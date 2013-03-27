@@ -1,4 +1,6 @@
-## 全部文章 (98)
+## 全部文章 (99)
+
+* 【JavaScript】 [改善 JavaScript 的建议——语言基础](?2013/03/27/javascript_base_advice) (2013-03-27)
 
 * 【开发工具】 [Ubuntu 安装配置 vim](?2013/03/26/ubuntu_vim) (2013-03-26)
 
