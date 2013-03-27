@@ -1,0 +1,108 @@
+body {
+	font-family: Arial, "微软雅黑";
+	background: #B9E6EB url(../images/body_repeat.png) repeat-x;
+}
+.blog {
+	background: url(../images/body_bg.jpg) no-repeat center 0;
+}
+.container {
+	color: #4C4C4C;
+	background-color: #FAFAFA;
+}
+.header_top {
+	height: 300px;
+	background: url(../images/header_bg.jpg) no-repeat;
+}
+.header_content {
+	height: 90px;
+	background-color: white;
+	padding: 10px 0 10px 220px;
+}
+.wenyi-logo {
+	position: absolute;
+	top: -90px;
+	left: 20px;
+}
+
+.fork_me {
+    position: fixed;
+    display: block;
+    right: 0;
+    top: 0;
+    width: 149px;
+    height: 149px;
+    background: url(../images/forkme.png) no-repeat;
+    z-index: 100;
+}
+
+.posts {
+	color: #333;
+	border-top: 1px solid #CCC;
+}
+#post {
+	color: #444;
+    font-size: 14px;
+	line-height: 24px;
+}
+#post li {
+	line-height: 24px;
+	list-style-type: circle;
+}
+
+#comments {
+	border-top: 1px solid #CCC;
+}
+
+.goto_top {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    margin-left: 470px;
+    display: block;
+    background-color: #F7F7F7;
+    border: 1px solid #CCC;
+    border-radius: 2px;
+    width: 22px;
+    height: 80px;
+    padding-top: 5px;
+    line-height: 14px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    color: #333;
+}
+.goto_top:hover {
+    background-color: #F0F0F0;
+    color: #606060;
+}
+.goto_top i {
+    margin-bottom: 2px;
+}
+
+.footer {
+    border-top: 1px solid #ddd;
+    padding: 40px 0;
+    text-align: center;
+    margin-top: 40px;
+    color: #777;
+}
+.footer p {
+    font-size: 14px;
+    color: #777;
+}
+.footer a {
+    margin: 0 0.5em;
+    color: #777;
+}
+
+
+.time_line {
+    vertical-align: middle;
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    background: url(../images/time_line.png) no-repeat;
+}
+.vco-storyjs h2.start, .my_description {
+    margin-left: 250px;
+}
