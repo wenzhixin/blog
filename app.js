@@ -12,7 +12,7 @@ var app = module.exports = express();
 var accessLogfile = fs.createWriteStream('logs/access.log', {flags: 'a'});
 
 app.configure(function() {
-	app.set('port', process.env.PORT || 3333);
+	app.set('port', process.env.PORT || settings.port);
 	app.use(express.logger({stream: accessLogfile}));
 	app.use(express.static(__dirname + '/html'));
 	app.use(express.favicon());
