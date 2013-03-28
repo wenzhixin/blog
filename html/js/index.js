@@ -7,6 +7,11 @@ $(function() {
 	'use strict';
 	var INDEX = 'index';
 	
+	function main() {
+		$(window).scroll(showGotoTop);
+		getPost(url('?'));
+	}
+	
 	function getPost(url) {
 		if (!url) {
 			getPost(INDEX);
@@ -29,5 +34,15 @@ $(function() {
 		});
 	}
 	
-	getPost(url('?'));
+	function showGotoTop() {
+		var $gotoTop = $('.goto_top');
+		if ($(document).scrollTop() > 0) {
+			console.log($gotoTop.length);
+			$gotoTop.fadeIn('slow');
+		} else {
+			$gotoTop.fadeOut('slow');
+		}
+	}
+	
+	main();
 });

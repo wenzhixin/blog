@@ -58,7 +58,7 @@ body {
     bottom: 20px;
     left: 50%;
     margin-left: 470px;
-    display: block;
+    display: none;
     background-color: #F7F7F7;
     border: 1px solid #CCC;
     border-radius: 2px;
