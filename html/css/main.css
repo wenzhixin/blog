@@ -103,6 +103,13 @@ body {
     height: 32px;
     background: url(../images/time_line.png) no-repeat;
 }
+.rss {
+	vertical-align: middle;
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    background: url(../images/rss.png) no-repeat;
+}
 .vco-storyjs h2.start, .my_description {
     margin-left: 250px;
 }
