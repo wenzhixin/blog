@@ -1,4 +1,4 @@
-# Ubuntu 12.10 VirtualBox 问题
+## Ubuntu 12.10 VirtualBox 问题
 
 分类：开发工具 | 标签：VirtualBox | 发布时间：2013-04-01 00:29:00
 
