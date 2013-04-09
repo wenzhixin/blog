@@ -27,7 +27,7 @@ ___
 在客户端生成公钥和私钥文件
 
 	ssh-keygen
-	cat ~/.ssh/id_dsa.pub >> ~/.ssh/authorized_keys
+	cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 	
 scp 到服务器端
 	
