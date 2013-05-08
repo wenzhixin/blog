@@ -34,28 +34,28 @@ ___
 
 ### jQuery 插件
 
-#### jQuery rest
+#### rest
 
 * 简介：jQuery RESTful 接口请求
 
 * github：[https://github.com/wenzhixin/rest](https://github.com/wenzhixin/rest)
 
 
-#### jQuery rest-tester
+#### rest-tester
 
 * 简介：jQuery RESTful 接口测试
 
 * github：[https://github.com/wenzhixin/rest-tester](https://github.com/wenzhixin/rest-tester)
 
 
-#### jQuery jsonrpc
+#### jsonrpc
 
 * 简介：jQuery JSONRpc 接口请求
 
 * github：[https://github.com/wenzhixin/jsonrpc](https://github.com/wenzhixin/jsonrpc)
 
 
-#### jQuery multiple-select
+#### multiple-select
 
 * 简介：jQuery 多选框
 
@@ -64,21 +64,21 @@ ___
 * github：[https://github.com/wenzhixin/multiple-select](https://github.com/wenzhixin/multiple-select)
 
 
-#### jQuery imagebox
+#### imagebox
 
 * 简介：jQuery 图片查看弹出框
 
 * github：[https://github.com/wenzhixin/imagebox](https://github.com/wenzhixin/imagebox)
 
 
-#### jQuery navigate
+#### navigate
 
 * 简介：jQuery 导航
 
 * github：[https://github.com/wenzhixin/navigate](https://github.com/wenzhixin/navigate)
 
 
-#### jQuery vericode
+#### vericode
 
 * 简介：jQuery 验证码
 
@@ -157,6 +157,7 @@ ___
 
 * 网上商店：[https://chrome.google.com/webstore/detail/weibo-attention/hfhnidmhfikpicbkkkielijapaebopap](https://chrome.google.com/webstore/detail/weibo-attention/hfhnidmhfikpicbkkkielijapaebopap)
 
+___
 
 ### 其他
 
@@ -164,6 +165,6 @@ ___
 
 * 简介："泰囧"台词生成器
 
-* 主页：http://wenzhixin.net.cn/?2013/01/10/fill_text
-
 * github：[https://github.com/wenzhixin/filltext](https://github.com/wenzhixin/filltext)
+
+* demo：[http://wenzhixin.net.cn/posts/2013/01/10/filltext/filltext.html](http://wenzhixin.net.cn/posts/2013/01/10/filltext/filltext.html)

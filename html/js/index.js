@@ -27,6 +27,7 @@ $(function() {
 				if (url !== INDEX) {
 					$('#comments').show();
 				}
+				showShare();
 			},
 			error: function(data) {
 				getPost(INDEX);
@@ -42,6 +43,10 @@ $(function() {
 		} else {
 			$gotoTop.fadeOut('slow');
 		}
+	}
+	
+	function showShare() {
+		$('#bdshell_js').attr('src', 'http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000');
 	}
 	
 	main();
