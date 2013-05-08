@@ -49,7 +49,7 @@ ___
 * github：[https://github.com/wenzhixin/jsonrpc](https://github.com/wenzhixin/jsonrpc)
 
 
-#### jQuery Multiple Select
+#### jQuery multiple-select
 
 * 简介：jQuery 多选框
 
