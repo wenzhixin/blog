@@ -156,3 +156,14 @@ ___
 * github：[https://github.com/wenzhixin/weibo-attention](https://github.com/wenzhixin/weibo-attention)
 
 * 网上商店：[https://chrome.google.com/webstore/detail/weibo-attention/hfhnidmhfikpicbkkkielijapaebopap](https://chrome.google.com/webstore/detail/weibo-attention/hfhnidmhfikpicbkkkielijapaebopap)
+
+
+### 其他
+
+#### filltext
+
+* 简介："泰囧"台词生成器
+
+* 主页：http://wenzhixin.net.cn/?2013/01/10/fill_text
+
+* github：[https://github.com/wenzhixin/filltext](https://github.com/wenzhixin/filltext)
