@@ -4,6 +4,12 @@ ___
 
 ### 集成框架
 
+#### blog
+
+* 简介：基于 jQuery + markdown 的个人博客
+
+* github：[https://github.com/wenzhixin/blog](https://github.com/wenzhixin/blog)
+
 #### nodejs-express
 
 * 简介：基于 nodejs 和 express 的基本 MVC 框架
