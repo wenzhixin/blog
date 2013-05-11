@@ -134,7 +134,7 @@ ___
 
 * DSt ([https://github.com/gamache/DSt](https://github.com/gamache/DSt)) 是一个包装 localStorage 对象的简单类库。
 
-* jStore ([https://code.google.com/p/jquery-jstore](https://code.google.com/p/jquery-jstore) jQuery 的 jStore 插件，
+* jStore ([https://code.google.com/p/jquery-jstore](https://code.google.com/p/jquery-jstore)) jQuery 的 jStore 插件，
 支持 localStorage、sessionStorage、Gears SQLLite 和 HTML5 SQLLite，以及 Flash Storage 和 IE7 的解决方案。
 
 ___
