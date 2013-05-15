@@ -88,6 +88,12 @@ ___
 
 ### bootstrap 插件
 
+#### bootstrap-login
+
+* 简介：bootstrap 登录插件
+
+* github: [https://github.com/wenzhixin/bootstrap-login](https://github.com/wenzhixin/bootstrap-login)
+
 #### bootstrap-application-wizard
 
 * 简介：bootstrap 向导插件
