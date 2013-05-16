@@ -72,7 +72,7 @@ PS：基于 jQuery、markdown 的 html 博客，无涉及后台，如此简单�
 
     ## 文章列表
     
-    * [我的第一篇文章哦](?2012/11/30/hello_world) (2012-11-30)
+    * [我的第一篇文章哦](/2012/11/30/hello_world) (2012-11-30)
     
 ### 4、增加第一篇文章 hello_world.md
 
@@ -92,9 +92,9 @@ PS：基于 jQuery、markdown 的 html 博客，无涉及后台，如此简单�
 ### 5、大功告成
 最后，将整个 blog 目录放到服务器上（nodejs, apache2, nginx, IIS, ...）,输入地址便可以看到:
 
-![index](posts/2012/11/30/build_markdown_blog1.jpeg) 
+![index](/posts/2012/11/30/build_markdown_blog1.jpeg) 
 
-![hello_world](posts/2012/11/30/build_markdown_blog2.jpeg) 
+![hello_world](/posts/2012/11/30/build_markdown_blog2.jpeg) 
 
 ### 6、最后的最后>>>
 * 你可以加入自己的 CSS 进行美化，以及其他信息
@@ -103,4 +103,4 @@ PS：基于 jQuery、markdown 的 html 博客，无涉及后台，如此简单�
 ___
 
 #### 附件下载：
-[blog.zip](posts/2012/11/30/build_markdown_blog.zip)
+[blog.zip](/posts/2012/11/30/build_markdown_blog.zip)

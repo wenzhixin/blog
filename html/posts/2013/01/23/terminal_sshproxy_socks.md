@@ -40,4 +40,4 @@ tsocks server is not on a local subnet
 ___
 	
 设置 sshproxy 篇：
-[Ubuntu 设置 sshproxy 代理](?2012/10/24/ubuntu_sshproxy)
+[Ubuntu 设置 sshproxy 代理](/2012/10/24/ubuntu_sshproxy)

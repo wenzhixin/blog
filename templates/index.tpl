@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>文翼的博客</title>
+    <title><%= title %> — 文翼的博客</title>
     <meta name="author" content="zhixin wen" />
     <meta name="Keywords" 
       content="文翼的博客，web前端博客" />
@@ -11,11 +11,11 @@
       content="简介：坚持看书，每天进步一点点。 要常常提醒自己：无情的岁月，还有不够努力的自己！" />
     <meta name="viewport" content="width=device-width; initial-scale=1.0" />
     <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml" />
-    <link rel="stylesheet" href="css/base.css" />
-    <link rel="stylesheet" href="css/bootstrap.css" />
-    <link rel="stylesheet" href="css/jquery.imagebox.css" />
-    <link rel="stylesheet" href="css/logo.css" />
-    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="/css/base.css" />
+    <link rel="stylesheet" href="/css/bootstrap.css" />
+    <link rel="stylesheet" href="/css/jquery.imagebox.css" />
+    <link rel="stylesheet" href="/css/logo.css" />
+    <link rel="stylesheet" href="/css/main.css" />
   </head>
   <body>
     <div class="blog">
@@ -24,26 +24,20 @@
           <div class="header_top"></div>
           <div class="header_content pr">
             <a class="wenyi-logo" href="/">
-            <div class="border">
-              <div class="circle">
-                <div class="wy">
-                  <div class="wen">
-                    文
-                  </div>
-                  <div class="yi">
-                    翼
-                  </div>
-                  <div class="bo">
-                    博
-                  </div>
-                  <div class="ke">
-                    客
+              <div class="border">
+                <div class="circle">
+                  <div class="wy">
+                    <div class="wen">文</div>
+                    <div class="yi">翼</div>
+                    <div class="bo">博</div>
+                    <div class="ke">客</div>
                   </div>
                 </div>
+                <!--<img src="images/logo.jpeg" alt="" /> -->
               </div>
-              <!--<img src="images/logo.jpeg" alt="" /> -->
-            </div> </a>
-            <h3><a href="/">文翼的博客</a>
+            </a>
+            <h3>
+              <a href="/">文翼的博客</a>
               <a href="timeline.html" class="time_line ml10" title="查看时间轴"></a>
               <a href="rss.xml" class="rss ml10" title="查看RSS"></a>
             </h3>
@@ -57,7 +51,7 @@
         <div class="row">
           <div class="span8">
             <div class="p30">
-              <div id="post"></div>
+              <div id="post"><%= content %></div>
             </div>
           </div>
           <div class="span4">
@@ -86,11 +80,9 @@
         </div>
       </div>
     </div>
-    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
-    <script type="text/javascript" src="js/js-url.js"></script>
-    <script type="text/javascript" src="js/markdown.js"></script>
-    <script type="text/javascript" src="js/jquery.imagebox.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="/js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.imagebox.js"></script>
+    <script type="text/javascript" src="/js/index.js"></script>
     <script type="text/javascript" id="bdshare_js" data="type=slide&amp;img=6&amp;pos=right&amp;uid=6692400" ></script>
     <script type="text/javascript" id="bdshell_js"></script>
     <script type="text/javascript">

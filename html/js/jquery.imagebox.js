@@ -12,7 +12,7 @@
 			'<div class="prevButton ' + (options.direction) + '"></div>' +
 			'<div class="nextButton ' + (options.direction) + '"></div>' +
 			'<a href="" title="' + options.linkTitle + '" target="blank">' + 
-			'<img src="images/loading.gif" />' + 
+			'<img src="/images/loading.gif" />' + 
 			'</a>' + 
 			'</div>' +
 			'<div class="translucent"></div>' +

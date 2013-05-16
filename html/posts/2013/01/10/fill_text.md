@@ -8,7 +8,7 @@ ___
 
 先上效果图：
 
-![](posts/2013/01/10/1.png)
+![](/posts/2013/01/10/1.png)
 
 就想用 html5 自己也做一个来玩玩，查了下 API，发现还是挺简单的。
 
@@ -48,4 +48,4 @@ js:
     
 ___
     
-源代码(当然，请用支持 html5 的浏览器)：[demo](posts/2013/01/10/filltext/filltext.html)
+源代码(当然，请用支持 html5 的浏览器)：[demo](/posts/2013/01/10/filltext/filltext.html)

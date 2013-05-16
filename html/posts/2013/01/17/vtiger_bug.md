@@ -6,7 +6,7 @@ ___
 
 ### 图表乱码：
 
-1. 下载 [Simsun](posts/2013/01/17/Simsun.zip) 解压
+1. 下载 [Simsun](/posts/2013/01/17/Simsun.zip) 解压
 
 2. 将 Simsun.ttf 文件复制到 Image/Canvas/Fonts 目录下
 
@@ -30,7 +30,7 @@ ___
 
 ### 导出 cvs 乱码
 
-1. 下载 [vtiger53csv](posts/2013/01/17/vtiger53csv.zip) 解压（改的文件比较多，已压缩为 zip 包）
+1. 下载 [vtiger53csv](/posts/2013/01/17/vtiger53csv.zip) 解压（改的文件比较多，已压缩为 zip 包）
 
 2. 覆盖目标目录
 
@@ -38,7 +38,7 @@ ___
 
 ### 导出 pdf 乱码：
 
-1. 下载 [vtiger53pdf](posts/2013/01/17/vtiger53pdf.zip) 解压 (改的文件比较多，已压缩为 zip 包)
+1. 下载 [vtiger53pdf](/posts/2013/01/17/vtiger53pdf.zip) 解压 (改的文件比较多，已压缩为 zip 包)
 
 2. 覆盖目标目录
 
