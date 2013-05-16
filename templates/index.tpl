@@ -38,8 +38,8 @@
             </a>
             <h3>
               <a href="/">文翼的博客</a>
-              <a href="timeline.html" class="time_line ml10" title="查看时间轴"></a>
-              <a href="rss.xml" class="rss ml10" title="查看RSS"></a>
+              <a href="/timeline.html" class="time_line ml10" title="查看时间轴"></a>
+              <a href="/rss.xml" class="rss ml10" title="查看RSS"></a>
             </h3>
             <p>
               简介：  坚持看书，每天进步一点点。 要常常提醒自己：无情的岁月，还有不够努力的自己！

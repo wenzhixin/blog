@@ -94,6 +94,8 @@ ___
 
 * github: [https://github.com/wenzhixin/bootstrap-login](https://github.com/wenzhixin/bootstrap-login)
 
+* demo: [http://wenzhixin.net.cn/p/bootstrap-login](http://wenzhixin.net.cn/p/bootstrap-login/)
+
 #### bootstrap-application-wizard
 
 * 简介：bootstrap 向导插件
