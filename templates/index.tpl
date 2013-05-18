@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="/css/jquery.imagebox.css" />
     <link rel="stylesheet" href="/css/logo.css" />
     <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/fork.css" />
   </head>
   <body>
     <div class="blog">

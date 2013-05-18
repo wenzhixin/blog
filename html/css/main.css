@@ -24,17 +24,6 @@ body {
 	left: 20px;
 }
 
-.fork_me {
-    position: fixed;
-    display: block;
-    right: 0;
-    top: 0;
-    width: 149px;
-    height: 149px;
-    background: url(../images/forkme.png) no-repeat;
-    z-index: 100;
-}
-
 .posts {
 	color: #333;
 	border-top: 1px solid #CCC;

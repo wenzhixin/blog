@@ -1,0 +1,10 @@
+.fork_me {
+    position: fixed;
+    display: block;
+    right: 0;
+    top: 0;
+    width: 149px;
+    height: 149px;
+    background: url(../images/forkme.png) no-repeat;
+    z-index: 10000;
+}
