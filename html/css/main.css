@@ -38,6 +38,12 @@ body {
 	list-style-type: circle;
 }
 
+pre {
+    overflow: auto;
+    word-wrap: normal;
+    white-space: pre;
+}
+
 #comments {
 	border-top: 1px solid #CCC;
 }
