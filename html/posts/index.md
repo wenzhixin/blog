@@ -4,7 +4,7 @@
 
 * 【jQuery】 [jQuery 中 attr() 和 prop() 方法的区别](/2013/05/24/jquery_attr_prop) (2013-05-24)
 
-* 【JavaScript】 [客户端数据存储(一)](/2013/05/09/data_storage) (2013-05-09)
+* 【JavaScript】 [客户端数据存储之 Web Storage](/2013/05/09/data_storage) (2013-05-09)
 
 * 【JavaScript】 [制作在线聊天室](/2013/04/02/node_chat) (2013-04-02)
 
