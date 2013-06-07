@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>照片导航</title>
+    <meta name="author" content="zhixin" />
+    <link rel="stylesheet" href="/css/base.css" />
+    <link rel="stylesheet" href="/css/bootstrap.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <a href="/demos"><<返回文章</a>
+    </div>
+    <div class="container mt10">
+      <div id="zt-container" class="zt-container">
+        <div class="zt-item" data-id="zt-item-1">
+          <img class="zt-current" src="images/image.jpg" />
+          <div class="zt-tag" data-dir="1" data-link="zt-item-2" data-zoom="15" data-speed="850" data-delay="50" 
+            style="top:230px;left:370px;width:100px; height:50px;"></div>
+        </div>
+        <div class="zt-item" data-id="zt-item-2">
+          <img class="zt-current" src="images/image_1.jpg" />
+          <div class="zt-tag" data-dir="1" data-link="zt-item-3" data-zoom="10" data-speed="850" data-delay="100" 
+            style="top:260px;left:550px;width:50px;height:60px;"></div>
+          <div class="zt-tag zt-tag-back" data-dir="-1" data-link="zt-item-1" data-zoom="15" data-speed="700" data-delay="0"></div>
+        </div>    
+        <div class="zt-item" data-id="zt-item-3">
+          <img class="zt-current little-image" src="images/image_2.jpg" width="338" height="450" />
+          <div class="zt-tag zt-tag-back" data-dir="-1" data-link="zt-item-2" data-zoom="10" data-speed="650" data-delay="20"></div>
+        </div>      
+      </div>
+    </div>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.transform-0.9.3.min_.js"></script>
+    <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="js/jquery.zoomtour.js"></script>
+    <script type="text/javascript">
+      $(function() {
+        $('#zt-container').zoomtour();
+      })
+    </script>
+  </body>
+</html>

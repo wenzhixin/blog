@@ -2,6 +2,8 @@
 
 * 【个人作品】 [个人作品介绍](/projects) [置顶]
 
+* 【演示】 [好玩的东东——演示](/demos) [置顶]
+
 * 【jQuery】 [jQuery 中 attr() 和 prop() 方法的区别](/2013/05/24/jquery_attr_prop) (2013-05-24)
 
 * 【JavaScript】 [客户端数据存储之 Web Storage](/2013/05/09/data_storage) (2013-05-09)

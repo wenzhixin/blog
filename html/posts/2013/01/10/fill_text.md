@@ -48,4 +48,4 @@ js:
     
 ___
     
-源代码(当然，请用支持 html5 的浏览器)：[demo](/posts/2013/01/10/filltext/filltext.html)
+源代码(当然，请用支持 html5 的浏览器)：[demo](/demos/filltext/)
