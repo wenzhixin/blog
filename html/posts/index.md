@@ -1,8 +1,10 @@
-## 全部文章 (107)
+## 全部文章 (108)
 
 * 【个人作品】 [个人作品介绍](/projects) [置顶]
 
 * 【演示】 [好玩的东东——演示](/demos) [置顶]
+
+* 【Ubuntu】 [Ubuntu 系统下 android 连接小米2进行开发](/2013/06/14/ubuntu_android_xiaomi2) (2013-06-14)
 
 * 【数据库】 [MongoDB mongoexport 命令的使用及简单实现](/2013/06/12/mongodb_export) (2013-06-12)
 
