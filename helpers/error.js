@@ -14,4 +14,4 @@ exports.handler = function(err, req, res, status) {
 	
 	res.status(status);
 	res.end('');
-}
+};

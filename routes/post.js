@@ -24,4 +24,4 @@ exports.get = function(req, res) {
 		var tpl = fs.readFileSync(TEMPLATE_PATH + '404.tpl').toString();
 		res.send(_.template(tpl)());
 	}
-}
+};

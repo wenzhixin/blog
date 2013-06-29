@@ -22,17 +22,17 @@ exports.list = function(req, res) {
 	var text = fs.readFileSync(POST_PATH + 'index.md').toString(), 
 		m = text.match(/\[[^\[\]]*\]\([^\(\)]*\)\s\([^\(\)]*\)/g);
 	m.forEach(function(str) {
-		var results = /\[([^\[\]]*)\]\(([^\(\)]*)\)/.exec(str);
-			title = results[1], 
+		var results = /\[([^\[\]]*)\]\(([^\(\)]*)\)/.exec(str),
+			title = results[1],
 			path = results[2],
-			description = fs.readFileSync(POST_PATH + path + '.md').toString(), 
+			description = fs.readFileSync(POST_PATH + path + '.md').toString(),
 			m = description.match(/\d{2,4}-\d{1,2}-\d{1,2} \d{1,2}:\d{1,2}:\d{1,2}/);
 		feed.item({
 			title: title,
 			description: markdown.toHTML(description),
 			url: feed.site_url + '?' + path,
 			author: 'wenzhixin',
-			date: m && m[0]
+			date: m ? m[0] : ''
 		});
 	});
 	res.status(200);
