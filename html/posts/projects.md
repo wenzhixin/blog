@@ -1,4 +1,11 @@
-## 个人作品介绍
+## 个人开源项目介绍
+
+___
+
+
+GitHub 个人主页：
+[https://github.com/wenzhixin/](https://github.com/wenzhixin/)
+
 
 ___
 
@@ -8,6 +15,8 @@ ___
 
 * 简介：基于 jQuery + markdown 的个人博客
 
+* 主页：[http://wenzhixin.net.cn](http://wenzhixin.net.cn)
+
 * github：[https://github.com/wenzhixin/blog](https://github.com/wenzhixin/blog)
 
 #### nodejs-express
@@ -15,6 +24,8 @@ ___
 * 简介：基于 nodejs 和 express 的基本 MVC 框架
 
 * github：[https://github.com/wenzhixin/nodejs-express](https://github.com/wenzhixin/nodejs-express)
+
+* github：[https://github.com/wenzhixin/nodejs-express-mongo](https://github.com/wenzhixin/nodejs-express-mongo)
 
 
 #### phprpc-php
@@ -30,7 +41,9 @@ ___
 
 * github：[https://github.com/wenzhixin/chat](https://github.com/wenzhixin/chat)
 
+
 ___
+
 
 ### jQuery 插件
 
@@ -84,7 +97,18 @@ ___
 
 * github：[https://github.com/wenzhixin/vericode](https://github.com/wenzhixin/vericode)
 
+
+#### bulletin
+
+* 简介：jQuery 公告
+
+* github：[https://github.com/wenzhixin/bulletin](https://github.com/wenzhixin/bulletin)
+
+* demo: [http://wenzhixin.net.cn/p/bulletin](http://wenzhixin.net.cn/p/bulletin/)
+
+
 ___
+
 
 ### bootstrap 插件
 
@@ -109,7 +133,9 @@ ___
 
 * github：[https://github.com/wenzhixin/bootstrap-pagination](https://github.com/wenzhixin/bootstrap-pagination)
 
+
 ___
+
 
 ### seajs 模块
 
@@ -126,7 +152,9 @@ ___
 
 * github：[https://github.com/wenzhixin/datagrid](https://github.com/wenzhixin/datagrid)
 
+
 ___
+
 
 ### chrome 浏览器插件
 
@@ -165,7 +193,9 @@ ___
 
 * 网上商店：[https://chrome.google.com/webstore/detail/weibo-attention/hfhnidmhfikpicbkkkielijapaebopap](https://chrome.google.com/webstore/detail/weibo-attention/hfhnidmhfikpicbkkkielijapaebopap)
 
+
 ___
+
 
 ### 其他
 
@@ -175,4 +205,11 @@ ___
 
 * github：[https://github.com/wenzhixin/filltext](https://github.com/wenzhixin/filltext)
 
-* demo：[http://wenzhixin.net.cn/posts/2013/01/10/filltext/filltext.html](http://wenzhixin.net.cn/posts/2013/01/10/filltext/filltext.html)
+* demo：[http://wenzhixin.net.cn/demos/filltext](http://wenzhixin.net.cn/demos/filltext)
+
+
+#### imagetour
+
+* 简介：图片导航
+
+* demo：[http://wenzhixin.net.cn/demos/imagetour](http://wenzhixin.net.cn/demos/imagetour)
