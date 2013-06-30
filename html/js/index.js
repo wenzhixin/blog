@@ -11,6 +11,7 @@ $(function() {
 		showImageBox();
 		showShare();
 		showComments();
+		showBulletin();
 	}
 	
 	function showGotoTop() {
@@ -36,6 +37,10 @@ $(function() {
 	    if (location.pathname !== "/" && location.pathname !== "/index") {
 	        $('#comments').show();
 	    }
+	}
+	
+	function showBulletin() {
+		$('#bulletin').bulletin();
 	}
 	
 	main();

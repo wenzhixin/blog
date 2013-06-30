@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="/css/logo.css" />
     <link rel="stylesheet" href="/css/main.css" />
     <link rel="stylesheet" href="/css/fork.css" />
+    <link rel="stylesheet" href="/p/bulletin/assets/bulletin/bulletin.css" />
   </head>
   <body>
     <div class="blog">
@@ -66,6 +67,15 @@
       <div id="comments" class="container none">
         <div id="disqus_thread" class="m10"></div>
       </div>
+      
+      <div id="bulletin" class="bulletin">
+        <ul>
+          <li><a href="http://wenzhixin.net.cn/p/multiple-select/">Multiple Select - Multiple select is a jQuery plugin to select multiple elements with checkboxes.</a></li>
+          <li><a href="http://wenzhixin.net.cn/p/bootstrap-login/">Bootstrap Login - Login plugin from for bootstrap.</a></li>
+          <li><a href="http://wenzhixin.net.cn/p/bulletin/">Bulletin - A jQuery plugin to show bulletin for website.</a></li>
+        </ul>
+        <div class="close"><a href="javascript:void(0)">×</a></div>
+      </div>
 
       <a href="https://github.com/wenzhixin/blog" class="fork_me"></a>
       <div class="goto_top"
@@ -83,6 +93,7 @@
     </div>
     <script type="text/javascript" src="/js/jquery-1.8.3.min.js"></script>
     <script type="text/javascript" src="/js/jquery.imagebox.js"></script>
+    <script type="text/javascript" src="/p/bulletin/assets/bulletin/jquery.bulletin.js"></script>
     <script type="text/javascript" src="/js/index.js"></script>
     <script type="text/javascript" id="bdshare_js" data="type=slide&amp;img=6&amp;pos=right&amp;uid=6692400" ></script>
     <script type="text/javascript" id="bdshell_js"></script>
