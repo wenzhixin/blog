@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="/css/logo.css" />
     <link rel="stylesheet" href="/css/main.css" />
     <link rel="stylesheet" href="/css/fork.css" />
-    <link rel="stylesheet" href="/assets/highlight.js/styles/default.css">
+    <link rel="stylesheet" href="/assets/highlight.js/styles/github.css">
     <link rel="stylesheet" href="/p/bulletin/assets/bulletin/bulletin.css" />
   </head>
   <body>

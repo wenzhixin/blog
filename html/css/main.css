@@ -42,6 +42,7 @@ pre {
     overflow: auto;
     word-wrap: normal;
     white-space: pre;
+    padding: 0;
 }
 
 #comments {
