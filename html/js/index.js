@@ -12,6 +12,7 @@ $(function() {
 		showShare();
 		showComments();
 		showBulletin();
+		hljs.initHighlightingOnLoad();
 	}
 	
 	function showGotoTop() {

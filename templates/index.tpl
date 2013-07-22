@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="/css/logo.css" />
     <link rel="stylesheet" href="/css/main.css" />
     <link rel="stylesheet" href="/css/fork.css" />
+    <link rel="stylesheet" href="/assets/highlight.js/styles/default.css">
     <link rel="stylesheet" href="/p/bulletin/assets/bulletin/bulletin.css" />
   </head>
   <body>
@@ -93,6 +94,7 @@
     </div>
     <script type="text/javascript" src="/js/jquery-1.8.3.min.js"></script>
     <script type="text/javascript" src="/js/jquery.imagebox.js"></script>
+    <script type="text/javascript" src="/assets/highlight.js/highlight.pack.js"></script>
     <script type="text/javascript" src="/p/bulletin/assets/bulletin/jquery.bulletin.js"></script>
     <script type="text/javascript" src="/js/index.js"></script>
     <script type="text/javascript" id="bdshare_js" data="type=slide&amp;img=6&amp;pos=right&amp;uid=6692400" ></script>
