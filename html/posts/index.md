@@ -4,6 +4,8 @@
 
 * 【演示】 [好玩的东东——演示](/demos) [置顶]
 
+* 【测试】 [firefox 利用 Selenium IDE 对 DBackup 进行自动化测试](/2013/07/30/firefox_selenium_ide.md) (2013-07-30)
+
 * 【服务器】 [使用 nginx 作为代理服务器的路径问题](/2013/07/17/nginx_proxy) (2013-07-17)
 
 * 【服务器】 [搭建小型下载服务器(raspberry pi)](/2013/07/01/raspberry_server) (2013-07-01)
