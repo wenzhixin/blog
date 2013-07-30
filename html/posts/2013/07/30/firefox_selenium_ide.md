@@ -37,7 +37,7 @@ ___
 我们先看看这里命令的含义（大概了解下就OK了，不用记），很容易理解的：
 
 1) open(url)  
-- 在浏览器中打开URL,可以接受相对和绝对路径两种形式  
+- 在浏览器中打开URL，可以接受相对和绝对路径两种形式  
 - 注意：该URL必须在与浏览器相同的安全限定范围之内
 
 2) type(inputLocator, value)  
@@ -45,9 +45,9 @@ ___
 - 也适合给复选和单选框赋值
 
 3) click(elementLocator)  
-- 点击连接,按钮，复选和单选框  
-- 如果点击后需要等待响应，则用"clickAndWait"  
-- 如果是需要经过JavaScript的alert或confirm对话框后才能继续操作，则需要调用verify或assert来告诉Selenium你期望对对话框进行什么操作。
+- 点击连接、按钮、复选和单选框  
+- 如果点击后需要等待响应，则用 "clickAndWait"  
+- 如果是需要经过 JavaScript 的 alert 或 confirm 对话框后才能继续操作，则需要调用 verify 或 assert 来告诉 Selenium 你期望对对话框进行什么操作。
 
 ##### 5. 我们发现最后一项 assertAlert 是指对 alert 的处理，在这里我们并不需要，删除。并将该测试用例保存为 login。
 
