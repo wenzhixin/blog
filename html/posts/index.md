@@ -1,10 +1,12 @@
-## 全部文章 (114)
+## 全部文章 (115)
 
 * 【个人作品】 [个人开源项目介绍](/projects) [置顶]
 
 * 【演示】 [好玩的东东——演示](/demos) [置顶]
 
-* 【服务器】 [nignx 配置 SSL（https）](2013/09/01/nginx_ssl_settings) (2013-09-01)
+* 【服务器】 [nginx 安装与配置详解](/2013/09/21/nginx_install_settings) (2013-09-21)
+
+* 【服务器】 [nignx 配置 SSL（https）](/2013/09/01/nginx_ssl_settings) (2013-09-01)
 
 * 【CSS】 [Bootstrap 禁用 a 按钮](/2013/08/12/disable_link) (2013-08-12)
 
