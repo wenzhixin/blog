@@ -20,7 +20,7 @@ exports.list = function(req, res) {
 	});
 
 	var text = fs.readFileSync(POST_PATH + 'index.md').toString(), 
-		m = text.match(/\[[^\[\]]*\]\([^\(\)]*\)\s\([^\(\)]*\)/g);
+		m = text.match(/\([^\(\)]\d{2,4}-\d{1,2}-\d{1,2}\)\s\[[^\[\]]*\]\([^\(\)]*\)/g);
 	m.forEach(function(str) {
 		var results = /\[([^\[\]]*)\]\(([^\(\)]*)\)/.exec(str),
 			title = results[1],

@@ -63,7 +63,7 @@ $(function() {
 	
 	function getPost(url, param) {
 		$.ajax({
-			url: 'posts/' + url.substring(1) + '.md', 
+			url: 'posts/' + url + '.md', 
 			async: true,
 			success: function(data) {
 				var text = markdown.toHTML(data);
