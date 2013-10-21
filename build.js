@@ -57,13 +57,13 @@ function create(posts) {
 	for (var i in posts) {
 		var post = posts[i];
 		content.push([
-			'* ',
+			'*',
 			'(' + post.time + ')',
 			'[' + post.title + '](' + post.path + ')',
 			'【' + post.category + '】'
 		].join(' '));
 	}
-	content.push('* (其他)[更多文章...](http://qing.weibo.com/2292826740/profile) ')
+	content.push('* (其他) [更多文章...](http://qing.weibo.com/2292826740/profile) ')
 	fs.writeFile(POST_DIR + 'index.md', content.join('\n\n'));
 }
 
