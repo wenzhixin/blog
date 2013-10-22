@@ -16,7 +16,7 @@ body {
 .header_content {
 	height: 90px;
 	background-color: white;
-	padding: 10px 0 10px 220px;
+	padding: 10px 10px 10px 220px;
 }
 .wenyi-logo {
 	position: absolute;
@@ -24,6 +24,9 @@ body {
 	left: 20px;
 }
 
+.post_content {
+	padding: 30px;
+}
 .posts {
 	color: #333;
 	border-top: 1px solid #CCC;
@@ -52,8 +55,6 @@ pre {
 .goto_top {
     position: fixed;
     bottom: 20px;
-    left: 50%;
-    margin-left: 470px;
     display: none;
     background-color: #F7F7F7;
     border: 1px solid #CCC;

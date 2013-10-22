@@ -2,14 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title><%= title %> — 文翼的博客</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width; initial-scale=1.0" />
     <meta name="author" content="zhixin wen" />
     <meta name="Keywords" 
       content="文翼的博客，web前端博客" />
     <meta name="description" 
       content="简介：坚持看书，每天进步一点点。 要常常提醒自己：无情的岁月，还有不够努力的自己！" />
-    <meta name="viewport" content="width=device-width; initial-scale=1.0" />
     <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml" />
     <link rel="stylesheet" href="/css/base.css" />
     <link rel="stylesheet" href="/css/bootstrap.css" />
@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="/css/logo.css" />
     <link rel="stylesheet" href="/css/main.css" />
     <link rel="stylesheet" href="/css/fork.css" />
+    <link rel="stylesheet" href="/css/bootstrap-responsive.css" />
     <link rel="stylesheet" href="/assets/highlight.js/styles/github.css">
     <link rel="stylesheet" href="/p/bulletin/assets/bulletin/bulletin.css" />
   </head>
@@ -53,12 +54,12 @@
       <div class="container posts">
         <div class="row">
           <div class="span8">
-            <div class="p30">
+            <div class="post_content">
               <div id="post"><%= content %></div>
             </div>
           </div>
           <div class="span4">
-            <div class="pt15 pr15 pb15">
+            <div class="weibo_content pt15 pr15 pb15">
               <iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=1&isFans=1&uid=2292826740&verifier=b05b5d3a&dpc=1"></iframe>
             </div>
           </div>
@@ -66,12 +67,13 @@
       </div>
 
       <div id="comments" class="container none">
-        <div id="disqus_thread" class="m10"></div>
+        <div class="ds-thread m10"></div>
       </div>
       
       <div id="bulletin" class="bulletin">
         <ul>
           <li><a href="http://wenzhixin.net.cn/p/multiple-select/">Multiple Select - Multiple select is a jQuery plugin to select multiple elements with checkboxes.</a></li>
+          <li><a href="http://wenzhixin.net.cn/p/bootstrap-table/">Bootstrap Table - Simple table for bootstrap.</a></li>
           <li><a href="http://wenzhixin.net.cn/p/bootstrap-login/">Bootstrap Login - Login plugin from for bootstrap.</a></li>
           <li><a href="http://wenzhixin.net.cn/p/bulletin/">Bulletin - A jQuery plugin to show bulletin for website.</a></li>
         </ul>
@@ -113,14 +115,15 @@
 		})();
     </script>
     <script type="text/javascript">
-		var disqus_shortname = 'wenzhixin';
-		(function() {
-			var dsq = document.createElement('script');
-			dsq.type = 'text/javascript';
-			dsq.async = true;
-			dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-		})();
+    var duoshuoQuery = {short_name:"wenzhixin"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = 'http://static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0] 
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
     </script>
   </body>
 </html>

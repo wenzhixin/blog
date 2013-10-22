@@ -7,6 +7,7 @@ $(function() {
 	
 	function main() {
 		$(window).scroll(showGotoTop);
+		$(window).resize(showGotoTop);
 		showGotoTop();
 		showImageBox();
 		showShare();
@@ -17,6 +18,22 @@ $(function() {
 	
 	function showGotoTop() {
 		var $gotoTop = $('.goto_top');
+		
+		// position
+		if ($(window).width() > 767) {
+			$gotoTop.css({
+				'left': '50%',
+				'margin-left': $('.posts').width() / 2 + 'px',
+				'right': 'auto'
+			});
+		} else {
+			$gotoTop.css({
+				'left': 'auto',
+				'margin-left': '0',
+				'right': '0'
+			});
+		}
+		
 		if ($(document).scrollTop() > 0) {
 			$gotoTop.fadeIn('slow');
 		} else {
