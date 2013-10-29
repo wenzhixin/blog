@@ -30,5 +30,5 @@ ___
 	
 **5. 查看 nodejs 和 npm 的版本**	
 
-	nodejs -v
+	node -v
 	npm -v
