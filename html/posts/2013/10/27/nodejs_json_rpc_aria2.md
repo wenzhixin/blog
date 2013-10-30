@@ -1,6 +1,6 @@
-## 开发下载服务器——第三天
+## nodejs 通过 JSON-RPC 调用 aria2 接口
 
-分类：项目 | 标签：aria2、websocket、jsonrpc | 发布时间：2013-10-27 12:50:00
+分类：前端技术 | 标签：aria2、websocket、jsonrpc | 发布时间：2013-10-27 12:50:00
 
 ___
 

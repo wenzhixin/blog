@@ -1,6 +1,6 @@
 ## 安卓 ssh 和 rsync 同步客户端的实现
 
-分类：Android | 标签：Android、ssh、rsync | 发布时间：2013-10-18 09:30:00
+分类：移动开发 | 标签：Android、ssh、rsync | 发布时间：2013-10-18 09:30:00
 
 ___
 
