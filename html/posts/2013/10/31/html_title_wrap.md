@@ -31,14 +31,14 @@ ___
 
 测试了 chrome 和 firefox，貌似没什么问题，不过为了更好的解决浏览器兼容性，决定用 jQuery 来解决。
 
-新建文件（jquery.wrap.title.js）：
+新建文件（[jquery.wrap.title.js](/posts/2013/10/31/jquery.wrap.title.js)）：
 
     $(function() {
         $(document).on('mouseover', '[title]', function(e) {
             var $this = $(this),
                 title = $this.attr('title'),
                 titles = [],
-                $div = $('<div class="jquery_title"></div>');
+                $div = $('<div class="wrap-title"></div>');
                 
             $this.attr('data-title', title);
             $this.removeAttr('title');
@@ -66,7 +66,7 @@ ___
                 title = $this.attr('data-title');
             
             $this.attr('title', title);
-            $this.find('.jquery_title').remove();
+            $this.find('.wrap-title').remove();
         });
     });
     
