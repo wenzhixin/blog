@@ -4,7 +4,7 @@
 
 var fs = require('fs'), 
 	_ = require('underscore'),
-	markdown = require('markdown').markdown, 
+	marked = require('marked'),
 	
 	TEMPLATE_PATH = __dirname + '/../templates/',
 	POST_PATH = __dirname + '/../html/posts/';
@@ -18,7 +18,7 @@ exports.get = function(req, res) {
 			m = /^##\s(.*)/.exec(text);
 		res.send(_.template(tpl)({
 			title: m && m[1],
-			content: markdown.toHTML(text)
+			content: marked(text)
 		}));
 	} catch (e) {
 		var tpl = fs.readFileSync(TEMPLATE_PATH + '404.tpl').toString();

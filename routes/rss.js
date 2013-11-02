@@ -5,7 +5,7 @@
 
 var fs = require('fs'), 
 	RSS = require('rss'), 
-	markdown = require('markdown').markdown, 
+	marked = require('marked'),
 	config = require('../config'),
 	
 	POST_PATH = __dirname + '/../html/posts/';
@@ -29,7 +29,7 @@ exports.list = function(req, res) {
 			m = description.match(/\d{2,4}-\d{1,2}-\d{1,2} \d{1,2}:\d{1,2}:\d{1,2}/);
 		feed.item({
 			title: title,
-			description: markdown.toHTML(description),
+			description: marked(description),
 			url: feed.site_url + '?' + path,
 			author: 'wenzhixin',
 			date: m ? m[0] : ''

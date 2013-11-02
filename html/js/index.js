@@ -8,12 +8,17 @@ $(function() {
 	function main() {
 		$(window).scroll(showGotoTop);
 		$(window).resize(showGotoTop);
+		resetViews();
 		showGotoTop();
 		showImageBox();
 		showShare();
 		showComments();
 		showBulletin();
 		hljs.initHighlightingOnLoad();
+	}
+	
+	function resetViews() {
+		$('table').addClass('table table-bordered table-striped');
 	}
 	
 	function showGotoTop() {
