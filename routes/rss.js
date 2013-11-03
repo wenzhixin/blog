@@ -30,7 +30,7 @@ exports.list = function(req, res) {
 		feed.item({
 			title: title,
 			description: marked(description),
-			url: feed.site_url + '?' + path,
+			url: feed.site_url + '/' + path,
 			author: 'wenzhixin',
 			date: m ? m[0] : ''
 		});
