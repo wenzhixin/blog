@@ -4,11 +4,13 @@
  */
 
 var fs = require('fs'), 
+	rd = require('rd'),
 	RSS = require('rss'), 
 	marked = require('marked'),
 	config = require('../config'),
+	util = require('../helpers/util'),
 	
-	POST_PATH = __dirname + '/../html/posts/';
+	POST_DIR = __dirname + '/../html/posts/';
 
 exports.list = function(req, res) {
 	var feed = new RSS({
@@ -18,23 +20,30 @@ exports.list = function(req, res) {
 		site_url: config.site,
 		author: 'wenzhixin'
 	});
-
-	var text = fs.readFileSync(POST_PATH + 'index.md').toString(), 
-		m = text.match(/\([^\(\)]\d{2,4}-\d{1,2}-\d{1,2}\)\s\[[^\[\]]*\]\([^\(\)]*\)/g);
-	m.forEach(function(str) {
-		var results = /\[([^\[\]]*)\]\(([^\(\)]*)\)/.exec(str),
-			title = results[1],
-			path = results[2],
-			description = fs.readFileSync(POST_PATH + path + '.md').toString(),
-			m = description.match(/\d{2,4}-\d{1,2}-\d{1,2} \d{1,2}:\d{1,2}:\d{1,2}/);
-		feed.item({
-			title: title,
-			description: marked(description),
-			url: feed.site_url + '/' + path,
-			author: 'wenzhixin',
-			date: m ? m[0] : ''
+	
+	rd.read(POST_DIR, function(err, files) {
+		if (err) {
+			console.log(err);
+			return;
+		}
+		files = files.filter(function(file) {
+			return /\d{2,4}\/\d{1,2}\/\d{1,2}/.test(file) && util.endWith(file, '.md'); // 查找 md 结尾的文件
 		});
+		files.sort().reverse(); // 按日期排序
+		
+		for (var i in files) {
+			var content = fs.readFileSync(files[i]).toString();
+				lines = content.split('\n');
+				
+			feed.item({
+				title: lines[0],
+				description: marked(content),
+				url: feed.site_url + files[i].substring(POST_DIR.length - 11, files[i].length - 3),
+				author: 'wenzhixin',
+				date: lines[2]
+			});
+		}
+		res.status(200);
+		res.end(feed.xml());
 	});
-	res.status(200);
-	res.end(feed.xml());
 };

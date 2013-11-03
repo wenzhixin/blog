@@ -15,11 +15,19 @@ exports.get = function(req, res) {
 				req.params.file || 'index'].join('/'),
 			tpl = fs.readFileSync(TEMPLATE_PATH + 'index.tpl').toString(),
 			text = fs.readFileSync(POST_PATH + path + '.md').toString(),
-			m = /^##\s(.*)/.exec(text);
-		res.send(_.template(tpl)({
-			title: m && m[1],
-			content: marked(text)
-		}));
+			m = /^##\s(.*)/.exec(text),
+			options = {
+				title: m ? m[1] + ' —— ' : '',
+				list: '',
+				post: ''
+			};
+			
+		if (/\d{2,4}\/\d{1,2}\/\d{1,2}/.test(path)) {
+			options.post = '<div id="post">' + marked(text) + '</div>';
+		} else {
+			options.list = text;
+		}
+		res.send(_.template(tpl)(options));
 	} catch (e) {
 		var tpl = fs.readFileSync(TEMPLATE_PATH + '404.tpl').toString();
 		res.send(_.template(tpl)());

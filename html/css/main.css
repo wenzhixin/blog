@@ -5,56 +5,111 @@ body {
 .blog {
 	background: url(../images/body_bg.jpg) no-repeat center 0;
 }
-.container {
-	color: #4C4C4C;
-	background-color: #FAFAFA;
-}
-.header_top {
-	height: 300px;
-	background: url(../images/header_bg.jpg) no-repeat;
-}
-.header_content {
-	height: 90px;
-	background-color: white;
-	padding: 10px 10px 10px 220px;
-}
-.wenyi-logo {
-	position: absolute;
-	top: -90px;
-	left: 20px;
-}
 
-.post_content {
-	padding: 30px;
-}
-.posts {
+.wrapper {
 	color: #333;
 	border-top: 1px solid #CCC;
 }
-#post {
+.wrapper .navs {
+	width: 220px;
+	position: fixed;
+	top: 60px;
+	left: 55px;
+	background-color: #fafafa;
+}
+.wrapper .contents {
+	min-height: 506px;
+	min-width: 800px;
+	padding: 60px 0 100px 325px;
+}
+
+.posts-list {
+	float: left;
+	margin: 0 0 0 -20px;
+	list-style: none;
+}
+.posts-list .post {
+	width: 280px;
+	height: 230px;
+	margin: 0 0 40px 20px;
+	float: left;
+	background-color: #fff;
+	position: relative;
+	box-shadow: 0 1px 1px #eee;
+	list-style: none;
+	border: 1px solid #dcdcdc;
+	border-radius: 10px;
+}
+.posts-list .post:hover {
+	border: 2px solid #ff5f3e;
+	margin: -1px -1px 39px 19px;
+}
+.posts-list .shortcut {
+	height: 150px;
+	width: 280px;
+	background-color: #efefef;
+	overflow: hidden;
+	border-radius: 10px 10px 0 0;
+}
+.posts-list .shortcut p {
+	padding: 20px 20px 0;
+	color: #888;
+	line-height: 22px;
+	text-indent: 24px;
+	float: left;
+}
+.posts-list .post-title {
+	padding: 15px 15px 10px;
+	width: 250px;
+	font-size: 14px;
+	line-height: 18px;
+	display: inline-block;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+.posts-list .post-extra {
+	padding: 5px 16px 0;
+	color: #999;
+	line-height: 10px;
+	font-size: 11px;
+}
+
+#post, #comments {
+	background: #fafafa;
+	margin: 0 100px 0 0;
+	padding: 20px 25px 75px;
 	color: #444;
     font-size: 14px;
 	line-height: 24px;
+}
+#post {
+	border-radius: 5px 5px 0 0;
+}
+#comments {
+	border-radius: 0 0 5px 5px;
 }
 #post li {
 	line-height: 24px;
 	list-style-type: circle;
 }
 
+a:hover {
+	text-decoration: none;
+}
 pre {
     overflow: auto;
     word-wrap: normal;
     white-space: pre;
     padding: 0;
 }
-
-#comments {
-	border-top: 1px solid #CCC;
+.nav {
+	margin-bottom: 0;
 }
 
 .goto_top {
     position: fixed;
-    bottom: 20px;
+    bottom: 30px;
     display: none;
     background-color: #F7F7F7;
     border: 1px solid #CCC;

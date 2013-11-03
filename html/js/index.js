@@ -9,6 +9,7 @@ $(function() {
 		$(window).scroll(showGotoTop);
 		$(window).resize(showGotoTop);
 		resetViews();
+		$('#search').click(search);
 		showGotoTop();
 		showImageBox();
 		showShare();
@@ -27,14 +28,10 @@ $(function() {
 		// position
 		if ($(window).width() > 767) {
 			$gotoTop.css({
-				'left': '50%',
-				'margin-left': $('.posts').width() / 2 + 'px',
-				'right': 'auto'
+				'right': '76px'
 			});
 		} else {
 			$gotoTop.css({
-				'left': 'auto',
-				'margin-left': '0',
 				'right': '0'
 			});
 		}

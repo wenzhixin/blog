@@ -2,9 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title><%= title %> — 文翼的博客</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="viewport" content="width=device-width; initial-scale=1.0" />
+    <title><%= title %>文翼的博客</title>
+    <!-- <meta name="viewport" content="width=device-width; initial-scale=1.0" /> -->
     <meta name="author" content="zhixin wen" />
     <meta name="Keywords" 
       content="文翼的博客，web前端博客" />
@@ -17,57 +16,55 @@
     <link rel="stylesheet" href="/css/logo.css" />
     <link rel="stylesheet" href="/css/main.css" />
     <link rel="stylesheet" href="/css/fork.css" />
-    <link rel="stylesheet" href="/css/bootstrap-responsive.css" />
+    <!-- <link rel="stylesheet" href="/css/bootstrap-responsive.css" /> -->
     <link rel="stylesheet" href="/assets/highlight.js/styles/github.css">
     <link rel="stylesheet" href="/p/bulletin/assets/bulletin/bulletin.css" />
   </head>
   <body>
     <div class="blog">
-      <div class="container">
-        <div class="header">
-          <div class="header_top"></div>
-          <div class="header_content pr">
-            <a class="wenyi-logo" href="/">
-              <div class="border">
-                <div class="circle">
-                  <div class="wy">
-                    <div class="wen">文</div>
-                    <div class="yi">翼</div>
-                    <div class="bo">博</div>
-                    <div class="ke">客</div>
-                  </div>
-                </div>
-                <!--<img src="images/logo.jpeg" alt="" /> -->
-              </div>
-            </a>
-            <h3>
-              <a href="/">文翼的博客</a>
-              <a href="/timeline.html" class="time_line ml10" title="查看时间轴"></a>
-              <a href="/rss.xml" class="rss ml10" title="查看RSS"></a>
-            </h3>
-            <p>
-              简介：  坚持看书，每天进步一点点。 要常常提醒自己：无情的岁月，还有不够努力的自己！
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="container posts">
-        <div class="row">
-          <div class="span8">
-            <div class="post_content">
-              <div id="post"><%= content %></div>
-            </div>
-          </div>
-          <div class="span4">
-            <div class="weibo_content pt15 pr15 pb15">
-              <iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=1&isFans=1&uid=2292826740&verifier=b05b5d3a&dpc=1"></iframe>
+      <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+          <div class="container">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="brand" href="/">文翼的博客</a>
+            <div class="nav-collapse collapse">
+              <ul class="nav">
+                <!-- <li><a href="/timeline.html">时间轴</a></li> -->
+                <li><a href="/rss.xml">RSS订阅</a></li>
+                <li><a href="http://weibo.com/2292826740">新浪微博</a></li>
+              </ul>
+              <!-- <form class="navbar-form pull-right">
+                <input id="query" type="text" class="input-medium search-query" />
+                <button id="search" class="btn">搜索</button>
+              </form> -->
             </div>
           </div>
         </div>
       </div>
-
-      <div id="comments" class="container none">
-        <div class="ds-thread m10"></div>
+      <div class="wrapper">
+        <div class="navs">
+          <ul class="nav nav-tabs nav-stacked">
+            <li><a href="/">首页</a></li>
+            <li><a href="/">前端技术</a></li>
+            <li><a href="/">交互设计</a></li>
+            <li><a href="/">移动开发</a></li>
+            <li><a href="/">数据库</a></li>
+            <li><a href="/">服务器</a></li>
+            <li><a href="/">操作系统</a></li>
+            <li><a href="/">生活随笔</a></li>
+          </ul>
+        </div>
+        <div class="contents">
+          <%= list %>
+          <%= post %>
+          <div id="comments" class="none">
+            <div class="ds-thread m10"></div>
+          </div>
+        </div>
       </div>
       
       <div id="bulletin" class="bulletin">
@@ -86,12 +83,10 @@
         <i class="icon-plane"></i>
         <span>返回顶部</span>
       </div>
-      <div class="container">
-        <div class="footer">
-          <p>
-            Copyright © 2012-2013 wenzhixin.net.cn
-          </p>
-        </div>
+      <div class="footer">
+        <p>
+          Copyright © 2012-2013 wenzhixin.net.cn
+        </p>
       </div>
     </div>
     <script type="text/javascript" src="/js/jquery-1.8.3.min.js"></script>
