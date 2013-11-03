@@ -33,6 +33,8 @@
             <a class="brand" href="/">文翼的博客</a>
             <div class="nav-collapse collapse">
               <ul class="nav">
+                <li><a href="/projects">个人开源项目</a></li>
+                <li><a href="/demos">好玩的东东</a></li>
                 <!-- <li><a href="/timeline.html">时间轴</a></li> -->
                 <li><a href="/rss.xml">RSS订阅</a></li>
                 <li><a href="http://weibo.com/2292826740">新浪微博</a></li>

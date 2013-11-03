@@ -22,10 +22,11 @@ exports.get = function(req, res) {
 				post: ''
 			};
 			
-		if (/\d{2,4}\/\d{1,2}\/\d{1,2}/.test(path)) {
-			options.post = '<div id="post">' + marked(text) + '</div>';
-		} else {
+		// if (/\d{2,4}\/\d{1,2}\/\d{1,2}/.test(path)) {
+		if (/index$/.test(path)) {
 			options.list = text;
+		} else {
+			options.post = '<div id="post">' + marked(text) + '</div>';
 		}
 		res.send(_.template(tpl)(options));
 	} catch (e) {

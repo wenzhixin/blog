@@ -22,6 +22,10 @@ $(function() {
 		$('table').addClass('table table-bordered table-striped');
 	}
 	
+	function search() {
+		
+	}
+	
 	function showGotoTop() {
 		var $gotoTop = $('.goto_top');
 		
