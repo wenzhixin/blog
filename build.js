@@ -57,36 +57,37 @@ function getPost(file, title, desc, content) {
 	return post;
 }
 
-// function create(posts) {
-	// var content = ['## 全部文章 (' + (posts.length + 50) + ')'];
-	// for (var i in posts) {
-		// var post = posts[i];
-		// content.push([
-			// '*',
-			// '(' + post.time + ')',
-			// '[' + post.title + '](' + post.path + ')',
-			// '【' + post.category + '】'
-		// ].join(' '));
-	// }
-	// content.push('* (其他) [更多文章...](http://qing.weibo.com/2292826740/profile) ')
-	// fs.writeFile(POST_DIR + 'index.md', content.join('\n\n'));
-// }
-
 function create(posts) {
-	var content = ['<ul class="posts-list">'],
-		tpl = fs.readFileSync(TEMPLATE_PATH + 'post.tpl').toString();
+	var tpl = fs.readFileSync(TEMPLATE_PATH + 'post.tpl').toString(),
+		contents = {
+			index: ['<ul class="posts-list">']
+		};
 		
+	util.getCategoryKeys().forEach(function(key) {
+		contents[key] = ['<ul class="posts-list">'];
+	});
+	
 	for (var i in posts) {
-		var post = posts[i];
-		content.push(_.template(tpl)({
-			title: post.title,
-			content: post.content,
-			url: post.path,
-			time: post.time
-		}));
+		var post = posts[i],
+			key = util.getCategoryKey(post.category),
+			item = _.template(tpl)({
+				title: post.title,
+				content: post.content,
+				url: post.path,
+				time: post.time
+			});
+			
+		contents.index.push(item);
+		if (key) contents[key].push(item);
 	}
-	content.push('</ul>');
-	fs.writeFile(POST_DIR + 'index.md', content.join('\n\n'));
+	
+	contents.index.push('</ul>');
+	fs.writeFile(POST_DIR + 'index.md', contents.index.join('\n\n'));
+	
+	util.getCategoryKeys().forEach(function(key) {
+		contents[key].push('</ul>');
+		fs.writeFile(POST_DIR + 'index_' + key + '.md', contents[key].join('\n\n'));
+	});
 }
 
 list();

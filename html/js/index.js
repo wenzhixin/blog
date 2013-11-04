@@ -19,6 +19,7 @@ $(function() {
 	}
 	
 	function resetViews() {
+		$('.nav a[href="' + location.pathname + '"]').parent().addClass('active');
 		$('table').addClass('table table-bordered table-striped');
 	}
 	
@@ -58,7 +59,7 @@ $(function() {
 	}
 	
 	function showComments() {
-	    if (location.pathname !== "/" && location.pathname !== "/index") {
+	    if (location.pathname !== "/" && location.pathname.indexOf("/index") === -1) {
 	        $('#comments').show();
 	    }
 	}

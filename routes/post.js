@@ -11,8 +11,9 @@ var fs = require('fs'),
 
 exports.get = function(req, res) {
 	try {
-		var path = [req.params.yy, req.params.mm, req.params.dd, 
-				req.params.file || 'index'].join('/'),
+		var path = req.params.yy && req.params.mm && req.params.dd ? 
+				[req.params.yy, req.params.mm, req.params.dd, req.params.file].join('/') :
+				(req.params.file || 'index'),
 			tpl = fs.readFileSync(TEMPLATE_PATH + 'index.tpl').toString(),
 			text = fs.readFileSync(POST_PATH + path + '.md').toString(),
 			m = /^##\s(.*)/.exec(text),
@@ -22,8 +23,7 @@ exports.get = function(req, res) {
 				post: ''
 			};
 			
-		// if (/\d{2,4}\/\d{1,2}\/\d{1,2}/.test(path)) {
-		if (/index$/.test(path)) {
+		if (/^index/.test(path)) {
 			options.list = text;
 		} else {
 			options.post = '<div id="post">' + marked(text) + '</div>';

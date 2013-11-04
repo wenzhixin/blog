@@ -38,6 +38,7 @@
                 <!-- <li><a href="/timeline.html">时间轴</a></li> -->
                 <li><a href="/rss.xml">RSS订阅</a></li>
                 <li><a href="http://weibo.com/2292826740">新浪微博</a></li>
+                <li><a href="http://qing.weibo.com/2292826740/profile">更多文章</a></li>
               </ul>
               <!-- <form class="navbar-form pull-right">
                 <input id="query" type="text" class="input-medium search-query" />
@@ -51,13 +52,13 @@
         <div class="navs">
           <ul class="nav nav-tabs nav-stacked">
             <li><a href="/">首页</a></li>
-            <li><a href="/">前端技术</a></li>
-            <li><a href="/">交互设计</a></li>
-            <li><a href="/">移动开发</a></li>
-            <li><a href="/">数据库</a></li>
-            <li><a href="/">服务器</a></li>
-            <li><a href="/">操作系统</a></li>
-            <li><a href="/">生活随笔</a></li>
+            <li><a href="/index_web">前端技术</a></li>
+            <li><a href="/index_ui">交互设计</a></li>
+            <li><a href="/index_mobile">移动开发</a></li>
+            <li><a href="/index_sql">数据库</a></li>
+            <li><a href="/index_server">服务器</a></li>
+            <li><a href="/index_os">操作系统</a></li>
+            <li><a href="/index_life">生活随笔</a></li>
           </ul>
         </div>
         <div class="contents">
