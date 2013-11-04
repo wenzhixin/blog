@@ -33,14 +33,15 @@ exports.list = function(req, res) {
 		
 		for (var i in files) {
 			var content = fs.readFileSync(files[i]).toString();
-				lines = content.split('\n');
+				lines = content.split('\n'),
+				m = lines[2].match(/\d{2,4}-\d{1,2}-\d{1,2} \d{1,2}:\d{1,2}:\d{1,2}/);
 				
 			feed.item({
-				title: lines[0],
+				title: lines[0].substring(3),
 				description: marked(content),
 				url: feed.site_url + files[i].substring(POST_DIR.length - 11, files[i].length - 3),
 				author: 'wenzhixin',
-				date: lines[2]
+				date: m ? util.getGMTString(m[0]) : ''
 			});
 		}
 		res.status(200);
