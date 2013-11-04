@@ -9,6 +9,7 @@ $(function() {
 		$(window).scroll(showGotoTop);
 		$(window).resize(showGotoTop);
 		resetViews();
+		getApi();
 		$('#search').click(search);
 		showGotoTop();
 		showImageBox();
@@ -19,8 +20,17 @@ $(function() {
 	}
 	
 	function resetViews() {
-		$('.nav a[href="' + location.pathname + '"]').parent().addClass('active');
+		$('#nav a[href="' + location.pathname + '"]').parent().addClass('active');
 		$('table').addClass('table table-bordered table-striped');
+	}
+	
+	function getApi() {
+		$.get('/api/categories').done(function(data) {
+			var categories = $.parseJSON(data);
+			for (var key in categories) {
+				$('#nav a[href$="' + key + '"]').append(' <span>(' + categories[key] + ')</span>');
+			}
+		});
 	}
 	
 	function search() {

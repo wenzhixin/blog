@@ -5,6 +5,7 @@ var fs = require('fs'),
 	util = require('./helpers/util'),
 	
 	TEMPLATE_PATH = __dirname + '/templates/',
+	API_DIR = __dirname + '/html/api/',
 	POST_DIR = __dirname + '/html/posts/';
 
 
@@ -61,7 +62,8 @@ function create(posts) {
 	var tpl = fs.readFileSync(TEMPLATE_PATH + 'post.tpl').toString(),
 		contents = {
 			index: ['<ul class="posts-list">']
-		};
+		},
+		categories = {};
 		
 	util.getCategoryKeys().forEach(function(key) {
 		contents[key] = ['<ul class="posts-list">'];
@@ -85,9 +87,19 @@ function create(posts) {
 	fs.writeFile(POST_DIR + 'index.md', contents.index.join('\n\n'));
 	
 	util.getCategoryKeys().forEach(function(key) {
+		categories[key] = contents[key].length - 1;
 		contents[key].push('</ul>');
 		fs.writeFile(POST_DIR + 'index_' + key + '.md', contents[key].join('\n\n'));
 	});
+	
+	createApi(categories);
+}
+
+function createApi(categories) {
+	if (!fs.existsSync(API_DIR)) {
+		fs.mkdirSync(API_DIR);
+	}
+	fs.writeFile(API_DIR + 'categories', JSON.stringify(categories));
 }
 
 list();

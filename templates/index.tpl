@@ -50,7 +50,7 @@
       </div>
       <div class="wrapper">
         <div class="navs">
-          <ul class="nav nav-tabs nav-stacked">
+          <ul id="nav" class="nav nav-tabs nav-stacked">
             <li><a href="/">首页</a></li>
             <li><a href="/index_web">前端技术</a></li>
             <li><a href="/index_ui">交互设计</a></li>
