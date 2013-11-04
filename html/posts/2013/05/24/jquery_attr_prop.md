@@ -16,7 +16,7 @@ ___
     <script>
         $(function() {
             $('input').click(function() {
-                $(this).attr('checkbox');
+                $(this).attr('checked');
             });
         });
     </script>
