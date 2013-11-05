@@ -88,6 +88,7 @@ body {
 	line-height: 24px;
 }
 #post {
+	position: relative;
 	border-radius: 5px 5px 0 0;
 }
 #comments {
