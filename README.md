@@ -7,8 +7,6 @@
 
 http://wenzhixin.net.cn
 
-http://wenyi.tk
-
 
 ### 博客时间轴：
 
