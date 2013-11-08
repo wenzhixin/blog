@@ -6,8 +6,8 @@ var categories = {
 	web: '前端技术',
 	ui: '交互设计',
 	mobile: '移动开发',
+	server: '后台技术',
 	sql: '数据库',
-	server: '服务器',
 	os: '操作系统',
 	life: '生活随笔'
 };

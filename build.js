@@ -83,6 +83,7 @@ function create(posts) {
 		if (key) contents[key].push(item);
 	}
 	
+	categories.index = contents.index.length - 1;
 	contents.index.push('</ul>');
 	fs.writeFile(POST_DIR + 'index.md', contents.index.join('\n\n'));
 	

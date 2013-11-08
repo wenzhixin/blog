@@ -51,12 +51,12 @@
       <div class="wrapper">
         <div class="navs">
           <ul id="nav" class="nav nav-tabs nav-stacked">
-            <li><a href="/">首页</a></li>
+            <li><a href="/index">首页</a></li>
             <li><a href="/index_web">前端技术</a></li>
             <li><a href="/index_ui">交互设计</a></li>
             <li><a href="/index_mobile">移动开发</a></li>
+            <li><a href="/index_server">后台技术</a></li>
             <li><a href="/index_sql">数据库</a></li>
-            <li><a href="/index_server">服务器</a></li>
             <li><a href="/index_os">操作系统</a></li>
             <li><a href="/index_life">生活随笔</a></li>
           </ul>
