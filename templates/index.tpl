@@ -39,6 +39,7 @@
                 <li><a href="/rss.xml">RSS订阅</a></li>
                 <li><a href="http://weibo.com/2292826740">新浪微博</a></li>
                 <li><a href="http://qing.weibo.com/2292826740/profile">更多文章</a></li>
+                <li><a href="/about">关于本博客</a></li>
               </ul>
               <!-- <form class="navbar-form pull-right">
                 <input id="query" type="text" class="input-medium search-query" />
