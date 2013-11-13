@@ -48,6 +48,8 @@ http.request(options, callback)
 
 #### 3. 实现
 
+[github 源码](https://github.com/wenzhixin/baidu-translate-api)
+
 	function translate(query, callback) {
 	
 		var params = {
@@ -61,7 +63,7 @@ http.request(options, callback)
 				port: 80,
 				path: '/v2transapi',
 				method: 'POST',
-				headers:{
+				headers: {
 					'Content-Type':'application/x-www-form-urlencoded',
 					'Content-Length': data.length
 				}
@@ -90,5 +92,8 @@ http.request(options, callback)
 				translation(query, callback);
 			}, 3000);
 		});
+		
+		req.write(data);
+		req.end();
 		
 	}
