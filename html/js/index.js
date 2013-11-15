@@ -31,6 +31,12 @@ $(function() {
 				$('#nav a[href$="' + key + '"]').append(' <span>(' + categories[key] + ')</span>');
 			}
 		});
+		if (/(\/\d+){3}.*/.test(location.pathname)) {
+			$.get('/stat?path=' + location.pathname).done(function(data) {
+				var $p = $('#post p:eq(0)');
+				$p.text($p.text() + ' | 唯一身份浏览量：' + data.visits);
+			});
+		}
 	}
 	
 	function search() {

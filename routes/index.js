@@ -4,7 +4,8 @@
  */
 
 var post = require('./post'),
-	rss = require('./rss');
+	rss = require('./rss'),
+	stat = require('./stat');
 
 module.exports = function(app) {
 	app.get('/', checkUrl);
@@ -15,6 +16,10 @@ module.exports = function(app) {
 function checkUrl(req, res) {
 	if (req.params.file === 'rss.xml') {
 		rss.list(req, res);
+		return;
+	}
+	if (req.params.file === 'stat') {
+		stat.visits(req, res);
 		return;
 	}
 	post.get(req, res);
