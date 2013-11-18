@@ -38,7 +38,7 @@ ___
 	gzip_min_length 1k;
 	gzip_buffers 4 16k;
 	gzip_comp_level 5;
-	gzip_types text/plain application/x-javascript text/css application/xml text/javascript application/x-httpd-php image/jpeg image/gif image/png;
+	gzip_types text/plain application/x-javascript text/css application/xml text/javascript application/x-httpd-php;
 	
 1) gzip
 
@@ -73,4 +73,4 @@ ___
 * 语法: gzip_types mime-type [mime-type ...]
 * 默认值: gzip_types text/html
 * 作用域: http, server, location
-* 说明：匹配MIME类型进行压缩，（无论是否指定）"text/html" 类型总是会被压缩的。这里设置为 text/plain application/x-javascript text/css application/xml text/javascript application/x-httpd-php image/jpeg image/gif image/png。
+* 说明：匹配MIME类型进行压缩，（无论是否指定）"text/html" 类型总是会被压缩的。这里设置为 text/plain application/x-javascript text/css application/xml text/javascript application/x-httpd-php。
