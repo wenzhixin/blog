@@ -6,9 +6,9 @@ $(function() {
 	'use strict';
 	
 	function main() {
+		resetViews();
 		$(window).scroll(showGotoTop);
 		$(window).resize(showGotoTop);
-		resetViews();
 		getApi();
 		$('#search').click(search);
 		showGotoTop();
@@ -22,6 +22,19 @@ $(function() {
 	function resetViews() {
 		$('#nav a[href="' + location.pathname + '"]').parent().addClass('active');
 		$('table').addClass('table table-bordered table-striped');
+		
+		$('.posts-type div').click(function() {
+			var type = $(this).data('type');
+			$.cookie('posts-type', type, {expires: 365});
+			switchTo(type);
+		});
+		switchTo($.cookie('posts-type'));
+		$('.contents').show();
+	}
+	
+	function switchTo(type) {
+		type = type === 'list' ? 'list' : 'tile';
+		$('.contents > ul').removeClass('posts-tile posts-list').addClass('posts-' + type);
 	}
 	
 	function getApi() {

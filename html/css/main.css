@@ -27,12 +27,33 @@ body {
 	padding: 60px 0 100px 325px;
 }
 
-.posts-list {
+.posts-type {
+	position: fixed;
+	margin-left: -30px;
+}
+.posts-type > div {
+	margin-bottom: 15px;
+	cursor: pointer;
+}
+.posts-type img {
+	-webkit-transition: all .8s ease-in-out;
+	-moz-transition: all .8s ease-in-out;
+	-o-transition: all .8s ease-in-out;
+	transition: all .8s ease-in-out;
+}
+.posts-type img:hover {
+	-webkit-transform: rotate(360deg) scale(1);
+	-moz-transform: rotate(360deg) scale(1);
+	-o-transform: rotate(360deg) scale(1);
+	transform: rotate(360deg) scale(1);
+}
+
+.posts-tile {
 	float: left;
 	margin: 0 0 0 -20px;
 	list-style: none;
 }
-.posts-list .post {
+.posts-tile .post {
 	width: 280px;
 	height: 230px;
 	margin: 0 0 40px 20px;
@@ -44,25 +65,25 @@ body {
 	border: 1px solid #dcdcdc;
 	border-radius: 10px;
 }
-.posts-list .post:hover {
+.posts-tile .post:hover {
 	border: 2px solid #ff5f3e;
 	margin: -1px -1px 39px 19px;
 }
-.posts-list .shortcut {
+.posts-tile .shortcut {
 	height: 150px;
 	width: 280px;
 	background-color: #efefef;
 	overflow: hidden;
 	border-radius: 10px 10px 0 0;
 }
-.posts-list .shortcut p {
+.posts-tile .shortcut p {
 	padding: 20px 20px 0;
 	color: #888;
 	line-height: 22px;
 	text-indent: 24px;
 	float: left;
 }
-.posts-list .post-title {
+.posts-tile .post-title {
 	padding: 15px 15px 10px;
 	width: 250px;
 	font-size: 14px;
@@ -72,11 +93,40 @@ body {
 	white-space: nowrap;
 	overflow: hidden;
 }
-.posts-list .post-extra {
+.posts-tile .post-extra {
 	padding: 5px 16px 0;
 	color: #999;
 	line-height: 10px;
 	font-size: 11px;
+}
+
+.posts-list {
+	margin: 0 0 0 5px;
+	list-style: none;
+}
+.posts-list .post {
+	display: block;
+	width: 650px;
+	height: 40px;
+	line-height: 40px;
+	border-top: 1px solid #ccc;
+}
+.posts-list .post:last-child {
+	border-bottom: 1px solid #ccc;
+}
+.posts-list .shortcut {
+	display: none;
+}
+.posts-list .post-title {
+	float: right;
+	width: 500px;
+	font-size: 14px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+.posts-list .post-extra {
+	float: left;
 }
 
 #post, #comments {

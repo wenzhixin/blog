@@ -60,13 +60,20 @@ function getPost(file, title, desc, content) {
 
 function create(posts) {
 	var tpl = fs.readFileSync(TEMPLATE_PATH + 'post.tpl').toString(),
+		commons = [
+			'<div class="posts-type">',
+				'<div data-type="tile"><img class="img-tile" src="images/tile.png" /></div>',
+				'<div data-type="list"><img class="img-list" src="images/list.png" /></div>',
+			'</div>',
+			'<ul class="posts-tile">'
+		].join('');
 		contents = {
-			index: ['<ul class="posts-list">']
+			index: [commons]
 		},
 		categories = {};
 		
 	util.getCategoryKeys().forEach(function(key) {
-		contents[key] = ['<ul class="posts-list">'];
+		contents[key] = [commons];
 	});
 	
 	for (var i in posts) {
