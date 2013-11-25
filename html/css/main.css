@@ -6,10 +6,6 @@ body {
 	background: url(../images/body_bg.jpg) no-repeat center 0;
 }
 
-img {
-	max-width: 600px;
-}
-
 .navbar-inverse .navbar-inner {
 	background: url(../images/nav_bg.png);
 }
@@ -29,6 +25,10 @@ img {
 	min-height: 506px;
 	min-width: 600px;
 	padding: 60px 0 100px 325px;
+}
+
+.wrapper .contents img {
+	max-width: 600px;
 }
 
 .posts-type {
