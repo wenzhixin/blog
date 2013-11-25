@@ -6,6 +6,10 @@ body {
 	background: url(../images/body_bg.jpg) no-repeat center 0;
 }
 
+img {
+	max-width: 600px;
+}
+
 .navbar-inverse .navbar-inner {
 	background: url(../images/nav_bg.png);
 }
