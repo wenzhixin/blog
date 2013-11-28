@@ -4,19 +4,19 @@
 
 ___
 
-### 前言
+#### 前言 
 
 由于安全问题，浏览器不允许通过 XMLHttpRequest（又名XHR）的方式上传文件。
 
 那么如何在不刷新界面的情况下实现文件的上传呢？
 
-### 解决方法
+#### 解决方法
 
 * 一种方法是使用 Flash，但是需要安装 Flash 插件。
 
 * 使用 iframe 的方法，这里来介绍它是如何工作的。
 
-### iframe 的方法
+#### iframe 的方法
 
 假设我们有一个文件类型的输入字段的表单
 ```html
@@ -53,7 +53,7 @@ ___
 
 ![](/posts/2013/11/27/iframe-method-step-6.png)
 
-### 需要注意的问题
+#### 需要注意的问题
 
 由于使用了 iframe，所以我们无法获得响应接口的响应头和状态码。
 
@@ -66,7 +66,7 @@ ___
 }
 ```
 
-### 使用 iframe 的 jQuery 插件
+#### 使用 iframe 的 jQuery 插件
 
 [AjaxFileUpload 插件](http://www.phpletter.com/Demo/AjaxFileUpload-Demo/)
 
