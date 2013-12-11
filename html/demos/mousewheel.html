@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>鼠标滚轮事件 MouseWheel</title>
+	<style>
+	  .parent {
+	    position: relative;
+	    height: 100px;
+	    overflow: hidden;
+	    border: 1px solid #ccc;
+	  }
+	  .child {
+	    position: absolute;
+	  }
+	</style>
+</head>
+<body>
+  <div class="parent">
+    <div class="child">
+      <p>数据0</p>
+      <p>数据1</p>
+      <p>数据2</p>
+      <p>数据3</p>
+      <p>数据4</p>
+      <p>数据5</p>
+      <p>数据6</p>
+      <p>数据7</p>
+      <p>数据8</p>
+      <p>数据9</p>
+    </div>
+  </div>
+  <script src="/js/jquery.min.js"></script>
+  <script>
+  var iScroll = 0,
+      maxHeight = $('.child').outerHeight(true) - $('.parent').outerHeight(true);
+      
+  $('.parent').on('mousewheel', function(event) {
+    var oEvent = event.originalEvent,
+        iDelta = oEvent.wheelDelta ? -oEvent.wheelDelta / 120 : oEvent.detail / 3;
+
+    iScroll += iDelta * 40;
+    iScroll = Math.min(maxHeight, Math.max(0, iScroll));
+    $('.child').css('top', -iScroll);
+  });
+  </script>
+  <script src="//wenzhixin.net.cn/js/analytics.js"></script>
+</body>
+</html>
