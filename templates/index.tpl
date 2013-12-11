@@ -93,22 +93,15 @@
         </p>
       </div>
     </div>
-    <script type="text/javascript" src="/js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
     <script type="text/javascript" src="/js/jquery.imagebox.js"></script>
     <script type="text/javascript" src="/assets/highlight.js/highlight.pack.js"></script>
     <script type="text/javascript" src="/p/bulletin/assets/bulletin/jquery.bulletin.js"></script>
     <script type="text/javascript" src="/js/jquery.cookie.js"></script>
     <script type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript" src="/js/analytics.js"></script>
     <script type="text/javascript" id="bdshare_js" data="type=slide&amp;img=6&amp;pos=right&amp;uid=6692400" ></script>
     <script type="text/javascript" id="bdshell_js"></script>
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-36708951-1', 'wenzhixin.net.cn');
-      ga('send', 'pageview');
-    </script>
     <script type="text/javascript">
     var duoshuoQuery = {short_name:"wenzhixin"};
     (function() {
