@@ -122,7 +122,7 @@ function pinboard_excerpt_length() 改为 return 100;
 
 #### sytle.css
 
-#header #searchform 加上 
+\#header \#searchform 加上 
 ```
 display: none;
 ```
