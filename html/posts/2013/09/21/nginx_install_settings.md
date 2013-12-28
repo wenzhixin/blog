@@ -211,3 +211,6 @@ ___
 	 
 	# 重定向运行过程中的stdout和stderr到主要的错误日志文件中。如果没有设置, stdout 和 stderr 将会根据FastCGI的规则被重定向到 /dev/null 。默认值: 空。
 	catch_workers_output = yes
+
+注：  	
+安装完后，需要修改 listen = 127.0.0.1:9001
