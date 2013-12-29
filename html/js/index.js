@@ -44,6 +44,40 @@ $(function() {
 				$('#nav a[href$="' + key + '"]').append(' <span>(' + categories[key] + ')</span>');
 			}
 		});
+		$.get('/api/posts').done(function(data) {
+			var list = $.parseJSON(data),
+				index = -1,
+				postNavs = [];
+				
+			$.each(list, function(i, post) {
+				if (location.pathname === '/' + post.path) {
+					index = i;
+					postNavs = ['<hr/>'];
+					return false;
+				}
+			});
+			if (index + 1 <= list.length - 1) {
+				postNavs.push(
+					'<div class="mt10">',
+						'上一篇：',
+						'<a href="/' + list[index + 1].path + '">',
+							list[index + 1].title,
+						'</a>',
+					'<div>'
+				);
+			}
+			if (index - 1 >= 0) {
+				postNavs.push(
+					'<div class="mt10">',
+						'下一篇：',
+						'<a href="/' + list[index - 1].path + '">',
+							list[index - 1].title,
+						'</a>',
+					'<div>'
+				);
+			}
+			$('#post').append(postNavs.join(''));
+		});
 		if (/(\/\d+){3}.*/.test(location.pathname)) {
 			$.get('/stat?path=' + location.pathname).done(function(data) {
 				var $p = $('#post p:eq(0)');

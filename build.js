@@ -70,7 +70,8 @@ function create(posts) {
 		contents = {
 			index: [commons]
 		},
-		categories = {};
+		apiCategories = {},
+		apiPosts = [];
 		
 	util.getCategoryKeys().forEach(function(key) {
 		contents[key] = [commons];
@@ -90,24 +91,32 @@ function create(posts) {
 		if (key) contents[key].push(item);
 	}
 	
-	categories.index = contents.index.length - 1;
+	apiCategories.index = contents.index.length - 1;
 	contents.index.push('</ul>');
 	fs.writeFile(POST_DIR + 'index.md', contents.index.join('\n\n'));
 	
 	util.getCategoryKeys().forEach(function(key) {
-		categories[key] = contents[key].length - 1;
+		apiCategories[key] = contents[key].length - 1;
 		contents[key].push('</ul>');
 		fs.writeFile(POST_DIR + 'index_' + key + '.md', contents[key].join('\n\n'));
 	});
 	
-	createApi(categories);
+	posts.forEach(function(post) {
+		apiPosts.push({
+			path: post.path,
+			title: post.title
+		});
+	});
+	
+	createApi(apiCategories, apiPosts);
 }
 
-function createApi(categories) {
+function createApi(apiCategories, posts) {
 	if (!fs.existsSync(API_DIR)) {
 		fs.mkdirSync(API_DIR);
 	}
-	fs.writeFile(API_DIR + 'categories', JSON.stringify(categories));
+	fs.writeFile(API_DIR + 'categories', JSON.stringify(apiCategories));
+	fs.writeFile(API_DIR + 'posts', JSON.stringify(apiPosts));
 }
 
 list();
