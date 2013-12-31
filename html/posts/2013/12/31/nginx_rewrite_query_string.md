@@ -1,6 +1,6 @@
 ## Nginx rewrite query string
 
-分类：后台技术 | 标签：nginx、rewrite、query string | 发布时间：2013-12-31 00:00:00
+分类：后台技术 | 标签：nginx、rewrite、query string | 发布时间：2013-12-31 09:00:00
 
 ___
 
