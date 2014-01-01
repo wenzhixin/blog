@@ -7,7 +7,7 @@ ___
 ### 前言
 
 平时在定义目录菜单的时候会使用 ul、li 等，定义和维护起来不是很方便，
-所以就写成了 bootstrap 的 jQuery 的插件。
+所以就写成了 bootstrap 的 jQuery 的[插件](https://github.com/wenzhixin/bootstrap-menu)。
 
 ### 如何使用
 
