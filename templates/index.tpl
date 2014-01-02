@@ -89,7 +89,7 @@
       </div>
       <div class="footer">
         <p>
-          Copyright © 2012-2013 wenzhixin.net.cn
+          Copyright © 2012-2014 wenzhixin.net.cn
         </p>
       </div>
     </div>
