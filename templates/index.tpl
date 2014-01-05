@@ -36,9 +36,7 @@
                 <li><a href="/projects">个人开源项目</a></li>
                 <li><a href="/demos">好玩的东东</a></li>
                 <!-- <li><a href="/timeline.html">时间轴</a></li> -->
-                <li><a href="/rss.xml">RSS订阅</a></li>
                 <li><a href="http://weibo.com/2292826740">新浪微博</a></li>
-                <li><a href="http://qing.weibo.com/2292826740/profile">更多文章</a></li>
                 <li><a href="/about">关于本博客</a></li>
               </ul>
               <!-- <form class="navbar-form pull-right">
