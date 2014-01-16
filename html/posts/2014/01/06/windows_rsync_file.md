@@ -24,7 +24,7 @@ cd home
 mkdir .ssh
 ```
 
-进入 C:\Program Files\cwRsync\home\.ssh 下新建文件 config，输入以下信息
+进入 C:\Program Files\cwRsync\home\\.ssh 下新建文件 config，输入以下信息
 ```
 host server
 	HostName ip.address
