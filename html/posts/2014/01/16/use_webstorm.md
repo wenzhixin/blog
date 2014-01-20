@@ -34,3 +34,7 @@ cd bin
 在 File - Settings - Editor - Colors & Fonts - Font 下，选择自己想要的主题，
 然后 Save as... 保存自己想要的主题名称，设置字体为```Ubuntu Mono```，
 字体设置为 16（貌似有点小，相当于 Eclipse 下的 12）
+
+### 显示行数
+
+在 File - Settings - Appearance 下，勾选 Show line numbers 选项。
