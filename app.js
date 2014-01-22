@@ -9,7 +9,7 @@ var routes = require('./routes');
 var settings = require('./settings');
 
 var app = module.exports = express();
-var accessLogfile = fs.createWriteStream('logs/access.log', {flags: 'a'});
+var accessLogfile = fs.createWriteStream('./logs/access.log', {flags: 'a'});
 
 app.configure(function() {
 	app.set('port', process.env.PORT || settings.port);

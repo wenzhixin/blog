@@ -4,7 +4,7 @@
  */
 
 var fs = require('fs');
-var errorLogfile = fs.createWriteStream('logs/error.log', {flags: 'a'});
+var errorLogfile = fs.createWriteStream('./logs/error.log', {flags: 'a'});
 
 exports.handler = function(err, req, res, status) {
 	console.log(err);
