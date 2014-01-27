@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Transform</title>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0"/>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            list-style: none;
+            text-align: center;
+        }
+        ul li {
+            display: inline-block;
+            border: 1px solid #ccc;
+            margin: 5px;
+        }
+        .container {
+            position: absolute;
+            top: 50px;
+            bottom: 0;
+            width: 100%;
+            color: #fff;
+            overflow: hidden;
+        }
+        .page {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            -webkit-transform: translate3d(0, 0, 0);
+            -webkit-transition-duration: .5s;
+        }
+        .stage-center {
+            left: 0;
+        }
+        .stage-left {
+            left: -100%;
+        }
+        .stage-right {
+            left: 100%;
+        }
+        #home {
+            background: #660000;
+        }
+        #products {
+            background: #000066;
+        }
+        #about {
+            background: #006600;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">About</a></li>
+    </ul>
+    <div class="container">
+        <div id="home" class="page stage-center">
+            <h1>Home Page</h1>
+        </div>
+        <div id="products" class="page stage-right">
+            <h1>Products Page</h1>
+        </div>
+        <div id="about" class="page stage-right">
+            <h1>About  Page</h1>
+        </div>
+    </div>
+    <script src="/js/jquery.min.js"></script>
+    <script>
+        $(function() {
+            $('a').click(function() {
+                var index = $(this).parent().index();
+
+                $('.page:lt(' + index + ')').attr('class', 'page transition stage-left');
+                $('.page:eq(' + index + ')').attr('class', 'page transition stage-center');
+                $('.page:gt(' + index + ')').attr('class', 'page transition stage-right');
+//                $('.page:lt(' + index + ')').animate({
+//                    left: '-100%'
+//                }, 500);
+//                $('.page:eq(' + index + ')').animate({
+//                    left: '0'
+//                }, 500);
+//                $('.page:gt(' + index + ')').animate({
+//                    left: '100%'
+//                }, 500);
+            });
+        });
+    </script>
+</body>
+</html>
