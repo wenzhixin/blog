@@ -242,11 +242,13 @@ a:hover {
 	text-decoration: none;
 }
 pre {
-    min-width: 600px;
     overflow: auto;
     word-wrap: normal;
     white-space: pre;
     padding: 0;
+}
+pre code {
+    min-width: 600px;
 }
 
 .goto_top {
