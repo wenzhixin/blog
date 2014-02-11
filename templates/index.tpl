@@ -64,7 +64,7 @@
                 <li><a href="/index_life">生活随笔</a></li>
             </ul>
         </div>
-        <div class="container contents">
+        <div class="container contents hidden">
             <%= list %>
             <%= post %>
             <div id="comments" class="hidden">

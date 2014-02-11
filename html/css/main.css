@@ -101,7 +101,7 @@ body {
 }
 
 .wrapper .contents img {
-	width: 100%;
+	max-width: 100%;
 }
 .navs.push-right,
 .contents.push-right {

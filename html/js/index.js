@@ -31,7 +31,7 @@ $(function() {
 			switchTo(type);
 		});
 		switchTo($.cookie('posts-type'));
-		$('.contents').show();
+		$('.contents').removeClass('hidden');
 	}
 	
 	function switchTo(type) {
@@ -110,7 +110,7 @@ $(function() {
 	
 	function showComments() {
 	    if (location.pathname !== "/" && location.pathname.indexOf("/index") === -1) {
-	        $('#comments').show();
+	        $('#comments').removeClass('hidden');
 	    }
 	}
 	
