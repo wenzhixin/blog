@@ -29,8 +29,8 @@ context.clearRect(0, 0, width, height);
 
 那么，应该如何解决这个问题呢？
 
-* 1. 假如背景图片是静态的，那么就使用 css 对 canvas 的样式 ```background``` 属性进行设置。
+* 假如背景图片是静态的，那么就使用 css 对 canvas 的样式 ```background``` 属性进行设置。
 例如我上面遇到的问题就是这种情况。
 
-* 2. 假如背景是动态的，可以考虑使用 Retained Drawing Mode 的 SVG 或者 HTML。
+* 假如背景是动态的，可以考虑使用 Retained Drawing Mode 的 SVG 或者 HTML。
 使用这些元素，就可以改变背景的位置或者大小。
