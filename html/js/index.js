@@ -35,7 +35,7 @@ $(function() {
 	}
 	
 	function switchTo(type) {
-		type = type === 'list' ? 'list' : 'tile';
+		type = type === 'tile' ? 'tile' : 'list';
 		$('.contents > ul').removeClass('posts-tile posts-list').addClass('posts-' + type);
 	}
 	
