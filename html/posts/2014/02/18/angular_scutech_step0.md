@@ -9,7 +9,7 @@ ___
 在这一小节中，我们将学习最基础、同时也是重要的代码结构和数据绑定。
 
 在开始之前，我们先来看看 [演示](/demos/angular-scutech/step0)，
-也可以通过链接下载 [step0.zip](/demos/angular-scutech/step0.zip) 包。
+也可以通过链接下载 [zip](/demos/angular-scutech/step0.zip) 包。
 
 可能没有让你觉得很兴奋，不过一切都只是开始。
 
