@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en" ng-app="scutechApp">
+<head>
+    <meta charset="utf-8">
+    <title>Angular Scutech</title>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <script src="lib/angular/angular.js"></script>
+    <script src="js/controllers.js"></script>
+</head>
+<body ng-controller="ListCtrl">
+
+<ul>
+    <li ng-repeat="product in products">
+        <span>{{product.name}}</span>
+        <p>{{product.info}}</p>
+    </li>
+</ul>
+</body>
+</html>
