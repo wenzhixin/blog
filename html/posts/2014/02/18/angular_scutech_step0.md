@@ -46,7 +46,7 @@ ___
 ```ng-app```标签代表 Angular 中名叫```ngApp```的指令
 （Angular 使用连接符-来定义它的标签，如```ng-app```，
 与其相对应的规则为驼峰命名，如```ngApp```），这里表示我们的应用程序是作用于根元素
-```html```下，对开发者而已可以将 angular 应用于整个页面中，
+```html```下，对开发者而言可以将 angular 应用于整个页面中，
 也可以作为你的应用的一部分，例如用到了其他的框架。
 
 样式标签：
@@ -81,7 +81,7 @@ Angular 会先解析并运行想对应的表达式。
 **启用 AngularJS 应用程序**
 
 在上面的内容中，我们知道，使用```ngApp```标签可以自动启用我们的程序。
-当然，你也可以通过[手动](http://docs.angularjs.org/guide/bootstrap）来启用 Angular。
+当然，你也可以通过[手动](http://docs.angularjs.org/guide/bootstrap)来启用 Angular。
 
 在启用的过程中，Angular 主要做了三件事情：
 
