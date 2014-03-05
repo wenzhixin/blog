@@ -55,7 +55,7 @@ ___
 <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
 ```
 
-表示我们的应用是基于 [bootstrap](getbootstrap.com) 的。
+表示我们的应用是基于 [bootstrap](http://getbootstrap.com) 的。
 
 脚本标签：
 

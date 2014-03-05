@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en" ng-app="scutechApp">
+<head>
+    <meta charset="utf-8">
+    <title>Angular Scutech</title>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <script src="lib/angular/angular.js"></script>
+    <script src="js/controllers.js"></script>
+</head>
+<body ng-controller="ListCtrl">
+
+<div class="container">
+    <div class="col-md-3">
+        <input type="text" placeholder="搜索" ng-model="query" />
+    </div>
+    <ul class="col-md-9">
+        <li ng-repeat="product in products | filter:query">
+            <span>{{product.name}}</span>
+            <p>{{product.info}}</p>
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>
