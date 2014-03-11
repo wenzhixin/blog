@@ -5,6 +5,7 @@
 ___
 
 [上一节](/2014/02/22/angular_scutech_step4)
+[下一节](/2014/03/10/angular_scutech_step6)
 
 在之前几个小节中，我们的列表都是使用固定的数据。
 在这一小节，我们使用 $http 请求从后台获取数据。
@@ -142,6 +143,7 @@ $scope.products = data.splice(0, 2);
 
 
 [上一节](/2014/02/22/angular_scutech_step4)
+[下一节](/2014/03/10/angular_scutech_step6)
 
 ---
 
@@ -151,3 +153,4 @@ $scope.products = data.splice(0, 2);
 * [一步一步学习 AngularJS（四）](/2014/02/21/angular_scutech_step3)
 * [一步一步学习 AngularJS（五）](/2014/02/22/angular_scutech_step4)
 * [一步一步学习 AngularJS（六）](/2014/02/23/angular_scutech_step5)
+* [一步一步学习 AngularJS（七）](/2014/03/10/angular_scutech_step6)

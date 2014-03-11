@@ -130,3 +130,4 @@ Angular 会先解析并运行想对应的表达式。
 * [一步一步学习 AngularJS（四）](/2014/02/21/angular_scutech_step3)
 * [一步一步学习 AngularJS（五）](/2014/02/22/angular_scutech_step4)
 * [一步一步学习 AngularJS（六）](/2014/02/23/angular_scutech_step5)
+* [一步一步学习 AngularJS（七）](/2014/03/10/angular_scutech_step6)
