@@ -4,6 +4,9 @@
 
 ___
 
+[上一节](/2014/02/19/angular_scutech_step1)
+[下一节](/2014/02/21/angular_scutech_step3)
+
 在这一小节，我们使用 Angular 来动态生成上一节的页面。
 
 在开始之前，我们先来看看 [演示](/demos/angular-scutech/step2)，
@@ -36,13 +39,27 @@ model（模型）、view（视图）和 controller（控制器）。
 </head>
 <body ng-controller="ListCtrl">
 
-<ul>
-    <li ng-repeat="product in products">
-        <span>{{product.name}}</span>
-        <p>{{product.info}}</p>
-    </li>
-</ul>
+<div class="navbar navbar-inverse" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">项目名称</a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">产品列表</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</div>
 
+<div class="container">
+    <ul class="list-group">
+        <li class="list-group-item" ng-repeat="product in products">
+            <h4 class="list-group-item-heading">{{product.name}}</h4>
+            <p class="list-group-item-text">{{product.info}}</p>
+        </li>
+    </ul>
+</div>
 </body>
 </html>
 ```
@@ -138,6 +155,9 @@ scutechApp.controller('ListCtrl', function ($scope) {
 </table>
 ```
 
+[上一节](/2014/02/19/angular_scutech_step1)
+[下一节](/2014/02/21/angular_scutech_step3)
+
 ---
 
 * [一步一步学习 AngularJS（一）](/2014/02/18/angular_scutech_step0)
@@ -146,9 +166,3 @@ scutechApp.controller('ListCtrl', function ($scope) {
 * [一步一步学习 AngularJS（四）](/2014/02/21/angular_scutech_step3)
 * [一步一步学习 AngularJS（五）](/2014/02/22/angular_scutech_step4)
 * [一步一步学习 AngularJS（六）](/2014/02/23/angular_scutech_step5)
-* [一步一步学习 AngularJS（七）](/2014/02/24/angular_scutech_step6)
-* [一步一步学习 AngularJS（八）](/2014/02/27/angular_scutech_step7)
-* [一步一步学习 AngularJS（九）](/2014/02/28/angular_scutech_step8)
-* [一步一步学习 AngularJS（十）](/2014/03/01/angular_scutech_step9)
-* [一步一步学习 AngularJS（十一）](/2014/03/02/angular_scutech_step10)
-* [一步一步学习 AngularJS（十二）](/2014/03/03/angular_scutech_step11)

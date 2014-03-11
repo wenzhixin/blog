@@ -4,6 +4,9 @@
 
 ___
 
+[上一节](/2014/02/20/angular_scutech_step2)
+[下一节](/2014/02/22/angular_scutech_step4)
+
 在这一小节，我们增加一个简单的```input```输入框，用于搜索。
 
 在开始之前，我们先来看看 [演示](/demos/angular-scutech/step3)，
@@ -17,25 +20,22 @@ ___
 
 文件：```index.html```
 ```
-<body ng-controller="ListCtrl">
-
 <div class="container">
     <div class="col-md-3">
-        <input type="text" placeholder="搜索" ng-model="query" />
+        <input type="text" class="form-control" placeholder="搜索" ng-model="query" />
     </div>
-    <ul class="col-md-9">
-        <li ng-repeat="product in products | filter:query">
-            <span>{{product.name}}</span>
-            <p>{{product.info}}</p>
+    <ul class="col-md-9 list-group">
+        <li class="list-group-item" ng-repeat="product in products | filter:query">
+            <h4 class="list-group-item-heading">{{product.name}}</h4>
+            <p class="list-group-item-text">{{product.info}}</p>
         </li>
     </ul>
 </div>
-
-</body>
 ```
 
-我们修改 ```body``` 之间的模板代码，```container```、```col-md-3```、```col-md-9```
-都是 bootstrap 提供的类，表示将搜索栏和列表分别放在左右两边。
+我们修改我们的模板代码，```col-md-3```、```col-md-9```
+都是 bootstrap 提供的类，表示将搜索栏和列表分别放在左右两边，```form-control```
+将 input 设置为 bootstrap 的风格。
 
 看到为 input 输入框增加了```ng-model```指令，表示我们的模型是```query```，
 而在```ng-repeat```中加入了 filter 函数用于处理输入框的模型。
@@ -87,6 +87,9 @@ ___
 
 到这里，你是不是对 AngularJS 的数据绑定有所理解了呢:-)
 
+[上一节](/2014/02/20/angular_scutech_step2)
+[下一节](/2014/02/22/angular_scutech_step4)
+
 ---
 
 * [一步一步学习 AngularJS（一）](/2014/02/18/angular_scutech_step0)
@@ -95,9 +98,3 @@ ___
 * [一步一步学习 AngularJS（四）](/2014/02/21/angular_scutech_step3)
 * [一步一步学习 AngularJS（五）](/2014/02/22/angular_scutech_step4)
 * [一步一步学习 AngularJS（六）](/2014/02/23/angular_scutech_step5)
-* [一步一步学习 AngularJS（七）](/2014/02/24/angular_scutech_step6)
-* [一步一步学习 AngularJS（八）](/2014/02/27/angular_scutech_step7)
-* [一步一步学习 AngularJS（九）](/2014/02/28/angular_scutech_step8)
-* [一步一步学习 AngularJS（十）](/2014/03/01/angular_scutech_step9)
-* [一步一步学习 AngularJS（十一）](/2014/03/02/angular_scutech_step10)
-* [一步一步学习 AngularJS（十二）](/2014/03/03/angular_scutech_step11)

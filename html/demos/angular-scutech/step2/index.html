@@ -9,11 +9,26 @@
 </head>
 <body ng-controller="ListCtrl">
 
-<ul>
-    <li ng-repeat="product in products">
-        <span>{{product.name}}</span>
-        <p>{{product.info}}</p>
-    </li>
-</ul>
+<div class="navbar navbar-inverse" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">项目名称</a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">产品列表</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</div>
+
+<div class="container">
+    <ul class="list-group">
+        <li class="list-group-item" ng-repeat="product in products">
+            <h4 class="list-group-item-heading">{{product.name}}</h4>
+            <p class="list-group-item-text">{{product.info}}</p>
+        </li>
+    </ul>
+</div>
 </body>
 </html>

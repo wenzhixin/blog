@@ -4,6 +4,8 @@
 
 ___
 
+[下一节](/2014/02/19/angular_scutech_step1)
+
 今天开始一步一步学习 AngularJS 的教程之旅。
 
 在这一小节中，我们将学习最基础、同时也是重要的代码结构和数据绑定。
@@ -29,7 +31,22 @@ ___
 </head>
 <body>
 
-<p>现在还没有任何{{'内容' + '！'}}</p>
+<div class="navbar navbar-inverse" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">项目名称</a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">产品列表</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</div>
+
+<div class="container">
+    <p>现在还没有任何{{'内容' + '！'}}</p>
+</div>
 
 </body>
 </html>
@@ -55,7 +72,8 @@ ___
 <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
 ```
 
-表示我们的应用是基于 [bootstrap](http://getbootstrap.com) 的。
+表示我们的应用是基于 [bootstrap](http://getbootstrap.com) 的，我们增加了一个基本的框架，
+可以通过 [案例](http://v3.bootcss.com/getting-started/#examples) 查看相对应的例子。
 
 脚本标签：
 
@@ -102,6 +120,8 @@ Angular 会先解析并运行想对应的表达式。
 <p>1 + 2 = {{ 1 + 2 }}</p>
 ```
 
+[下一节](/2014/02/19/angular_scutech_step1)
+
 ---
 
 * [一步一步学习 AngularJS（一）](/2014/02/18/angular_scutech_step0)
@@ -110,9 +130,3 @@ Angular 会先解析并运行想对应的表达式。
 * [一步一步学习 AngularJS（四）](/2014/02/21/angular_scutech_step3)
 * [一步一步学习 AngularJS（五）](/2014/02/22/angular_scutech_step4)
 * [一步一步学习 AngularJS（六）](/2014/02/23/angular_scutech_step5)
-* [一步一步学习 AngularJS（七）](/2014/02/24/angular_scutech_step6)
-* [一步一步学习 AngularJS（八）](/2014/02/27/angular_scutech_step7)
-* [一步一步学习 AngularJS（九）](/2014/02/28/angular_scutech_step8)
-* [一步一步学习 AngularJS（十）](/2014/03/01/angular_scutech_step9)
-* [一步一步学习 AngularJS（十一）](/2014/03/02/angular_scutech_step10)
-* [一步一步学习 AngularJS（十二）](/2014/03/03/angular_scutech_step11)

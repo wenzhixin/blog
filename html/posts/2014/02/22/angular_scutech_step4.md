@@ -4,6 +4,9 @@
 
 ___
 
+[上一节](/2014/02/21/angular_scutech_step3)
+[下一节](/2014/02/23/angular_scutech_step5)
+
 在这一小节，我们增加一个功能可以用来对列表进行排序。
 
 在开始之前，我们先来看看 [演示](/demos/angular-scutech/step4)，
@@ -18,20 +21,20 @@ ___
 ```
 <div class="container">
     <div class="col-md-3">
-        <p>
-            <input type="text" placeholder="搜索" ng-model="query" />
-        </p>
-        <p>
-            <select ng-model="order">
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="搜索" ng-model="query" />
+        </div>
+        <div class="form-group">
+            <select class="form-control" ng-model="order">
                 <option value="name">名称</option>
                 <option value="age">发布时长</option>
             </select>
-        </p>
+        </div>
     </div>
-    <ul class="col-md-9">
-        <li ng-repeat="product in products | filter:query | orderBy:order">
-            <span>{{product.name}}({{product.age}})</span>
-            <p>{{product.info}}</p>
+    <ul class="col-md-9 list-group">
+        <li class="list-group-item" ng-repeat="product in products | filter:query | orderBy:order">
+            <h4 class="list-group-item-heading">{{product.name}} - {{product.age}}年</h4>
+            <p class="list-group-item-text">{{product.info}}</p>
         </li>
     </ul>
 </div>
@@ -124,6 +127,9 @@ $scope.order = '-age';
 <option value="-age">发布时长</option>
 ```
 
+[上一节](/2014/02/21/angular_scutech_step3)
+[下一节](/2014/02/23/angular_scutech_step5)
+
 ---
 
 * [一步一步学习 AngularJS（一）](/2014/02/18/angular_scutech_step0)
@@ -132,9 +138,3 @@ $scope.order = '-age';
 * [一步一步学习 AngularJS（四）](/2014/02/21/angular_scutech_step3)
 * [一步一步学习 AngularJS（五）](/2014/02/22/angular_scutech_step4)
 * [一步一步学习 AngularJS（六）](/2014/02/23/angular_scutech_step5)
-* [一步一步学习 AngularJS（七）](/2014/02/24/angular_scutech_step6)
-* [一步一步学习 AngularJS（八）](/2014/02/27/angular_scutech_step7)
-* [一步一步学习 AngularJS（九）](/2014/02/28/angular_scutech_step8)
-* [一步一步学习 AngularJS（十）](/2014/03/01/angular_scutech_step9)
-* [一步一步学习 AngularJS（十一）](/2014/03/02/angular_scutech_step10)
-* [一步一步学习 AngularJS（十二）](/2014/03/03/angular_scutech_step11)
