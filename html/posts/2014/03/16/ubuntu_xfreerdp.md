@@ -37,7 +37,7 @@ xfreerdp -f host:port -u username -p password
 
 ```
 xfreerdp -f 192.168.1.10 -u administrator -p 123456
-``
+```
 
 表示远程桌面到 192.168.1.10
 
