@@ -4,19 +4,17 @@
   "description": "wenyi blog",
   "author": {
     "name": "zhixin wen",
-    "email": "wenzhixin2010@gmailcom"
+    "email": "wenzhixin2010@gmail.com"
   },
-  
   "engines": {
     "node": ">= 0.8.11",
     "npm": ">= 1.1.62"
   },
-
   "dependencies": {
-    "express": "3.0.0rc4",
-    "underscore": "1.4.3",
-    "markdown": "0.4.0",
-    "rss": "0.0.4",
-    "rd": "0.0.1"
+    "express": "^3.4.7",
+    "marked": "^0.3.2",
+    "underscore": "^1.6.0",
+    "rd": "0.0.1",
+    "rss": "0.2.1"
   }
 }
