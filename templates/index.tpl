@@ -10,7 +10,7 @@
     <meta name="description"
           content="简介：坚持看书，每天进步一点点。 要常常提醒自己：无情的岁月，还有不够努力的自己！"/>
     <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml"/>
-    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.css"/>
     <link rel="stylesheet" href="/assets/highlight.js/styles/github.css"/>
     <link rel="stylesheet" href="/css/jquery.imagebox.css"/>
     <link rel="stylesheet" href="/css/main.css"/>
@@ -36,7 +36,7 @@
                         <li><a href="/demos">好玩的东东</a></li>
                         <!-- <li><a href="/timeline.html">时间轴</a></li> -->
                         <li><a href="http://weibo.com/2292826740">新浪微博</a></li>
-                        <li><a href="/about">关于本博客</a></li>
+                        <li><a href="/about">关于我</a></li>
                     </ul>
                     <!-- <form class="navbar-form pull-right">
                       <input id="query" type="text" class="input-medium search-query" />

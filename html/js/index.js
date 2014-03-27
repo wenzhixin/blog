@@ -89,12 +89,15 @@ $(function() {
 	}
 	
 	function showGotoTop() {
-		var $gotoTop = $('.goto_top');
+		var $gotoTop = $('.goto_top'),
+            $bdshare = $('#bdshare');
 
 		if ($(document).scrollTop() > 0) {
 			$gotoTop.fadeIn('slow');
+            $bdshare.fadeOut('slow');
 		} else {
 			$gotoTop.fadeOut('slow');
+            $bdshare.fadeIn('slow');
 		}
 	}
 	

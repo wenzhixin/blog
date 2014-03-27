@@ -32,7 +32,8 @@ exports.list = function(req, res) {
 		});
 		files.sort().reverse(); // 按日期排序
 		
-		for (var i in files) {
+		// 只获取最新 10 篇
+		for (var i = 0; i < 10; i++) {
 			var content = fs.readFileSync(files[i]).toString();
 				lines = content.split('\n'),
 				category = lines[2].split(' | ')[0].split('：')[1],
