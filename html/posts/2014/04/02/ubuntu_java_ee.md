@@ -27,7 +27,7 @@ sudo apt-get install tomcat7
 
 注：不安装 JST Server Adapters 的话，在 Eclipse Server Runtime Environments 选择不了 tomcat
 
-### create new server wizard
+### 3. create new server wizard
 
 会出现 ```Cannot create a server using the selected type``` 的问题，解决：
 
