@@ -55,6 +55,11 @@ sudo -u postgres psql
 sudo -u postgres createdb -O root test
 ```
 
+修改数据库 test 为 test1：
+```
+alter database test rename to test1;
+```
+
 也可以删除不需要的数据库，如：
 ```
 sudo -u postgres dropdb test
