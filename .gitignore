@@ -1,0 +1,8 @@
+.idea
+.project
+.settings
+*.log
+*.zip
+node_modules
+html/admin
+bootstrap
