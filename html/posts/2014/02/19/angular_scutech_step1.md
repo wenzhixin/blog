@@ -86,3 +86,4 @@ ___
 * [一步一步学习 AngularJS（五）](/2014/02/22/angular_scutech_step4)
 * [一步一步学习 AngularJS（六）](/2014/02/23/angular_scutech_step5)
 * [一步一步学习 AngularJS（七）](/2014/03/10/angular_scutech_step6)
+* [一步一步学习 AngularJS（八）](/2014/04/22/angular_scutech_step7)
