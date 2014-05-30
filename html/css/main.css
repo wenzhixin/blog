@@ -3,6 +3,12 @@ body {
 	background: #B9E6EB url(../images/body_repeat.png) repeat-x;
     color: #333;
 }
+.alert-info h2 {
+    margin-top: 0;
+}
+.alert-info h2 a {
+    font-size: 14px;
+}
 .blog {
 	background: url(../images/body_bg.jpg) no-repeat center 0;
 }

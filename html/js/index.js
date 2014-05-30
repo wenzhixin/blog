@@ -40,15 +40,24 @@ $(function() {
 	}
 	
 	function getApi() {
-		$.get('/api/categories').done(function(data) {
-			var categories = $.parseJSON(data);
+        $.get('/api/stats.json').done(function(stats) {
+            $('.alert.alert-info div').html([
+                '<p>统计时间：' + stats.start + ' - ' + stats.end + '</p>',
+                '<p>总文章数：' + stats.posts + ' 篇，',
+                '技术文章：' + stats.tech + ' 篇，',
+                '生活随笔：' + stats.life + ' 篇</p>',
+                '<p>博客总字数：' + stats.words + '，',
+                '总访问量：' + stats.views + '，',
+                '总用户量：' + stats.visits + '</p>'
+            ].join(''));
+        });
+		$.get('/api/categories.json').done(function(categories) {
 			for (var key in categories) {
 				$('#nav a[href$="' + key + '"]').append(' <span>(' + categories[key] + ')</span>');
 			}
 		});
-		$.get('/api/posts').done(function(data) {
-			var list = $.parseJSON(data),
-				index = -1,
+		$.get('/api/posts.json').done(function(list) {
+			var index = -1,
 				postNavs = [];
 				
 			$.each(list, function(i, post) {

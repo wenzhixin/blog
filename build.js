@@ -2,7 +2,9 @@ var fs = require('fs'),
 	rd = require('rd'),
 	_ = require('underscore'),
 	marked = require('marked'),
+    shelljs = require('shelljs'),
 	util = require('./helpers/util'),
+    ga = require('./models/ga.js'),
 	
 	TEMPLATE_PATH = __dirname + '/templates/',
 	API_DIR = __dirname + '/html/api/',
@@ -61,6 +63,10 @@ function getPost(file, title, desc, content) {
 function create(posts) {
 	var tpl = fs.readFileSync(TEMPLATE_PATH + 'post.tpl').toString(),
 		commons = [
+            '<div class="alert alert-info">',
+            '<h2>文翼的博客 <a href="javascript:void(0)"><i class="glyphicon glyphicon-info-sign"></i></a></h2>',
+            '<div></div>',
+            '</div>',
 			'<div class="posts-type">',
 				'<div data-type="tile"><img class="img-tile" src="images/tile.png" /></div>',
 				'<div data-type="list"><img class="img-list" src="images/list.png" /></div>',
@@ -115,8 +121,28 @@ function createApi(apiCategories, posts) {
 	if (!fs.existsSync(API_DIR)) {
 		fs.mkdirSync(API_DIR);
 	}
-	fs.writeFile(API_DIR + 'categories', JSON.stringify(apiCategories));
-	fs.writeFile(API_DIR + 'posts', JSON.stringify(apiPosts));
+	fs.writeFile(API_DIR + 'categories.json', JSON.stringify(apiCategories));
+	fs.writeFile(API_DIR + 'posts.json', JSON.stringify(apiPosts));
+
+
+    ga.getVisits('', function(err, result) {
+        if (err) {
+            return console.log(err);
+        }
+
+        var wordsCmd = 'find html/posts/$1 -name "*.md" -print0 | xargs -0 cat | wc -m';
+
+        fs.writeFile(API_DIR + 'stats.json', JSON.stringify({
+            posts: apiCategories.index,
+            life: apiCategories.life,
+            tech: apiCategories.index - apiCategories.life,
+            start: apiPosts[apiPosts.length - 1].path.substring(0, 10),
+            end: apiPosts[0].path.substring(0, 10),
+            words: shelljs.exec(wordsCmd, {silent:true}).output.replace(/\n/g, ''),
+            views: result['ga:pageviews'],
+            visits: result['ga:visits']
+        }));
+    });
 }
 
 list();

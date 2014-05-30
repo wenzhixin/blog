@@ -32,10 +32,9 @@
                 </div>
                 <div class="collapse navbar-collapse bs-navbar-collapse">
                     <ul class="nav navbar-nav">
-                        <li><a href="/projects">个人开源项目</a></li>
-                        <li><a href="/demos">好玩的东东</a></li>
-                        <!-- <li><a href="/timeline.html">时间轴</a></li> -->
-                        <li><a href="http://weibo.com/2292826740">新浪微博</a></li>
+                        <li><a href="http://repos.wenzhixin.net.cn">个人开源项目</a></li>
+                        <li><a href="http://books.wenzhixin.net.cn">我的藏书</a></li>
+                        <li><a href="http://travels.wenzhixin.net.cn">游遍广州</a></li>
                         <li><a href="/about">关于我</a></li>
                     </ul>
                     <!-- <form class="navbar-form pull-right">
@@ -83,26 +82,15 @@
         </p>
     </div>
 </div>
-<script type="text/javascript" src="/js/jquery.min.js"></script>
-<script type="text/javascript" src="/assets/bootstrap/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="/assets/highlight.js/highlight.pack.js"></script>
-<script type="text/javascript" src="/js/jquery.imagebox.js"></script>
-<script type="text/javascript" src="/js/jquery.cookie.js"></script>
-<script type="text/javascript" src="/js/index.js"></script>
-<script type="text/javascript" src="/js/analytics.js"></script>
-<script type="text/javascript" id="bdshare_js" data="type=slide&amp;img=6&amp;pos=right&amp;uid=6692400"></script>
-<script type="text/javascript" id="bdshell_js"></script>
-<script type="text/javascript">
-    var duoshuoQuery = {short_name: "wenzhixin"};
-    (function () {
-        var ds = document.createElement('script');
-        ds.type = 'text/javascript';
-        ds.async = true;
-        ds.src = 'http://static.duoshuo.com/embed.js';
-        ds.charset = 'UTF-8';
-        (document.getElementsByTagName('head')[0]
-                || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-</script>
+<script src="/js/jquery.min.js"></script>
+<script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="/assets/highlight.js/highlight.pack.js"></script>
+<script src="/js/jquery.imagebox.js"></script>
+<script src="/js/jquery.cookie.js"></script>
+<script src="/js/index.js"></script>
+<script src="/js/analytics.js"></script>
+<script id="bdshare_js" data="type=slide&amp;img=6&amp;pos=right&amp;uid=6692400"></script>
+<script id="bdshell_js"></script>
+<script src="/js/duoshuo.js"></script>
 </body>
 </html>
