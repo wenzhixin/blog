@@ -64,7 +64,7 @@ function create(posts) {
 	var tpl = fs.readFileSync(TEMPLATE_PATH + 'post.tpl').toString(),
 		commons = [
             '<div class="alert alert-info">',
-            '<h2>文翼的博客 <a href="javascript:void(0)"><i class="glyphicon glyphicon-info-sign"></i></a></h2>',
+            '<h2>文翼的博客 <a href="javascript:void(0)" data-toggle="modal" data-target="#blog-info"><i class="glyphicon glyphicon-info-sign"></i></a></h2>',
             '<div></div>',
             '</div>',
 			'<div class="posts-type">',

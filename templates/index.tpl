@@ -81,6 +81,25 @@
             Copyright © 2012-2014 wenzhixin.net.cn
         </p>
     </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="blog-info" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel">博客信息</h4>
+          </div>
+          <div class="modal-body">
+            <ol>
+              <li>本博客由 nodejs + markdown 实现。</li>
+              <li>统计信息由 google analytics 提供。</li>
+              <li>评论使用多说评论插件。</li>
+            </ol>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
 </div>
 <script src="/js/jquery.min.js"></script>
 <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
