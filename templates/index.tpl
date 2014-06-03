@@ -95,6 +95,7 @@
               <li>本博客由 nodejs + markdown 实现。</li>
               <li>统计信息由 google analytics 提供。</li>
               <li>评论使用多说评论插件。</li>
+              <li>Github 地址：<a href="https://github.com/wenzhixin/blog">wenzhixin/blog</a>。</li>
             </ol>
           </div>
         </div><!-- /.modal-content -->
