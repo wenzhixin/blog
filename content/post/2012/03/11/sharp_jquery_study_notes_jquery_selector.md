@@ -1,6 +1,6 @@
 ---
 title: 《锋利的jQuery》学习笔记——jQuery选择器
-date: 2012-03-11 00:00:00
+date: 2012-03-11
 categories: [前端技术]
 tags: [jQuery]
 ---

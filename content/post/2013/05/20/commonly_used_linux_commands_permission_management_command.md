@@ -1,6 +1,6 @@
 ---
 title: linux常用命令——权限管理命令
-date: 2012-05-20 00:00:00
+date: 2012-05-20
 categories: [后台技术]
 tags: [linux]
 ---

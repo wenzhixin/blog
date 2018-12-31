@@ -1,6 +1,6 @@
 ---
 title: linux常用命令——帮助命令
-date: 2012-05-22 00:00:00
+date: 2012-05-22
 categories: [后台技术]
 tags: [linux]
 ---

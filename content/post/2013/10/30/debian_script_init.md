@@ -1,6 +1,6 @@
 ---
 title: Debian 添加自启动服务
-date: 2013-10-30 07:46:00
+date: 2013-10-30
 categories: [操作系统]
 tags: [Debian,aria2c,自启动]
 ---
@@ -12,7 +12,7 @@ tags: [Debian,aria2c,自启动]
 ```bash
 sudo vi /etc/init.d/aria2c
 ```
-	
+
 + 输入内容：
 
 ```bash
@@ -79,7 +79,7 @@ exit 0
 * -a, --startas pathname  进程路径
 * -R, --retry timeout|schedule  重试次数
 
-需要将 USER 修改为自己的用户名称  
+需要将 USER 修改为自己的用户名称
 配置文件位于 /home/$USER/.aria2/aria2.conf
 
 更多参数含义可以通过 `man start-stop-daemon` 进行查看
@@ -89,7 +89,7 @@ exit 0
 ```bash
 sudo chmod +x /etc/init.d/aria2c
 ```
-	
+
 + 测试脚本
 
 ```
@@ -99,7 +99,7 @@ sudo /etc/init.d/aria2c stop
 sudo /etc/init.d/aria2c status
 sudo /etc/init.d/aria2c restart
 ```
-	
+
 #### 2. 使用 insserv 设置自动启动
 
 + 添加服务
@@ -108,7 +108,7 @@ sudo /etc/init.d/aria2c restart
 sudo insserv /etc/init.d/aria2c #添加服务
 sudo insserv -r /etc/init.d/aria2c #删除服务
 ```
-	
+
 + 重启测试
 
 ```

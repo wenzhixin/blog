@@ -1,6 +1,6 @@
 ---
 title: crontab 学习笔记
-date: 2014-11-07 21:35:00
+date: 2014-11-07
 categories: [操作系统]
 tags: [linux,crontab]
 ---

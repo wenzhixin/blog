@@ -1,6 +1,6 @@
 ---
 title: 手机 web 开发之 Touch 入门
-date: 2013-11-18 22:55:00
+date: 2013-11-18
 categories: [移动开发]
 tags: [web,Touch]
 ---
@@ -45,26 +45,26 @@ touches 有两个重要的属性分别是 pageX 和 pageY，表示触摸点相�
 
 	(function() {
 		'use strict';
-		
+
 		var startPos = {},
 			endPos = {};
-	
+
 		window.addEventListener('touchstart', function(event) {
 			event.preventDefault();
-	
+
 			var touch = event.touches[0];
 			startPos.x = touch.pageX;
 			startPos.y = touch.pageY;
 		}, false);
-		
+
 		window.addEventListener('touchmove', function(event) {
 			event.preventDefault();
-	
+
 			var touch = event.touches[0];
 			endPos.x = touch.pageX;
 			endPos.y = touch.pageY;
 		}, false);
-		
+
 		window.addEventListener('touchend', function(event) {
 			if (startPos.x < endPos.x) {
 				location.href = 'index.html';
@@ -72,11 +72,11 @@ touches 有两个重要的属性分别是 pageX 和 pageY，表示触摸点相�
 				location.href = 'page.html';
 			}
 		}, false);
-	
+
 	})();
-	
-在 touchstart 事件中，我们将位置保存到 startPos  
-在 touchmove 事件中，我们将位置保存到 endPos  
+
+在 touchstart 事件中，我们将位置保存到 startPos
+在 touchmove 事件中，我们将位置保存到 endPos
 在 touchend 事件中，我们通过比较 startPos 和 endPos 的关系得到用户是向左滑动还是向右滑动。
 
 更多相关知识，请见[Touch_events](https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Events/Touch_events)

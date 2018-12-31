@@ -1,6 +1,6 @@
 ---
 title: 《锋利的jQuery》学习笔记——jQuery与Ajax应用
-date: 2012-03-13 00:00:00
+date: 2012-03-13
 categories: [前端技术]
 tags: [jQuery,Ajax]
 ---
@@ -149,5 +149,3 @@ JSON 格式的数据
  • $.ajaxStop()-Ajax 请求结束时执行的函数
 
  
-
-

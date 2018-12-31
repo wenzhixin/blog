@@ -1,6 +1,6 @@
 ---
 title: 读《Backbone.js 实战》
-date: 2014-07-06 07:31:00
+date: 2014-07-06
 categories: [前端技术]
 tags: [Bootstrap,按钮,prop]
 ---

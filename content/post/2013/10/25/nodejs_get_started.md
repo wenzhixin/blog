@@ -1,6 +1,6 @@
 ---
 title: Ubuntu 开发 Nodejs 入门小记
-date: 2012-10-25 22:40:00
+date: 2012-10-25
 categories: [前端技术]
 tags: [Nodejs]
 ---
@@ -40,7 +40,7 @@ ___
     exports.func = function() {};
     var hello = require("./hello");
     hello.func();
-    
+
     function Hello() {}
     module.exports = Hello;
     var Hello = require("./Hello");
@@ -59,36 +59,36 @@ ___
     repositories 仓库托管地址数组，包含 type、url、path（可选）
     dependencies 包的依赖，由包名和版本号组成
 
-##### 4) 包管理器 npm  
-安装 Nodejs 包：  
+##### 4) 包管理器 npm
+安装 Nodejs 包：
 
     npm [install / i] [-g] [package_name]
-    
+
 本地模式和全局模式区别：
 
-* 本地模式：npm install package_name  
+* 本地模式：npm install package_name
 * 全局模式：npm install -g package_name
-     
-* 本地模式：可通过 require 使用、不注册 PATH  
+
+* 本地模式：可通过 require 使用、不注册 PATH
 * 全局模式：不可通过 require 使用、注册 PATH
 
 创建全局链接：
-    
-    npm link package_name  
+
+    npm link package_name
 
 包的发布相关：
-    
+
     npm init / npm publish / npm unpublish
 
 ___
 
 ### Nodejs 之调试
 
-##### 1) 命令行调试  
+##### 1) 命令行调试
 
-    node debug *.js  
+    node debug *.js
 
-调试参数：  
+调试参数：
 
     run 执行脚本，在第一行暂停
     restart 重新执行脚本
@@ -103,8 +103,8 @@ ___
     watchers 显示监视列表所有的表达式和值
     kill 停止执行
 
-##### 2) 使用 Eclipse 调试 Nodejs  
-* 依次点击：Help -> Install New Software... -> Add  
+##### 2) 使用 Eclipse 调试 Nodejs
+* 依次点击：Help -> Install New Software... -> Add
 * 输入：http://chromedevtools.googlecode.com/svn/update/dev/
 * 选择：Google Chrome Developer Tools
 * 重启 eclipse

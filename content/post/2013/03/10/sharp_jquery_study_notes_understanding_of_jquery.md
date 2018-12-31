@@ -1,6 +1,6 @@
 ---
 title: 《锋利的jQuery》学习笔记——认识jQuery
-date: 2012-03-10 00:00:00
+date: 2012-03-10
 categories: [前端技术]
 tags: [jQuery]
 ---
@@ -81,5 +81,3 @@ JS、MooTools、jQuery
 
 (2)重启Eclipse，选择Project \> properties \> Project Build Path
 并勾选最新jQuery
-
-

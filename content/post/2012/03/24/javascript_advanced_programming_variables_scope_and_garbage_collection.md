@@ -1,6 +1,6 @@
 ---
 title: JavaScript 高级程序设计——变量、作用域和垃圾回收
-date: 2012-03-24 00:00:00
+date: 2012-03-24
 categories: [前端技术]
 tags: [JavaScript,变量,作用域,垃圾回收]
 ---

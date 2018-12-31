@@ -1,6 +1,6 @@
 ---
 title: Ubuntu 无法找到更新源的问题
-date: 2014-07-21 00:00:00
+date: 2014-07-21
 categories: [操作系统]
 tags: [Ubuntu,更新源]
 ---

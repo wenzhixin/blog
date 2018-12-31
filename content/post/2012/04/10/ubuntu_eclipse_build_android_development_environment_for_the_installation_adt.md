@@ -1,6 +1,6 @@
 ---
 title: Ubuntu 下 eclipse 搭建 Android 开发环境安装 ADT 的问题
-date: 2012-04-10 00:00:00
+date: 2012-04-10
 categories: [移动开发]
 tags: [android]
 ---

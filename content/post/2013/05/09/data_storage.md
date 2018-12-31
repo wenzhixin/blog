@@ -1,6 +1,6 @@
 ---
 title: 客户端数据存储之 Web Storage
-date: 2013-04-09 23:52:00
+date: 2013-04-09
 categories: [前端技术]
 tags: [数据存储]
 ---
@@ -18,8 +18,8 @@ Web Storage 有两种形式：localStorage (本地存储) 和 sessionStorage (�
 
 * Web Storage:
 
-1) 存储空间更大  
-2) 数据则仅仅是存在本地，不与服务器发生任何交互  
+1) 存储空间更大
+2) 数据则仅仅是存在本地，不与服务器发生任何交互
 3) 独立的存储空间
 
 **而 localStorage 与 sessionStorage 的区别：**
@@ -63,12 +63,12 @@ Web Storage 有两种形式：localStorage (本地存储) 和 sessionStorage (�
     localStorage['name']; //'wenzhixin'
     delete localStorage.name;//删除键值
     delete localStorage['name'];//删除键值
-    
+
 在**实际使用**中，会先将数据转换为 JSON，作为字符存储，如：
 
     localStorage[name] = JSON.stringify(value); //存储
     JSON.parse(localStorage[name]); //读取
-    
+
 **如何判断一个浏览器是否支持 Web Storage 呢？**
 
     function supportsLocalStorage() {
@@ -90,9 +90,9 @@ Web Storage 有两种形式：localStorage (本地存储) 和 sessionStorage (�
         url: 'url',
         storageArea: storage //更改的存储区域
     };
-    
+
  通过 window 来添加**事件监听**：
-    
+
     function addStorageEvent() {
         var handlerStorage = function(e) {
             console.log(e);
@@ -123,7 +123,7 @@ Web Storage 有两种形式：localStorage (本地存储) 和 sessionStorage (�
 答案是 no，no～你一定会问为什么不会触发呢？
 
     A storage event is fired on every window/tab except for the one that updated the localStorage object and caused the event.
-    
+
 没错，确实不会触发。因为同一窗口下不会触发事件，当打开新的窗口或者标签，才会触发 Storage Event。
 
 由此，我们可以知道，storage 事件主要是**用于监听 localStorage 数据改变时，通知其他窗口或者标签**。
@@ -163,23 +163,23 @@ html 代码：
         </thead>
         <tbody></tbody>
       </table>
-      
+
 js 代码：
 
     $(function() {
-    
+
         var $tbody = $('table tbody');
-    
+
         function main() {
             $(window).on('storage', list);
-            
+
             //添加测试数据
             localStorage.setItem('name', 'wenzhixin');
             localStorage.setItem('age', 26);
             list();
             events();
         }
-    
+
         function events() {
             $('#clear').click(function() {
                 localStorage.clear();
@@ -200,7 +200,7 @@ js 代码：
                 list();
             });
         }
-    
+
         function list() {
             var html = [];
             for (var key in localStorage) {
@@ -208,12 +208,12 @@ js 代码：
             }
             $tbody.html(html.join(''));
         }
-        
+
         function getItem(key, value) {
             return [
-                '<tr data-key="' + key + '">', 
-                    '<td>' + key + '</td>', 
-                    '<td>' + value + '</td>', 
+                '<tr data-key="' + key + '">',
+                    '<td>' + key + '</td>',
+                    '<td>' + value + '</td>',
                     '<td>',
                         '<button class="btn edit">编辑</button>',
                         '<button class="btn remove">删除</button>',
@@ -221,10 +221,10 @@ js 代码：
                 '</tr>'
             ].join('');
         }
-    
-        main();
-    }); 
 
-___ 
-   
+        main();
+    });
+
+___
+
 注：本文中的大部分观点以及例子属于个人理解，难免还有不准确的地方，欢迎有相关研究的同行指正。

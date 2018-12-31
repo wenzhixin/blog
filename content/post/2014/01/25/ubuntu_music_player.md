@@ -1,6 +1,6 @@
 ---
 title: Ubuntu 下安装音乐播放器
-date: 2014-01-25 00:00:00
+date: 2014-01-25
 categories: [操作系统]
 tags: [Ubuntu,音乐播放器]
 ---

@@ -1,6 +1,6 @@
 ---
 title: Android 静默安装 apk
-date: 2013-03-18 23:38:00
+date: 2013-03-18
 categories: [移动开发]
 tags: [静默安装]
 ---
@@ -12,7 +12,7 @@ tags: [静默安装]
 #### 安装 apk
 
     pm install -r package
-    
+
 #### 具体代码
 
     private void downloadApk(final String fileUrl) {
@@ -27,7 +27,7 @@ tags: [静默安装]
 
                     File file = new File(filePath);
                     file.createNewFile();// 新建文件
-                    
+
                     is = conn.getInputStream();
                     fos = new FileOutputStream(file);
                     byte[] buffer = new byte[1024];

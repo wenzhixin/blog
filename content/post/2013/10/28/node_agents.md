@@ -1,6 +1,6 @@
 ---
 title: nodejs 获取路由的主机列表
-date: 2013-10-28 00:30:00
+date: 2013-10-28
 categories: [前端技术]
 tags: [nodejs,路由,主机]
 ---
@@ -29,11 +29,11 @@ HTTP Basic Authentication 是一种通过直接提供用户名、密码来进行
 2) 在url中添加用户名和密码：
 
     http://userName:password@192.168.1.1
-    
+
 通过分析路由器的页面地址，可以知道获取主机列表的页面地址为：
 
     http://192.168.1.1/userRpm/AssignedIpAddrListRpm.htm?Refresh=true
-    
+
 #### 2. 代码实现
 
 在这里，我们使用第二种方法来添加认证，使用 http 模块获取主机列表页面的内容，在通过正则表达式进行匹配出主机列表。
@@ -42,7 +42,7 @@ HTTP Basic Authentication 是一种通过直接提供用户名、密码来进行
 
     http.get('http://admin:admin@192.168.1.1/userRpm/AssignedIpAddrListRpm.htm?Refresh=true', function(res) {
         var content = '';
-        
+
         res.setEncoding('utf8');
         res.on('data', function(data) {
             content += data;
@@ -51,7 +51,7 @@ HTTP Basic Authentication 是一种通过直接提供用户名、密码来进行
             handle(content);
         })
     });
-    
+
     function handle(content) {
         content = content.replace(/\n/g, '');
         var m = content.match(/var DHCPDynList = new Array\(([^\)]*)\);/);

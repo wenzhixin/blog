@@ -1,6 +1,6 @@
 ---
 title: VirtualBox 安装 Mac OS X 10.9 Mavericks 小记
-date: 2014-02-10 00:00:00
+date: 2014-02-10
 categories: [操作系统]
 tags: [OS,Mac]
 ---

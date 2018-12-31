@@ -1,6 +1,6 @@
 ---
 title: Ubuntu 下不能访问 Windows 文件系统
-date: 2014-11-20 15:07:00
+date: 2014-11-20
 categories: [操作系统]
 tags: [Ubuntu,Windows 文件系统]
 ---
@@ -24,7 +24,7 @@ $ sudo ntfsfix /dev/sdb1
 Mounting volume... The disk contains an unclean file system (0, 0).
 Metadata kept in Windows cache, refused to mount.
 FAILED
-Attempting to correct errors... 
+Attempting to correct errors...
 Processing $MFT and $MFTMirr...
 Reading $MFT... OK
 Reading $MFTMirr... OK

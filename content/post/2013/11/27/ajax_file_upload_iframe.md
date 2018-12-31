@@ -1,6 +1,6 @@
 ---
 title: Ajax 文件上传——通过 iframe 的方法
-date: 2013-11-27 00:00:00
+date: 2013-11-27
 categories: [前端技术]
 tags: [Ajax 文件上传,iframe]
 ---

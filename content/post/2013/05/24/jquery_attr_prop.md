@@ -1,6 +1,6 @@
 ---
 title: jQuery 中 attr() 和 prop() 方法的区别
-date: 2013-05-24 01:11:00
+date: 2013-05-24
 categories: [前端技术]
 tags: [jQuery,attr,prop]
 ---

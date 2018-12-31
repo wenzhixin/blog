@@ -1,6 +1,6 @@
 ---
 title: 《锋利的jQuery》学习笔记——jQuery中的DOM操作
-date: 2012-03-12 00:00:00
+date: 2012-03-12
 categories: [前端技术]
 tags: [jQuery,DOM]
 ---

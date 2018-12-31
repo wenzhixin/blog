@@ -1,6 +1,6 @@
 ---
 title: MySQL、Postgres 开启远程访问权限（ubuntu）
-date: 2012-05-15 00:00:00
+date: 2012-05-15
 categories: [数据库]
 tags: [MySQL,远程访问权限]
 ---

@@ -1,6 +1,6 @@
 ---
 title: 使用 js 自动生成博客首页文件列表
-date: 2013-10-20 00:17:00
+date: 2013-10-20
 categories: [前端技术]
 tags: [node]
 ---
@@ -35,10 +35,10 @@ tags: [node]
 
     var fs = require('fs'),
         rd = require('rd'),
-        
+
         POST_DIR = __dirname + '/html/posts/';
-    
-    
+
+
     function list() {
         rd.read(POST_DIR, function(err, files) {
             if (err) {
@@ -55,22 +55,22 @@ tags: [node]
             parse(files);
         });
     }
-    
+
     function endWith(name, str) {
         return name.substring(name.length - str.length) === str;
     }
-    
+
     function parse(files) {
         var posts = [];
         for (var i in files) {
             var content = fs.readFileSync(files[i]).toString();
                 lines = content.split('\n');
-                
+
             posts.push(getPost(files[i], lines[0], lines[2]));
         }
         create(posts);
     }
-    
+
     function getPost(file, title, desc) {
         var arr = desc.split(' | '),
             post = {
@@ -79,14 +79,14 @@ tags: [node]
                 category: '个人作品',
                 time: '置顶'
             };
-            
+
         if (arr.length === 3) {
-            post.category = arr[0].split('：')[1];    
+            post.category = arr[0].split('：')[1];
             post.time = arr[2].split('：')[1].split(' ')[0];
         }
         return post;
     }
-    
+
     function create(posts) {
         var content = ['## 全部文章 (' + (posts.length + 50) + ')'];
         for (var i in posts) {
@@ -101,5 +101,5 @@ tags: [node]
         content.push('* (其他)[更多文章...](http://qing.weibo.com/2292826740/profile) ')
         fs.writeFile(POST_DIR + 'index.md', content.join('\n\n'));
     }
-    
+
     list();

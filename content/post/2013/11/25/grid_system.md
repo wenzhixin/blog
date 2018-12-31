@@ -1,11 +1,11 @@
 ---
 title: 栅格化布局和常用框架比较
-date: 2013-11-25 21:41:00
+date: 2013-11-25
 categories: [交互设计]
 tags: [栅格化]
 ---
 
-在使用了Bootstrap、Foundation 之后，其实已经接触到栅格化布局这一概念。  
+在使用了Bootstrap、Foundation 之后，其实已经接触到栅格化布局这一概念。
 今天接触了 skeleton 后，特别强调了栅格化布局，那么何为栅格化布局？
 
 #### 1. 栅格化布局

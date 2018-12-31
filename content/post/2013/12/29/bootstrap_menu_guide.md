@@ -1,6 +1,6 @@
 ---
 title: bootstrap menu 插件介绍
-date: 2013-12-29 00:00:00
+date: 2013-12-29
 categories: [前端技术]
 tags: [bootstrap,menu,插件]
 ---

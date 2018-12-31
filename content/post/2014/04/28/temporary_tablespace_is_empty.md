@@ -1,6 +1,6 @@
 ---
 title: Temporary Tablespace is Empty 解决方法（ORA-25153）
-date: 2014-04-28 22:05:00
+date: 2014-04-28
 categories: [数据库]
 tags: [Oracle,25153]
 ---

@@ -1,6 +1,6 @@
 ---
 title: 导出或者备份新浪轻博客
-date: 2013-11-14 00:00:00
+date: 2013-11-14
 categories: [前端技术]
 tags: [导出,备份,轻博客]
 ---
@@ -14,7 +14,7 @@ tags: [导出,备份,轻博客]
 	var scraper = require('scraper');
 	scraper('http://qing.blog.sina.com.cn/2292826740/profile', function(err, $) {
 	    if (err) {throw err;}
-	
+
 	    $('ul.archivelist .txtz strong a').each(function(i) {
 			var href = $(this).attr('href');
 			console.log(href);
@@ -31,15 +31,15 @@ tags: [导出,备份,轻博客]
 
 	scraper('http://qing.blog.sina.com.cn/2292826740/profile', function(err, $) {
 		if (err) throw err;
-		
+
 		var hrefs = [];
-		
+
 		$('ul.archivelist .txtz strong a').each(function(i) {
 			scraper($(this).attr('href'), function(err, $) {
 				var $post = $('.post'),
 					$content = $post.find('div.caption'),
 					post = {};
-				
+
 				post.title = $.trim($post.find('span.title').text());
 				post.tags = [];
 				$post.find('.tags a').each(function() {
@@ -47,7 +47,7 @@ tags: [导出,备份,轻博客]
 				});
 				post.date = $post.find('p.label strong').text() + '/' + $post.find('p.label em').text();
 				post.content = $content.text();
-				
+
 				console.log(post);
 			});
 		});

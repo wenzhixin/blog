@@ -1,6 +1,6 @@
 ---
 title: linux 常用命令——文件处理命令
-date: 2012-05-19 00:00:00
+date: 2012-05-19
 categories: [后台技术]
 tags: [linux]
 ---

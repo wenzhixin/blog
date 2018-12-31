@@ -1,6 +1,6 @@
 ---
 title: nodejs 通过 JSON-RPC 调用 aria2 接口
-date: 2013-10-27 12:50:00
+date: 2013-10-27
 categories: [前端技术]
 tags: [aria2,websocket,jsonrpc]
 ---
@@ -15,7 +15,7 @@ tags: [aria2,websocket,jsonrpc]
 在[搭建小型下载服务器](http://wenzhixin.net.cn/2013/07/01/raspberry_server)一文中，提到启动的方式为：
 
     aria2c --enable-rpc --rpc-listen-all &
-    
+
 用命令方式导致配置不方便修改保存，推荐启动方式是使用配置文件 $HOME/.aria2/aria2.conf 来进行启动。
 
     aria2c --conf-path=/home/pi/.aria2/aria2.conf &
@@ -32,7 +32,7 @@ tags: [aria2,websocket,jsonrpc]
     rpc-listen-all=true
     #RPC端口, 仅当默认端口被占用时修改
     rpc-listen-port=6800
-    
+
     #最大同时下载数(任务数), 路由建议值: 3
     max-concurrent-downloads=10
     #断点续传
@@ -51,10 +51,10 @@ tags: [aria2,websocket,jsonrpc]
     max-overall-upload-limit=0
     #单文件速度限制
     max-upload-limit=0
-    
+
     #文件保存路径, 默认为当前启动位置
     dir=/home/pi/Downloads
-    
+
 3) 增加系统启动脚本（raspberrypi 系统还有待研究）
 
 #### 2. 编写 nodejs 代码
@@ -68,11 +68,11 @@ tags: [aria2,websocket,jsonrpc]
 
     var WebSocketClient = require('websocket').client,
 
-        client = new WebSocketClient(), 
-        conn, 
+        client = new WebSocketClient(),
+        conn,
         cb,
         cbmap = {};
-    
+
     client.on('connect', function(connection) {
         console.log('INFO: WebSocket client connected to Aria2.');
         connection.on('error', function(error) {
@@ -94,40 +94,40 @@ tags: [aria2,websocket,jsonrpc]
                 delete cbmap[data.id];
             }
         });
-    
+
         conn = connection;
         if (typeof cb === 'function') {
             cb();
         }
     });
-    
+
     client.on('connectFailed', function(error) {
         console.error('ERROR: Client Error: ' + error.toString());
     });
-    
+
     function connect(callback) {
         cb = callback;
         client.connect('ws://localhost:6800/jsonrpc');
     }
-    
+
     function uuid() {
         return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
             var r = Math.random() * 16 | 0, v = (c === 'x') ? r : (r & 0x3 | 0x8);
             return v.toString(16);
         });
     }
-    
+
     function send(command, callback) {
         var id = uuid();
         if (typeof callback === 'function') {
             cbmap[id] = callback;
         }
-    
+
         command.jsonrpc = '2.0';
         command.id = id;
         conn.sendUTF(JSON.stringify(command));
     }
-    
+
     exports.connect = connect;
     exports.send = send;
 
@@ -143,6 +143,6 @@ tags: [aria2,websocket,jsonrpc]
             console.log(result);
         });
     });
-    
+
 到这里，查看 /home/pi/Downloads，可以看到已经成功下载了 header_bg.jpg 文件，
 已经可以调用后台的 aria2 接口进行添加下载地址并下载我们想要的东西了。

@@ -1,6 +1,6 @@
 ---
 title: 通过 css 设置图片的高度与宽度相等
-date: 2016-01-11 13:30:00
+date: 2016-01-11
 categories: [前端技术]
 tags: [CSS]
 ---

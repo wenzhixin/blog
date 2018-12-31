@@ -1,6 +1,6 @@
 ---
 title: 《锋利的jQuery》学习笔记——jQuery插件
-date: 2012-03-14 00:00:00
+date: 2012-03-14
 categories: [前端技术]
 tags: [jQuery,插件]
 ---
@@ -71,7 +71,7 @@ tags: [jQuery,插件]
 				/\*这里置放代码\*/
 			});
 		},
-		
+
 		...
 	}
 })(jQuery);

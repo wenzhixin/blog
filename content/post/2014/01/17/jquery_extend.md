@@ -1,6 +1,6 @@
 ---
 title: 详解 jQuery.extend() 方法
-date: 2014-01-17 00:00:00
+date: 2014-01-17
 categories: [前端技术]
 tags: [jQuery,extend]
 ---

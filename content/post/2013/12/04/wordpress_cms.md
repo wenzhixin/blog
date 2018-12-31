@@ -1,6 +1,6 @@
 ---
 title: Wordpress 打造 CMS 系统小记
-date: 2013-12-04 00:00:00
+date: 2013-12-04
 categories: [后台技术]
 tags: [Wordpress]
 ---
@@ -86,14 +86,14 @@ Template Name: Home
 
 ### 其他
 
-#### content.php 
+#### content.php
 
 第1行去掉
 ```
 <?php post_class(); ?>
 ```
 
-#### functions.php 
+#### functions.php
 第760行去掉
 ```
 $content.imagesLoaded(function() {
@@ -123,7 +123,7 @@ function pinboard_excerpt_length() 改为 return 100;
 
 #### sytle.css
 
-\#header \#searchform 加上 
+\#header \#searchform 加上
 ```
 display: none;
 ```

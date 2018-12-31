@@ -1,6 +1,6 @@
 ---
 title: Bootstrap a 标签按钮使用 prop 方法
-date: 2014-06-18 13:31:00
+date: 2014-06-18
 categories: [前端技术]
 tags: [Bootstrap,按钮,prop]
 ---
@@ -50,4 +50,3 @@ tags: [Bootstrap,按钮,prop]
 ```
 
 在这里，我们对原来的 prop 函数进行了预处理，假如是 a 标签则使用 attr 方式。
-

@@ -1,6 +1,6 @@
 ---
 title: Nodejs 应用部署小记
-date: 2012-11-09 00:05:00
+date: 2012-11-09
 categories: [前端技术]
 tags: [Nodejs,部署]
 ---
@@ -10,24 +10,24 @@ tags: [Nodejs,部署]
 #### 1) 加入 access.log
 
     var accessLogfile = fs.createWriteStream('access.log', {flags: 'a'});
-    
+
     app.configure(function() {
         app.use(express.logger({stream: accessLogfile}));
     }
 
 #### 2) 加入 error.log
 
-首先，添加 helpers/error.js 文件：  
+首先，添加 helpers/error.js 文件：
 
     var fs = require('fs');
     var errorLogfile = fs.createWriteStream('logs/error.log', {flags: 'a'});
-    
+
     exports.handler = function(err, req, res, status) {
           console.log(err);
-      
+
           var meta = '[' + new Date() + '] ' + req.url + ' ' + status + '\n';
           errorLogfile.write(meta + err.stack + '\n');
-      
+
           res.status(status);
           res.end('');
     }
@@ -42,10 +42,10 @@ tags: [Nodejs,部署]
 
     var cluster = require('cluster');
     var os = require('os');
-    
+
     // 获取 CPU 的数量
     var numCPUs = os.cpus().length;
-    
+
     var workers = {};
     if (cluster.isMaster) {
           // 主进程分支
@@ -67,7 +67,7 @@ tags: [Nodejs,部署]
             console.log('Server listening on port %d in %s mode', app.get('port'), app.get('env'));
           });
     }
-    
+
     // 当进程被终止时，关闭所有工作进程
     process.on('SIGTERM', function() {
           for ( var pid in workers) {
@@ -79,12 +79,12 @@ tags: [Nodejs,部署]
 ### 3、启动脚本，可用于开机启动服务
 
     #! /bin/bash
-    
+
     NODE_ENV=production
     DAEMON="node cluster.js"
     NAME=name
     PIDFILE="name.pid"
-    
+
     case "$1" in
       start)
             echo "Starting $NAME."
@@ -101,5 +101,5 @@ tags: [Nodejs,部署]
           ps -ef | grep nodejs
           ;;
         esac
-    
+
         exit 0

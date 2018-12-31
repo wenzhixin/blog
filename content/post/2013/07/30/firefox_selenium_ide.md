@@ -1,6 +1,6 @@
 ---
 title: firefox 利用 Selenium IDE 对 DBackup 进行自动化测试
-date: 2013-07-30 01:02:00
+date: 2013-07-30
 categories: [前端技术]
 tags: [Selenium IDE]
 ---

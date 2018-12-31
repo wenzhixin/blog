@@ -1,6 +1,6 @@
 ---
 title: 如何不用 eval 的方式通过字符串调用 JavaScript 的方法
-date: 2014-10-03 23:28:00
+date: 2014-10-03
 categories: [前端技术]
 tags: [eval,字符串,方法]
 ---

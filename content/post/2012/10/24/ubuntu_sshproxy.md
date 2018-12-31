@@ -1,6 +1,6 @@
 ---
 title: Ubuntu 设置 sshproxy 代理
-date: 2012-10-24 22:39:00
+date: 2012-10-24
 categories: [操作系统]
 tags: [sshproxy. 代理]
 ---
@@ -37,8 +37,8 @@ ___
 #### 2. 配置 sshproxy，在 .ssh/config 中加入：
 
     host sshproxy
-            HostName <your hostname> 
-            user sshproxy 
+            HostName <your hostname>
+            user sshproxy
             IdentityFile ~/.ssh/sshproxy/id_rsa
 
 #### 3. 安装 autossh
@@ -48,16 +48,16 @@ ___
 
 #### 4. 创建 /etc/init/myhost.conf
 
-    # autossh 
-    
-    description  "myhost autossh daemon" 
-    
-    start on (net-device-up IFACE!=lo) 
-    stop on (net-device-down IFACE!=lo) 
-    
-    respawn 
-    
-    script 
+    # autossh
+
+    description  "myhost autossh daemon"
+
+    start on (net-device-up IFACE!=lo)
+    stop on (net-device-down IFACE!=lo)
+
+    respawn
+
+    script
             exec /usr/bin/autossh -U <your username> -M40000 -q -N -D localhost:12345 sshproxy
     end script
 

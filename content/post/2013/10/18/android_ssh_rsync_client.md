@@ -1,6 +1,6 @@
 ---
 title: 安卓 ssh 和 rsync 同步客户端的实现
-date: 2013-10-18 09:30:00
+date: 2013-10-18
 categories: [移动开发]
 tags: [Android,ssh,rsync]
 ---

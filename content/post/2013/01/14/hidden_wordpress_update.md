@@ -1,6 +1,6 @@
 ---
 title: 完全禁用 Wordpress 后台的更新提示和功能
-date: 2013-01-14 10:48:00
+date: 2013-01-14
 categories: [后台技术]
 tags: [Wordpress]
 ---
@@ -36,7 +36,7 @@ tags: [Wordpress]
 注释第 37 行：
 
     $submenu[ 'index.php' ][10] = array( sprintf( __('Updates %s'), "<span class='update-plugins count-{$update_data['counts']['total']}' title='{$update_data['title']}'><span class='update-count'>" . number_format_i18n($update_data['counts']['total']) . "</span></span>" ), 'update_core',  'update-core.php');
-    
+
 #### 4. 底部更新提示 (wp-admin/admin-footer.php)
 
 注释第 28 行：

@@ -1,6 +1,6 @@
 ---
 title: 使用 nginx 作为代理服务器的路径问题
-date: 2013-07-17 15:31:00
+date: 2013-07-17
 categories: [后台技术]
 tags: [nginx,proxy_pass,路径]
 ---
@@ -24,15 +24,15 @@ tags: [nginx,proxy_pass,路径]
 
 那么应该怎么设置呢？
 
-	location /a {   
+	location /a {
 		proxy_pass http://192.168.1.14;
 		access_log off;
 	}
-	
+
 通过试验可以发现，这样代理的实际地址为
 
 	http://192.168.1.14/a
-	
+
 并不是我们想要的，为什么会这样呢？
 
 答案在与 proxy_pass 中路径是否有加上/：
@@ -45,40 +45,40 @@ tags: [nginx,proxy_pass,路径]
 
 **代理到同一台服务器的多个项目下：**
 
-	location /a/ {   
+	location /a/ {
 		proxy_pass http://192.168.1.14;
 		access_log off;
 	}
-	location /b/ {   
+	location /b/ {
 		proxy_pass http://192.168.1.14;
 		access_log off;
 	}
-	location /c/ {   
+	location /c/ {
 		proxy_pass http://192.168.1.14;
 		access_log off;
 	}
-	
+
 分别代理为：
 
 	http://127.0.0.1/a  ->  http://192.168.1.14/a
 	http://127.0.0.1/b  ->  http://192.168.1.14/b
 	http://127.0.0.1/c  ->  http://192.168.1.14/c
-	
+
 **代理到不同服务器上：**
 
-	location /a/ {   
+	location /a/ {
 		proxy_pass http://192.168.1.14/;
 		access_log off;
 	}
-	location /b/ {   
+	location /b/ {
 		proxy_pass http://192.168.1.15/;
 		access_log off;
 	}
-	location /c/ {   
+	location /c/ {
 		proxy_pass http://192.168.1.14/;
 		access_log off;
 	}
-	
+
 分别代理为：
 
 	http://127.0.0.1/a  ->  http://192.168.1.14

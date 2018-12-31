@@ -1,6 +1,6 @@
 ---
 title: html5 canvas 画图实例——rotate
-date: 2012-05-20 00:00:00
+date: 2012-05-20
 categories: [前端技术]
 tags: [html5,canvas]
 ---

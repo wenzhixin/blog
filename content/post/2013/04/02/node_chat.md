@@ -1,6 +1,6 @@
 ---
 title: 制作在线聊天室
-date: 2013-04-02 20:41:00
+date: 2013-04-02
 categories: [前端技术]
 tags: [nodejs]
 ---

@@ -1,6 +1,6 @@
 ---
 title: 使用 requestAnimationFrame 实现动画
-date: 2014-01-14 00:00:00
+date: 2014-01-14
 categories: [前端开发]
 tags: [requestAnimationFrame,动画]
 ---
@@ -17,10 +17,10 @@ requestAnimationFrame 函数是主流浏览器推出来的用来代替旧的```s
 在使用的时候，需要考虑多浏览器之间的兼容问题：
 ```
 window.requestAnimFrame = (function() {
-	return window.requestAnimationFrame || 
-		window.webkitRequestAnimationFrame || 
-		window.mozRequestAnimationFrame || 
-		window.oRequestAnimationFrame || 
+	return window.requestAnimationFrame ||
+		window.webkitRequestAnimationFrame ||
+		window.mozRequestAnimationFrame ||
+		window.oRequestAnimationFrame ||
 		window.msRequestAnimationFrame ||
 		function(/* function */callback, /* DOMElement */element) {
 			return window.setTimeout(callback, 1000 / 60);
@@ -28,11 +28,11 @@ window.requestAnimFrame = (function() {
 })();
 
 window.cancelAnimFrame = (function() {
-	return window.cancelAnimationFrame || 
-		window.webkitCancelRequestAnimationFrame || 
-		window.mozCancelRequestAnimationFrame || 
-		window.oCancelRequestAnimationFrame || 
-		window.msCancelRequestAnimationFrame || 
+	return window.cancelAnimationFrame ||
+		window.webkitCancelRequestAnimationFrame ||
+		window.mozCancelRequestAnimationFrame ||
+		window.oCancelRequestAnimationFrame ||
+		window.msCancelRequestAnimationFrame ||
 		clearTimeout;
 })();
 ```
@@ -45,7 +45,7 @@ var fps = 30;
 function draw() {
 	setTimeout(function() {
         requestAnimFrame(draw);
-        
+
         // do something
     }, 1000 / fps);
 }

@@ -1,6 +1,6 @@
 ---
 title: ubuntu 下使用 FreeRDP 连接 Windows 远程桌面
-date: 2014-03-16 00:00:00
+date: 2014-03-16
 categories: [操作系统]
 tags: [ssh,FreeRDP]
 ---

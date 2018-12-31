@@ -1,6 +1,6 @@
 ---
 title: 使用 CSS3 制作自己的博客 Logo
-date: 2012-12-07 23:01:00
+date: 2012-12-07
 categories: [前端技术]
 tags: [CSS3]
 ---

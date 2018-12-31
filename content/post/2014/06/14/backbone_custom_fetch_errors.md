@@ -1,6 +1,6 @@
 ---
 title: 在 Backbone.js 中自定义 fetch 错误处理
-date: 2014-06-14 23:55:00
+date: 2014-06-14
 categories: [前端技术]
 tags: [Backbone,fetch,错误]
 ---

@@ -1,6 +1,6 @@
 ---
 title: nodejs 异步递归
-date: 2013-10-26 00:00:00
+date: 2013-10-26
 categories: [前端技术]
 tags: [async,递归,异步]
 ---
@@ -13,13 +13,13 @@ tags: [async,递归,异步]
 
     var https = require('https'),
         config = require('./config'),
-        
+
         list = [];
-    
+
     function getList(path) {
         https.get(config.file_url + 'list&access_token=' + config.access_token + '&path=' + path, function(res) {
             var content = '';
-            
+
             res.setEncoding('utf8');
             res.on('data', function(data) {
                 content += data;
@@ -38,17 +38,17 @@ tags: [async,递归,异步]
             });
         });
     }
-    
+
     getList(config.app_path);
-    
-到这里，貌似已经可以获取所有的文件的。  
-但是发现了一个问题，那就是什么时候才完成所有的调用，然后对 list 进行下一步的处理呢？  
+
+到这里，貌似已经可以获取所有的文件的。
+但是发现了一个问题，那就是什么时候才完成所有的调用，然后对 list 进行下一步的处理呢？
 因为 https.get() 是一个异步的方法，我们无法知道什么时候完成。
 
 #### 2. async.each 和 async.eachSeries 的实现
 
-相信聪明的人已经知道怎么解决上面的问题了，但是我并不聪明，一时半会被卡在了这里。  
-记得之前刚刚看过《JavaScript 异步编程》这本书，里面有提到 [async](https://github.com/caolan/async) 和 [step](https://github.com/creationix/step)。  
+相信聪明的人已经知道怎么解决上面的问题了，但是我并不聪明，一时半会被卡在了这里。
+记得之前刚刚看过《JavaScript 异步编程》这本书，里面有提到 [async](https://github.com/caolan/async) 和 [step](https://github.com/creationix/step)。
 其实有用过了 async 了，但是一直是时间去研究源码，既然自己遇到了问题，那不搞懂也不能罢休。
 
 修改了下，实现很简单：
@@ -100,21 +100,21 @@ tags: [async,递归,异步]
         };
         iterate();
     };
-    
-其实也不难理解，加了 completed 参数统计完成的数量，两个函数都有 callback 作为结束的函数通知。  
+
+其实也不难理解，加了 completed 参数统计完成的数量，两个函数都有 callback 作为结束的函数通知。
 有所不同的是 eachSeries 的话是在一次异步请求返回之后才进行下一个请求，这样就相当于实现了同步调用。
 
 #### 3. 最终成果
 
     var https = require('https'),
         config = require('./config'),
-        
+
         list = [];
-    
+
     function getList(path, callback) {
         https.get(config.file_url + 'list&access_token=' + config.access_token + '&path=' + path, function(res) {
             var content = '';
-            
+
             res.setEncoding('utf8');
             res.on('data', function(data) {
                 content += data;
@@ -134,7 +134,7 @@ tags: [async,递归,异步]
             });
         });
     }
-    
+
     getList(config.app_path, function() {
         list.forEach(function(path) {
             console.log(config.file_url + 'download&access_token=' + config.access_token + '&path=' + path);

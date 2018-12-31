@@ -1,6 +1,6 @@
 ---
 title: JavaScript 高级程序设计——数据类型
-date: 2012-03-19 00:00:00
+date: 2012-03-19
 categories: [前端技术]
 tags: [JavaScript,数据类型]
 ---

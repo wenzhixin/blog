@@ -1,6 +1,6 @@
 ---
 title: Twitter Bootstrap 资源汇总
-date: 2012-09-18 00:00:00
+date: 2012-09-18
 categories: [前端技术]
 tags: [Bootstrap,jQuery]
 ---
@@ -34,4 +34,4 @@ http://fontello.com 
 
 * jQuery UI Bootstrap 主题：jQuery UI Bootstrap
 ​
-* jQuery 手机 Bootstrap 主题：jQuery Mobile Bootstrap Theme                              
+* jQuery 手机 Bootstrap 主题：jQuery Mobile Bootstrap Theme

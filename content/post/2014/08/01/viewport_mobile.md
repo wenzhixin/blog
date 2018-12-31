@@ -1,6 +1,6 @@
 ---
 title: 设置 viewport 实现定宽网页 WebApp 下布局自适应
-date: 2014-08-01 23:13:00
+date: 2014-08-01
 categories: [前端技术]
 tags: [viewport,定宽,自适应]
 ---

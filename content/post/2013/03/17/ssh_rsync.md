@@ -1,6 +1,6 @@
 ---
 title: Ubuntu 下无密码访问及文件同步
-date: 2013-03-17 22:38:00
+date: 2013-03-17
 categories: [操作系统]
 tags: [SSH,rsync]
 ---
@@ -10,17 +10,17 @@ tags: [SSH,rsync]
 修改客户端sshd配置文件
 
 	sudo vi /etc/ssh/sshd_config
-	
+
 修改为
 
 	RSAAuthentication yes
 	PubkeyAuthentication yes
 	AuthorizedKeysFile     %h/.ssh/authorized_keys
-	
+
 重启ssh服务
 
 	sudo /etc/init.d/sshd restart
-	
+
 ___
 
 #### 配置密钥
@@ -29,11 +29,11 @@ ___
 
 	ssh-keygen
 	cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
-	
+
 scp 到服务器端
-	
+
 	scp ~/.ssh/authorized_keys username@hostname:~/.ssh/authorized_keys
-	
+
 修改 config 文件
 
 	vi ~/.ssh/config
@@ -48,13 +48,13 @@ scp 到服务器端
 测试
 
 	ssh sshname (-p port)
-	
+
 ___
 
 #### rsync 同步
 
 	rsync (--exclude=exclude) -avz (-e "ssh -p 22") ./ sshname:~/path
-	
+
 ___
 
 注：

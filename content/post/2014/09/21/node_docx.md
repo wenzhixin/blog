@@ -1,6 +1,6 @@
 ---
 title: 如何批量读取 word 的内容和图片
-date: 2014-09-21 21:20:00
+date: 2014-09-21
 categories: [后台技术]
 tags: [nodejs,word,批量]
 ---

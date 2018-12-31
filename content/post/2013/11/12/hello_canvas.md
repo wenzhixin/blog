@@ -1,6 +1,6 @@
 ---
 title: html5 canvas 画布入门
-date: 2013-11-12 23:13:00
+date: 2013-11-12
 categories: [前端技术]
 tags: [canvas,入门]
 ---

@@ -1,6 +1,6 @@
 ---
 title: KVM 虚拟机的学习和使用
-date: 2014-11-21 22:20:00
+date: 2014-11-21
 categories: [操作系统]
 tags: [Ubuntu,KVM]
 ---

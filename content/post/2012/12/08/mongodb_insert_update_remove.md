@@ -1,6 +1,6 @@
 ---
 title: MongoDB 创建、更新及删除文档
-date: 2012-12-08 08:24:00
+date: 2012-12-08
 categories: [数据库]
 tags: [MongoDB]
 ---
@@ -107,4 +107,4 @@ tags: [MongoDB]
         "update": "string", //更新文档
         "remove": bool, //是否删除文档
         "new": bool //返回更新前（默认）和更新后的文档
-    } 
+    }

@@ -1,6 +1,6 @@
 ---
 title: wordpress 修改IP地址后进不去后台的解决方法
-date: 2012-09-14 00:00:00
+date: 2012-09-14
 categories: [后台技术]
 tags: [wordpress]
 ---
@@ -23,9 +23,9 @@ ___
 
 	#! /bin/bash
 	# set wordpress admin ip
-	
+
 	param=$#
-	
+
 	if [ $param -eq 1 ]; then
 	        echo "update wp_options set option_value = 'http://"$1"/wordpress' where option_name = 'siteurl' or option_name = 'home';" > setwordpress.tmp
 	        mysql -uroot -ppassword wordpress < setwordpress.tmp
@@ -33,7 +33,7 @@ ___
 	        echo "OK..."
 	        exit 0
 	fi
-	
+
 	echo "use: $0 IP Address (127.0.0.1)"
 
 
@@ -42,4 +42,3 @@ ___
 更正文章中内部链接及附件的地址：
 
 	update wp_posts set post_content = replace(post_content, 'http://www.old-domain.com', 'http://www.new-domain.com');
-                                        

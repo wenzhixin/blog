@@ -1,6 +1,6 @@
 ---
 title: Web 前端开发有用的代码片段
-date: 2013-06-20 23:43:00
+date: 2013-06-20
 categories: [前端技术]
 tags: [JavaScript,Web,代码片段]
 ---
@@ -23,7 +23,7 @@ tags: [JavaScript,Web,代码片段]
             setTimeout(repeat, start);
         }
     }
-    
+
 参数：
 
 * func：需要运行的函数
@@ -37,22 +37,22 @@ tags: [JavaScript,Web,代码片段]
     timer(function() {
         console.log('test1');
     });
-    
+
     // 2秒后开始运行
     timer(function() {
         console.log('test2');
     }, 2000);
-    
+
     // 2秒后开始运行，并隔2秒重复运行1次
     timer(function() {
         console.log('test3');
     }, 2000, 2000);
-    
+
     // 2秒后开始运行，并隔1秒重复运行1次，结束时间为10秒后
     timer(function() {
         console.log('test4');
     }, 2000, 1000, 10000);
-    
+
 源码：[https://gist.github.com/wenzhixin/5820136](https://gist.github.com/wenzhixin/5820136)
 
 ### 2. url 解析
@@ -65,7 +65,7 @@ tags: [JavaScript,Web,代码片段]
         a.href = href;
         return a;
     }
-    
+
 参数：
 
 * href：需要解析的 href 字符串
@@ -79,7 +79,7 @@ tags: [JavaScript,Web,代码片段]
     console.log(u.pathname); // /test
     console.log(u.search); // ?name=wenzhixin
     console.log(u.hash); // #about
-    
+
 源码：[https://gist.github.com/wenzhixin/5820633](https://gist.github.com/wenzhixin/5820633)
 
 ### 3. search 解析
@@ -87,7 +87,7 @@ tags: [JavaScript,Web,代码片段]
 解析 location.search，转换为对象：
 
     function parse(search) {
-        var query = {}, 
+        var query = {},
             params = search.substring(1).split('&');
         for (var i = 0, l = params.length; i < l; i++) {
             var p = params[i].split('=');

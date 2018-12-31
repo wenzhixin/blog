@@ -1,6 +1,6 @@
 ---
 title: 理解 JavaScript 中的 Array.prototype.slice.apply(arguments)
-date: 2014-08-03 23:28:00
+date: 2014-08-03
 categories: [前端技术]
 tags: [slice,arguments]
 ---

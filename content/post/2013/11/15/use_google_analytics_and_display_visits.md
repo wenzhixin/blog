@@ -1,6 +1,6 @@
 ---
 title: 使用 google analytics 和显示页面浏览量
-date: 2013-11-15 00:00:00
+date: 2013-11-15
 categories: [前端技术]
 tags: [analytics,浏览量]
 ---
@@ -30,7 +30,7 @@ Google Analytics 还有一些好玩的统计功能，充满乐趣的同时更显
 	  &start-date=2008-10-01
 	  &end-date=2008-10-31
 	  &metrics=ga:visits,ga:bounces
-	  
+
 可能是因为自己的英文阅读水平比较差或者文档说的比较不清楚，
 找了好久，才找到自己想要的：
 
@@ -41,7 +41,7 @@ Google Analytics 还有一些好玩的统计功能，充满乐趣的同时更显
 	  &metrics=ga:visits,ga:bounces
 	  &dimensions=ga:pagePath
 	  &filters=ga:pagePath==/2013/11/15/use_google_analytics_and_display_visits
-	  
+
 * ids：表示统计的 ID 数据视图的 ID （具体位置：管理›报告数据视图设置）
 * start-date：开始统计的时间，这里设置为博客的开始时间
 * end-date：结束时间，表示到今天

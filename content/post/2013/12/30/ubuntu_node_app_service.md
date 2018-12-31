@@ -1,6 +1,6 @@
 ---
 title: Ubuntu 12.10 添加 node 应用为自启动服务
-date: 2013-12-30 00:00:00
+date: 2013-12-30
 categories: [操作系统]
 tags: [Ubuntu,node]
 ---

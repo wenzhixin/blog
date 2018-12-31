@@ -1,6 +1,6 @@
 ---
 title: ssh tunnel（隧道）
-date: 2014-03-15 00:00:00
+date: 2014-03-15
 categories: [操作系统]
 tags: [ssh,tunnel]
 ---

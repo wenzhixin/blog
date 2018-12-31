@@ -1,6 +1,6 @@
 ---
 title: ubuntu 解决语言设置错误的问题
-date: 2014-01-11 00:00:00
+date: 2014-01-11
 categories: [操作系统]
 tags: [ubuntu,locale]
 ---

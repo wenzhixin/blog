@@ -1,6 +1,6 @@
 ---
 title: PHP 代码规范
-date: 2014-01-20 00:00:00
+date: 2014-01-20
 categories: [后台技术]
 tags: [PHP,代码规范]
 ---

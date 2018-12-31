@@ -1,6 +1,6 @@
 ---
 title: ubuntu 下 PostgreSQL 使用小记
-date: 2014-01-12 00:00:00
+date: 2014-01-12
 categories: [数据库]
 tags: [PostgreSQL]
 ---

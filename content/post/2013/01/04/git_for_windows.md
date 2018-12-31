@@ -1,6 +1,6 @@
 ---
 title: git for windows 安装和配置
-date: 2013-01-04 09:49:00
+date: 2013-01-04
 categories: [操作系统]
 tags: [git,windows]
 ---

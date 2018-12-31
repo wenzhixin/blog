@@ -1,6 +1,6 @@
 ---
 title: JavaScript 高级程序设计——继承
-date: 2012-04-04 00:00:00
+date: 2012-04-04
 categories: [前端技术]
 tags: [JavaScript]
 ---
@@ -128,7 +128,7 @@ function createAnother(original) {
 		F.prototype = o;
 		return new F();
 	}
-	
+
 	var another = clone(original);
 	another.sayHi = function() {//以某种方式来增强对象
 		alert("hi");
@@ -156,7 +156,7 @@ function inheritPrototype(subType, superType) {
 		F.prototype = o;
 		return new F();
 	}
-	
+
 	var prototype = clone(subperType.prototype);
 	prototype.constructor = subType;
 	subType.prototype = prototype;

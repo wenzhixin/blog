@@ -1,6 +1,6 @@
 ---
 title: 使用 nginx 作为代理服务器轻松解决 Ajax 跨域问题
-date: 2012-08-01 00:00:00
+date: 2012-08-01
 categories: [前端技术]
 tags: [Ajax,跨域,nginx]
 ---

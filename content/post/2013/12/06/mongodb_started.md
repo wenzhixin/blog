@@ -1,6 +1,6 @@
 ---
 title: MongoDB 入门
-date: 2012-12-06 22:39:00
+date: 2012-12-06
 categories: [数据库]
 tags: [MongoDB]
 ---
@@ -67,7 +67,7 @@ tags: [MongoDB]
 
 * 最多 64 字节
 
-#### 4、MongoDB shell 
+#### 4、MongoDB shell
 
 1) 运行 shell
 

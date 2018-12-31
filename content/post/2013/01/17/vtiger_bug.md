@@ -1,6 +1,6 @@
 ---
 title: vtiger5.2 问题修复
-date: 2013-01-17 22:52:00
+date: 2013-01-17
 categories: [后台技术]
 tags: [php,vtiger]
 ---

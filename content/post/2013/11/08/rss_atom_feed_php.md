@@ -1,6 +1,6 @@
 ---
 title: RSS、Atom、Feed 介绍与简单实现
-date: 2013-11-08 22:59:00
+date: 2013-11-08
 categories: [后台技术]
 tags: [php,RSS,Atom,Feed]
 ---
@@ -43,39 +43,39 @@ feed.php
 	<?php
 
 	class Feed {
-		
+
 		protected $entries = array();
-		
+
 		protected $title;
 		protected $url;
 		protected $updated;
 		protected $author;
-		
+
 		public function title($title) {
 			$this->title = $title;
 			return $this;
 		}
-		
+
 		public function url($url) {
 			$this->url = $url;
 			return $this;
 		}
-		
+
 		public function updated($updated) {
 			$this->updated = $updated;
 			return $this;
 		}
-		
+
 		public function author($author) {
 			$this->author = $author;
 			return $this;
 		}
-		
+
 		public function addEntry($entry) {
 			$this->entries[] = $entry;
 			return $this;
-		}	
-		
+		}
+
 		public function __toString() {
 			$result = '<?xml version="1.0">';
 			$result .= '<feed xmlns="http://www.w3.org/2005/Atom">';
@@ -83,47 +83,47 @@ feed.php
 			$result .= '<link href=">' . $this->url . '" />';
 			$result .= '<updated>' . $this->updated . '</updated>';
 			$result .= '<author>' . $this->author . '</author>';
-			
+
 			foreach ($this->entries as $entry) {
 				$result .= $entry;
 			}
-			
+
 			return $result;
 		}
 	}
-	
+
 	class Entry {
 		protected $title;
 		protected $url;
 		protected $updated;
 		protected $author;
 		protected $description;
-		
+
 		public function title($title) {
 			$this->title = $title;
 			return $this;
 		}
-		
+
 		public function url($url) {
 			$this->url = $url;
 			return $this;
 		}
-		
+
 		public function updated($updated) {
 			$this->updated = $updated;
 			return $this;
 		}
-		
+
 		public function author($author) {
 			$this->author = $author;
 			return $this;
 		}
-		
+
 		public function description($description) {
 			$this->description = $description;
 			return $this;
 		}
-		
+
 		public function __toString() {
 			$result .= '<entry>';
 			$result .= '<title>' . $this->title . '</title>';
@@ -136,19 +136,19 @@ feed.php
 		}
 	}
 	?>
-	
+
 test.php
 
 	<?php
 	require_once 'feed.php';
-	
+
 	$feed = new Feed();
 	$feed->title('文翼的博客')
 		->url('http://wenzhixin.net.cn')
 		->updated(date('Y-m-d H:i:s', time()))
 		->author('wenzhixin');
 	echo $feed;
-		
+
 	$entry = new Entry();
 	$entry->title('文章1')
 		->description('这里是文章1的内容')
@@ -156,7 +156,7 @@ test.php
 		->updated('2013-11-08 22:55:00')
 		->author('wenzhixin');
 	$feed->addEntry($entry);
-		
+
 	$entry = new Entry();
 	$entry->title('文章2')
 		->description('这里是文章2的内容')
@@ -164,6 +164,6 @@ test.php
 		->updated('2013-11-07 11:33:00')
 		->author('wenzhixin');
 	$feed->addEntry($entry);
-	
+
 	echo $feed;
 	?>

@@ -1,6 +1,6 @@
 ---
 title: 使用 JavaScript 转换数据单位
-date: 2014-09-03 17:31:00
+date: 2014-09-03
 categories: [前端技术]
 tags: [JavaScript,数据单位]
 ---

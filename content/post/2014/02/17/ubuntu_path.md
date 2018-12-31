@@ -1,6 +1,6 @@
 ---
 title: ubuntu 设置环境变量问题
-date: 2014-02-17 00:00:00
+date: 2014-02-17
 categories: [操作系统]
 tags: [ubuntu,环境变量]
 ---

@@ -1,6 +1,6 @@
 ---
 title: AngularJS学习笔记——AngularJS简介
-date: 2014-01-07 00:00:00
+date: 2014-01-07
 categories: [前端技术]
 tags: [AngularJS]
 ---

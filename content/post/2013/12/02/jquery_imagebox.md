@@ -1,6 +1,6 @@
 ---
 title: 图片查看弹出框 (jQuery 插件)
-date: 2012-12-02 21:11:00
+date: 2012-12-02
 categories: [前端技术]
 tags: [jQuery,插件]
 ---

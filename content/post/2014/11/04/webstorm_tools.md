@@ -1,6 +1,6 @@
 ---
 title: 编写 WebStorm 实用工具
-date: 2014-11-04 23:29:00
+date: 2014-11-04
 categories: [前端技术]
 tags: [WebStorm,工具]
 ---

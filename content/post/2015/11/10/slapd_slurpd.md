@@ -1,6 +1,6 @@
 ---
 title: ldap 管理指南
-date: 2015-11-10 16:07:00
+date: 2015-11-10
 categories: [操作系统]
 tags: [ldap, slapd, slurpd, gosa]
 ---
@@ -27,16 +27,16 @@ LDAP目录的条目（entry）由属性（attribute）的一个聚集组成，�
 
 ```
          dc=com
- 
+
       |dc=scutech
        /          \
  ou=people     ou=groups
 ```
- 
+
 LDAP目录与普通数据库的主要不同之处在于数据的组织方式，它是一种有层次的、树形结构。所有条目的属性的定义是对象类object class的组成部分，并组成在一起构成schema；那些在组织内代表个人的schema被命名为white pages schema。数据库内的每个条目都与若干对象类联系，而这些对象类决定了一个属性是否为可选和它保存哪些类型的信息。属性的名字一般是一个易于记忆的字符串，例如用cn为通用名（common name）命名，而"mail"代表e-mail地址。属性取值依赖于其类型，并且LDAPv3中一般非二进制值都遵从UTF-8字符串语法。例如，mail属性包含值 `user@example.com`；jpegPhotos属性一般包含JPEG/JFIF格式的图片。
- 
+
 #### 1.4 什么是 slapd
- 
+
 Slapd 是 LDAP 的独立服务，可以在不同的 UNIX 系统下运行，你可以将其作为自己的目录服务器。Slapd 包含很多特性和功能：
 * 可选数据库：LDBM，基于磁盘的高性能数据库；SHELL，一个可以任意操作 UNIX 命令和 shell 脚本的数据库；PASSWD，简单的密码文件数据库。
 * 支持多个数据库实例
@@ -44,9 +44,9 @@ Slapd 是 LDAP 的独立服务，可以在不同的 UNIX 系统下运行，你�
 * 权限访问控制
 * 多线程
 * 可复制
- 
+
 #### 1.5 什么是 X.500 协议
- 
+
 X.500是计算机目录服务的标准系列。最早是ITU-T X.500开发，前身为CCITT的，并于1988年首次批准，此一目录可以成为全球目录的一部分。
 
 X.500协议包括：
@@ -129,4 +129,3 @@ objectclass: person
 ```
 ldapadd -cx -D cn=admin,dc=scutech,dc=com -w password -f my.ldif
 ```
- 

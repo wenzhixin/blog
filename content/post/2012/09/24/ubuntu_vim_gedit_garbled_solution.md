@@ -1,6 +1,6 @@
 ---
 title: ubuntu vim gedit 乱码解决
-date: 2012-09-24 00:00:00
+date: 2012-09-24
 categories: [操作系统]
 tags: [ubuntu,乱码]
 ---
@@ -16,7 +16,7 @@ tags: [ubuntu,乱码]
 	zh_CN.GB18030 GB18030
 
 #### 使其生效：
-	
+
 	sudo dpkg-reconfigure locales
 
 ___
@@ -47,4 +47,4 @@ ___
 
 	gconf-editor (sudo apt-get install gconf-editor)
 
-选择 apps->gedit2->preferences->encodings，添加需要的字符集                                        
+选择 apps->gedit2->preferences->encodings，添加需要的字符集

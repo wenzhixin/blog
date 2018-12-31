@@ -1,6 +1,6 @@
 ---
 title: 一步一步学习 AngularJS（二）
-date: 2014-02-19 00:00:00
+date: 2014-02-19
 categories: [前端技术]
 tags: [AngularJS]
 ---

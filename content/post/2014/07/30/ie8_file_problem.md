@@ -1,6 +1,6 @@
 ---
 title: IE8 文件上传问题分析小记
-date: 2014-07-30 23:31:00
+date: 2014-07-30
 categories: [前端技术]
 tags: [IE8,file,文件]
 ---

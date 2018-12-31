@@ -1,6 +1,6 @@
 ---
 title: 为你的网站开启 gzip 压缩功能（nodejs、nginx）
-date: 2013-11-10 23:22:00
+date: 2013-11-10
 categories: [后台技术]
 tags: [gzip,nodejs,nginx]
 ---
@@ -22,15 +22,15 @@ tags: [gzip,nodejs,nginx]
 	app.use(express.static(__dirname + '/html'));
 	app.use(express.methodOverride());
 	app.use(express.bodyParser());
-	
+
 #### nginx
 
 编辑 nginx 的配置文件
 
 	sudo vi /etc/nginx/nginx.conf
-	
+
 在 Gzip Settings 中加入如下设置：
-	
+
 	##
 	# Gzip Settings
 	##
@@ -40,7 +40,7 @@ tags: [gzip,nodejs,nginx]
 	gzip_buffers 4 16k;
 	gzip_comp_level 5;
 	gzip_types text/plain application/x-javascript text/css application/xml text/javascript application/x-httpd-php;
-	
+
 1) gzip
 
 * 语法：gzip on/off

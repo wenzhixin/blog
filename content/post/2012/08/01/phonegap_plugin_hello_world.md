@@ -1,6 +1,6 @@
 ---
 title: PhoneGap Plugin 之 Hello World
-date: 2012-08-01 00:00:00
+date: 2012-08-01
 categories: [移动开发]
 tags: [PhoneGap,WebApp]
 ---
@@ -8,12 +8,12 @@ tags: [PhoneGap,WebApp]
 #### 1、编写Java类并继承Plugin：
 
 	public class MyPlugin extends Plugin {
-	
+
 		@SuppressWarnings("deprecation")
 		@Override
 		public PluginResult execute(String action, JSONArray args, String callbackId) {
 	        PluginResult result = new PluginResult(Status.INVALID_ACTION);
-	
+
 	        if (action.equals("hello")) {
 	                try {
 	                        Toast.makeText(cordova.getContext(), "Hello World!", Toast.LENGTH_SHORT).show();
@@ -25,7 +25,7 @@ tags: [PhoneGap,WebApp]
 	        }
 	        return result;
 		}
-	
+
 	}
 
 
@@ -51,7 +51,3 @@ API: cordova.exec(success, error, service, action, args);
 	myplugin.hello(function(data) {
         console.log(data); //Hello World!
 	});
-
-
- 
-                                            

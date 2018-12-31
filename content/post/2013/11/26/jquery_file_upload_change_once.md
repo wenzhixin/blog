@@ -1,6 +1,6 @@
 ---
 title: jQuery file upload 插件 change 只生效一次
-date: 2013-11-26 21:32:00
+date: 2013-11-26
 categories: [前端技术]
 tags: [jQuery,file,change]
 ---
@@ -29,7 +29,7 @@ jQuery(io).unbind()
 
 ```javascript
 $(document).on('change', '#upload', function() {
-	
+
 });
 ```
 

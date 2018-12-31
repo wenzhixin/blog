@@ -1,6 +1,6 @@
 ---
 title: canvas 如何在保留 background 的情况下重置画布
-date: 2014-02-16 00:00:00
+date: 2014-02-16
 categories: [前端技术]
 tags: [canvas,background]
 ---

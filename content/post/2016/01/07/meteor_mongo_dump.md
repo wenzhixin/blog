@@ -1,6 +1,6 @@
 ---
 title: 备份恢复 Meteor Mongo 数据库
-date: 2016-01-07 22:30:00
+date: 2016-01-07
 categories: [数据库]
 tags: [meteor,导出]
 ---
@@ -13,7 +13,7 @@ meteor mongo
 
 可以看到类似下面的信息：
 ```
-MongoDB shell version: 2.6.7                  
+MongoDB shell version: 2.6.7
 connecting to: 127.0.0.1:4001/meteor
 ```
 

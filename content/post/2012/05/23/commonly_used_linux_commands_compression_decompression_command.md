@@ -1,6 +1,6 @@
 ---
 title: linux常用命令——压缩解压命令
-date: 2012-05-23 00:00:00
+date: 2012-05-23
 categories: [后台技术]
 tags: [linux]
 ---

@@ -1,6 +1,6 @@
 ---
 title: 如何使用 python 连接 Oracle（网站）
-date: 2014-08-04 23:55:00
+date: 2014-08-04
 categories: [数据库]
 tags: [Oracle,python]
 ---

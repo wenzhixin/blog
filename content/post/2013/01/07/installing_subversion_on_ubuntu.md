@@ -1,6 +1,6 @@
 ---
 title: Ubuntu 12.04 安装 Subversion 1.7
-date: 2013-01-07 10:07:00
+date: 2013-01-07
 categories: [操作系统]
 tags: [Subversion]
 ---

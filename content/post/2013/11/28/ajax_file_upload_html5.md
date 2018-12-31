@@ -1,11 +1,11 @@
 ---
 title: Ajax 文件上传——通过 html5 的方法
-date: 2013-11-28 21:17:00
+date: 2013-11-28
 categories: [前端技术]
 tags: [Ajax 文件上传,html5]
 ---
 
-#### html5 方法 
+#### html5 方法
 
 上篇文章讲到 Ajax 文件上传是如何通过 iframe 的方法，这里我们通过 html5 的方法来进行文件的上传。
 
@@ -37,7 +37,7 @@ var files = document.getElementById('filename').files;
 接下来，要介绍的是另一个 html5 推出的新对象：FormData。
 
 FormData 对象是用户的表单数据的集合，
-它以键值对的形式存储了表单数据，其值能够包括数字、字符串以及文件。  
+它以键值对的形式存储了表单数据，其值能够包括数字、字符串以及文件。
 我们通过这个对象，来向服务器提交我们的文件数据。
 
 ```javascript```

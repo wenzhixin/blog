@@ -1,6 +1,6 @@
 ---
 title: vim 添加批量注释
-date: 2014-03-14 00:00:00
+date: 2014-03-14
 categories: [操作系统]
 tags: [vim,批量注释]
 ---

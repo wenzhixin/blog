@@ -1,6 +1,6 @@
 ---
 title: Ubuntu 使用 WebStorm IDE 小记
-date: 2014-01-16 00:00:00
+date: 2014-01-16
 categories: [前端技术]
 tags: [WebStorm]
 ---

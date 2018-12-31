@@ -1,6 +1,6 @@
 ---
 title: Ubuntu 11.10 将 OpenJDK 换成 Sun JDK 的步骤
-date: 2012-04-26 00:00:00
+date: 2012-04-26
 categories: [操作系统]
 tags: [Ubuntu]
 ---
@@ -33,5 +33,3 @@ sudo update-java-alternatives -s java-6-sun
 5、查看是否切换成功：
 
 java -version
-
-

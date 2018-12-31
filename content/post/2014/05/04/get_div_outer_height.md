@@ -1,6 +1,6 @@
 ---
 title: 如何获取 div 的实际高度
-date: 2014-05-04 22:00:00
+date: 2014-05-04
 categories: [前端技术]
 tags: [div,实际高度]
 ---

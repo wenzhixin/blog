@@ -1,6 +1,6 @@
 ---
 title: Windows 使用 ssh proxy 翻墙
-date: 2013-01-06 16:02:00
+date: 2013-01-06
 categories: [操作系统]
 tags: [bitvise,翻墙]
 ---

@@ -1,6 +1,6 @@
 ---
 title: JavaScript高级程序设计——在 HTML 中使用 JavaScript
-date: 2012-03-16 00:00:00
+date: 2012-03-16
 categories: [前端技术]
 tags: [JavaScript]
 ---

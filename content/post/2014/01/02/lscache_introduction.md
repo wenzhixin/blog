@@ -1,6 +1,6 @@
 ---
 title: lscache 介绍
-date: 2014-01-02 00:00:00
+date: 2014-01-02
 categories: [前端技术]
 tags: [localStorage,lscache]
 ---
@@ -10,7 +10,7 @@ tags: [localStorage,lscache]
 [lscache](https://github.com/pamelafox/lscache) 是一个带有时间戳的缓存库，提供类似内存缓存行为。
 使用 html5 localStorage 模拟内存缓冲功能，这样就可以在客户端缓冲数据，
 并对每块数据关联一个过期时间。如果超过 localStorage 的限制（大约 5MB），
-它试图删除最近过期的项目以释放空间。如果浏览器不支持 localStorage，则返回 null。 
+它试图删除最近过期的项目以释放空间。如果浏览器不支持 localStorage，则返回 null。
 
 ### 方法
 

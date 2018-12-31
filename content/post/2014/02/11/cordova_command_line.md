@@ -1,6 +1,6 @@
 ---
 title: cordova 初识之命令行工具
-date: 2014-02-11 00:00:00
+date: 2014-02-11
 categories: [移动开发]
 tags: [cordova,命令行,Android]
 ---

@@ -1,6 +1,6 @@
 ---
 title: 虚拟机安装 Android_x86 系统，用于开发、测试 Android 程序
-date: 2012-06-02 00:00:00
+date: 2012-06-02
 categories: [移动开发]
 tags: [android,android_x86]
 ---
@@ -42,7 +42,7 @@ tags: [android,android_x86]
 （2）修改 menu.lst 文件：
 
 	mount -o remount,rw /mnt
-	
+
 	vi /mnt/grub/menu.lst
 
 修改启动参数：
@@ -50,7 +50,7 @@ tags: [android,android_x86]
 	androidboot_hardware=eeepc
 	androidboot_hardware=generic_x86 
 
-在 DPI=240 / DPI=160 后添加 
+在 DPI=240 / DPI=160 后添加
 
 	UVESA_MODE=480x800/UVESA_MODE=320x480
 
@@ -80,5 +80,4 @@ ps：
 
 （6）Alt+F1 => 切换到控制台模式
 
-（7）Alt+F7 => 切换到图形界面模式 
-                                            
+（7）Alt+F7 => 切换到图形界面模式

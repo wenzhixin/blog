@@ -1,6 +1,6 @@
 ---
 title: post 提交数据到新窗口中
-date: 2013-11-19 13:08:00
+date: 2013-11-19
 categories: [前端技术]
 tags: [post,新窗口]
 ---
@@ -12,7 +12,7 @@ tags: [post,新窗口]
 #### 1. flex
 
 flex 中使用 navigateToURL() 方法，可以指定 target 为 blank，
-而URLRequest 可以指定 method 方法，并且将数据保存到 data 中。  
+而URLRequest 可以指定 method 方法，并且将数据保存到 data 中。
 关键代码如下：
 
 	var request:URLRequest = new URLRequest(url); // 后台 url
@@ -27,7 +27,7 @@ flex 中使用 navigateToURL() 方法，可以指定 target 为 blank，
 
 js 中使用 form 表单来 submit 数据到指定的 url 中，
 这里设置 method 为 post，并且指定 target 为 blank，
-需要将 form 元素通过 display:none 隐藏起来。  
+需要将 form 元素通过 display:none 隐藏起来。
 关键代码如下：
 
 	<form action="url" method="post" target="_blank" style="display: none;">
@@ -40,7 +40,7 @@ js 中使用 form 表单来 submit 数据到指定的 url 中，
 		$('input[name="password"]').val('password');
 		$form.submit();
 	</script>
-	
-**注：**  
+
+**注：**
 使用动态生成 form 的情况在 firefox 下不起作用，
 原因是 firefox 需要 form 在 DOM 中进行初始化才起作用。

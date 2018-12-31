@@ -1,6 +1,6 @@
 ---
 title: chrome 浏览器 console 面板直接使用 JSON 数据进行调试错误问题
-date: 2014-11-02 23:49:00
+date: 2014-11-02
 categories: [前端技术]
 tags: [console,JSON,错误]
 ---

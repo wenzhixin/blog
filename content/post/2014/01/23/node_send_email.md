@@ -1,6 +1,6 @@
 ---
 title: 使用 nodejs 发送邮件
-date: 2014-01-23 00:00:00
+date: 2014-01-23
 categories: [后台技术]
 tags: [nodejs,邮件]
 ---

@@ -1,6 +1,6 @@
 ---
 title: 使用 jQuery 修复 IE7 z-index 的 bug
-date: 2013-12-06 00:00:00
+date: 2013-12-06
 categories: [前端技术]
 tags: [IE7,z-index]
 ---

@@ -1,6 +1,6 @@
 ---
 title: VirtualBox 虚拟机设置共享文件夹
-date: 2013-01-06 12:34:00
+date: 2013-01-06
 categories: [操作系统]
 tags: [VirtualBox]
 ---

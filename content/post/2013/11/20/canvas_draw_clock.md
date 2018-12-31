@@ -1,6 +1,6 @@
 ---
 title: 使用 canvas 绘制时钟
-date: 2013-11-20 23:10:00
+date: 2013-11-20
 categories: [前端技术]
 tags: [canvas,时钟]
 ---

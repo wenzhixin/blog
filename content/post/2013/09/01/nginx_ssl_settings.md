@@ -1,6 +1,6 @@
 ---
 title: nginx 配置 SSL（https）
-date: 2013-09-01 11:45:00
+date: 2013-09-01
 categories: [后台技术]
 tags: [nginx,https,ssl]
 ---
@@ -24,5 +24,5 @@ tags: [nginx,https,ssl]
 是为了解决：
 
 	unable to get local issuer certificate
-	
+
 的问题。

@@ -1,6 +1,6 @@
 ---
 title: Bootstrap 禁用 a 按钮
-date: 2013-08-12 00:31:00
+date: 2013-08-12
 categories: [前端技术]
 tags: [Bootstrap,按钮]
 ---
@@ -20,7 +20,7 @@ tags: [Bootstrap,按钮]
          -moz-box-shadow: none;
               box-shadow: none;
     }
-    
+
 假如我们需要对按钮进行事件监听，例如：
 
     <a href="#" class="btn" disabled="disabled">按钮</a>
@@ -30,7 +30,7 @@ tags: [Bootstrap,按钮]
             alert('click');
         });
     });
-    
+
 按钮是灰掉了，但是还是会触发点击事件。
 
 ### 问题解决：

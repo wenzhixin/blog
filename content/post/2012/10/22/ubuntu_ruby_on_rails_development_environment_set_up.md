@@ -1,6 +1,6 @@
 ---
 title: Ubuntu 搭建 Ruby on Rails 开发环境
-date: 2012-10-22 00:00:00
+date: 2012-10-22
 categories: [前端技术]
 tags: [ROR,Ubuntu]
 ---
@@ -64,5 +64,4 @@ tags: [ROR,Ubuntu]
 
 注释 mysql_adapter.rb 中的 318 行和 642 行
 
-	/usr/lib/ruby/vendor_ruby/active_record/connection_adapters/mysql_adapter.rb 
-                                            
+	/usr/lib/ruby/vendor_ruby/active_record/connection_adapters/mysql_adapter.rb

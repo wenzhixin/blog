@@ -1,6 +1,6 @@
 ---
 title: ON DUPLICATE KEY UPDATE
-date: 2013-12-05 00:00:00
+date: 2013-12-05
 categories: [数据库]
 tags: [插入或更新]
 ---

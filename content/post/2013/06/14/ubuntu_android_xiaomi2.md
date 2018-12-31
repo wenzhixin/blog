@@ -1,6 +1,6 @@
 ---
 title: Ubuntu 系统下 android 连接小米2进行开发
-date: 2013-06-14 01:30:00
+date: 2013-06-14
 categories: [移动开发]
 tags: [Ubuntu,android,小米2]
 ---
@@ -30,22 +30,22 @@ tags: [Ubuntu,android,小米2]
 修改文件权限：
 
 	sudo chmod a+rx /etc/udev/rules.d/70-android.rules
-	
+
 ##### 3. 重启 udev
 
 	sudo /etc/init.d/udev restart
-	
+
 ##### 4. 增加 adb_usb.ini 文件
 
 	vi ~/.android/adb_usb.ini
-	
+
 加入内容（对应设备号）：
 
 	0x2717
-	
+
 ##### 5. 到 SDK 下的 platform-tools 下：
 
 	./adb kill-server
 	./adb devices
-	
+
 ##### 6. 搞定！

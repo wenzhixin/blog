@@ -1,6 +1,6 @@
 ---
 title: CSS 自定义字体
-date: 2014-04-21 13:22:00
+date: 2014-04-21
 categories: [前端技术]
 tags: [CSS,自定义字体]
 ---

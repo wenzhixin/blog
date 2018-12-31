@@ -1,6 +1,6 @@
 ---
 title: 前端工程师必备工具 livejs
-date: 2013-11-07 13:13:00
+date: 2013-11-07
 categories: [前端技术]
 tags: [前端,必备工具,livejs]
 ---

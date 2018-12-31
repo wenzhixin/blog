@@ -1,6 +1,6 @@
 ---
 title: 在 Ubuntu 14.04 server 上部署 meteor 应用
-date: 2015-07-06 22:30:00
+date: 2015-07-06
 categories: [操作系统]
 tags: [meteor,部署]
 ---
@@ -78,10 +78,10 @@ sudo start myapp
 
 ```bash
 server {
-    listen 80; 
+    listen 80;
     server_name myapp.wenzhixin.net.cn;
 
-    location / { 
+    location / {
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header Host $http_host;

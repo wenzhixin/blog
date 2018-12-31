@@ -1,6 +1,6 @@
 ---
 title: 使用 Chrome 调试和模拟 android 上的页面
-date: 2013-11-16 00:00:00
+date: 2013-11-16
 categories: [前端技术]
 tags: [Chrome,android,调试]
 ---

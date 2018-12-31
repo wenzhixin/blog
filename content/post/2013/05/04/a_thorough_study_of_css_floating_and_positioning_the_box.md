@@ -1,6 +1,6 @@
 ---
 title: 彻底研究CSS——盒子的浮动和定位
-date: 2012-05-04 00:00:00
+date: 2012-05-04
 categories: [前端技术]
 tags: [CSS,浮动和定位]
 ---
@@ -77,5 +77,3 @@ left、right、top 和 bottom 来指定偏移量。这 4
 
  \* 可以通过设置 display 属性来确定盒子的类型。inline 表示行内元素，block
 表示块级元素，none 表示无用于隐藏元素。
-
-

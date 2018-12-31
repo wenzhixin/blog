@@ -1,6 +1,6 @@
 ---
 title: jQuery 判断所有图片加载完成
-date: 2013-11-22 22:50:00
+date: 2013-11-22
 categories: [前端技术]
 tags: [图片,加载完成,Deferred]
 ---
@@ -26,7 +26,7 @@ $imgs.load(function() {
 
 #### 二、使用 jQuery 中的 Deferred 对象
 
-Deferred 对象是从 jQuery 1.5.0 版本开始引入的一个新功能，详细介绍可以见 
+Deferred 对象是从 jQuery 1.5.0 版本开始引入的一个新功能，详细介绍可以见
 [官方文档](http://api.jquery.com/category/deferred-object/)。
 
 简单的说，Deferred 对象就是jQuery的回调函数解决方案，它解决了如何处理耗时操作的问题，
@@ -48,7 +48,7 @@ var defereds = [];
 
 $imgs.each(function() {
 	var dfd = $.Deferred();
-	
+
 	$(this).load(dfd.resolve);
 	defereds.push(dfd);
 });
@@ -57,8 +57,8 @@ $.when.apply(null, defereds).done(function() {
 });
 ```
 
-**基本思路：**  
+**基本思路：**
 每加载完一张图片 resolve()，when() 当所有的 Deferred 完成便执行 done()。
 
-**注：** 
+**注：**
 因为 $.when 支持的参数是 $.when(dfd1, dfd2, dfd3, ...)，所以我们这里使用了 apply 来接受数组参数。

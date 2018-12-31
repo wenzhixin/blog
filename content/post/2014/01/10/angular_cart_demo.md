@@ -1,6 +1,6 @@
 ---
 title: AngularJS学习笔记——购物车实例与解析
-date: 2014-01-10 00:00:00
+date: 2014-01-10
 categories: [前端技术]
 tags: [AngularJS]
 ---

@@ -1,6 +1,6 @@
 ---
 title: nodeJS 和 Nginx 解决客户端发送大数据的问题
-date: 2014-01-18 00:00:00
+date: 2014-01-18
 categories: [后台技术]
 tags: [nodejs,nginx,large body]
 ---

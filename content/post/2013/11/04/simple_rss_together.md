@@ -1,6 +1,6 @@
 ---
 title: 简单的博客 RSS 聚合
-date: 2013-11-04 01:00:00
+date: 2013-11-04
 categories: [数据库]
 tags: [RSS,聚合,数据库]
 ---
@@ -11,15 +11,15 @@ tags: [RSS,聚合,数据库]
 
 #### 2. 创建数据库表
 
-	CREATE TABLE links (  
-	    id int NOT NULL AUTO_INCREMENT,  
+	CREATE TABLE links (
+	    id int NOT NULL AUTO_INCREMENT,
 	    name varchar(250) NOT NULL,
 	    url varchar(250) NOT NULL,
 	    time timestamp NOT NULL DEFAULT current_timestamp,
 	    PRIMARY KEY (id),
 	    UNIQUE (url)
 	) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-	
+
 数据库表只有名称和链接地址两个字段，这里的 url 是唯一的，可以防止插入重复的数据。
 
 #### 3. 插入数据 INSERT IGNORE
@@ -32,7 +32,7 @@ INSERT IGNORE 会忽略数据库中已经存在的数据。
 例如我们连续插入数据：
 
 	INSERT IGNORE INTO links(name, url) values('wenyi', 'http://wenzhixin.net.cn');
-	
+
 第一条是：
 
 	Query OK, 1 row affected
@@ -40,7 +40,7 @@ INSERT IGNORE 会忽略数据库中已经存在的数据。
 其他的都是：
 
 	Query OK, 0 rows affected
-	
+
 查看数据库，也是只有一条记录。
 
 #### 4. 编写代码
@@ -62,7 +62,7 @@ INSERT IGNORE 会忽略数据库中已经存在的数据。
 具体设置方法（Ubuntu 下）：
 
 	sudo vi /etc/mysql/my.cnf
-	
+
 在 [mysqld] 下增加：
 
 	innodb_autoinc_lock_mode = 0

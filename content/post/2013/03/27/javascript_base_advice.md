@@ -1,6 +1,6 @@
 ---
 title: 改善 JavaScript 的建议——语言基础
-date: 2013-03-27 19:46:00
+date: 2013-03-27
 categories: [前端技术]
 tags: [语言基础]
 ---
@@ -57,7 +57,7 @@ tags: [语言基础]
 ### 4. 避免误用 parseInt
 
 建议：强制使用基数参数 parseInt(str, base)
-    
+
     parseInt('08'); //0
     parseInt('09'); //0
     parseInt('09', 10); //9
@@ -68,7 +68,7 @@ tags: [语言基础]
 
     // 相当于 return;
     function test() {
-        return 
+        return
         {
             status: true
         };
@@ -105,7 +105,7 @@ tags: [语言基础]
     console.log(count['on']); //3
     console.log(count['off']); //3
     console.log(count['constructor']); //function Object(){[native code]}
-    
+
     //use:
     if (typeof count[word] === 'number') {
     }
@@ -117,9 +117,9 @@ tags: [语言基础]
     function isArray(value) {
         return value && typeof value === 'object' && value.constructor === Array;
     }
-    
+
     console.log(isArray(arguments));
-    
+
 ### 9. 避免使用 with
 
 建议： 不使用 with
@@ -129,12 +129,12 @@ tags: [语言基础]
             name = 'wenzhixin',
             age = 26
         };
-    
+
     with (obj) {
         alert(name); //速度慢
         alert(age);
     }
-    
+
     with (obj) {
         a = b; //结果不可预料
     }
@@ -145,24 +145,24 @@ tags: [语言基础]
 
     eval('value = obj.' + key + ';'); //错的写法
     value = obj[key]; //对的写法
-    
+
 ### 11. 块标志并非多余
 
 建议：单行语句也加上大括号
 
-    if (0) 
+    if (0)
         if (1)
             alert(1);
     else
         alert(0);
-        
+
     //实际上使用最近原则解析
-    if (0) 
+    if (0)
         if (1)
             alert(1);
-        else 
+        else
             alert(0);
-    
+
     //应该加上大括号
     if (0) {
         if (1) {

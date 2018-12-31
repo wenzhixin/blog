@@ -1,6 +1,6 @@
 ---
 title: Eclipse 安装插件(aptana、svn 、git、Java EE、JSHint)
-date: 2012-05-08 00:00:00
+date: 2012-05-08
 categories: [前端技术]
 tags: [Eclipse,插件]
 ---

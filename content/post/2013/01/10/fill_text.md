@@ -1,6 +1,6 @@
 ---
 title: 泰囧台词生成器（html5 版）
-date: 2013-01-10 20:23:00
+date: 2013-01-10
 categories: [前端技术]
 tags: [html5]
 ---

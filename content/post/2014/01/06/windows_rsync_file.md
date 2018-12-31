@@ -1,6 +1,6 @@
 ---
 title: windows 下同步文件到远程服务器中
-date: 2014-01-06 00:00:00
+date: 2014-01-06
 categories: [操作系统]
 tags: [windows,ubuntu,rsync]
 ---

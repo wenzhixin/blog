@@ -1,6 +1,6 @@
 ---
 title: linux shell编程
-date: 2012-05-29 00:00:00
+date: 2012-05-29
 categories: [后台技术]
 tags: [linux,shell]
 ---

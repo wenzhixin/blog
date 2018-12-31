@@ -1,6 +1,6 @@
 ---
 title: Ant 关键元素和常用命令
-date: 2012-06-07 00:00:00
+date: 2012-06-07
 categories: [后台技术]
 tags: [ant]
 ---
@@ -125,5 +125,4 @@ copy主要用来对文件和目录的复制功能
 
 例子：
 
-	<echo message="Hello,ANT" file="/home/wenyi/logs/ant.log" append="true"> 
-                                            
+	<echo message="Hello,ANT" file="/home/wenyi/logs/ant.log" append="true">

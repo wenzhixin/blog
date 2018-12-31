@@ -1,6 +1,6 @@
 ---
 title: apache 重写链接
-date: 2013-12-31 00:00:00
+date: 2013-12-31
 categories: [后台技术]
 tags: [nginx,rewrite,query string]
 ---

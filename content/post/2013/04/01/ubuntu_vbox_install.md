@@ -1,6 +1,6 @@
 ---
 title: Ubuntu 12.10 VirtualBox 问题
-date: 2013-04-01 00:29:00
+date: 2013-04-01
 categories: [操作系统]
 tags: [VirtualBox]
 ---
@@ -18,9 +18,9 @@ Ubuntu 12.10 unable to find sources of your current kernel
     '/etc/init.d/vboxdrv setup'
 
     as root. If it is available in your distribution, you should install the DKMS package first. This package keeps track of Linux kernel changes and recompiles the vboxdrv kernel module if necessary.
-    
+
 #### 解决：
 
 	sudo apt-get install dkms build-essential linux-headers-generic
-	
+
 	sudo /etc/init.d/vboxdrv setup

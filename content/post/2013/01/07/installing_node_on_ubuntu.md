@@ -1,6 +1,6 @@
 ---
 title: Ubuntu 12.04 安装 Nodejs
-date: 2013-01-07 10:12:00
+date: 2013-01-07
 categories: [操作系统]
 tags: [Nodejs]
 ---

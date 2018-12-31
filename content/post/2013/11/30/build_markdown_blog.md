@@ -1,6 +1,6 @@
 ---
 title: 快速搭建自己的博客(markdown)
-date: 2012-11-30 01:54:00
+date: 2012-11-30
 categories: [前端技术]
 tags: [markdown,博客]
 ---

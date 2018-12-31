@@ -1,6 +1,6 @@
 ---
 title: Installing Virtualbox On Ubuntu Server 14.04
-date: 2015-09-07 16:07:00
+date: 2015-09-07
 categories: [操作系统]
 tags: [Virtualbox, Ubuntu Server]
 ---

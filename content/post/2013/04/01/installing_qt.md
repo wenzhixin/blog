@@ -1,6 +1,6 @@
 ---
 title: Ubuntu 安装 QT 4.8
-date: 2013-04-01 22:30:00
+date: 2013-04-01
 categories: [后台技术]
 tags: [QT]
 ---
@@ -12,18 +12,18 @@ tags: [QT]
 解压：
 
 	tar xvf qt-everywhere-opensource-src-4.8.4.tar
-	
+
 ### 2. 编译库并安装 Library
 
 	cd qt-everywhere-opensource-src-4.8.4
 	./configure
-	
+
 	//o: opensource
-	
+
 	make
-	
+
 	make install
-	
+
 ### 3. 设置 QT Creator
 
 * 选择：工具 - 选项 - 构建并执行
@@ -43,8 +43,7 @@ ___
 	Basic XLib functionality test failed!
 	You might need to modify the include and library search paths by editing
 	QMAKE_INCDIR_X11 and QMAKE_LIBDIR_X11 in /home/zhu/Qt/qt-x11-opensource-src-4.5.2/mkspecs/linux-g++
-	
+
 解决：
 
 	sudo apt-get install libX11-dev libXext-dev libXtst-dev
-	

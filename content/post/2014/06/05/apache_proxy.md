@@ -1,6 +1,6 @@
 ---
 title: 使用 apache2 作为代理服务器轻松解决 Ajax 跨域问题
-date: 2014-06-05 13:45:00
+date: 2014-06-05
 categories: [后台技术]
 tags: [Ajax,apache2,http代理,跨域]
 ---

@@ -1,6 +1,6 @@
 ---
 title: jQuery 打造月份选择器插件
-date: 2013-11-23 00:00:00
+date: 2013-11-23
 categories: [前端技术]
 tags: [月份,选择器,jQuery]
 ---

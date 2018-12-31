@@ -1,6 +1,6 @@
 ---
 title: 管理 ubuntu 服务器用户
-date: 2013-12-28 00:00:00
+date: 2013-12-28
 categories: [操作系统]
 tags: [ubuntu,用户]
 ---

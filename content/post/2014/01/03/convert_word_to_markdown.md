@@ -1,6 +1,6 @@
 ---
 title: ubuntu 下将 word 文件转换为 markdown
-date: 2014-01-03 00:00:00
+date: 2014-01-03
 categories: [前端技术]
 tags: [标签]
 ---

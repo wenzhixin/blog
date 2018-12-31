@@ -1,6 +1,6 @@
 ---
 title: nodejs 使用百度翻译 API
-date: 2013-11-13 00:00:00
+date: 2013-11-13
 categories: [前端技术]
 tags: [nodejs,翻译]
 ---
@@ -52,7 +52,7 @@ http.request(options, callback)
 [github 源码](https://github.com/wenzhixin/baidu-translate-api)
 
 	function translate(query, callback) {
-	
+
 		var params = {
 				from: 'zh',
 				to: 'en',
@@ -69,10 +69,10 @@ http.request(options, callback)
 					'Content-Length': data.length
 				}
 			};
-			
+
 		var req = http.request(options, function(res) {
 			var result = '';
-			
+
 			res.setEncoding('utf8');
 			res.on('data', function(data) {
 				result += data;
@@ -80,21 +80,21 @@ http.request(options, callback)
 			res.on('end', function() {
 				var obj = JSON.parse(result),
 					str = obj.trans_result.data[0].dst;
-				
+
 				str = str.replace(/\"/g, '');
 				str = str.toLowerCase().split(' ').join('_');
 				console.log(str);
 			});
 		});
-		
+
 		req.on('error', function(err) {
 			console.log(err);
 			setTimeout(function() {
 				translation(query, callback);
 			}, 3000);
 		});
-		
+
 		req.write(data);
 		req.end();
-		
+
 	}

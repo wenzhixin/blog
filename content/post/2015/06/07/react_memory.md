@@ -1,6 +1,6 @@
 ---
 title: react-memory：基于 nodejs + bower + react 的文字记忆游戏
-date: 2015-06-07 13:30:00
+date: 2015-06-07
 categories: [前端技术]
 tags: [React]
 ---

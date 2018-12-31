@@ -1,6 +1,6 @@
 ---
 title: Ubuntu 下搭建 JavaEE 环境
-date: 2014-04-02 13:30:00
+date: 2014-04-02
 categories: [后台技术]
 tags: [Ubuntu,JavaEE]
 ---

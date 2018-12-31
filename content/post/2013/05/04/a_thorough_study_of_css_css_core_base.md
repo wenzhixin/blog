@@ -1,6 +1,6 @@
 ---
 title: 彻底研究 CSS—— CSS 核心基础
-date: 2012-05-04 00:00:00
+date: 2012-05-04
 categories: [前端技术]
 tags: [CSS]
 ---

@@ -1,6 +1,6 @@
 ---
 title: VirtualBox 设置 Host-Only 上网
-date: 2014-07-31 15:33:00
+date: 2014-07-31
 categories: [操作系统]
 tags: [VirtualBox,Host-Only]
 ---

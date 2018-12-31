@@ -1,6 +1,6 @@
 ---
 title: MongoDB mongoexport 命令的使用及简单实现
-date: 2013-06-12 23:07:00
+date: 2013-06-12
 categories: [数据库]
 tags: [MongoDB,mongoexport]
 ---
@@ -10,29 +10,29 @@ MongoDB 提供了 mongoexport 命令来导出数据，导出的数据是 json �
 具体的使用，我们使用 --help 查看，主要的参数有：
 
     -h [ --host ] arg         要连接的服务器，例如 127.0.0.1 或者 localhost
-    
+
     --port arg                要连接服务器的端口，也可以使用 --host hostname:port
-    
+
     -u [ --username ] arg     用户名
-    
+
     -p [ --password ] arg     密码
-    
+
     -d [ --db ] arg           使用的数据库（database）名称
-    
+
     -c [ --collection ] arg   使用的集合（collection）
-      
+
     -o [ --out ] arg          导出的文件名
-    
+
     -f [ --fields ] arg       字段名称，使用逗号分隔，例如 -f name,age
-      
+
     -q [ --query ] arg        查询过滤器
-      
+
     --csv                     导出为 csv 格式
 
 例如，我们要导出 tests 数据库中的 users 集合，可以使用：
 
     mongoexport -d tests -c users -o users.dat
-    
+
 现在，针对这几个简单的参数，我们自己使用 nodejs 来进行对 mongoexport 简单的实现，**大概思路**如下：
 
 * 1. 使用 nodejs 的 mongodb 库 [node-mongodb-native](https://github.com/mongodb/node-mongodb-native) 来连接 MongoDB。
@@ -40,13 +40,13 @@ MongoDB 提供了 mongoexport 命令来导出数据，导出的数据是 json �
 安装 mongodb：
 
     npm install mongodb
-    
+
 连接 MongoDB 的主要代码：
 
     var mongoClient = new MongoClient(new Server('localhost', 27017));
-    
+
     mongoClient.open(function(err, mongoclient) {
-    
+
     });
 
 * 2. 使用 process.argv 来接收输入的参数
@@ -58,18 +58,18 @@ MongoDB 提供了 mongoexport 命令来导出数据，导出的数据是 json �
     var fs = require('fs'),
         MongoClient = require('mongodb').MongoClient,
         Server = require('mongodb').Server,
-    
+
         options = null;
         mongoClient = null;
-    
+
     if (process.argv.length <= 2 || process.argv.indexOf('--help') !== -1) {
         showHelp();
         return;
     }
-    
+
     options = getOptions();
     exportFile();
-    
+
     function showHelp() {
         console.error([
             'Export MongoDB data to JSON files.',
@@ -85,7 +85,7 @@ MongoDB 提供了 mongoexport 命令来导出数据，导出的数据是 json �
               ' -o [ --out ] arg                      output file'
         ].join('\n'));
     }
-    
+
     function getOptions() {
         var args = process.argv,
             options = {
@@ -114,7 +114,7 @@ MongoDB 提供了 mongoexport 命令来导出数据，导出的数据是 json �
         }
         return options;
     }
-    
+
     function exportFile() {
         mongoClient = new MongoClient(new Server(options.host, options.port, {native_parse: true}));
         mongoClient.open(function(err, mongoclient) {
@@ -135,14 +135,14 @@ MongoDB 提供了 mongoexport 命令来导出数据，导出的数据是 json �
                     ].join('\n'));
                     mongoClient.close();
                 });
-            });    
+            });
         });
     }
 
 **如何使用**：
 
     node mongoexport.js -d tests -c users -o users.dat
-    
+
 ___
 
 [源码下载](/demos/mongoexport.js)

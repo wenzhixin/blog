@@ -1,6 +1,6 @@
 ---
 title: SQL学习笔记——DML
-date: 2012-03-09 00:00:00
+date: 2012-03-09
 categories: [数据库]
 tags: [SQL,DML]
 ---

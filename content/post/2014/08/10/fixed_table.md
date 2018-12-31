@@ -1,6 +1,6 @@
 ---
 title: 表格固定表头的问题和解决方案
-date: 2014-08-10 00:00:00
+date: 2014-08-10
 categories: [前端技术]
 tags: [bootstrap-table,固定表头]
 ---

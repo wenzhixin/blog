@@ -1,6 +1,6 @@
 ---
 title: 理解并实现 PubSub 模式
-date: 2013-11-06 12:54:00
+date: 2013-11-06
 categories: [前端技术]
 tags: [PubSub 模式,分布式事件]
 ---
@@ -24,17 +24,17 @@ PubSub 模式，是 Publish/Subscribe 的缩写，意为“发布/订阅”模�
 		fn2 = function(value) {
 			console.log('fn2:', value);
 		};
-		
+
 	emitter.addListener('message', fn1);
 	emitter.addListener('message', fn2);
 	emitter.emit('message', 'test1');
 	emitter.removeListener('message', fn2);
 	emitter.emit('message', 'test2');
-	
+
 	//fn1: test1
 	//fn2: test1
 	//fn1: test2
-	
+
 当调用 emit 方法时，会触发所有监听的事件。
 
 就像上面说的，PubSub 其实很简单，现在我们来实现属于我们自己的 PubSub 对象。
@@ -44,9 +44,9 @@ PubSub 模式，是 Publish/Subscribe 的缩写，意为“发布/订阅”模�
 	function PubSub() {
 		this.handlers = {};
 	}
-	
+
 添加事件时，将监听器加到数组中：
-	
+
 	PubSub.prototype.on = function(type, listener) {
 		if (!(type in this.handlers)) {
 			this.handlers[type] = [];
@@ -55,39 +55,39 @@ PubSub 模式，是 Publish/Subscribe 的缩写，意为“发布/订阅”模�
 	};
 
 删除事件时，移除监听器：
-	
+
 	PubSub.prototype.off = function(type, listener) {
 		var i,
 			position = -1,
 			list = this.handlers[type],
 			length = this.handlers[type].length;
-		
+
 		for (i = 0; i < length; i++) {
 			if (list[i] === listener) {
 				position = i;
 				break;
 			}
 		}
-		
+
 		if (position === -1) {
 			return;
 		}
-		
+
 		if (length === 1) {
 			delete this.handlers[type];
 		} else {
 			this.handlers[type].splice(position, 1);
 		}
 	};
-	
+
 触发事件，循环遍历并触发所有的事件：
-	
+
 	PubSub.prototype.emit = function(type) {
 		var args = Array.prototype.slice.call(arguments, 1),
 			i,
 			list = this.handlers[type],
 			length = this.handlers[type].length;
-		
+
 		for (i = 0; i < length; i++) {
 			list[i].apply(this, args);
 		}
@@ -102,13 +102,13 @@ PubSub 模式，是 Publish/Subscribe 的缩写，意为“发布/订阅”模�
 	    fn2 = function(value) {
 	            console.log('fn2:', value);
 	    };
-	
+
 	pubsub.on('message', fn1);
 	pubsub.on('message', fn2);
 	pubsub.emit('message', 'test1');
 	pubsub.off('message', fn2);
 	pubsub.emit('message', 'test2');
-	
+
 	//fn1: test1
 	//fn2: test1
 	//fn1: test2

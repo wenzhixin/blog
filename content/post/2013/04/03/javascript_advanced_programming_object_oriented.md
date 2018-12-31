@@ -1,6 +1,6 @@
 ---
 title: JavaScript 高级程序设计——面向对象
-date: 2012-04-03 00:00:00
+date: 2012-04-03
 categories: [前端技术]
 tags: [JavaScript,面向对象]
 ---
@@ -122,11 +122,11 @@ constructor 的指向。如：
 ```
 Person.prototype = {
 	constructor: Person,
-	
+
 	name: "wenyi",
-	
+
 	age: 25,
-	
+
 	sayName: function() {
 		alert(this.name);
 	}
@@ -183,7 +183,7 @@ alert(colors.toPipedString());//"red|blue|green"
 ```
 function Person(name, age) {
 	var o = new Object();
-	
+
 	o.sayName = function() {
 		alert(name);
 	};

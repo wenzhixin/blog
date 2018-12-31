@@ -1,6 +1,6 @@
 ---
 title: 在 JavaScript 中定义常量（不可修改）
-date: 2014-05-07 23:00:00
+date: 2014-05-07
 categories: [前端技术]
 tags: [常量,不可修改]
 ---

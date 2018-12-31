@@ -1,6 +1,6 @@
 ---
 title: html 标签 title 换行方法
-date: 2013-10-31 00:51:00
+date: 2013-10-31
 categories: [前端技术]
 tags: [title,换行]
 ---

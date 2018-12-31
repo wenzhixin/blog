@@ -1,6 +1,6 @@
 ---
 title: 让你的网站支持自适应界面
-date: 2013-10-22 08:50:00
+date: 2013-10-22
 categories: [前端技术]
 tags: [博客,自适应,响应式]
 ---
@@ -16,7 +16,7 @@ tags: [博客,自适应,响应式]
 1) 在网页代码的头部，加入 viewport 元标签
 
     <meta name="viewport" content="width=device-width; initial-scale=1.0" />
-    
+
 viewport 是页面默认的宽度和高度，上面代码的意思是：
 页面宽度默认等于屏幕宽度（width=device-width），
 并且原始缩放比例（initial-scale=1.0）为1.0，即页面初始大小占屏幕面积的100%。
@@ -32,11 +32,11 @@ viewport 是页面默认的宽度和高度，上面代码的意思是：
     @media (min-width: 768px) and (max-width: 979px) {
         /* CSS1 */
     }
-    
+
     @media (max-width: 767px) {
         /* CSS2 */
     }
-    
+
 分别表示屏幕在 768px-979px 之间显示 CSS1 内容 和 屏幕宽度小于 767 像素显示 CSS2 内容。
 
 由于博客用到了 bootstrap，所以我引入了 bootstrap-responsive.css 样式，它已经帮我做了大部分工作了。
@@ -58,7 +58,7 @@ viewport 是页面默认的宽度和高度，上面代码的意思是：
             padding: 10px;
         }
     }
-    
+
 这段代码的意思是，如果屏幕宽度小于 767 像素，那么 body 的左右间距都为 0，博客的标题和文章的间距为 10 像素，
 并且隐藏 fork me 图片、标题图片、博客的 logo、微博、百度分享和公告功能。
 
@@ -70,7 +70,7 @@ viewport 是页面默认的宽度和高度，上面代码的意思是：
 所以只能用 js 来进行设置，代码如下：
 
     $(window).resize(showGotoTop);
-    
+
     function showGotoTop() {
         if ($(window).width() > 767) {
             $gotoTop.css({
@@ -86,7 +86,7 @@ viewport 是页面默认的宽度和高度，上面代码的意思是：
             });
         }
     }
-    
+
 代码监听了界面改变大小时的事件，并且计算出“返回顶部”的位置。
 
 #### 3. 其他问题

@@ -1,6 +1,6 @@
 ---
 title: 鼠标滚轮事件 MouseWheel
-date: 2013-12-03 00:00:00
+date: 2013-12-03
 categories: [前端技术]
 tags: [MouseWheel]
 ---
@@ -49,11 +49,11 @@ tags: [MouseWheel]
 ```
 var iScroll = 0,
     maxHeight = $('.child').outerHeight(true) - $('.parent').outerHeight(true);
-    
+
 $('.parent').on('mousewheel', function(e) {
 	var oEvent = event.originalEvent,
         iDelta = oEvent.wheelDelta ? -oEvent.wheelDelta / 120 : oEvent.detail / 3;
-        
+
     iScroll += iDelta * 40;
     iScroll = Math.min(maxHeight, Math.max(0, iScroll));
     $('.child').css('top', -iScroll);
@@ -61,7 +61,7 @@ $('.parent').on('mousewheel', function(e) {
 ```
 这里只用到了滚轮事件重要的两个属性：wheelDelta 和 detail
 
-除了 FireFox 之外的浏览器，每次往下滚动，wheelDelta 值都是 -120；  
+除了 FireFox 之外的浏览器，每次往下滚动，wheelDelta 值都是 -120；
 对于 FireFox 浏览器，每次往下滚动，detail 值都是 3，所以我们通过：
 ```
 oEvent.wheelDelta ? -oEvent.wheelDelta / 120 : oEvent.detail / 3

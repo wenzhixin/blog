@@ -1,6 +1,6 @@
 ---
 title: lxc 小贴士：创建、自动启动、设置存放目录
-date: 2015-03-04 09:56:00
+date: 2015-03-04
 categories: [操作系统]
 tags: [lxc]
 ---
@@ -53,4 +53,3 @@ lxc.start.delay = 5
 sudo mv /var/lib/lxc ~/lxc
 ln -s ~/lxc /var/lib/lxc
 ```
-

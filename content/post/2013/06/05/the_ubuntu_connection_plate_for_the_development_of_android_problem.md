@@ -1,6 +1,6 @@
 ---
 title: ubuntu 连接平板进行 Android 开发的问题
-date: 2012-06-05 00:00:00
+date: 2012-06-05
 categories: [移动开发]
 tags: [Android]
 ---
@@ -20,7 +20,7 @@ ubuntu 下连接平板进行 Android 开发，在 eclipse 下会显示乱码(???
 3、新建文件，添加以下内容（idVendor 对于相应的 ID 号）：
 
 	sudo vi /etc/udev/rules.d/70-android.rules
-	
+
 	SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", MODE="0666", GROUP="plugdev"
 
 4、修改权限并重启udev：

@@ -1,6 +1,6 @@
 ---
 title: Android 界面不支持 position fixed 问题
-date: 2013-11-21 21:50:00
+date: 2013-11-21
 categories: [移动开发]
 tags: [Android,position,fixed]
 ---
@@ -19,18 +19,18 @@ tags: [Android,position,fixed]
 详细参数解释：
 
 * width：视口的宽度。可以使用像素值，但推荐使用device-width关键字。表示依照设备屏幕的宽度。
- 
+
 * height：视口的高度。不用指定。
 
 * initial-scale：初始缩放值。比如1.0表示一个视口像素等于一个屏幕像素。
 
 * minimum-scale：最小比例值。范围从0至10.0
- 
+
 * maximum-scale：最大比例值。范围从0至10.0
- 
-* user-scalable：用户是否可以缩放视口。值可以是：  
-1, yes, or true: 允许用户缩放  
-0, no, or false: 不许用户缩放  
+
+* user-scalable：用户是否可以缩放视口。值可以是：
+1, yes, or true: 允许用户缩放
+0, no, or false: 不许用户缩放
 
 **使用 position: absolute 代替**
 
@@ -49,5 +49,5 @@ if (navigator.userAgent.match(/Android|iPhone|iPad|iPod/i)) {
 
 [iScroll](https://github.com/cubiq/iscroll)
 
-注：  
+注：
 该库也没有使用过，有待研究...

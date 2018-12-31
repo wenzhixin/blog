@@ -1,6 +1,6 @@
 ---
 title: Oracle 获取DDL语句入门小记
-date: 2014-02-13 00:00:00
+date: 2014-02-13
 categories: [数据库]
 tags: [Oracle,DDL]
 ---

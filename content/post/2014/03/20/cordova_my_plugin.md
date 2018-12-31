@@ -1,6 +1,6 @@
 ---
 title: Cordova 开发属于自己的插件（plugin）
-date: 2014-03-20 21:58:00
+date: 2014-03-20
 categories: [移动开发]
 tags: [cordova,插件,Android]
 ---
@@ -51,7 +51,7 @@ ExtraInfo
 先来看看 ```plugin.xml``` 的内容：
 ```
 <?xml version="1.0" encoding="utf-8"?>
-<plugin id="cn.net.wenzhixin.cordova" version="0.0.1" 
+<plugin id="cn.net.wenzhixin.cordova" version="0.0.1"
         xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android">
     <name>ExtraInfo</name>
@@ -102,8 +102,8 @@ exports.getExtra = function(success, error) {
 最后看 ```ExtraInfo.java``` 的内容：
 ```
 public class ExtraInfo extends CordovaPlugin {
-    
-    public boolean execute(String action, JSONArray args, CallbackContext callbackContext) 
+
+    public boolean execute(String action, JSONArray args, CallbackContext callbackContext)
             throws JSONException {
         Activity activity = this.cordova.getActivity();
         if (action.equals("getExtra")) {

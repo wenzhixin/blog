@@ -1,6 +1,6 @@
 ---
 title: JavaScript 语言基础知识点
-date: 2013-02-25 01:11:00
+date: 2013-02-25
 categories: [前端技术]
 tags: [知识点]
 ---

@@ -1,6 +1,6 @@
 ---
 title: 搭建小型下载服务器(raspberry pi)
-date: 2013-07-01 21:23:00
+date: 2013-07-01
 categories: [后台技术]
 tags: [raspberry pi,服务器]
 ---
@@ -34,15 +34,15 @@ tags: [raspberry pi,服务器]
 **警告！这步将会擦除SD卡内的数据，如果选择了错误的存储设备，会导致硬盘数据丢失。**
 
 	dd if=wheezy-raspbian.img of=/dev/mmcblk0p1 bs=512k
-	
+
 4) 设置固定 IP
 
 	sudo vi /etc/network/interfaces
-	
+
 将内容
 
 	iface eth0 inet dhcp
-	
+
 改为
 
 	iface eth0 inet static
@@ -50,7 +50,7 @@ tags: [raspberry pi,服务器]
 	netmask 255.255.255.0
 	gateway 192.168.1.1
 	dns-nameservers 192.168.1.1
-	
+
 重启服务
 
 	sudo /etc/init.d/networking restart
@@ -61,22 +61,22 @@ tags: [raspberry pi,服务器]
 
 	sudo apt-get install ntfs-3g
 
-2) 使用命令查找设备号 
+2) 使用命令查找设备号
 
 	sudo fdisk -l
-	
+
 3) 创建挂载目录
 
 	sudo mkdir /media/usb1
-	
+
 4) 挂载硬盘，/dev/sda5 为移动硬盘设备号
 
 	sudo mount -t ntfs-3g /dev/sda5 /media/usb1
-	
+
 5) 设置开机自动加载
 
 	sudo vi /etc/fstab
-	
+
 加入内容
 
 	/dev/sda5      /media/usb1           ntfs-3g defaults         0       0
@@ -92,7 +92,7 @@ tags: [raspberry pi,服务器]
 使用 aria2 作为下载工具
 
 	sudo apt-get install aria2
-	
+
 启动服务
 
 	aria2c --enable-rpc --rpc-listen-all &
@@ -101,11 +101,11 @@ tags: [raspberry pi,服务器]
 
 使用 [webui-aria2](https://github.com/ziahamza/webui-aria2) 作为管理界面
 
-下载 [webui-aria2](https://github.com/ziahamza/webui-aria2/archive/master.zip) 
+下载 [webui-aria2](https://github.com/ziahamza/webui-aria2/archive/master.zip)
 并解压到 nginx 的 www 目录下即可 /usr/share/nginx/www/
 
 #### 8. 浏览器访问并设置下载目录
 
-访问： http://192.168.1.10/webui-aria2 
+访问： http://192.168.1.10/webui-aria2
 
 通过 Settings 设置下载目录为移动硬盘，便可以开始使用我们的小型服务器啦！

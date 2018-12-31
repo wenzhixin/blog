@@ -1,6 +1,6 @@
 ---
 title: 如何为 NodeJs 设置 Nginx 代理服务器
-date: 2014-09-18 13:45:00
+date: 2014-09-18
 categories: [后台技术]
 tags: [Nginx,NodeJs,http代理]
 ---

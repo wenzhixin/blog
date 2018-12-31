@@ -1,6 +1,6 @@
 ---
 title: web 前端开发学习资料
-date: 2014-01-08 00:00:00
+date: 2014-01-08
 categories: [前端技术]
 tags: [web 前端]
 ---

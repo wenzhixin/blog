@@ -1,6 +1,6 @@
 ---
 title: 从 ubuntu 同步文件到 windows
-date: 2013-12-01 00:00:00
+date: 2013-12-01
 categories: [操作系统]
 tags: [ubuntu,rsync,windows]
 ---

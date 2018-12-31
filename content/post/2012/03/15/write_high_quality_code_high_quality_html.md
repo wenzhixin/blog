@@ -1,6 +1,6 @@
 ---
 title: 编写高质量代码——高质量的HTML
-date: 2012-03-15 00:00:00
+date: 2012-03-15
 categories: [前端技术]
 tags: [Web,HTML]
 ---

@@ -1,6 +1,6 @@
 ---
-title: 设置存在特殊字符的 tooltip 
-date: 2013-01-12 10:21:00
+title: 设置存在特殊字符的 tooltip
+date: 2013-01-12
 categories: [前端技术]
 tags: [特殊字符]
 ---

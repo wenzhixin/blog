@@ -1,6 +1,6 @@
 ---
 title: windows7 下 Bad owner or permissions 问题
-date: 2014-01-15 00:00:00
+date: 2014-01-15
 categories: [操作系统]
 tags: [windows7,rsync]
 ---

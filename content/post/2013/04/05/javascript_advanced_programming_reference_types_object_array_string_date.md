@@ -1,6 +1,6 @@
 ---
 title: JavaScript 高级程序设计——引用类型（Object、Array、String、Date）
-date: 2012-04-05 00:00:00
+date: 2012-04-05
 categories: [前端技术]
 tags: [JavaScript]
 ---

@@ -1,6 +1,6 @@
 ---
 title: 编写高质量代码——高质量的CSS
-date: 2012-03-17 00:00:00
+date: 2012-03-17
 categories: [前端技术]
 tags: [CSS]
 ---
