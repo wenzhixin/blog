@@ -1,9 +1,8 @@
 dist: xenial
 
-before_install:
-  - export VER="0.53"
-  - wget https://github.com/gohugoio/hugo/releases/download/v${VER}/hugo_${VER}_Linux-64bit.deb
-  - sudo dpkg -i hugo_${VER}_Linux-64bit.deb
+addons:
+  snaps:
+  - hugo
 
 script:
   - hugo version
