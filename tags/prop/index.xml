@@ -2,40 +2,40 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>prop on 文翼的博客</title>
-    <link>http://wenzhixin.net.cn/tags/prop/</link>
+    <link>http://blog.wenzhixin.net.cn/tags/prop/</link>
     <description>Recent content in prop on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Sun, 06 Jul 2014 07:31:00 +0000</lastBuildDate>
     
-	<atom:link href="http://wenzhixin.net.cn/tags/prop/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/prop/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>读《Backbone.js 实战》</title>
-      <link>http://wenzhixin.net.cn/2014/07/06/backbone_book/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/07/06/backbone_book/</link>
       <pubDate>Sun, 06 Jul 2014 07:31:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2014/07/06/backbone_book/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/07/06/backbone_book/</guid>
       <description>Backbone 是一个轻量级 JavaScript 的 MVC 框架，配合 Underscore 这个依赖库，我们可以打造出强大的 MVC 应用程序。其实很早就用到 Backbone + Underscore 进行网站和应用程序的开发了，只是国内一直没有</description>
     </item>
     
     <item>
       <title>Bootstrap a 标签按钮使用 prop 方法</title>
-      <link>http://wenzhixin.net.cn/2014/06/18/a_prop_problem/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/06/18/a_prop_problem/</link>
       <pubDate>Wed, 18 Jun 2014 13:31:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2014/06/18/a_prop_problem/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/06/18/a_prop_problem/</guid>
       <description>问题 将 jQuery 从 1.5.2 升级到 1.7.2 之后，统一将attr(&#39;disabled&#39;, &#39;disabled&#39;)改为prop(&#39;disabled&#39;, true)，将at</description>
     </item>
     
     <item>
       <title>jQuery 中 attr() 和 prop() 方法的区别</title>
-      <link>http://wenzhixin.net.cn/2013/05/24/jquery_attr_prop/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/05/24/jquery_attr_prop/</link>
       <pubDate>Fri, 24 May 2013 01:11:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2013/05/24/jquery_attr_prop/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/05/24/jquery_attr_prop/</guid>
       <description>前几天，有人给 Multiple Select 插件 提了问题： setSelects doesn&amp;rsquo;t work in Firefox when using jquery 1.9.0 一直都在用 jQuery 1.8.3 的版本，没有尝试过 jQuery 1.9.0 的版本。 于是，开始调试代码，在 1.9.0 的版本中： 1 2 3 4 5 6</description>
     </item>
     

@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>z-index on 文翼的博客</title>
-    <link>http://wenzhixin.net.cn/tags/z-index/</link>
+    <link>http://blog.wenzhixin.net.cn/tags/z-index/</link>
     <description>Recent content in z-index on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Fri, 06 Dec 2013 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://wenzhixin.net.cn/tags/z-index/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/z-index/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>使用 jQuery 修复 IE7 z-index 的 bug</title>
-      <link>http://wenzhixin.net.cn/2013/12/06/jquery_ie7_zindex/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/12/06/jquery_ie7_zindex/</link>
       <pubDate>Fri, 06 Dec 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2013/12/06/jquery_ie7_zindex/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/12/06/jquery_ie7_zindex/</guid>
       <description>现象： 先来看下这段代码： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 td { text-align: center; } .parent { width: 300px; height: 30px; position: relative;</description>
     </item>
     

@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>批量注释 on 文翼的博客</title>
-    <link>http://wenzhixin.net.cn/tags/%E6%89%B9%E9%87%8F%E6%B3%A8%E9%87%8A/</link>
+    <link>http://blog.wenzhixin.net.cn/tags/%E6%89%B9%E9%87%8F%E6%B3%A8%E9%87%8A/</link>
     <description>Recent content in 批量注释 on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Fri, 14 Mar 2014 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://wenzhixin.net.cn/tags/%E6%89%B9%E9%87%8F%E6%B3%A8%E9%87%8A/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/%E6%89%B9%E9%87%8F%E6%B3%A8%E9%87%8A/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>vim 添加批量注释</title>
-      <link>http://wenzhixin.net.cn/2014/03/14/vim_batch_notes/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/03/14/vim_batch_notes/</link>
       <pubDate>Fri, 14 Mar 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2014/03/14/vim_batch_notes/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/03/14/vim_batch_notes/</guid>
       <description>在配置服务器的过程中，经常会用到 vim 作为我们的编辑器，批量注释这一功能很常用到。 这里记录 vim 如何添加批量注释的方法。 Ctrl + v 使用方向键上下选择范围</description>
     </item>
     

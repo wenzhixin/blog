@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Feed on 文翼的博客</title>
-    <link>http://wenzhixin.net.cn/tags/feed/</link>
+    <link>http://blog.wenzhixin.net.cn/tags/feed/</link>
     <description>Recent content in Feed on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Fri, 08 Nov 2013 22:59:00 +0000</lastBuildDate>
     
-	<atom:link href="http://wenzhixin.net.cn/tags/feed/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/feed/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>RSS、Atom、Feed 介绍与简单实现</title>
-      <link>http://wenzhixin.net.cn/2013/11/08/rss_atom_feed_php/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/11/08/rss_atom_feed_php/</link>
       <pubDate>Fri, 08 Nov 2013 22:59:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2013/11/08/rss_atom_feed_php/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/08/rss_atom_feed_php/</guid>
       <description>最近接触了 RSS 订阅相关的，做了一些了解与开发，记录下。 RSS是什么 RSS（全称RDF Site Summary，网景的最初定义），RSS也是一种“类网页</description>
     </item>
     

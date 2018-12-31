@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>固定表头 on 文翼的博客</title>
-    <link>http://wenzhixin.net.cn/tags/%E5%9B%BA%E5%AE%9A%E8%A1%A8%E5%A4%B4/</link>
+    <link>http://blog.wenzhixin.net.cn/tags/%E5%9B%BA%E5%AE%9A%E8%A1%A8%E5%A4%B4/</link>
     <description>Recent content in 固定表头 on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Sun, 10 Aug 2014 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://wenzhixin.net.cn/tags/%E5%9B%BA%E5%AE%9A%E8%A1%A8%E5%A4%B4/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/%E5%9B%BA%E5%AE%9A%E8%A1%A8%E5%A4%B4/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>表格固定表头的问题和解决方案</title>
-      <link>http://wenzhixin.net.cn/2014/08/10/fixed_table/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/08/10/fixed_table/</link>
       <pubDate>Sun, 10 Aug 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2014/08/10/fixed_table/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/08/10/fixed_table/</guid>
       <description>在写插件bootstrap table的时候，当数据过多的时候，需要对表格的 thead进行固定，然后滚动表格的tbody。但是在实际的操作上，</description>
     </item>
     

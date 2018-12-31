@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Debian on 文翼的博客</title>
-    <link>http://wenzhixin.net.cn/tags/debian/</link>
+    <link>http://blog.wenzhixin.net.cn/tags/debian/</link>
     <description>Recent content in Debian on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Wed, 30 Oct 2013 07:46:00 +0000</lastBuildDate>
     
-	<atom:link href="http://wenzhixin.net.cn/tags/debian/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/debian/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Debian 添加自启动服务</title>
-      <link>http://wenzhixin.net.cn/2013/10/30/debian_script_init/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/10/30/debian_script_init/</link>
       <pubDate>Wed, 30 Oct 2013 07:46:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2013/10/30/debian_script_init/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/10/30/debian_script_init/</guid>
       <description>1. 新建脚本文件 在 /etc/init.d 下加入脚本文件 1 sudo vi /etc/init.d/aria2c 输入内容： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45</description>
     </item>
     
     <item>
       <title>Debian 安装 nodejs 环境</title>
-      <link>http://wenzhixin.net.cn/2013/10/29/debian_node_install/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/10/29/debian_node_install/</link>
       <pubDate>Tue, 29 Oct 2013 00:30:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2013/10/29/debian_node_install/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/10/29/debian_node_install/</guid>
       <description>1. 安装编译包 1 sudo apt-get install python g++ make checkinstall 2. 获取最新的 node 源码 1 2 3 mkdir ~/src &amp;amp;&amp;amp; cd ~/src wget -N http://nodejs.org/dist/node-latest.tar.gz tar xzvf node-latest.tar.gz &amp;amp;&amp;amp; cd node-v* 3. 配置编译源码 1 2 ./configure sudo checkinstall 注意，运行 checkinstall 需要 sudo，之后选择 3</description>
     </item>
     

@@ -2,130 +2,130 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ubuntu on 文翼的博客</title>
-    <link>http://wenzhixin.net.cn/tags/ubuntu/</link>
+    <link>http://blog.wenzhixin.net.cn/tags/ubuntu/</link>
     <description>Recent content in ubuntu on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Fri, 21 Nov 2014 22:20:00 +0000</lastBuildDate>
     
-	<atom:link href="http://wenzhixin.net.cn/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>KVM 虚拟机的学习和使用</title>
-      <link>http://wenzhixin.net.cn/2014/11/21/kvm_study/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/11/21/kvm_study/</link>
       <pubDate>Fri, 21 Nov 2014 22:20:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2014/11/21/kvm_study/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/11/21/kvm_study/</guid>
       <description>KVM 是 Kernel-based Virtual Machine的简称，是一个开源的系统虚拟化模块，是基于硬件的完全虚拟化。 查看硬件是否支持 通过命令行可以查看硬件是否支持： 1 2 3 4 5</description>
     </item>
     
     <item>
       <title>Ubuntu 下不能访问 Windows 文件系统</title>
-      <link>http://wenzhixin.net.cn/2014/11/20/ubuntu_unable_to_access_windows/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/11/20/ubuntu_unable_to_access_windows/</link>
       <pubDate>Thu, 20 Nov 2014 15:07:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2014/11/20/ubuntu_unable_to_access_windows/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/11/20/ubuntu_unable_to_access_windows/</guid>
       <description>Ubuntu 和 Windows 双系统下，Ubuntu 不能访问 Windows 下的分区，例如：/dev/sdb1，显示如下错误： 1 2 3 4 5 6 Error mounting /dev/sdb1 exited with non-zero exit status 14: The disk contains an unclean file system (0, 0). Metadata kept</description>
     </item>
     
     <item>
       <title>Ubuntu 无法找到更新源的问题</title>
-      <link>http://wenzhixin.net.cn/2014/07/21/ubuntu_source_list_not_found/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/07/21/ubuntu_source_list_not_found/</link>
       <pubDate>Mon, 21 Jul 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2014/07/21/ubuntu_source_list_not_found/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/07/21/ubuntu_source_list_not_found/</guid>
       <description>问题： 前段时间，Ubuntu 官方源已经停止了对非长期维护版（如 11.10，12.04，12.10 和 13.04）的支持，并且从归档服务器上移除</description>
     </item>
     
     <item>
       <title>Ubuntu 下搭建 JavaEE 环境</title>
-      <link>http://wenzhixin.net.cn/2014/04/02/ubuntu_java_ee/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/04/02/ubuntu_java_ee/</link>
       <pubDate>Wed, 02 Apr 2014 13:30:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2014/04/02/ubuntu_java_ee/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/04/02/ubuntu_java_ee/</guid>
       <description>在 Ubuntu 下搭建 JavaEE 的环境稍微有些麻烦，这里记录下。 1. 安装 eclipse 和 tomcat7 1 2 sudo apt-get install eclipse sudo apt-get install tomcat7 注：安装 eclipse 后会把依赖的 jdk 安装好，使用 apt-get 安装的 eclipse 是最精简的版本。 2.</description>
     </item>
     
     <item>
       <title>Ubuntu 下安装音乐播放器</title>
-      <link>http://wenzhixin.net.cn/2014/01/25/ubuntu_music_player/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/01/25/ubuntu_music_player/</link>
       <pubDate>Sat, 25 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2014/01/25/ubuntu_music_player/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/01/25/ubuntu_music_player/</guid>
       <description>对于喜欢听歌的人来说，音乐播放器还是挺重要的， 但是不像 windows 一样，很多流行的播放器都没有 ubuntu 版。 这里记录下安装 Audacious 播放器，还是比较强大的，可以支持 ape</description>
     </item>
     
     <item>
       <title>Ubuntu 12.10 添加 node 应用为自启动服务</title>
-      <link>http://wenzhixin.net.cn/2013/12/30/ubuntu_node_app_service/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/12/30/ubuntu_node_app_service/</link>
       <pubDate>Mon, 30 Dec 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2013/12/30/ubuntu_node_app_service/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/12/30/ubuntu_node_app_service/</guid>
       <description>开发 node 应用之后，启动的方式一般是通过 node app 或者 node app &amp;amp; 来运行， 十分不方便，这里将以本 blog 应用为例介绍如何添加为自启动的服务。 环境 用户名：usern</description>
     </item>
     
     <item>
       <title>Ubuntu 系统下 android 连接小米2进行开发</title>
-      <link>http://wenzhixin.net.cn/2013/06/14/ubuntu_android_xiaomi2/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/06/14/ubuntu_android_xiaomi2/</link>
       <pubDate>Fri, 14 Jun 2013 01:30:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2013/06/14/ubuntu_android_xiaomi2/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/06/14/ubuntu_android_xiaomi2/</guid>
       <description>问题： 小米2 通过 USB 连接到 Ubuntu 12.10 系统进行开发，发现 adb devices 不能看到设备。 解决： 1. 运行下面的命令： 1 lsusb 通过对比发现，Bus 002 Device 010: ID 2717:9039 就是小米2的设备号</description>
     </item>
     
     <item>
       <title>Ubuntu 11.10 搭建 gitlab 服务器</title>
-      <link>http://wenzhixin.net.cn/2013/01/14/gitlab_installation/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/01/14/gitlab_installation/</link>
       <pubDate>Mon, 14 Jan 2013 15:55:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2013/01/14/gitlab_installation/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/01/14/gitlab_installation/</guid>
       <description>ps: 请按照顺序一步一步来，并注意查看提示，确保成功！ 1. 更新系统 1 2 sudo apt-get update sudo apt-get upgrade 2. 安装必要的包 1 sudo apt-get install -y build-essential zlib1g-dev libyaml-dev libssl-dev libgdbm-dev libreadline-dev libncurses5-dev libffi-dev wget curl git-core openssh-server redis-server postfix checkinstall libxml2-dev libxslt-dev libcurl4-openssl-dev libicu-dev 3.</description>
     </item>
     
     <item>
       <title>Ubuntu 12.04 设置 VPN</title>
-      <link>http://wenzhixin.net.cn/2013/01/12/ubuntu_set_vpn/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/01/12/ubuntu_set_vpn/</link>
       <pubDate>Sat, 12 Jan 2013 10:55:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2013/01/12/ubuntu_set_vpn/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/01/12/ubuntu_set_vpn/</guid>
       <description>1. 设置 - 网络 - VPN 连接 - 配置 VPN 2. 添加 VPN - 新建 PPTP 3. 输入正确的网关、用户名、密码 4. 选择高级 - 勾选使用点到点加密(MPPE)(P) 5. 设置 IPv4 路由，添加</description>
     </item>
     
     <item>
       <title>Ubuntu 搭建 Ruby on Rails 开发环境</title>
-      <link>http://wenzhixin.net.cn/2012/10/22/ubuntu_ruby_on_rails_development_environment_set_up/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/10/22/ubuntu_ruby_on_rails_development_environment_set_up/</link>
       <pubDate>Mon, 22 Oct 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2012/10/22/ubuntu_ruby_on_rails_development_environment_set_up/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/10/22/ubuntu_ruby_on_rails_development_environment_set_up/</guid>
       <description>安装 ruby： 1 sudo apt-get install ruby1.9.1 ruby1.9.1-dev 安装 rubygems： 1 sudo apt-get install rubygems 安装 mysql 1 sudo apt-get install mysql 安装 ruby-mysql 1）下载：http://www.tmtm.org/en/ru</description>
     </item>
     
     <item>
       <title>Ubuntu 搭建 Ruby on Rails 开发环境</title>
-      <link>http://wenzhixin.net.cn/2012/10/22/ubuntu_ruby_on_rails_development_environment_set_up/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/10/22/ubuntu_ruby_on_rails_development_environment_set_up/</link>
       <pubDate>Mon, 22 Oct 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2012/10/22/ubuntu_ruby_on_rails_development_environment_set_up/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/10/22/ubuntu_ruby_on_rails_development_environment_set_up/</guid>
       <description>安装 ruby： 1 sudo apt-get install ruby1.9.1 ruby1.9.1-dev 安装 rubygems： 1 sudo apt-get install rubygems 安装 mysql 1 sudo apt-get install mysql 安装 ruby-mysql 1）下载：http://www.tmtm.org/en/ru</description>
     </item>
     
     <item>
       <title>Ubuntu 11.10 将 OpenJDK 换成 Sun JDK 的步骤</title>
-      <link>http://wenzhixin.net.cn/2012/04/26/ubuntu_11.10_will_be_openjdk_into_sun_jdk_steps/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/04/26/ubuntu_11.10_will_be_openjdk_into_sun_jdk_steps/</link>
       <pubDate>Thu, 26 Apr 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2012/04/26/ubuntu_11.10_will_be_openjdk_into_sun_jdk_steps/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/04/26/ubuntu_11.10_will_be_openjdk_into_sun_jdk_steps/</guid>
       <description>1、加入repository： sudo add-apt-repository &amp;ldquo;deb http://cz.archive.Ubuntu.com/ubuntu hardy-updates main multiverse&amp;rdquo; (vi /etc/apt/sources.list) 2、更新源： sudo apt-get update 3、安装 jdk 和 jre： sudo apt-get install sun-java6-jdk sun-java6-jre 4、切换为 Sun JDK： sudo update-java-alternatives -s java-6-sun (ls /usr/lib/jvm) 5、查看是否</description>
     </item>
     
     <item>
       <title>Ubuntu 11.10 将 OpenJDK 换成 Sun JDK 的步骤</title>
-      <link>http://wenzhixin.net.cn/2012/04/26/ubuntu_11.10_will_be_openjdk_into_sun_jdk_steps/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/04/26/ubuntu_11.10_will_be_openjdk_into_sun_jdk_steps/</link>
       <pubDate>Thu, 26 Apr 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2012/04/26/ubuntu_11.10_will_be_openjdk_into_sun_jdk_steps/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/04/26/ubuntu_11.10_will_be_openjdk_into_sun_jdk_steps/</guid>
       <description>1、加入repository： sudo add-apt-repository &amp;ldquo;deb http://cz.archive.Ubuntu.com/ubuntu hardy-updates main multiverse&amp;rdquo; (vi /etc/apt/sources.list) 2、更新源： sudo apt-get update 3、安装 jdk 和 jre： sudo apt-get install sun-java6-jdk sun-java6-jre 4、切换为 Sun JDK： sudo update-java-alternatives -s java-6-sun (ls /usr/lib/jvm) 5、查看是否</description>
     </item>
     

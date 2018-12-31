@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>DML on 文翼的博客</title>
-    <link>http://wenzhixin.net.cn/tags/dml/</link>
+    <link>http://blog.wenzhixin.net.cn/tags/dml/</link>
     <description>Recent content in DML on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Fri, 09 Mar 2012 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://wenzhixin.net.cn/tags/dml/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/dml/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>SQL学习笔记——DML</title>
-      <link>http://wenzhixin.net.cn/2012/03/09/sql_study_notes_dml/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/03/09/sql_study_notes_dml/</link>
       <pubDate>Fri, 09 Mar 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2012/03/09/sql_study_notes_dml/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/03/09/sql_study_notes_dml/</guid>
       <description>​1. What is SQL (1) SQL stands for Structured Query Language (2) SQL is an ANSI standard (3) RDBMS(Relational Database Managerment System) is the basis for SQL like SQLServer, DB2, Oracle, MySQL, and Access eg. ​2. SQL DML and DDL (1) The query and update commands from the DML(Data Manipulation Language) part of SQL: • SELECT - extracts data from a database • UPDATE - updates</description>
     </item>
     
     <item>
       <title>SQL学习笔记——DML</title>
-      <link>http://wenzhixin.net.cn/2012/03/09/sql_study_notes_dml/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/03/09/sql_study_notes_dml/</link>
       <pubDate>Fri, 09 Mar 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2012/03/09/sql_study_notes_dml/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/03/09/sql_study_notes_dml/</guid>
       <description>​1. What is SQL (1) SQL stands for Structured Query Language (2) SQL is an ANSI standard (3) RDBMS(Relational Database Managerment System) is the basis for SQL like SQLServer, DB2, Oracle, MySQL, and Access eg. ​2. SQL DML and DDL (1) The query and update commands from the DML(Data Manipulation Language) part of SQL: • SELECT - extracts data from a database • UPDATE - updates</description>
     </item>
     

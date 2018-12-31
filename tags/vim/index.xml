@@ -2,40 +2,40 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>vim on 文翼的博客</title>
-    <link>http://wenzhixin.net.cn/tags/vim/</link>
+    <link>http://blog.wenzhixin.net.cn/tags/vim/</link>
     <description>Recent content in vim on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Sat, 30 Aug 2014 14:58:00 +0000</lastBuildDate>
     
-	<atom:link href="http://wenzhixin.net.cn/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/vim/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>通过 vim 编辑网页文本输入框</title>
-      <link>http://wenzhixin.net.cn/2014/08/30/edit_text_gvim/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/08/30/edit_text_gvim/</link>
       <pubDate>Sat, 30 Aug 2014 14:58:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2014/08/30/edit_text_gvim/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/08/30/edit_text_gvim/</guid>
       <description>对于文本编辑和编写代码，我们常常会用到 vim，使用 vim 的好处在这里就不多说了。那么能不能在浏览器中的文本输入框中也使用 vim 来编辑呢，编辑完之后再</description>
     </item>
     
     <item>
       <title>vim 添加批量注释</title>
-      <link>http://wenzhixin.net.cn/2014/03/14/vim_batch_notes/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/03/14/vim_batch_notes/</link>
       <pubDate>Fri, 14 Mar 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2014/03/14/vim_batch_notes/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/03/14/vim_batch_notes/</guid>
       <description>在配置服务器的过程中，经常会用到 vim 作为我们的编辑器，批量注释这一功能很常用到。 这里记录 vim 如何添加批量注释的方法。 Ctrl + v 使用方向键上下选择范围</description>
     </item>
     
     <item>
       <title>Ubuntu 安装配置 vim</title>
-      <link>http://wenzhixin.net.cn/2013/03/26/ubuntu_vim/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/03/26/ubuntu_vim/</link>
       <pubDate>Tue, 26 Mar 2013 16:57:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2013/03/26/ubuntu_vim/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/03/26/ubuntu_vim/</guid>
       <description>安装 1 sudo apt-get install vim 配置 1 sudo vi ～/.vimrc 内容（显示行数、不备份）： 1 2 3 source $VIMRUNTIME/vimrc_example.vim set nu set nobackup 资料：简明 Vim 练级攻略</description>
     </item>
     

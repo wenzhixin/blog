@@ -2,130 +2,130 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>linux on 文翼的博客</title>
-    <link>http://wenzhixin.net.cn/tags/linux/</link>
+    <link>http://blog.wenzhixin.net.cn/tags/linux/</link>
     <description>Recent content in linux on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Fri, 07 Nov 2014 21:35:00 +0000</lastBuildDate>
     
-	<atom:link href="http://wenzhixin.net.cn/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>crontab 学习笔记</title>
-      <link>http://wenzhixin.net.cn/2014/11/07/crontab_study/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/11/07/crontab_study/</link>
       <pubDate>Fri, 07 Nov 2014 21:35:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2014/11/07/crontab_study/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/11/07/crontab_study/</guid>
       <description>crontab 常见于 Unix 和类 Unix 的操作系统之中，用于设置周期性被执行的指令。该命令从标准输入设备读取指令，并将其存放于crontab文件中，以供之后读取和执</description>
     </item>
     
     <item>
       <title>linux shell编程</title>
-      <link>http://wenzhixin.net.cn/2012/05/29/linux_shell_programming/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/05/29/linux_shell_programming/</link>
       <pubDate>Tue, 29 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2012/05/29/linux_shell_programming/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/05/29/linux_shell_programming/</guid>
       <description>1、shell结构 * #!指定执行脚本的shell * #注释行 * 命令和控制结构 2、创建shell程序的步骤 * 创建一个包含命令和控制结构的文件 * 修</description>
     </item>
     
     <item>
       <title>linux shell编程</title>
-      <link>http://wenzhixin.net.cn/2012/05/29/linux_shell_programming/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/05/29/linux_shell_programming/</link>
       <pubDate>Tue, 29 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2012/05/29/linux_shell_programming/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/05/29/linux_shell_programming/</guid>
       <description>1、shell结构 * #!指定执行脚本的shell * #注释行 * 命令和控制结构 2、创建shell程序的步骤 * 创建一个包含命令和控制结构的文件 * 修</description>
     </item>
     
     <item>
       <title>linux常用命令——压缩解压命令</title>
-      <link>http://wenzhixin.net.cn/2012/05/23/commonly_used_linux_commands_compression_decompression_command/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/05/23/commonly_used_linux_commands_compression_decompression_command/</link>
       <pubDate>Wed, 23 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2012/05/23/commonly_used_linux_commands_compression_decompression_command/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/05/23/commonly_used_linux_commands_compression_decompression_command/</guid>
       <description>命令：gzip (GNU zip) 功能：压缩文件 权限：所有用户 语法：gzip 选项[文件] 压缩后格式：.gz 说明：只能压缩文件，不保存源文件 命令：gunzip</description>
     </item>
     
     <item>
       <title>linux常用命令——压缩解压命令</title>
-      <link>http://wenzhixin.net.cn/2012/05/23/commonly_used_linux_commands_compression_decompression_command/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/05/23/commonly_used_linux_commands_compression_decompression_command/</link>
       <pubDate>Wed, 23 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2012/05/23/commonly_used_linux_commands_compression_decompression_command/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/05/23/commonly_used_linux_commands_compression_decompression_command/</guid>
       <description>命令：gzip (GNU zip) 功能：压缩文件 权限：所有用户 语法：gzip 选项[文件] 压缩后格式：.gz 说明：只能压缩文件，不保存源文件 命令：gunzip</description>
     </item>
     
     <item>
       <title>linux常用命令——帮助命令</title>
-      <link>http://wenzhixin.net.cn/2012/05/22/commonly_used_linux_commands_help_command/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/05/22/commonly_used_linux_commands_help_command/</link>
       <pubDate>Tue, 22 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2012/05/22/commonly_used_linux_commands_help_command/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/05/22/commonly_used_linux_commands_help_command/</guid>
       <description>命令：man (manual) 功能：获得帮助信息 权限：所有用户 语法：man [命令或配置文件] 例子：man ls 查看 ls 命令的帮助信息 man services 查看配置文件 services 的帮助信息 命</description>
     </item>
     
     <item>
       <title>linux常用命令——帮助命令</title>
-      <link>http://wenzhixin.net.cn/2012/05/22/commonly_used_linux_commands_help_command/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/05/22/commonly_used_linux_commands_help_command/</link>
       <pubDate>Tue, 22 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2012/05/22/commonly_used_linux_commands_help_command/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/05/22/commonly_used_linux_commands_help_command/</guid>
       <description>命令：man (manual) 功能：获得帮助信息 权限：所有用户 语法：man [命令或配置文件] 例子：man ls 查看 ls 命令的帮助信息 man services 查看配置文件 services 的帮助信息 命</description>
     </item>
     
     <item>
       <title>linux常用命令——文件搜索命令</title>
-      <link>http://wenzhixin.net.cn/2012/05/22/commonly_used_linux_commands_file_search_command/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/05/22/commonly_used_linux_commands_file_search_command/</link>
       <pubDate>Tue, 22 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2012/05/22/commonly_used_linux_commands_file_search_command/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/05/22/commonly_used_linux_commands_file_search_command/</guid>
       <description>命令：which / whereis 功能：显示系统命令所在目录 权限：所有用户 语法：which / whereis [命令名称] 命令：find 功能：查找文件或目录 权限：所有用户</description>
     </item>
     
     <item>
       <title>linux常用命令——文件搜索命令</title>
-      <link>http://wenzhixin.net.cn/2012/05/22/commonly_used_linux_commands_file_search_command/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/05/22/commonly_used_linux_commands_file_search_command/</link>
       <pubDate>Tue, 22 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2012/05/22/commonly_used_linux_commands_file_search_command/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/05/22/commonly_used_linux_commands_file_search_command/</guid>
       <description>命令：which / whereis 功能：显示系统命令所在目录 权限：所有用户 语法：which / whereis [命令名称] 命令：find 功能：查找文件或目录 权限：所有用户</description>
     </item>
     
     <item>
       <title>linux常用命令——权限管理命令</title>
-      <link>http://wenzhixin.net.cn/2012/05/20/commonly_used_linux_commands_permission_management_command/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/05/20/commonly_used_linux_commands_permission_management_command/</link>
       <pubDate>Sun, 20 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2012/05/20/commonly_used_linux_commands_permission_management_command/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/05/20/commonly_used_linux_commands_permission_management_command/</guid>
       <description>命令：chmod (change the permissions mode of a file) 功能：改变文件或目录权限 权限：所有用户 语法：chmod [{ugo}{+-=}{rwx}][文件或目录] chmod [mo</description>
     </item>
     
     <item>
       <title>linux常用命令——权限管理命令</title>
-      <link>http://wenzhixin.net.cn/2012/05/20/commonly_used_linux_commands_permission_management_command/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/05/20/commonly_used_linux_commands_permission_management_command/</link>
       <pubDate>Sun, 20 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2012/05/20/commonly_used_linux_commands_permission_management_command/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/05/20/commonly_used_linux_commands_permission_management_command/</guid>
       <description>命令：chmod (change the permissions mode of a file) 功能：改变文件或目录权限 权限：所有用户 语法：chmod [{ugo}{+-=}{rwx}][文件或目录] chmod [mo</description>
     </item>
     
     <item>
       <title>linux 常用命令——文件处理命令</title>
-      <link>http://wenzhixin.net.cn/2012/05/19/commonly_used_linux_commands_file_command/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/05/19/commonly_used_linux_commands_file_command/</link>
       <pubDate>Sat, 19 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2012/05/19/commonly_used_linux_commands_file_command/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/05/19/commonly_used_linux_commands_file_command/</guid>
       <description>命令：ls (list) 功能：显示目录文件 权限：所有用户 语法：ls 选项[-ald] [文件或目录] -a 显示所有文件，包括隐藏文件 -l 显示详细信息 -d 查看目录属性</description>
     </item>
     
     <item>
       <title>linux 常用命令——文件处理命令</title>
-      <link>http://wenzhixin.net.cn/2012/05/19/commonly_used_linux_commands_file_command/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/05/19/commonly_used_linux_commands_file_command/</link>
       <pubDate>Sat, 19 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2012/05/19/commonly_used_linux_commands_file_command/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/05/19/commonly_used_linux_commands_file_command/</guid>
       <description>命令：ls (list) 功能：显示目录文件 权限：所有用户 语法：ls 选项[-ald] [文件或目录] -a 显示所有文件，包括隐藏文件 -l 显示详细信息 -d 查看目录属性</description>
     </item>
     

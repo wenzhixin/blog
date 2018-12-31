@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Touch on 文翼的博客</title>
-    <link>http://wenzhixin.net.cn/tags/touch/</link>
+    <link>http://blog.wenzhixin.net.cn/tags/touch/</link>
     <description>Recent content in Touch on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Mon, 18 Nov 2013 22:55:00 +0000</lastBuildDate>
     
-	<atom:link href="http://wenzhixin.net.cn/tags/touch/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/touch/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>手机 web 开发之 Touch 入门</title>
-      <link>http://wenzhixin.net.cn/2013/11/18/hello_touch_event/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/11/18/hello_touch_event/</link>
       <pubDate>Mon, 18 Nov 2013 22:55:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2013/11/18/hello_touch_event/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/18/hello_touch_event/</guid>
       <description>微博应用上用手向左滑动，便可以触发返回事件，这一小小的功能虽说很简单， 但是却大大提高了用户体验（特别是用左手拿手机的人）。 今天来研究在 web 上模</description>
     </item>
     

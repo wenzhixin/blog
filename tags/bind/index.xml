@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>bind on 文翼的博客</title>
-    <link>http://wenzhixin.net.cn/tags/bind/</link>
+    <link>http://blog.wenzhixin.net.cn/tags/bind/</link>
     <description>Recent content in bind on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Fri, 01 Nov 2013 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://wenzhixin.net.cn/tags/bind/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/bind/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>理解并实现 underscore 中的 bind 和 bindAll 函数</title>
-      <link>http://wenzhixin.net.cn/2013/11/01/understanding_bind_bindall/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/11/01/understanding_bind_bindall/</link>
       <pubDate>Fri, 01 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2013/11/01/understanding_bind_bindall/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/01/understanding_bind_bindall/</guid>
       <description>在开始之前，我们定义了 Person 类： 1 2 3 4 5 6 function Person(name) { this.name = name; } Person.prototype.say = function() { console.log(this.name); } 首先，新建 person 对象： 1 2 var wenyi = new Person(&amp;#39;wenyi&amp;#39;); wenyi.say(); // wenyi 可以看到这里输出的结果是 wenyi，</description>
     </item>
     

@@ -2,157 +2,157 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>CSS on 文翼的博客</title>
-    <link>http://wenzhixin.net.cn/tags/css/</link>
+    <link>http://blog.wenzhixin.net.cn/tags/css/</link>
     <description>Recent content in CSS on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Mon, 11 Jan 2016 13:30:00 +0000</lastBuildDate>
     
-	<atom:link href="http://wenzhixin.net.cn/tags/css/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/css/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>通过 css 设置图片的高度与宽度相等</title>
-      <link>http://wenzhixin.net.cn/2016/01/11/css_height_equals_width_with_css/</link>
+      <link>http://blog.wenzhixin.net.cn/2016/01/11/css_height_equals_width_with_css/</link>
       <pubDate>Mon, 11 Jan 2016 13:30:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2016/01/11/css_height_equals_width_with_css/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2016/01/11/css_height_equals_width_with_css/</guid>
       <description>在图片长宽不相等的情况下，想将长宽设置为相等并且自适应屏幕，可以通过 js 的方式进行设置并通过监听 resize 来实时更新，但是这种方式很麻烦。 这里通过 css 来</description>
     </item>
     
     <item>
       <title>CSS 自定义字体</title>
-      <link>http://wenzhixin.net.cn/2014/04/21/css_font_face/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/04/21/css_font_face/</link>
       <pubDate>Mon, 21 Apr 2014 13:22:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2014/04/21/css_font_face/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/04/21/css_font_face/</guid>
       <description>介绍 通过 CSS 的 @font-face 属性可以实现在网页中嵌入任意字体，例如自定字体、或者是自定义图标（bootstrap）。 为了能在主流浏览器中都能正常显示自定义</description>
     </item>
     
     <item>
       <title>div 中无法自动换行、以及单行显示的问题</title>
-      <link>http://wenzhixin.net.cn/2012/05/08/word_wrap_and_one_cannot_display_the_problems_in_div/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/05/08/word_wrap_and_one_cannot_display_the_problems_in_div/</link>
       <pubDate>Tue, 08 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2012/05/08/word_wrap_and_one_cannot_display_the_problems_in_div/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/05/08/word_wrap_and_one_cannot_display_the_problems_in_div/</guid>
       <description>1、无法自动换行 * 问题：如果 div 输入的是英文字母且没有空格，会导致英文字母不换行直接在同一行输出，导致 div 的宽度远远超出设定的大小。 * 原因：因为</description>
     </item>
     
     <item>
       <title>div 中无法自动换行、以及单行显示的问题</title>
-      <link>http://wenzhixin.net.cn/2012/05/08/word_wrap_and_one_cannot_display_the_problems_in_div/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/05/08/word_wrap_and_one_cannot_display_the_problems_in_div/</link>
       <pubDate>Tue, 08 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2012/05/08/word_wrap_and_one_cannot_display_the_problems_in_div/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/05/08/word_wrap_and_one_cannot_display_the_problems_in_div/</guid>
       <description>1、无法自动换行 * 问题：如果 div 输入的是英文字母且没有空格，会导致英文字母不换行直接在同一行输出，导致 div 的宽度远远超出设定的大小。 * 原因：因为</description>
     </item>
     
     <item>
       <title>彻底研究 CSS ——段落的垂直对齐</title>
-      <link>http://wenzhixin.net.cn/2012/05/06/the_vertical_alignment_of_css_complete_paragraph/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/05/06/the_vertical_alignment_of_css_complete_paragraph/</link>
       <pubDate>Sun, 06 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2012/05/06/the_vertical_alignment_of_css_complete_paragraph/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/05/06/the_vertical_alignment_of_css_complete_paragraph/</guid>
       <description>如果文字内容只有一行，可以设置 line-height 与height 相同来使文字垂直居中。 * css 代码： 1 2 3 4 5 6 7 8 .one_line { width: 500px; height: 100px; line-height: 100px; background-color: #9bd; margin: 20px; padding: 20px; } * html 代码： 1 2 3</description>
     </item>
     
     <item>
       <title>彻底研究 CSS ——段落的垂直对齐</title>
-      <link>http://wenzhixin.net.cn/2012/05/06/the_vertical_alignment_of_css_complete_paragraph/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/05/06/the_vertical_alignment_of_css_complete_paragraph/</link>
       <pubDate>Sun, 06 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2012/05/06/the_vertical_alignment_of_css_complete_paragraph/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/05/06/the_vertical_alignment_of_css_complete_paragraph/</guid>
       <description>如果文字内容只有一行，可以设置 line-height 与height 相同来使文字垂直居中。 * css 代码： 1 2 3 4 5 6 7 8 .one_line { width: 500px; height: 100px; line-height: 100px; background-color: #9bd; margin: 20px; padding: 20px; } * html 代码： 1 2 3</description>
     </item>
     
     <item>
       <title>彻底研究 CSS——文字与图像</title>
-      <link>http://wenzhixin.net.cn/2012/05/05/a_thorough_study_of_css_text_and_image/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/05/05/a_thorough_study_of_css_text_and_image/</link>
       <pubDate>Sat, 05 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2012/05/05/a_thorough_study_of_css_text_and_image/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/05/05/a_thorough_study_of_css_text_and_image/</guid>
       <description>1、CSS 文字样式 * font-family：用于设置字体。同时声明多种字体时，字体之间用逗号分隔开，字体名称有空格需要用双引号引起来。 * fo</description>
     </item>
     
     <item>
       <title>彻底研究 CSS——文字与图像</title>
-      <link>http://wenzhixin.net.cn/2012/05/05/a_thorough_study_of_css_text_and_image/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/05/05/a_thorough_study_of_css_text_and_image/</link>
       <pubDate>Sat, 05 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2012/05/05/a_thorough_study_of_css_text_and_image/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/05/05/a_thorough_study_of_css_text_and_image/</guid>
       <description>1、CSS 文字样式 * font-family：用于设置字体。同时声明多种字体时，字体之间用逗号分隔开，字体名称有空格需要用双引号引起来。 * fo</description>
     </item>
     
     <item>
       <title>彻底研究 CSS—— CSS 核心基础</title>
-      <link>http://wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_css_core_base/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_css_core_base/</link>
       <pubDate>Fri, 04 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_css_core_base/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_css_core_base/</guid>
       <description>1、HTML 书写规范 * 标记名称必须小写 * 属性名必须小写 * 标记必须严格嵌套 * 标记必须封闭，即使是空元素 * 属性值用双引号括起来，并且使用完整形式</description>
     </item>
     
     <item>
       <title>彻底研究 CSS—— CSS 核心基础</title>
-      <link>http://wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_css_core_base/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_css_core_base/</link>
       <pubDate>Fri, 04 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_css_core_base/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_css_core_base/</guid>
       <description>1、HTML 书写规范 * 标记名称必须小写 * 属性名必须小写 * 标记必须严格嵌套 * 标记必须封闭，即使是空元素 * 属性值用双引号括起来，并且使用完整形式</description>
     </item>
     
     <item>
       <title>彻底研究CSS——深入理解盒子模型</title>
-      <link>http://wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_understanding_the_box_model/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_understanding_the_box_model/</link>
       <pubDate>Fri, 04 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_understanding_the_box_model/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_understanding_the_box_model/</guid>
       <description>1、盒子模型的内部结构 * 在 CSS 中，一个独立的盒子模型由 content（内容）、border（边框）、padding（内边距）和 margin（外</description>
     </item>
     
     <item>
       <title>彻底研究CSS——深入理解盒子模型</title>
-      <link>http://wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_understanding_the_box_model/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_understanding_the_box_model/</link>
       <pubDate>Fri, 04 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_understanding_the_box_model/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_understanding_the_box_model/</guid>
       <description>1、盒子模型的内部结构 * 在 CSS 中，一个独立的盒子模型由 content（内容）、border（边框）、padding（内边距）和 margin（外</description>
     </item>
     
     <item>
       <title>彻底研究CSS——盒子的浮动和定位</title>
-      <link>http://wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_floating_and_positioning_the_box/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_floating_and_positioning_the_box/</link>
       <pubDate>Fri, 04 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_floating_and_positioning_the_box/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_floating_and_positioning_the_box/</guid>
       <description>1、盒子的浮动 * CSS 中有一个 float 属性，默认为 none，即标准流。通过设置 float 属性的值为 left 或 right，元素会向其父元素的左侧或右侧靠近，盒子的宽度</description>
     </item>
     
     <item>
       <title>彻底研究CSS——盒子的浮动和定位</title>
-      <link>http://wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_floating_and_positioning_the_box/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_floating_and_positioning_the_box/</link>
       <pubDate>Fri, 04 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_floating_and_positioning_the_box/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_floating_and_positioning_the_box/</guid>
       <description>1、盒子的浮动 * CSS 中有一个 float 属性，默认为 none，即标准流。通过设置 float 属性的值为 left 或 right，元素会向其父元素的左侧或右侧靠近，盒子的宽度</description>
     </item>
     
     <item>
       <title>编写高质量代码——高质量的CSS</title>
-      <link>http://wenzhixin.net.cn/2012/03/17/write_high_quality_code_high_quality_css/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/03/17/write_high_quality_code_high_quality_css/</link>
       <pubDate>Sat, 17 Mar 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2012/03/17/write_high_quality_code_high_quality_css/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/03/17/write_high_quality_code_high_quality_css/</guid>
       <description>1、解析网页模式和DTD （1）解析网页模式主要有标准模式和怪异模式。怪异模式是为了兼容老式浏览器下的代码，应该避免触发怪异模式，选用标准模式</description>
     </item>
     
     <item>
       <title>编写高质量代码——高质量的CSS</title>
-      <link>http://wenzhixin.net.cn/2012/03/17/write_high_quality_code_high_quality_css/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/03/17/write_high_quality_code_high_quality_css/</link>
       <pubDate>Sat, 17 Mar 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2012/03/17/write_high_quality_code_high_quality_css/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/03/17/write_high_quality_code_high_quality_css/</guid>
       <description>1、解析网页模式和DTD （1）解析网页模式主要有标准模式和怪异模式。怪异模式是为了兼容老式浏览器下的代码，应该避免触发怪异模式，选用标准模式</description>
     </item>
     

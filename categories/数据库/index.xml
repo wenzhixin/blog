@@ -2,175 +2,175 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>数据库 on 文翼的博客</title>
-    <link>http://wenzhixin.net.cn/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
+    <link>http://blog.wenzhixin.net.cn/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
     <description>Recent content in 数据库 on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Thu, 07 Jan 2016 22:30:00 +0000</lastBuildDate>
     
-	<atom:link href="http://wenzhixin.net.cn/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.wenzhixin.net.cn/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>备份恢复 Meteor Mongo 数据库</title>
-      <link>http://wenzhixin.net.cn/2016/01/07/meteor_mongo_dump/</link>
+      <link>http://blog.wenzhixin.net.cn/2016/01/07/meteor_mongo_dump/</link>
       <pubDate>Thu, 07 Jan 2016 22:30:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2016/01/07/meteor_mongo_dump/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2016/01/07/meteor_mongo_dump/</guid>
       <description>运行 meteor 后使用新的窗口运行 1 meteor mongo 可以看到类似下面的信息： 1 2 MongoDB shell version: 2.6.7 connecting to: 127.0.0.1:4001/meteor Meteor 数据库运行于 127.0.0.1 3001 端口，Ctrl + D 退出即可。 导出： 1 mongodump -h 127.0.0.1 --port 4001 -d meteor</description>
     </item>
     
     <item>
       <title>如何使用 python 连接 Oracle（网站）</title>
-      <link>http://wenzhixin.net.cn/2014/08/04/python_oracle/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/08/04/python_oracle/</link>
       <pubDate>Mon, 04 Aug 2014 23:55:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2014/08/04/python_oracle/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/08/04/python_oracle/</guid>
       <description>首先，由于网站部署在远程服务器的局域网上面，所以需要通过 ssh tunnel（隧道） 的方式进行本地的映射，主要映射两个端口： Oracle 服务：ssh -fN -L 1521:ip:1521 server</description>
     </item>
     
     <item>
       <title>Temporary Tablespace is Empty 解决方法（ORA-25153）</title>
-      <link>http://wenzhixin.net.cn/2014/04/28/temporary_tablespace_is_empty/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/04/28/temporary_tablespace_is_empty/</link>
       <pubDate>Mon, 28 Apr 2014 22:05:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2014/04/28/temporary_tablespace_is_empty/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/04/28/temporary_tablespace_is_empty/</guid>
       <description>问题： 当我们对 Oralce 数据库进行操作的时候，出现了： 1 ORA-25153: Temporary Tablespace is Empty 的错误，提示 temporary 表空间为空。 思路： 当前用户没有设置表空间权限 表空间状态为 offline 当前用户没</description>
     </item>
     
     <item>
       <title>Oracle 获取DDL语句入门小记</title>
-      <link>http://wenzhixin.net.cn/2014/02/13/oracle_ddl/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/02/13/oracle_ddl/</link>
       <pubDate>Thu, 13 Feb 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2014/02/13/oracle_ddl/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/02/13/oracle_ddl/</guid>
       <description>sqlplus 登录 在操作系统命令行下： 方法1： 1 2 sqlplus / as sysdba #这是典型的操作系统认证，不需要listener进程 sqlplus system/password as sysdba #这种连接方式只能连接本机数据库，</description>
     </item>
     
     <item>
       <title>ubuntu 下 PostgreSQL 使用小记</title>
-      <link>http://wenzhixin.net.cn/2014/01/12/hello_postgresql/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/01/12/hello_postgresql/</link>
       <pubDate>Sun, 12 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2014/01/12/hello_postgresql/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/01/12/hello_postgresql/</guid>
       <description>PostgreSQL 是自由的对象-关系型数据库服务器（数据库管理系统）。 刚刚入门，记录下： 安装 安装 PostgreSQL 的服务器和客户端： 1 sudo apt-get install postgresql postgresql-client 服务 安装完成后 PostgreSQL 已经自动启动</description>
     </item>
     
     <item>
       <title>ON DUPLICATE KEY UPDATE</title>
-      <link>http://wenzhixin.net.cn/2013/12/05/on_duplicate_key_update/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/12/05/on_duplicate_key_update/</link>
       <pubDate>Thu, 05 Dec 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2013/12/05/on_duplicate_key_update/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/12/05/on_duplicate_key_update/</guid>
       <description>有些时候，操作 sql 语句需要判断记录是否存在，不存在则插入存在则更新，可以考虑使用 ON DUPLICATE KEY UPDATE。 在 INSERT INTO 语句末尾指定了 ON DUPLICATE KEY UPDATE，并</description>
     </item>
     
     <item>
       <title>简单的博客 RSS 聚合</title>
-      <link>http://wenzhixin.net.cn/2013/11/04/simple_rss_together/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/11/04/simple_rss_together/</link>
       <pubDate>Mon, 04 Nov 2013 01:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2013/11/04/simple_rss_together/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/04/simple_rss_together/</guid>
       <description>1. 前言 将博客的 RSS 内容聚合起来，这样方便查看，今天就来研究如何简单的将 RSS 的内容存到数据库（MySQL）中。 2. 创建数据库表 1 2 3 4 5 6 7 8 CREATE TABLE links</description>
     </item>
     
     <item>
       <title>MongoDB mongoexport 命令的使用及简单实现</title>
-      <link>http://wenzhixin.net.cn/2013/06/12/mongodb_export/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/06/12/mongodb_export/</link>
       <pubDate>Wed, 12 Jun 2013 23:07:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2013/06/12/mongodb_export/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/06/12/mongodb_export/</guid>
       <description>MongoDB 提供了 mongoexport 命令来导出数据，导出的数据是 json 格式的，当然也可以是 csv 格式。主要可以实现备份和恢复的功能。 具体的使用，我们使用 &amp;ndash;help 查看，主要的参数有：</description>
     </item>
     
     <item>
       <title>MongoDB 创建、更新及删除文档</title>
-      <link>http://wenzhixin.net.cn/2012/12/08/mongodb_insert_update_remove/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/12/08/mongodb_insert_update_remove/</link>
       <pubDate>Sat, 08 Dec 2012 08:24:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2012/12/08/mongodb_insert_update_remove/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/12/08/mongodb_insert_update_remove/</guid>
       <description>1、插入文档：insert 1) 基本用法： 1 db.name.insert(文档内容); 例子： 1 db.users.insert({&amp;#34;username&amp;#34;: &amp;#34;wenyi&amp;#34;, &amp;#34;age&amp;#34;: 25}); 2) 从其他数据库导入数据，使用 mongoimport 命令 3) 原理与</description>
     </item>
     
     <item>
       <title>MongoDB 创建、更新及删除文档</title>
-      <link>http://wenzhixin.net.cn/2012/12/08/mongodb_insert_update_remove/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/12/08/mongodb_insert_update_remove/</link>
       <pubDate>Sat, 08 Dec 2012 08:24:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2012/12/08/mongodb_insert_update_remove/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/12/08/mongodb_insert_update_remove/</guid>
       <description>1、插入文档：insert 1) 基本用法： 1 db.name.insert(文档内容); 例子： 1 db.users.insert({&amp;#34;username&amp;#34;: &amp;#34;wenyi&amp;#34;, &amp;#34;age&amp;#34;: 25}); 2) 从其他数据库导入数据，使用 mongoimport 命令 3) 原理与</description>
     </item>
     
     <item>
       <title>MongoDB 入门</title>
-      <link>http://wenzhixin.net.cn/2012/12/06/mongodb_started/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/12/06/mongodb_started/</link>
       <pubDate>Thu, 06 Dec 2012 22:39:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2012/12/06/mongodb_started/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/12/06/mongodb_started/</guid>
       <description>1、文档 1) 概念：文档是将多个键及其关联的值有序地放置在一起。 1 {&amp;#34;name&amp;#34;: &amp;#34;wenyi&amp;#34;, &amp;#34;say&amp;#34;: &amp;#34;Hello, world!&amp;#34;} 2) 特性： 文档中的键值对是有序的 文档的键是字符串 文档不能有重复的键 3) 键</description>
     </item>
     
     <item>
       <title>MongoDB 入门</title>
-      <link>http://wenzhixin.net.cn/2012/12/06/mongodb_started/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/12/06/mongodb_started/</link>
       <pubDate>Thu, 06 Dec 2012 22:39:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2012/12/06/mongodb_started/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/12/06/mongodb_started/</guid>
       <description>1、文档 1) 概念：文档是将多个键及其关联的值有序地放置在一起。 1 {&amp;#34;name&amp;#34;: &amp;#34;wenyi&amp;#34;, &amp;#34;say&amp;#34;: &amp;#34;Hello, world!&amp;#34;} 2) 特性： 文档中的键值对是有序的 文档的键是字符串 文档不能有重复的键 3) 键</description>
     </item>
     
     <item>
       <title>MySQL、Postgres 开启远程访问权限（ubuntu）</title>
-      <link>http://wenzhixin.net.cn/2012/05/15/mysql_open_the_remote_access_ubuntu/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/05/15/mysql_open_the_remote_access_ubuntu/</link>
       <pubDate>Tue, 15 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2012/05/15/mysql_open_the_remote_access_ubuntu/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/05/15/mysql_open_the_remote_access_ubuntu/</guid>
       <description>MySQL 1、编辑 my.cnf 文件： 1 sudo vi /etc/mysql/my.cnf 2、将绑定地址行注释掉或者修改为指定 IP 1 #bind-address = 127.0.0.1 3、登录 MySQL： 1 mysql -uroot -p123 4、添加 root 用户访问权限 1 2 grant all privileges on *.* to &amp;#39;root&amp;#39;@&amp;#39;%&amp;#39;</description>
     </item>
     
     <item>
       <title>MySQL、Postgres 开启远程访问权限（ubuntu）</title>
-      <link>http://wenzhixin.net.cn/2012/05/15/mysql_open_the_remote_access_ubuntu/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/05/15/mysql_open_the_remote_access_ubuntu/</link>
       <pubDate>Tue, 15 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2012/05/15/mysql_open_the_remote_access_ubuntu/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/05/15/mysql_open_the_remote_access_ubuntu/</guid>
       <description>MySQL 1、编辑 my.cnf 文件： 1 sudo vi /etc/mysql/my.cnf 2、将绑定地址行注释掉或者修改为指定 IP 1 #bind-address = 127.0.0.1 3、登录 MySQL： 1 mysql -uroot -p123 4、添加 root 用户访问权限 1 2 grant all privileges on *.* to &amp;#39;root&amp;#39;@&amp;#39;%&amp;#39;</description>
     </item>
     
     <item>
       <title>SQL学习笔记——DDL</title>
-      <link>http://wenzhixin.net.cn/2012/03/09/sql_study_notes_ddl/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/03/09/sql_study_notes_ddl/</link>
       <pubDate>Fri, 09 Mar 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2012/03/09/sql_study_notes_ddl/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/03/09/sql_study_notes_ddl/</guid>
       <description>​1. CREATE DATABASE Syntax • CREATE DATABASE database_name ​2. CREATE TABLE Syntax • CREATE TABLE table_name ( column_name1 data_type, column_name2 data_type, column_name3 data_type, ) ​3. SQL Constraints • NOT NULL - cannot insert a new record, or update a record without adding a value to this field • UNIQUE - uniquely identifies each record in a table • PRIMARY KEY • FOREIGN KEY (REFERENCES)</description>
     </item>
     
     <item>
       <title>SQL学习笔记——DDL</title>
-      <link>http://wenzhixin.net.cn/2012/03/09/sql_study_notes_ddl/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/03/09/sql_study_notes_ddl/</link>
       <pubDate>Fri, 09 Mar 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2012/03/09/sql_study_notes_ddl/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/03/09/sql_study_notes_ddl/</guid>
       <description>​1. CREATE DATABASE Syntax • CREATE DATABASE database_name ​2. CREATE TABLE Syntax • CREATE TABLE table_name ( column_name1 data_type, column_name2 data_type, column_name3 data_type, ) ​3. SQL Constraints • NOT NULL - cannot insert a new record, or update a record without adding a value to this field • UNIQUE - uniquely identifies each record in a table • PRIMARY KEY • FOREIGN KEY (REFERENCES)</description>
     </item>
     
     <item>
       <title>SQL学习笔记——DML</title>
-      <link>http://wenzhixin.net.cn/2012/03/09/sql_study_notes_dml/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/03/09/sql_study_notes_dml/</link>
       <pubDate>Fri, 09 Mar 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2012/03/09/sql_study_notes_dml/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/03/09/sql_study_notes_dml/</guid>
       <description>​1. What is SQL (1) SQL stands for Structured Query Language (2) SQL is an ANSI standard (3) RDBMS(Relational Database Managerment System) is the basis for SQL like SQLServer, DB2, Oracle, MySQL, and Access eg. ​2. SQL DML and DDL (1) The query and update commands from the DML(Data Manipulation Language) part of SQL: • SELECT - extracts data from a database • UPDATE - updates</description>
     </item>
     
     <item>
       <title>SQL学习笔记——DML</title>
-      <link>http://wenzhixin.net.cn/2012/03/09/sql_study_notes_dml/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/03/09/sql_study_notes_dml/</link>
       <pubDate>Fri, 09 Mar 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2012/03/09/sql_study_notes_dml/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/03/09/sql_study_notes_dml/</guid>
       <description>​1. What is SQL (1) SQL stands for Structured Query Language (2) SQL is an ANSI standard (3) RDBMS(Relational Database Managerment System) is the basis for SQL like SQLServer, DB2, Oracle, MySQL, and Access eg. ​2. SQL DML and DDL (1) The query and update commands from the DML(Data Manipulation Language) part of SQL: • SELECT - extracts data from a database • UPDATE - updates</description>
     </item>
     

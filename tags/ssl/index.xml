@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ssl on 文翼的博客</title>
-    <link>http://wenzhixin.net.cn/tags/ssl/</link>
+    <link>http://blog.wenzhixin.net.cn/tags/ssl/</link>
     <description>Recent content in ssl on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Sun, 01 Sep 2013 11:45:00 +0000</lastBuildDate>
     
-	<atom:link href="http://wenzhixin.net.cn/tags/ssl/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/ssl/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>nginx 配置 SSL（https）</title>
-      <link>http://wenzhixin.net.cn/2013/09/01/nginx_ssl_settings/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/09/01/nginx_ssl_settings/</link>
       <pubDate>Sun, 01 Sep 2013 11:45:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2013/09/01/nginx_ssl_settings/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/09/01/nginx_ssl_settings/</guid>
       <description>配置信息： 1 2 3 4 5 6 7 8 listen 443; server_name wenzhixin.net.cn; ssl on; ssl_certificate /etc/ssl/certs/wenzhixin_net_cn.crt; ssl_certificate_key /etc/ssl/private/wenzhixin_net_cn.key; ssl_client_certificate /etc/ssl/certs/wenzhixin_net_cn-bundle; ssl_verify_client optional; 配置下面： 1 2 ssl_client_certificate /etc/ssl/certs/wenzhixin_net_cn-bundle; ssl_verify_client optional; 是为了解决： 1 unable to get local issuer certificate 的问题。</description>
     </item>
     

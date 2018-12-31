@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>浮动和定位 on 文翼的博客</title>
-    <link>http://wenzhixin.net.cn/tags/%E6%B5%AE%E5%8A%A8%E5%92%8C%E5%AE%9A%E4%BD%8D/</link>
+    <link>http://blog.wenzhixin.net.cn/tags/%E6%B5%AE%E5%8A%A8%E5%92%8C%E5%AE%9A%E4%BD%8D/</link>
     <description>Recent content in 浮动和定位 on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Fri, 04 May 2012 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://wenzhixin.net.cn/tags/%E6%B5%AE%E5%8A%A8%E5%92%8C%E5%AE%9A%E4%BD%8D/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/%E6%B5%AE%E5%8A%A8%E5%92%8C%E5%AE%9A%E4%BD%8D/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>彻底研究CSS——盒子的浮动和定位</title>
-      <link>http://wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_floating_and_positioning_the_box/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_floating_and_positioning_the_box/</link>
       <pubDate>Fri, 04 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_floating_and_positioning_the_box/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_floating_and_positioning_the_box/</guid>
       <description>1、盒子的浮动 * CSS 中有一个 float 属性，默认为 none，即标准流。通过设置 float 属性的值为 left 或 right，元素会向其父元素的左侧或右侧靠近，盒子的宽度</description>
     </item>
     
     <item>
       <title>彻底研究CSS——盒子的浮动和定位</title>
-      <link>http://wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_floating_and_positioning_the_box/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_floating_and_positioning_the_box/</link>
       <pubDate>Fri, 04 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_floating_and_positioning_the_box/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_floating_and_positioning_the_box/</guid>
       <description>1、盒子的浮动 * CSS 中有一个 float 属性，默认为 none，即标准流。通过设置 float 属性的值为 left 或 right，元素会向其父元素的左侧或右侧靠近，盒子的宽度</description>
     </item>
     

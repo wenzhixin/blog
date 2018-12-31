@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>mongoexport on 文翼的博客</title>
-    <link>http://wenzhixin.net.cn/tags/mongoexport/</link>
+    <link>http://blog.wenzhixin.net.cn/tags/mongoexport/</link>
     <description>Recent content in mongoexport on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Wed, 12 Jun 2013 23:07:00 +0000</lastBuildDate>
     
-	<atom:link href="http://wenzhixin.net.cn/tags/mongoexport/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/mongoexport/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>MongoDB mongoexport 命令的使用及简单实现</title>
-      <link>http://wenzhixin.net.cn/2013/06/12/mongodb_export/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/06/12/mongodb_export/</link>
       <pubDate>Wed, 12 Jun 2013 23:07:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2013/06/12/mongodb_export/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/06/12/mongodb_export/</guid>
       <description>MongoDB 提供了 mongoexport 命令来导出数据，导出的数据是 json 格式的，当然也可以是 csv 格式。主要可以实现备份和恢复的功能。 具体的使用，我们使用 &amp;ndash;help 查看，主要的参数有：</description>
     </item>
     

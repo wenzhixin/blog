@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>用户 on 文翼的博客</title>
-    <link>http://wenzhixin.net.cn/tags/%E7%94%A8%E6%88%B7/</link>
+    <link>http://blog.wenzhixin.net.cn/tags/%E7%94%A8%E6%88%B7/</link>
     <description>Recent content in 用户 on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Sat, 28 Dec 2013 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://wenzhixin.net.cn/tags/%E7%94%A8%E6%88%B7/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/%E7%94%A8%E6%88%B7/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>管理 ubuntu 服务器用户</title>
-      <link>http://wenzhixin.net.cn/2013/12/28/ubuntu_new_user/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/12/28/ubuntu_new_user/</link>
       <pubDate>Sat, 28 Dec 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2013/12/28/ubuntu_new_user/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/12/28/ubuntu_new_user/</guid>
       <description>前言 对于刚刚安装（或者购买）的服务器，一般只有 root 用户，那我们需要对其进行用户管理设置。 创建新的用户 创建一个名为 username 的新用户（自己替换为想要的名</description>
     </item>
     

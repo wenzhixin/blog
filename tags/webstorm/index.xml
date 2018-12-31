@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>WebStorm on 文翼的博客</title>
-    <link>http://wenzhixin.net.cn/tags/webstorm/</link>
+    <link>http://blog.wenzhixin.net.cn/tags/webstorm/</link>
     <description>Recent content in WebStorm on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Tue, 04 Nov 2014 23:29:00 +0000</lastBuildDate>
     
-	<atom:link href="http://wenzhixin.net.cn/tags/webstorm/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/webstorm/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>编写 WebStorm 实用工具</title>
-      <link>http://wenzhixin.net.cn/2014/11/04/webstorm_tools/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/11/04/webstorm_tools/</link>
       <pubDate>Tue, 04 Nov 2014 23:29:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2014/11/04/webstorm_tools/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/11/04/webstorm_tools/</guid>
       <description>在写代码的时候，很多时候（例如写 jQuery 插件）需要将 html 代码转换为 js 模板。例如将下面的 html 代码： 1 2 3 4 5 &amp;lt;ul&amp;gt; &amp;lt;li class=&amp;#34;item&amp;#34;&amp;gt; &amp;lt;a href=&amp;#34;#&amp;#34;&amp;gt;Item 1&amp;lt;/a&amp;gt; &amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; 放到 js 中： 1 2 3 4 5 6 7 8 var</description>
     </item>
     
     <item>
       <title>Ubuntu 使用 WebStorm IDE 小记</title>
-      <link>http://wenzhixin.net.cn/2014/01/16/use_webstorm/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/01/16/use_webstorm/</link>
       <pubDate>Thu, 16 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2014/01/16/use_webstorm/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/01/16/use_webstorm/</guid>
       <description>WebStorm 是 jetbrains 公司旗下一款 JavaScript 开发工具，被广大 JS 开发者誉为“Web前端开发神器”。 安装 下载：http://www.jetbrains.com/webs</description>
     </item>
     

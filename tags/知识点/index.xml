@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>知识点 on 文翼的博客</title>
-    <link>http://wenzhixin.net.cn/tags/%E7%9F%A5%E8%AF%86%E7%82%B9/</link>
+    <link>http://blog.wenzhixin.net.cn/tags/%E7%9F%A5%E8%AF%86%E7%82%B9/</link>
     <description>Recent content in 知识点 on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Mon, 25 Feb 2013 01:11:00 +0000</lastBuildDate>
     
-	<atom:link href="http://wenzhixin.net.cn/tags/%E7%9F%A5%E8%AF%86%E7%82%B9/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/%E7%9F%A5%E8%AF%86%E7%82%B9/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>JavaScript 语言基础知识点</title>
-      <link>http://wenzhixin.net.cn/2013/02/25/javascript_base/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/02/25/javascript_base/</link>
       <pubDate>Mon, 25 Feb 2013 01:11:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2013/02/25/javascript_base/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/02/25/javascript_base/</guid>
       <description>JavaScript 数据类型 JavaScript 变量 Javascript 运算符 JavaScript 流程控制 JavaScript 函数基础 JavaScript数组 JavaScript 字符串函数 JavaScript 正则表达式 Window对象 DOM 基本操作</description>
     </item>
     

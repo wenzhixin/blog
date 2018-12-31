@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>livejs on 文翼的博客</title>
-    <link>http://wenzhixin.net.cn/tags/livejs/</link>
+    <link>http://blog.wenzhixin.net.cn/tags/livejs/</link>
     <description>Recent content in livejs on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Thu, 07 Nov 2013 13:13:00 +0000</lastBuildDate>
     
-	<atom:link href="http://wenzhixin.net.cn/tags/livejs/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/livejs/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>前端工程师必备工具 livejs</title>
-      <link>http://wenzhixin.net.cn/2013/11/07/front_end_tool_livejs/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/11/07/front_end_tool_livejs/</link>
       <pubDate>Thu, 07 Nov 2013 13:13:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2013/11/07/front_end_tool_livejs/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/07/front_end_tool_livejs/</guid>
       <description>公司的台式机一直没有用到，于是乎想到能否重复利用起来，在笔记本上做开发，在大显示器上看效果。 有了这样的想法之后，找到了 Live.js， 它可以</description>
     </item>
     

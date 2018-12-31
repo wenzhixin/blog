@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>解析 on 文翼的博客</title>
-    <link>http://wenzhixin.net.cn/tags/%E8%A7%A3%E6%9E%90/</link>
+    <link>http://blog.wenzhixin.net.cn/tags/%E8%A7%A3%E6%9E%90/</link>
     <description>Recent content in 解析 on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Sat, 02 Nov 2013 10:42:00 +0000</lastBuildDate>
     
-	<atom:link href="http://wenzhixin.net.cn/tags/%E8%A7%A3%E6%9E%90/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/%E8%A7%A3%E6%9E%90/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>markdown 介绍、解析与编辑器</title>
-      <link>http://wenzhixin.net.cn/2013/11/02/markdown_and_markdown_editor/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/11/02/markdown_and_markdown_editor/</link>
       <pubDate>Sat, 02 Nov 2013 10:42:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2013/11/02/markdown_and_markdown_editor/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/02/markdown_and_markdown_editor/</guid>
       <description>markdown 是一种轻量级标记语言，它允许使用易读易写的纯文本格式编写文档，然后转换成html文档。 markdown 强调可读性高于一切。其实网上有很多介绍 markdown 的文章，这</description>
     </item>
     

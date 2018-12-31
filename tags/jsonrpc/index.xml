@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>jsonrpc on 文翼的博客</title>
-    <link>http://wenzhixin.net.cn/tags/jsonrpc/</link>
+    <link>http://blog.wenzhixin.net.cn/tags/jsonrpc/</link>
     <description>Recent content in jsonrpc on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Sun, 27 Oct 2013 12:50:00 +0000</lastBuildDate>
     
-	<atom:link href="http://wenzhixin.net.cn/tags/jsonrpc/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/jsonrpc/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>nodejs 通过 JSON-RPC 调用 aria2 接口</title>
-      <link>http://wenzhixin.net.cn/2013/10/27/nodejs_json_rpc_aria2/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/10/27/nodejs_json_rpc_aria2/</link>
       <pubDate>Sun, 27 Oct 2013 12:50:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2013/10/27/nodejs_json_rpc_aria2/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/10/27/nodejs_json_rpc_aria2/</guid>
       <description>今天继续之前的下载服务器的开发，第一步是调用文件的 API，第二步是列出应用目录下的所有文件，今天的目标是调用后台接口进行下载。 1. aria2 配置 这里，</description>
     </item>
     

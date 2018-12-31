@@ -2,40 +2,40 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>动画 on 文翼的博客</title>
-    <link>http://wenzhixin.net.cn/tags/%E5%8A%A8%E7%94%BB/</link>
+    <link>http://blog.wenzhixin.net.cn/tags/%E5%8A%A8%E7%94%BB/</link>
     <description>Recent content in 动画 on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Tue, 14 Jan 2014 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://wenzhixin.net.cn/tags/%E5%8A%A8%E7%94%BB/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/%E5%8A%A8%E7%94%BB/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>使用 requestAnimationFrame 实现动画</title>
-      <link>http://wenzhixin.net.cn/2014/01/14/canvas_fps_frame/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/01/14/canvas_fps_frame/</link>
       <pubDate>Tue, 14 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2014/01/14/canvas_fps_frame/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/01/14/canvas_fps_frame/</guid>
       <description>requestAnimationFrame 函数是主流浏览器推出来的用来代替旧的setTimeout和setInterval方法， 从而提高动作的性能。 该函数把绘制动画的任务直接交给浏</description>
     </item>
     
     <item>
       <title>《锋利的jQuery》学习笔记——jQuery中的动画</title>
-      <link>http://wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_in_animation/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_in_animation/</link>
       <pubDate>Tue, 13 Mar 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_in_animation/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_in_animation/</guid>
       <description>​1. show和hide方法 • (&amp;ldquo;element&amp;rdquo;).show(speed[, callback])-显示element元素 • (&amp;ldquo;element&amp;rdquo;).hide(speed[, callback])-隐藏element元素 (1)show() 和 hide() 方法同时修</description>
     </item>
     
     <item>
       <title>《锋利的jQuery》学习笔记——jQuery中的动画</title>
-      <link>http://wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_in_animation/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_in_animation/</link>
       <pubDate>Tue, 13 Mar 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_in_animation/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_in_animation/</guid>
       <description>​1. show和hide方法 • (&amp;ldquo;element&amp;rdquo;).show(speed[, callback])-显示element元素 • (&amp;ldquo;element&amp;rdquo;).hide(speed[, callback])-隐藏element元素 (1)show() 和 hide() 方法同时修</description>
     </item>
     

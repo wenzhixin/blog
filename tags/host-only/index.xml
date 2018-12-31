@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Host-Only on 文翼的博客</title>
-    <link>http://wenzhixin.net.cn/tags/host-only/</link>
+    <link>http://blog.wenzhixin.net.cn/tags/host-only/</link>
     <description>Recent content in Host-Only on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Thu, 31 Jul 2014 15:33:00 +0000</lastBuildDate>
     
-	<atom:link href="http://wenzhixin.net.cn/tags/host-only/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/host-only/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>VirtualBox 设置 Host-Only 上网</title>
-      <link>http://wenzhixin.net.cn/2014/07/31/virtual_box_host_only_settings/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/07/31/virtual_box_host_only_settings/</link>
       <pubDate>Thu, 31 Jul 2014 15:33:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2014/07/31/virtual_box_host_only_settings/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/07/31/virtual_box_host_only_settings/</guid>
       <description>我们平时在使用 VirtualBox 虚拟机的时候，工作场所内部网和家里内部网的网段不相同，使用 DHCP 获取 IP 地址的方式导致虚拟机的地址会经常改变，从而不方便使用，特别</description>
     </item>
     

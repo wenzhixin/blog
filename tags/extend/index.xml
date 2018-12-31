@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>extend on 文翼的博客</title>
-    <link>http://wenzhixin.net.cn/tags/extend/</link>
+    <link>http://blog.wenzhixin.net.cn/tags/extend/</link>
     <description>Recent content in extend on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Fri, 17 Jan 2014 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://wenzhixin.net.cn/tags/extend/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/extend/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>详解 jQuery.extend() 方法</title>
-      <link>http://wenzhixin.net.cn/2014/01/17/jquery_extend/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/01/17/jquery_extend/</link>
       <pubDate>Fri, 17 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2014/01/17/jquery_extend/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/01/17/jquery_extend/</guid>
       <description>今天在写插件，使用$.extend({}, defaults, options)的时候发现漏写了 {}，浪费了一些时间， 所以详细记录下该方法的 API 和使用。 API 如下： jQuery.extend(</description>
     </item>
     

@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>命令行 on 文翼的博客</title>
-    <link>http://wenzhixin.net.cn/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/</link>
+    <link>http://blog.wenzhixin.net.cn/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/</link>
     <description>Recent content in 命令行 on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Tue, 11 Feb 2014 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://wenzhixin.net.cn/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>cordova 初识之命令行工具</title>
-      <link>http://wenzhixin.net.cn/2014/02/11/cordova_command_line/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/02/11/cordova_command_line/</link>
       <pubDate>Tue, 11 Feb 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2014/02/11/cordova_command_line/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/02/11/cordova_command_line/</guid>
       <description>1. 准备工作 在使用 cordova 的命令行之前，需要安装各平台对应的 SDK，各个平台对应的操作系统如下： iOS (Mac) Amazon Fire OS (Mac, Linux, Windows) Android (Mac, Linux) BlackBerry 10 (Mac, Linux, Windows) Windows Phone 7 (Windows) Windows Phone 8 (Windows) Windows 8</description>
     </item>
     

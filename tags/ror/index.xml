@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ROR on 文翼的博客</title>
-    <link>http://wenzhixin.net.cn/tags/ror/</link>
+    <link>http://blog.wenzhixin.net.cn/tags/ror/</link>
     <description>Recent content in ROR on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Mon, 22 Oct 2012 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://wenzhixin.net.cn/tags/ror/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/ror/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Ubuntu 搭建 Ruby on Rails 开发环境</title>
-      <link>http://wenzhixin.net.cn/2012/10/22/ubuntu_ruby_on_rails_development_environment_set_up/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/10/22/ubuntu_ruby_on_rails_development_environment_set_up/</link>
       <pubDate>Mon, 22 Oct 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2012/10/22/ubuntu_ruby_on_rails_development_environment_set_up/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/10/22/ubuntu_ruby_on_rails_development_environment_set_up/</guid>
       <description>安装 ruby： 1 sudo apt-get install ruby1.9.1 ruby1.9.1-dev 安装 rubygems： 1 sudo apt-get install rubygems 安装 mysql 1 sudo apt-get install mysql 安装 ruby-mysql 1）下载：http://www.tmtm.org/en/ru</description>
     </item>
     
     <item>
       <title>Ubuntu 搭建 Ruby on Rails 开发环境</title>
-      <link>http://wenzhixin.net.cn/2012/10/22/ubuntu_ruby_on_rails_development_environment_set_up/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/10/22/ubuntu_ruby_on_rails_development_environment_set_up/</link>
       <pubDate>Mon, 22 Oct 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2012/10/22/ubuntu_ruby_on_rails_development_environment_set_up/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/10/22/ubuntu_ruby_on_rails_development_environment_set_up/</guid>
       <description>安装 ruby： 1 sudo apt-get install ruby1.9.1 ruby1.9.1-dev 安装 rubygems： 1 sudo apt-get install rubygems 安装 mysql 1 sudo apt-get install mysql 安装 ruby-mysql 1）下载：http://www.tmtm.org/en/ru</description>
     </item>
     

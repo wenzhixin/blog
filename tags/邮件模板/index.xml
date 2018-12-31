@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>邮件模板 on 文翼的博客</title>
-    <link>http://wenzhixin.net.cn/tags/%E9%82%AE%E4%BB%B6%E6%A8%A1%E6%9D%BF/</link>
+    <link>http://blog.wenzhixin.net.cn/tags/%E9%82%AE%E4%BB%B6%E6%A8%A1%E6%9D%BF/</link>
     <description>Recent content in 邮件模板 on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Fri, 24 Jan 2014 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://wenzhixin.net.cn/tags/%E9%82%AE%E4%BB%B6%E6%A8%A1%E6%9D%BF/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/%E9%82%AE%E4%BB%B6%E6%A8%A1%E6%9D%BF/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>制作漂亮的邮件模板</title>
-      <link>http://wenzhixin.net.cn/2014/01/24/send_email_template/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/01/24/send_email_template/</link>
       <pubDate>Fri, 24 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2014/01/24/send_email_template/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/01/24/send_email_template/</guid>
       <description>上一篇中讲到如何通过 nodejs 发送通知邮件，在发送通知邮件的时候， 假如可以有漂亮的邮件模板就更好了，但是出于安全的原因， 邮件一般不支持 link 或者 style 样式，</description>
     </item>
     

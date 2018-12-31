@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>服务器 on 文翼的博客</title>
-    <link>http://wenzhixin.net.cn/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+    <link>http://blog.wenzhixin.net.cn/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
     <description>Recent content in 服务器 on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Mon, 01 Jul 2013 21:23:00 +0000</lastBuildDate>
     
-	<atom:link href="http://wenzhixin.net.cn/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>搭建小型下载服务器(raspberry pi)</title>
-      <link>http://wenzhixin.net.cn/2013/07/01/raspberry_server/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/07/01/raspberry_server/</link>
       <pubDate>Mon, 01 Jul 2013 21:23:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2013/07/01/raspberry_server/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/07/01/raspberry_server/</guid>
       <description>1. 购买设备 1) 单板机：我购买的是树莓派raspberry pi B型 512MB，购买地址为（我是在淘宝上购买的，声明不是广告哦）： 官方地址 淘宝地址 2)</description>
     </item>
     

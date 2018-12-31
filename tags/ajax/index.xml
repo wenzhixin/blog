@@ -2,58 +2,58 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ajax on 文翼的博客</title>
-    <link>http://wenzhixin.net.cn/tags/ajax/</link>
+    <link>http://blog.wenzhixin.net.cn/tags/ajax/</link>
     <description>Recent content in Ajax on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Thu, 05 Jun 2014 13:45:00 +0000</lastBuildDate>
     
-	<atom:link href="http://wenzhixin.net.cn/tags/ajax/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/ajax/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>使用 apache2 作为代理服务器轻松解决 Ajax 跨域问题</title>
-      <link>http://wenzhixin.net.cn/2014/06/05/apache_proxy/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/06/05/apache_proxy/</link>
       <pubDate>Thu, 05 Jun 2014 13:45:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2014/06/05/apache_proxy/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/06/05/apache_proxy/</guid>
       <description>介绍 我们知道，使用 JavaScript 进行开发 Ajax 应用的时候会有跨域访问的问题，而用代理便可以解决跨域访问的问题。 那么应该如何开启 apache2 的 http 代理模块呢？ 模块 mod_</description>
     </item>
     
     <item>
       <title>使用 nginx 作为代理服务器轻松解决 Ajax 跨域问题</title>
-      <link>http://wenzhixin.net.cn/2012/08/01/the_use_of_nginx_as_a_proxy_server_easily_solve_the_cross_domain_ajax_problem/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/08/01/the_use_of_nginx_as_a_proxy_server_easily_solve_the_cross_domain_ajax_problem/</link>
       <pubDate>Wed, 01 Aug 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2012/08/01/the_use_of_nginx_as_a_proxy_server_easily_solve_the_cross_domain_ajax_problem/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/08/01/the_use_of_nginx_as_a_proxy_server_easily_solve_the_cross_domain_ajax_problem/</guid>
       <description>1、安装 nginx： 1 sudo apt-get install nginx 2、配置 nginx： 1 sudo vi /etc/nginx/sites-enabled/default 输入内容： 1 2 3 4 5 6 7 8 server { listen 8080; location /api { proxy_pass http://myserver/api; access_log off; } } 3、重启 1 sudo /etc/init.d/nginx restart 4、使用： 1 var</description>
     </item>
     
     <item>
       <title>使用 nginx 作为代理服务器轻松解决 Ajax 跨域问题</title>
-      <link>http://wenzhixin.net.cn/2012/08/01/the_use_of_nginx_as_a_proxy_server_easily_solve_the_cross_domain_ajax_problem/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/08/01/the_use_of_nginx_as_a_proxy_server_easily_solve_the_cross_domain_ajax_problem/</link>
       <pubDate>Wed, 01 Aug 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2012/08/01/the_use_of_nginx_as_a_proxy_server_easily_solve_the_cross_domain_ajax_problem/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/08/01/the_use_of_nginx_as_a_proxy_server_easily_solve_the_cross_domain_ajax_problem/</guid>
       <description>1、安装 nginx： 1 sudo apt-get install nginx 2、配置 nginx： 1 sudo vi /etc/nginx/sites-enabled/default 输入内容： 1 2 3 4 5 6 7 8 server { listen 8080; location /api { proxy_pass http://myserver/api; access_log off; } } 3、重启 1 sudo /etc/init.d/nginx restart 4、使用： 1 var</description>
     </item>
     
     <item>
       <title>《锋利的jQuery》学习笔记——jQuery与Ajax应用</title>
-      <link>http://wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_and_ajax_application/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_and_ajax_application/</link>
       <pubDate>Tue, 13 Mar 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_and_ajax_application/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_and_ajax_application/</guid>
       <description>​1. 什么是 Ajax？ • Ajax 全称为”Asynchronous Javascript and XML”（异步 Javascript 和 XML），并不是指一种单一的技术，而是有机地利用了一系列交互</description>
     </item>
     
     <item>
       <title>《锋利的jQuery》学习笔记——jQuery与Ajax应用</title>
-      <link>http://wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_and_ajax_application/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_and_ajax_application/</link>
       <pubDate>Tue, 13 Mar 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_and_ajax_application/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_and_ajax_application/</guid>
       <description>​1. 什么是 Ajax？ • Ajax 全称为”Asynchronous Javascript and XML”（异步 Javascript 和 XML），并不是指一种单一的技术，而是有机地利用了一系列交互</description>
     </item>
     

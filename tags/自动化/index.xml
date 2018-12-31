@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>自动化 on 文翼的博客</title>
-    <link>http://wenzhixin.net.cn/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/</link>
+    <link>http://blog.wenzhixin.net.cn/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/</link>
     <description>Recent content in 自动化 on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Mon, 11 Nov 2013 23:31:00 +0000</lastBuildDate>
     
-	<atom:link href="http://wenzhixin.net.cn/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>使用 js 脚本自动安装最新安备客户端</title>
-      <link>http://wenzhixin.net.cn/2013/11/11/js_anbay_agent_auto_install/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/11/11/js_anbay_agent_auto_install/</link>
       <pubDate>Mon, 11 Nov 2013 23:31:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2013/11/11/js_anbay_agent_auto_install/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/11/js_anbay_agent_auto_install/</guid>
       <description>每次安备客户端的代码一更新（即使是一行代码），那么我需要做的事情包括： 从 FTP 上下载最新的安装包（包括打开 ftp，输入用户名密码，复制，粘贴等）</description>
     </item>
     

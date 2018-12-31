@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>fixed on 文翼的博客</title>
-    <link>http://wenzhixin.net.cn/tags/fixed/</link>
+    <link>http://blog.wenzhixin.net.cn/tags/fixed/</link>
     <description>Recent content in fixed on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Thu, 21 Nov 2013 21:50:00 +0000</lastBuildDate>
     
-	<atom:link href="http://wenzhixin.net.cn/tags/fixed/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/fixed/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Android 界面不支持 position fixed 问题</title>
-      <link>http://wenzhixin.net.cn/2013/11/21/android_position_fixed/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/11/21/android_position_fixed/</link>
       <pubDate>Thu, 21 Nov 2013 21:50:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2013/11/21/android_position_fixed/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/21/android_position_fixed/</guid>
       <description>在 Android 中，部分浏览器不支持 css 的 position: fixed 属性。 详细的支持情况见：http://caniuse.com/css-fixed 对于不支持的情况，我们可以通</description>
     </item>
     

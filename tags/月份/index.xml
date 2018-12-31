@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>月份 on 文翼的博客</title>
-    <link>http://wenzhixin.net.cn/tags/%E6%9C%88%E4%BB%BD/</link>
+    <link>http://blog.wenzhixin.net.cn/tags/%E6%9C%88%E4%BB%BD/</link>
     <description>Recent content in 月份 on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Sat, 23 Nov 2013 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://wenzhixin.net.cn/tags/%E6%9C%88%E4%BB%BD/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/%E6%9C%88%E4%BB%BD/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>jQuery 打造月份选择器插件</title>
-      <link>http://wenzhixin.net.cn/2013/11/23/jquery_month_picker/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/11/23/jquery_month_picker/</link>
       <pubDate>Sat, 23 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2013/11/23/jquery_month_picker/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/23/jquery_month_picker/</guid>
       <description>项目中需要用到月份选择器，找到了几款日期选择器 datepicker， 但是我不需要选择具体的日期，虽然有个可以支持只显示月份的，但是显得比较臃</description>
     </item>
     

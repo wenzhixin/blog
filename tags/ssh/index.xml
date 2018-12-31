@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ssh on 文翼的博客</title>
-    <link>http://wenzhixin.net.cn/tags/ssh/</link>
+    <link>http://blog.wenzhixin.net.cn/tags/ssh/</link>
     <description>Recent content in ssh on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Sun, 17 Mar 2013 22:38:00 +0000</lastBuildDate>
     
-	<atom:link href="http://wenzhixin.net.cn/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Ubuntu 下无密码访问及文件同步</title>
-      <link>http://wenzhixin.net.cn/2013/03/17/ssh_rsync/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/03/17/ssh_rsync/</link>
       <pubDate>Sun, 17 Mar 2013 22:38:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2013/03/17/ssh_rsync/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/03/17/ssh_rsync/</guid>
       <description>服务器端配置 ssh 修改客户端sshd配置文件 1 sudo vi /etc/ssh/sshd_config 修改为 1 2 3 RSAAuthentication yes PubkeyAuthentication yes AuthorizedKeysFile %h/.ssh/authorized_keys 重启ssh服务 1 sudo /etc/init.d/sshd restart 配置密钥 在客户端生成公钥和私钥文件 1 2 ssh-keygen cat ~/.ssh/id_rsa.pub &amp;gt;&amp;gt;</description>
     </item>
     

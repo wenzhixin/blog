@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>title on 文翼的博客</title>
-    <link>http://wenzhixin.net.cn/tags/title/</link>
+    <link>http://blog.wenzhixin.net.cn/tags/title/</link>
     <description>Recent content in title on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Thu, 31 Oct 2013 00:51:00 +0000</lastBuildDate>
     
-	<atom:link href="http://wenzhixin.net.cn/tags/title/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/title/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>html 标签 title 换行方法</title>
-      <link>http://wenzhixin.net.cn/2013/10/31/html_title_wrap/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/10/31/html_title_wrap/</link>
       <pubDate>Thu, 31 Oct 2013 00:51:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2013/10/31/html_title_wrap/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/10/31/html_title_wrap/</guid>
       <description>1. 使用换行符换行 换行符分别为：&amp;amp;#10; 或 &amp;amp;#13; 例如： 1 &amp;lt;a href=&amp;#34;http://wenzhixin.net.cn&amp;#34; title=&amp;#34;前端技术&amp;amp;#10;交互设计&amp;amp;#13;移</description>
     </item>
     

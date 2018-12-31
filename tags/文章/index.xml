@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>文章 on 文翼的博客</title>
-    <link>http://wenzhixin.net.cn/tags/%E6%96%87%E7%AB%A0/</link>
+    <link>http://blog.wenzhixin.net.cn/tags/%E6%96%87%E7%AB%A0/</link>
     <description>Recent content in 文章 on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Sun, 02 Feb 2014 12:45:00 +0000</lastBuildDate>
     
-	<atom:link href="http://wenzhixin.net.cn/tags/%E6%96%87%E7%AB%A0/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/%E6%96%87%E7%AB%A0/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>看见</title>
-      <link>http://wenzhixin.net.cn/2014/02/02/kanjian/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/02/02/kanjian/</link>
       <pubDate>Sun, 02 Feb 2014 12:45:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2014/02/02/kanjian/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/02/02/kanjian/</guid>
       <description>桌子上静静躺着的柴静的《看见》这本书，虽然买了好一段时间了，但却没真正的开始翻过。记得当时这本书在排行榜上还排到了第一名的位置，一开始也不知</description>
     </item>
     
     <item>
       <title>也谈写文章</title>
-      <link>http://wenzhixin.net.cn/2014/01/27/write_article/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/01/27/write_article/</link>
       <pubDate>Mon, 27 Jan 2014 09:10:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2014/01/27/write_article/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/01/27/write_article/</guid>
       <description>自从有了自己的博客之后，陆陆续续写了 100 多篇文章， 定的小目标虽然说已经完成。但是对于写作来说，从一开始的害怕无话可说， 到现在的一天一篇文章，还</description>
     </item>
     

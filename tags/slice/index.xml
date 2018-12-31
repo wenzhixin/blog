@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>slice on 文翼的博客</title>
-    <link>http://wenzhixin.net.cn/tags/slice/</link>
+    <link>http://blog.wenzhixin.net.cn/tags/slice/</link>
     <description>Recent content in slice on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Sun, 03 Aug 2014 23:28:00 +0000</lastBuildDate>
     
-	<atom:link href="http://wenzhixin.net.cn/tags/slice/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/slice/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>理解 JavaScript 中的 Array.prototype.slice.apply(arguments)</title>
-      <link>http://wenzhixin.net.cn/2014/08/03/slice_arguments/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/08/03/slice_arguments/</link>
       <pubDate>Sun, 03 Aug 2014 23:28:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2014/08/03/slice_arguments/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/08/03/slice_arguments/</guid>
       <description>假如你是一个 JavaScript 开发者，你可能见到过 Array.prototype.slice.apply(arguments) 这样的用法，然后你会问，这么写是什么意思呢？ 这个语法其实不难理解，只是它有些不好看。Array 是 JavaScript 的基本</description>
     </item>
     

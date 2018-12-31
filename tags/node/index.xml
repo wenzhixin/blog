@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>node on 文翼的博客</title>
-    <link>http://wenzhixin.net.cn/tags/node/</link>
+    <link>http://blog.wenzhixin.net.cn/tags/node/</link>
     <description>Recent content in node on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Mon, 30 Dec 2013 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://wenzhixin.net.cn/tags/node/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/node/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Ubuntu 12.10 添加 node 应用为自启动服务</title>
-      <link>http://wenzhixin.net.cn/2013/12/30/ubuntu_node_app_service/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/12/30/ubuntu_node_app_service/</link>
       <pubDate>Mon, 30 Dec 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2013/12/30/ubuntu_node_app_service/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/12/30/ubuntu_node_app_service/</guid>
       <description>开发 node 应用之后，启动的方式一般是通过 node app 或者 node app &amp;amp; 来运行， 十分不方便，这里将以本 blog 应用为例介绍如何添加为自启动的服务。 环境 用户名：usern</description>
     </item>
     
     <item>
       <title>使用 js 自动生成博客首页文件列表</title>
-      <link>http://wenzhixin.net.cn/2013/10/20/auto_create_blog_index/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/10/20/auto_create_blog_index/</link>
       <pubDate>Sun, 20 Oct 2013 00:17:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2013/10/20/auto_create_blog_index/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/10/20/auto_create_blog_index/</guid>
       <description>1. 介绍 因为每次写完文章后，都需要手动更新主页文件，打算每天至少写一篇文章。 所以这种重复工作还是交给机器去完成吧。 2. 步骤 1) 遍历文章存放文件夹列</description>
     </item>
     

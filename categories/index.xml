@@ -2,84 +2,84 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on 文翼的博客</title>
-    <link>http://wenzhixin.net.cn/categories/</link>
+    <link>http://blog.wenzhixin.net.cn/categories/</link>
     <description>Recent content in Categories on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     
-	<atom:link href="http://wenzhixin.net.cn/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.wenzhixin.net.cn/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>交互设计</title>
-      <link>http://wenzhixin.net.cn/categories/%E4%BA%A4%E4%BA%92%E8%AE%BE%E8%AE%A1/</link>
+      <link>http://blog.wenzhixin.net.cn/categories/%E4%BA%A4%E4%BA%92%E8%AE%BE%E8%AE%A1/</link>
       <pubDate>Mon, 25 Nov 2013 21:41:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/categories/%E4%BA%A4%E4%BA%92%E8%AE%BE%E8%AE%A1/</guid>
+      <guid>http://blog.wenzhixin.net.cn/categories/%E4%BA%A4%E4%BA%92%E8%AE%BE%E8%AE%A1/</guid>
       <description></description>
     </item>
     
     <item>
       <title>前端开发</title>
-      <link>http://wenzhixin.net.cn/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/</link>
+      <link>http://blog.wenzhixin.net.cn/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/</link>
       <pubDate>Tue, 14 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/</guid>
+      <guid>http://blog.wenzhixin.net.cn/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/</guid>
       <description></description>
     </item>
     
     <item>
       <title>前端技术</title>
-      <link>http://wenzhixin.net.cn/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/</link>
+      <link>http://blog.wenzhixin.net.cn/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/</link>
       <pubDate>Mon, 11 Jan 2016 13:30:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/</guid>
+      <guid>http://blog.wenzhixin.net.cn/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/</guid>
       <description></description>
     </item>
     
     <item>
       <title>后台技术</title>
-      <link>http://wenzhixin.net.cn/categories/%E5%90%8E%E5%8F%B0%E6%8A%80%E6%9C%AF/</link>
+      <link>http://blog.wenzhixin.net.cn/categories/%E5%90%8E%E5%8F%B0%E6%8A%80%E6%9C%AF/</link>
       <pubDate>Sun, 21 Sep 2014 21:20:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/categories/%E5%90%8E%E5%8F%B0%E6%8A%80%E6%9C%AF/</guid>
+      <guid>http://blog.wenzhixin.net.cn/categories/%E5%90%8E%E5%8F%B0%E6%8A%80%E6%9C%AF/</guid>
       <description></description>
     </item>
     
     <item>
       <title>操作系统</title>
-      <link>http://wenzhixin.net.cn/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</link>
+      <link>http://blog.wenzhixin.net.cn/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</link>
       <pubDate>Tue, 10 Nov 2015 16:07:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</guid>
+      <guid>http://blog.wenzhixin.net.cn/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</guid>
       <description></description>
     </item>
     
     <item>
       <title>数据库</title>
-      <link>http://wenzhixin.net.cn/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
+      <link>http://blog.wenzhixin.net.cn/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
       <pubDate>Thu, 07 Jan 2016 22:30:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</guid>
+      <guid>http://blog.wenzhixin.net.cn/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</guid>
       <description></description>
     </item>
     
     <item>
       <title>生活随笔</title>
-      <link>http://wenzhixin.net.cn/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/</link>
+      <link>http://blog.wenzhixin.net.cn/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/</link>
       <pubDate>Sun, 23 Nov 2014 08:29:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/</guid>
+      <guid>http://blog.wenzhixin.net.cn/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/</guid>
       <description></description>
     </item>
     
     <item>
       <title>移动开发</title>
-      <link>http://wenzhixin.net.cn/categories/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/</link>
+      <link>http://blog.wenzhixin.net.cn/categories/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/</link>
       <pubDate>Thu, 20 Mar 2014 21:58:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/categories/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/</guid>
+      <guid>http://blog.wenzhixin.net.cn/categories/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/</guid>
       <description></description>
     </item>
     

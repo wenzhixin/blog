@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>locale on 文翼的博客</title>
-    <link>http://wenzhixin.net.cn/tags/locale/</link>
+    <link>http://blog.wenzhixin.net.cn/tags/locale/</link>
     <description>Recent content in locale on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Sat, 11 Jan 2014 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://wenzhixin.net.cn/tags/locale/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/locale/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>ubuntu 解决语言设置错误的问题</title>
-      <link>http://wenzhixin.net.cn/2014/01/11/ubuntu_setting_locale_failed/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/01/11/ubuntu_setting_locale_failed/</link>
       <pubDate>Sat, 11 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2014/01/11/ubuntu_setting_locale_failed/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/01/11/ubuntu_setting_locale_failed/</guid>
       <description>在使用 ubuntu 命令行登录的时候，出现： 1 2 3 4 5 6 7 8 perl: warning: Setting locale failed. perl: warning: Please check that your locale settings: LANGUAGE = (unset), LC_ALL = (unset), LC_MESSAGES = &amp;#34;zh_CN.UTF-8&amp;#34;, LANG = &amp;#34;zh_CN.UTF-8&amp;#34; are supported and installed on your system. perl: warning: Falling back to the standard locale (&amp;#34;C&amp;#34;). 这样的错误</description>
     </item>
     

@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>gitlab on 文翼的博客</title>
-    <link>http://wenzhixin.net.cn/tags/gitlab/</link>
+    <link>http://blog.wenzhixin.net.cn/tags/gitlab/</link>
     <description>Recent content in gitlab on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Mon, 14 Jan 2013 15:55:00 +0000</lastBuildDate>
     
-	<atom:link href="http://wenzhixin.net.cn/tags/gitlab/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/gitlab/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Ubuntu 11.10 搭建 gitlab 服务器</title>
-      <link>http://wenzhixin.net.cn/2013/01/14/gitlab_installation/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/01/14/gitlab_installation/</link>
       <pubDate>Mon, 14 Jan 2013 15:55:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2013/01/14/gitlab_installation/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/01/14/gitlab_installation/</guid>
       <description>ps: 请按照顺序一步一步来，并注意查看提示，确保成功！ 1. 更新系统 1 2 sudo apt-get update sudo apt-get upgrade 2. 安装必要的包 1 sudo apt-get install -y build-essential zlib1g-dev libyaml-dev libssl-dev libgdbm-dev libreadline-dev libncurses5-dev libffi-dev wget curl git-core openssh-server redis-server postfix checkinstall libxml2-dev libxslt-dev libcurl4-openssl-dev libicu-dev 3.</description>
     </item>
     

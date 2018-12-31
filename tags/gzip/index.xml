@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>gzip on 文翼的博客</title>
-    <link>http://wenzhixin.net.cn/tags/gzip/</link>
+    <link>http://blog.wenzhixin.net.cn/tags/gzip/</link>
     <description>Recent content in gzip on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Sun, 10 Nov 2013 23:22:00 +0000</lastBuildDate>
     
-	<atom:link href="http://wenzhixin.net.cn/tags/gzip/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/gzip/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>为你的网站开启 gzip 压缩功能（nodejs、nginx）</title>
-      <link>http://wenzhixin.net.cn/2013/11/10/server_gzip_on/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/11/10/server_gzip_on/</link>
       <pubDate>Sun, 10 Nov 2013 23:22:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2013/11/10/server_gzip_on/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/10/server_gzip_on/</guid>
       <description>开启网站的 gzip 压缩功能，通常可以高达70%，也就是说，如果你的网页有30K，压缩之后就变成9K， 对于大部分网站，显然可以明显提高浏览速度（注：</description>
     </item>
     

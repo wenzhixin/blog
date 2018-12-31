@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>KVM on 文翼的博客</title>
-    <link>http://wenzhixin.net.cn/tags/kvm/</link>
+    <link>http://blog.wenzhixin.net.cn/tags/kvm/</link>
     <description>Recent content in KVM on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Fri, 21 Nov 2014 22:20:00 +0000</lastBuildDate>
     
-	<atom:link href="http://wenzhixin.net.cn/tags/kvm/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/kvm/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>KVM 虚拟机的学习和使用</title>
-      <link>http://wenzhixin.net.cn/2014/11/21/kvm_study/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/11/21/kvm_study/</link>
       <pubDate>Fri, 21 Nov 2014 22:20:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2014/11/21/kvm_study/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/11/21/kvm_study/</guid>
       <description>KVM 是 Kernel-based Virtual Machine的简称，是一个开源的系统虚拟化模块，是基于硬件的完全虚拟化。 查看硬件是否支持 通过命令行可以查看硬件是否支持： 1 2 3 4 5</description>
     </item>
     

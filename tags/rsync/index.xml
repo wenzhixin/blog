@@ -2,58 +2,58 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>rsync on 文翼的博客</title>
-    <link>http://wenzhixin.net.cn/tags/rsync/</link>
+    <link>http://blog.wenzhixin.net.cn/tags/rsync/</link>
     <description>Recent content in rsync on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Wed, 15 Jan 2014 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://wenzhixin.net.cn/tags/rsync/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/rsync/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>windows7 下 Bad owner or permissions 问题</title>
-      <link>http://wenzhixin.net.cn/2014/01/15/windows7_rsync_error/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/01/15/windows7_rsync_error/</link>
       <pubDate>Wed, 15 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2014/01/15/windows7_rsync_error/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/01/15/windows7_rsync_error/</guid>
       <description>问题： ssh 或者 rsync 的时候出现以下错误： 1 Bad owner or permissions on ~/.ssh/config 原因： 权限问题，需要将配置文件和 key 文件修改成当前用户和 600 解决： 下载 chown.zip， 解压放</description>
     </item>
     
     <item>
       <title>windows 下同步文件到远程服务器中</title>
-      <link>http://wenzhixin.net.cn/2014/01/06/windows_rsync_file/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/01/06/windows_rsync_file/</link>
       <pubDate>Mon, 06 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2014/01/06/windows_rsync_file/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/01/06/windows_rsync_file/</guid>
       <description>安装 cwRsync 下载 cwRsync 客户端 解压并安装到指定目录，例如：C:\Program Files\cwRsync 配置环境变量： 系统变量 Path中后面加入 C:\Program Files\cwRsync\bin; 创建新的系统变量 HOME = C:\Program Files\cwRsync\home (其</description>
     </item>
     
     <item>
       <title>从 ubuntu 同步文件到 windows</title>
-      <link>http://wenzhixin.net.cn/2013/12/01/ubuntu_rsync_to_windows/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/12/01/ubuntu_rsync_to_windows/</link>
       <pubDate>Sun, 01 Dec 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2013/12/01/ubuntu_rsync_to_windows/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/12/01/ubuntu_rsync_to_windows/</guid>
       <description>windows 下使用 cwRsync，ubuntu 使用默认的 rsync。 安装 cwRsync 下载 cwRsync 服务端 解压并安装到指定目录，例如：E:\Program Files\ICW 配置 cwRsync 修改 rsyncd.conf 1</description>
     </item>
     
     <item>
       <title>安卓 ssh 和 rsync 同步客户端的实现</title>
-      <link>http://wenzhixin.net.cn/2013/10/18/android_ssh_rsync_client/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/10/18/android_ssh_rsync_client/</link>
       <pubDate>Fri, 18 Oct 2013 09:30:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2013/10/18/android_ssh_rsync_client/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/10/18/android_ssh_rsync_client/</guid>
       <description>1. 介绍 基于安卓的 ssh 和 rsync 客户端，可用于对服务器指定的目录进行同步到手机。 在这里我们使用 Dropbear 的 dbclient 作为 ssh 的客户端。 Dropbear是一个相对较小的S</description>
     </item>
     
     <item>
       <title>Ubuntu 下无密码访问及文件同步</title>
-      <link>http://wenzhixin.net.cn/2013/03/17/ssh_rsync/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/03/17/ssh_rsync/</link>
       <pubDate>Sun, 17 Mar 2013 22:38:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2013/03/17/ssh_rsync/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/03/17/ssh_rsync/</guid>
       <description>服务器端配置 ssh 修改客户端sshd配置文件 1 sudo vi /etc/ssh/sshd_config 修改为 1 2 3 RSAAuthentication yes PubkeyAuthentication yes AuthorizedKeysFile %h/.ssh/authorized_keys 重启ssh服务 1 sudo /etc/init.d/sshd restart 配置密钥 在客户端生成公钥和私钥文件 1 2 ssh-keygen cat ~/.ssh/id_rsa.pub &amp;gt;&amp;gt;</description>
     </item>
     

@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>DBackup on 文翼的博客</title>
-    <link>http://wenzhixin.net.cn/tags/dbackup/</link>
+    <link>http://blog.wenzhixin.net.cn/tags/dbackup/</link>
     <description>Recent content in DBackup on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Sat, 08 Nov 2014 02:14:00 +0000</lastBuildDate>
     
-	<atom:link href="http://wenzhixin.net.cn/tags/dbackup/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/dbackup/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>开源所带来的——记 DBackup 4.0 发布和 Bootstrap Table 插件的开发</title>
-      <link>http://wenzhixin.net.cn/2014/11/08/bootstrap-table/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/11/08/bootstrap-table/</link>
       <pubDate>Sat, 08 Nov 2014 02:14:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2014/11/08/bootstrap-table/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/11/08/bootstrap-table/</guid>
       <description>源起 最最开始的时候，在写公司的考勤系统，系统的功能十分简单，只需要简单地查询数据和展示数据（无需增加、修改和删除），后台接口使用的是标准的 Restful</description>
     </item>
     

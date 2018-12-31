@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>插入或更新 on 文翼的博客</title>
-    <link>http://wenzhixin.net.cn/tags/%E6%8F%92%E5%85%A5%E6%88%96%E6%9B%B4%E6%96%B0/</link>
+    <link>http://blog.wenzhixin.net.cn/tags/%E6%8F%92%E5%85%A5%E6%88%96%E6%9B%B4%E6%96%B0/</link>
     <description>Recent content in 插入或更新 on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Thu, 05 Dec 2013 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://wenzhixin.net.cn/tags/%E6%8F%92%E5%85%A5%E6%88%96%E6%9B%B4%E6%96%B0/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/%E6%8F%92%E5%85%A5%E6%88%96%E6%9B%B4%E6%96%B0/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>ON DUPLICATE KEY UPDATE</title>
-      <link>http://wenzhixin.net.cn/2013/12/05/on_duplicate_key_update/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/12/05/on_duplicate_key_update/</link>
       <pubDate>Thu, 05 Dec 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2013/12/05/on_duplicate_key_update/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/12/05/on_duplicate_key_update/</guid>
       <description>有些时候，操作 sql 语句需要判断记录是否存在，不存在则插入存在则更新，可以考虑使用 ON DUPLICATE KEY UPDATE。 在 INSERT INTO 语句末尾指定了 ON DUPLICATE KEY UPDATE，并</description>
     </item>
     

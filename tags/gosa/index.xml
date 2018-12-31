@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>gosa on 文翼的博客</title>
-    <link>http://wenzhixin.net.cn/tags/gosa/</link>
+    <link>http://blog.wenzhixin.net.cn/tags/gosa/</link>
     <description>Recent content in gosa on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Tue, 10 Nov 2015 16:07:00 +0000</lastBuildDate>
     
-	<atom:link href="http://wenzhixin.net.cn/tags/gosa/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/gosa/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>ldap 管理指南</title>
-      <link>http://wenzhixin.net.cn/2015/11/10/slapd_slurpd/</link>
+      <link>http://blog.wenzhixin.net.cn/2015/11/10/slapd_slurpd/</link>
       <pubDate>Tue, 10 Nov 2015 16:07:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2015/11/10/slapd_slurpd/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2015/11/10/slapd_slurpd/</guid>
       <description>1. slapd 和 slurpd 介绍 本章介绍如何编译、配置和运行独立的 LDAP 守护进程（slapd）和独立的更新复制守护进程（slurpd），该内容主要是针对系统管理员。</description>
     </item>
     

@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>字符串 on 文翼的博客</title>
-    <link>http://wenzhixin.net.cn/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/</link>
+    <link>http://blog.wenzhixin.net.cn/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/</link>
     <description>Recent content in 字符串 on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Fri, 03 Oct 2014 23:28:00 +0000</lastBuildDate>
     
-	<atom:link href="http://wenzhixin.net.cn/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>如何不用 eval 的方式通过字符串调用 JavaScript 的方法</title>
-      <link>http://wenzhixin.net.cn/2014/10/03/call_string_function/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/10/03/call_string_function/</link>
       <pubDate>Fri, 03 Oct 2014 23:28:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2014/10/03/call_string_function/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/10/03/call_string_function/</guid>
       <description>由于 bootstrap-table 插件需要支持data-name=&amp;quot;functionName&amp;quot;的方式，所以在实现的过程中使用了eval的方法。我们知</description>
     </item>
     

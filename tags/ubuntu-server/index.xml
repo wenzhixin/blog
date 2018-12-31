@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ubuntu Server on 文翼的博客</title>
-    <link>http://wenzhixin.net.cn/tags/ubuntu-server/</link>
+    <link>http://blog.wenzhixin.net.cn/tags/ubuntu-server/</link>
     <description>Recent content in Ubuntu Server on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Mon, 07 Sep 2015 16:07:00 +0000</lastBuildDate>
     
-	<atom:link href="http://wenzhixin.net.cn/tags/ubuntu-server/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/ubuntu-server/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Installing Virtualbox On Ubuntu Server 14.04</title>
-      <link>http://wenzhixin.net.cn/2015/09/07/installing_vbox_on_ubuntu_server/</link>
+      <link>http://blog.wenzhixin.net.cn/2015/09/07/installing_vbox_on_ubuntu_server/</link>
       <pubDate>Mon, 07 Sep 2015 16:07:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2015/09/07/installing_vbox_on_ubuntu_server/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2015/09/07/installing_vbox_on_ubuntu_server/</guid>
       <description>For some reasons, my computer just only installed Ubuntu Server 14.04 system. But sometimes I need to use Windows system to test our project, so I think if I can install virtualbox on the Ubuntu Server, and then manage the virtualbox by website. How to do that? Install Virtualbox First we go to the website, and download the latest verion(5.0.2) of Virtualbox: 1 2 wget http://download.virtualbox.org/virtualbox/5.0.2/virtualbox-5.0_5.0.2-102096~Ubuntu~trusty_amd64.deb wget http://download.virtualbox.org/virtualbox/5.0.2/Oracle_VM_VirtualBox_Extension_Pack-5.0.2-102096.vbox-extpack Install: 1</description>
     </item>
     

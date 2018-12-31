@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>不可修改 on 文翼的博客</title>
-    <link>http://wenzhixin.net.cn/tags/%E4%B8%8D%E5%8F%AF%E4%BF%AE%E6%94%B9/</link>
+    <link>http://blog.wenzhixin.net.cn/tags/%E4%B8%8D%E5%8F%AF%E4%BF%AE%E6%94%B9/</link>
     <description>Recent content in 不可修改 on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Wed, 07 May 2014 23:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://wenzhixin.net.cn/tags/%E4%B8%8D%E5%8F%AF%E4%BF%AE%E6%94%B9/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/%E4%B8%8D%E5%8F%AF%E4%BF%AE%E6%94%B9/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>在 JavaScript 中定义常量（不可修改）</title>
-      <link>http://wenzhixin.net.cn/2014/05/07/javascript_define_const/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/05/07/javascript_define_const/</link>
       <pubDate>Wed, 07 May 2014 23:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2014/05/07/javascript_define_const/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/05/07/javascript_define_const/</guid>
       <description>define-const.js 在《JavaScript 启示录》的最后一章中提到: &amp;gt; Math 属性是无法改变的常数。这与 JavaScript 可变性质相悖，因此这些属性全部大写。 于是在浏览器（包括 I</description>
     </item>
     

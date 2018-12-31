@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>树莓派 on 文翼的博客</title>
-    <link>http://wenzhixin.net.cn/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/</link>
+    <link>http://blog.wenzhixin.net.cn/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/</link>
     <description>Recent content in 树莓派 on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Thu, 24 Oct 2013 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://wenzhixin.net.cn/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>使用百度云接口</title>
-      <link>http://wenzhixin.net.cn/2013/10/24/call_baidu_pan/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/10/24/call_baidu_pan/</link>
       <pubDate>Thu, 24 Oct 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2013/10/24/call_baidu_pan/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/10/24/call_baidu_pan/</guid>
       <description>树莓派 raspberry pi 已经买了好一段时间了，但是实际上却没怎么用到。 一开始买的时候就是打算重复利用宿舍网络资源的，但是却一直没有时间去做开发。 有些事情，</description>
     </item>
     

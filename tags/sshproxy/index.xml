@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>sshproxy on 文翼的博客</title>
-    <link>http://wenzhixin.net.cn/tags/sshproxy/</link>
+    <link>http://blog.wenzhixin.net.cn/tags/sshproxy/</link>
     <description>Recent content in sshproxy on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Wed, 23 Jan 2013 20:43:00 +0000</lastBuildDate>
     
-	<atom:link href="http://wenzhixin.net.cn/tags/sshproxy/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/sshproxy/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Ubuntu 终端下使用 sshproxy 代理</title>
-      <link>http://wenzhixin.net.cn/2013/01/23/terminal_sshproxy_socks/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/01/23/terminal_sshproxy_socks/</link>
       <pubDate>Wed, 23 Jan 2013 20:43:00 +0000</pubDate>
       
-      <guid>http://wenzhixin.net.cn/2013/01/23/terminal_sshproxy_socks/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/01/23/terminal_sshproxy_socks/</guid>
       <description>1. 安装 tsocks 1 sudo apt-get install tsocks 2. 修改配置信息 1 sudo vi /etc/tsocks.conf 找到最后几行，修改 1 2 server = 192.168.0.1 server_port = 1080 为 1 2 server = 127.0.0.1 server_port = 12345 3. 使用代理（命令前加上 tsocks） 1 2 tsocks wget https://github.com tsocks</description>
     </item>
     
