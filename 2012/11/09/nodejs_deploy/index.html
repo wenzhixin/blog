@@ -58,6 +58,14 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Nodejs 应用部署小记"/>
 <meta name="twitter:description" content="1、日志功能 1) 加入 access.log 1 2 3 4 5 var accessLogfile = fs.createWriteStream(&#39;access.log&#39;, {flags: &#39;a&#39;}); app.configure(function() { app.use(express.logger({stream: accessLogfile})); } 2) 加入 error.log 首先，添加 helpers/error.js 文件： 1 2 3 4 5 6 7 8 9 10 11 12 var fs = require(&#39;fs&#39;); var errorLogfile = fs.createWriteStream(&#39;logs/error.log&#39;, {flags: &#39;a&#39;}); exports.handler = function(err, req, res, status) { console.log(err); var"/>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-6977536652297913",
+    enable_page_level_ads: true
+  });
+</script>
+
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -392,13 +400,13 @@ process.on(&#39;SIGTERM&#39;, function() {
           <a href="/tags/%E9%83%A8%E7%BD%B2/">部署</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/2012/11/09/nodejs_deploy/">
+        <a class="prev" href="/2012/11/16/because_not_easy/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Nodejs 应用部署小记</span>
+            <span class="prev-text nav-default">因为“不容易”</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
-        <a class="next" href="/2012/10/25/nodejs_get_started/">
-            <span class="next-text nav-default">Ubuntu 开发 Nodejs 入门小记</span>
+        <a class="next" href="/2012/11/09/nodejs_deploy/">
+            <span class="next-text nav-default">Nodejs 应用部署小记</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
@@ -489,4 +497,6 @@ if (!doNotTrack) {
 
 
 </body>
+</html>
+body>
 </html>
