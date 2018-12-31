@@ -7,18 +7,120 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Mon, 20 Jan 2014 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.wenzhixin.net.cn/tags/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="http://blog.wenzhixin.net.cn/tags/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>PHP 代码规范</title>
-      <link>http://blog.wenzhixin.net.cn/2014/01/20/php_code_standard/</link>
-      <pubDate>Mon, 20 Jan 2014 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/php_code_standard</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/01/20/php_code_standard/</guid>
-      <description>通用规范 代码缩进全部用 tab / 四个空格 SVN / Git 中新建文件编码类型统一用 utf-8 编码 行宽：80 字符 PHP 代码划分 PHP 代码总是用完整的标准的 PHP 标签定界： 1 2 3 4 5</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/php_code_standard</guid>
+      <description>
+
+&lt;h3 id=&#34;通用规范:ed497f5f7762bd3c3ecc61d8f0720d1b&#34;&gt;通用规范&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;代码缩进全部用 tab / 四个空格&lt;/li&gt;
+&lt;li&gt;SVN / Git 中新建文件编码类型统一用 utf-8 编码&lt;/li&gt;
+&lt;li&gt;行宽：80 字符&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;php-代码划分:ed497f5f7762bd3c3ecc61d8f0720d1b&#34;&gt;PHP 代码划分&lt;/h3&gt;
+
+&lt;p&gt;PHP 代码总是用完整的标准的 PHP 标签定界：&lt;/p&gt;
+&lt;?php
+// 开头必须使用 &lt;?php
+
+// php文件必须以 ?&gt; 结尾，并且保证其后面没有空格或空行。
+?&gt;
+
+&lt;h3 id=&#34;注明作者信息:ed497f5f7762bd3c3ecc61d8f0720d1b&#34;&gt;注明作者信息&lt;/h3&gt;
+
+&lt;p&gt;每个文件必须注明作者的信息和邮箱&lt;/p&gt;
+&lt;?php
+/*
+ * @author: zhixin &lt;wenzhixin2010@gmail.com&gt;
+ */
+?&gt;
+
+&lt;h3 id=&#34;字符串文字:ed497f5f7762bd3c3ecc61d8f0720d1b&#34;&gt;字符串文字&lt;/h3&gt;
+
+&lt;p&gt;当字符串是文字（不包含变量），应当用单引号（apostrophe）来括起来：&lt;/p&gt;
+$a = &#39;Example String&#39;;
+
+&lt;h3 id=&#34;操作符前后都要有空格:ed497f5f7762bd3c3ecc61d8f0720d1b&#34;&gt;操作符前后都要有空格&lt;/h3&gt;
+$c = $a + $b; // 操作符前后都要有空格
+
+$company = &#39;Zend&#39; . &#39; &#39; . &#39;Technologies&#39;; // 字符串必需用 &#34;.&#34; 操作符连接，在它的前后加上空格以提高可读性
+
+&lt;h3 id=&#34;函数:ed497f5f7762bd3c3ecc61d8f0720d1b&#34;&gt;函数&lt;/h3&gt;
+function foo($i, $list) { // 定义函数，( 前面没有空格，） 后面需要空格
+
+}
+
+require_once(&#39;config.inc.php&#39;); //  调用函数，() 前后没有空格
+
+threeArguments(1, 2, 3); // 多个参数，如果有逗号，那么逗号后面要有空格
+
+&lt;h3 id=&#34;控制语句:ed497f5f7762bd3c3ecc61d8f0720d1b&#34;&gt;控制语句&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;使用控制语句在语句的圆括号前后都必须有一个空格。&lt;/li&gt;
+&lt;/ul&gt;
+if ($i &gt; 0) { // if后面加空格
+
+} else { // else前后也要有空格
+
+}
+
+for ($j = 0; $j &lt; $i; $j++) { // for后面加空格
+
+}
+
+switch ($numPeople) { // switch后面加空格
+    case 1: // 缩进
+        break;
+
+    case 2:
+        break;
+
+    default: // switch 语句应当有 default
+        break;
+}
+
+&lt;h3 id=&#34;数组:ed497f5f7762bd3c3ecc61d8f0720d1b&#34;&gt;数组：&lt;/h3&gt;
+$number = array(1, 2, 3, 4); // 简单数组，放一行
+
+// 数组格式
+$color = array(
+    &#39;1&#39; =&gt; &#39;red&#39;, // 缩进一次
+    &#39;2&#39; =&gt; &#39;blue&#39;,
+    &#39;3&#39; =&gt; &#39;yellow&#39;,
+    &#39;4&#39; =&gt; array(
+        &#39;1&#39; =&gt; &#39;green&#39;,	// 缩进一次
+        &#39;2&#39; =&gt; &#39;gray&#39;
+    ) // 数组的结尾与声明的变量最前面对齐
+); // 数组的结尾与数组变量声明的地方对齐
+
+&lt;h3 id=&#34;类:ed497f5f7762bd3c3ecc61d8f0720d1b&#34;&gt;类&lt;/h3&gt;
+class CodingStandard { // 大括号前面加空格，类名开头字母大写，多个字母首字母大写
+    private $attribute; // 命名使用驼峰原则
+
+    public function testFunction() { // 方法命名都遵守驼峰原则
+
+    }
+}
+
+$s = new CodingStandard(); // new 一个对象，后面必须加括弧
+
+&lt;hr /&gt;
+
+&lt;p&gt;参考：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://framework.zend.com/manual/1.12/zh/coding-standard.coding-style.html&#34;&gt;编码风格&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
     
   </channel>

@@ -1,60 +1,48 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>nodejs on 文翼的博客</title>
+    <title>NodeJs on 文翼的博客</title>
     <link>http://blog.wenzhixin.net.cn/tags/nodejs/</link>
-    <description>Recent content in nodejs on 文翼的博客</description>
+    <description>Recent content in NodeJs on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Mon, 07 Jan 2013 10:12:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.wenzhixin.net.cn/tags/nodejs/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="http://blog.wenzhixin.net.cn/tags/nodejs/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Ubuntu 12.04 安装 Nodejs</title>
-      <link>http://blog.wenzhixin.net.cn/2013/01/07/installing_node_on_ubuntu/</link>
-      <pubDate>Mon, 07 Jan 2013 10:12:00 +0000</pubDate>
+      <title>如何为 NodeJs 设置 Nginx 代理服务器</title>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/nginx_as_proxy_nodejs</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/01/07/installing_node_on_ubuntu/</guid>
-      <description>命令行： 1 2 3 4 sudo apt-get install python-software-properties sudo add-apt-repository ppa:chris-lea/node.js sudo apt-get update sudo apt-get install nodejs npm Installing Node.js via package manager</description>
-    </item>
-    
-    <item>
-      <title>Nodejs 应用部署小记</title>
-      <link>http://blog.wenzhixin.net.cn/2012/11/09/nodejs_deploy/</link>
-      <pubDate>Fri, 09 Nov 2012 00:05:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/11/09/nodejs_deploy/</guid>
-      <description>1、日志功能 1) 加入 access.log 1 2 3 4 5 var accessLogfile = fs.createWriteStream(&amp;#39;access.log&amp;#39;, {flags: &amp;#39;a&amp;#39;}); app.configure(function() { app.use(express.logger({stream: accessLogfile})); } 2) 加入 error.log 首先，添加 helpers/error.js 文件： 1 2 3 4 5 6 7 8 9 10 11 12 var fs = require(&amp;#39;fs&amp;#39;); var errorLogfile = fs.createWriteStream(&amp;#39;logs/error.log&amp;#39;, {flags: &amp;#39;a&amp;#39;}); exports.handler = function(err, req, res, status) { console.log(err); var</description>
-    </item>
-    
-    <item>
-      <title>Nodejs 应用部署小记</title>
-      <link>http://blog.wenzhixin.net.cn/2012/11/09/nodejs_deploy/</link>
-      <pubDate>Fri, 09 Nov 2012 00:05:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/11/09/nodejs_deploy/</guid>
-      <description>1、日志功能 1) 加入 access.log 1 2 3 4 5 var accessLogfile = fs.createWriteStream(&amp;#39;access.log&amp;#39;, {flags: &amp;#39;a&amp;#39;}); app.configure(function() { app.use(express.logger({stream: accessLogfile})); } 2) 加入 error.log 首先，添加 helpers/error.js 文件： 1 2 3 4 5 6 7 8 9 10 11 12 var fs = require(&amp;#39;fs&amp;#39;); var errorLogfile = fs.createWriteStream(&amp;#39;logs/error.log&amp;#39;, {flags: &amp;#39;a&amp;#39;}); exports.handler = function(err, req, res, status) { console.log(err); var</description>
-    </item>
-    
-    <item>
-      <title>Ubuntu 开发 Nodejs 入门小记</title>
-      <link>http://blog.wenzhixin.net.cn/2012/10/25/nodejs_get_started/</link>
-      <pubDate>Thu, 25 Oct 2012 22:40:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/10/25/nodejs_get_started/</guid>
-      <description>Nodejs 之搭建环境 1) 安装 nodejs、npm 1 2 3 4 sudo apt-get install python-software-properties sudo add-apt-repository ppa:chris-lea/node.js sudo apt-get update sudo apt-get install nodejs npm 2) 安装 express​ - web application framework for node 1 sudo npm install -g express 3) 安装 supervisor - is used to restart</description>
-    </item>
-    
-    <item>
-      <title>Ubuntu 开发 Nodejs 入门小记</title>
-      <link>http://blog.wenzhixin.net.cn/2012/10/25/nodejs_get_started/</link>
-      <pubDate>Thu, 25 Oct 2012 22:40:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/10/25/nodejs_get_started/</guid>
-      <description>Nodejs 之搭建环境 1) 安装 nodejs、npm 1 2 3 4 sudo apt-get install python-software-properties sudo add-apt-repository ppa:chris-lea/node.js sudo apt-get update sudo apt-get install nodejs npm 2) 安装 express​ - web application framework for node 1 sudo npm install -g express 3) 安装 supervisor - is used to restart</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/nginx_as_proxy_nodejs</guid>
+      <description>&lt;p&gt;很多时候，我们需要为 NodeJs 设置反向代理，例如本博客后台 NodeJs 的应用监听的端口为 3333，通过 Nginx 便可以轻松代理为 80 端口，那么应该如何设置呢？&lt;/p&gt;
+
+&lt;p&gt;首先设置 &lt;code&gt;upstream&lt;/code&gt;：&lt;/p&gt;
+upstream app_blog {
+    server 127.0.0.1:3333;
+}
+
+&lt;p&gt;设置 &lt;code&gt;server&lt;/code&gt;：&lt;/p&gt;
+server {
+    listen 80 default;
+    server_name wenzhixin.net.cn wenzhixin.*;
+
+    location / {
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $http_host;
+        proxy_set_header X-NginX-Proxy true;
+
+        proxy_pass http://app_blog;
+        proxy_redirect off;
+    }
+}
+
+&lt;p&gt;重启 &lt;code&gt;nginx&lt;/code&gt;：&lt;/p&gt;
+sudo service nginx restart
+
+&lt;p&gt;大功告成！根据我们的设置，所有通过 80 的请求（头部信息）都会跳转到 3333 端口。&lt;/p&gt;
+</description>
     </item>
     
   </channel>

@@ -1,24 +1,162 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>bootstrap-table on 文翼的博客</title>
+    <title>Bootstrap Table on 文翼的博客</title>
     <link>http://blog.wenzhixin.net.cn/tags/bootstrap-table/</link>
-    <description>Recent content in bootstrap-table on 文翼的博客</description>
+    <description>Recent content in Bootstrap Table on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Sun, 10 Aug 2014 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.wenzhixin.net.cn/tags/bootstrap-table/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="http://blog.wenzhixin.net.cn/tags/bootstrap-table/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>表格固定表头的问题和解决方案</title>
-      <link>http://blog.wenzhixin.net.cn/2014/08/10/fixed_table/</link>
-      <pubDate>Sun, 10 Aug 2014 00:00:00 +0000</pubDate>
+      <title>开源所带来的——记 DBackup 4.0 发布和 Bootstrap Table 插件的开发</title>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/bootstrap-table</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/08/10/fixed_table/</guid>
-      <description>在写插件bootstrap table的时候，当数据过多的时候，需要对表格的 thead进行固定，然后滚动表格的tbody。但是在实际的操作上，</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/bootstrap-table</guid>
+      <description>
+
+&lt;h3 id=&#34;源起:e5cac10725cb8ad4ca8dff8f0c5d6867&#34;&gt;源起&lt;/h3&gt;
+
+&lt;p&gt;最最开始的时候，在写公司的考勤系统，系统的功能十分简单，只需要简单地查询数据和展示数据（无需增加、修改和删除），后台接口使用的是标准的 Restful API，例如接口&lt;code&gt;/api/url1&lt;/code&gt;返回这样的数组：&lt;/p&gt;
+[
+    {
+        &#34;name&#34;: &#34;文翼&#34;,
+        &#34;startTime&#34;: &#34;09:00&#34;,
+        &#34;endTime&#34;: &#34;18:00&#34;
+    }
+]
+
+&lt;p&gt;接口&lt;code&gt;/api/url2&lt;/code&gt;返回这样的数组：&lt;/p&gt;
+[
+    {
+        &#34;name&#34;: &#34;文翼&#34;,
+        &#34;job&#34;: &#34;Web开发工程师&#34;
+    }
+]
+
+&lt;p&gt;一般的做法是遍历返回来的数据并对每一行的数据进行渲染为&lt;code&gt;tr&lt;/code&gt;，然后再&lt;code&gt;append&lt;/code&gt;到表格中。由于自己十分的“懒”，很多时候宁愿写出个工具（当然有时候可能花的时候会更多），也不想写重复的代码，做重复、无用的工作。现在系统有 5 个不同的接口，需要显示为 5 个不同的表格。要是能使用这样的代码，而无需使用 JavaScript 去对不同的 API 接口进行渲染组装，那该多省心省事：&lt;/p&gt;
+&lt;table data-url=&#34;/api/url1&#34;&gt;
+    &lt;thead&gt;
+    &lt;tr&gt;
+        &lt;td data-field=&#34;name&#34;&gt;姓名&lt;/td&gt;
+        &lt;td data-field=&#34;startTime&#34;&gt;上班时间&lt;/td&gt;
+        &lt;td data-field=&#34;endTime&#34;&gt;下班时间&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;/thead&gt;
+&lt;/table&gt;
+
+&lt;table data-url=&#34;/api/url2&#34;&gt;
+    &lt;thead&gt;
+    &lt;tr&gt;
+        &lt;td data-field=&#34;name&#34;&gt;姓名&lt;/td&gt;
+        &lt;td data-field=&#34;job&#34;&gt;工作&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;/thead&gt;
+&lt;/table&gt;
+
+&lt;p&gt;可以看到，这样的话我们无需写一行 JavaScript 的代码就能实现我们想要的功能了。于是乎，Bootstrap Table 的 1.0.0 版本就这样面世了，只有最最简单的显示的功能，没有单选、多选、排序和分页等复杂的功能。&lt;/p&gt;
+
+&lt;h3 id=&#34;开源和改善:e5cac10725cb8ad4ca8dff8f0c5d6867&#34;&gt;开源和改善&lt;/h3&gt;
+
+&lt;p&gt;因为 Bootstrap Table 支持标准的 Restful API 接口，我便将其开源到 GitHub 上（6月份），并尝试着模仿 Bootstrap JavaScript Plugin 的文档说明，编写了全英文的文档（其实也没几个属性、方法和事件）。而在当时，由于公司最主要的产品 DBackup，并没有使用 Restful 接口 API，所以无法将其应用到自己的产品开发中。&lt;/p&gt;
+
+&lt;p&gt;随着其他的产品也应用到 Bootstrap Table，我便加入了单选、多选、排序等功能。而在 GitHub 上，关注 Bootstrap Table 的人也多了起来，时不时有人给我提建议和一些新的功能，而大部分是很好的建议。并认真地考虑，加上了大部分觉得合理的功能。&lt;/p&gt;
+
+&lt;p&gt;到发布 1.2.0 的时候（8月），我在想是不是应该应用到主要产品DBackup呢，只是要使用的话就得重构后台接口。不能浪费了，重构就重构，于是便开始为 DBackup 编写标准的 Restful API 文档，我们在开发的过程中往往习惯了根据后台接口，然后选择前端的实现。而 Bootstrap Table 是根据标准的 Restful API 来实现的，这反而能更好地使产品的接口更加规范化、文档化。&lt;/p&gt;
+
+&lt;p&gt;那么，或许你会问，开源又带来了什么？&lt;/p&gt;
+
+&lt;p&gt;在 GitHub 上，我们可以看到很多 Web 开源项目，而这些开源项目的工程师也乐于维护和改善这些开源项目，例如：Twitter 的 &lt;a href=&#34;https://github.com/twbs/bootstrap&#34;&gt;bootstrap&lt;/a&gt;，Facebook 的 &lt;a href=&#34;https://github.com/facebook/react&#34;&gt;react&lt;/a&gt;，阿里的 &lt;a href=&#34;https://github.com/seajs/seajs&#34;&gt;seajs&lt;/a&gt;，还有 &lt;a href=&#34;https://github.com/joyent/node&#34;&gt;node&lt;/a&gt;，&lt;a href=&#34;https://github.com/jashkenas/backbone&#34;&gt;backbone&lt;/a&gt;，&lt;a href=&#34;https://github.com/angular/angular.js&#34;&gt;angular.js&lt;/a&gt; 等等。&lt;/p&gt;
+
+&lt;p&gt;我在签名档上写道：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;I am making the world better by developing open-source JavaScript libraries.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;开源，就是为了使世界更加美好！哈哈，难道不是吗！&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/11/08/1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/11/08/2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;时至今日，Bootstrap Table 项目已有 488 个 Star 和 109 个 Fork（分支），47 个 Pull Requests，支持 20 种语言（翻译），以及 4 个插件扩展。除了我自己，有很多热心开发者为其提交了很多有用的代码，插件扩展和建议。&lt;/p&gt;
+
+&lt;p&gt;对于插件来说，因为开源，使其不断的完善和改进！&lt;/p&gt;
+
+&lt;p&gt;对于公司产品来说，因为开源，越来越规范化和模块化！&lt;/p&gt;
+
+&lt;p&gt;对于我来说，因为开源，自己的英文水平、代码规范化以及项目管理相关的方面也在不断提高！&lt;/p&gt;
+
+&lt;h3 id=&#34;bootstrap-table-的强大之处:e5cac10725cb8ad4ca8dff8f0c5d6867&#34;&gt;Bootstrap Table 的强大之处&lt;/h3&gt;
+
+&lt;p&gt;说了这么多，Bootstrap Table 的强大之处还是需要用个简单的例子来说明，除了上面用 html 的方式外，这里使用 JavaScript 的方式：&lt;/p&gt;
+
+&lt;p&gt;定义 html（只需要一句话）：&lt;/p&gt;
+&lt;table id=&#34;table&#34;&gt;&lt;/table&gt;
+
+&lt;p&gt;使用：&lt;/p&gt;
+$(&#39;#table&#39;).bootstrapTable({
+    url: &#39;/api/url&#39;, // 接口 URL 地址
+    cache: false, // 不缓存
+    height: 400, // 设置高度，会启用固定表头的特性
+    striped: true, // 隔行加亮
+    pagination: true, // 开启分页功能
+    pageSize: 50, // 设置默认分页为 50
+    pageList: [10, 25, 50, 100, 200], // 自定义分页列表
+    search: true, // 开启搜索功能
+    showColumns: true, // 开启自定义列显示功能
+    showRefresh: true, // 开启刷新功能
+    minimumCountColumns: 2, // 设置最少显示列个数
+    clickToSelect: true, // 单击行即可以选中
+    sortName: &#39;name&#39;, // 设置默认排序为 name
+    sortOrder: &#39;desc&#39;, // 设置排序为反序 desc
+    smartDisplay: true, // 智能显示 pagination 和 cardview 等
+    columns: [{ // 列设置
+        field: &#39;state&#39;,
+        checkbox: true // 使用复选框
+    }, {
+        field: &#39;id&#39;,
+        title: &#39;Item ID&#39;,
+        align: &#39;right&#39;,
+        valign: &#39;bottom&#39;,
+        sortable: true // 开启排序功能
+    }, {
+        field: &#39;name&#39;,
+        title: &#39;Item Name&#39;,
+        align: &#39;center&#39;,
+        valign: &#39;middle&#39;,
+        sortable: true,
+        formatter: nameFormatter
+    }, {
+        field: &#39;price&#39;,
+        title: &#39;Item Price&#39;,
+        align: &#39;left&#39;,
+        valign: &#39;top&#39;,
+        sortable: true,
+        formatter: priceFormatter,
+        sorter: priceSorter
+    }, {
+        field: &#39;operate&#39;,
+        title: &#39;Item Operate&#39;,
+        align: &#39;center&#39;,
+        valign: &#39;middle&#39;,
+        clickToSelect: false,
+        formatter: operateFormatter,
+        events: operateEvents
+    }]
+});
+
+&lt;p&gt;我们可以看到，通过简单的设置，就可以拥有强大的单选、多选、排序、分页，以及编辑、导出、过滤（扩展）等等的功能了：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/11/08/3.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;最后，今天，我们的产品 DBackup 发布了 4.0 版本，其中一整个大模块已经全部重构为使用 Bootstrap Table 和标准的 Restful 接口。虽说距离全部还有一段时间和距离，但我坚信，Bootstrap Table 会越做越强大，产品也会越来越规范，越做越好用！&lt;/p&gt;
+</description>
     </item>
     
   </channel>

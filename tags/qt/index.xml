@@ -7,18 +7,57 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Mon, 01 Apr 2013 22:30:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.wenzhixin.net.cn/tags/qt/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="http://blog.wenzhixin.net.cn/tags/qt/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Ubuntu 安装 QT 4.8</title>
-      <link>http://blog.wenzhixin.net.cn/2013/04/01/installing_qt/</link>
-      <pubDate>Mon, 01 Apr 2013 22:30:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/installing_qt</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/04/01/installing_qt/</guid>
-      <description>1. 下载并解压安装包 下载：Qt libraries 4.8.4 for Linux/X11 解压： 1 tar xvf qt-everywhere-opensource-src-4.8.4.tar 2. 编译库并安装 Library 1 2 3 4 5 6 7 8 cd qt-everywhere-opensource-src-4.8.4 ./configure //o: opensource make make install 3. 设置 QT Creator 选择：工具 - 选项 - 构建并执行 设置</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/installing_qt</guid>
+      <description>
+
+&lt;h3 id=&#34;1-下载并解压安装包:a139f3fd97157b6ba6a6bca80379b293&#34;&gt;1. 下载并解压安装包&lt;/h3&gt;
+
+&lt;p&gt;下载：&lt;a href=&#34;http://releases.qt-project.org/qt4/source/qt-everywhere-opensource-src-4.8.4.tar.gz&#34;&gt;Qt libraries 4.8.4 for Linux/X11&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;解压：&lt;/p&gt;
+tar xvf qt-everywhere-opensource-src-4.8.4.tar
+
+&lt;h3 id=&#34;2-编译库并安装-library:a139f3fd97157b6ba6a6bca80379b293&#34;&gt;2. 编译库并安装 Library&lt;/h3&gt;
+cd qt-everywhere-opensource-src-4.8.4
+./configure
+
+//o: opensource
+
+make
+
+make install
+
+&lt;h3 id=&#34;3-设置-qt-creator:a139f3fd97157b6ba6a6bca80379b293&#34;&gt;3. 设置 QT Creator&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;选择：工具 - 选项 - 构建并执行&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;设置QT版本：新增，选择目录&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;设置 Kits&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;出现的问题:a139f3fd97157b6ba6a6bca80379b293&#34;&gt;出现的问题&lt;/h3&gt;
+
+&lt;h4 id=&#34;1-basic-xlib-functionality-test-failed:a139f3fd97157b6ba6a6bca80379b293&#34;&gt;1. Basic XLib functionality test failed!&lt;/h4&gt;
+
+&lt;p&gt;错误：&lt;/p&gt;
+Basic XLib functionality test failed!
+You might need to modify the include and library search paths by editing
+QMAKE_INCDIR_X11 and QMAKE_LIBDIR_X11 in /home/zhu/Qt/qt-x11-opensource-src-4.5.2/mkspecs/linux-g++
+
+&lt;p&gt;解决：&lt;/p&gt;
+sudo apt-get install libX11-dev libXext-dev libXtst-dev
+</description>
     </item>
     
   </channel>

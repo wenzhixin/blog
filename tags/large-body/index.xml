@@ -1,24 +1,40 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>large body on 文翼的博客</title>
+    <title>Large body on 文翼的博客</title>
     <link>http://blog.wenzhixin.net.cn/tags/large-body/</link>
-    <description>Recent content in large body on 文翼的博客</description>
+    <description>Recent content in Large body on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Sat, 18 Jan 2014 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.wenzhixin.net.cn/tags/large-body/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="http://blog.wenzhixin.net.cn/tags/large-body/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>nodeJS 和 Nginx 解决客户端发送大数据的问题</title>
-      <link>http://blog.wenzhixin.net.cn/2014/01/18/large_body_error/</link>
-      <pubDate>Sat, 18 Jan 2014 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/large_body_error</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/01/18/large_body_error/</guid>
-      <description>nodeJS 和 Nginx 默认情况下都只支持 1MB 的 body 数据，当客户端发送大数据的时候，分别会出现以下错误： nodeJS： 1 Error: request entity too large 解决： 1 2 3 app.use(express.bodyParser({ limit: 1024 * 1024 * 64 // 64M }));</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/large_body_error</guid>
+      <description>&lt;p&gt;nodeJS 和 Nginx 默认情况下都只支持 1MB 的 body 数据，当客户端发送大数据的时候，分别会出现以下错误：&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;nodeJS：&lt;/strong&gt;&lt;/p&gt;
+Error: request entity too large
+
+&lt;p&gt;&lt;strong&gt;解决：&lt;/strong&gt;&lt;/p&gt;
+app.use(express.bodyParser({
+    limit: 1024 * 1024 * 64 // 64M
+}));
+
+&lt;p&gt;&lt;strong&gt;Nginx：&lt;/strong&gt;&lt;/p&gt;
+client intended to send too large body
+
+&lt;p&gt;&lt;strong&gt;解决：&lt;/strong&gt;
+在 nginx/nginx.conf 中的 http 下加入&lt;/p&gt;
+http {
+    ...
+    client_max_body_size 64M;
+}
+</description>
     </item>
     
   </channel>

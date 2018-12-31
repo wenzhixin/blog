@@ -7,18 +7,98 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Tue, 30 Jul 2013 01:02:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.wenzhixin.net.cn/tags/selenium-ide/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="http://blog.wenzhixin.net.cn/tags/selenium-ide/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>firefox 利用 Selenium IDE 对 DBackup 进行自动化测试</title>
-      <link>http://blog.wenzhixin.net.cn/2013/07/30/firefox_selenium_ide/</link>
-      <pubDate>Tue, 30 Jul 2013 01:02:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/firefox_selenium_ide</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/07/30/firefox_selenium_ide/</guid>
-      <description>今天看《编写可维护的JavaScript》的时候有一章是专门讲 Selenium 对 JavaScript 进行自动化测试的。 在了解了 Selenium 的强大之后，动手试验了一下 firefox 中的 Selenium IDE，还</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/firefox_selenium_ide</guid>
+      <description>
+
+&lt;p&gt;今天看《编写可维护的JavaScript》的时候有一章是专门讲 Selenium 对 JavaScript 进行自动化测试的。
+在了解了 Selenium 的强大之后，动手试验了一下 firefox 中的 Selenium IDE，还是挺给力的说，在此记录下。&lt;/p&gt;
+
+&lt;h4 id=&#34;什么是-selenium-ide:9c007a706a8c055fd8b1a5190c839830&#34;&gt;什么是 Selenium IDE？&lt;/h4&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Selenium IDE：一个Firefox插件，可以录制用户的基本操作，生成测试用例。
+可以运行这些测试用例在浏览器里回放，可将测试用例转换为其他语言的自动化脚本。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;了解了概念之后，我们来开始神奇的 Selenium IDE 之旅吧。&lt;/p&gt;
+
+&lt;h4 id=&#34;安装-selenium-ide:9c007a706a8c055fd8b1a5190c839830&#34;&gt;安装 Selenium IDE&lt;/h4&gt;
+
+&lt;h5 id=&#34;1-下载-http-docs-seleniumhq-org-download-http-docs-seleniumhq-org-download-额-貌似被墙了-从-这里-2013-07-30-selenium-ide-2-2-0-xpi-下吧:9c007a706a8c055fd8b1a5190c839830&#34;&gt;1. 下载：&lt;a href=&#34;http://docs.seleniumhq.org/download/&#34;&gt;http://docs.seleniumhq.org/download/&lt;/a&gt; (额，貌似被墙了，从&lt;a href=&#34;http://blog.wenzhixin.net.cn/2013/07/30/selenium-ide-2.2.0.xpi&#34;&gt;这里&lt;/a&gt;下吧)&lt;/h5&gt;
+
+&lt;h5 id=&#34;2-直接安装-或者拖动-xpi-文件到-firefox-完成安装:9c007a706a8c055fd8b1a5190c839830&#34;&gt;2. 直接安装，或者拖动 xpi 文件到 firefox 完成安装～&lt;/h5&gt;
+
+&lt;h5 id=&#34;3-重启-firefox-查看工具发现已经多了-selenium-ide-菜单-证明我们已经安装成功了:9c007a706a8c055fd8b1a5190c839830&#34;&gt;3. 重启 firefox，查看工具发现已经多了 Selenium IDE 菜单，证明我们已经安装成功了～&lt;/h5&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2013/07/30/1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;怎么使用:9c007a706a8c055fd8b1a5190c839830&#34;&gt;怎么使用？&lt;/h4&gt;
+
+&lt;h5 id=&#34;1-打开迪备服务器界面-点击菜单中的-selenium-ide:9c007a706a8c055fd8b1a5190c839830&#34;&gt;1. 打开迪备服务器界面，点击菜单中的 Selenium IDE&lt;/h5&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2013/07/30/2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;2-点击-recording-开始录制事件-假如状态已经开始录制了-不用再点开始:9c007a706a8c055fd8b1a5190c839830&#34;&gt;2. 点击 Recording 开始录制事件（假如状态已经开始录制了，不用再点开始）&lt;/h5&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2013/07/30/3.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;3-在界面中依次输入用户名-密码-点击登录按钮-登录成功后-再次点击录制按钮关闭录制:9c007a706a8c055fd8b1a5190c839830&#34;&gt;3. 在界面中依次输入用户名、密码，点击登录按钮，登录成功后，再次点击录制按钮关闭录制&lt;/h5&gt;
+
+&lt;h5 id=&#34;4-可以看到已经自动生成了事件了:9c007a706a8c055fd8b1a5190c839830&#34;&gt;4. 可以看到已经自动生成了事件了&lt;/h5&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2013/07/30/4.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;我们先看看这里命令的含义（大概了解下就OK了，不用记），很容易理解的：&lt;/p&gt;
+
+&lt;p&gt;1) open(url)
+- 在浏览器中打开URL，可以接受相对和绝对路径两种形式
+- 注意：该URL必须在与浏览器相同的安全限定范围之内&lt;/p&gt;
+
+&lt;p&gt;2) type(inputLocator, value)
+- 模拟人手的输入过程，往指定的input中输入值
+- 也适合给复选和单选框赋值&lt;/p&gt;
+
+&lt;p&gt;3) click(elementLocator)
+- 点击连接、按钮、复选和单选框
+- 如果点击后需要等待响应，则用 &amp;ldquo;clickAndWait&amp;rdquo;
+- 如果是需要经过 JavaScript 的 alert 或 confirm 对话框后才能继续操作，则需要调用 verify 或 assert 来告诉 Selenium 你期望对对话框进行什么操作。&lt;/p&gt;
+
+&lt;h5 id=&#34;5-我们发现最后一项-assertalert-是指对-alert-的处理-在这里我们并不需要-删除-并将该测试用例保存为-login:9c007a706a8c055fd8b1a5190c839830&#34;&gt;5. 我们发现最后一项 assertAlert 是指对 alert 的处理，在这里我们并不需要，删除。并将该测试用例保存为 login。&lt;/h5&gt;
+
+&lt;h5 id=&#34;6-退出登录-并将速度调整为-normal-点击-play-current-test-case-可以发现已经登录成功了:9c007a706a8c055fd8b1a5190c839830&#34;&gt;6. 退出登录，并将速度调整为 normal，点击 play current test case，可以发现已经登录成功了！&lt;/h5&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2013/07/30/5.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;7-最后-按照同样的方法-试试看-很简单的-对注册用户也进行了自动化注册-并保存为-register-那么就可以快速的根据-test-case-的名称进行自动化测试了:9c007a706a8c055fd8b1a5190c839830&#34;&gt;7. 最后，按照同样的方法（试试看，很简单的）对注册用户也进行了自动化注册，并保存为 register，那么就可以快速的根据 test case 的名称进行自动化测试了。&lt;/h5&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2013/07/30/6.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h5 id=&#34;一点想法:9c007a706a8c055fd8b1a5190c839830&#34;&gt;一点想法：&lt;/h5&gt;
+
+&lt;p&gt;Selenium IDE 只能在 firefox 中使用，那么其他浏览器就无法使用了。
+查看生成的文件发现格式是 html 代码，那么是否可以对录制的事件进行转为为其他语言（如 nodejs、python），
+然后通过 web 后台服务器进行处理，生成相对应的界面管理，从而就可以指定某个测试用例（汇集起来）在某个浏览器（IE、chrome）启动，并
+进行自动化测试呢？未完待续吧&amp;hellip;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;PS：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;DBackup 是一款很牛逼的数据库备份软件，详细介绍和试用可以猛击&lt;a href=&#34;http://www.scutech.com/#!c/41&#34;&gt;这里&lt;/a&gt;。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;更多信息见 &lt;a href=&#34;http://docs.seleniumhq.org/&#34;&gt;http://docs.seleniumhq.org/&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
     
   </channel>

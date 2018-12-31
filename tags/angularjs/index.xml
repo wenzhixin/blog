@@ -7,99 +7,1166 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Tue, 22 Apr 2014 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.wenzhixin.net.cn/tags/angularjs/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="http://blog.wenzhixin.net.cn/tags/angularjs/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>一步一步学习 AngularJS（八）</title>
-      <link>http://blog.wenzhixin.net.cn/2014/04/22/angular_scutech_step7/</link>
-      <pubDate>Tue, 22 Apr 2014 00:00:00 +0000</pubDate>
+      <title>AngularJS学习笔记——AngularJS简介</title>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/angularjs_study_note_introduction</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/04/22/angular_scutech_step7/</guid>
-      <description>上一节 在这一小节，我们将学习如何创建布局模板，和如何通过添加路由来创建多页面的应用， 将使用新的 Angular 模块ngRoute。 在开始之前，我们先来看看</description>
-    </item>
-    
-    <item>
-      <title>一步一步学习 AngularJS（七）</title>
-      <link>http://blog.wenzhixin.net.cn/2014/03/10/angular_scutech_step6/</link>
-      <pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2014/03/10/angular_scutech_step6/</guid>
-      <description>上一节 在这一小节，我们为列表中的产品添加图片和链接，下一小节将使用链接跳转到详细的页面。 在开始之前，我们先来看看 演示， 也可以通过链接下载 zip 包</description>
-    </item>
-    
-    <item>
-      <title>一步一步学习 AngularJS（六）</title>
-      <link>http://blog.wenzhixin.net.cn/2014/02/23/angular_scutech_step5/</link>
-      <pubDate>Sun, 23 Feb 2014 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2014/02/23/angular_scutech_step5/</guid>
-      <description>上一节 下一节 在之前几个小节中，我们的列表都是使用固定的数据。 在这一小节，我们使用 $http 请求从后台获取数据。 在开始之前，我们先来看看 演示， 也可以通</description>
-    </item>
-    
-    <item>
-      <title>一步一步学习 AngularJS（五）</title>
-      <link>http://blog.wenzhixin.net.cn/2014/02/22/angular_scutech_step4/</link>
-      <pubDate>Sat, 22 Feb 2014 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2014/02/22/angular_scutech_step4/</guid>
-      <description>上一节 下一节 在这一小节，我们增加一个功能可以用来对列表进行排序。 在开始之前，我们先来看看 演示， 也可以通过链接下载 zip 包。 可以看到在搜索框下面，</description>
-    </item>
-    
-    <item>
-      <title>一步一步学习 AngularJS（四）</title>
-      <link>http://blog.wenzhixin.net.cn/2014/02/21/angular_scutech_step3/</link>
-      <pubDate>Fri, 21 Feb 2014 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2014/02/21/angular_scutech_step3/</guid>
-      <description>上一节 下一节 在这一小节，我们增加一个简单的input输入框，用于搜索。 在开始之前，我们先来看看 演示， 也可以通过链接下载 zip 包。 控制器 我们没有改</description>
-    </item>
-    
-    <item>
-      <title>一步一步学习 AngularJS（三）</title>
-      <link>http://blog.wenzhixin.net.cn/2014/02/20/angular_scutech_step2/</link>
-      <pubDate>Thu, 20 Feb 2014 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2014/02/20/angular_scutech_step2/</guid>
-      <description>上一节 下一节 在这一小节，我们使用 Angular 来动态生成上一节的页面。 在开始之前，我们先来看看 演示， 也可以通过链接下载 zip 包。 一个应用可以有很多种代码结构</description>
-    </item>
-    
-    <item>
-      <title>一步一步学习 AngularJS（二）</title>
-      <link>http://blog.wenzhixin.net.cn/2014/02/19/angular_scutech_step1/</link>
-      <pubDate>Wed, 19 Feb 2014 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2014/02/19/angular_scutech_step1/</guid>
-      <description>上一节 下一节 在这一小节，为了说明 Angular 是如何增强标准 HTML 的，这一节我们来创建静态的 HTML 页面， 顺便也会用到 bootstrap 相关的组件，然后下一节我们将使用 Angul</description>
-    </item>
-    
-    <item>
-      <title>一步一步学习 AngularJS（一）</title>
-      <link>http://blog.wenzhixin.net.cn/2014/02/18/angular_scutech_step0/</link>
-      <pubDate>Tue, 18 Feb 2014 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2014/02/18/angular_scutech_step0/</guid>
-      <description>下一节 今天开始一步一步学习 AngularJS 的教程之旅。 在这一小节中，我们将学习最基础、同时也是重要的代码结构和数据绑定。 在开始之前，我们先来看看 演示， 也可</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/angularjs_study_note_introduction</guid>
+      <description>
+
+&lt;p&gt;自己在前端开发中还有很多新知识要学习，今天开始进入《用 AngularJS 开发下一代 Web 应用》一书的学习之旅。&lt;/p&gt;
+
+&lt;p&gt;AngularJS是一款开源 JavaScript函式库，由Google维护, 主要用于单页面应用开发。
+目标是增强基于浏览器的应用，并带有MVC模式功能，这为了使得开发和测试变得更加容易。&lt;/p&gt;
+
+&lt;h3 id=&#34;一些概念:038d44456dceb35ec535cbe3141747a8&#34;&gt;一些概念&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;客户端模板&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;传统的 web 应用会在服务器中创建 HTML，然后和数据生成页面一起发送到浏览器中。
+而现在单页面应用则会把模板存放在客户端中，而服务器则是仅仅为这些模板提供静态资源和数据。&lt;/p&gt;
+
+&lt;p&gt;hello world：&lt;/p&gt;
+&lt;!doctype html&gt;
+&lt;html lang=&#34;en&#34; ng-app&gt;
+&lt;head&gt;
+	&lt;meta charset=&#34;UTF-8&#34; /&gt;
+	&lt;title&gt;hello&lt;/title&gt;
+	&lt;script src=&#34;assets/angular.min.js&#34;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;input type=&#34;text&#34; ng-model=&#34;name&#34; /&gt;
+  &lt;h2&gt;Hello {{name}}!&lt;/h2&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+&lt;p&gt;从 hello world 中可以看到：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;html 里没有 class 或者 ID 来标记哪里添加事件。&lt;/li&gt;
+&lt;li&gt;数据绑定，改变数据页面也会随之改变。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Model View Controller (MVC)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;MVC 的核心理念：把管理数据的代码（model）、应用逻辑代码（controller）和展示数据的代码（view）清晰的分离开。&lt;/p&gt;
+
+&lt;p&gt;AngularJS 中，视图是 Document Object Model（DOM，文档对象模型），控制器为 JavaScript 类，模型数据被存储在对象的属性中。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;数据绑定&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;使用 jQuery 开发，我们会把获取的数据插入到 DOM 中，或者直接操作 DOM 的内容。&lt;/p&gt;
+
+&lt;p&gt;而在 AngularJS 中，仅仅声明 UI 中的 DOM 映射到某个 JavaScript 属性，然后修改 JavaScript 属性，就可以自动更新 DOM 中的值。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;依赖注入&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;开发风格：类只是简单的获取所需要的东西，并不需要创建所需要的东西。这种风格叫迪米特法则，也叫最小知识原则。&lt;/p&gt;
+
+&lt;p&gt;例如：$scope 对象表示 Controller 模型中的内部状态；$location 对象表示浏览器 URL 地址状态。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;指令&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;AngularJS 引入了强大的 DOM 转换引擎，用来扩展 HTML 语法。&lt;/p&gt;
+
+&lt;p&gt;如：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;{{}}：表示数据绑定&lt;/li&gt;
+&lt;li&gt;ng-controller：指定控制器范围&lt;/li&gt;
+&lt;li&gt;ng-model：把输入数据绑定到模型的属性上&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
     
     <item>
       <title>AngularJS学习笔记——购物车实例与解析</title>
-      <link>http://blog.wenzhixin.net.cn/2014/01/10/angular_cart_demo/</link>
-      <pubDate>Fri, 10 Jan 2014 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/angular_cart_demo</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/01/10/angular_cart_demo/</guid>
-      <description>通过构建一款实例来了解 AngularJS 的特性，貌似还是比较有效的。 先来看看效果。 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 &amp;lt;!doctype html&amp;gt; &amp;lt;html ng-app&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;UTF-8&amp;#34;</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/angular_cart_demo</guid>
+      <description>&lt;p&gt;通过构建一款实例来了解 AngularJS 的特性，貌似还是比较有效的。&lt;/p&gt;
+
+&lt;p&gt;先来看看&lt;a href=&#34;http://blog.wenzhixin.net.cn/demos/angular/cart.html&#34;&gt;效果&lt;/a&gt;。&lt;/p&gt;
+&lt;!doctype html&gt;
+&lt;html ng-app&gt;
+&lt;head&gt;
+	&lt;meta charset=&#34;UTF-8&#34; /&gt;
+	&lt;title&gt;Cart&lt;/title&gt;
+&lt;/head&gt;
+&lt;body ng-controller=&#34;CartController&#34;&gt;
+	&lt;h1&gt;Your Order&lt;/h1&gt;
+	&lt;div ng-repeat=&#34;item in items&#34;&gt;
+	 &lt;span&gt;{{item.title}}&lt;/span&gt;
+	 &lt;input ng-model=&#34;item.quantity&#34; /&gt;
+	 &lt;span&gt;{{item.price | currency}}&lt;/span&gt;
+	 &lt;span&gt;{{item.price * item.quantity | currency}}&lt;/span&gt;
+	 &lt;button ng-click=&#34;remove($index)&#34;&gt;Remove&lt;/button&gt;
+	&lt;/div&gt;
+	&lt;script src=&#34;assets/angular.min.js&#34;&gt;&lt;/script&gt;
+	&lt;script&gt;
+	  function CartController($scope) {
+	    $scope.items = [
+	      {title: &#39;Pots&#39;, quantity: 8, price: 3.95},
+	      {title: &#39;Dots&#39;, quantity: 17, price: 12.95},
+	      {title: &#39;Pebbels&#39;, quantity: 5, price: 6.95}
+	    ];
+	    $scope.remove = function(index) {
+	      $scope.items.splice(index, 1);
+	    };
+	  }
+	&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+&lt;p&gt;可以看到很少代码就可以实现基本的购物车功能了，例如：实时更新总价，删除订单。&lt;/p&gt;
+
+&lt;p&gt;一起来看看代码是什么意思吧：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ng-app：告诉 angular 页面中那部分需要接受它的管理，一般放在 html 标签上，表示管理整个页面。&lt;/li&gt;
+&lt;li&gt;ng-controller=&amp;ldquo;CartController&amp;rdquo;：声明控制器 CartController，用于管理 body 标签之间的内容。&lt;/li&gt;
+&lt;li&gt;ng-repeat=&amp;ldquo;item in items&amp;rdquo;：表示对于 items 数组中的每个元素，都把 div 中的 DOM 结构复制一份（包括div自身）。&lt;/li&gt;
+&lt;li&gt;{{item.title}}：通过 {{}} 进行数据绑定，更新数据将会实时更新页面。&lt;/li&gt;
+&lt;li&gt;ng-model=&amp;ldquo;item.quantity&amp;rdquo;：ng-model 将会在输入框和 item.quantity 的值之间创建数据绑定关系。&lt;/li&gt;
+&lt;li&gt;{{item.price | currency}}：单向绑定，currency 表示过滤器，可以实现美元格式化。&lt;/li&gt;
+&lt;li&gt;ng-click=&amp;ldquo;remove($index)&amp;ldquo;：点击按钮调用 remove 函数，$index 表示循环计数的位置。&lt;/li&gt;
+&lt;li&gt;$scope：控制器需要通过 $scope 把数据绑定到 UI 中的元素上。&lt;/li&gt;
+&lt;li&gt;$scope.items：定义数组，表示用户购物车的物品列表。&lt;/li&gt;
+&lt;li&gt;$scope.remove：定义删除物品函数，点击 Remove 按钮时触发。&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
     
     <item>
-      <title>AngularJS学习笔记——AngularJS简介</title>
-      <link>http://blog.wenzhixin.net.cn/2014/01/07/angularjs_study_note_introduction/</link>
-      <pubDate>Tue, 07 Jan 2014 00:00:00 +0000</pubDate>
+      <title>一步一步学习 AngularJS（一）</title>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/angular_scutech_step0</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/01/07/angularjs_study_note_introduction/</guid>
-      <description>自己在前端开发中还有很多新知识要学习，今天开始进入《用 AngularJS 开发下一代 Web 应用》一书的学习之旅。 AngularJS是一款开源 JavaScript函</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/angular_scutech_step0</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/19/angular_scutech_step1&#34;&gt;下一节&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;今天开始一步一步学习 AngularJS 的教程之旅。&lt;/p&gt;
+
+&lt;p&gt;在这一小节中，我们将学习最基础、同时也是重要的代码结构和数据绑定。&lt;/p&gt;
+
+&lt;p&gt;在开始之前，我们先来看看 &lt;a href=&#34;http://blog.wenzhixin.net.cn/demos/angular-scutech/step0&#34;&gt;演示&lt;/a&gt;，
+也可以通过链接下载 &lt;a href=&#34;http://blog.wenzhixin.net.cn/demos/angular-scutech/step0.zip&#34;&gt;zip&lt;/a&gt; 包。&lt;/p&gt;
+
+&lt;p&gt;可能没有让你觉得很兴奋，不过一切都只是开始。&lt;/p&gt;
+
+&lt;p&gt;可以看到页面显示“现在还没有任何内容！”，通过查看 html 的代码，
+可以看到一些我们所需要的 Angular 的简单的关键字。&lt;/p&gt;
+
+&lt;p&gt;文件&lt;code&gt;index.html&lt;/code&gt;&lt;/p&gt;
+&lt;!doctype html&gt;
+&lt;html lang=&#34;en&#34; ng-app&gt;
+&lt;head&gt;
+    &lt;meta charset=&#34;utf-8&#34;&gt;
+    &lt;title&gt;Angular Scutech&lt;/title&gt;
+    &lt;link rel=&#34;stylesheet&#34; href=&#34;lib/bootstrap/css/bootstrap.css&#34;&gt;
+    &lt;script src=&#34;lib/angular/angular.js&#34;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div class=&#34;navbar navbar-inverse&#34; role=&#34;navigation&#34;&gt;
+    &lt;div class=&#34;container&#34;&gt;
+        &lt;div class=&#34;navbar-header&#34;&gt;
+            &lt;a class=&#34;navbar-brand&#34; href=&#34;#&#34;&gt;项目名称&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;collapse navbar-collapse&#34;&gt;
+            &lt;ul class=&#34;nav navbar-nav&#34;&gt;
+                &lt;li class=&#34;active&#34;&gt;&lt;a href=&#34;#&#34;&gt;产品列表&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;&lt;!--/.nav-collapse --&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;container&#34;&gt;
+    &lt;p&gt;现在还没有任何{{&#39;内容&#39; + &#39;！&#39;}}&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+&lt;p&gt;&lt;strong&gt;这些代码都做了什么事情呢？&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;指令&lt;code&gt;ng-app&lt;/code&gt;：&lt;/p&gt;
+&lt;html ng-app&gt;
+
+&lt;p&gt;&lt;code&gt;ng-app&lt;/code&gt;标签代表 Angular 中名叫&lt;code&gt;ngApp&lt;/code&gt;的指令
+（Angular 使用连接符-来定义它的标签，如&lt;code&gt;ng-app&lt;/code&gt;，
+与其相对应的规则为驼峰命名，如&lt;code&gt;ngApp&lt;/code&gt;），这里表示我们的应用程序是作用于根元素
+&lt;code&gt;html&lt;/code&gt;下，对开发者而言可以将 angular 应用于整个页面中，
+也可以作为你的应用的一部分，例如用到了其他的框架。&lt;/p&gt;
+
+&lt;p&gt;样式标签：&lt;/p&gt;
+&lt;link rel=&#34;stylesheet&#34; href=&#34;lib/bootstrap/css/bootstrap.css&#34;&gt;
+
+&lt;p&gt;表示我们的应用是基于 &lt;a href=&#34;http://getbootstrap.com&#34;&gt;bootstrap&lt;/a&gt; 的，我们增加了一个基本的框架，
+可以通过 &lt;a href=&#34;http://v3.bootcss.com/getting-started/#examples&#34;&gt;案例&lt;/a&gt; 查看相对应的例子。&lt;/p&gt;
+
+&lt;p&gt;脚本标签：&lt;/p&gt;
+&lt;script src=&#34;lib/angular/angular.js&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;引用 angular 的脚本，当脚本加载完成之后，Angular 会寻找&lt;code&gt;npApp&lt;/code&gt;指令，
+假如找到这个标签，Angular 会为项目解析该标签下的元素，并启用应用程序。&lt;/p&gt;
+
+&lt;p&gt;绑定表达式的双括号行：&lt;/p&gt;
+现在还没有任何{{&#39;内容&#39; + &#39;！&#39;}}
+
+&lt;p&gt;这一行演示了 Angular 的核心功能——数据模板绑定，通过&lt;code&gt;{{}}&lt;/code&gt;来绑定我们的内容。
+绑定标签告诉 Angular 运行括号内的表达式并插入到相对应的 DOM 中，当表达式进行改变的时候，
+DOM 中的内容会相对应的作出改变，这就是所谓的实时动态绑定。&lt;/p&gt;
+
+&lt;p&gt;这里的表达式可以是一个变量，也可以是一个运算符，在插入数据之前，
+Angular 会先解析并运行想对应的表达式。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;启用 AngularJS 应用程序&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;在上面的内容中，我们知道，使用&lt;code&gt;ngApp&lt;/code&gt;标签可以自动启用我们的程序。
+当然，你也可以通过&lt;a href=&#34;http://docs.angularjs.org/guide/bootstrap&#34;&gt;手动&lt;/a&gt;来启用 Angular。&lt;/p&gt;
+
+&lt;p&gt;在启用的过程中，Angular 主要做了三件事情：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://docs.angularjs.org/api/auto/service/$injector&#34;&gt;injector&lt;/a&gt; 会被自动创建用于依赖注入&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;接下来 injector 会创建根变量&lt;code&gt;root scope&lt;/code&gt;作为应用程序的数据模块&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Angular 会从&lt;code&gt;ngApp&lt;/code&gt;根元素开始，“编译”解析，处理所有的指令和绑定。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;在本小节中，我们的应用程序很简单，我们只是添加了简单的静态绑定，数据模型是空的。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/02/18/tutorial_0.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;扩展练习&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;试着添加其他的绑定元素，并查看结果，例如：&lt;/p&gt;
+&lt;p&gt;1 + 2 = {{ 1 + 2 }}&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/19/angular_scutech_step1&#34;&gt;下一节&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/18/angular_scutech_step0&#34;&gt;一步一步学习 AngularJS（一）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/19/angular_scutech_step1&#34;&gt;一步一步学习 AngularJS（二）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/20/angular_scutech_step2&#34;&gt;一步一步学习 AngularJS（三）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/21/angular_scutech_step3&#34;&gt;一步一步学习 AngularJS（四）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/22/angular_scutech_step4&#34;&gt;一步一步学习 AngularJS（五）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/23/angular_scutech_step5&#34;&gt;一步一步学习 AngularJS（六）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/03/10/angular_scutech_step6&#34;&gt;一步一步学习 AngularJS（七）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/04/22/angular_scutech_step7&#34;&gt;一步一步学习 AngularJS（八）&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>一步一步学习 AngularJS（七）</title>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/angular_scutech_step6</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/angular_scutech_step6</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/23/angular_scutech_step5&#34;&gt;上一节&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;在这一小节，我们为列表中的产品添加图片和链接，下一小节将使用链接跳转到详细的页面。&lt;/p&gt;
+
+&lt;p&gt;在开始之前，我们先来看看 &lt;a href=&#34;http://blog.wenzhixin.net.cn/demos/angular-scutech/step6&#34;&gt;演示&lt;/a&gt;，
+也可以通过链接下载 &lt;a href=&#34;http://blog.wenzhixin.net.cn/demos/angular-scutech/step6.zip&#34;&gt;zip&lt;/a&gt; 包。&lt;/p&gt;
+
+&lt;p&gt;现在可以看到产品图片和链接了，现在点击链接还没有任何的反应，因为我们还没进行任何的处理。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;数据&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;我们增加了 images 文件夹用于存放我们的图片，并且为产品信息添加了&lt;code&gt;id&lt;/code&gt;和&lt;code&gt;image&lt;/code&gt;
+两个属性，可以看到文件&lt;code&gt;data/products.json&lt;/code&gt;（这里只列举了一条记录，
+图片路径对应我们的实际的图片文件）：&lt;/p&gt;
+[
+    {
+        &#34;id&#34;: 1,
+        &#34;name&#34;: &#34;鼎甲信息仓（Infokist）&#34;,
+        &#34;info&#34;: &#34;一款将自主研发的一系列数据软件与云存储硬件深度整合为一体的数据保护系统。&#34;,
+        &#34;age&#34;: 2,
+        &#34;image&#34;: &#34;images/infokist.png&#34;
+    },
+    ...
+]
+
+&lt;p&gt;&lt;strong&gt;模板&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;文件&lt;code&gt;index.html&lt;/code&gt;：&lt;/p&gt;
+&lt;ul class=&#34;col-md-9 list-group&#34;&gt;
+    &lt;li class=&#34;list-group-item&#34; ng-repeat=&#34;product in products | filter:query | orderBy:order&#34;&gt;
+        &lt;a href=&#34;#/product/{{product.id}}&#34;&gt;
+            &lt;h4 class=&#34;list-group-item-heading&#34;&gt;
+                &lt;img ng-src=&#34;{{product.image}}&#34; /&gt;
+                {{product.name}} - {{product.age}}年
+            &lt;/h4&gt;
+        &lt;/a&gt;
+        &lt;p class=&#34;list-group-item-text&#34;&gt;
+            {{product.info}}
+        &lt;/p&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;我们增加了超链接并且设置 href 为&lt;code&gt;#/product/{{product.id}}&lt;/code&gt;，以 id 作为我们的标志，
+用于显示更详细的产品内容。&lt;/p&gt;
+
+&lt;p&gt;然后我们增加了图片标签，并且设置了 Angular 的&lt;code&gt;ngSrc&lt;/code&gt;指令。这里你可能会有疑问，为什么不能用 src 属性呢？
+需要注意的是，假如我们使用了 src 属性，那么浏览器在加载的时候会发送请求
+到&lt;code&gt;http://localohost/images/{{product.image}}&lt;/code&gt;，使用 F12 可以看到会导致 404 Not Found 的错误，
+所以 Angular 提供了&lt;code&gt;ng-src&lt;/code&gt;属性来避免这种错误。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;扩展练习&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;将&lt;code&gt;ng-src&lt;/code&gt;属性替换为原来的&lt;code&gt;src&lt;/code&gt;属性，然后通过 F12（Chrome 的审查元素或者 Firefox 的 Firebug）
+查看，会发现错误信息，这里可以加深理解 Angular 的工作原理。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/23/angular_scutech_step5&#34;&gt;上一节&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/18/angular_scutech_step0&#34;&gt;一步一步学习 AngularJS（一）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/19/angular_scutech_step1&#34;&gt;一步一步学习 AngularJS（二）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/20/angular_scutech_step2&#34;&gt;一步一步学习 AngularJS（三）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/21/angular_scutech_step3&#34;&gt;一步一步学习 AngularJS（四）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/22/angular_scutech_step4&#34;&gt;一步一步学习 AngularJS（五）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/23/angular_scutech_step5&#34;&gt;一步一步学习 AngularJS（六）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/03/10/angular_scutech_step6&#34;&gt;一步一步学习 AngularJS（七）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/04/22/angular_scutech_step7&#34;&gt;一步一步学习 AngularJS（八）&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>一步一步学习 AngularJS（三）</title>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/angular_scutech_step2</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/angular_scutech_step2</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/19/angular_scutech_step1&#34;&gt;上一节&lt;/a&gt;
+&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/21/angular_scutech_step3&#34;&gt;下一节&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;在这一小节，我们使用 Angular 来动态生成上一节的页面。&lt;/p&gt;
+
+&lt;p&gt;在开始之前，我们先来看看 &lt;a href=&#34;http://blog.wenzhixin.net.cn/demos/angular-scutech/step2&#34;&gt;演示&lt;/a&gt;，
+也可以通过链接下载 &lt;a href=&#34;http://blog.wenzhixin.net.cn/demos/angular-scutech/step2.zip&#34;&gt;zip&lt;/a&gt; 包。&lt;/p&gt;
+
+&lt;p&gt;一个应用可以有很多种代码结构，对于 Angular 来说，我们推荐使用
+&lt;a href=&#34;http://en.wikipedia.org/wiki/Model%E2%80%93View%E2%80%93Controller&#34;&gt;Model–View–Controller（MVC）&lt;/a&gt;
+来组织代码结构。现在，让我们使用 Angular 和 JavaScript 代码来为我们的应用程序添加
+model（模型）、view（视图）和 controller（控制器）。&lt;/p&gt;
+
+&lt;p&gt;查看演示，可以看到跟上一节我们使用静态页面一样的页面。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;View（视图）和 Template（模板）&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;在 Angular 中，View（视图）是通过 HTML 的 Template（模板）来显示 Model（模型）的。
+也就是说，无论在任何时候，模型发生了变化，Angular 会刷新相对应的绑定节点，
+从而更新视图。&lt;/p&gt;
+
+&lt;p&gt;文件&lt;code&gt;index.html&lt;/code&gt;：&lt;/p&gt;
+&lt;!doctype html&gt;
+&lt;html lang=&#34;en&#34; ng-app=&#34;scutechApp&#34;&gt;
+&lt;head&gt;
+    &lt;meta charset=&#34;utf-8&#34;&gt;
+    &lt;title&gt;Angular Scutech&lt;/title&gt;
+    &lt;link rel=&#34;stylesheet&#34; href=&#34;lib/bootstrap/css/bootstrap.css&#34;&gt;
+    &lt;script src=&#34;lib/angular/angular.js&#34;&gt;&lt;/script&gt;
+    &lt;script src=&#34;js/controllers.js&#34;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body ng-controller=&#34;ListCtrl&#34;&gt;
+
+&lt;div class=&#34;navbar navbar-inverse&#34; role=&#34;navigation&#34;&gt;
+    &lt;div class=&#34;container&#34;&gt;
+        &lt;div class=&#34;navbar-header&#34;&gt;
+            &lt;a class=&#34;navbar-brand&#34; href=&#34;#&#34;&gt;项目名称&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;collapse navbar-collapse&#34;&gt;
+            &lt;ul class=&#34;nav navbar-nav&#34;&gt;
+                &lt;li class=&#34;active&#34;&gt;&lt;a href=&#34;#&#34;&gt;产品列表&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;&lt;!--/.nav-collapse --&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;container&#34;&gt;
+    &lt;ul class=&#34;list-group&#34;&gt;
+        &lt;li class=&#34;list-group-item&#34; ng-repeat=&#34;product in products&#34;&gt;
+            &lt;h4 class=&#34;list-group-item-heading&#34;&gt;{{product.name}}&lt;/h4&gt;
+            &lt;p class=&#34;list-group-item-text&#34;&gt;{{product.info}}&lt;/p&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+&lt;p&gt;这里我们使用&lt;code&gt;ng-repeat&lt;/code&gt;指令来代替产品列表，然后使用两个表达式：&lt;code&gt;{{product.name}}&lt;/code&gt;
+和&lt;code&gt;{{product.info}}&lt;/code&gt;来绑定我们的产品信息。&lt;/p&gt;
+&lt;li ng-repeat=&#34;product in products&#34;&gt;
+
+&lt;p&gt;li 标签中使用了重复器，告诉 Angular 去对每个 product 创建一个 li 标签，使用第一个 li 标签的模板。&lt;/p&gt;
+
+&lt;p&gt;我们新增一个新的指令，叫做&lt;code&gt;ng-controller&lt;/code&gt;，并且设置为 ListCtrl，这里对应模型中的控制器。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Model（模型） 和 Controller（控制器）&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;控制器&lt;code&gt;ListCtrl&lt;/code&gt;现在加入了数据模型（一个简单的产品列表数组），这里的控制器只是简单的拥有 &lt;code&gt;$scope&lt;/code&gt;
+属性的一个方法：&lt;/p&gt;
+
+&lt;p&gt;文件&lt;code&gt;js/controllers.js&lt;/code&gt;：&lt;/p&gt;
+var scutechApp = angular.module(&#39;scutechApp&#39;, []);
+
+scutechApp.controller(&#39;ListCtrl&#39;, function ($scope) {
+    $scope.products = [
+        {
+            &#39;name&#39;: &#39;鼎甲信息仓（Infokist）&#39;,
+            &#39;info&#39;: &#39;一款将自主研发的一系列数据软件与云存储硬件深度整合为一体的数据保护系统。&#39;
+        },
+        {
+            &#39;name&#39;: &#39;鼎甲迪备（DBackup）&#39;,
+            &#39;info&#39;: &#39;一款分布式运维级数据库存储备份管理软件，广泛支持主流的操作系统平台以及数据库类型。&#39;
+        },
+        {
+            &#39;name&#39;: &#39;鼎甲安备（AnBay）&#39;,
+            &#39;info&#39;: &#39;一款为文件系统提供全面的SaaS（Software-as-a-Service）数据保护的“云备份”产品。&#39;
+        },
+        {
+            &#39;name&#39;: &#39;鼎甲奥备（OBackup）&#39;,
+            &#39;info&#39;: &#39;一款通过简单的图形化界面操作就可迅速完成的Linux操作系统备份和裸机恢复软件。&#39;
+        },
+        {
+            &#39;name&#39;: &#39;鼎甲智备（WBackup）&#39;,
+            &#39;info&#39;: &#39;一款基于云存储的远程异的移动终端备份软件。&#39;
+        },
+        {
+            &#39;name&#39;: &#39;鼎甲数据卫士（GBackup）&#39;,
+            &#39;info&#39;: &#39;一款专门用于Windows系统的各种类型文件、文件夹以及程序的单机备份和恢复的软件。&#39;
+        }
+    ];
+});
+
+&lt;p&gt;我们定义了&lt;code&gt;ListCtrl&lt;/code&gt;控制器，并且注册到 Angular 的 module：&lt;code&gt;scutechApp&lt;/code&gt;中，
+注意到我们在上面的 html 中设置了&lt;code&gt;ng-app=&amp;quot;scutechApp&amp;quot;&lt;/code&gt;，与这里的 module 相对应，
+从而让 Angular 知道如何启用我们的应用程序。&lt;/p&gt;
+
+&lt;p&gt;即使控制器没有做任何事情，但它起了决定性的作用。通过提供我们的模型数据，
+控制器允许我们建立模型和视图之间的双向绑定。我们可以看到：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;指令&lt;code&gt;ngController&lt;/code&gt;是位于&lt;code&gt;body&lt;/code&gt;标签中的，与之相对应的&lt;code&gt;ListCtrl&lt;/code&gt;是位于&lt;code&gt;controllers.js&lt;/code&gt;中，
+表示我们的控制器范围是作用于 body 下的。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;code&gt;ListCtrl&lt;/code&gt;控制器将数据作为&lt;code&gt;$scope&lt;/code&gt;的一个属性值&lt;code&gt;products&lt;/code&gt;。这里的 scope 继承于 root scope，
+当应用程序启动的时候自动被创建。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Scope&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;在 Angular 中，Scope 的概念是至关重要的，Scope 将视图、模板、模型和控制器紧紧结合在了一起。
+同时，使用 Scope 让视图、模型和控制器起到了解藕的效果，但是又做到了同步。
+即数据模型与视图的双向绑定，所以任何数据的改变都会在视图中显示出来，反之亦然。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;扩展练习&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;在&lt;code&gt;index.html&lt;/code&gt;中添加新的绑定：&lt;/p&gt;
+&lt;p&gt;产品个数：{{products.length}}&lt;/p&gt;
+
+&lt;p&gt;使用表格显示我们的产品：&lt;/p&gt;
+&lt;table class=&#34;table table-bordered&#34;&gt;
+    &lt;tr&gt;
+        &lt;th&gt;编号&lt;/th&gt;
+        &lt;th&gt;名称&lt;/th&gt;
+        &lt;th&gt;描述&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr ng-repeat=&#34;product in products&#34;&gt;
+        &lt;td&gt;{{$index + 1}}&lt;/td&gt;
+        &lt;td&gt;{{product.name}}&lt;/td&gt;
+        &lt;td&gt;{{product.info}}&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/19/angular_scutech_step1&#34;&gt;上一节&lt;/a&gt;
+&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/21/angular_scutech_step3&#34;&gt;下一节&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/18/angular_scutech_step0&#34;&gt;一步一步学习 AngularJS（一）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/19/angular_scutech_step1&#34;&gt;一步一步学习 AngularJS（二）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/20/angular_scutech_step2&#34;&gt;一步一步学习 AngularJS（三）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/21/angular_scutech_step3&#34;&gt;一步一步学习 AngularJS（四）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/22/angular_scutech_step4&#34;&gt;一步一步学习 AngularJS（五）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/23/angular_scutech_step5&#34;&gt;一步一步学习 AngularJS（六）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/03/10/angular_scutech_step6&#34;&gt;一步一步学习 AngularJS（七）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/04/22/angular_scutech_step7&#34;&gt;一步一步学习 AngularJS（八）&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>一步一步学习 AngularJS（二）</title>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/angular_scutech_step1</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/angular_scutech_step1</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/18/angular_scutech_step0&#34;&gt;上一节&lt;/a&gt;
+&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/20/angular_scutech_step2&#34;&gt;下一节&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;在这一小节，为了说明 Angular 是如何增强标准 HTML 的，这一节我们来创建静态的 HTML 页面，
+顺便也会用到 bootstrap 相关的组件，然后下一节我们将使用 Angular，通过创建模板动态生成和显示相同的页面。&lt;/p&gt;
+
+&lt;p&gt;在开始之前，我们先来看看 &lt;a href=&#34;http://blog.wenzhixin.net.cn/demos/angular-scutech/step1&#34;&gt;演示&lt;/a&gt;，
+也可以通过链接下载 &lt;a href=&#34;http://blog.wenzhixin.net.cn/demos/angular-scutech/step1.zip&#34;&gt;zip&lt;/a&gt; 包。&lt;/p&gt;
+
+&lt;p&gt;页面现在显示鼎甲科技的6个产品列表以及简单的产品介绍。&lt;/p&gt;
+
+&lt;p&gt;文件&lt;code&gt;index.html&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;container&#34;&gt;
+    &lt;ul class=&#34;list-group&#34;&gt;
+        &lt;li class=&#34;list-group-item&#34;&gt;
+            &lt;h4 class=&#34;list-group-item-heading&#34;&gt;鼎甲信息仓（Infokist）&lt;/h4&gt;
+            &lt;p class=&#34;list-group-item-text&#34;&gt;
+                一款将自主研发的一系列数据软件与云存储硬件深度整合为一体的数据保护系统。
+            &lt;/p&gt;
+        &lt;/li&gt;
+        &lt;li class=&#34;list-group-item&#34;&gt;
+            &lt;h4 class=&#34;list-group-item-heading&#34;&gt;鼎甲迪备（DBackup）&lt;/h4&gt;
+            &lt;p class=&#34;list-group-item-text&#34;&gt;
+                一款分布式运维级数据库存储备份管理软件，广泛支持主流的操作系统平台以及数据库类型。
+            &lt;/p&gt;
+        &lt;/li&gt;
+        &lt;li class=&#34;list-group-item&#34;&gt;
+            &lt;h4 class=&#34;list-group-item-heading&#34;&gt;鼎甲安备（AnBay）&lt;/h4&gt;
+            &lt;p class=&#34;list-group-item-text&#34;&gt;
+                一款为文件系统提供全面的SaaS（Software-as-a-Service）数据保护的“云备份”产品。
+            &lt;/p&gt;
+        &lt;/li&gt;
+        &lt;li class=&#34;list-group-item&#34;&gt;
+            &lt;h4 class=&#34;list-group-item-heading&#34;&gt;鼎甲奥备（OBackup）&lt;/h4&gt;
+            &lt;p class=&#34;list-group-item-text&#34;&gt;
+                一款通过简单的图形化界面操作就可迅速完成的Linux操作系统备份和裸机恢复软件。
+            &lt;/p&gt;
+        &lt;/li&gt;
+        &lt;li class=&#34;list-group-item&#34;&gt;
+            &lt;h4 class=&#34;list-group-item-heading&#34;&gt;鼎甲智备（WBackup）&lt;/h4&gt;
+            &lt;p class=&#34;list-group-item-text&#34;&gt;
+                一款基于云存储的远程异的移动终端备份软件。
+            &lt;/p&gt;
+        &lt;/li&gt;
+        &lt;li class=&#34;list-group-item&#34;&gt;
+            &lt;h4 class=&#34;list-group-item-heading&#34;&gt;鼎甲数据卫士（GBackup）&lt;/h4&gt;
+            &lt;p class=&#34;list-group-item-text&#34;&gt;
+                一款专门用于Windows系统的各种类型文件、文件夹以及程序的单机备份和恢复的软件。
+            &lt;/p&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;p&gt;其中，&lt;code&gt;list-group&lt;/code&gt;是bootstap 提供的列表组件（也提供了其他的一些组件），
+详细见&lt;a href=&#34;http://v3.bootcss.com/components/#list-group&#34;&gt;列表&lt;/a&gt;，
+通过增加 &lt;code&gt;list-group-item&lt;/code&gt;、&lt;code&gt;list-group-item-heading&lt;/code&gt;、&lt;code&gt;list-group-item-text&lt;/code&gt;
+这些 class 类来显示我们的列表。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;扩展练习&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;添加静态内容到&lt;code&gt;index.html&lt;/code&gt;中，例如：&lt;/p&gt;
+&lt;p&gt;产品个数：6&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/18/angular_scutech_step0&#34;&gt;上一节&lt;/a&gt;
+&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/20/angular_scutech_step2&#34;&gt;下一节&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/18/angular_scutech_step0&#34;&gt;一步一步学习 AngularJS（一）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/19/angular_scutech_step1&#34;&gt;一步一步学习 AngularJS（二）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/20/angular_scutech_step2&#34;&gt;一步一步学习 AngularJS（三）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/21/angular_scutech_step3&#34;&gt;一步一步学习 AngularJS（四）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/22/angular_scutech_step4&#34;&gt;一步一步学习 AngularJS（五）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/23/angular_scutech_step5&#34;&gt;一步一步学习 AngularJS（六）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/03/10/angular_scutech_step6&#34;&gt;一步一步学习 AngularJS（七）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/04/22/angular_scutech_step7&#34;&gt;一步一步学习 AngularJS（八）&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>一步一步学习 AngularJS（五）</title>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/angular_scutech_step4</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/angular_scutech_step4</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/21/angular_scutech_step3&#34;&gt;上一节&lt;/a&gt;
+&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/23/angular_scutech_step5&#34;&gt;下一节&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;在这一小节，我们增加一个功能可以用来对列表进行排序。&lt;/p&gt;
+
+&lt;p&gt;在开始之前，我们先来看看 &lt;a href=&#34;http://blog.wenzhixin.net.cn/demos/angular-scutech/step4&#34;&gt;演示&lt;/a&gt;，
+也可以通过链接下载 &lt;a href=&#34;http://blog.wenzhixin.net.cn/demos/angular-scutech/step4.zip&#34;&gt;zip&lt;/a&gt; 包。&lt;/p&gt;
+
+&lt;p&gt;可以看到在搜索框下面，我们用一个下拉列表来显示排序的信息。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;模板&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;文件&lt;code&gt;index.html&lt;/code&gt;：&lt;/p&gt;
+&lt;div class=&#34;container&#34;&gt;
+    &lt;div class=&#34;col-md-3&#34;&gt;
+        &lt;div class=&#34;form-group&#34;&gt;
+            &lt;input type=&#34;text&#34; class=&#34;form-control&#34; placeholder=&#34;搜索&#34; ng-model=&#34;query&#34; /&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;form-group&#34;&gt;
+            &lt;select class=&#34;form-control&#34; ng-model=&#34;order&#34;&gt;
+                &lt;option value=&#34;name&#34;&gt;名称&lt;/option&gt;
+                &lt;option value=&#34;age&#34;&gt;发布时长&lt;/option&gt;
+            &lt;/select&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;ul class=&#34;col-md-9 list-group&#34;&gt;
+        &lt;li class=&#34;list-group-item&#34; ng-repeat=&#34;product in products | filter:query | orderBy:order&#34;&gt;
+            &lt;h4 class=&#34;list-group-item-heading&#34;&gt;{{product.name}} - {{product.age}}年&lt;/h4&gt;
+            &lt;p class=&#34;list-group-item-text&#34;&gt;{{product.info}}&lt;/p&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;p&gt;在这个页面中，我们做了一些修改：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;首先，我们增加了模型名称为&lt;code&gt;order&lt;/code&gt;的&lt;code&gt;select&lt;/code&gt;下拉列表，可以选择按照不同的条件进行排序。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;我们在过滤器&lt;code&gt;filter&lt;/code&gt;的后面增加了&lt;code&gt;orderBy&lt;/code&gt;函数，从而更进一步去处理列表。&lt;code&gt;orderBy&lt;/code&gt;
+是一个接受数组，并对数组进行拷贝排序后返回想要的数组。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Angular 创建了一个从选择框到模型&lt;code&gt;order&lt;/code&gt;之间的双向绑定，并且作为&lt;code&gt;orderBy&lt;/code&gt;函数的参数。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;控制器&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;文件&lt;code&gt;js/controllers.js&lt;/code&gt;：&lt;/p&gt;
+var scutechApp = angular.module(&#39;scutechApp&#39;, []);
+
+scutechApp.controller(&#39;ListCtrl&#39;, function ($scope) {
+    $scope.products = [
+        {
+            &#39;name&#39;: &#39;鼎甲信息仓（Infokist）&#39;,
+            &#39;info&#39;: &#39;一款将自主研发的一系列数据软件与云存储硬件深度整合为一体的数据保护系统。&#39;,
+            &#39;age&#39;: 2
+        },
+        {
+            &#39;name&#39;: &#39;鼎甲迪备（DBackup）&#39;,
+            &#39;info&#39;: &#39;一款分布式运维级数据库存储备份管理软件，广泛支持主流的操作系统平台以及数据库类型。&#39;,
+            &#39;age&#39;: 4
+        },
+        {
+            &#39;name&#39;: &#39;鼎甲安备（AnBay）&#39;,
+            &#39;info&#39;: &#39;一款为文件系统提供全面的SaaS（Software-as-a-Service）数据保护的“云备份”产品。&#39;,
+            &#39;age&#39;: 3.5
+        },
+        {
+            &#39;name&#39;: &#39;鼎甲奥备（OBackup）&#39;,
+            &#39;info&#39;: &#39;一款通过简单的图形化界面操作就可迅速完成的Linux操作系统备份和裸机恢复软件。&#39;,
+            &#39;age&#39;: 3
+        },
+        {
+            &#39;name&#39;: &#39;鼎甲智备（WBackup）&#39;,
+            &#39;info&#39;: &#39;一款基于云存储的远程异的移动终端备份软件。&#39;,
+            &#39;age&#39;: 1.5
+        },
+        {
+            &#39;name&#39;: &#39;鼎甲数据卫士（GBackup）&#39;,
+            &#39;info&#39;: &#39;一款专门用于Windows系统的各种类型文件、文件夹以及程序的单机备份和恢复的软件。&#39;,
+            &#39;age&#39;: 1
+        }
+    ];
+    $scope.order = &#39;age&#39;;
+});
+
+&lt;p&gt;我们修改了&lt;code&gt;products&lt;/code&gt;列表的数据，为每条记录增加了&lt;code&gt;age&lt;/code&gt;属性，用于排序，对应于上面的：&lt;/p&gt;
+&lt;option value=&#34;age&#34;&gt;发布时长&lt;/option&gt;
+
+&lt;p&gt;然后增加了：&lt;/p&gt;
+$scope.order = &#39;age&#39;;
+
+&lt;p&gt;表示我们将 age 作为默认的排序值，假如没有为它设置值，下拉列表将会为空，这个可以在扩展练习中尝试下。&lt;/p&gt;
+
+&lt;p&gt;这里涉及到了一个很重要的双向绑定的概念。可以看到，当页面加载完成的时候，下拉列表会自动选择“发布时长”，
+这是因为我们在控制器中将&lt;code&gt;order&lt;/code&gt;默认设置为&lt;code&gt;age&lt;/code&gt;，这里就是从模型（model）到视图（view）的绑定。
+而当你改变下拉列表的值（名称）后，模型（model）将会相对应的更新为&lt;code&gt;name&lt;/code&gt;，列表也会进行重新排序，
+这是从视图（view）到模型（model）的绑定。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;拓展练习&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;删除控制器中的：&lt;/p&gt;
+$scope.order = &#39;age&#39;;
+
+&lt;p&gt;通过F12，可以看到在下拉列表增加了：&lt;/p&gt;
+&lt;option value=&#34;? undefined:undefined ?&#34;&gt;&lt;/option&gt;
+
+&lt;p&gt;假如要改变排序的顺序，可以通过加上&lt;code&gt;-&lt;/code&gt;号，不加的话相当于“asc”，加了就变成了“desc”：&lt;/p&gt;
+$scope.order = &#39;-age&#39;;
+
+&lt;option value=&#34;-age&#34;&gt;发布时长&lt;/option&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/21/angular_scutech_step3&#34;&gt;上一节&lt;/a&gt;
+&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/23/angular_scutech_step5&#34;&gt;下一节&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/18/angular_scutech_step0&#34;&gt;一步一步学习 AngularJS（一）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/19/angular_scutech_step1&#34;&gt;一步一步学习 AngularJS（二）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/20/angular_scutech_step2&#34;&gt;一步一步学习 AngularJS（三）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/21/angular_scutech_step3&#34;&gt;一步一步学习 AngularJS（四）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/22/angular_scutech_step4&#34;&gt;一步一步学习 AngularJS（五）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/23/angular_scutech_step5&#34;&gt;一步一步学习 AngularJS（六）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/03/10/angular_scutech_step6&#34;&gt;一步一步学习 AngularJS（七）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/04/22/angular_scutech_step7&#34;&gt;一步一步学习 AngularJS（八）&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>一步一步学习 AngularJS（八）</title>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/angular_scutech_step7</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/angular_scutech_step7</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/03/10/angular_scutech_step6&#34;&gt;上一节&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;在这一小节，我们将学习如何创建布局模板，和如何通过添加路由来创建多页面的应用，
+将使用新的 Angular 模块&lt;code&gt;ngRoute&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;在开始之前，我们先来看看 &lt;a href=&#34;http://blog.wenzhixin.net.cn/demos/angular-scutech/step7&#34;&gt;演示&lt;/a&gt;，
+也可以通过链接下载 &lt;a href=&#34;http://blog.wenzhixin.net.cn/demos/angular-scutech/step7.zip&#34;&gt;zip&lt;/a&gt; 包。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;当你通过浏览器打开地址&lt;code&gt;index.html&lt;/code&gt;时，会自动跳转到&lt;code&gt;index.html#products&lt;/code&gt;并且显示产品列表。&lt;/li&gt;
+&lt;li&gt;当你点击某个产品时，会跳到相对应的产品信息页面中。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;依赖&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;用到路由需要提供 angular 的依赖&lt;code&gt;angular-route.js&lt;/code&gt;，我们把它加入到&lt;code&gt;index.html&lt;/code&gt;中：&lt;/p&gt;
+&lt;script src=&#34;lib/angular/angular.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;lib/angular/angular-route.js&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;这样我们就可以使用&lt;code&gt;ngRoute&lt;/code&gt;模块了。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;多页面，路由和布局模板&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;我们的应用正在慢慢的变强大起来，在前几节中，我们提供了一个单页面（产品列表），并且所有的模板都放在&lt;code&gt;index.html&lt;/code&gt;
+中，下一步是增加一个页面来显示我们列表中每个产品的详细信息。&lt;/p&gt;
+
+&lt;p&gt;增加产品的详细信息页面，我们可以扩展&lt;code&gt;index.html&lt;/code&gt;的内容，但是这样的话，随着页面的增加，我们的页面会变得凌乱起来。
+在这里，我们使用布局模板来解决这一问题。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;模板&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;首先，我们新建 partials 文件夹，用于存放模板文件。并新建&lt;code&gt;partials/list.html&lt;/code&gt;：&lt;/p&gt;
+&lt;div class=&#34;navbar navbar-inverse&#34; role=&#34;navigation&#34;&gt;
+    &lt;div class=&#34;container&#34;&gt;
+        &lt;div class=&#34;navbar-header&#34;&gt;
+            &lt;a class=&#34;navbar-brand&#34; href=&#34;#&#34;&gt;项目名称&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;collapse navbar-collapse&#34;&gt;
+            &lt;ul class=&#34;nav navbar-nav&#34;&gt;
+                &lt;li class=&#34;active&#34;&gt;&lt;a href=&#34;#&#34;&gt;产品列表&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;&lt;!--/.nav-collapse --&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;container&#34;&gt;
+    &lt;div class=&#34;col-md-3&#34;&gt;
+        &lt;div class=&#34;form-group&#34;&gt;
+            &lt;input type=&#34;text&#34; class=&#34;form-control&#34; placeholder=&#34;搜索&#34; ng-model=&#34;query&#34; /&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;form-group&#34;&gt;
+            &lt;select class=&#34;form-control&#34; ng-model=&#34;order&#34;&gt;
+                &lt;option value=&#34;name&#34;&gt;名称&lt;/option&gt;
+                &lt;option value=&#34;age&#34;&gt;发布时长&lt;/option&gt;
+            &lt;/select&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;ul class=&#34;col-md-9 list-group&#34;&gt;
+        &lt;li class=&#34;list-group-item&#34; ng-repeat=&#34;product in products | filter:query | orderBy:order&#34;&gt;
+            &lt;a href=&#34;#/product/{{product.id}}&#34;&gt;
+                &lt;h4 class=&#34;list-group-item-heading&#34;&gt;
+                    &lt;img ng-src=&#34;{{product.image}}&#34; /&gt;
+                    {{product.name}} - {{product.age}}年
+                &lt;/h4&gt;
+            &lt;/a&gt;
+            &lt;p class=&#34;list-group-item-text&#34;&gt;
+                {{product.info}}
+            &lt;/p&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;p&gt;我们把&lt;code&gt;index.html&lt;/code&gt;中的内容 copy 到&lt;code&gt;list.html&lt;/code&gt;了，并在 body 间加入了&lt;code&gt;ngView&lt;/code&gt;指令，&lt;/p&gt;
+&lt;body ng-controller=&#34;ListCtrl&#34;&gt;
+
+&lt;div ng-view&gt;&lt;/div&gt;
+
+&lt;/body&gt;
+
+&lt;p&gt;接着，我们添加&lt;code&gt;partials/detail.html&lt;/code&gt;文件，简单的加入：&lt;/p&gt;
+detail view for {{productId}}
+
+&lt;p&gt;用于显示当前产品的 ID 信息。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;APP 模块&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;在之前的小节中，我们仅仅只用到了&lt;code&gt;controllers.js&lt;/code&gt;文件，为了更好的组织我们的代码结构，
+在这里加入&lt;code&gt;app.js&lt;/code&gt;，用于控制我们应用的入口和路由的配置信息：&lt;/p&gt;
+var scutechApp = angular.module(&#39;scutechApp&#39;, [
+    &#39;ngRoute&#39;,
+    &#39;controllers&#39;
+]);
+
+scutechApp.config([&#39;$routeProvider&#39;,
+    function($routeProvider) {
+        $routeProvider.
+            when(&#39;/products&#39;, {
+                templateUrl: &#39;partials/list.html&#39;,
+                controller: &#39;ListCtrl&#39;
+            }).
+            when(&#39;/products/:productId&#39;, {
+                templateUrl: &#39;partials/detail.html&#39;,
+                controller: &#39;DetailCtrl&#39;
+            }).
+            otherwise({
+                redirectTo: &#39;/products&#39;
+            });
+    }]);
+
+&lt;p&gt;这里配置了主模块，并且加入了&lt;code&gt;ngRoute&lt;/code&gt;，表示我们将启用路由控制我们的界面。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;when(&amp;lsquo;/products&amp;rsquo;)：当 url 地址为 products 时，我们使用&lt;code&gt;list.html&lt;/code&gt;模板，定义了控制器为&lt;code&gt;ListCtrl&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;when(&amp;lsquo;/products/:productId&amp;rsquo;)：当 url 地址为产品详细信息时，
+我们使用&lt;code&gt;detail.html&lt;/code&gt;模板，定义了控制器为&lt;code&gt;DetailCtrl&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;otherwise：表示默认为&lt;code&gt;/products&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;因为在这里指定了控制器对应不同的模板页面，所以在&lt;code&gt;index.html&lt;/code&gt;不需要在指定&lt;code&gt;ng-controller&lt;/code&gt;了，
+加入app.js之后，我们的&lt;code&gt;index.html&lt;/code&gt;文件为：&lt;/p&gt;
+&lt;!doctype html&gt;
+&lt;html lang=&#34;en&#34; ng-app=&#34;scutechApp&#34;&gt;
+&lt;head&gt;
+    &lt;meta charset=&#34;utf-8&#34;&gt;
+    &lt;title&gt;Angular Scutech&lt;/title&gt;
+    &lt;link rel=&#34;stylesheet&#34; href=&#34;lib/bootstrap/css/bootstrap.css&#34;&gt;
+    &lt;script src=&#34;lib/angular/angular.js&#34;&gt;&lt;/script&gt;
+    &lt;script src=&#34;lib/angular/angular-route.js&#34;&gt;&lt;/script&gt;
+    &lt;script src=&#34;js/app.js&#34;&gt;&lt;/script&gt;
+    &lt;script src=&#34;js/controllers.js&#34;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div ng-view&gt;&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+&lt;p&gt;&lt;strong&gt;控制器&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;文件&lt;code&gt;controllers.js&lt;/code&gt;：&lt;/p&gt;
+var controllers = angular.module(&#39;controllers&#39;, []);
+
+controllers.controller(&#39;ListCtrl&#39;, [&#39;$scope&#39;, &#39;$http&#39;,
+    function ($scope, $http) {
+        $http.get(&#39;data/products.json&#39;).success(function(data) {
+            $scope.products = data;
+        });
+        $scope.order = &#39;age&#39;;
+    }
+]);
+
+controllers.controller(&#39;DetailCtrl&#39;, [&#39;$scope&#39;, &#39;$routeParams&#39;,
+    function ($scope, $routeParams) {
+        $scope.productId = $routeParams.productId;
+    }
+]);
+
+&lt;p&gt;注意到，我们创建了一个名叫&lt;code&gt;controllers&lt;/code&gt;的module，对应 app.js 中的控制器名称，
+用于告诉 AngularJS 使用相对应控制器（对于大型应用，你可能需要创建多个模块）。
+在&lt;code&gt;DetailCtrl&lt;/code&gt;中，用到了&lt;code&gt;$routeParams&lt;/code&gt;，用于获取 url 的参数，
+如：&lt;code&gt;/products/:productId&lt;/code&gt;，直接用&lt;code&gt;$routeParams.productId&lt;/code&gt;即可。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;扩展练习&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;添加&lt;code&gt;{{order}}&lt;/code&gt;绑定到&lt;code&gt;index.html&lt;/code&gt;中，你会发现，该值一直为空，
+这是因为我们把控制器的范围指定为具体的模块中去了，例如&lt;code&gt;ListCtrl&lt;/code&gt;对应&lt;code&gt;list.html&lt;/code&gt;，
+&lt;code&gt;DetailCtrl&lt;/code&gt;对应&lt;code&gt;detail.html&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/03/10/angular_scutech_step6&#34;&gt;上一节&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/18/angular_scutech_step0&#34;&gt;一步一步学习 AngularJS（一）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/19/angular_scutech_step1&#34;&gt;一步一步学习 AngularJS（二）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/20/angular_scutech_step2&#34;&gt;一步一步学习 AngularJS（三）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/21/angular_scutech_step3&#34;&gt;一步一步学习 AngularJS（四）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/22/angular_scutech_step4&#34;&gt;一步一步学习 AngularJS（五）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/23/angular_scutech_step5&#34;&gt;一步一步学习 AngularJS（六）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/03/10/angular_scutech_step6&#34;&gt;一步一步学习 AngularJS（七）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/04/22/angular_scutech_step7&#34;&gt;一步一步学习 AngularJS（八）&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>一步一步学习 AngularJS（六）</title>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/angular_scutech_step5</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/angular_scutech_step5</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/22/angular_scutech_step4&#34;&gt;上一节&lt;/a&gt;
+&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/03/10/angular_scutech_step6&#34;&gt;下一节&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;在之前几个小节中，我们的列表都是使用固定的数据。
+在这一小节，我们使用 $http 请求从后台获取数据。&lt;/p&gt;
+
+&lt;p&gt;在开始之前，我们先来看看 &lt;a href=&#34;http://blog.wenzhixin.net.cn/demos/angular-scutech/step5&#34;&gt;演示&lt;/a&gt;，
+也可以通过链接下载 &lt;a href=&#34;http://blog.wenzhixin.net.cn/demos/angular-scutech/step5.zip&#34;&gt;zip&lt;/a&gt; 包。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;数据&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;我们在当前文件夹下增加了 data 文件夹，并将我们的列表保存为 JSON 格式放到&lt;code&gt;data/products.json&lt;/code&gt;文件中：&lt;/p&gt;
+[
+    {
+        &#34;name&#34;: &#34;鼎甲信息仓（Infokist）&#34;,
+        &#34;info&#34;: &#34;一款将自主研发的一系列数据软件与云存储硬件深度整合为一体的数据保护系统。&#34;,
+        &#34;age&#34;: 2
+    },
+    {
+        &#34;name&#34;: &#34;鼎甲迪备（DBackup）&#34;,
+        &#34;info&#34;: &#34;一款分布式运维级数据库存储备份管理软件，广泛支持主流的操作系统平台以及数据库类型。&#34;,
+        &#34;age&#34;: 4
+    },
+    {
+        &#34;name&#34;: &#34;鼎甲安备（AnBay）&#34;,
+        &#34;info&#34;: &#34;一款为文件系统提供全面的SaaS（Software-as-a-Service）数据保护的“云备份”产品。&#34;,
+        &#34;age&#34;: 3.5
+    },
+    {
+        &#34;name&#34;: &#34;鼎甲奥备（OBackup）&#34;,
+        &#34;info&#34;: &#34;一款通过简单的图形化界面操作就可迅速完成的Linux操作系统备份和裸机恢复软件。&#34;,
+        &#34;age&#34;: 3
+    },
+    {
+        &#34;name&#34;: &#34;鼎甲智备（WBackup）&#34;,
+        &#34;info&#34;: &#34;一款基于云存储的远程异的移动终端备份软件。&#34;,
+        &#34;age&#34;: 1.5
+    },
+    {
+        &#34;name&#34;: &#34;鼎甲数据卫士（GBackup）&#34;,
+        &#34;info&#34;: &#34;一款专门用于Windows系统的各种类型文件、文件夹以及程序的单机备份和恢复的软件。&#34;,
+        &#34;age&#34;: 1
+    }
+]
+
+&lt;p&gt;&lt;strong&gt;控制器&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;我们 Angular 提供的使用 &lt;a href=&#34;http://docs.angularjs.org/api/ng/service/$http&#34;&gt;$http&lt;/a&gt; 服务来发送 http 请求，
+类似于 jQuery 的 ajax 请求，例如 $http.get 相当于 jQuery 的 $.get，$http.post 相当于 jQuery 的 $.post。&lt;/p&gt;
+
+&lt;p&gt;文件&lt;code&gt;js/controllers.js&lt;/code&gt;：&lt;/p&gt;
+var scutechApp = angular.module(&#39;scutechApp&#39;, []);
+
+scutechApp.controller(&#39;ListCtrl&#39;, function ($scope, $http) {
+    $http.get(&#39;data/products.json&#39;).success(function(data) {
+        $scope.products = data;
+    });
+    $scope.order = &#39;age&#39;;
+});
+
+&lt;p&gt;可以看到，我们通过 http 的 GET 方法，发送请求到地址为 data/products.json（这里相当于我们上面新建的文件，
+跟在服务器去获取是一样的道理，但是涉及到跨域的问题，所以这里用本地文件作为演示），服务器返回了一个 JSON
+格式的数据，即我们的列表数据。&lt;/p&gt;
+
+&lt;p&gt;$http 服务返回了一个 &lt;a href=&#34;http://docs.angularjs.org/api/ng/service/$q&#34;&gt;promise&lt;/a&gt; 对象，这个 promise
+对象有一个&lt;code&gt;success&lt;/code&gt;的方法，我们使用这个方法来处理异步返回的数据，并且将返回的数据绑定到&lt;code&gt;$scope.products&lt;/code&gt;
+变量中，从而通知我们的视图做出相对应的更新。&lt;/p&gt;
+
+&lt;p&gt;$http 服务的使用和 $scope 一样，我们只需要通过注入的方式即可，使用起来很简单。&lt;/p&gt;
+scutechApp.controller(&#39;ListCtrl&#39;, function ($scope, $http) {...}
+
+&lt;p&gt;Angular 的依赖注入提供了一系列的服务给我们使用，例如后面会讲到的 &lt;code&gt;$resource&lt;/code&gt;、&lt;code&gt;$animate&lt;/code&gt;也是一样的道理。
+需要注意的是，参数的名称必须是有意义的，因为 Angular 就是通过名字进行依赖查找的。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;$前缀的命名规范&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;我们可以创建属于自己的服务，后面应该会提到。根据 Angular 的命名规范，提供的服务都是以 $ 为前缀进行命名的，
+例如 $scope、$http、$resource 等等。&lt;/p&gt;
+
+&lt;p&gt;也就是说，$前缀在 Angular 中代表提供的服务的命名空间，为了避免与 Angular 提供的服务进行冲突，
+我们不建议使用 $前缀进行自定义服务的命名。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;极简化改进&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;上面提到，Angular 是通过服务名进行查找，然后依赖注入的，但是这样子就相当于将所有的参数都传递进来了。
+这里涉及到一个概念，就是 &lt;a href=&#34;http://zh.wikipedia.org/wiki/%E6%A5%B5%E7%B0%A1%E5%8C%96&#34;&gt;极简化&lt;/a&gt;，意思是说，
+我们只需要传递我们需要的参数就可以了，这样就可以优化我们的程序。&lt;/p&gt;
+
+&lt;p&gt;那么，我们应该如何改进我们的程序呢？&lt;/p&gt;
+
+&lt;p&gt;有两种方法：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;可以为控制器方法创建一个&lt;code&gt;$inject&lt;/code&gt;属性，这个属性是一个保存我们所需要注入的服务的名称，例如：&lt;/li&gt;
+&lt;/ul&gt;
+funciton ListCtrl($scope, $http) {...}
+ListCtrl.$inject = [&#39;$scope&#39;, &#39;$http&#39;];
+scutechApp.controller(&#39;ListCtrl&#39;, ListCtrl);
+
+&lt;ul&gt;
+&lt;li&gt;使用单行括号来声明我们需要的服务，然后最后一个参数是我们的控制器方法：&lt;/li&gt;
+&lt;/ul&gt;
+funciton ListCtrl($scope, $http) {...}
+scutechApp.controller(&#39;ListCtrl&#39;, [&#39;$scope&#39;, &#39;$http&#39;, ListCtrl]);
+
+&lt;p&gt;在实际使用中，我们会使用第二种方法，并且写成了一行，改进后的代码为：&lt;/p&gt;
+var scutechApp = angular.module(&#39;scutechApp&#39;, []);
+
+scutechApp.controller(&#39;ListCtrl&#39;, [&#39;$scope&#39;, &#39;$http&#39;,
+    function ($scope, $http) {
+        $http.get(&#39;data/products.json&#39;).success(function(data) {
+            $scope.products = data;
+        });
+        $scope.order = &#39;age&#39;;
+    }
+]);
+
+&lt;p&gt;&lt;strong&gt;扩展练习&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;在&lt;code&gt;index.html&lt;/code&gt;的最后面，我们可以通过增加&lt;code&gt;{{products | json}}&lt;/code&gt;来查看我们的列表信息（JSON格式）。&lt;/p&gt;
+
+&lt;p&gt;在控制器&lt;code&gt;js/controllers.js&lt;/code&gt;中，我们可以通过预处理，只显示两条记录（实际项目中可能会对列表做一些处理）：&lt;/p&gt;
+$scope.products = data.splice(0, 2);
+
+&lt;p&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/22/angular_scutech_step4&#34;&gt;上一节&lt;/a&gt;
+&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/03/10/angular_scutech_step6&#34;&gt;下一节&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/18/angular_scutech_step0&#34;&gt;一步一步学习 AngularJS（一）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/19/angular_scutech_step1&#34;&gt;一步一步学习 AngularJS（二）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/20/angular_scutech_step2&#34;&gt;一步一步学习 AngularJS（三）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/21/angular_scutech_step3&#34;&gt;一步一步学习 AngularJS（四）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/22/angular_scutech_step4&#34;&gt;一步一步学习 AngularJS（五）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/23/angular_scutech_step5&#34;&gt;一步一步学习 AngularJS（六）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/03/10/angular_scutech_step6&#34;&gt;一步一步学习 AngularJS（七）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/04/22/angular_scutech_step7&#34;&gt;一步一步学习 AngularJS（八）&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>一步一步学习 AngularJS（四）</title>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/angular_scutech_step3</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/angular_scutech_step3</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/20/angular_scutech_step2&#34;&gt;上一节&lt;/a&gt;
+&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/22/angular_scutech_step4&#34;&gt;下一节&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;在这一小节，我们增加一个简单的&lt;code&gt;input&lt;/code&gt;输入框，用于搜索。&lt;/p&gt;
+
+&lt;p&gt;在开始之前，我们先来看看 &lt;a href=&#34;http://blog.wenzhixin.net.cn/demos/angular-scutech/step3&#34;&gt;演示&lt;/a&gt;，
+也可以通过链接下载 &lt;a href=&#34;http://blog.wenzhixin.net.cn/demos/angular-scutech/step3.zip&#34;&gt;zip&lt;/a&gt; 包。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;控制器&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;我们没有改变控制器的任何代码。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;模板&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;文件：&lt;code&gt;index.html&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;container&#34;&gt;
+    &lt;div class=&#34;col-md-3&#34;&gt;
+        &lt;input type=&#34;text&#34; class=&#34;form-control&#34; placeholder=&#34;搜索&#34; ng-model=&#34;query&#34; /&gt;
+    &lt;/div&gt;
+    &lt;ul class=&#34;col-md-9 list-group&#34;&gt;
+        &lt;li class=&#34;list-group-item&#34; ng-repeat=&#34;product in products | filter:query&#34;&gt;
+            &lt;h4 class=&#34;list-group-item-heading&#34;&gt;{{product.name}}&lt;/h4&gt;
+            &lt;p class=&#34;list-group-item-text&#34;&gt;{{product.info}}&lt;/p&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;p&gt;我们修改我们的模板代码，&lt;code&gt;col-md-3&lt;/code&gt;、&lt;code&gt;col-md-9&lt;/code&gt;
+都是 bootstrap 提供的类，表示将搜索栏和列表分别放在左右两边，&lt;code&gt;form-control&lt;/code&gt;
+将 input 设置为 bootstrap 的风格。&lt;/p&gt;
+
+&lt;p&gt;看到为 input 输入框增加了&lt;code&gt;ng-model&lt;/code&gt;指令，表示我们的模型是&lt;code&gt;query&lt;/code&gt;，
+而在&lt;code&gt;ng-repeat&lt;/code&gt;中加入了 filter 函数用于处理输入框的模型。&lt;/p&gt;
+
+&lt;p&gt;当你在输入框中输入内容的时候会立即看到列表的变化。&lt;/p&gt;
+
+&lt;p&gt;这些新代码表明了：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;数据绑定：这是 AngularJS 的一个核心功能，当页面加载后，AngularJS 在模型中绑定了相同的名字的变量，
+从而保证视图和模型之间的同步。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;使用&lt;code&gt;filter&lt;/code&gt;函数过滤内容：&lt;code&gt;filter&lt;/code&gt;函数使用&lt;code&gt;query&lt;/code&gt;参数去创建新的只包含输入框内容的列表。
+从而自动更新列表的内容，达到搜索的功能。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;扩展练习&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;增加一个绑定显示当前的搜索内容：&lt;/p&gt;
+&lt;p&gt;输入的内容：{{query}}&lt;/p&gt;
+
+&lt;p&gt;假如我想把搜索内容显示在页面的标题上呢？&lt;/p&gt;
+
+&lt;p&gt;是不是通过设置：&lt;/p&gt;
+&lt;title&gt;Angular Scutech：{{query}}&lt;/title&gt;
+
+&lt;p&gt;就可以了呢？通过实践我们可以知道，并不能达到我们想要的结果，这是为什么呢？&lt;/p&gt;
+
+&lt;p&gt;因为我们的控制器是放在 body 标签上的，这样使用 query 变量的话就超出我们的作用域了：&lt;/p&gt;
+&lt;body ng-controller=&#34;ListCtrl&#34;&gt;
+
+&lt;p&gt;我们可以把控制移动到 html 标签上，就可以了：&lt;/p&gt;
+&lt;html lang=&#34;en&#34; ng-app=&#34;scutechApp&#34; ng-controller=&#34;ListCtrl&#34;&gt;
+
+&lt;p&gt;但是这里有个小问题，就是使用&lt;code&gt;{{}}&lt;/code&gt;的时候在最初加载的时候，显示为&lt;code&gt;Angular Scutech：{{query}}&lt;/code&gt;，很不美观。&lt;/p&gt;
+
+&lt;p&gt;在 AngularJS 中，我们可以使用&lt;code&gt;ngBind&lt;/code&gt;（用于绑定变量，例如&lt;code&gt;ng-bind=&amp;quot;query&amp;quot;&lt;/code&gt;）
+或者&lt;code&gt;ngBindTemplate&lt;/code&gt;（用于绑定模块，例如&lt;code&gt;ng-bind-template=&amp;quot;Angular Scutech：{{query}}&amp;quot;&lt;/code&gt;）
+来代替双括号进行数据绑定，例如我们用下面的代码就可以了：&lt;/p&gt;
+&lt;title ng-bind=&#34;Angular Scutech：{{query}}&#34;&gt;Angular Scutech&lt;/title&gt;
+
+&lt;p&gt;到这里，你是不是对 AngularJS 的数据绑定有所理解了呢:-)&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/20/angular_scutech_step2&#34;&gt;上一节&lt;/a&gt;
+&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/22/angular_scutech_step4&#34;&gt;下一节&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/18/angular_scutech_step0&#34;&gt;一步一步学习 AngularJS（一）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/19/angular_scutech_step1&#34;&gt;一步一步学习 AngularJS（二）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/20/angular_scutech_step2&#34;&gt;一步一步学习 AngularJS（三）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/21/angular_scutech_step3&#34;&gt;一步一步学习 AngularJS（四）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/22/angular_scutech_step4&#34;&gt;一步一步学习 AngularJS（五）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/02/23/angular_scutech_step5&#34;&gt;一步一步学习 AngularJS（六）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/03/10/angular_scutech_step6&#34;&gt;一步一步学习 AngularJS（七）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/04/22/angular_scutech_step7&#34;&gt;一步一步学习 AngularJS（八）&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
     
   </channel>

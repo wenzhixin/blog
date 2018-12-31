@@ -7,18 +7,139 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Sat, 23 Nov 2013 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.wenzhixin.net.cn/tags/%E6%9C%88%E4%BB%BD/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="http://blog.wenzhixin.net.cn/tags/%E6%9C%88%E4%BB%BD/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>jQuery 打造月份选择器插件</title>
-      <link>http://blog.wenzhixin.net.cn/2013/11/23/jquery_month_picker/</link>
-      <pubDate>Sat, 23 Nov 2013 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/jquery_month_picker</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/11/23/jquery_month_picker/</guid>
-      <description>项目中需要用到月份选择器，找到了几款日期选择器 datepicker， 但是我不需要选择具体的日期，虽然有个可以支持只显示月份的，但是显得比较臃</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/jquery_month_picker</guid>
+      <description>
+
+&lt;p&gt;项目中需要用到月份选择器，找到了几款日期选择器 datepicker，
+但是我不需要选择具体的日期，虽然有个可以支持只显示月份的，但是显得比较臃肿。&lt;/p&gt;
+
+&lt;p&gt;所以，还是决定自己实现一个吧。最后封装成了 jQuery 的插件，插件地址为：&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://wenzhixin.net.cn/p/bootstrap-monthpicker/&#34;&gt;bootstrap-monthpicker&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;其实编写 jQuery 插件很简单，使用起来也简单，把相同的代码提取出来写成 jQuery 的插件，
+这样不仅仅可以省很多代码量，还可以很好的提高开发速度。&lt;/p&gt;
+
+&lt;p&gt;这里，把自己编写插件的步骤记录下来，希望有需要的人可以参考下。&lt;/p&gt;
+
+&lt;h4 id=&#34;1-编写基本的-html-代码:ad5eee46152d62e3e061bf4e3d35a595&#34;&gt;1. 编写基本的 html 代码&lt;/h4&gt;
+
+&lt;p&gt;日期选择器需要年份选择，以及12个月的月份选择。&lt;/p&gt;
+&lt;div class=&#34;mp-dialog&#34;&gt;
+	&lt;div class=&#34;mp-title&#34;&gt;
+		&lt;i class=&#34;glyphicon glyphicon-circle-arrow-left&#34;&gt;&lt;/i&gt;
+		&lt;span&gt;2013&lt;/span&gt;
+		&lt;i class=&#34;glyphicon glyphicon-circle-arrow-right&#34;&gt;&lt;/i&gt;
+	&lt;/div&gt;
+	&lt;div class=&#34;mp-content&#34;&gt;
+		&lt;ul&gt;
+			&lt;li&gt;一&lt;/li&gt;
+			&lt;li&gt;二&lt;/li&gt;
+			...
+			&lt;li&gt;十二&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&#34;2-编写基本的-css-代码:ad5eee46152d62e3e061bf4e3d35a595&#34;&gt;2. 编写基本的 css 代码&lt;/h4&gt;
+
+&lt;p&gt;根据 html 代码，编写我们所需要的 css 样式。&lt;/p&gt;
+.mp-dialog {
+	position: absolute;
+	z-index: 1000;
+	width: 282px;
+	height: 260px;
+	background: #fff;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	display: none;
+}
+.mp-title {
+	text-align: center;
+	line-height: 40px;
+	background: #92cade;
+	color: #fff;
+	border-radius: 5px 5px 0 0;
+}
+.mp-title i {
+	cursor: pointer;
+}
+.mp-content ul {
+	list-style: none;
+	margin: 0;
+	padding: 20px;
+}
+.mp-content li {
+	text-align: center;
+	line-height: 48px;
+	float: left;
+	margin: 6px;
+	padding: 0;
+	width: 48px;
+	height: 48px;
+	border: 2px dotted #ccc;
+	cursor: pointer;
+	border-radius: 5px;
+}
+.mp-content li:hover, .mp-content li.active {
+	background: #f5f9fc;
+	border: 2px dotted #ffaaaa;
+}
+
+&lt;h4 id=&#34;3-编写基本的-js-事件监听:ad5eee46152d62e3e061bf4e3d35a595&#34;&gt;3. 编写基本的 js 事件监听&lt;/h4&gt;
+
+&lt;p&gt;我们需要对上一年和下一年进行事件监听，并显示我们想要的年份。&lt;/p&gt;
+&lt;div class=&#34;mp-title&#34;&gt;
+	&lt;i class=&#34;mp-year-prev glyphicon glyphicon-circle-arrow-left&#34;&gt;&lt;/i&gt;
+	&lt;span&gt;2013&lt;/span&gt;
+	&lt;i class=&#34;mp-year-next glyphicon glyphicon-circle-arrow-right&#34;&gt;&lt;/i&gt;
+&lt;/div&gt;
+
+&lt;p&gt;这里添加了 mp-year-prev 和 mp-year-next 两个类。&lt;/p&gt;
+var year = 2013;
+$(&#39;.mp-year-prev&#39;).click(function() {
+	year--;
+	$(&#39;.mp-title span&#39;).text(year);
+});
+$(&#39;.mp-year-next&#39;).click(function() {
+	year++;
+	$(&#39;.mp-title span&#39;).text(year);
+});
+
+&lt;p&gt;我们在月份中加上了 data-month 属性，方便知道是选择哪个月份。&lt;/p&gt;
+&lt;li data-month=&#34;0&#34;&gt;一&lt;/li&gt;
+&lt;li data-month=&#34;1&#34;&gt;二&lt;/li&gt;
+...
+&lt;li data-month=&#34;11&#34;&gt;十二&lt;/li&gt;
+
+&lt;p&gt;并添加对月份选择的监听。&lt;/p&gt;
+$(&#39;.mp-content li&#39;).click(function() {
+	console.log($(this).data);
+});
+
+&lt;h4 id=&#34;4-封装成-jquery-插件:ad5eee46152d62e3e061bf4e3d35a595&#34;&gt;4. 封装成 jQuery 插件&lt;/h4&gt;
+
+&lt;p&gt;自己写 jQuery 插件的时候有个基本的模块，详细见
+&lt;a href=&#34;https://gist.github.com/wenzhixin/7634953&#34;&gt;源码&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;需要做的事情：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;将基本的 html 让 js 来自动生成&lt;/li&gt;
+&lt;li&gt;监听事件使用 $el.off(&amp;lsquo;click&amp;rsquo;).on(&amp;lsquo;click&amp;rsquo;) 或者绑定监听&lt;/li&gt;
+&lt;li&gt;将月份选择器加在 input 或者 div、span 选择器中&lt;/li&gt;
+&lt;li&gt;对于 input 使用 val()，对于 div、span 使用 text()&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;至此，我们的&lt;a href=&#34;https://github.com/wenzhixin/bootstrap-monthpicker&#34;&gt;月份选择器插件&lt;/a&gt;就完成了。&lt;/p&gt;
+</description>
     </item>
     
   </channel>

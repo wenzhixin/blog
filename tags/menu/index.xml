@@ -1,24 +1,113 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>menu on 文翼的博客</title>
+    <title>Menu on 文翼的博客</title>
     <link>http://blog.wenzhixin.net.cn/tags/menu/</link>
-    <description>Recent content in menu on 文翼的博客</description>
+    <description>Recent content in Menu on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Sun, 29 Dec 2013 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.wenzhixin.net.cn/tags/menu/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="http://blog.wenzhixin.net.cn/tags/menu/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>bootstrap menu 插件介绍</title>
-      <link>http://blog.wenzhixin.net.cn/2013/12/29/bootstrap_menu_guide/</link>
-      <pubDate>Sun, 29 Dec 2013 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/bootstrap_menu_guide</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/12/29/bootstrap_menu_guide/</guid>
-      <description>前言 平时在定义目录菜单的时候会使用 ul、li 等，定义和维护起来不是很方便， 所以就写成了 bootstrap 的 jQuery 的插件。 如何使用 使用起来非常简单，先来看看如何使</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/bootstrap_menu_guide</guid>
+      <description>
+
+&lt;h3 id=&#34;前言:39d60e384587fa13715ba353a1183d76&#34;&gt;前言&lt;/h3&gt;
+
+&lt;p&gt;平时在定义目录菜单的时候会使用 ul、li 等，定义和维护起来不是很方便，
+所以就写成了 bootstrap 的 jQuery 的&lt;a href=&#34;https://github.com/wenzhixin/bootstrap-menu&#34;&gt;插件&lt;/a&gt;。&lt;/p&gt;
+
+&lt;h3 id=&#34;如何使用:39d60e384587fa13715ba353a1183d76&#34;&gt;如何使用&lt;/h3&gt;
+
+&lt;p&gt;使用起来非常简单，先来看看如何使用吧：&lt;/p&gt;
+
+&lt;p&gt;首先引入需要的文件&lt;/p&gt;
+&lt;link rel=&#34;stylesheet&#34; href=&#34;bootstrap-menu.css&#34; /&gt;
+&lt;script src=&#34;bootstrap-menu.js&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;接着定义一个 div&lt;/p&gt;
+&lt;div id=&#34;menu&#34; class=&#34;bs-menu&#34;&gt;&lt;/div&gt;
+
+&lt;p&gt;使用 js 初始化插件，定义了 Menu1 的菜单&lt;/p&gt;
+$(&#39;#menu&#39;).bootstrapMenu({
+	data: [{
+		name: &#39;menu1&#39;,
+		title: &#39;Menu1&#39;,
+		icon: &#39;images/1.png&#39;
+	}]
+});
+
+&lt;p&gt;效果可以查看 &lt;a href=&#34;http://wenzhixin.net.cn/p/bootstrap-menu/&#34;&gt;demo&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;属性:39d60e384587fa13715ba353a1183d76&#34;&gt;属性&lt;/h3&gt;
+
+&lt;h4 id=&#34;width:39d60e384587fa13715ba353a1183d76&#34;&gt;width&lt;/h4&gt;
+
+&lt;p&gt;定义菜单的宽度&lt;/p&gt;
+
+&lt;p&gt;类型：整数值&lt;/p&gt;
+
+&lt;p&gt;默认：180&lt;/p&gt;
+
+&lt;h4 id=&#34;isopen:39d60e384587fa13715ba353a1183d76&#34;&gt;isOpen&lt;/h4&gt;
+
+&lt;p&gt;定义是否展开菜单&lt;/p&gt;
+
+&lt;p&gt;类型：布尔值&lt;/p&gt;
+
+&lt;p&gt;默认：false&lt;/p&gt;
+
+&lt;h4 id=&#34;data:39d60e384587fa13715ba353a1183d76&#34;&gt;data&lt;/h4&gt;
+
+&lt;p&gt;定义菜单数据&lt;/p&gt;
+
+&lt;p&gt;类型：对象数组&lt;/p&gt;
+
+&lt;p&gt;默认：[]&lt;/p&gt;
+
+&lt;p&gt;对象属性值：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;name: 菜单的 name，用于标志&lt;/li&gt;
+&lt;li&gt;title：菜单的标题&lt;/li&gt;
+&lt;li&gt;icon：菜单的图标&lt;/li&gt;
+&lt;li&gt;url：菜单的链接，不填可以通过事件监听&lt;/li&gt;
+&lt;li&gt;children：子菜单（有 name、title、url 三个属性）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;事件:39d60e384587fa13715ba353a1183d76&#34;&gt;事件&lt;/h3&gt;
+
+&lt;h4 id=&#34;ontoggle:39d60e384587fa13715ba353a1183d76&#34;&gt;onToggle&lt;/h4&gt;
+
+&lt;p&gt;切换主菜单的时候触发&lt;/p&gt;
+
+&lt;p&gt;index：点击菜单的 index 值&lt;/p&gt;
+
+&lt;p&gt;例子：&lt;/p&gt;
+$(&#39;#menu&#39;).bootstrapMenu({
+	onToggle: function(index) {
+		console.log(index);
+	}
+});
+
+&lt;h4 id=&#34;onselect:39d60e384587fa13715ba353a1183d76&#34;&gt;onSelect&lt;/h4&gt;
+
+&lt;p&gt;点击子菜单的时候触发&lt;/p&gt;
+
+&lt;p&gt;name：点击的子菜单的 name 指&lt;/p&gt;
+
+&lt;p&gt;例子：&lt;/p&gt;
+$(&#39;#menu&#39;).bootstrapMenu({
+	onSelect: function(name) {
+		console.log(name);
+	}
+});
+</description>
     </item>
     
   </channel>

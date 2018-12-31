@@ -7,18 +7,29 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Thu, 21 Feb 2013 23:32:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.wenzhixin.net.cn/tags/%E5%BD%93%E5%89%8D%E8%B7%AF%E5%BE%84/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="http://blog.wenzhixin.net.cn/tags/%E5%BD%93%E5%89%8D%E8%B7%AF%E5%BE%84/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Java 获取当前路径</title>
-      <link>http://blog.wenzhixin.net.cn/2013/02/21/java_get_cur_path/</link>
-      <pubDate>Thu, 21 Feb 2013 23:32:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/java_get_cur_path</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/02/21/java_get_cur_path/</guid>
-      <description>1. 利用 System.getProperty( )函数获取当前路径： 1 System.out.println(System.getProperty(&amp;#34;user.dir&amp;#34</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/java_get_cur_path</guid>
+      <description>
+
+&lt;h4 id=&#34;1-利用-system-getproperty-函数获取当前路径:540daac25fb976cd73bd39aa4ba49495&#34;&gt;1. 利用 System.getProperty( )函数获取当前路径：&lt;/h4&gt;
+System.out.println(System.getProperty(&#34;user.dir&#34;));//user.dir指定了当前的路径
+
+&lt;h4 id=&#34;2-使用-file-提供的函数获取当前路径:540daac25fb976cd73bd39aa4ba49495&#34;&gt;2. 使用 File 提供的函数获取当前路径：&lt;/h4&gt;
+File directory = new File(&#34;&#34;);//设定为当前文件夹
+try {
+    System.out.println(directory.getCanonicalPath());//获取标准的路径
+    System.out.println(directory.getAbsolutePath());//获取绝对路径
+} catch(Exceptin e) {}
+
+&lt;h4 id=&#34;3-使用当前类获取当前路径:540daac25fb976cd73bd39aa4ba49495&#34;&gt;3. 使用当前类获取当前路径：&lt;/h4&gt;
+ System.out.println(Test.class.getResource(&#34;&#34;));//获取标准的路径
+</description>
     </item>
     
   </channel>

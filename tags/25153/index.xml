@@ -7,18 +7,75 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Mon, 28 Apr 2014 22:05:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.wenzhixin.net.cn/tags/25153/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="http://blog.wenzhixin.net.cn/tags/25153/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Temporary Tablespace is Empty 解决方法（ORA-25153）</title>
-      <link>http://blog.wenzhixin.net.cn/2014/04/28/temporary_tablespace_is_empty/</link>
-      <pubDate>Mon, 28 Apr 2014 22:05:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/temporary_tablespace_is_empty</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/04/28/temporary_tablespace_is_empty/</guid>
-      <description>问题： 当我们对 Oralce 数据库进行操作的时候，出现了： 1 ORA-25153: Temporary Tablespace is Empty 的错误，提示 temporary 表空间为空。 思路： 当前用户没有设置表空间权限 表空间状态为 offline 当前用户没</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/temporary_tablespace_is_empty</guid>
+      <description>
+
+&lt;h3 id=&#34;问题:80823c84cfc39e1c08535d0f0ce2d355&#34;&gt;问题：&lt;/h3&gt;
+
+&lt;p&gt;当我们对 Oralce 数据库进行操作的时候，出现了：&lt;/p&gt;
+ORA-25153: Temporary Tablespace is Empty
+
+&lt;p&gt;的错误，提示 temporary 表空间为空。&lt;/p&gt;
+
+&lt;h3 id=&#34;思路:80823c84cfc39e1c08535d0f0ce2d355&#34;&gt;思路：&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;当前用户没有设置表空间权限&lt;/li&gt;
+&lt;li&gt;表空间状态为 offline&lt;/li&gt;
+&lt;li&gt;当前用户没有指定表空间文件&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;解决:80823c84cfc39e1c08535d0f0ce2d355&#34;&gt;解决：&lt;/h3&gt;
+
+&lt;h4 id=&#34;1-查看当前用户:80823c84cfc39e1c08535d0f0ce2d355&#34;&gt;1. 查看当前用户&lt;/h4&gt;
+SQL&gt; show user;
+
+USER is &#34;SYS&#34;
+
+&lt;h4 id=&#34;2-查看当前用户是否已经设置了表空间权限:80823c84cfc39e1c08535d0f0ce2d355&#34;&gt;2. 查看当前用户是否已经设置了表空间权限&lt;/h4&gt;
+SQL&gt; select username,temporary_tablespace from dba_users where username=&#39;sys&#39;;
+
+USERNAME                       TEMPORARY_TABLESPACE
+------------------------------ ------------------------------
+SYS                            TEMP
+
+&lt;p&gt;假如为空，我们需要增加权限：&lt;/p&gt;
+SQL&gt; alter user sys temporary tablespace temp;
+
+&lt;h4 id=&#34;3-查看表空间状态:80823c84cfc39e1c08535d0f0ce2d355&#34;&gt;3. 查看表空间状态&lt;/h4&gt;
+SQL&gt; select tablespace_name, status from dba_tablespaces where tablespace_name=&#39;temp&#39;;
+
+TABLESPACE STATUS
+---------- ---------
+TEMP       ONLINE
+
+&lt;p&gt;假如为 OFFLINE，我们需要改为 ONLINE：&lt;/p&gt;
+SQL&gt; alter tablespace temp online;
+
+&lt;h4 id=&#34;4-查看当前用户是否指定表空间文件:80823c84cfc39e1c08535d0f0ce2d355&#34;&gt;4. 查看当前用户是否指定表空间文件&lt;/h4&gt;
+SQL&gt; select tablespace_name, file_name from dba_temp_files;
+
+TABLESPACE FILE_NAME
+---------- --------------------------------------------------
+TEMP       /opt/oracle/oradata/orcl/temp01.dbf
+
+&lt;p&gt;假如为空，我们需要先查看文件是否存在（windows 下为安装目录下的 oradata/orcl/temp01.dbf）：&lt;/p&gt;
+ls /opt/oracle/oradata/orcl/temp01.dbf
+
+/opt/oracle/oradata/orcl/temp01.dbf
+
+&lt;p&gt;在增加表空间文件：&lt;/p&gt;
+SQL&gt; alter tablespace temp add tempfile &#39;/opt/oracle/oradata/orcl/temp01.dbf&#39;;
+
+&lt;p&gt;搞定！！！&lt;/p&gt;
+</description>
     </item>
     
   </channel>

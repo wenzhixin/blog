@@ -7,18 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Wed, 03 Sep 2014 17:31:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.wenzhixin.net.cn/tags/%E6%95%B0%E6%8D%AE%E5%8D%95%E4%BD%8D/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="http://blog.wenzhixin.net.cn/tags/%E6%95%B0%E6%8D%AE%E5%8D%95%E4%BD%8D/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>使用 JavaScript 转换数据单位</title>
-      <link>http://blog.wenzhixin.net.cn/2014/09/03/convert_size_using_javascript/</link>
-      <pubDate>Wed, 03 Sep 2014 17:31:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/convert_size_using_javascript</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/09/03/convert_size_using_javascript/</guid>
-      <description>我们知道，千字节是一个计量单位，虽然从字面上理解代表着1000，但是专业术语kilobyte在计算机科学和信息技术等领域有两种含义，分别代表</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/convert_size_using_javascript</guid>
+      <description>&lt;p&gt;我们知道，千字节是一个计量单位，虽然从字面上理解代表着1000，但是专业术语&lt;code&gt;kilobyte&lt;/code&gt;在计算机科学和信息技术等领域有两种含义，分别代表1024（2&lt;sup&gt;10&lt;/sup&gt;）和1000（10&lt;sup&gt;3&lt;/sup&gt;）。&lt;/p&gt;
+
+&lt;p&gt;例如，当我们提到“数据传输速度”和“硬盘存储空间”的时候，千字节代表1000（10&lt;sup&gt;3&lt;/sup&gt;）；而提到内存或者CPU高速缓存容量的时候，千字节代表1024（2&lt;sup&gt;10&lt;/sup&gt;），这是因为在这里是按照字节码地址存储的。&lt;/p&gt;
+
+&lt;p&gt;在实际应用中，我们经常需要将字节码转换为KB、MB、GB等等，这里使用JavaScript对字节码进行转换：&lt;/p&gt;
+function bytesToSize(bytes) {
+    if (bytes === 0) return &#39;0 B&#39;;
+    var k = 1000, // or 1024
+        sizes = [&#39;B&#39;, &#39;KB&#39;, &#39;MB&#39;, &#39;GB&#39;, &#39;TB&#39;, &#39;PB&#39;, &#39;EB&#39;, &#39;ZB&#39;, &#39;YB&#39;],
+        i = Math.floor(Math.log(bytes) / Math.log(k));
+
+   return (bytes / Math.pow(k, i)).toPrecision(3) + &#39; &#39; + sizes[i];
+}
+</description>
     </item>
     
   </channel>

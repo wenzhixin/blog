@@ -1,42 +1,124 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>vim on 文翼的博客</title>
+    <title>Vim on 文翼的博客</title>
     <link>http://blog.wenzhixin.net.cn/tags/vim/</link>
-    <description>Recent content in vim on 文翼的博客</description>
+    <description>Recent content in Vim on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Sat, 30 Aug 2014 14:58:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.wenzhixin.net.cn/tags/vim/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="http://blog.wenzhixin.net.cn/tags/vim/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>通过 vim 编辑网页文本输入框</title>
-      <link>http://blog.wenzhixin.net.cn/2014/08/30/edit_text_gvim/</link>
-      <pubDate>Sat, 30 Aug 2014 14:58:00 +0000</pubDate>
+      <title>Ubuntu 安装配置 vim</title>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_vim</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/08/30/edit_text_gvim/</guid>
-      <description>对于文本编辑和编写代码，我们常常会用到 vim，使用 vim 的好处在这里就不多说了。那么能不能在浏览器中的文本输入框中也使用 vim 来编辑呢，编辑完之后再</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_vim</guid>
+      <description>
+
+&lt;h4 id=&#34;安装:48edcd4f9af91db52571973375d085e1&#34;&gt;安装&lt;/h4&gt;
+sudo apt-get install vim
+
+&lt;h4 id=&#34;配置:48edcd4f9af91db52571973375d085e1&#34;&gt;配置&lt;/h4&gt;
+sudo vi ～/.vimrc
+
+&lt;p&gt;内容（显示行数、不备份）：&lt;/p&gt;
+source $VIMRUNTIME/vimrc_example.vim
+set nu
+set nobackup
+
+&lt;hr /&gt;
+
+&lt;p&gt;资料：&lt;a href=&#34;http://coolshell.cn/articles/5426.html&#34;&gt;简明 Vim 练级攻略&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>vim 添加批量注释</title>
-      <link>http://blog.wenzhixin.net.cn/2014/03/14/vim_batch_notes/</link>
-      <pubDate>Fri, 14 Mar 2014 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/vim_batch_notes</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/03/14/vim_batch_notes/</guid>
-      <description>在配置服务器的过程中，经常会用到 vim 作为我们的编辑器，批量注释这一功能很常用到。 这里记录 vim 如何添加批量注释的方法。 Ctrl + v 使用方向键上下选择范围</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/vim_batch_notes</guid>
+      <description>&lt;p&gt;在配置服务器的过程中，经常会用到 vim 作为我们的编辑器，批量注释这一功能很常用到。&lt;/p&gt;
+
+&lt;p&gt;这里记录 vim 如何添加批量注释的方法。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Ctrl + v 使用方向键上下选择范围&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Shift + i 进入编辑模式，输入&lt;code&gt;#&lt;/code&gt;或者&lt;code&gt;//&lt;/code&gt;，按 esc 退出，搞定。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;批量删除注释：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Ctrl + v 使用方向键上下选择范围，按&lt;code&gt;d&lt;/code&gt;即可（删除选择内容）。&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
     
     <item>
-      <title>Ubuntu 安装配置 vim</title>
-      <link>http://blog.wenzhixin.net.cn/2013/03/26/ubuntu_vim/</link>
-      <pubDate>Tue, 26 Mar 2013 16:57:00 +0000</pubDate>
+      <title>通过 vim 编辑网页文本输入框</title>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/edit_text_gvim</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/03/26/ubuntu_vim/</guid>
-      <description>安装 1 sudo apt-get install vim 配置 1 sudo vi ～/.vimrc 内容（显示行数、不备份）： 1 2 3 source $VIMRUNTIME/vimrc_example.vim set nu set nobackup 资料：简明 Vim 练级攻略</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/edit_text_gvim</guid>
+      <description>
+
+&lt;p&gt;对于文本编辑和编写代码，我们常常会用到 vim，使用 vim 的好处在这里就不多说了。那么能不能在浏览器中的文本输入框中也使用 vim 来编辑呢，编辑完之后再自动保存回去？答案当然可以！&lt;/p&gt;
+
+&lt;p&gt;使用这种方式，我们可以将编写的内容随时保存到临时文件中，或者可以打开已经保存的文件中继续编辑。&lt;/p&gt;
+
+&lt;h3 id=&#34;使用的环境:36b5f6c6e268d0329acc55e45482e8aa&#34;&gt;使用的环境&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;浏览器：chrome&lt;/li&gt;
+&lt;li&gt;操作系统：Ubuntu 14.04&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;安装和使用:36b5f6c6e268d0329acc55e45482e8aa&#34;&gt;安装和使用&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;安装 gvim：&lt;/p&gt;
+sudo apt-get install vim-gnome&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;下载后台脚本：&lt;/p&gt;
+# mkdir ~/bin
+cd ~/bin
+wget http://opencoder.net/edit-server
+chmod +x edit-server&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;编辑配置后台脚本信息：&lt;/p&gt;
+vi edit-server
+our $REQUIRE_AUTH = 1; # 将这里改为 our $REQUIRE_AUTH = 0;
+our $PORT = 8888; # 将这里改为自己没有用到的端口，例如 our $PORT = 8123;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;增加自动启动后台服务到&lt;code&gt;.profile&lt;/code&gt;中：&lt;/p&gt;
+vi ~/.profile
+$HOME/bin/edit-server &amp;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;安装浏览器插件 &lt;a href=&#34;https://chrome.google.com/webstore/detail/ppoadiihggafnhokfkpphojggcdigllp&#34;&gt;TextAid&lt;/a&gt;。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;配置 TextAid：
+安装完成后，焦点在需要输入的文本框时，浏览器 URL 输入框会出现
+&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/08/30/2.png&#34; alt=&#34;&#34; /&gt;
+右击点击选项，将 URL 设置为 &lt;a href=&#34;http://127.0.0.1:8123&#34;&gt;http://127.0.0.1:8123&lt;/a&gt; （对应自己设置的端号）
+&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/08/30/1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;开始使用：
+在你需要编辑文本输入框时，点击浏览器 URL 出现的图标即可弹出 gvim 的输入框，然后开始享受你的 vim 编辑器吧。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;附：设置 gvim 配色和字体。&lt;/p&gt;
+vi ~/.gvimrc
+colorscheme slate
+set guifont=Ubuntu\ Mono\ 12
+&lt;/blockquote&gt;
+</description>
     </item>
     
   </channel>

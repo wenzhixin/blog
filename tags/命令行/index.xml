@@ -7,18 +7,119 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Tue, 11 Feb 2014 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.wenzhixin.net.cn/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="http://blog.wenzhixin.net.cn/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>cordova 初识之命令行工具</title>
-      <link>http://blog.wenzhixin.net.cn/2014/02/11/cordova_command_line/</link>
-      <pubDate>Tue, 11 Feb 2014 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/cordova_command_line</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/02/11/cordova_command_line/</guid>
-      <description>1. 准备工作 在使用 cordova 的命令行之前，需要安装各平台对应的 SDK，各个平台对应的操作系统如下： iOS (Mac) Amazon Fire OS (Mac, Linux, Windows) Android (Mac, Linux) BlackBerry 10 (Mac, Linux, Windows) Windows Phone 7 (Windows) Windows Phone 8 (Windows) Windows 8</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/cordova_command_line</guid>
+      <description>
+
+&lt;h3 id=&#34;1-准备工作:3e3ff89256ad4638db10fc2d7fbcb164&#34;&gt;1. 准备工作&lt;/h3&gt;
+
+&lt;p&gt;在使用 cordova 的命令行之前，需要安装各平台对应的 SDK，各个平台对应的操作系统如下：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;iOS (Mac)&lt;/li&gt;
+&lt;li&gt;Amazon Fire OS (Mac, Linux, Windows)&lt;/li&gt;
+&lt;li&gt;Android (Mac, Linux)&lt;/li&gt;
+&lt;li&gt;BlackBerry 10 (Mac, Linux, Windows)&lt;/li&gt;
+&lt;li&gt;Windows Phone 7 (Windows)&lt;/li&gt;
+&lt;li&gt;Windows Phone 8 (Windows)&lt;/li&gt;
+&lt;li&gt;Windows 8 (Windows)&lt;/li&gt;
+&lt;li&gt;Firefox OS (Mac, Linux, Windows)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;2-安装命令行工具:3e3ff89256ad4638db10fc2d7fbcb164&#34;&gt;2. 安装命令行工具&lt;/h3&gt;
+
+&lt;p&gt;首先下载安装 &lt;a href=&#34;http://nodejs.org/&#34;&gt;node.js&lt;/a&gt; （像我安装过的就不用啦）&lt;/p&gt;
+
+&lt;p&gt;全局安装 cordova：&lt;/p&gt;
+npm install -g cordova
+
+&lt;p&gt;注：&lt;/p&gt;
+
+&lt;p&gt;-g 表示安装为全局，有些系统需要 sudo 权限（像 ubuntu）&lt;/p&gt;
+
+&lt;p&gt;cordova 的基本命令格式为：&lt;/p&gt;
+cordova command [options]
+
+&lt;h3 id=&#34;3-创建-app:3e3ff89256ad4638db10fc2d7fbcb164&#34;&gt;3. 创建 app&lt;/h3&gt;
+
+&lt;p&gt;创建使用&lt;code&gt;cordova create&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;例如，进入工程目录：&lt;/p&gt;
+cordova create hello com.example.hello HelloWorld
+
+&lt;ul&gt;
+&lt;li&gt;第一个参数&lt;code&gt;hello&lt;/code&gt;表示在工程目录中创建一个 hello 的文件夹&lt;/li&gt;
+&lt;li&gt;第二个参数&lt;code&gt;com.example.hello&lt;/code&gt;表示包名（反向域名），用于标志不同的 app&lt;/li&gt;
+&lt;li&gt;第三个参数&lt;code&gt;HelloWorld&lt;/code&gt;表示项目的名称，可以在 config.xml 文件中修改&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;4-添加平台:3e3ff89256ad4638db10fc2d7fbcb164&#34;&gt;4. 添加平台&lt;/h3&gt;
+
+&lt;p&gt;进入创建的项目中：&lt;/p&gt;
+cd hello
+
+&lt;p&gt;查看已经安装的平台和支持的平台：&lt;/p&gt;
+cordova platforms list
+
+&lt;p&gt;例如，在 ubuntu 下的结果是：&lt;/p&gt;
+Installed platforms:
+Available platforms: android, blackberry10, firefoxos, ubuntu
+
+&lt;p&gt;在 ubuntu 下，可以通过以下命令添加支持的平台：&lt;/p&gt;
+cordova platform add android
+cordova platform add blackberry10
+cordova platform add firefoxos
+cordova platform add ubuntu
+
+&lt;p&gt;在 mac 下，可以通过以下命令添加支持的平台：&lt;/p&gt;
+cordova platform add ios
+cordova platform add amazon-fireos
+cordova platform add android
+cordova platform add blackberry10
+cordova platform add firefoxos
+
+&lt;p&gt;在 windows 下，可以通过以下命令添加支持的平台：&lt;/p&gt;
+cordova platform add wp7
+cordova platform add wp8
+cordova platform add windows8
+cordova platform add amazon-fireos
+cordova platform add android
+cordova platform add blackberry10
+cordova platform add firefoxos
+
+&lt;p&gt;当然，也可以删除不想要的平台：&lt;/p&gt;
+cordova platform remove android
+cordova platform rm android
+
+&lt;h3 id=&#34;5-编译项目:3e3ff89256ad4638db10fc2d7fbcb164&#34;&gt;5. 编译项目&lt;/h3&gt;
+
+&lt;p&gt;通过下面命令，即可编译项目：&lt;/p&gt;
+cordova build android
+
+&lt;p&gt;或者是使用（build 为简写）：&lt;/p&gt;
+cordova prepare android
+cordova compile android
+
+&lt;p&gt;编译完成后可以看到 platforms/android/bin/ 下已经生成了 apk 文件&lt;/p&gt;
+
+&lt;h3 id=&#34;6-测试-运行项目:3e3ff89256ad4638db10fc2d7fbcb164&#34;&gt;6. 测试、运行项目&lt;/h3&gt;
+
+&lt;p&gt;启动 android 虚拟机：&lt;/p&gt;
+cordova emulate android
+
+&lt;p&gt;运行 app 项目（在虚拟机或者在真机）：&lt;/p&gt;
+cordova run android
+
+&lt;p&gt;运行结果：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/02/11/1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+</description>
     </item>
     
   </channel>

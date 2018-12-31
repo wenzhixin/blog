@@ -1,24 +1,54 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>splice on 文翼的博客</title>
+    <title>Splice on 文翼的博客</title>
     <link>http://blog.wenzhixin.net.cn/tags/splice/</link>
-    <description>Recent content in splice on 文翼的博客</description>
+    <description>Recent content in Splice on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Wed, 16 Jan 2013 00:18:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.wenzhixin.net.cn/tags/splice/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="http://blog.wenzhixin.net.cn/tags/splice/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>IE 下 splice 的 bug</title>
-      <link>http://blog.wenzhixin.net.cn/2013/01/16/splice_in_ie/</link>
-      <pubDate>Wed, 16 Jan 2013 00:18:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/splice_in_ie</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/01/16/splice_in_ie/</guid>
-      <description>引用： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 array.splice() in Internet Explorer I finally got around to investigating an IE bug I’ve been meaning to look into. The root cause was a difference between JScript and ECMAScript as regards array.splice(). The signature for this handy method that removes and inserts array elements in place: splice(start, deleteCount, value, ...)</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/splice_in_ie</guid>
+      <description>
+
+&lt;p&gt;引用：&lt;/p&gt;
+array.splice() in Internet Explorer
+I finally got around to investigating an IE bug I’ve been meaning to look into. The root cause was a difference between JScript and ECMAScript as regards array.splice(). The signature for this handy method that removes and inserts array elements in place:
+
+splice(start, deleteCount, value, ...)
+
+According to the standard, only start (the index at which to start removing elements) is a required argument. So:
+
+var a = [&#34;e1&#34;, &#34;e2&#34;, &#34;e3&#34;];
+a.splice(1);
+
+should result in a being a single-element array containing “e1″. But of course, IE does not see it that way. According to MSDN, deleteCount is also required argument. Thus, the above would have to be:
+
+var a = [&#34;e1&#34;, &#34;e2&#34;, &#34;e3&#34;];
+a.splice(1, a.length-1);
+
+&lt;h4 id=&#34;问题:828165d955b49a5a0cab0507962366b5&#34;&gt;问题：&lt;/h4&gt;
+
+&lt;p&gt;使用 markdown.js 在 IE 下无法正常显示 pre 代码&lt;/p&gt;
+
+&lt;h4 id=&#34;原因:828165d955b49a5a0cab0507962366b5&#34;&gt;原因：&lt;/h4&gt;
+
+&lt;p&gt;array.splice() 在 IE 下的 bug 引起的&lt;/p&gt;
+
+&lt;h4 id=&#34;解决:828165d955b49a5a0cab0507962366b5&#34;&gt;解决：&lt;/h4&gt;
+
+&lt;p&gt;将 markdown.js 中的第 1495 行：&lt;/p&gt;
+code.push.apply( code, jsonml.splice( i ) );
+
+&lt;p&gt;改为&lt;/p&gt;
+code.push.apply( code, jsonml.splice( i, jsonml.length - 1) );
+</description>
     </item>
     
   </channel>

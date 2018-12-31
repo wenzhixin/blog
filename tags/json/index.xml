@@ -7,18 +7,52 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Sun, 02 Nov 2014 23:49:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.wenzhixin.net.cn/tags/json/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="http://blog.wenzhixin.net.cn/tags/json/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>chrome 浏览器 console 面板直接使用 JSON 数据进行调试错误问题</title>
-      <link>http://blog.wenzhixin.net.cn/2014/11/02/chrome_console_error/</link>
-      <pubDate>Sun, 02 Nov 2014 23:49:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/chrome_console_error</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/11/02/chrome_console_error/</guid>
-      <description>今天在微博上看到小鱼在问：https://gist.github.com/sofish/c250881989aaa10c029d 为什么会出错</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/chrome_console_error</guid>
+      <description>&lt;p&gt;今天在微博上看到小鱼在问：&lt;a href=&#34;https://gist.github.com/sofish/c250881989aaa10c029d&#34;&gt;https://gist.github.com/sofish/c250881989aaa10c029d&lt;/a&gt; 为什么会出错，看了下之前就有遇到过这个问题，特意整理记录下。&lt;/p&gt;
+
+&lt;p&gt;是想直接 copy json 数据到 console 面板进行调试，但是竟然报错了。然后特意对比了下，奇怪的是为什么 &lt;code&gt;{a: &amp;quot;b&amp;quot;}&lt;/code&gt; 是输出 &lt;code&gt;&amp;quot;b&amp;quot;&lt;/code&gt;，而 &lt;code&gt;{&amp;quot;a&amp;quot;: &amp;quot;b&amp;quot;}&lt;/code&gt; 输出却是 &lt;code&gt;Uncaught SyntaxError: Unexpected token :&lt;/code&gt;，why?&lt;/p&gt;
+
+&lt;p&gt;后面就研究了下，可以看到源码 &lt;a href=&#34;https://code.google.com/p/webkit-mirror/source/browse/Source/WebCore/inspector/InjectedScriptSource.js?r=ed19c0a99ddb564e317bb7363d481c2693ffb5fd#333&#34;&gt;InjectedScriptSource.js&lt;/a&gt; 中实现 console 是通过下面的方式：&lt;/p&gt;
+expression = &#34;with ((window &amp;&amp; window.console &amp;&amp; window.console._commandLineAPI) || {}) {\n&#34; + expression + &#34;\n}&#34;;
+eval(expression);
+
+&lt;p&gt;当我们在 &lt;code&gt;console&lt;/code&gt; 面板下直接输入 &lt;code&gt;{a: &amp;quot;b&amp;quot;}&lt;/code&gt; 时，相当于执行：&lt;/p&gt;
+eval(&#34;with ((window &amp;&amp; window.console &amp;&amp; window.console._commandLineAPI) || {}) {\n{a: \&#34;b\&#34;}\n}&#34;); // &#34;b&#34;
+
+&lt;p&gt;而 &lt;code&gt;{&amp;quot;a&amp;quot;: &amp;quot;b&amp;quot;}&lt;/code&gt; 相当于执行：&lt;/p&gt;
+eval(&#34;with ((window &amp;&amp; window.console &amp;&amp; window.console._commandLineAPI) || {}) {\n{\&#34;a\&#34;: \&#34;b\&#34;}\n}&#34;); // Uncaught SyntaxError: Unexpected token :
+
+&lt;p&gt;因为 &lt;code&gt;with&lt;/code&gt; 这里的 &lt;code&gt;{{ ... }}&lt;/code&gt; 被忽略成了 &lt;code&gt;{}&lt;/code&gt;，例如：&lt;/p&gt;
+with (window) {{{{a:&#34;b&#34;}}}}; // window.a = &#34;b&#34;;
+
+with (window) {&#34;a&#34;:&#34;b&#34;}; // error!!!
+
+&lt;p&gt;后面想直接 copy json 到 console 中进行调试的时候，加上：&lt;/p&gt;
+var obj = {&#34;status&#34;:&#34;error&#34;,&#34;error&#34;:{&#34;msg&#34;:&#34;\u6b64\u997f\u5355\u5df2\u6295\u8bc9&#34;,&#34;code&#34;:23}}; // undefined
+
+&lt;p&gt;就OK了，但是这样还得输入多一次 obj，干脆酱紫：&lt;/p&gt;
+}0,{&#34;status&#34;:&#34;error&#34;,&#34;error&#34;:{&#34;msg&#34;:&#34;\u6b64\u997f\u5355\u5df2\u6295\u8bc9&#34;,&#34;code&#34;:23} // Object {status: &#34;error&#34;, error: Object}
+
+&lt;p&gt;还有其他的一些比较有趣的，例如输入：&lt;/p&gt;
+{} // undefined
+
+( // Uncaught SyntaxError: Unexpected token }
+
+}{ // undefined
+
+}!{ // false
+
+}!!{ // true
+
+}+{ // NaN
+</description>
     </item>
     
   </channel>

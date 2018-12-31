@@ -1,24 +1,49 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>change on 文翼的博客</title>
+    <title>Change on 文翼的博客</title>
     <link>http://blog.wenzhixin.net.cn/tags/change/</link>
-    <description>Recent content in change on 文翼的博客</description>
+    <description>Recent content in Change on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Tue, 26 Nov 2013 21:32:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.wenzhixin.net.cn/tags/change/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="http://blog.wenzhixin.net.cn/tags/change/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>jQuery file upload 插件 change 只生效一次</title>
-      <link>http://blog.wenzhixin.net.cn/2013/11/26/jquery_file_upload_change_once/</link>
-      <pubDate>Tue, 26 Nov 2013 21:32:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/jquery_file_upload_change_once</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/11/26/jquery_file_upload_change_once/</guid>
-      <description>1. 前言 在使用 AjaxFileUpload 插件的时候， 发现使用 jQuery 监听 change 事件只生效一次 1 2 3 4 $(&amp;#39;#upload&amp;#39;).change(function() { }); 那么是为什么呢？ 2. 原因 找了下原因，原来是 130 行对事件进行了 unbind 1 2 jQuery(io).unbind() 3. 解决</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/jquery_file_upload_change_once</guid>
+      <description>
+
+&lt;h4 id=&#34;1-前言:0a4244611fc4da1ce3230d8125714dd2&#34;&gt;1. 前言&lt;/h4&gt;
+
+&lt;p&gt;在使用 &lt;a href=&#34;http://www.phpletter.com/Demo/AjaxFileUpload-Demo/&#34;&gt;AjaxFileUpload 插件&lt;/a&gt;的时候，
+发现使用 jQuery 监听 change 事件只生效一次&lt;/p&gt;
+$(&#39;#upload&#39;).change(function() {
+
+});
+
+&lt;p&gt;那么是为什么呢？&lt;/p&gt;
+
+&lt;h4 id=&#34;2-原因:0a4244611fc4da1ce3230d8125714dd2&#34;&gt;2. 原因&lt;/h4&gt;
+
+&lt;p&gt;找了下原因，原来是 130 行对事件进行了 unbind&lt;/p&gt;
+jQuery(io).unbind()
+
+&lt;h4 id=&#34;3-解决:0a4244611fc4da1ce3230d8125714dd2&#34;&gt;3. 解决&lt;/h4&gt;
+
+&lt;p&gt;1) 使用 on() 方法（推荐）：&lt;/p&gt;
+$(document).on(&#39;change&#39;, &#39;#upload&#39;, function() {
+	
+});
+
+&lt;p&gt;2) 在 change 起作用之后继续绑定 change 事件&lt;/p&gt;
+
+&lt;p&gt;3) 替换原来的 input：&lt;/p&gt;
+$(&#39;#upload&#39;).replaceWidth(&#39;&lt;input id=&#34;upload&#34; type=&#34;file&#34; /&gt;&#39;)
+</description>
     </item>
     
   </channel>

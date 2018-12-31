@@ -7,27 +7,230 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Mon, 12 Mar 2012 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.wenzhixin.net.cn/tags/%E4%BA%8B%E4%BB%B6/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="http://blog.wenzhixin.net.cn/tags/%E4%BA%8B%E4%BB%B6/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>《锋利的jQuery》学习笔记——jQuery中的事件</title>
-      <link>http://blog.wenzhixin.net.cn/2012/03/12/sharp_jquery_study_notes_events_in_jquery/</link>
-      <pubDate>Mon, 12 Mar 2012 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/sharp_jquery_study_notes_events_in_jquery</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/03/12/sharp_jquery_study_notes_events_in_jquery/</guid>
-      <description>​1. 加载 DOM 1 2 3 $(document).ready(function() { //代码 }); (1)执行时机：window.onload 方法在网页中所有的元素（包括愿你苏的所有关联文件）完全加载后才执行</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/sharp_jquery_study_notes_events_in_jquery</guid>
+      <description>&lt;p&gt;​&lt;strong&gt;1. 加载 DOM&lt;/strong&gt;&lt;/p&gt;
+$(document).ready(function() {
+	//代码
+});
+
+&lt;p&gt;(1)执行时机：window.onload
+方法在网页中所有的元素（包括愿你苏的所有关联文件）完全加载后才执行，而
+$(document).ready() 在 DOM 完全就绪时就可以被调用&lt;/p&gt;
+
+&lt;p&gt; • $(window).load()与 window.onload 等价&lt;/p&gt;
+
+&lt;p&gt;(2)可多次使用：window.onload 方法只能执行一次，而$(document).ready()
+多次使用，根据注册的顺序依次执行&lt;/p&gt;
+
+&lt;p&gt;(3)简写方式&lt;/p&gt;
+$().ready(function() {
+	//代码
+});
+$(function() {
+	//代码
+});
+
+&lt;p&gt;​&lt;strong&gt;2. 事件绑定&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt; • bind(type[ , data], fn)&lt;/p&gt;
+
+&lt;p&gt; • one(type[ ,data], fn)-只执行一次&lt;/p&gt;
+
+&lt;p&gt;(1)第一个参数type表示事件类型：blur、focus、load、resize、scroll、unload、click、dblclick、mousedown、mouseup、mousemove、mouseover、mouseout、mouseenter、mouseleave、change、select、submit、keydown、keypress、keyup和error等&lt;/p&gt;
+
+&lt;p&gt;(2)第二个为可选参数，为做 event.data 属性传递给事件对象的额外数据&lt;/p&gt;
+
+&lt;p&gt;(3)第三个参数是用来绑定的处理函数&lt;/p&gt;
+
+&lt;p&gt; • 事件简写：$(variable).bind(type [, data], fn) 简写为
+$(variable).type(fn)&lt;/p&gt;
+
+&lt;p&gt;​&lt;strong&gt;3. 合成事件&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;(1)hover(fn, fn)方法-是 mouseover(fn) 和 mouseout(fn) 的合成&lt;/p&gt;
+
+&lt;p&gt;(2)toggle(fn1, fn2, &amp;hellip;)&lt;/p&gt;
+
+&lt;p&gt; • 用于模拟鼠标连续单击事件，当点击事件时重复对设置的函数进行调用&lt;/p&gt;
+
+&lt;p&gt; • 用于切换元素的可见状态&lt;/p&gt;
+
+&lt;p&gt;​&lt;strong&gt;4. 事件冒泡&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;(1)事件冒泡是指事件会按照 DOM 的层次结构像水泡一样不断向上直至顶端&lt;/p&gt;
+
+&lt;p&gt;(2)事件冒泡可能会引起预料之外的效果，可以使用&lt;/p&gt;
+
+&lt;p&gt; • event.stopPropagation()-停止事件冒泡&lt;/p&gt;
+
+&lt;p&gt; • event.preventDefault()-阻止默认行为&lt;/p&gt;
+
+&lt;p&gt; • return false-停止事件冒泡或者阻止默认行为&lt;/p&gt;
+
+&lt;p&gt;​&lt;strong&gt;5. 事件对象的属性&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt; • event.type()-获取事件的类型&lt;/p&gt;
+
+&lt;p&gt; • event.target()-获取到触发事件的元素&lt;/p&gt;
+
+&lt;p&gt; • event.relatedTarget()-获取触发事件的相关元素&lt;/p&gt;
+
+&lt;p&gt; • event.pageX()-获取鼠标相对于页面的 x 坐标&lt;/p&gt;
+
+&lt;p&gt; • event.pageY()-获取鼠标相对于页面的 y 坐标&lt;/p&gt;
+
+&lt;p&gt; •
+event.which()-在鼠标单击事件中获取鼠标的左(1)、中(2)、右健(3)；在键盘事件中获取键盘的按键&lt;/p&gt;
+
+&lt;p&gt; • event.metaKey()-键盘事件中获取 ctrl 按键&lt;/p&gt;
+
+&lt;p&gt; • event.originalEvent()-指向原始的事件对象&lt;/p&gt;
+
+&lt;p&gt;​&lt;strong&gt;6. 移除事件&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt; • unbind([type][ ,data])&lt;/p&gt;
+
+&lt;p&gt;(1)第一个参数为事件类型，第二个参数为要移除的函数&lt;/p&gt;
+
+&lt;p&gt;(2)没有参数，删除所有绑定的事件&lt;/p&gt;
+
+&lt;p&gt;(3)提供事件类型为参数，只删除该类型的绑定事件&lt;/p&gt;
+
+&lt;p&gt;(4)提供处理函数作为第二个函数，只删除提供的特定事件&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;7. 模拟事件操作&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;(1)模拟点击事件&lt;/p&gt;
+
+&lt;p&gt; • $(variable).trigger(&amp;ldquo;click&amp;rdquo;)&lt;/p&gt;
+
+&lt;p&gt; • $(variable).click()&lt;/p&gt;
+
+&lt;p&gt;(2)触发自定义事件&lt;/p&gt;
+
+&lt;p&gt; • $(variable).bind(&amp;ldquo;customEvent&amp;rdquo;, fn);&lt;/p&gt;
+
+&lt;p&gt;   $(variable).trigger(&amp;ldquo;customEvent&amp;rdquo;);&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>《锋利的jQuery》学习笔记——jQuery中的事件</title>
-      <link>http://blog.wenzhixin.net.cn/2012/03/12/sharp_jquery_study_notes_events_in_jquery/</link>
-      <pubDate>Mon, 12 Mar 2012 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/sharp_jquery_study_notes_events_in_jquery</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/03/12/sharp_jquery_study_notes_events_in_jquery/</guid>
-      <description>​1. 加载 DOM 1 2 3 $(document).ready(function() { //代码 }); (1)执行时机：window.onload 方法在网页中所有的元素（包括愿你苏的所有关联文件）完全加载后才执行</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/sharp_jquery_study_notes_events_in_jquery</guid>
+      <description>&lt;p&gt;​&lt;strong&gt;1. 加载 DOM&lt;/strong&gt;&lt;/p&gt;
+$(document).ready(function() {
+	//代码
+});
+
+&lt;p&gt;(1)执行时机：window.onload
+方法在网页中所有的元素（包括愿你苏的所有关联文件）完全加载后才执行，而
+$(document).ready() 在 DOM 完全就绪时就可以被调用&lt;/p&gt;
+
+&lt;p&gt; • $(window).load()与 window.onload 等价&lt;/p&gt;
+
+&lt;p&gt;(2)可多次使用：window.onload 方法只能执行一次，而$(document).ready()
+多次使用，根据注册的顺序依次执行&lt;/p&gt;
+
+&lt;p&gt;(3)简写方式&lt;/p&gt;
+$().ready(function() {
+	//代码
+});
+$(function() {
+	//代码
+});
+
+&lt;p&gt;​&lt;strong&gt;2. 事件绑定&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt; • bind(type[ , data], fn)&lt;/p&gt;
+
+&lt;p&gt; • one(type[ ,data], fn)-只执行一次&lt;/p&gt;
+
+&lt;p&gt;(1)第一个参数type表示事件类型：blur、focus、load、resize、scroll、unload、click、dblclick、mousedown、mouseup、mousemove、mouseover、mouseout、mouseenter、mouseleave、change、select、submit、keydown、keypress、keyup和error等&lt;/p&gt;
+
+&lt;p&gt;(2)第二个为可选参数，为做 event.data 属性传递给事件对象的额外数据&lt;/p&gt;
+
+&lt;p&gt;(3)第三个参数是用来绑定的处理函数&lt;/p&gt;
+
+&lt;p&gt; • 事件简写：$(variable).bind(type [, data], fn) 简写为
+$(variable).type(fn)&lt;/p&gt;
+
+&lt;p&gt;​&lt;strong&gt;3. 合成事件&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;(1)hover(fn, fn)方法-是 mouseover(fn) 和 mouseout(fn) 的合成&lt;/p&gt;
+
+&lt;p&gt;(2)toggle(fn1, fn2, &amp;hellip;)&lt;/p&gt;
+
+&lt;p&gt; • 用于模拟鼠标连续单击事件，当点击事件时重复对设置的函数进行调用&lt;/p&gt;
+
+&lt;p&gt; • 用于切换元素的可见状态&lt;/p&gt;
+
+&lt;p&gt;​&lt;strong&gt;4. 事件冒泡&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;(1)事件冒泡是指事件会按照 DOM 的层次结构像水泡一样不断向上直至顶端&lt;/p&gt;
+
+&lt;p&gt;(2)事件冒泡可能会引起预料之外的效果，可以使用&lt;/p&gt;
+
+&lt;p&gt; • event.stopPropagation()-停止事件冒泡&lt;/p&gt;
+
+&lt;p&gt; • event.preventDefault()-阻止默认行为&lt;/p&gt;
+
+&lt;p&gt; • return false-停止事件冒泡或者阻止默认行为&lt;/p&gt;
+
+&lt;p&gt;​&lt;strong&gt;5. 事件对象的属性&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt; • event.type()-获取事件的类型&lt;/p&gt;
+
+&lt;p&gt; • event.target()-获取到触发事件的元素&lt;/p&gt;
+
+&lt;p&gt; • event.relatedTarget()-获取触发事件的相关元素&lt;/p&gt;
+
+&lt;p&gt; • event.pageX()-获取鼠标相对于页面的 x 坐标&lt;/p&gt;
+
+&lt;p&gt; • event.pageY()-获取鼠标相对于页面的 y 坐标&lt;/p&gt;
+
+&lt;p&gt; •
+event.which()-在鼠标单击事件中获取鼠标的左(1)、中(2)、右健(3)；在键盘事件中获取键盘的按键&lt;/p&gt;
+
+&lt;p&gt; • event.metaKey()-键盘事件中获取 ctrl 按键&lt;/p&gt;
+
+&lt;p&gt; • event.originalEvent()-指向原始的事件对象&lt;/p&gt;
+
+&lt;p&gt;​&lt;strong&gt;6. 移除事件&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt; • unbind([type][ ,data])&lt;/p&gt;
+
+&lt;p&gt;(1)第一个参数为事件类型，第二个参数为要移除的函数&lt;/p&gt;
+
+&lt;p&gt;(2)没有参数，删除所有绑定的事件&lt;/p&gt;
+
+&lt;p&gt;(3)提供事件类型为参数，只删除该类型的绑定事件&lt;/p&gt;
+
+&lt;p&gt;(4)提供处理函数作为第二个函数，只删除提供的特定事件&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;7. 模拟事件操作&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;(1)模拟点击事件&lt;/p&gt;
+
+&lt;p&gt; • $(variable).trigger(&amp;ldquo;click&amp;rdquo;)&lt;/p&gt;
+
+&lt;p&gt; • $(variable).click()&lt;/p&gt;
+
+&lt;p&gt;(2)触发自定义事件&lt;/p&gt;
+
+&lt;p&gt; • $(variable).bind(&amp;ldquo;customEvent&amp;rdquo;, fn);&lt;/p&gt;
+
+&lt;p&gt;   $(variable).trigger(&amp;ldquo;customEvent&amp;rdquo;);&lt;/p&gt;
+</description>
     </item>
     
   </channel>

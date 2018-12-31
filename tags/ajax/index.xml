@@ -7,54 +7,428 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Thu, 05 Jun 2014 13:45:00 +0000</lastBuildDate>
+    <atom:link href="http://blog.wenzhixin.net.cn/tags/ajax/index.xml" rel="self" type="application/rss+xml" />
     
-	<atom:link href="http://blog.wenzhixin.net.cn/tags/ajax/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>《锋利的jQuery》学习笔记——jQuery与Ajax应用</title>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/sharp_jquery_study_notes_jquery_and_ajax_application</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/sharp_jquery_study_notes_jquery_and_ajax_application</guid>
+      <description>&lt;p&gt;​&lt;strong&gt;1. 什么是 Ajax？&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt; • Ajax 全称为”Asynchronous Javascript and XML”（异步 Javascript 和
+XML），并不是指一种单一的技术，而是有机地利用了一系列交互式网页应用相关的技术所形成的结合体。&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;​&lt;strong&gt;2. Ajax 的优势和不足&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt; • Ajax 的优势：&lt;/p&gt;
+
+&lt;p&gt;(1)不需要插件支持；(2)优秀的用户体验；(3)提高
+Web程序的性能；(4)减轻服务器和宽带的负担&lt;/p&gt;
+
+&lt;p&gt; • Ajax 的不足&lt;/p&gt;
+
+&lt;p&gt;(1)  浏览器对 XMLHttpRequest
+对象的支持度不足；(2)破坏浏览器前进、后退按钮的正常工作；(3)对搜索引擎的支持不足&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;​&lt;strong&gt;3. Ajax的XMLHttpRequest对象&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt; • Ajax 的核心是 XMLHttpRequest 对象，是 Ajax
+实现的关键——发送异步请求、接收响应及执行回调。&lt;/p&gt;
+
+&lt;p&gt;(1)readyState 属性-标识当前对象正处于什么状态&lt;/p&gt;
+
+&lt;p&gt;(2)responseText 属性-包含客户端接收到的 HTTP 响应的文本内容&lt;/p&gt;
+
+&lt;p&gt;(3)responseXML 属性-描述被 XMLHttpRequest 解析后的 XML 文档的属性&lt;/p&gt;
+
+&lt;p&gt;(4)status 属性-描述 HTTP 的状态码&lt;/p&gt;
+
+&lt;p&gt;(5)statusText 属性-描述了 HTTP 的状态代码文本&lt;/p&gt;
+
+&lt;p&gt;(6)onreadystatechange 事件-当 readyState 属性值改变时，触发该事件&lt;/p&gt;
+
+&lt;p&gt;(7)open(method, uri, async, username, password) 方法-对 XMLhttpRequest
+对象进行初始化&lt;/p&gt;
+
+&lt;p&gt;(8)send(params) 方法-按照 open() 方法设定的参数将请求进行发送&lt;/p&gt;
+
+&lt;p&gt;(9)abort() 方法-暂停一个 HttpRequest 的发送请求或者接收，并将
+XMLHttpRequest 对象设置为初始化状态&lt;/p&gt;
+
+&lt;p&gt;(10)setRequestHeader() 方法-设置请求的头部信息&lt;/p&gt;
+
+&lt;p&gt;(11)getResponseHeader() 方法-获取 HttpResponse 的头部信息&lt;/p&gt;
+
+&lt;p&gt;​&lt;strong&gt;4. jQuery 中的 Ajax&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;(1)load(url[, data][, callback])&lt;/p&gt;
+
+&lt;p&gt; • url-请求 HTML 页面的 URL 地址&lt;/p&gt;
+
+&lt;p&gt; • data-发送至服务器的 key/value 数据，可选，没有设置参数表示使用 GET
+方式，设置参数表示使用 POST 方式&lt;/p&gt;
+
+&lt;p&gt; • callback(responseText, textStatus,
+XMLHttpRequest)-请求完成时的回调函数，参数分别表示：请求返回的内容、请求状态（success、error、notmodified、timeout）和
+XMLHttpRequest 对象&lt;/p&gt;
+
+&lt;p&gt;(2)&lt;/p&gt;
+
+&lt;p&gt;$.get(url[, data][, callback][, type])-使用 GET 方式来进行一步请求&lt;/p&gt;
+
+&lt;p&gt;$.post(url[, data][, callback][, type])-使用 POST 方式来进行一步请求&lt;/p&gt;
+
+&lt;p&gt; • url-请求 HTML 页面的 URL 地址&lt;/p&gt;
+
+&lt;p&gt; • data-发送至服务器的 key/value 数据，GET 作为 QueryString 附加到请求
+URL 中，POST 作为 HTTP 消息的实体内容&lt;/p&gt;
+
+&lt;p&gt; • callback(data,
+textStatus)-载入成功时的回调函数，参数分别表示：返回的内容和请求状态（success）&lt;/p&gt;
+
+&lt;p&gt; • type-服务器返回内容的格式，包括 xml、html、script、json、text 和_default&lt;/p&gt;
+
+&lt;p&gt; • 注意：GET 方式请求的数据会被浏览器缓存起来，而 POST 方式不会&lt;/p&gt;
+
+&lt;p&gt;(3)$.getScript(url, callback)-用于动态加载 JS(.js) 文件&lt;/p&gt;
+
+&lt;p&gt;(4)$.getJSON(url, callback)-用于加载 JSON(.json) 文件&lt;/p&gt;
+
+&lt;p&gt;(5)$.ajax(options)-jQuery 最底层的 Ajax 实现&lt;/p&gt;
+
+&lt;p&gt; • 参数 options 以 key/value 的形式存在：&lt;/p&gt;
+
+&lt;p&gt; • url：发送请求的地址&lt;/p&gt;
+
+&lt;p&gt; • type：请求方式（POST 或 GET）默认为 GET&lt;/p&gt;
+
+&lt;p&gt; • timeout：设置请求超时时间（毫秒）&lt;/p&gt;
+
+&lt;p&gt; • data：发送到服务器的数据，默认会将不是字符串会自动转换为字符串。GET
+方式将附加在 URL 后&lt;/p&gt;
+
+&lt;p&gt; •
+dataType：预期服务器返回的数据类型（xml、html、script、json、jsonp、text），默认返回
+responeXML 或 responseText&lt;/p&gt;
+
+&lt;p&gt; • beforeSend：function(XMLHttpRequest)，发送请求前触发的事件&lt;/p&gt;
+
+&lt;p&gt; • complete：function(XMLHttpRequest，textStatus)，请求完成后调用的回调函数（请求成功或失败都调用）&lt;/p&gt;
+
+&lt;p&gt; • success：function(data, textStatus)，请求成功后调用的回调函数&lt;/p&gt;
+
+&lt;p&gt; • error：function(XMLHttpRequest, textStatus,
+errorThrown)，请求失败时被调用的回调函数&lt;/p&gt;
+
+&lt;p&gt; • global：默认为 true，表示是否触发全局 Ajax 事件&lt;/p&gt;
+
+&lt;p&gt;​&lt;strong&gt;5. 序列化方法&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt; • serialize() 方法是用于一个 jQuery 对象，能将 DOM
+元素内容序列化为字符串，用于 Ajax
+请求。经常用于复杂的表单请求中，从而减少代码量&lt;/p&gt;
+
+&lt;p&gt; • serializeArray() 方法是用于一个 jQuery 对象，能将 DOM 元素内容序列化为
+JSON 格式的数据&lt;/p&gt;
+
+&lt;p&gt; • $.param() 方法是用于将一个数组或者对象按照 key/value 进行序列化&lt;/p&gt;
+
+&lt;p&gt;​&lt;strong&gt;6. jQuery 中的 Ajax 全局事件&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt; • $.ajaxStart()-Ajax 请求开始时执行的函数&lt;/p&gt;
+
+&lt;p&gt; • $.ajaxSend()-Ajax 请求发送前执行的函数&lt;/p&gt;
+
+&lt;p&gt; • $.ajaxComplete()-Ajax 请求完成时执行的函数&lt;/p&gt;
+
+&lt;p&gt; • $.ajaxSuccess()-Ajax 请求成功时执行的函数&lt;/p&gt;
+
+&lt;p&gt; • $.ajaxError()-Ajax 请求发生错误时执行的函数&lt;/p&gt;
+
+&lt;p&gt; • $.ajaxStop()-Ajax 请求结束时执行的函数&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+</description>
+    </item>
     
+    <item>
+      <title>《锋利的jQuery》学习笔记——jQuery与Ajax应用</title>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/sharp_jquery_study_notes_jquery_and_ajax_application</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/sharp_jquery_study_notes_jquery_and_ajax_application</guid>
+      <description>&lt;p&gt;​&lt;strong&gt;1. 什么是 Ajax？&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt; • Ajax 全称为”Asynchronous Javascript and XML”（异步 Javascript 和
+XML），并不是指一种单一的技术，而是有机地利用了一系列交互式网页应用相关的技术所形成的结合体。&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;​&lt;strong&gt;2. Ajax 的优势和不足&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt; • Ajax 的优势：&lt;/p&gt;
+
+&lt;p&gt;(1)不需要插件支持；(2)优秀的用户体验；(3)提高
+Web程序的性能；(4)减轻服务器和宽带的负担&lt;/p&gt;
+
+&lt;p&gt; • Ajax 的不足&lt;/p&gt;
+
+&lt;p&gt;(1)  浏览器对 XMLHttpRequest
+对象的支持度不足；(2)破坏浏览器前进、后退按钮的正常工作；(3)对搜索引擎的支持不足&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt;​&lt;strong&gt;3. Ajax的XMLHttpRequest对象&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt; • Ajax 的核心是 XMLHttpRequest 对象，是 Ajax
+实现的关键——发送异步请求、接收响应及执行回调。&lt;/p&gt;
+
+&lt;p&gt;(1)readyState 属性-标识当前对象正处于什么状态&lt;/p&gt;
+
+&lt;p&gt;(2)responseText 属性-包含客户端接收到的 HTTP 响应的文本内容&lt;/p&gt;
+
+&lt;p&gt;(3)responseXML 属性-描述被 XMLHttpRequest 解析后的 XML 文档的属性&lt;/p&gt;
+
+&lt;p&gt;(4)status 属性-描述 HTTP 的状态码&lt;/p&gt;
+
+&lt;p&gt;(5)statusText 属性-描述了 HTTP 的状态代码文本&lt;/p&gt;
+
+&lt;p&gt;(6)onreadystatechange 事件-当 readyState 属性值改变时，触发该事件&lt;/p&gt;
+
+&lt;p&gt;(7)open(method, uri, async, username, password) 方法-对 XMLhttpRequest
+对象进行初始化&lt;/p&gt;
+
+&lt;p&gt;(8)send(params) 方法-按照 open() 方法设定的参数将请求进行发送&lt;/p&gt;
+
+&lt;p&gt;(9)abort() 方法-暂停一个 HttpRequest 的发送请求或者接收，并将
+XMLHttpRequest 对象设置为初始化状态&lt;/p&gt;
+
+&lt;p&gt;(10)setRequestHeader() 方法-设置请求的头部信息&lt;/p&gt;
+
+&lt;p&gt;(11)getResponseHeader() 方法-获取 HttpResponse 的头部信息&lt;/p&gt;
+
+&lt;p&gt;​&lt;strong&gt;4. jQuery 中的 Ajax&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;(1)load(url[, data][, callback])&lt;/p&gt;
+
+&lt;p&gt; • url-请求 HTML 页面的 URL 地址&lt;/p&gt;
+
+&lt;p&gt; • data-发送至服务器的 key/value 数据，可选，没有设置参数表示使用 GET
+方式，设置参数表示使用 POST 方式&lt;/p&gt;
+
+&lt;p&gt; • callback(responseText, textStatus,
+XMLHttpRequest)-请求完成时的回调函数，参数分别表示：请求返回的内容、请求状态（success、error、notmodified、timeout）和
+XMLHttpRequest 对象&lt;/p&gt;
+
+&lt;p&gt;(2)&lt;/p&gt;
+
+&lt;p&gt;$.get(url[, data][, callback][, type])-使用 GET 方式来进行一步请求&lt;/p&gt;
+
+&lt;p&gt;$.post(url[, data][, callback][, type])-使用 POST 方式来进行一步请求&lt;/p&gt;
+
+&lt;p&gt; • url-请求 HTML 页面的 URL 地址&lt;/p&gt;
+
+&lt;p&gt; • data-发送至服务器的 key/value 数据，GET 作为 QueryString 附加到请求
+URL 中，POST 作为 HTTP 消息的实体内容&lt;/p&gt;
+
+&lt;p&gt; • callback(data,
+textStatus)-载入成功时的回调函数，参数分别表示：返回的内容和请求状态（success）&lt;/p&gt;
+
+&lt;p&gt; • type-服务器返回内容的格式，包括 xml、html、script、json、text 和_default&lt;/p&gt;
+
+&lt;p&gt; • 注意：GET 方式请求的数据会被浏览器缓存起来，而 POST 方式不会&lt;/p&gt;
+
+&lt;p&gt;(3)$.getScript(url, callback)-用于动态加载 JS(.js) 文件&lt;/p&gt;
+
+&lt;p&gt;(4)$.getJSON(url, callback)-用于加载 JSON(.json) 文件&lt;/p&gt;
+
+&lt;p&gt;(5)$.ajax(options)-jQuery 最底层的 Ajax 实现&lt;/p&gt;
+
+&lt;p&gt; • 参数 options 以 key/value 的形式存在：&lt;/p&gt;
+
+&lt;p&gt; • url：发送请求的地址&lt;/p&gt;
+
+&lt;p&gt; • type：请求方式（POST 或 GET）默认为 GET&lt;/p&gt;
+
+&lt;p&gt; • timeout：设置请求超时时间（毫秒）&lt;/p&gt;
+
+&lt;p&gt; • data：发送到服务器的数据，默认会将不是字符串会自动转换为字符串。GET
+方式将附加在 URL 后&lt;/p&gt;
+
+&lt;p&gt; •
+dataType：预期服务器返回的数据类型（xml、html、script、json、jsonp、text），默认返回
+responeXML 或 responseText&lt;/p&gt;
+
+&lt;p&gt; • beforeSend：function(XMLHttpRequest)，发送请求前触发的事件&lt;/p&gt;
+
+&lt;p&gt; • complete：function(XMLHttpRequest，textStatus)，请求完成后调用的回调函数（请求成功或失败都调用）&lt;/p&gt;
+
+&lt;p&gt; • success：function(data, textStatus)，请求成功后调用的回调函数&lt;/p&gt;
+
+&lt;p&gt; • error：function(XMLHttpRequest, textStatus,
+errorThrown)，请求失败时被调用的回调函数&lt;/p&gt;
+
+&lt;p&gt; • global：默认为 true，表示是否触发全局 Ajax 事件&lt;/p&gt;
+
+&lt;p&gt;​&lt;strong&gt;5. 序列化方法&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt; • serialize() 方法是用于一个 jQuery 对象，能将 DOM
+元素内容序列化为字符串，用于 Ajax
+请求。经常用于复杂的表单请求中，从而减少代码量&lt;/p&gt;
+
+&lt;p&gt; • serializeArray() 方法是用于一个 jQuery 对象，能将 DOM 元素内容序列化为
+JSON 格式的数据&lt;/p&gt;
+
+&lt;p&gt; • $.param() 方法是用于将一个数组或者对象按照 key/value 进行序列化&lt;/p&gt;
+
+&lt;p&gt;​&lt;strong&gt;6. jQuery 中的 Ajax 全局事件&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt; • $.ajaxStart()-Ajax 请求开始时执行的函数&lt;/p&gt;
+
+&lt;p&gt; • $.ajaxSend()-Ajax 请求发送前执行的函数&lt;/p&gt;
+
+&lt;p&gt; • $.ajaxComplete()-Ajax 请求完成时执行的函数&lt;/p&gt;
+
+&lt;p&gt; • $.ajaxSuccess()-Ajax 请求成功时执行的函数&lt;/p&gt;
+
+&lt;p&gt; • $.ajaxError()-Ajax 请求发生错误时执行的函数&lt;/p&gt;
+
+&lt;p&gt; • $.ajaxStop()-Ajax 请求结束时执行的函数&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>使用 apache2 作为代理服务器轻松解决 Ajax 跨域问题</title>
-      <link>http://blog.wenzhixin.net.cn/2014/06/05/apache_proxy/</link>
-      <pubDate>Thu, 05 Jun 2014 13:45:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/apache_proxy</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/06/05/apache_proxy/</guid>
-      <description>介绍 我们知道，使用 JavaScript 进行开发 Ajax 应用的时候会有跨域访问的问题，而用代理便可以解决跨域访问的问题。 那么应该如何开启 apache2 的 http 代理模块呢？ 模块 mod_</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/apache_proxy</guid>
+      <description>
+
+&lt;h3 id=&#34;介绍:299d40c8bf8f0942a2f38dea542412ab&#34;&gt;介绍&lt;/h3&gt;
+
+&lt;p&gt;我们知道，使用 JavaScript 进行开发 Ajax 应用的时候会有跨域访问的问题，而用代理便可以解决跨域访问的问题。
+那么应该如何开启 apache2 的 http 代理模块呢？&lt;/p&gt;
+
+&lt;p&gt;模块 &lt;a href=&#34;http://www.2cto.com/shouce/ApacheManual/mod/mod_proxy.html&#34;&gt;mod_proxy&lt;/a&gt;实现了Apache的代理/网关。
+它实现了以下规范的代理 FTP， CONNECT（用于SSL）， HTTP/0.9， HTTP/1.0，和 HTTP/1.1。
+此模块经配置后可用上述或其它协议连接其它代理模块。&lt;/p&gt;
+
+&lt;h3 id=&#34;启动:299d40c8bf8f0942a2f38dea542412ab&#34;&gt;启动&lt;/h3&gt;
+
+&lt;p&gt;在 apache2 的安装目录下，有这样的两个目录：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;/etc/apache2/mods-enabled/ 已经被启用的模块&lt;/li&gt;
+&lt;li&gt;/etc/apache2/mods-available/ 当前系统中可用的模块&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;我们可以使用下列命令来启用（或禁用）proxy 模块：&lt;/p&gt;
+sudo a2enmod proxy
+sudo a2enmod proxy_http
+
+sudo a2dismod proxy
+sudo a2dismod proxy_http
+
+&lt;p&gt;启用完之后重启 apache 即可：&lt;/p&gt;
+sudo service apache restart
+
+&lt;h3 id=&#34;配置:299d40c8bf8f0942a2f38dea542412ab&#34;&gt;配置&lt;/h3&gt;
+
+&lt;p&gt;新建配置文件：&lt;/p&gt;
+sudo vi /etc/apache2/site-enabled/proxy.conf
+&lt;IfModule mod_proxy.c&gt;
+	ProxyPass /api http://wenzhixin.net.cn/api
+	ProxyPassReverse /api http://wenzhixin.net.cn/api
+&lt;/IfModule&gt;
+
+&lt;p&gt;这里使用了 &lt;a href=&#34;http://www.2cto.com/shouce/ApacheManual/mod/mod_proxy.html#proxypass&#34;&gt;ProxyPass&lt;/a&gt; 和 &lt;a href=&#34;http://www.2cto.com/shouce/ApacheManual/mod/mod_proxy.html#proxypassreverse&#34;&gt;ProxyPassReverse&lt;/a&gt; 指令：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ProxyPass：将一个远端服务器映射到本地服务器的URL空间中&lt;/li&gt;
+&lt;li&gt;ProxyPassReverse：调整由反向代理服务器发送的HTTP回应头中的URL&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;保存，重启 apache2。&lt;/p&gt;
+
+&lt;p&gt;到这里，我们就可以通过直接访问 &lt;code&gt;http://127.0.0.1/api&lt;/code&gt;来代理远程服务器的 api 接口了，从而解决了跨域的问题。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;相关问题：&lt;a href=&#34;http://wenzhixin.net.cn/2012/08/01/the_use_of_nginx_as_a_proxy_server_easily_solve_the_cross_domain_ajax_problem&#34;&gt;使用 nginx 作为代理服务器轻松解决 Ajax 跨域问题&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>使用 nginx 作为代理服务器轻松解决 Ajax 跨域问题</title>
-      <link>http://blog.wenzhixin.net.cn/2012/08/01/the_use_of_nginx_as_a_proxy_server_easily_solve_the_cross_domain_ajax_problem/</link>
-      <pubDate>Wed, 01 Aug 2012 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/the_use_of_nginx_as_a_proxy_server_easily_solve_the_cross_domain_ajax_problem</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/08/01/the_use_of_nginx_as_a_proxy_server_easily_solve_the_cross_domain_ajax_problem/</guid>
-      <description>1、安装 nginx： 1 sudo apt-get install nginx 2、配置 nginx： 1 sudo vi /etc/nginx/sites-enabled/default 输入内容： 1 2 3 4 5 6 7 8 server { listen 8080; location /api { proxy_pass http://myserver/api; access_log off; } } 3、重启 1 sudo /etc/init.d/nginx restart 4、使用： 1 var</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/the_use_of_nginx_as_a_proxy_server_easily_solve_the_cross_domain_ajax_problem</guid>
+      <description>
+
+&lt;h4 id=&#34;1-安装-nginx:c454f079fec5970fae8ce8ed94772b28&#34;&gt;1、安装 nginx：&lt;/h4&gt;
+sudo apt-get install nginx
+
+&lt;h4 id=&#34;2-配置-nginx:c454f079fec5970fae8ce8ed94772b28&#34;&gt;2、配置 nginx：&lt;/h4&gt;
+sudo vi /etc/nginx/sites-enabled/default
+
+&lt;p&gt;输入内容：&lt;/p&gt;
+server {   
+        listen 8080;
+    
+        location /api {   
+                proxy_pass http://myserver/api;
+                access_log off;
+        }
+}
+
+&lt;h4 id=&#34;3-重启:c454f079fec5970fae8ce8ed94772b28&#34;&gt;3、重启&lt;/h4&gt;
+sudo /etc/init.d/nginx restart
+
+&lt;h4 id=&#34;4-使用:c454f079fec5970fae8ce8ed94772b28&#34;&gt;4、使用：&lt;/h4&gt;
+var SERVER_URI = &#34;/api&#34;; 
+</description>
     </item>
     
     <item>
       <title>使用 nginx 作为代理服务器轻松解决 Ajax 跨域问题</title>
-      <link>http://blog.wenzhixin.net.cn/2012/08/01/the_use_of_nginx_as_a_proxy_server_easily_solve_the_cross_domain_ajax_problem/</link>
-      <pubDate>Wed, 01 Aug 2012 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/the_use_of_nginx_as_a_proxy_server_easily_solve_the_cross_domain_ajax_problem</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/08/01/the_use_of_nginx_as_a_proxy_server_easily_solve_the_cross_domain_ajax_problem/</guid>
-      <description>1、安装 nginx： 1 sudo apt-get install nginx 2、配置 nginx： 1 sudo vi /etc/nginx/sites-enabled/default 输入内容： 1 2 3 4 5 6 7 8 server { listen 8080; location /api { proxy_pass http://myserver/api; access_log off; } } 3、重启 1 sudo /etc/init.d/nginx restart 4、使用： 1 var</description>
-    </item>
-    
-    <item>
-      <title>《锋利的jQuery》学习笔记——jQuery与Ajax应用</title>
-      <link>http://blog.wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_and_ajax_application/</link>
-      <pubDate>Tue, 13 Mar 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_and_ajax_application/</guid>
-      <description>​1. 什么是 Ajax？ • Ajax 全称为”Asynchronous Javascript and XML”（异步 Javascript 和 XML），并不是指一种单一的技术，而是有机地利用了一系列交互</description>
-    </item>
-    
-    <item>
-      <title>《锋利的jQuery》学习笔记——jQuery与Ajax应用</title>
-      <link>http://blog.wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_and_ajax_application/</link>
-      <pubDate>Tue, 13 Mar 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_and_ajax_application/</guid>
-      <description>​1. 什么是 Ajax？ • Ajax 全称为”Asynchronous Javascript and XML”（异步 Javascript 和 XML），并不是指一种单一的技术，而是有机地利用了一系列交互</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/the_use_of_nginx_as_a_proxy_server_easily_solve_the_cross_domain_ajax_problem</guid>
+      <description>
+
+&lt;h4 id=&#34;1-安装-nginx:c454f079fec5970fae8ce8ed94772b28&#34;&gt;1、安装 nginx：&lt;/h4&gt;
+sudo apt-get install nginx
+
+&lt;h4 id=&#34;2-配置-nginx:c454f079fec5970fae8ce8ed94772b28&#34;&gt;2、配置 nginx：&lt;/h4&gt;
+sudo vi /etc/nginx/sites-enabled/default
+
+&lt;p&gt;输入内容：&lt;/p&gt;
+server {   
+        listen 8080;
+    
+        location /api {   
+                proxy_pass http://myserver/api;
+                access_log off;
+        }
+}
+
+&lt;h4 id=&#34;3-重启:c454f079fec5970fae8ce8ed94772b28&#34;&gt;3、重启&lt;/h4&gt;
+sudo /etc/init.d/nginx restart
+
+&lt;h4 id=&#34;4-使用:c454f079fec5970fae8ce8ed94772b28&#34;&gt;4、使用：&lt;/h4&gt;
+var SERVER_URI = &#34;/api&#34;; 
+</description>
     </item>
     
   </channel>

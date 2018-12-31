@@ -1,24 +1,37 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>jshint on 文翼的博客</title>
+    <title>Jshint on 文翼的博客</title>
     <link>http://blog.wenzhixin.net.cn/tags/jshint/</link>
-    <description>Recent content in jshint on 文翼的博客</description>
+    <description>Recent content in Jshint on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Fri, 29 Nov 2013 09:12:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.wenzhixin.net.cn/tags/jshint/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="http://blog.wenzhixin.net.cn/tags/jshint/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>解决 jshint 的语法警告</title>
-      <link>http://blog.wenzhixin.net.cn/2013/11/29/jshint_warnings_resolve/</link>
-      <pubDate>Fri, 29 Nov 2013 09:12:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/jshint_warnings_resolve</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/11/29/jshint_warnings_resolve/</guid>
-      <description>问题： Wrap the regexp literal in parens to disambiguate the slash operator 示例代码： 1 2 3 function isMe(name) { return /^wenzhixin$/.test(name); } 警告原因： 虽然 JavaScript 解析器可以正常工作，但是对于解析器来说，解析 “/” 的完整含义是比较困</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/jshint_warnings_resolve</guid>
+      <description>
+
+&lt;h4 id=&#34;问题-wrap-the-regexp-literal-in-parens-to-disambiguate-the-slash-operator:b87619fd7d1d731fba536f19526929ee&#34;&gt;问题： Wrap the regexp literal in parens to disambiguate the slash operator&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;示例代码：&lt;/strong&gt;&lt;/p&gt;
+function isMe(name) {
+	return /^wenzhixin$/.test(name);
+}
+
+&lt;p&gt;&lt;strong&gt;警告原因：&lt;/strong&gt;&lt;br /&gt;
+虽然 JavaScript 解析器可以正常工作，但是对于解析器来说，解析 “/” 的完整含义是比较困难的。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;建议写法：&lt;/strong&gt;&lt;/p&gt;
+function isMe(name) {
+    return (/^wenzhixin$/).test(name);
+}
+</description>
     </item>
     
   </channel>

@@ -1,24 +1,52 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>background on 文翼的博客</title>
+    <title>Background on 文翼的博客</title>
     <link>http://blog.wenzhixin.net.cn/tags/background/</link>
-    <description>Recent content in background on 文翼的博客</description>
+    <description>Recent content in Background on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Sun, 16 Feb 2014 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.wenzhixin.net.cn/tags/background/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="http://blog.wenzhixin.net.cn/tags/background/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>canvas 如何在保留 background 的情况下重置画布</title>
-      <link>http://blog.wenzhixin.net.cn/2014/02/16/canvas_background/</link>
-      <pubDate>Sun, 16 Feb 2014 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/canvas_background</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/02/16/canvas_background/</guid>
-      <description>前几天在用 canvas 实现动画的时候，因为是需要设置画图的背景， 所以一开始想到的就是使用 canvas 的 drawImage() 方法： 1 context.drawImage(img, x, y, width, height); 但是后面发现了在此基础上画动画的话，假</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/canvas_background</guid>
+      <description>&lt;p&gt;前几天在用 canvas 实现动画的时候，因为是需要设置画图的背景，
+所以一开始想到的就是使用 canvas 的 drawImage() 方法：&lt;/p&gt;
+context.drawImage(img, x, y, width, height);
+
+&lt;p&gt;但是后面发现了在此基础上画动画的话，假如通过：&lt;/p&gt;
+context.clearRect(0, 0, width, height);
+
+&lt;p&gt;来重置画布的话，背景也被清除掉了，再次重画背景就先出现一闪一闪的问题，
+并不是自己想要的结果。&lt;/p&gt;
+
+&lt;p&gt;查阅了相关资料：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;HTML5 Canvas is a Non-Retained Drawing Mode Graphics API.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;意思是说画布是一种类似油彩画的画图模式。就像现实世界中的油彩画一样，
+当你使用 &lt;code&gt;stroke()&lt;/code&gt; 或者 &lt;code&gt;fill()&lt;/code&gt; 或者 &lt;code&gt;drawImage()&lt;/code&gt;
+的时候，其实就像油彩一样变为画布的一部分。例如，一个画家画了一个人，
+你说让那个人移动或者变大，是不可能的，你不能改变它，也不能擦掉它。
+当然你可以重新拿一张白纸重新开始画，就相当于调用&lt;code&gt;clearRect()&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;那么，应该如何解决这个问题呢？&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;假如背景图片是静态的，那么就使用 css 对 canvas 的样式 &lt;code&gt;background&lt;/code&gt; 属性进行设置。
+例如我上面遇到的问题就是这种情况。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;假如背景是动态的，可以考虑使用 Retained Drawing Mode 的 SVG 或者 HTML。
+使用这些元素，就可以改变背景的位置或者大小。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
     
   </channel>

@@ -1,24 +1,73 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ssh on 文翼的博客</title>
+    <title>SSH on 文翼的博客</title>
     <link>http://blog.wenzhixin.net.cn/tags/ssh/</link>
-    <description>Recent content in ssh on 文翼的博客</description>
+    <description>Recent content in SSH on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Sun, 17 Mar 2013 22:38:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.wenzhixin.net.cn/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="http://blog.wenzhixin.net.cn/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Ubuntu 下无密码访问及文件同步</title>
-      <link>http://blog.wenzhixin.net.cn/2013/03/17/ssh_rsync/</link>
-      <pubDate>Sun, 17 Mar 2013 22:38:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/ssh_rsync</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/03/17/ssh_rsync/</guid>
-      <description>服务器端配置 ssh 修改客户端sshd配置文件 1 sudo vi /etc/ssh/sshd_config 修改为 1 2 3 RSAAuthentication yes PubkeyAuthentication yes AuthorizedKeysFile %h/.ssh/authorized_keys 重启ssh服务 1 sudo /etc/init.d/sshd restart 配置密钥 在客户端生成公钥和私钥文件 1 2 ssh-keygen cat ~/.ssh/id_rsa.pub &amp;gt;&amp;gt;</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/ssh_rsync</guid>
+      <description>
+
+&lt;h4 id=&#34;服务器端配置-ssh:c438dcfbdb89c88db42e10ae91da1f05&#34;&gt;服务器端配置 ssh&lt;/h4&gt;
+
+&lt;p&gt;修改客户端sshd配置文件&lt;/p&gt;
+sudo vi /etc/ssh/sshd_config
+
+&lt;p&gt;修改为&lt;/p&gt;
+RSAAuthentication yes
+PubkeyAuthentication yes
+AuthorizedKeysFile     %h/.ssh/authorized_keys
+
+&lt;p&gt;重启ssh服务&lt;/p&gt;
+sudo /etc/init.d/sshd restart
+
+&lt;hr /&gt;
+
+&lt;h4 id=&#34;配置密钥:c438dcfbdb89c88db42e10ae91da1f05&#34;&gt;配置密钥&lt;/h4&gt;
+
+&lt;p&gt;在客户端生成公钥和私钥文件&lt;/p&gt;
+ssh-keygen
+cat ~/.ssh/id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys
+
+&lt;p&gt;scp 到服务器端&lt;/p&gt;
+scp ~/.ssh/authorized_keys username@hostname:~/.ssh/authorized_keys
+
+&lt;p&gt;修改 config 文件&lt;/p&gt;
+vi ~/.ssh/config
+
+&lt;p&gt;添加&lt;/p&gt;
+host sshname
+    HostName hostname(ip address)
+    user username
+    IdentityFile ~/.ssh/id_rsa
+
+&lt;p&gt;测试&lt;/p&gt;
+ssh sshname (-p port)
+
+&lt;hr /&gt;
+
+&lt;h4 id=&#34;rsync-同步:c438dcfbdb89c88db42e10ae91da1f05&#34;&gt;rsync 同步&lt;/h4&gt;
+rsync (--exclude=exclude) -avz (-e &#34;ssh -p 22&#34;) ./ sshname:~/path
+
+&lt;hr /&gt;
+
+&lt;p&gt;注：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;括号为可选&lt;/li&gt;
+&lt;li&gt;hostname 指域名或者 IP 地址&lt;/li&gt;
+&lt;li&gt;username 对应服务器的用户名&lt;/li&gt;
+&lt;/ol&gt;
+</description>
     </item>
     
   </channel>

@@ -1,24 +1,164 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>mongoexport on 文翼的博客</title>
+    <title>Mongoexport on 文翼的博客</title>
     <link>http://blog.wenzhixin.net.cn/tags/mongoexport/</link>
-    <description>Recent content in mongoexport on 文翼的博客</description>
+    <description>Recent content in Mongoexport on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Wed, 12 Jun 2013 23:07:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.wenzhixin.net.cn/tags/mongoexport/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="http://blog.wenzhixin.net.cn/tags/mongoexport/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>MongoDB mongoexport 命令的使用及简单实现</title>
-      <link>http://blog.wenzhixin.net.cn/2013/06/12/mongodb_export/</link>
-      <pubDate>Wed, 12 Jun 2013 23:07:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/mongodb_export</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/06/12/mongodb_export/</guid>
-      <description>MongoDB 提供了 mongoexport 命令来导出数据，导出的数据是 json 格式的，当然也可以是 csv 格式。主要可以实现备份和恢复的功能。 具体的使用，我们使用 &amp;ndash;help 查看，主要的参数有：</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/mongodb_export</guid>
+      <description>&lt;p&gt;MongoDB 提供了 mongoexport 命令来导出数据，导出的数据是 json 格式的，当然也可以是 csv 格式。主要可以实现&lt;strong&gt;备份和恢复&lt;/strong&gt;的功能。&lt;/p&gt;
+
+&lt;p&gt;具体的使用，我们使用 &amp;ndash;help 查看，主要的参数有：&lt;/p&gt;
+-h [ --host ] arg         要连接的服务器，例如 127.0.0.1 或者 localhost
+
+--port arg                要连接服务器的端口，也可以使用 --host hostname:port
+
+-u [ --username ] arg     用户名
+
+-p [ --password ] arg     密码
+
+-d [ --db ] arg           使用的数据库（database）名称
+
+-c [ --collection ] arg   使用的集合（collection）
+
+-o [ --out ] arg          导出的文件名
+
+-f [ --fields ] arg       字段名称，使用逗号分隔，例如 -f name,age
+
+-q [ --query ] arg        查询过滤器
+
+--csv                     导出为 csv 格式
+
+&lt;p&gt;例如，我们要导出 tests 数据库中的 users 集合，可以使用：&lt;/p&gt;
+mongoexport -d tests -c users -o users.dat
+
+&lt;p&gt;现在，针对这几个简单的参数，我们自己使用 nodejs 来进行对 mongoexport 简单的实现，&lt;strong&gt;大概思路&lt;/strong&gt;如下：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;1. 使用 nodejs 的 mongodb 库 &lt;a href=&#34;https://github.com/mongodb/node-mongodb-native&#34;&gt;node-mongodb-native&lt;/a&gt; 来连接 MongoDB。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;安装 mongodb：&lt;/p&gt;
+npm install mongodb
+
+&lt;p&gt;连接 MongoDB 的主要代码：&lt;/p&gt;
+var mongoClient = new MongoClient(new Server(&#39;localhost&#39;, 27017));
+
+mongoClient.open(function(err, mongoclient) {
+
+});
+
+&lt;ul&gt;
+&lt;li&gt;&lt;ol&gt;
+&lt;li&gt;使用 process.argv 来接收输入的参数&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;ol&gt;
+&lt;li&gt;使用 fs.writeFile 来输出 json 数据文件&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;具体实现&lt;/strong&gt;如下：&lt;/p&gt;
+var fs = require(&#39;fs&#39;),
+    MongoClient = require(&#39;mongodb&#39;).MongoClient,
+    Server = require(&#39;mongodb&#39;).Server,
+
+    options = null;
+    mongoClient = null;
+
+if (process.argv.length &lt;= 2 || process.argv.indexOf(&#39;--help&#39;) !== -1) {
+    showHelp();
+    return;
+}
+
+options = getOptions();
+exportFile();
+
+function showHelp() {
+    console.error([
+        &#39;Export MongoDB data to JSON files.&#39;,
+        &#39;&#39;,
+        &#39;options:&#39;,
+          &#39; --help                                produce help message&#39;,
+          &#39; -h [ --host ] arg                     mongo host to connect to&#39;,
+          &#39; --port arg                            server port&#39;,
+          &#39; -u [ --username ] arg                 username&#39;,
+          &#39; -p [ --password ] arg                 password&#39;,
+          &#39; -d [ --db ] arg                       database to use&#39;,
+          &#39; -c [ --collection ] arg               collection to use (some commands)&#39;,
+          &#39; -o [ --out ] arg                      output file&#39;
+    ].join(&#39;\n&#39;));
+}
+
+function getOptions() {
+    var args = process.argv,
+        options = {
+            host: &#39;127.0.0.1&#39;,
+            port: 27017
+        },
+        keys = {
+            &#39;-h&#39;: &#39;host&#39;,
+            &#39;--host&#39;: &#39;host&#39;,
+            &#39;--port&#39;: &#39;port&#39;,
+            &#39;-u&#39;: &#39;username&#39;,
+            &#39;--username&#39;: &#39;username&#39;,
+            &#39;-p&#39;: &#39;password&#39;,
+            &#39;--password&#39;: &#39;password&#39;,
+            &#39;-d&#39;: &#39;db&#39;,
+            &#39;--db&#39;: &#39;db&#39;,
+            &#39;-c&#39;: &#39;collection&#39;,
+            &#39;--collection&#39;: &#39;collection&#39;,
+            &#39;-o&#39;: &#39;output&#39;,
+            &#39;--out&#39;: &#39;output&#39;
+        };
+    for (var i = 2; i &lt; args.length; i += 2) {
+        if (keys.hasOwnProperty(args[i])) {
+            options[keys[args[i]]] = args[i + 1];
+        }
+    }
+    return options;
+}
+
+function exportFile() {
+    mongoClient = new MongoClient(new Server(options.host, options.port, {native_parse: true}));
+    mongoClient.open(function(err, mongoclient) {
+        var db = mongoclient.db(options.db);
+        db.collection(options.collection).find().toArray(function(err, results) {
+            if (err) {
+                console.log(err);
+                return;
+            }
+            fs.writeFile(options.output, JSON.stringify(results), function(err) {
+                if (err) {
+                    console.log(err);
+                    return;
+                }
+                console.log([
+                    &#39;connected to: &#39; + options.host,
+                    &#39;exported &#39; + results.length + &#39; records&#39;
+                ].join(&#39;\n&#39;));
+                mongoClient.close();
+            });
+        });    
+    });
+}
+
+&lt;p&gt;&lt;strong&gt;如何使用&lt;/strong&gt;：&lt;/p&gt;
+node mongoexport.js -d tests -c users -o users.dat
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/demos/mongoexport.js&#34;&gt;源码下载&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
     
   </channel>

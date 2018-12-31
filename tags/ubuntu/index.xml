@@ -1,132 +1,700 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ubuntu on 文翼的博客</title>
+    <title>Ubuntu on 文翼的博客</title>
     <link>http://blog.wenzhixin.net.cn/tags/ubuntu/</link>
-    <description>Recent content in ubuntu on 文翼的博客</description>
+    <description>Recent content in Ubuntu on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Fri, 21 Nov 2014 22:20:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.wenzhixin.net.cn/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="http://blog.wenzhixin.net.cn/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>KVM 虚拟机的学习和使用</title>
-      <link>http://blog.wenzhixin.net.cn/2014/11/21/kvm_study/</link>
-      <pubDate>Fri, 21 Nov 2014 22:20:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/kvm_study</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/11/21/kvm_study/</guid>
-      <description>KVM 是 Kernel-based Virtual Machine的简称，是一个开源的系统虚拟化模块，是基于硬件的完全虚拟化。 查看硬件是否支持 通过命令行可以查看硬件是否支持： 1 2 3 4 5</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/kvm_study</guid>
+      <description>
+
+&lt;p&gt;KVM 是 Kernel-based Virtual Machine的简称，是一个开源的系统虚拟化模块，是基于硬件的完全虚拟化。&lt;/p&gt;
+
+&lt;h3 id=&#34;查看硬件是否支持:0fe43c51449a66e046d87a7538942507&#34;&gt;查看硬件是否支持&lt;/h3&gt;
+
+&lt;p&gt;通过命令行可以查看硬件是否支持：&lt;/p&gt;
+# INTEL芯片
+grep vmx /proc/cpuinfo
+
+# AMD芯片
+grep svm /proc/cpuinfo
+
+# 不知道芯片的
+egrep &#39;(vmx|svm)&#39; /proc/cpuinfo
+
+&lt;p&gt;假如有输出，表示 cpu 是支持 KVM 虚拟机的。&lt;/p&gt;
+
+&lt;h3 id=&#34;ubuntu-下安装-kvm:0fe43c51449a66e046d87a7538942507&#34;&gt;Ubuntu 下安装 KVM&lt;/h3&gt;
+
+&lt;p&gt;基本安装包：&lt;/p&gt;
+sudo apt-get install kvm libvirt-bin ubuntu-vm-builder bridge-utils
+
+&lt;p&gt;界面管理：&lt;/p&gt;
+sudo apt-get install virt-manager virt-viewer
+
+&lt;h3 id=&#34;使用:0fe43c51449a66e046d87a7538942507&#34;&gt;使用&lt;/h3&gt;
+
+&lt;p&gt;直接打开虚拟机管理器会报错，我们需要用命令行通过 root 方式运行：&lt;/p&gt;
+sudo virt-manager
+
+&lt;p&gt;继续学习&amp;hellip;&lt;/p&gt;
+</description>
     </item>
     
     <item>
-      <title>Ubuntu 下不能访问 Windows 文件系统</title>
-      <link>http://blog.wenzhixin.net.cn/2014/11/20/ubuntu_unable_to_access_windows/</link>
-      <pubDate>Thu, 20 Nov 2014 15:07:00 +0000</pubDate>
+      <title>Ubuntu 11.10 将 OpenJDK 换成 Sun JDK 的步骤</title>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_11.10_will_be_openjdk_into_sun_jdk_steps</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/11/20/ubuntu_unable_to_access_windows/</guid>
-      <description>Ubuntu 和 Windows 双系统下，Ubuntu 不能访问 Windows 下的分区，例如：/dev/sdb1，显示如下错误： 1 2 3 4 5 6 Error mounting /dev/sdb1 exited with non-zero exit status 14: The disk contains an unclean file system (0, 0). Metadata kept</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_11.10_will_be_openjdk_into_sun_jdk_steps</guid>
+      <description>&lt;p&gt;1、加入repository： &lt;/p&gt;
+
+&lt;p&gt;sudo add-apt-repository &amp;ldquo;deb &lt;a href=&#34;http://cz.archive.Ubuntu.com/ubuntu&#34;&gt;http://cz.archive.Ubuntu.com/ubuntu&lt;/a&gt;
+hardy-updates main multiverse&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;(vi /etc/apt/sources.list)&lt;/p&gt;
+
+&lt;p&gt;2、更新源：&lt;/p&gt;
+
+&lt;p&gt;sudo apt-get update&lt;/p&gt;
+
+&lt;p&gt;3、安装 jdk 和 jre：&lt;/p&gt;
+
+&lt;p&gt;sudo apt-get install sun-java6-jdk sun-java6-jre&lt;/p&gt;
+
+&lt;p&gt;4、切换为 Sun JDK：&lt;/p&gt;
+
+&lt;p&gt;sudo update-java-alternatives -s java-6-sun&lt;/p&gt;
+
+&lt;p&gt;(ls /usr/lib/jvm)&lt;/p&gt;
+
+&lt;p&gt;5、查看是否切换成功：&lt;/p&gt;
+
+&lt;p&gt;java -version&lt;/p&gt;
+</description>
     </item>
     
     <item>
-      <title>Ubuntu 无法找到更新源的问题</title>
-      <link>http://blog.wenzhixin.net.cn/2014/07/21/ubuntu_source_list_not_found/</link>
-      <pubDate>Mon, 21 Jul 2014 00:00:00 +0000</pubDate>
+      <title>Ubuntu 11.10 将 OpenJDK 换成 Sun JDK 的步骤</title>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_11.10_will_be_openjdk_into_sun_jdk_steps</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/07/21/ubuntu_source_list_not_found/</guid>
-      <description>问题： 前段时间，Ubuntu 官方源已经停止了对非长期维护版（如 11.10，12.04，12.10 和 13.04）的支持，并且从归档服务器上移除</description>
-    </item>
-    
-    <item>
-      <title>Ubuntu 下搭建 JavaEE 环境</title>
-      <link>http://blog.wenzhixin.net.cn/2014/04/02/ubuntu_java_ee/</link>
-      <pubDate>Wed, 02 Apr 2014 13:30:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2014/04/02/ubuntu_java_ee/</guid>
-      <description>在 Ubuntu 下搭建 JavaEE 的环境稍微有些麻烦，这里记录下。 1. 安装 eclipse 和 tomcat7 1 2 sudo apt-get install eclipse sudo apt-get install tomcat7 注：安装 eclipse 后会把依赖的 jdk 安装好，使用 apt-get 安装的 eclipse 是最精简的版本。 2.</description>
-    </item>
-    
-    <item>
-      <title>Ubuntu 下安装音乐播放器</title>
-      <link>http://blog.wenzhixin.net.cn/2014/01/25/ubuntu_music_player/</link>
-      <pubDate>Sat, 25 Jan 2014 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2014/01/25/ubuntu_music_player/</guid>
-      <description>对于喜欢听歌的人来说，音乐播放器还是挺重要的， 但是不像 windows 一样，很多流行的播放器都没有 ubuntu 版。 这里记录下安装 Audacious 播放器，还是比较强大的，可以支持 ape</description>
-    </item>
-    
-    <item>
-      <title>Ubuntu 12.10 添加 node 应用为自启动服务</title>
-      <link>http://blog.wenzhixin.net.cn/2013/12/30/ubuntu_node_app_service/</link>
-      <pubDate>Mon, 30 Dec 2013 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2013/12/30/ubuntu_node_app_service/</guid>
-      <description>开发 node 应用之后，启动的方式一般是通过 node app 或者 node app &amp;amp; 来运行， 十分不方便，这里将以本 blog 应用为例介绍如何添加为自启动的服务。 环境 用户名：usern</description>
-    </item>
-    
-    <item>
-      <title>Ubuntu 系统下 android 连接小米2进行开发</title>
-      <link>http://blog.wenzhixin.net.cn/2013/06/14/ubuntu_android_xiaomi2/</link>
-      <pubDate>Fri, 14 Jun 2013 01:30:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2013/06/14/ubuntu_android_xiaomi2/</guid>
-      <description>问题： 小米2 通过 USB 连接到 Ubuntu 12.10 系统进行开发，发现 adb devices 不能看到设备。 解决： 1. 运行下面的命令： 1 lsusb 通过对比发现，Bus 002 Device 010: ID 2717:9039 就是小米2的设备号</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_11.10_will_be_openjdk_into_sun_jdk_steps</guid>
+      <description>&lt;p&gt;1、加入repository： &lt;/p&gt;
+
+&lt;p&gt;sudo add-apt-repository &amp;ldquo;deb &lt;a href=&#34;http://cz.archive.Ubuntu.com/ubuntu&#34;&gt;http://cz.archive.Ubuntu.com/ubuntu&lt;/a&gt;
+hardy-updates main multiverse&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;(vi /etc/apt/sources.list)&lt;/p&gt;
+
+&lt;p&gt;2、更新源：&lt;/p&gt;
+
+&lt;p&gt;sudo apt-get update&lt;/p&gt;
+
+&lt;p&gt;3、安装 jdk 和 jre：&lt;/p&gt;
+
+&lt;p&gt;sudo apt-get install sun-java6-jdk sun-java6-jre&lt;/p&gt;
+
+&lt;p&gt;4、切换为 Sun JDK：&lt;/p&gt;
+
+&lt;p&gt;sudo update-java-alternatives -s java-6-sun&lt;/p&gt;
+
+&lt;p&gt;(ls /usr/lib/jvm)&lt;/p&gt;
+
+&lt;p&gt;5、查看是否切换成功：&lt;/p&gt;
+
+&lt;p&gt;java -version&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>Ubuntu 11.10 搭建 gitlab 服务器</title>
-      <link>http://blog.wenzhixin.net.cn/2013/01/14/gitlab_installation/</link>
-      <pubDate>Mon, 14 Jan 2013 15:55:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/gitlab_installation</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/01/14/gitlab_installation/</guid>
-      <description>ps: 请按照顺序一步一步来，并注意查看提示，确保成功！ 1. 更新系统 1 2 sudo apt-get update sudo apt-get upgrade 2. 安装必要的包 1 sudo apt-get install -y build-essential zlib1g-dev libyaml-dev libssl-dev libgdbm-dev libreadline-dev libncurses5-dev libffi-dev wget curl git-core openssh-server redis-server postfix checkinstall libxml2-dev libxslt-dev libcurl4-openssl-dev libicu-dev 3.</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/gitlab_installation</guid>
+      <description>
+
+&lt;p&gt;ps: 请按照顺序一步一步来，并注意查看提示，确保成功！&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&#34;1-更新系统:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;1. 更新系统&lt;/h4&gt;
+sudo apt-get update
+sudo apt-get upgrade
+
+&lt;h4 id=&#34;2-安装必要的包:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;2. 安装必要的包&lt;/h4&gt;
+sudo apt-get install -y build-essential zlib1g-dev libyaml-dev libssl-dev libgdbm-dev libreadline-dev libncurses5-dev libffi-dev  wget curl git-core openssh-server redis-server postfix checkinstall libxml2-dev libxslt-dev libcurl4-openssl-dev libicu-dev
+
+&lt;h4 id=&#34;3-安装-python-一般已经安装了:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;3. 安装 python  (一般已经安装了)&lt;/h4&gt;
+sudo apt-get install python2.7
+
+# 查看 python 版本 ( 2.5 &lt;= version &lt; 3.0)
+python2 --version
+
+sudo ln -s /usr/bin/python /usr/bin/python2
+
+&lt;h4 id=&#34;4-下载编译并安装-ruby-1-9-3-apt-get-install-的有问题:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;4. 下载编译并安装 ruby 1.9.3 (apt-get install 的有问题)&lt;/h4&gt;
+mkdir /tmp/ruby &amp;&amp; cd /tmp/ruby
+
+# 太慢了可以从 ftp 上下载 ftp://192.168.88.104/temp/ruby-1.9.3-p327.tar.gz
+wget http://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.3-p327.tar.gz
+
+tar xfvz ruby-1.9.3-p327.tar.gz
+cd ruby-1.9.3-p327
+
+# 编译 (可以去喝杯茶再说)
+./configure
+make
+
+# 安装
+sudo make install
+
+&lt;h4 id=&#34;5-安装-bundler:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;5. 安装 bundler&lt;/h4&gt;
+sudo gem install bundler
+
+&lt;h4 id=&#34;6-新建-git-和-gitolite-的用户:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;6. 新建 git 和 gitolite 的用户&lt;/h4&gt;
+sudo adduser --system --shell /bin/sh --gecos &#39;Git Version Control&#39; --group --disabled-password --home /home/git git
+
+&lt;h4 id=&#34;7-新建-gitlab-用户:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;7. 新建 gitlab 用户&lt;/h4&gt;
+sudo adduser --disabled-login --gecos &#39;GitLab&#39; gitlab
+
+# 添加到 git 组
+sudo usermod -a -G git gitlab
+
+# 创建 SSH 密钥
+sudo -u gitlab -H ssh-keygen -q -N &#39;&#39; -t rsa -f /home/gitlab/.ssh/id_rsa
+
+&lt;h4 id=&#34;8-克隆-gitolite-源码:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;8. 克隆 gitolite 源码&lt;/h4&gt;
+cd /home/git
+sudo -u git -H git clone -b gl-v320 https://github.com/gitlabhq/gitolite.git /home/git/gitolite
+
+&lt;h4 id=&#34;9-设置-gitolite:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;9. 设置 gitolite&lt;/h4&gt;
+# 添加 gitolite 脚本到 $PATH
+sudo -u git -H mkdir /home/git/bin
+sudo -u git -H sh -c &#39;printf &#34;%b\n%b\n&#34; &#34;PATH=\$PATH:/home/git/bin&#34; &#34;export PATH&#34; &gt;&gt; /home/git/.profile&#39;
+sudo -u git -H sh -c &#39;gitolite/install -ln /home/git/bin&#39;
+
+# 设置 SSH 密钥
+sudo cp /home/gitlab/.ssh/id_rsa.pub /home/git/gitlab.pub
+sudo chmod 0444 /home/git/gitlab.pub
+sudo -u git -H sh -c &#34;PATH=/home/git/bin:$PATH; gitolite setup -pk /home/git/gitlab.pub&#34;
+
+# 修改文件夹权限
+sudo chmod 750 /home/git/.gitolite/
+sudo chown -R git:git /home/git/.gitolite/
+sudo chmod -R ug+rwXs,o-rwx /home/git/repositories/
+sudo chown -R git:git /home/git/repositories/
+
+&lt;h4 id=&#34;10-测试-gitolite:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;10. 测试 gitolite&lt;/h4&gt;
+sudo -u gitlab -H git clone git@localhost:gitolite-admin.git /tmp/gitolite-admin
+sudo rm -rf /tmp/gitolite-admin
+
+&lt;p&gt;出现以下提示表示配置 gitolite 成功：&lt;/p&gt;
+Cloning into /tmp/gitolite-admin...
+remote: Counting objects: 6, done.
+remote: Compressing objects: 100% (4/4), done.
+Receiving objects: 100% (6/6), 740 bytes, done.
+remote: Total 6 (delta 0), reused 0 (delta 0)
+
+&lt;h4 id=&#34;11-安装-mysql-服务器:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;11. 安装 mysql 服务器&lt;/h4&gt;
+sudo apt-get install -y mysql-server mysql-client libmysqlclient-dev
+
+&lt;h4 id=&#34;12-设置-mysql:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;12. 设置 mysql&lt;/h4&gt;
+# 登陆 mysql
+mysql -u root -p password
+
+# 添加 gitlab 用户 (记得修改 password 为自己的密码)
+CREATE USER &#39;gitlab&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;password&#39;;
+
+&lt;h4 id=&#34;13-克隆-gitlab-源码:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;13. 克隆 gitlab 源码&lt;/h4&gt;
+cd /home/gitlab
+sudo -u gitlab -H git clone https://github.com/gitlabhq/gitlabhq.git gitlab
+cd /home/gitlab/gitlab
+sudo -u gitlab -H git checkout 4-0-stable
+
+&lt;h4 id=&#34;14-设置-gitlab:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;14. 设置 gitlab&lt;/h4&gt;
+sudo -u gitlab -H cp config/gitlab.yml.example config/gitlab.yml
+sudo -u gitlab -H cp config/unicorn.rb.example config/unicorn.rb
+
+# 修改 gitlab 文件夹权限
+sudo chown -R gitlab log/
+sudo chown -R gitlab tmp/
+sudo chmod -R u+rwX  log/
+sudo chmod -R u+rwX  tmp/
+
+&lt;h4 id=&#34;15-设置-gitlab-数据库-mysql-连接:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;15. 设置 gitlab 数据库 (mysql) 连接&lt;/h4&gt;
+sudo -u gitlab cp config/database.yml.mysql config/database.yml
+
+# 安装 gems (可以再去喝杯茶)
+sudo gem install charlock_holmes --version &#39;0.6.9&#39;
+sudo -u gitlab -H bundle install --deployment --without development test postgres
+
+&lt;h4 id=&#34;16-设置-git:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;16. 设置 git&lt;/h4&gt;
+sudo -u gitlab -H git config --global user.name &#34;GitLab&#34;
+sudo -u gitlab -H git config --global user.email &#34;gitlab@localhost&#34;
+
+&lt;h4 id=&#34;17-设置-gitlab-钩子:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;17. 设置 gitlab 钩子&lt;/h4&gt;
+sudo cp ./lib/hooks/post-receive /home/git/.gitolite/hooks/common/post-receive
+sudo chown git:git /home/git/.gitolite/hooks/common/post-receive
+
+&lt;h4 id=&#34;18-初始化数据库:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;18. 初始化数据库&lt;/h4&gt;
+sudo -u gitlab -H bundle exec rake gitlab:app:setup RAILS_ENV=production
+
+&lt;h4 id=&#34;19-设置-gitlab-开机启动脚本:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;19. 设置 gitlab 开机启动脚本&lt;/h4&gt;
+sudo wget https://raw.github.com/gitlabhq/gitlab-recipes/4-0-stable/init.d/gitlab -P /etc/init.d/
+sudo chmod +x /etc/init.d/gitlab
+sudo update-rc.d gitlab defaults 21
+
+&lt;h4 id=&#34;20-启动-gitlab:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;20. 启动 gitlab&lt;/h4&gt;
+sudo /etc/init.d/gitlab start
+# 或者 sudo /etc/init.d/gitlab restart
+
+&lt;h4 id=&#34;21-安装-nginx:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;21. 安装 nginx&lt;/h4&gt;
+sudo apt-get install nginx
+
+&lt;h4 id=&#34;22-设置-gitlab-的网站配置:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;22. 设置 gitlab 的网站配置&lt;/h4&gt;
+sudo wget https://raw.github.com/gitlabhq/gitlab-recipes/4-0-stable/nginx/gitlab -P /etc/nginx/sites-available/
+sudo ln -s /etc/nginx/sites-available/gitlab /etc/nginx/sites-enabled/gitlab
+
+&lt;h4 id=&#34;23-修改配置文件-并重启-nginx:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;23. 修改配置文件，并重启 nginx&lt;/h4&gt;
+# 修改 listen server_IP:80 default_server; 为服务器 IP
+sudo vim /etc/nginx/sites-enabled/gitlab
+# 重启
+sudo /etc/init.d/nginx restart
+
+&lt;h4 id=&#34;24-查看和测试服务器状态:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;24. 查看和测试服务器状态&lt;/h4&gt;
+sudo -u gitlab -H bundle exec rake gitlab:env:info RAILS_ENV=production
+sudo -u gitlab -H bundle exec rake gitlab:check RAILS_ENV=production
+
+&lt;p&gt;&amp;mdash;&amp;mdash;&amp;mdash;-服务器端至此搞定！以下为客户端&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;-&lt;/p&gt;
+
+&lt;h4 id=&#34;25-在浏览器中输入地址:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;25. 在浏览器中输入地址：&lt;/h4&gt;
+http://server_IP/users/sign_in
+
+&lt;h5 id=&#34;登录用户名和密码:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;登录用户名和密码：&lt;/h5&gt;
+username: admin@local.host
+password: 5iveL!fe
+
+&lt;h4 id=&#34;26-最后-设置-ssh-key:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;26. 最后，设置 SSH key&lt;/h4&gt;
+# 邮箱与登录名称保持一致
+ssh-keygen -t rsa -C &#34;admin@local.host&#34;
+
+cat ~/.ssh/id_rsa.pub
+
+&lt;p&gt;选择 Your Profile -&amp;gt; SSH key -&amp;gt; Add new，将 id_rsa.pub 中的内容复制到 Key 输入框中，Save&lt;/p&gt;
+
+&lt;h5 id=&#34;配置-id-rsa:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;配置 id_rsa&lt;/h5&gt;
+cd ~/.ssh
+mkdir gitlab
+mv id_rsa gitlab/
+chmod 600 gitlab/id_rsa
+
+&lt;h5 id=&#34;配置-config-修改相应的-server-ip:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;配置 config (修改相应的 server_IP)&lt;/h5&gt;
+host gitlab
+    HostName server_IP
+    User git
+    IdentityFile ~/.ssh/gitlab/id_rsa
+
+&lt;h4 id=&#34;27-最后的最后-创建提交项目:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;27. 最后的最后，创建提交项目&lt;/h4&gt;
+
+&lt;p&gt;选择 New Project -&amp;gt; Create Project&lt;/p&gt;
+
+&lt;h5 id=&#34;提交:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;提交&lt;/h5&gt;
+# 修改下面命令为：
+# git remote add origin git@localhost
+git remote add origin gitlab
+</description>
     </item>
     
     <item>
       <title>Ubuntu 12.04 设置 VPN</title>
-      <link>http://blog.wenzhixin.net.cn/2013/01/12/ubuntu_set_vpn/</link>
-      <pubDate>Sat, 12 Jan 2013 10:55:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_set_vpn</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/01/12/ubuntu_set_vpn/</guid>
-      <description>1. 设置 - 网络 - VPN 连接 - 配置 VPN 2. 添加 VPN - 新建 PPTP 3. 输入正确的网关、用户名、密码 4. 选择高级 - 勾选使用点到点加密(MPPE)(P) 5. 设置 IPv4 路由，添加</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_set_vpn</guid>
+      <description>&lt;p&gt;&lt;strong&gt;1. 设置 - 网络 - VPN 连接 - 配置 VPN&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;2. 添加 VPN - 新建 PPTP&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;3. 输入正确的网关、用户名、密码&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;4. 选择高级 - 勾选使用点到点加密(MPPE)(P)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;5. 设置 IPv4 路由，添加路由并勾选仅将此连接用于相对应的网络上的资源：&lt;/strong&gt;&lt;/p&gt;
+地址：192.168.1.0 // 网关相对应的地址  
+子网掩码：255.255.255.0  
+网关：192.168.1.1  
+
+&lt;p&gt;&lt;strong&gt;6. 连接 VPN (搞定！)&lt;/strong&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 12.10 添加 node 应用为自启动服务</title>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_node_app_service</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_node_app_service</guid>
+      <description>&lt;p&gt;开发 node 应用之后，启动的方式一般是通过 &lt;code&gt;node app&lt;/code&gt; 或者 &lt;code&gt;node app &amp;amp;&lt;/code&gt; 来运行，
+十分不方便，这里将以本 blog 应用为例介绍如何添加为自启动的服务。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;环境&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;用户名：username&lt;/li&gt;
+&lt;li&gt;blog 位置：/home/username/blog&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;首先服务名取为 blog：&lt;/p&gt;
+sudo vi /etc/init/blog.conf
+
+&lt;p&gt;输入以下内容：&lt;/p&gt;
+# blog
+
+description &#34;blog&#34;
+
+start on filesystem or runlevel [2345]
+stop on runlevel [!2345]
+
+setuid useranme
+chdir /home/username/blog
+
+respawn
+
+exec /usr/bin/nodejs /home/useranme/blog/app.js
+
+&lt;p&gt;保存，便可以使用以下命令了：&lt;/p&gt;
+sudo service blog start
+sudo service blog restart
+sudo service blog stop
+sudo service blog status
+</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 下不能访问 Windows 文件系统</title>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_unable_to_access_windows</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_unable_to_access_windows</guid>
+      <description>
+
+&lt;p&gt;Ubuntu 和 Windows 双系统下，Ubuntu 不能访问 Windows 下的分区，例如：&lt;code&gt;/dev/sdb1&lt;/code&gt;，显示如下错误：&lt;/p&gt;
+Error mounting /dev/sdb1 exited with non-zero exit status 14: The disk contains an unclean file system (0, 0).
+Metadata kept in Windows cache, refused to mount.
+Failed to mount &#39;/dev/sdb1&#39;: Operation not permitted
+The NTFS partition is in an unsafe state. Please resume and shutdown
+Windows fully (no hibernation or fast restarting), or mount the volume
+read-only with the &#39;ro&#39; mount option.
+
+&lt;h3 id=&#34;解决:5af504e3a6dfa89ab0895ec157811330&#34;&gt;解决&lt;/h3&gt;
+
+&lt;p&gt;不确定具体是什么原因引起这个错误，应该是 Windows 没有正确关闭所引起。可以通过 &lt;code&gt;ntfsfix&lt;/code&gt; 命令，来对 NTFS 磁盘进行检查和修复。&lt;/p&gt;
+$ sudo ntfsfix /dev/sdb1
+Mounting volume... The disk contains an unclean file system (0, 0).
+Metadata kept in Windows cache, refused to mount.
+FAILED
+Attempting to correct errors... 
+Processing $MFT and $MFTMirr...
+Reading $MFT... OK
+Reading $MFTMirr... OK
+Comparing $MFTMirr to $MFT... OK
+Processing of $MFT and $MFTMirr completed successfully.
+Setting required flags on partition... OK
+Going to empty the journal ($LogFile)... OK
+Checking the alternate boot sector... OK
+NTFS volume version is 3.1.
+NTFS partition /dev/sdb1 was processed successfully.
+</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 下安装音乐播放器</title>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_music_player</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_music_player</guid>
+      <description>&lt;p&gt;对于喜欢听歌的人来说，音乐播放器还是挺重要的，
+但是不像 windows 一样，很多流行的播放器都没有 ubuntu 版。&lt;/p&gt;
+
+&lt;p&gt;这里记录下安装 Audacious 播放器，还是比较强大的，可以支持 ape 格式的。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/01/25/1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;安装：&lt;/strong&gt;&lt;/p&gt;
+sudo add-apt-repository ppa:nilarimogard/webupd8
+sudo apt-get update
+sudo apt-get install audacious audacious-plugins
+
+&lt;p&gt;当然歌词显示也是很有必要的，使用 &lt;a href=&#34;https://code.google.com/p/osd-lyrics/&#34;&gt;osd-lyrics&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;安装：&lt;/strong&gt;&lt;/p&gt;
+sudo add-apt-repository ppa:osd-lyrics/ppa
+sudo apt-get update
+sudo apt-get install osdlyrics
+</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 下搭建 JavaEE 环境</title>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_java_ee</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_java_ee</guid>
+      <description>
+
+&lt;p&gt;在 Ubuntu 下搭建 JavaEE 的环境稍微有些麻烦，这里记录下。&lt;/p&gt;
+
+&lt;h3 id=&#34;1-安装-eclipse-和-tomcat7:2d9f64794b91e20ce48f94cc6b696e20&#34;&gt;1. 安装 eclipse 和 tomcat7&lt;/h3&gt;
+sudo apt-get install eclipse
+sudo apt-get install tomcat7
+
+&lt;p&gt;注：安装 eclipse 后会把依赖的 jdk 安装好，使用 apt-get 安装的 eclipse 是最精简的版本。&lt;/p&gt;
+
+&lt;h3 id=&#34;2-安装-eclipse-的-javaee-插件:2d9f64794b91e20ce48f94cc6b696e20&#34;&gt;2. 安装 eclipse 的 JavaEE 插件&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;依次点击：Help -&amp;gt; Install New Software&amp;hellip; -&amp;gt; Add&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;输入：&lt;a href=&#34;http://download.eclipse.org/releases/indigo&#34;&gt;http://download.eclipse.org/releases/indigo&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;选择：Eclipse Java EE Developer Tools、JST Server Adapters、JST Server Adapters Extentions 并进行安装&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;重启 eclipse&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;注：不安装 JST Server Adapters 的话，在 Eclipse Server Runtime Environments 选择不了 tomcat&lt;/p&gt;
+
+&lt;h3 id=&#34;3-create-new-server-wizard:2d9f64794b91e20ce48f94cc6b696e20&#34;&gt;3. create new server wizard&lt;/h3&gt;
+
+&lt;p&gt;会出现 &lt;code&gt;Cannot create a server using the selected type&lt;/code&gt; 的问题，解决：&lt;/p&gt;
+cd .metadata/.plugins/org.eclipse.core.runtime/.settings/
+rm org.eclipse.jst.server.tomcat.core.prefs
+rm org.eclipse.wst.server.core.prefs
+
+&lt;p&gt;修改 tomcat7 的配置和文件权限：&lt;/p&gt;
+cd /usr/share/tomcat7
+sudo ln -s /var/lib/tomcat7/conf conf
+sudo ln -s /etc/tomcat7/policy.d/03catalina.policy conf/catalina.policy
+sudo ln -s /var/log/tomcat7 log
+sudo chmod -R 777 /usr/share/tomcat7/conf
+
+&lt;p&gt;禁用 tomcat7 自启动：&lt;/p&gt;
+sudo service tomcat7 stop
+sudo update-rc.d tomcat7 disable
+
+&lt;p&gt;注：至此，已经搞定了，假如还有问题那还需要：&lt;/p&gt;
+cd /usr/share/tomcat7
+sudo ln -s /var/lib/tomcat7/common common
+sudo ln -s /var/lib/tomcat7/server server
+sudo ln -s /var/lib/tomcat7/shared shared
+</description>
     </item>
     
     <item>
       <title>Ubuntu 搭建 Ruby on Rails 开发环境</title>
-      <link>http://blog.wenzhixin.net.cn/2012/10/22/ubuntu_ruby_on_rails_development_environment_set_up/</link>
-      <pubDate>Mon, 22 Oct 2012 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_ruby_on_rails_development_environment_set_up</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/10/22/ubuntu_ruby_on_rails_development_environment_set_up/</guid>
-      <description>安装 ruby： 1 sudo apt-get install ruby1.9.1 ruby1.9.1-dev 安装 rubygems： 1 sudo apt-get install rubygems 安装 mysql 1 sudo apt-get install mysql 安装 ruby-mysql 1）下载：http://www.tmtm.org/en/ru</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_ruby_on_rails_development_environment_set_up</guid>
+      <description>
+
+&lt;h4 id=&#34;安装-ruby:035bb69e15437290d6db321e2bbb2769&#34;&gt;安装 ruby：&lt;/h4&gt;
+sudo apt-get install ruby1.9.1 ruby1.9.1-dev
+
+&lt;h4 id=&#34;安装-rubygems:035bb69e15437290d6db321e2bbb2769&#34;&gt;安装 rubygems：&lt;/h4&gt;
+sudo apt-get install rubygems
+
+&lt;h4 id=&#34;安装-mysql:035bb69e15437290d6db321e2bbb2769&#34;&gt;安装 mysql&lt;/h4&gt;
+sudo apt-get install mysql
+
+&lt;h4 id=&#34;安装-ruby-mysql:035bb69e15437290d6db321e2bbb2769&#34;&gt;安装 ruby-mysql&lt;/h4&gt;
+
+&lt;p&gt;1）下载：&lt;a href=&#34;http://www.tmtm.org/en/ruby/mysql/ruby-mysql-0.2.6.tar.gz&#34;&gt;http://www.tmtm.org/en/ruby/mysql/ruby-mysql-0.2.6.tar.gz&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;2）解压安装：&lt;/p&gt;
+ruby setup.rb
+ruby test.rb hostname user passwd 
+ruby install.rb
+
+&lt;h4 id=&#34;安装-rails:035bb69e15437290d6db321e2bbb2769&#34;&gt;安装 rails&lt;/h4&gt;
+sudo apt-get install rails
+
+&lt;h4 id=&#34;更新-rake:035bb69e15437290d6db321e2bbb2769&#34;&gt;更新 rake&lt;/h4&gt;
+sudo gem install rake
+
+&lt;h4 id=&#34;遇到的问题:035bb69e15437290d6db321e2bbb2769&#34;&gt;遇到的问题：&lt;/h4&gt;
+
+&lt;p&gt;问题1：&lt;/p&gt;
+mysql_config: command not found
+
+&lt;p&gt;解决：&lt;/p&gt;
+sudo apt-get install libmysqlclient-dev
+
+&lt;p&gt;问题2：&lt;/p&gt;
+Client does not support authentication protocol requested by server
+
+&lt;p&gt;解决：&lt;/p&gt;
+
+&lt;p&gt;登录 mysql，重设密码&lt;/p&gt;
+set password for &#39;root&#39;@&#39;localhost&#39;=old_password(&#39;password&#39;);
+
+&lt;p&gt;问题3：&lt;/p&gt;
+undefinedmethod `more_results&#39; for #&lt;Mysql&gt;
+
+&lt;p&gt;解决：&lt;/p&gt;
+
+&lt;p&gt;注释 mysql_adapter.rb 中的 318 行和 642 行&lt;/p&gt;
+/usr/lib/ruby/vendor_ruby/active_record/connection_adapters/mysql_adapter.rb 
+</description>
     </item>
     
     <item>
       <title>Ubuntu 搭建 Ruby on Rails 开发环境</title>
-      <link>http://blog.wenzhixin.net.cn/2012/10/22/ubuntu_ruby_on_rails_development_environment_set_up/</link>
-      <pubDate>Mon, 22 Oct 2012 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_ruby_on_rails_development_environment_set_up</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/10/22/ubuntu_ruby_on_rails_development_environment_set_up/</guid>
-      <description>安装 ruby： 1 sudo apt-get install ruby1.9.1 ruby1.9.1-dev 安装 rubygems： 1 sudo apt-get install rubygems 安装 mysql 1 sudo apt-get install mysql 安装 ruby-mysql 1）下载：http://www.tmtm.org/en/ru</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_ruby_on_rails_development_environment_set_up</guid>
+      <description>
+
+&lt;h4 id=&#34;安装-ruby:035bb69e15437290d6db321e2bbb2769&#34;&gt;安装 ruby：&lt;/h4&gt;
+sudo apt-get install ruby1.9.1 ruby1.9.1-dev
+
+&lt;h4 id=&#34;安装-rubygems:035bb69e15437290d6db321e2bbb2769&#34;&gt;安装 rubygems：&lt;/h4&gt;
+sudo apt-get install rubygems
+
+&lt;h4 id=&#34;安装-mysql:035bb69e15437290d6db321e2bbb2769&#34;&gt;安装 mysql&lt;/h4&gt;
+sudo apt-get install mysql
+
+&lt;h4 id=&#34;安装-ruby-mysql:035bb69e15437290d6db321e2bbb2769&#34;&gt;安装 ruby-mysql&lt;/h4&gt;
+
+&lt;p&gt;1）下载：&lt;a href=&#34;http://www.tmtm.org/en/ruby/mysql/ruby-mysql-0.2.6.tar.gz&#34;&gt;http://www.tmtm.org/en/ruby/mysql/ruby-mysql-0.2.6.tar.gz&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;2）解压安装：&lt;/p&gt;
+ruby setup.rb
+ruby test.rb hostname user passwd 
+ruby install.rb
+
+&lt;h4 id=&#34;安装-rails:035bb69e15437290d6db321e2bbb2769&#34;&gt;安装 rails&lt;/h4&gt;
+sudo apt-get install rails
+
+&lt;h4 id=&#34;更新-rake:035bb69e15437290d6db321e2bbb2769&#34;&gt;更新 rake&lt;/h4&gt;
+sudo gem install rake
+
+&lt;h4 id=&#34;遇到的问题:035bb69e15437290d6db321e2bbb2769&#34;&gt;遇到的问题：&lt;/h4&gt;
+
+&lt;p&gt;问题1：&lt;/p&gt;
+mysql_config: command not found
+
+&lt;p&gt;解决：&lt;/p&gt;
+sudo apt-get install libmysqlclient-dev
+
+&lt;p&gt;问题2：&lt;/p&gt;
+Client does not support authentication protocol requested by server
+
+&lt;p&gt;解决：&lt;/p&gt;
+
+&lt;p&gt;登录 mysql，重设密码&lt;/p&gt;
+set password for &#39;root&#39;@&#39;localhost&#39;=old_password(&#39;password&#39;);
+
+&lt;p&gt;问题3：&lt;/p&gt;
+undefinedmethod `more_results&#39; for #&lt;Mysql&gt;
+
+&lt;p&gt;解决：&lt;/p&gt;
+
+&lt;p&gt;注释 mysql_adapter.rb 中的 318 行和 642 行&lt;/p&gt;
+/usr/lib/ruby/vendor_ruby/active_record/connection_adapters/mysql_adapter.rb 
+</description>
     </item>
     
     <item>
-      <title>Ubuntu 11.10 将 OpenJDK 换成 Sun JDK 的步骤</title>
-      <link>http://blog.wenzhixin.net.cn/2012/04/26/ubuntu_11.10_will_be_openjdk_into_sun_jdk_steps/</link>
-      <pubDate>Thu, 26 Apr 2012 00:00:00 +0000</pubDate>
+      <title>Ubuntu 无法找到更新源的问题</title>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_source_list_not_found</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/04/26/ubuntu_11.10_will_be_openjdk_into_sun_jdk_steps/</guid>
-      <description>1、加入repository： sudo add-apt-repository &amp;ldquo;deb http://cz.archive.Ubuntu.com/ubuntu hardy-updates main multiverse&amp;rdquo; (vi /etc/apt/sources.list) 2、更新源： sudo apt-get update 3、安装 jdk 和 jre： sudo apt-get install sun-java6-jdk sun-java6-jre 4、切换为 Sun JDK： sudo update-java-alternatives -s java-6-sun (ls /usr/lib/jvm) 5、查看是否</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_source_list_not_found</guid>
+      <description>
+
+&lt;h3 id=&#34;问题:f73ae7c8e69112b208895feeeb127e47&#34;&gt;问题：&lt;/h3&gt;
+
+&lt;p&gt;前段时间，Ubuntu 官方源已经停止了对非长期维护版（如 11.10，12.04，12.10 和 13.04）的支持，并且从归档服务器上移除了这些版本信息，导致无法更新软件和安装不了新软件。例如使用 apt-get update, apt-get upgrade, apt-get install 都无法正常工作。&lt;/p&gt;
+
+&lt;h3 id=&#34;解决方法:f73ae7c8e69112b208895feeeb127e47&#34;&gt;解决方法&lt;/h3&gt;
+
+&lt;p&gt;最好的办法是，升级系统到最新的版本（或者重装），例如升级到 14.04。但是有时候会觉得升级或者重装会很麻烦（说到底是懒），那么可以使用旧源 &lt;a href=&#34;http://old-releases.ubuntu.com&#34;&gt;http://old-releases.ubuntu.com&lt;/a&gt; 进行更新。&lt;/p&gt;
+
+&lt;p&gt;方法如下：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;使用&lt;code&gt;sed&lt;/code&gt;命令：&lt;/p&gt;
+sudo sed -i -e &#39;s/archive.ubuntu.com\|security.ubuntu.com/old-releases.ubuntu.com/g&#39; /etc/apt/sources.list&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;或者使用&lt;code&gt;vim&lt;/code&gt;编辑替换：&lt;/p&gt;
+sudo vi /etc/apt/sources.list
+:%s/archive.ubuntu.com\|security.ubuntu.com/old-releases.ubuntu.com/g&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;更新：&lt;/p&gt;
+sudo apt-get update
+sudo apt-get upgrade
+</description>
     </item>
     
     <item>
-      <title>Ubuntu 11.10 将 OpenJDK 换成 Sun JDK 的步骤</title>
-      <link>http://blog.wenzhixin.net.cn/2012/04/26/ubuntu_11.10_will_be_openjdk_into_sun_jdk_steps/</link>
-      <pubDate>Thu, 26 Apr 2012 00:00:00 +0000</pubDate>
+      <title>Ubuntu 系统下 android 连接小米2进行开发</title>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_android_xiaomi2</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/04/26/ubuntu_11.10_will_be_openjdk_into_sun_jdk_steps/</guid>
-      <description>1、加入repository： sudo add-apt-repository &amp;ldquo;deb http://cz.archive.Ubuntu.com/ubuntu hardy-updates main multiverse&amp;rdquo; (vi /etc/apt/sources.list) 2、更新源： sudo apt-get update 3、安装 jdk 和 jre： sudo apt-get install sun-java6-jdk sun-java6-jre 4、切换为 Sun JDK： sudo update-java-alternatives -s java-6-sun (ls /usr/lib/jvm) 5、查看是否</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_android_xiaomi2</guid>
+      <description>
+
+&lt;h3 id=&#34;问题:3284b07dbf879be3d511a7e668ba9982&#34;&gt;问题：&lt;/h3&gt;
+
+&lt;p&gt;小米2 通过 USB 连接到 Ubuntu 12.10 系统进行开发，发现 adb devices 不能看到设备。&lt;/p&gt;
+
+&lt;h3 id=&#34;解决:3284b07dbf879be3d511a7e668ba9982&#34;&gt;解决：&lt;/h3&gt;
+
+&lt;h5 id=&#34;1-运行下面的命令:3284b07dbf879be3d511a7e668ba9982&#34;&gt;1. 运行下面的命令：&lt;/h5&gt;
+lsusb
+
+&lt;p&gt;通过对比发现，Bus 002 Device 010: ID 2717:9039 就是小米2的设备号&lt;/p&gt;
+
+&lt;h5 id=&#34;2-增加-udev-rules-文件:3284b07dbf879be3d511a7e668ba9982&#34;&gt;2. 增加 udev rules 文件：&lt;/h5&gt;
+sudo vi  /etc/udev/rules.d/70-android.rules
+
+&lt;p&gt;加入内容（对应设备号）：&lt;/p&gt;
+SUBSYSTEM==&#34;usb&#34;, SYSFS{idVendor}==&#34;2717&#34;, MODE==&#34;0666&#34;
+SUBSYSTEM==&#34;usb_device&#34;, SYSFS{idVendor}==&#34;2717&#34;, MODE==&#34;0666&#34;
+SUBSYSTEM==&#34;usb&#34;, ATTR{idVendor}==&#34;2717&#34;, ATTR{idProduct}==&#34;9039&#34;, SYMLINK+=&#34;android_adb&#34;
+
+&lt;p&gt;修改文件权限：&lt;/p&gt;
+sudo chmod a+rx /etc/udev/rules.d/70-android.rules
+
+&lt;h5 id=&#34;3-重启-udev:3284b07dbf879be3d511a7e668ba9982&#34;&gt;3. 重启 udev&lt;/h5&gt;
+sudo /etc/init.d/udev restart
+
+&lt;h5 id=&#34;4-增加-adb-usb-ini-文件:3284b07dbf879be3d511a7e668ba9982&#34;&gt;4. 增加 adb_usb.ini 文件&lt;/h5&gt;
+vi ~/.android/adb_usb.ini
+
+&lt;p&gt;加入内容（对应设备号）：&lt;/p&gt;
+0x2717
+
+&lt;h5 id=&#34;5-到-sdk-下的-platform-tools-下:3284b07dbf879be3d511a7e668ba9982&#34;&gt;5. 到 SDK 下的 platform-tools 下：&lt;/h5&gt;
+./adb kill-server
+./adb devices
+
+&lt;h5 id=&#34;6-搞定:3284b07dbf879be3d511a7e668ba9982&#34;&gt;6. 搞定！&lt;/h5&gt;
+</description>
     </item>
     
   </channel>

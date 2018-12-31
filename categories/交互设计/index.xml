@@ -7,54 +7,906 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Mon, 25 Nov 2013 21:41:00 +0000</lastBuildDate>
+    <atom:link href="http://blog.wenzhixin.net.cn/categories/%E4%BA%A4%E4%BA%92%E8%AE%BE%E8%AE%A1/index.xml" rel="self" type="application/rss+xml" />
     
-	<atom:link href="http://blog.wenzhixin.net.cn/categories/%E4%BA%A4%E4%BA%92%E8%AE%BE%E8%AE%A1/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>《UCD 火花集》读书笔记（一）</title>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/ucd_book1</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/ucd_book1</guid>
+      <description>
+
+&lt;h4 id=&#34;一-用户体验设计在团队中:2a5edc5321624472294289915e7ae1d8&#34;&gt;一、用户体验设计在团队中&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;用户体验的特性：&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;对于用户——帮助分析和挖掘用户潜意识的需要和习性，力求产品设计给用户带来本质上的满足，以及顺畅自然的使用体验。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;对于团队——是整个团队的理念共识，是产品设计的基本需求，协助团队完成整个开发过程。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;用户体验担任的角色：&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;公司品牌的捍卫者-情感化设计和质量监控&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;用户的捍卫者-站在用户的角度把握设计的目标和方向&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;用户体验的工作：&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;可用性分析 - 数据信息分析 - 交互界面设计 - 视觉设计 - 内容优化&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&#34;二-用户调查和研究:2a5edc5321624472294289915e7ae1d8&#34;&gt;二、用户调查和研究&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;用户需要传达方式：目标(占25%)、行为(占50%)和说法(占25%)。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;ps: 用户所说的不一定是他们真正的需求，行为才是最重要的。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;收集用户需求&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;目标：1) 情景调查; 2) 可用性测试; 3) CRM 测试&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;行为：1) 网站流量统计; 2) 日志文件; 3) 眼动实验&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;说法：1) 用户访谈; 2) 调查问卷; 3) 反馈及建议&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;隐形挖掘用户行为&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;收集数据 - 过滤数据 - 习惯分析&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&#34;三-期望值:2a5edc5321624472294289915e7ae1d8&#34;&gt;三、期望值&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;满足用户期望的解决方案：&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;用户遇到了问题（如：用户想下载某首歌曲）&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;用户要解决这个问题&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;用户根据自身经验想到了某个解决方法（如：通过搜索引擎来查找）&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;网站或产品提供了该解决方法（如：提供下载功能）或更好的解决方法（如：可以在线试用、流行歌曲推荐）&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;用户使用该网站或产品（如：试用或者下载其他想听的歌曲）&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;要合理的处理好三品质模型间的关系：&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;期望性（设计）&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;可行性（商业）&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;可能性（技术）&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;期望的产生：&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;品牌信誉：产品本身的质量、口碑、公关和宣传&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;先前的体验：老用户对已有产品的体验、竞争对手和类似产品的体验&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&#34;四-产品概念设计和传达:2a5edc5321624472294289915e7ae1d8&#34;&gt;四、产品概念设计和传达&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;产品概念设计应该具备：&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;理解用户和需求&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;具有缜密的逻辑思维能力&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;能结合多方面因素综合思考&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;具有良好的沟通能力&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;概念设计的目的：&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;面向用户：模拟（而非实现）最终产品，解决焦点问题（定位和需求）&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;面向团队：预先演示，尽量达成共识，避免产品设计和开发的矛盾&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;概念设计的交付物：&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;概念模型 （Concept Model）：概念图和流程图&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;原型（Prototype）&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;内容清单（Content Inventory）：功能列表清单&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;评估和测试：&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;确认概念模型是否准确&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;确认该原型是否能完成功能&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;评估该原型技术和市场的可行性&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&#34;五-任务分解和情景设计:2a5edc5321624472294289915e7ae1d8&#34;&gt;五、任务分解和情景设计&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;任务分解：基于用户使用流程的任务分解，从整体到细节的过程。
+将大任务分成小任务，小任务分解为页面的每个元素以及每个过程可能出现的每个小提示等。（所谓的先主线任务，再支线任务）&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;如：“注册” 任务，先设计主线任务：填写信息 -&amp;gt; 发送验证 -&amp;gt; 验证注册 -&amp;gt; 注册成功；
+ 再设计支线任务：错误处理，提示信息等；最后到具体的按钮、文字设计&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;需要分解的任务：&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;功能的信息架构&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;具体分析每个角色在使用产品过程中最常用的功能需求&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;商业需要给流程提出来的额外任务&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;情景设计：运用故事和用户之间互动、激发想象、情感，并模拟问题出现和解决问题的方法。
+应以目标为向导，并以真实为基础。&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&#34;六-架构更好的信息结构:2a5edc5321624472294289915e7ae1d8&#34;&gt;六、架构更好的信息结构&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;内容的价值产生于 “合”：&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;有选择性的组织内容或者转载内容&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;引导用户组织内容，形成大量的原创内容和资讯&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;形成特色内容，将相关内容合并为专题或者专辑&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;成为信息源，提供 RSS 聚合端口&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;内容的能量释放于 “分”：&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;给内容分类，归属于哪个频道或者哪个类别&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;添加社会化标签（tag），把网站的内容连接起来&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;添加关键字，用于查找或形成相关内容&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;具体设计：&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;功能与功能的关系是什么&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;每个功能点应该具象化到也个页面&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;这个页面应该有有什么内容&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;这个页面的内容应该如何摆放&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;将不常用或者不经常改变的内容隐藏起来&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
     
+    <item>
+      <title>《UCD 火花集》读书笔记（一）</title>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/ucd_book1</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/ucd_book1</guid>
+      <description>
+
+&lt;h4 id=&#34;一-用户体验设计在团队中:2a5edc5321624472294289915e7ae1d8&#34;&gt;一、用户体验设计在团队中&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;用户体验的特性：&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;对于用户——帮助分析和挖掘用户潜意识的需要和习性，力求产品设计给用户带来本质上的满足，以及顺畅自然的使用体验。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;对于团队——是整个团队的理念共识，是产品设计的基本需求，协助团队完成整个开发过程。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;用户体验担任的角色：&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;公司品牌的捍卫者-情感化设计和质量监控&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;用户的捍卫者-站在用户的角度把握设计的目标和方向&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;用户体验的工作：&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;可用性分析 - 数据信息分析 - 交互界面设计 - 视觉设计 - 内容优化&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&#34;二-用户调查和研究:2a5edc5321624472294289915e7ae1d8&#34;&gt;二、用户调查和研究&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;用户需要传达方式：目标(占25%)、行为(占50%)和说法(占25%)。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;ps: 用户所说的不一定是他们真正的需求，行为才是最重要的。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;收集用户需求&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;目标：1) 情景调查; 2) 可用性测试; 3) CRM 测试&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;行为：1) 网站流量统计; 2) 日志文件; 3) 眼动实验&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;说法：1) 用户访谈; 2) 调查问卷; 3) 反馈及建议&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;隐形挖掘用户行为&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;收集数据 - 过滤数据 - 习惯分析&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&#34;三-期望值:2a5edc5321624472294289915e7ae1d8&#34;&gt;三、期望值&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;满足用户期望的解决方案：&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;用户遇到了问题（如：用户想下载某首歌曲）&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;用户要解决这个问题&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;用户根据自身经验想到了某个解决方法（如：通过搜索引擎来查找）&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;网站或产品提供了该解决方法（如：提供下载功能）或更好的解决方法（如：可以在线试用、流行歌曲推荐）&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;用户使用该网站或产品（如：试用或者下载其他想听的歌曲）&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;要合理的处理好三品质模型间的关系：&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;期望性（设计）&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;可行性（商业）&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;可能性（技术）&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;期望的产生：&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;品牌信誉：产品本身的质量、口碑、公关和宣传&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;先前的体验：老用户对已有产品的体验、竞争对手和类似产品的体验&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&#34;四-产品概念设计和传达:2a5edc5321624472294289915e7ae1d8&#34;&gt;四、产品概念设计和传达&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;产品概念设计应该具备：&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;理解用户和需求&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;具有缜密的逻辑思维能力&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;能结合多方面因素综合思考&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;具有良好的沟通能力&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;概念设计的目的：&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;面向用户：模拟（而非实现）最终产品，解决焦点问题（定位和需求）&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;面向团队：预先演示，尽量达成共识，避免产品设计和开发的矛盾&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;概念设计的交付物：&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;概念模型 （Concept Model）：概念图和流程图&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;原型（Prototype）&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;内容清单（Content Inventory）：功能列表清单&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;评估和测试：&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;确认概念模型是否准确&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;确认该原型是否能完成功能&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;评估该原型技术和市场的可行性&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&#34;五-任务分解和情景设计:2a5edc5321624472294289915e7ae1d8&#34;&gt;五、任务分解和情景设计&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;任务分解：基于用户使用流程的任务分解，从整体到细节的过程。
+将大任务分成小任务，小任务分解为页面的每个元素以及每个过程可能出现的每个小提示等。（所谓的先主线任务，再支线任务）&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;如：“注册” 任务，先设计主线任务：填写信息 -&amp;gt; 发送验证 -&amp;gt; 验证注册 -&amp;gt; 注册成功；
+ 再设计支线任务：错误处理，提示信息等；最后到具体的按钮、文字设计&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;需要分解的任务：&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;功能的信息架构&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;具体分析每个角色在使用产品过程中最常用的功能需求&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;商业需要给流程提出来的额外任务&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;情景设计：运用故事和用户之间互动、激发想象、情感，并模拟问题出现和解决问题的方法。
+应以目标为向导，并以真实为基础。&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&#34;六-架构更好的信息结构:2a5edc5321624472294289915e7ae1d8&#34;&gt;六、架构更好的信息结构&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;内容的价值产生于 “合”：&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;有选择性的组织内容或者转载内容&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;引导用户组织内容，形成大量的原创内容和资讯&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;形成特色内容，将相关内容合并为专题或者专辑&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;成为信息源，提供 RSS 聚合端口&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;内容的能量释放于 “分”：&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;给内容分类，归属于哪个频道或者哪个类别&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;添加社会化标签（tag），把网站的内容连接起来&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;添加关键字，用于查找或形成相关内容&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;具体设计：&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;功能与功能的关系是什么&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;每个功能点应该具象化到也个页面&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;这个页面应该有有什么内容&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;这个页面的内容应该如何摆放&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;将不常用或者不经常改变的内容隐藏起来&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>《UCD 火花集》读书笔记（二）</title>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/ucd_book2</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/ucd_book2</guid>
+      <description>
+
+&lt;h4 id=&#34;七-注意界面上的文字:d6fa563d001eeb929fb0ed2970c0b899&#34;&gt;七、注意界面上的文字&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;界面内容优化：&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;文字应该清楚而准确地向用户传达信息&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;文字应该便于用户阅读并快速理解其含义&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;整个产品不同位置的文字应该统一&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;文字应该具备产品需要传达给用户的气质&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;文字的视觉设计应该完整的融入整个产品视觉中&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;尽量让文字自身起到 “推销” 产品的作用&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;应该想方设法地优化、精简文字，多利用图片、形状、颜色和位置来交互&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;内容呈现建议:&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;避免写错文字&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;控制文字密度节奏&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;词语避免在同行断开&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;HTML 结构代码符合语义化标准&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;避免写错标点符号&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;符号的应用和差别，少用特殊符号&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;注意中文数字和阿拉伯数字的区别&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;控制链接量&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;合理使用色彩，整体不超过 3 种主色&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&#34;八-不得不说的网站导航:d6fa563d001eeb929fb0ed2970c0b899&#34;&gt;八、不得不说的网站导航&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;导航设计与信息架构：&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;不要为了导航而导航，前个导航是指表现形式，后个导航是指实际的导航系统&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;对于导航的设计，信息架构比交互方式、视觉形式更加重要&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;导航不仅仅是内容的一种分类，也包括类似交互操作的分类&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;情景式导航有可能是导航设计的一种发展趋势&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;导航的流行趋势：&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;在路径层面上提供辅助导航&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;组织形式也能带给我们好的体验&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;借鉴传统软件工程的导航模式&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;没有 “导航” 的导航——搜索&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;社会化导航&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&#34;九-如何设计有效的帮助:d6fa563d001eeb929fb0ed2970c0b899&#34;&gt;九、如何设计有效的帮助&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;为什么要有帮助：&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;用户使用产品前，需要有一个概念的认识和功能的确定&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;详细了解产品的每个细节特征与结构能有效提高使用效率&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;帮助本身是一本工具书手册，在需要的时候给予提示&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;帮助的真是含义：提示 -&amp;gt; 明确 -&amp;gt; 反馈 -&amp;gt; 改进 -&amp;gt; 提升&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;帮助的形式由性质确定。
+如：网站的帮助可以为交互式的指引页面；
+软件的帮助可能是一个 “智能精灵”；
+手机的帮助可以是一个提示音；
+购物帮助可能是一个导购员。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;帮助方案：&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;智能分析技术（操作历史，用户习惯，默认功能等）&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;搜索绑定&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;即时提醒&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;人工服务&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;多语言&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;组织性（打包为 pdf，P2P 互助，视频等）&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;及时更新（发布产品时）&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&#34;十-产品评估和测试:d6fa563d001eeb929fb0ed2970c0b899&#34;&gt;十、产品评估和测试&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;初步印象：&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;是否有眼前一亮的感觉？&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;能否尽快搞清网站提供何种服务，是否有注册的必要？&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;信息可视化：&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;是否具有层次感？&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;内容层现是否达到平衡？&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;检查内容与界面的关系，通过模块信息是否能分辨出网站？&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;导航系统：&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;多深入几级界面，是否清晰自己当前的位置？&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;多纵横几个来回，方向感是否到位？&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;功能结构：&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;主体逻辑是否清晰？&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;能满足自己多少需求？&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;有多少创新点？&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;细节设计&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;交互设计，业务流程是否混乱？&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;视觉设计评估&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;信息设计，内容有没有生命力？&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;客户端技术：&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;交互流畅程度，是否存在不恰当的 Ajax？&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;搜索引起的优化，利用 Google 工具&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;代码质量是否符合标准？&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;产品跟踪与数据挖掘：&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;更新节奏和解决方案&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;找准用户群&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;关注用户忠诚度、活跃程度和活跃倾向&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&#34;十一-我的-ued-故事:d6fa563d001eeb929fb0ed2970c0b899&#34;&gt;十一、我的 UED 故事&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;善于利用用户的操作习惯(按钮的位置等)、培养用户的操作习惯&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;记住用户的使用习惯(cookie 等)，让用户愉快地使用产品(人性化)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;多培养自己对专注点的敏感度&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;以用户为中心(让自己成为用户，自己满意才能让用户满意)，注重交互设计(请求 + 应答)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;打破用户习惯，新版改进，需要考虑易用性(与旧版进行对比)和加入新功能(辅助功能)&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>《UCD 火花集》读书笔记（二）</title>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/ucd_book2</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/ucd_book2</guid>
+      <description>
+
+&lt;h4 id=&#34;七-注意界面上的文字:d6fa563d001eeb929fb0ed2970c0b899&#34;&gt;七、注意界面上的文字&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;界面内容优化：&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;文字应该清楚而准确地向用户传达信息&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;文字应该便于用户阅读并快速理解其含义&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;整个产品不同位置的文字应该统一&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;文字应该具备产品需要传达给用户的气质&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;文字的视觉设计应该完整的融入整个产品视觉中&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;尽量让文字自身起到 “推销” 产品的作用&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;应该想方设法地优化、精简文字，多利用图片、形状、颜色和位置来交互&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;内容呈现建议:&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;避免写错文字&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;控制文字密度节奏&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;词语避免在同行断开&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;HTML 结构代码符合语义化标准&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;避免写错标点符号&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;符号的应用和差别，少用特殊符号&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;注意中文数字和阿拉伯数字的区别&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;控制链接量&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;合理使用色彩，整体不超过 3 种主色&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&#34;八-不得不说的网站导航:d6fa563d001eeb929fb0ed2970c0b899&#34;&gt;八、不得不说的网站导航&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;导航设计与信息架构：&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;不要为了导航而导航，前个导航是指表现形式，后个导航是指实际的导航系统&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;对于导航的设计，信息架构比交互方式、视觉形式更加重要&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;导航不仅仅是内容的一种分类，也包括类似交互操作的分类&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;情景式导航有可能是导航设计的一种发展趋势&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;导航的流行趋势：&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;在路径层面上提供辅助导航&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;组织形式也能带给我们好的体验&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;借鉴传统软件工程的导航模式&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;没有 “导航” 的导航——搜索&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;社会化导航&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&#34;九-如何设计有效的帮助:d6fa563d001eeb929fb0ed2970c0b899&#34;&gt;九、如何设计有效的帮助&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;为什么要有帮助：&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;用户使用产品前，需要有一个概念的认识和功能的确定&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;详细了解产品的每个细节特征与结构能有效提高使用效率&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;帮助本身是一本工具书手册，在需要的时候给予提示&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;帮助的真是含义：提示 -&amp;gt; 明确 -&amp;gt; 反馈 -&amp;gt; 改进 -&amp;gt; 提升&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;帮助的形式由性质确定。
+如：网站的帮助可以为交互式的指引页面；
+软件的帮助可能是一个 “智能精灵”；
+手机的帮助可以是一个提示音；
+购物帮助可能是一个导购员。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;帮助方案：&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;智能分析技术（操作历史，用户习惯，默认功能等）&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;搜索绑定&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;即时提醒&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;人工服务&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;多语言&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;组织性（打包为 pdf，P2P 互助，视频等）&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;及时更新（发布产品时）&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&#34;十-产品评估和测试:d6fa563d001eeb929fb0ed2970c0b899&#34;&gt;十、产品评估和测试&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;初步印象：&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;是否有眼前一亮的感觉？&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;能否尽快搞清网站提供何种服务，是否有注册的必要？&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;信息可视化：&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;是否具有层次感？&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;内容层现是否达到平衡？&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;检查内容与界面的关系，通过模块信息是否能分辨出网站？&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;导航系统：&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;多深入几级界面，是否清晰自己当前的位置？&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;多纵横几个来回，方向感是否到位？&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;功能结构：&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;主体逻辑是否清晰？&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;能满足自己多少需求？&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;有多少创新点？&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;细节设计&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;交互设计，业务流程是否混乱？&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;视觉设计评估&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;信息设计，内容有没有生命力？&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;客户端技术：&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;交互流畅程度，是否存在不恰当的 Ajax？&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;搜索引起的优化，利用 Google 工具&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;代码质量是否符合标准？&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;产品跟踪与数据挖掘：&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;更新节奏和解决方案&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;找准用户群&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;关注用户忠诚度、活跃程度和活跃倾向&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&#34;十一-我的-ued-故事:d6fa563d001eeb929fb0ed2970c0b899&#34;&gt;十一、我的 UED 故事&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;善于利用用户的操作习惯(按钮的位置等)、培养用户的操作习惯&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;记住用户的使用习惯(cookie 等)，让用户愉快地使用产品(人性化)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;多培养自己对专注点的敏感度&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;以用户为中心(让自己成为用户，自己满意才能让用户满意)，注重交互设计(请求 + 应答)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;打破用户习惯，新版改进，需要考虑易用性(与旧版进行对比)和加入新功能(辅助功能)&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
     
     <item>
       <title>栅格化布局和常用框架比较</title>
-      <link>http://blog.wenzhixin.net.cn/2013/11/25/grid_system/</link>
-      <pubDate>Mon, 25 Nov 2013 21:41:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/grid_system</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/11/25/grid_system/</guid>
-      <description>在使用了Bootstrap、Foundation 之后，其实已经接触到栅格化布局这一概念。 今天接触了 skeleton 后，特别强调了栅格化布局，那么何为栅格化</description>
-    </item>
-    
-    <item>
-      <title>《UCD 火花集》读书笔记（二）</title>
-      <link>http://blog.wenzhixin.net.cn/2012/12/05/ucd_book2/</link>
-      <pubDate>Wed, 05 Dec 2012 23:11:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/12/05/ucd_book2/</guid>
-      <description>七、注意界面上的文字 界面内容优化： 文字应该清楚而准确地向用户传达信息 文字应该便于用户阅读并快速理解其含义 整个产品不同位置的文字应该统一 文字应</description>
-    </item>
-    
-    <item>
-      <title>《UCD 火花集》读书笔记（二）</title>
-      <link>http://blog.wenzhixin.net.cn/2012/12/05/ucd_book2/</link>
-      <pubDate>Wed, 05 Dec 2012 23:11:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/12/05/ucd_book2/</guid>
-      <description>七、注意界面上的文字 界面内容优化： 文字应该清楚而准确地向用户传达信息 文字应该便于用户阅读并快速理解其含义 整个产品不同位置的文字应该统一 文字应</description>
-    </item>
-    
-    <item>
-      <title>《UCD 火花集》读书笔记（一）</title>
-      <link>http://blog.wenzhixin.net.cn/2012/12/04/ucd_book1/</link>
-      <pubDate>Tue, 04 Dec 2012 22:17:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/12/04/ucd_book1/</guid>
-      <description>一、用户体验设计在团队中 用户体验的特性： 对于用户——帮助分析和挖掘用户潜意识的需要和习性，力求产品设计给用户带来本质上的满足，以及顺畅自然的</description>
-    </item>
-    
-    <item>
-      <title>《UCD 火花集》读书笔记（一）</title>
-      <link>http://blog.wenzhixin.net.cn/2012/12/04/ucd_book1/</link>
-      <pubDate>Tue, 04 Dec 2012 22:17:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/12/04/ucd_book1/</guid>
-      <description>一、用户体验设计在团队中 用户体验的特性： 对于用户——帮助分析和挖掘用户潜意识的需要和习性，力求产品设计给用户带来本质上的满足，以及顺畅自然的</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/grid_system</guid>
+      <description>
+
+&lt;p&gt;在使用了Bootstrap、Foundation 之后，其实已经接触到栅格化布局这一概念。&lt;br /&gt;
+今天接触了 skeleton 后，特别强调了栅格化布局，那么何为栅格化布局？&lt;/p&gt;
+
+&lt;h4 id=&#34;1-栅格化布局:988ccd388d71202d7b55f559ce918a2a&#34;&gt;1. 栅格化布局&lt;/h4&gt;
+
+&lt;p&gt;栅格英文为 grid，是一种平面设计的方法与风格。运用固定的格子设计版面布局，其风格工整简洁。&lt;/p&gt;
+
+&lt;p&gt;在样式设计中，把页面等分成N个小的模块，每等份的宽度是Xpx，不同个数的模块组合成不同的栏目宽度，
+分别是：(1*X)px，(2*X)px、(3*X)px、……、(N*X)px。而页面的宽度就是 W = (N*X)px。这就是栅格化布局。&lt;/p&gt;
+
+&lt;p&gt;为什么要使用栅格化布局呢？它有以下的优势：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;能大大提高网页的规范性。在栅格系统下，页面中所有组件的尺寸都是有规律的。
+这对于大型网站的开发和维护来说，能节约不少成本。&lt;/li&gt;
+&lt;li&gt;基于栅格进行设计，可以让整个网站各个页面的布局保持一致。
+这能增加页面的相似度，提升用户体验。&lt;/li&gt;
+&lt;li&gt;对于设计师们来说，灵活地运用栅格系统，能做出很多优秀和独特的设计。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;2-常用框架对比:988ccd388d71202d7b55f559ce918a2a&#34;&gt;2. 常用框架对比&lt;/h4&gt;
+
+&lt;p&gt;这里列举了几种常用的 css 框架，更多信息见起网站：&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;a href=&#34;http://getbootstrap.com&#34;&gt;Bootstrap 3&lt;/a&gt;&lt;/th&gt;
+&lt;th&gt;&lt;a href=&#34;http://getbootstrap.com/2.3.2/&#34;&gt;Bootstrap 2&lt;/a&gt;&lt;/th&gt;
+&lt;th&gt;&lt;a href=&#34;http://foundation.zurb.com/&#34;&gt;Foundation v5&lt;/a&gt;&lt;/th&gt;
+&lt;th&gt;&lt;a href=&#34;http://foundation.zurb.com/docs/v/4.3.2/&#34;&gt;Foundation v4&lt;/a&gt;&lt;/th&gt;
+&lt;th&gt;&lt;a href=&#34;http://foundation.zurb.com/docs/v/3.2.5/&#34;&gt;Foundation v3&lt;/a&gt;&lt;/th&gt;
+&lt;th&gt;&lt;a href=&#34;http://getskeleton.com/&#34;&gt;Skeleton&lt;/a&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;基本宽度&lt;/td&gt;
+&lt;td&gt;浮动布局 (480px, 768px, 992px, 1200px)&lt;/td&gt;
+&lt;td&gt;浮动和固定布局 (724px, 940px, 1170px; 小于 768px 是单行垂直布局)&lt;/td&gt;
+&lt;td&gt;浮动布局 (默认最大宽度为 62.5em)&lt;/td&gt;
+&lt;td&gt;浮动布局 (默认最大宽度为 62.5em)&lt;/td&gt;
+&lt;td&gt;浮动布局 (最大宽度为 100%)&lt;/td&gt;
+&lt;td&gt;960px&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;列数&lt;/td&gt;
+&lt;td&gt;12&lt;/td&gt;
+&lt;td&gt;12&lt;/td&gt;
+&lt;td&gt;自定义 1-16 (默认为 12)&lt;/td&gt;
+&lt;td&gt;自定义 1-16 (默认为 12)&lt;/td&gt;
+&lt;td&gt;自定义 12-24&lt;/td&gt;
+&lt;td&gt;16&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</description>
     </item>
     
   </channel>

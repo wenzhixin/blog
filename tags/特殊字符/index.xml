@@ -7,18 +7,31 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Sat, 12 Jan 2013 10:21:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.wenzhixin.net.cn/tags/%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="http://blog.wenzhixin.net.cn/tags/%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>设置存在特殊字符的 tooltip</title>
-      <link>http://blog.wenzhixin.net.cn/2013/01/12/title_special_character/</link>
-      <pubDate>Sat, 12 Jan 2013 10:21:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/title_special_character</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/01/12/title_special_character/</guid>
-      <description>问题： 通过 $(&amp;lsquo;element&amp;rsquo;).html(html) 来生成页面元素时，假如 title 信息存在 &amp;lsquo; 或者 &amp;ldquo; 等特殊字符时便会出现显示错误的问题 解决： 1 2 3 4 5 6 7 8 9 function getHtml(html, title, el) { $div = $(&amp;#39;&amp;lt;div&amp;gt;&amp;lt;/div&amp;gt;&amp;#39;).html(html); if (el) { $div.find(el).attr(&amp;#39;title&amp;#39;, title); } else</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/title_special_character</guid>
+      <description>
+
+&lt;h4 id=&#34;问题:ae68a32d19839137e2f801d70ebe8ec5&#34;&gt;问题：&lt;/h4&gt;
+
+&lt;p&gt;通过 $(&amp;lsquo;element&amp;rsquo;).html(html) 来生成页面元素时，假如 title 信息存在 &amp;lsquo; 或者 &amp;ldquo; 等特殊字符时便会出现显示错误的问题&lt;/p&gt;
+
+&lt;h4 id=&#34;解决:ae68a32d19839137e2f801d70ebe8ec5&#34;&gt;解决：&lt;/h4&gt;
+function getHtml(html, title, el) {
+    $div = $(&#39;&lt;div&gt;&lt;/div&gt;&#39;).html(html);
+    if (el) {
+        $div.find(el).attr(&#39;title&#39;, title);
+    } else {
+        $div.children().attr(&#39;title&#39;, title);
+    }
+    return $div.html();
+}
+</description>
     </item>
     
   </channel>

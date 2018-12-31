@@ -1,33 +1,86 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>rewrite on 文翼的博客</title>
+    <title>Rewrite on 文翼的博客</title>
     <link>http://blog.wenzhixin.net.cn/tags/rewrite/</link>
-    <description>Recent content in rewrite on 文翼的博客</description>
+    <description>Recent content in Rewrite on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Tue, 31 Dec 2013 09:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.wenzhixin.net.cn/tags/rewrite/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="http://blog.wenzhixin.net.cn/tags/rewrite/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Nginx rewrite query string</title>
-      <link>http://blog.wenzhixin.net.cn/2013/12/31/nginx_rewrite_query_string/</link>
-      <pubDate>Tue, 31 Dec 2013 09:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/nginx_rewrite_query_string</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/12/31/nginx_rewrite_query_string/</guid>
-      <description>rewrite 的正则是不匹配 query string 的， 默认情况下，query string 会自动追加到rewrite 后的地址上。 例如： 1 rewrite ^/read.php$ /api.php 那么： 访问 read.php?tid=123 的时候实际上已经 rewrite 到了 api.php?tid=123 上了</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/nginx_rewrite_query_string</guid>
+      <description>&lt;p&gt;&lt;strong&gt;rewrite 的正则是不匹配 query string 的&lt;/strong&gt;，&lt;br /&gt;
+默认情况下，query string 会自动追加到rewrite 后的地址上。&lt;/p&gt;
+
+&lt;p&gt;例如：&lt;/p&gt;
+rewrite ^/read.php$ /api.php
+
+&lt;p&gt;那么：&lt;/p&gt;
+
+&lt;p&gt;访问 read.php?tid=123 的时候实际上已经 rewrite 到了 api.php?tid=123 上了&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;nginx 中 $args 变量保存了 query string 中的值&lt;/strong&gt;,&lt;br /&gt;
+例如 ?tid=123，那么可以使用 $arg_tid 来匹配 tid 的值&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;而不想自动追加 query string，则在 rewrite 地址的末尾添加 ?&lt;/strong&gt;&lt;/p&gt;
+rewrite ^/read.php$ /api.php?tid=$arg_tid&amp;func=post?
+</description>
     </item>
     
     <item>
       <title>apache 重写链接</title>
-      <link>http://blog.wenzhixin.net.cn/2013/12/31/apache_rewrite/</link>
-      <pubDate>Tue, 31 Dec 2013 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/apache_rewrite</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/12/31/apache_rewrite/</guid>
-      <description>安装启用 mod_rewrite 在安装启用之前，编写 info.php 文件 1 2 &amp;lt;?php phpinfo();?&amp;gt; 从浏览器中打开，使用 Ctrl + F 进行查找 mod_rewrite 是否在 Loaded Modules 中， 已经存在就表示我们已经安装，不存在的话，那么，</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/apache_rewrite</guid>
+      <description>
+
+&lt;h4 id=&#34;安装启用-mod-rewrite:1c9366477c365c5b0e6d0f98aacfd555&#34;&gt;安装启用 mod_rewrite&lt;/h4&gt;
+
+&lt;p&gt;在安装启用之前，编写 info.php 文件&lt;/p&gt;
+&lt;?php phpinfo();?&gt;
+
+&lt;p&gt;从浏览器中打开，使用 Ctrl + F 进行查找 mod_rewrite 是否在 Loaded Modules 中，
+已经存在就表示我们已经安装，不存在的话，那么，需要进行安装：&lt;/p&gt;
+sudo a2enmod rewrite
+
+&lt;p&gt;修改 AllowOverRide 为 AllowOverRide All&lt;/p&gt;
+sudo vi /etc/apache2/sites-enabled/default
+
+&lt;h4 id=&#34;使用正则重写链接:1c9366477c365c5b0e6d0f98aacfd555&#34;&gt;使用正则重写链接&lt;/h4&gt;
+
+&lt;p&gt;这里我们将 restfull 的 url 转发为 php 文件。&lt;/p&gt;
+
+&lt;p&gt;新建 .htaccess 文件&lt;/p&gt;
+RewriteEngine on
+RewriteRule ^/api/.*$ /api.php [L]
+
+&lt;ul&gt;
+&lt;li&gt;RewriteEngine：表示启用 rewrite&lt;/li&gt;
+&lt;li&gt;RewriteRule：表示这是一条 rewrite 规则&lt;/li&gt;
+&lt;li&gt;L：该属性表示规则匹配成功后就不需要匹配其他规则了&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;在 api.php 中，通过下面的变量来获取想要的值&lt;/p&gt;
+$request_method = $_SERVER[&#39;REQUEST_METHOD&#39;];
+$request_uri = $_SERVER[&#39;REQUEST_URI&#39;];
+$request_query = $_GET;
+$request_data = file_get_contents(&#39;php://input&#39;);
+
+&lt;h4 id=&#34;迁移网站重写规则:1c9366477c365c5b0e6d0f98aacfd555&#34;&gt;迁移网站重写规则&lt;/h4&gt;
+
+&lt;p&gt;迁移网站的时候，我们需要将旧地址都重写到新地址上去&lt;/p&gt;
+RewriteEngine on
+RewriteRule ^/old.php$ /new.php [R=301,L]
+
+&lt;p&gt;R=301：该属性表示请求 old.php 的时候返回一个 301 的重定向&lt;/p&gt;
+</description>
     </item>
     
   </channel>

@@ -7,27 +7,85 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Thu, 07 Jan 2016 22:30:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.wenzhixin.net.cn/tags/%E5%AF%BC%E5%87%BA/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="http://blog.wenzhixin.net.cn/tags/%E5%AF%BC%E5%87%BA/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>备份恢复 Meteor Mongo 数据库</title>
-      <link>http://blog.wenzhixin.net.cn/2016/01/07/meteor_mongo_dump/</link>
-      <pubDate>Thu, 07 Jan 2016 22:30:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/meteor_mongo_dump</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2016/01/07/meteor_mongo_dump/</guid>
-      <description>运行 meteor 后使用新的窗口运行 1 meteor mongo 可以看到类似下面的信息： 1 2 MongoDB shell version: 2.6.7 connecting to: 127.0.0.1:4001/meteor Meteor 数据库运行于 127.0.0.1 3001 端口，Ctrl + D 退出即可。 导出： 1 mongodump -h 127.0.0.1 --port 4001 -d meteor</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/meteor_mongo_dump</guid>
+      <description>&lt;p&gt;运行 &lt;code&gt;meteor&lt;/code&gt; 后使用新的窗口运行&lt;/p&gt;
+meteor mongo
+
+&lt;p&gt;可以看到类似下面的信息：&lt;/p&gt;
+MongoDB shell version: 2.6.7                  
+connecting to: 127.0.0.1:4001/meteor
+
+&lt;p&gt;Meteor 数据库运行于 127.0.0.1 3001 端口，Ctrl + D 退出即可。&lt;/p&gt;
+
+&lt;p&gt;导出：&lt;/p&gt;
+mongodump -h 127.0.0.1 --port 4001 -d meteor
+
+&lt;p&gt;导入：&lt;/p&gt;
+mongorestore -h 127.0.0.1 --port 4001 -d meteor dump/meteor
+</description>
     </item>
     
     <item>
       <title>导出或者备份新浪轻博客</title>
-      <link>http://blog.wenzhixin.net.cn/2013/11/14/sina_qing_export_or_backup/</link>
-      <pubDate>Thu, 14 Nov 2013 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/sina_qing_export_or_backup</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/11/14/sina_qing_export_or_backup/</guid>
-      <description>新浪轻博客没有提供 RSS 或者导出等功能，很不方便对博客进行备份或者迁移。 不过我们可以换种思路，那就是对博客网页进行解析从而得到我们想要的内容，包</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/sina_qing_export_or_backup</guid>
+      <description>&lt;p&gt;新浪轻博客没有提供 RSS 或者导出等功能，很不方便对博客进行备份或者迁移。
+不过我们可以换种思路，那就是对博客网页进行解析从而得到我们想要的内容，包括：
+标题、标签、日期、内容、评论等。&lt;/p&gt;
+
+&lt;p&gt;这里使用 &lt;a href=&#34;https://github.com/mape/node-scraper&#34;&gt;node-scraper&lt;/a&gt; 对网页进行解析。&lt;/p&gt;
+var scraper = require(&#39;scraper&#39;);
+scraper(&#39;http://qing.blog.sina.com.cn/2292826740/profile&#39;, function(err, $) {
+    if (err) {throw err;}
+
+    $(&#39;ul.archivelist .txtz strong a&#39;).each(function(i) {
+        var href = $(this).attr(&#39;href&#39;);
+        console.log(href);
+    });
+});
+
+&lt;p&gt;他的原理是，首先获取（get）整个网页的内容，过滤 script 脚本，
+并把 head 和 body 的内容放到 jQuery 中，这样我们就可以相当于在浏览器中，
+用 jQuery 对 dom 进行操作了。&lt;/p&gt;
+
+&lt;p&gt;先获取归档页面，这样就可以得到所有文章的地址了，在对每篇文章进行独一解析。&lt;/p&gt;
+
+&lt;p&gt;这里仅仅提供了一种思路，对于其他需要解析网页内容的当然也适用，关键代码：&lt;/p&gt;
+scraper(&#39;http://qing.blog.sina.com.cn/2292826740/profile&#39;, function(err, $) {
+    if (err) throw err;
+
+    var hrefs = [];
+
+    $(&#39;ul.archivelist .txtz strong a&#39;).each(function(i) {
+        scraper($(this).attr(&#39;href&#39;), function(err, $) {
+            var $post = $(&#39;.post&#39;),
+                $content = $post.find(&#39;div.caption&#39;),
+                post = {};
+
+            post.title = $.trim($post.find(&#39;span.title&#39;).text());
+            post.tags = [];
+            $post.find(&#39;.tags a&#39;).each(function() {
+                post.tags.push($(this).text());
+            });
+            post.date = $post.find(&#39;p.label strong&#39;).text() + &#39;/&#39; + $post.find(&#39;p.label em&#39;).text();
+            post.content = $content.text();
+
+            console.log(post);
+        });
+    });
+});
+
+&lt;p&gt;获取了文章信息之后，在写到文件（markdown）或者写入到数据库即可。&lt;/p&gt;
+</description>
     </item>
     
   </channel>

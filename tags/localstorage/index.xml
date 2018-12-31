@@ -1,24 +1,103 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>localStorage on 文翼的博客</title>
+    <title>LocalStorage on 文翼的博客</title>
     <link>http://blog.wenzhixin.net.cn/tags/localstorage/</link>
-    <description>Recent content in localStorage on 文翼的博客</description>
+    <description>Recent content in LocalStorage on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Thu, 02 Jan 2014 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.wenzhixin.net.cn/tags/localstorage/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="http://blog.wenzhixin.net.cn/tags/localstorage/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>lscache 介绍</title>
-      <link>http://blog.wenzhixin.net.cn/2014/01/02/lscache_introduction/</link>
-      <pubDate>Thu, 02 Jan 2014 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/lscache_introduction</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/01/02/lscache_introduction/</guid>
-      <description>介绍 lscache 是一个带有时间戳的缓存库，提供类似内存缓存行为。 使用 html5 localStorage 模拟内存缓冲功能，这样就可以在客户端缓冲数据， 并对每块数据关联一个过期时间。如</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/lscache_introduction</guid>
+      <description>
+
+&lt;h3 id=&#34;介绍:5f14d8505d64c13efd9e05c4fd7ed962&#34;&gt;介绍&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/pamelafox/lscache&#34;&gt;lscache&lt;/a&gt; 是一个带有时间戳的缓存库，提供类似内存缓存行为。
+使用 html5 localStorage 模拟内存缓冲功能，这样就可以在客户端缓冲数据，
+并对每块数据关联一个过期时间。如果超过 localStorage 的限制（大约 5MB），
+它试图删除最近过期的项目以释放空间。如果浏览器不支持 localStorage，则返回 null。&lt;/p&gt;
+
+&lt;h3 id=&#34;方法:5f14d8505d64c13efd9e05c4fd7ed962&#34;&gt;方法&lt;/h3&gt;
+
+&lt;h4 id=&#34;lscache-set:5f14d8505d64c13efd9e05c4fd7ed962&#34;&gt;lscache.set&lt;/h4&gt;
+
+&lt;p&gt;将数据存储到 localStorage 中，在指定分钟后到期。&lt;/p&gt;
+
+&lt;p&gt;参数：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;key (string)&lt;/li&gt;
+&lt;li&gt;value (Object|string)&lt;/li&gt;
+&lt;li&gt;time (number: optional)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;lscache-get:5f14d8505d64c13efd9e05c4fd7ed962&#34;&gt;lscache.get&lt;/h4&gt;
+
+&lt;p&gt;获取未过期的关键字为 key 的数据。&lt;/p&gt;
+
+&lt;p&gt;参数：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;key (string)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;lscache-remove:5f14d8505d64c13efd9e05c4fd7ed962&#34;&gt;lscache.remove&lt;/h4&gt;
+
+&lt;p&gt;删除关键字为 key 的数据。&lt;/p&gt;
+
+&lt;p&gt;参数：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;key (string)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;lscache-flush:5f14d8505d64c13efd9e05c4fd7ed962&#34;&gt;lscache.flush&lt;/h4&gt;
+
+&lt;p&gt;删除所有的 lscache 数据。&lt;/p&gt;
+
+&lt;h4 id=&#34;lscache-setbucket:5f14d8505d64c13efd9e05c4fd7ed962&#34;&gt;lscache.setBucket&lt;/h4&gt;
+
+&lt;p&gt;添加 CACHE_PREFIX 使 lscache 用不同的分区。&lt;/p&gt;
+
+&lt;p&gt;参数：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;key (string)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;使用实例:5f14d8505d64c13efd9e05c4fd7ed962&#34;&gt;使用实例&lt;/h3&gt;
+
+&lt;p&gt;使用 lscache 获取 Youtube 的 API 数据，并且缓存 10 分钟：&lt;/p&gt;
+var key = &#39;youtube:&#39; + query;
+var json = lscache.get(key);
+if (json) {
+  processJSON(json);
+} else {
+  fetchJSON(query);
+}
+
+function processJSON(json) {
+  // ..
+}
+
+function fetchJSON() {
+  var searchUrl = &#39;http://gdata.youtube.com/feeds/api/videos&#39;;
+  var params = {
+   &#39;v&#39;: &#39;2&#39;, &#39;alt&#39;: &#39;jsonc&#39;, &#39;q&#39;: encodeURIComponent(query)
+  }
+  JSONP.get(searchUrl, params, null, function(json) {
+    processJSON(json);
+    lscache.set(key, json, 10);
+  });
+}
+</description>
     </item>
     
   </channel>

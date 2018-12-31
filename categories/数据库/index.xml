@@ -7,171 +7,1753 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Thu, 07 Jan 2016 22:30:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.wenzhixin.net.cn/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="http://blog.wenzhixin.net.cn/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>备份恢复 Meteor Mongo 数据库</title>
-      <link>http://blog.wenzhixin.net.cn/2016/01/07/meteor_mongo_dump/</link>
-      <pubDate>Thu, 07 Jan 2016 22:30:00 +0000</pubDate>
+      <title>MongoDB mongoexport 命令的使用及简单实现</title>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/mongodb_export</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2016/01/07/meteor_mongo_dump/</guid>
-      <description>运行 meteor 后使用新的窗口运行 1 meteor mongo 可以看到类似下面的信息： 1 2 MongoDB shell version: 2.6.7 connecting to: 127.0.0.1:4001/meteor Meteor 数据库运行于 127.0.0.1 3001 端口，Ctrl + D 退出即可。 导出： 1 mongodump -h 127.0.0.1 --port 4001 -d meteor</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/mongodb_export</guid>
+      <description>&lt;p&gt;MongoDB 提供了 mongoexport 命令来导出数据，导出的数据是 json 格式的，当然也可以是 csv 格式。主要可以实现&lt;strong&gt;备份和恢复&lt;/strong&gt;的功能。&lt;/p&gt;
+
+&lt;p&gt;具体的使用，我们使用 &amp;ndash;help 查看，主要的参数有：&lt;/p&gt;
+-h [ --host ] arg         要连接的服务器，例如 127.0.0.1 或者 localhost
+
+--port arg                要连接服务器的端口，也可以使用 --host hostname:port
+
+-u [ --username ] arg     用户名
+
+-p [ --password ] arg     密码
+
+-d [ --db ] arg           使用的数据库（database）名称
+
+-c [ --collection ] arg   使用的集合（collection）
+
+-o [ --out ] arg          导出的文件名
+
+-f [ --fields ] arg       字段名称，使用逗号分隔，例如 -f name,age
+
+-q [ --query ] arg        查询过滤器
+
+--csv                     导出为 csv 格式
+
+&lt;p&gt;例如，我们要导出 tests 数据库中的 users 集合，可以使用：&lt;/p&gt;
+mongoexport -d tests -c users -o users.dat
+
+&lt;p&gt;现在，针对这几个简单的参数，我们自己使用 nodejs 来进行对 mongoexport 简单的实现，&lt;strong&gt;大概思路&lt;/strong&gt;如下：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;1. 使用 nodejs 的 mongodb 库 &lt;a href=&#34;https://github.com/mongodb/node-mongodb-native&#34;&gt;node-mongodb-native&lt;/a&gt; 来连接 MongoDB。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;安装 mongodb：&lt;/p&gt;
+npm install mongodb
+
+&lt;p&gt;连接 MongoDB 的主要代码：&lt;/p&gt;
+var mongoClient = new MongoClient(new Server(&#39;localhost&#39;, 27017));
+
+mongoClient.open(function(err, mongoclient) {
+
+});
+
+&lt;ul&gt;
+&lt;li&gt;&lt;ol&gt;
+&lt;li&gt;使用 process.argv 来接收输入的参数&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;ol&gt;
+&lt;li&gt;使用 fs.writeFile 来输出 json 数据文件&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;具体实现&lt;/strong&gt;如下：&lt;/p&gt;
+var fs = require(&#39;fs&#39;),
+    MongoClient = require(&#39;mongodb&#39;).MongoClient,
+    Server = require(&#39;mongodb&#39;).Server,
+
+    options = null;
+    mongoClient = null;
+
+if (process.argv.length &lt;= 2 || process.argv.indexOf(&#39;--help&#39;) !== -1) {
+    showHelp();
+    return;
+}
+
+options = getOptions();
+exportFile();
+
+function showHelp() {
+    console.error([
+        &#39;Export MongoDB data to JSON files.&#39;,
+        &#39;&#39;,
+        &#39;options:&#39;,
+          &#39; --help                                produce help message&#39;,
+          &#39; -h [ --host ] arg                     mongo host to connect to&#39;,
+          &#39; --port arg                            server port&#39;,
+          &#39; -u [ --username ] arg                 username&#39;,
+          &#39; -p [ --password ] arg                 password&#39;,
+          &#39; -d [ --db ] arg                       database to use&#39;,
+          &#39; -c [ --collection ] arg               collection to use (some commands)&#39;,
+          &#39; -o [ --out ] arg                      output file&#39;
+    ].join(&#39;\n&#39;));
+}
+
+function getOptions() {
+    var args = process.argv,
+        options = {
+            host: &#39;127.0.0.1&#39;,
+            port: 27017
+        },
+        keys = {
+            &#39;-h&#39;: &#39;host&#39;,
+            &#39;--host&#39;: &#39;host&#39;,
+            &#39;--port&#39;: &#39;port&#39;,
+            &#39;-u&#39;: &#39;username&#39;,
+            &#39;--username&#39;: &#39;username&#39;,
+            &#39;-p&#39;: &#39;password&#39;,
+            &#39;--password&#39;: &#39;password&#39;,
+            &#39;-d&#39;: &#39;db&#39;,
+            &#39;--db&#39;: &#39;db&#39;,
+            &#39;-c&#39;: &#39;collection&#39;,
+            &#39;--collection&#39;: &#39;collection&#39;,
+            &#39;-o&#39;: &#39;output&#39;,
+            &#39;--out&#39;: &#39;output&#39;
+        };
+    for (var i = 2; i &lt; args.length; i += 2) {
+        if (keys.hasOwnProperty(args[i])) {
+            options[keys[args[i]]] = args[i + 1];
+        }
+    }
+    return options;
+}
+
+function exportFile() {
+    mongoClient = new MongoClient(new Server(options.host, options.port, {native_parse: true}));
+    mongoClient.open(function(err, mongoclient) {
+        var db = mongoclient.db(options.db);
+        db.collection(options.collection).find().toArray(function(err, results) {
+            if (err) {
+                console.log(err);
+                return;
+            }
+            fs.writeFile(options.output, JSON.stringify(results), function(err) {
+                if (err) {
+                    console.log(err);
+                    return;
+                }
+                console.log([
+                    &#39;connected to: &#39; + options.host,
+                    &#39;exported &#39; + results.length + &#39; records&#39;
+                ].join(&#39;\n&#39;));
+                mongoClient.close();
+            });
+        });    
+    });
+}
+
+&lt;p&gt;&lt;strong&gt;如何使用&lt;/strong&gt;：&lt;/p&gt;
+node mongoexport.js -d tests -c users -o users.dat
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/demos/mongoexport.js&#34;&gt;源码下载&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
-      <title>如何使用 python 连接 Oracle（网站）</title>
-      <link>http://blog.wenzhixin.net.cn/2014/08/04/python_oracle/</link>
-      <pubDate>Mon, 04 Aug 2014 23:55:00 +0000</pubDate>
+      <title>MongoDB 入门</title>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/mongodb_started</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/08/04/python_oracle/</guid>
-      <description>首先，由于网站部署在远程服务器的局域网上面，所以需要通过 ssh tunnel（隧道） 的方式进行本地的映射，主要映射两个端口： Oracle 服务：ssh -fN -L 1521:ip:1521 server</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/mongodb_started</guid>
+      <description>
+
+&lt;h4 id=&#34;1-文档:dce783b64be9377b18562728f7c30112&#34;&gt;1、文档&lt;/h4&gt;
+
+&lt;p&gt;1) 概念：文档是将多个键及其关联的值有序地放置在一起。&lt;/p&gt;
+{&#34;name&#34;: &#34;wenyi&#34;, &#34;say&#34;: &#34;Hello, world!&#34;}
+
+&lt;p&gt;2) 特性：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;文档中的键值对是有序的&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;文档的键是字符串&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;文档不能有重复的键&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;3) 键的命名：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;不能含有 \0 (空字符)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;不能包含 . 和 $ 等有意义的字符&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;以下划线 _ 开头的键是保留的&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;2-集合:dce783b64be9377b18562728f7c30112&#34;&gt;2、集合&lt;/h4&gt;
+
+&lt;p&gt;1) 概念：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;集合是一组文档。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;子集合是使用 . 字符分开的俺命名空间划分的集合。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;2) 特性：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;集合是无模式的。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;建议将同种类型的文档放入同个集合中，可以更有效的索引。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;建议使用子集合来组织数据。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;3) 集合的命名：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;不能是空字符串&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;不能含有 \0 (空字符)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;不能以系统保留前缀 system. 开头&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;不能含有保留字符 $&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;3-数据库:dce783b64be9377b18562728f7c30112&#34;&gt;3、数据库&lt;/h4&gt;
+
+&lt;p&gt;1) 多个集合组成数据库，不同的数据库放置在不同的文件中，建议将一个应用的所有数据都存储到同个数据库中。&lt;/p&gt;
+
+&lt;p&gt;2) 命名：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;不能是空字符串&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;不得含有 空格 . $ / \ 和 \0 (空字符)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;应全部为小写&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;最多 64 字节&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;4-mongodb-shell:dce783b64be9377b18562728f7c30112&#34;&gt;4、MongoDB shell&lt;/h4&gt;
+
+&lt;p&gt;1) 运行 shell&lt;/p&gt;
+mongo
+
+&lt;p&gt;2) shell 的基本操作&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;创建： insert()&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;读取： find(), findOne()&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;更新：update()&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;删除： remove()&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;3) 帮助命令&lt;/p&gt;
+help
+db.help()
+
+&lt;h4 id=&#34;5-数据类型:dce783b64be9377b18562728f7c30112&#34;&gt;5、数据类型&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;null：表示空值或者不存在的字段&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;布尔值：true 和 false&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;32 位整数&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;64 位整数&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;64 位浮点数&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;字符串&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;符号&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;对象 id：ObjectId(), 文档的 12 字节的唯一 ID &amp;ldquo;_id&amp;rdquo;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;日期：存储从标准纪元开始的毫秒数&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;正则表达式：采用 JavaScript 正则表达式语法&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;代码：采用 JavaScript 代码&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;二进制数据&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;最大值&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;最小值&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;undefined：未定义&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;数组&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;内嵌文档：文档包含文档&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
     
     <item>
-      <title>Temporary Tablespace is Empty 解决方法（ORA-25153）</title>
-      <link>http://blog.wenzhixin.net.cn/2014/04/28/temporary_tablespace_is_empty/</link>
-      <pubDate>Mon, 28 Apr 2014 22:05:00 +0000</pubDate>
+      <title>MongoDB 入门</title>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/mongodb_started</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/04/28/temporary_tablespace_is_empty/</guid>
-      <description>问题： 当我们对 Oralce 数据库进行操作的时候，出现了： 1 ORA-25153: Temporary Tablespace is Empty 的错误，提示 temporary 表空间为空。 思路： 当前用户没有设置表空间权限 表空间状态为 offline 当前用户没</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/mongodb_started</guid>
+      <description>
+
+&lt;h4 id=&#34;1-文档:dce783b64be9377b18562728f7c30112&#34;&gt;1、文档&lt;/h4&gt;
+
+&lt;p&gt;1) 概念：文档是将多个键及其关联的值有序地放置在一起。&lt;/p&gt;
+{&#34;name&#34;: &#34;wenyi&#34;, &#34;say&#34;: &#34;Hello, world!&#34;}
+
+&lt;p&gt;2) 特性：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;文档中的键值对是有序的&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;文档的键是字符串&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;文档不能有重复的键&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;3) 键的命名：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;不能含有 \0 (空字符)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;不能包含 . 和 $ 等有意义的字符&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;以下划线 _ 开头的键是保留的&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;2-集合:dce783b64be9377b18562728f7c30112&#34;&gt;2、集合&lt;/h4&gt;
+
+&lt;p&gt;1) 概念：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;集合是一组文档。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;子集合是使用 . 字符分开的俺命名空间划分的集合。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;2) 特性：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;集合是无模式的。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;建议将同种类型的文档放入同个集合中，可以更有效的索引。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;建议使用子集合来组织数据。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;3) 集合的命名：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;不能是空字符串&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;不能含有 \0 (空字符)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;不能以系统保留前缀 system. 开头&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;不能含有保留字符 $&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;3-数据库:dce783b64be9377b18562728f7c30112&#34;&gt;3、数据库&lt;/h4&gt;
+
+&lt;p&gt;1) 多个集合组成数据库，不同的数据库放置在不同的文件中，建议将一个应用的所有数据都存储到同个数据库中。&lt;/p&gt;
+
+&lt;p&gt;2) 命名：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;不能是空字符串&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;不得含有 空格 . $ / \ 和 \0 (空字符)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;应全部为小写&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;最多 64 字节&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;4-mongodb-shell:dce783b64be9377b18562728f7c30112&#34;&gt;4、MongoDB shell&lt;/h4&gt;
+
+&lt;p&gt;1) 运行 shell&lt;/p&gt;
+mongo
+
+&lt;p&gt;2) shell 的基本操作&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;创建： insert()&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;读取： find(), findOne()&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;更新：update()&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;删除： remove()&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;3) 帮助命令&lt;/p&gt;
+help
+db.help()
+
+&lt;h4 id=&#34;5-数据类型:dce783b64be9377b18562728f7c30112&#34;&gt;5、数据类型&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;null：表示空值或者不存在的字段&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;布尔值：true 和 false&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;32 位整数&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;64 位整数&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;64 位浮点数&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;字符串&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;符号&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;对象 id：ObjectId(), 文档的 12 字节的唯一 ID &amp;ldquo;_id&amp;rdquo;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;日期：存储从标准纪元开始的毫秒数&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;正则表达式：采用 JavaScript 正则表达式语法&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;代码：采用 JavaScript 代码&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;二进制数据&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;最大值&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;最小值&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;undefined：未定义&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;数组&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;内嵌文档：文档包含文档&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
     
     <item>
-      <title>Oracle 获取DDL语句入门小记</title>
-      <link>http://blog.wenzhixin.net.cn/2014/02/13/oracle_ddl/</link>
-      <pubDate>Thu, 13 Feb 2014 00:00:00 +0000</pubDate>
+      <title>MongoDB 创建、更新及删除文档</title>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/mongodb_insert_update_remove</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/02/13/oracle_ddl/</guid>
-      <description>sqlplus 登录 在操作系统命令行下： 方法1： 1 2 sqlplus / as sysdba #这是典型的操作系统认证，不需要listener进程 sqlplus system/password as sysdba #这种连接方式只能连接本机数据库，</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/mongodb_insert_update_remove</guid>
+      <description>
+
+&lt;h4 id=&#34;1-插入文档-insert:da56ffb607df7734e09bf82346cedf76&#34;&gt;1、插入文档：insert&lt;/h4&gt;
+
+&lt;p&gt;1) 基本用法：&lt;/p&gt;
+db.name.insert(文档内容);
+
+&lt;p&gt;例子：&lt;/p&gt;
+db.users.insert({&#34;username&#34;: &#34;wenyi&#34;, &#34;age&#34;: 25});
+
+&lt;p&gt;2) 从其他数据库导入数据，使用 mongoimport 命令&lt;/p&gt;
+
+&lt;p&gt;3) 原理与作用:&lt;/p&gt;
+
+&lt;p&gt;插入数据时只检查文档大小（不超过 4M），不做别的数据验证，简单地将文档原样存进数据库中。
+这种方式可以让数据库更加安全，远离注入式攻击。&lt;/p&gt;
+
+&lt;h4 id=&#34;2-删除文档-remove:da56ffb607df7734e09bf82346cedf76&#34;&gt;2、删除文档：remove&lt;/h4&gt;
+
+&lt;p&gt;1) 基本用法：&lt;/p&gt;
+db.name.remove(索引);
+
+&lt;p&gt;例子：&lt;/p&gt;
+db.users.remove();
+db.users.remove({&#34;username&#34;: &#34;wenyi&#34;});
+
+&lt;p&gt;2) db.users.remove() 与 db.drop_collection(&amp;ldquo;users&amp;rdquo;) 的区别：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;两者都是删除整个集合&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;前者会保留所有的索引，后者删除所有的索引&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;前者删除速度慢，后者删除速度快&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;3-更新文档-update:da56ffb607df7734e09bf82346cedf76&#34;&gt;3、更新文档：update&lt;/h4&gt;
+
+&lt;p&gt;1) 基本用法：&lt;/p&gt;
+db.name.update(索引, 修改的文档);
+
+&lt;p&gt;例子：&lt;/p&gt;
+db.users.update({&#34;username&#34;: &#34;wenyi&#34;}, {&#34;username&#34;: &#34;wenyi&#34;, &#34;age&#34;: 26}});
+
+&lt;p&gt;2) 使用修改器：是种特殊的键，用来指定复杂的更新操作，更新文档部分内容&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;$set: 用来指定一个键的值，如果该键不存在，则创建它。用于更新模式或增加用户自定义键&lt;/li&gt;
+&lt;li&gt;$unset: 用来删除某个键&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;例子：&lt;/p&gt;
+db.users.update({&#34;username&#34;: &#34;wenyi&#34;}, {&#34;$set&#34;: {&#34;age&#34;: 26}}});
+db.users.update({&#34;username&#34;: &#34;wenyi&#34;}, {&#34;$set&#34;: {&#34;blog&#34;: &#34;wenyi.tk&#34;}}});
+db.users.update({&#34;username&#34;: &#34;wenyi&#34;}, {&#34;$unset&#34;: {&#34;blog&#34;: 1}}});
+
+&lt;ul&gt;
+&lt;li&gt;$inc: 用来增加已有键的值，或者在键不存在时创建一个键。用于分析数据、因果关系、投票或者有变化数值的地方&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;例子：&lt;/p&gt;
+db.users.update({&#34;username&#34;: &#34;wenyi&#34;}, {&#34;$inc&#34;: {&#34;age&#34;: 1}}});
+db.games.update({&#34;name&#34;: &#34;my_game&#34;}, {&#34;$inc&#34;: {&#34;score&#34;: 100}}});
+
+&lt;p&gt;注：只能用于整数、长整数或双精度浮点数&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;$push: 向一有数组末尾加入元素，不存在则创建新数组&lt;/li&gt;
+&lt;li&gt;$pop: 从数组任何一端删除元素。{$pop: {key: 1}} 从末尾删除一个元素；{$pop: {key: -1}} 从头尾删除一个元素&lt;/li&gt;
+&lt;li&gt;$pull: 基于特定的条件来删除元素&lt;/li&gt;
+&lt;li&gt;$: 用来定位查询文档已经匹配的元素&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;例子：&lt;/p&gt;
+db.posts.update({&#34;name&#34;: &#34;my_blog&#34;}, {&#34;$push&#34;, {&#34;comments&#34;: {&#34;name&#34;: &#34;test&#34;, &#34;content&#34;: &#34;这是一条评论&#34;}});
+db.posts.update({&#34;name&#34;: &#34;my_blog&#34;}, {&#34;$pop&#34;, {&#34;comments&#34;: 1});
+db.posts.update({&#34;name&#34;: &#34;my_blog&#34;}, {&#34;$pull&#34;, {&#34;comments.$.name&#34;: &#34;test&#34;});
+
+&lt;p&gt;3) upsert: 特殊的更新，没有符合更新条件的文档，便会以创建一个新的文档。&lt;/p&gt;
+
+&lt;p&gt;4) 其他命令：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;getLastError: 查看上次更新信息&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;参数:&lt;/p&gt;
+{
+    &#34;err&#34;: &#34;err&#34;, //错误信息
+    &#34;updatedExisting&#34;: true / fase,
+    &#34;n&#34;: n, //文档更新条数
+    &#34;ok&#34;: true / false //更新结果
+
+&lt;ul&gt;
+&lt;li&gt;findAndModify: 返回已更新的文档&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;用法：&lt;/p&gt;
+db.name.findAndModify({
+    &#34;findAndModify&#34;: &#34;string&#34;, //集合名
+    &#34;query&#34;: &#34;string&#34;, //查询文档
+    &#34;sort&#34;: string&#34;, //排序条件
+    &#34;update&#34;: &#34;string&#34;, //更新文档
+    &#34;remove&#34;: bool, //是否删除文档
+    &#34;new&#34;: bool //返回更新前（默认）和更新后的文档
+} 
+</description>
     </item>
     
     <item>
-      <title>ubuntu 下 PostgreSQL 使用小记</title>
-      <link>http://blog.wenzhixin.net.cn/2014/01/12/hello_postgresql/</link>
-      <pubDate>Sun, 12 Jan 2014 00:00:00 +0000</pubDate>
+      <title>MongoDB 创建、更新及删除文档</title>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/mongodb_insert_update_remove</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/01/12/hello_postgresql/</guid>
-      <description>PostgreSQL 是自由的对象-关系型数据库服务器（数据库管理系统）。 刚刚入门，记录下： 安装 安装 PostgreSQL 的服务器和客户端： 1 sudo apt-get install postgresql postgresql-client 服务 安装完成后 PostgreSQL 已经自动启动</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/mongodb_insert_update_remove</guid>
+      <description>
+
+&lt;h4 id=&#34;1-插入文档-insert:da56ffb607df7734e09bf82346cedf76&#34;&gt;1、插入文档：insert&lt;/h4&gt;
+
+&lt;p&gt;1) 基本用法：&lt;/p&gt;
+db.name.insert(文档内容);
+
+&lt;p&gt;例子：&lt;/p&gt;
+db.users.insert({&#34;username&#34;: &#34;wenyi&#34;, &#34;age&#34;: 25});
+
+&lt;p&gt;2) 从其他数据库导入数据，使用 mongoimport 命令&lt;/p&gt;
+
+&lt;p&gt;3) 原理与作用:&lt;/p&gt;
+
+&lt;p&gt;插入数据时只检查文档大小（不超过 4M），不做别的数据验证，简单地将文档原样存进数据库中。
+这种方式可以让数据库更加安全，远离注入式攻击。&lt;/p&gt;
+
+&lt;h4 id=&#34;2-删除文档-remove:da56ffb607df7734e09bf82346cedf76&#34;&gt;2、删除文档：remove&lt;/h4&gt;
+
+&lt;p&gt;1) 基本用法：&lt;/p&gt;
+db.name.remove(索引);
+
+&lt;p&gt;例子：&lt;/p&gt;
+db.users.remove();
+db.users.remove({&#34;username&#34;: &#34;wenyi&#34;});
+
+&lt;p&gt;2) db.users.remove() 与 db.drop_collection(&amp;ldquo;users&amp;rdquo;) 的区别：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;两者都是删除整个集合&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;前者会保留所有的索引，后者删除所有的索引&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;前者删除速度慢，后者删除速度快&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;3-更新文档-update:da56ffb607df7734e09bf82346cedf76&#34;&gt;3、更新文档：update&lt;/h4&gt;
+
+&lt;p&gt;1) 基本用法：&lt;/p&gt;
+db.name.update(索引, 修改的文档);
+
+&lt;p&gt;例子：&lt;/p&gt;
+db.users.update({&#34;username&#34;: &#34;wenyi&#34;}, {&#34;username&#34;: &#34;wenyi&#34;, &#34;age&#34;: 26}});
+
+&lt;p&gt;2) 使用修改器：是种特殊的键，用来指定复杂的更新操作，更新文档部分内容&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;$set: 用来指定一个键的值，如果该键不存在，则创建它。用于更新模式或增加用户自定义键&lt;/li&gt;
+&lt;li&gt;$unset: 用来删除某个键&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;例子：&lt;/p&gt;
+db.users.update({&#34;username&#34;: &#34;wenyi&#34;}, {&#34;$set&#34;: {&#34;age&#34;: 26}}});
+db.users.update({&#34;username&#34;: &#34;wenyi&#34;}, {&#34;$set&#34;: {&#34;blog&#34;: &#34;wenyi.tk&#34;}}});
+db.users.update({&#34;username&#34;: &#34;wenyi&#34;}, {&#34;$unset&#34;: {&#34;blog&#34;: 1}}});
+
+&lt;ul&gt;
+&lt;li&gt;$inc: 用来增加已有键的值，或者在键不存在时创建一个键。用于分析数据、因果关系、投票或者有变化数值的地方&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;例子：&lt;/p&gt;
+db.users.update({&#34;username&#34;: &#34;wenyi&#34;}, {&#34;$inc&#34;: {&#34;age&#34;: 1}}});
+db.games.update({&#34;name&#34;: &#34;my_game&#34;}, {&#34;$inc&#34;: {&#34;score&#34;: 100}}});
+
+&lt;p&gt;注：只能用于整数、长整数或双精度浮点数&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;$push: 向一有数组末尾加入元素，不存在则创建新数组&lt;/li&gt;
+&lt;li&gt;$pop: 从数组任何一端删除元素。{$pop: {key: 1}} 从末尾删除一个元素；{$pop: {key: -1}} 从头尾删除一个元素&lt;/li&gt;
+&lt;li&gt;$pull: 基于特定的条件来删除元素&lt;/li&gt;
+&lt;li&gt;$: 用来定位查询文档已经匹配的元素&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;例子：&lt;/p&gt;
+db.posts.update({&#34;name&#34;: &#34;my_blog&#34;}, {&#34;$push&#34;, {&#34;comments&#34;: {&#34;name&#34;: &#34;test&#34;, &#34;content&#34;: &#34;这是一条评论&#34;}});
+db.posts.update({&#34;name&#34;: &#34;my_blog&#34;}, {&#34;$pop&#34;, {&#34;comments&#34;: 1});
+db.posts.update({&#34;name&#34;: &#34;my_blog&#34;}, {&#34;$pull&#34;, {&#34;comments.$.name&#34;: &#34;test&#34;});
+
+&lt;p&gt;3) upsert: 特殊的更新，没有符合更新条件的文档，便会以创建一个新的文档。&lt;/p&gt;
+
+&lt;p&gt;4) 其他命令：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;getLastError: 查看上次更新信息&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;参数:&lt;/p&gt;
+{
+    &#34;err&#34;: &#34;err&#34;, //错误信息
+    &#34;updatedExisting&#34;: true / fase,
+    &#34;n&#34;: n, //文档更新条数
+    &#34;ok&#34;: true / false //更新结果
+
+&lt;ul&gt;
+&lt;li&gt;findAndModify: 返回已更新的文档&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;用法：&lt;/p&gt;
+db.name.findAndModify({
+    &#34;findAndModify&#34;: &#34;string&#34;, //集合名
+    &#34;query&#34;: &#34;string&#34;, //查询文档
+    &#34;sort&#34;: string&#34;, //排序条件
+    &#34;update&#34;: &#34;string&#34;, //更新文档
+    &#34;remove&#34;: bool, //是否删除文档
+    &#34;new&#34;: bool //返回更新前（默认）和更新后的文档
+} 
+</description>
+    </item>
+    
+    <item>
+      <title>MySQL、Postgres 开启远程访问权限（ubuntu）</title>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/mysql_open_the_remote_access_ubuntu</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/mysql_open_the_remote_access_ubuntu</guid>
+      <description>
+
+&lt;h3 id=&#34;mysql:30f7100cf497ea6b2f26a120244e132f&#34;&gt;MySQL&lt;/h3&gt;
+
+&lt;p&gt;1、编辑 my.cnf 文件：&lt;/p&gt;
+sudo vi /etc/mysql/my.cnf
+
+&lt;p&gt;2、将绑定地址行注释掉或者修改为指定 IP&lt;/p&gt;
+#bind-address = 127.0.0.1
+
+&lt;p&gt;3、登录 MySQL：&lt;/p&gt;
+mysql -uroot -p123
+
+&lt;p&gt;4、添加 root 用户访问权限&lt;/p&gt;
+grant all privileges on *.* to &#39;root&#39;@&#39;%&#39; identified by &#39;123&#39;;
+flush privileges;
+
+&lt;p&gt;5、查看 user 权限，成功修改权限为 %：&lt;/p&gt;
+select host,user from mysql.user;
+
++------------+----------------+
+| host       | user           |
++------------+----------------+
+| %          | root           |
+| 127.0.0.1  | root           |
+| localhost  | root           |
++------------+----------------+
+
+&lt;p&gt;6、重启 MySQL：&lt;/p&gt;
+sudo /etc/init.d/mysql restart
+
+&lt;h3 id=&#34;postgres:30f7100cf497ea6b2f26a120244e132f&#34;&gt;Postgres&lt;/h3&gt;
+
+&lt;p&gt;1、编辑 postgresql.conf 文件：&lt;/p&gt;
+sudo vi /etc/postgresql/9.4/main/postgresql.conf
+
+# 增加
+listen_addresses = &#39;*&#39;
+
+&lt;p&gt;2、编辑 pg_hba.conf 文件：&lt;/p&gt;
+sudo vi /etc/postgresql/9.4/main/pg_hba.conf
+
+# 修改
+#host    all             all             127.0.0.1/32            md5
+host    all             all             0.0.0.0/0               md5
+
+&lt;p&gt;3、重启 Postgres&lt;/p&gt;
+sudo service postgresql restart
+</description>
+    </item>
+    
+    <item>
+      <title>MySQL、Postgres 开启远程访问权限（ubuntu）</title>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/mysql_open_the_remote_access_ubuntu</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/mysql_open_the_remote_access_ubuntu</guid>
+      <description>
+
+&lt;h3 id=&#34;mysql:30f7100cf497ea6b2f26a120244e132f&#34;&gt;MySQL&lt;/h3&gt;
+
+&lt;p&gt;1、编辑 my.cnf 文件：&lt;/p&gt;
+sudo vi /etc/mysql/my.cnf
+
+&lt;p&gt;2、将绑定地址行注释掉或者修改为指定 IP&lt;/p&gt;
+#bind-address = 127.0.0.1
+
+&lt;p&gt;3、登录 MySQL：&lt;/p&gt;
+mysql -uroot -p123
+
+&lt;p&gt;4、添加 root 用户访问权限&lt;/p&gt;
+grant all privileges on *.* to &#39;root&#39;@&#39;%&#39; identified by &#39;123&#39;;
+flush privileges;
+
+&lt;p&gt;5、查看 user 权限，成功修改权限为 %：&lt;/p&gt;
+select host,user from mysql.user;
+
++------------+----------------+
+| host       | user           |
++------------+----------------+
+| %          | root           |
+| 127.0.0.1  | root           |
+| localhost  | root           |
++------------+----------------+
+
+&lt;p&gt;6、重启 MySQL：&lt;/p&gt;
+sudo /etc/init.d/mysql restart
+
+&lt;h3 id=&#34;postgres:30f7100cf497ea6b2f26a120244e132f&#34;&gt;Postgres&lt;/h3&gt;
+
+&lt;p&gt;1、编辑 postgresql.conf 文件：&lt;/p&gt;
+sudo vi /etc/postgresql/9.4/main/postgresql.conf
+
+# 增加
+listen_addresses = &#39;*&#39;
+
+&lt;p&gt;2、编辑 pg_hba.conf 文件：&lt;/p&gt;
+sudo vi /etc/postgresql/9.4/main/pg_hba.conf
+
+# 修改
+#host    all             all             127.0.0.1/32            md5
+host    all             all             0.0.0.0/0               md5
+
+&lt;p&gt;3、重启 Postgres&lt;/p&gt;
+sudo service postgresql restart
+</description>
     </item>
     
     <item>
       <title>ON DUPLICATE KEY UPDATE</title>
-      <link>http://blog.wenzhixin.net.cn/2013/12/05/on_duplicate_key_update/</link>
-      <pubDate>Thu, 05 Dec 2013 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/on_duplicate_key_update</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/12/05/on_duplicate_key_update/</guid>
-      <description>有些时候，操作 sql 语句需要判断记录是否存在，不存在则插入存在则更新，可以考虑使用 ON DUPLICATE KEY UPDATE。 在 INSERT INTO 语句末尾指定了 ON DUPLICATE KEY UPDATE，并</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/on_duplicate_key_update</guid>
+      <description>&lt;p&gt;有些时候，操作 sql 语句需要判断记录是否存在，不存在则插入存在则更新，可以考虑使用 ON DUPLICATE KEY UPDATE。&lt;/p&gt;
+
+&lt;p&gt;在 INSERT INTO 语句末尾指定了 ON DUPLICATE KEY UPDATE，并且插入行后，
+如何导致在一个 UNIQUE 索引或 PRIMARY KEY 中出现重复值，则在出现重复值的行执行 UPDATE 语句；
+如果不会导致唯一值列重复的问题，则插入新行。&lt;/p&gt;
+
+&lt;p&gt;例如，现有有个很简单的表：&lt;/p&gt;
+create table user (
+	id int not null auto_increment,
+	username varchar(250) not null,
+	primary key (id)
+) engine=innodb default charset=utf8;
+
+&lt;p&gt;按照正常的思路，先判断是否存在：&lt;/p&gt;
+select * from user where id = 1;
+
+&lt;p&gt;不存在则：&lt;/p&gt;
+insert into user(username) values(&#39;wenyi&#39;);
+
+&lt;p&gt;存在则：&lt;/p&gt;
+update user set username = &#39;wenyi&#39; where id = 1;
+
+&lt;p&gt;那么使用 ON DUPLICATE KEY UPDATE 就可以用一条语句表示：&lt;/p&gt;
+insert into user(id, username) values(1, &#39;wenyi&#39;) on duplicate key update username = &#39;wenyi&#39;;
+
+&lt;hr /&gt;
+
+&lt;p&gt;注：ON DUPLICATE KEY UPDATE只是MySQL的特有语法，并不是SQL标准语法。&lt;/p&gt;
+
+&lt;p&gt;更多信息见 &lt;a href=&#34;http://dev.mysql.com/doc/refman/5.1/zh/sql-syntax.html#insert&#34;&gt;http://dev.mysql.com/doc/refman/5.1/zh/sql-syntax.html#insert&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
-      <title>简单的博客 RSS 聚合</title>
-      <link>http://blog.wenzhixin.net.cn/2013/11/04/simple_rss_together/</link>
-      <pubDate>Mon, 04 Nov 2013 01:00:00 +0000</pubDate>
+      <title>Oracle 获取DDL语句入门小记</title>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/oracle_ddl</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/11/04/simple_rss_together/</guid>
-      <description>1. 前言 将博客的 RSS 内容聚合起来，这样方便查看，今天就来研究如何简单的将 RSS 的内容存到数据库（MySQL）中。 2. 创建数据库表 1 2 3 4 5 6 7 8 CREATE TABLE links</description>
-    </item>
-    
-    <item>
-      <title>MongoDB mongoexport 命令的使用及简单实现</title>
-      <link>http://blog.wenzhixin.net.cn/2013/06/12/mongodb_export/</link>
-      <pubDate>Wed, 12 Jun 2013 23:07:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2013/06/12/mongodb_export/</guid>
-      <description>MongoDB 提供了 mongoexport 命令来导出数据，导出的数据是 json 格式的，当然也可以是 csv 格式。主要可以实现备份和恢复的功能。 具体的使用，我们使用 &amp;ndash;help 查看，主要的参数有：</description>
-    </item>
-    
-    <item>
-      <title>MongoDB 创建、更新及删除文档</title>
-      <link>http://blog.wenzhixin.net.cn/2012/12/08/mongodb_insert_update_remove/</link>
-      <pubDate>Sat, 08 Dec 2012 08:24:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/12/08/mongodb_insert_update_remove/</guid>
-      <description>1、插入文档：insert 1) 基本用法： 1 db.name.insert(文档内容); 例子： 1 db.users.insert({&amp;#34;username&amp;#34;: &amp;#34;wenyi&amp;#34;, &amp;#34;age&amp;#34;: 25}); 2) 从其他数据库导入数据，使用 mongoimport 命令 3) 原理与</description>
-    </item>
-    
-    <item>
-      <title>MongoDB 创建、更新及删除文档</title>
-      <link>http://blog.wenzhixin.net.cn/2012/12/08/mongodb_insert_update_remove/</link>
-      <pubDate>Sat, 08 Dec 2012 08:24:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/12/08/mongodb_insert_update_remove/</guid>
-      <description>1、插入文档：insert 1) 基本用法： 1 db.name.insert(文档内容); 例子： 1 db.users.insert({&amp;#34;username&amp;#34;: &amp;#34;wenyi&amp;#34;, &amp;#34;age&amp;#34;: 25}); 2) 从其他数据库导入数据，使用 mongoimport 命令 3) 原理与</description>
-    </item>
-    
-    <item>
-      <title>MongoDB 入门</title>
-      <link>http://blog.wenzhixin.net.cn/2012/12/06/mongodb_started/</link>
-      <pubDate>Thu, 06 Dec 2012 22:39:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/12/06/mongodb_started/</guid>
-      <description>1、文档 1) 概念：文档是将多个键及其关联的值有序地放置在一起。 1 {&amp;#34;name&amp;#34;: &amp;#34;wenyi&amp;#34;, &amp;#34;say&amp;#34;: &amp;#34;Hello, world!&amp;#34;} 2) 特性： 文档中的键值对是有序的 文档的键是字符串 文档不能有重复的键 3) 键</description>
-    </item>
-    
-    <item>
-      <title>MongoDB 入门</title>
-      <link>http://blog.wenzhixin.net.cn/2012/12/06/mongodb_started/</link>
-      <pubDate>Thu, 06 Dec 2012 22:39:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/12/06/mongodb_started/</guid>
-      <description>1、文档 1) 概念：文档是将多个键及其关联的值有序地放置在一起。 1 {&amp;#34;name&amp;#34;: &amp;#34;wenyi&amp;#34;, &amp;#34;say&amp;#34;: &amp;#34;Hello, world!&amp;#34;} 2) 特性： 文档中的键值对是有序的 文档的键是字符串 文档不能有重复的键 3) 键</description>
-    </item>
-    
-    <item>
-      <title>MySQL、Postgres 开启远程访问权限（ubuntu）</title>
-      <link>http://blog.wenzhixin.net.cn/2012/05/15/mysql_open_the_remote_access_ubuntu/</link>
-      <pubDate>Tue, 15 May 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/05/15/mysql_open_the_remote_access_ubuntu/</guid>
-      <description>MySQL 1、编辑 my.cnf 文件： 1 sudo vi /etc/mysql/my.cnf 2、将绑定地址行注释掉或者修改为指定 IP 1 #bind-address = 127.0.0.1 3、登录 MySQL： 1 mysql -uroot -p123 4、添加 root 用户访问权限 1 2 grant all privileges on *.* to &amp;#39;root&amp;#39;@&amp;#39;%&amp;#39;</description>
-    </item>
-    
-    <item>
-      <title>MySQL、Postgres 开启远程访问权限（ubuntu）</title>
-      <link>http://blog.wenzhixin.net.cn/2012/05/15/mysql_open_the_remote_access_ubuntu/</link>
-      <pubDate>Tue, 15 May 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/05/15/mysql_open_the_remote_access_ubuntu/</guid>
-      <description>MySQL 1、编辑 my.cnf 文件： 1 sudo vi /etc/mysql/my.cnf 2、将绑定地址行注释掉或者修改为指定 IP 1 #bind-address = 127.0.0.1 3、登录 MySQL： 1 mysql -uroot -p123 4、添加 root 用户访问权限 1 2 grant all privileges on *.* to &amp;#39;root&amp;#39;@&amp;#39;%&amp;#39;</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/oracle_ddl</guid>
+      <description>
+
+&lt;h3 id=&#34;sqlplus-登录:e3b1259d48a958535969632ae5dfca28&#34;&gt;sqlplus 登录&lt;/h3&gt;
+
+&lt;p&gt;在操作系统命令行下：&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;方法1：&lt;/strong&gt;&lt;/p&gt;
+sqlplus / as sysdba #这是典型的操作系统认证，不需要listener进程
+sqlplus system/password as sysdba #这种连接方式只能连接本机数据库，同样不需要listener进程
+
+&lt;p&gt;&lt;strong&gt;方法2：&lt;/strong&gt;&lt;/p&gt;
+sqlplus /nolog
+CONNECT username/password@host[:port][/service_name]
+
+&lt;h3 id=&#34;查看当前用户:e3b1259d48a958535969632ae5dfca28&#34;&gt;查看当前用户&lt;/h3&gt;
+select user from dual;
+
+&lt;h3 id=&#34;查看-databases:e3b1259d48a958535969632ae5dfca28&#34;&gt;查看 databases&lt;/h3&gt;
+select name from v$database;
+
+&lt;h3 id=&#34;查看-tables:e3b1259d48a958535969632ae5dfca28&#34;&gt;查看 tables&lt;/h3&gt;
+select owner, table_name from dba_tables;
+select owner, table_name from all_tables; # do not have access dba_tables;
+select table_name from user_tables; # you own
+
+&lt;h3 id=&#34;获取一个schema下的所有建表-视图和建索引的语法:e3b1259d48a958535969632ae5dfca28&#34;&gt;获取一个SCHEMA下的所有建表、视图和建索引的语法&lt;/h3&gt;
+set pagesize 0
+set long 90000
+set feedback off
+set echo off
+spool schema.sql
+select dbms_metadata.get_ddl(&#39;TABLE&#39;, u.table_name) from user_tables u;
+select dbms_metadata.get_ddl(&#39;VIEW&#39;, u.VIEW_name) from user_views u;
+select dbms_metadata.get_ddl(&#39;INDEX&#39;, u.index_name) from user_indexes u;
+spool off;
+
+&lt;h3 id=&#34;获取单个的建表-视图和建索引的语法:e3b1259d48a958535969632ae5dfca28&#34;&gt;获取单个的建表、视图和建索引的语法&lt;/h3&gt;
+set pagesize 0
+set long 90000
+set feedback off
+set echo off
+spool &lt;table_name&gt;.sql
+select dbms_metadata.get_ddl(&#39;TABLE&#39;, &#39;&lt;table_name&gt;&#39;, &#39;&lt;SCHEMA&gt;&#39;) from dual;
+select dbms_metadata.get_ddl(&#39;VIEW&#39;, &#39;&lt;view_name&gt;&#39;, &#39;&lt;SCHEMA&gt;&#39;) from dual;
+select dbms_metadata.get_ddl(&#39;INDEX&#39;, &#39;&lt;index_name&gt;&#39;, &#39;&lt;SCHEMA&gt;&#39;) from dual;
+spool off;
+
+&lt;h3 id=&#34;获取某个-schema-的建全部存储过程的语法:e3b1259d48a958535969632ae5dfca28&#34;&gt;获取某个 SCHEMA 的建全部存储过程的语法&lt;/h3&gt;
+set pagesize 0
+set long 90000
+set feedback off
+set echo off
+spool procedures.sql
+select dbms_metadata.get_ddl(&#39;PROCEDURE&#39;, u.object_name)
+from user_objects u
+where object_type = &#39;PROCEDURE&#39;;
+spool off;
+
+&lt;h3 id=&#34;获取指定名称的建存储过程的语法:e3b1259d48a958535969632ae5dfca28&#34;&gt;获取指定名称的建存储过程的语法&lt;/h3&gt;
+set pagesize 0
+set long 90000
+set feedback off
+set echo off
+spool &lt;Procedure_Name&gt;.sql
+select text
+from all_source
+where name= &#39;&lt;procedure_name&gt;&#39;;
+spool off;
+</description>
     </item>
     
     <item>
       <title>SQL学习笔记——DDL</title>
-      <link>http://blog.wenzhixin.net.cn/2012/03/09/sql_study_notes_ddl/</link>
-      <pubDate>Fri, 09 Mar 2012 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/sql_study_notes_ddl</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/03/09/sql_study_notes_ddl/</guid>
-      <description>​1. CREATE DATABASE Syntax • CREATE DATABASE database_name ​2. CREATE TABLE Syntax • CREATE TABLE table_name ( column_name1 data_type, column_name2 data_type, column_name3 data_type, ) ​3. SQL Constraints • NOT NULL - cannot insert a new record, or update a record without adding a value to this field • UNIQUE - uniquely identifies each record in a table • PRIMARY KEY • FOREIGN KEY (REFERENCES)</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/sql_study_notes_ddl</guid>
+      <description>&lt;p&gt;​1. CREATE DATABASE Syntax&lt;/p&gt;
+
+&lt;p&gt;  • CREATE DATABASE database_name&lt;/p&gt;
+
+&lt;p&gt;​2. CREATE TABLE Syntax&lt;/p&gt;
+
+&lt;p&gt;  • CREATE TABLE table_name &lt;/p&gt;
+
+&lt;p&gt;    (&lt;/p&gt;
+
+&lt;p&gt;    column_name1 data_type,&lt;/p&gt;
+
+&lt;p&gt;    column_name2 data_type,&lt;/p&gt;
+
+&lt;p&gt;    column_name3 data_type,&lt;/p&gt;
+
+&lt;p&gt;    )&lt;/p&gt;
+
+&lt;p&gt;​3. SQL Constraints&lt;/p&gt;
+
+&lt;p&gt;  • NOT NULL - cannot insert a new record, or update a record without
+adding a value to this field&lt;/p&gt;
+
+&lt;p&gt;  • UNIQUE - uniquely identifies each record in a table&lt;/p&gt;
+
+&lt;p&gt;  • PRIMARY KEY&lt;/p&gt;
+
+&lt;p&gt;  • FOREIGN KEY (REFERENCES) - points to a PRIMARY KEY in another table&lt;/p&gt;
+
+&lt;p&gt;  • CHECK - is used to limit the value range that can be placed in a
+column&lt;/p&gt;
+
+&lt;p&gt;  • DEFAULT - is used to insert a default value into a column&lt;/p&gt;
+
+&lt;p&gt;​4. SQL Indexs&lt;/p&gt;
+
+&lt;p&gt;  (1) An index can be created in a table to find data more quickly and
+efficiently&lt;/p&gt;
+
+&lt;p&gt;  (2) CREATE INDEX Syntax:&lt;/p&gt;
+
+&lt;p&gt;  • CREATE INDEX index_name ON table_name(column_name)&lt;/p&gt;
+
+&lt;p&gt;  • CREATE UNIQUE INDEX index_name ON table_name(column_name)&lt;/p&gt;
+
+&lt;p&gt;  (3) DROP INDEX Syntax: &lt;/p&gt;
+
+&lt;p&gt;  • DROP INDEX index_name ON table_name&lt;/p&gt;
+
+&lt;p&gt;​5. DROP TABLE Syntax&lt;/p&gt;
+
+&lt;p&gt;  • DROP TABLE table_name&lt;/p&gt;
+
+&lt;p&gt;​6. DROP DATABASE Syntax&lt;/p&gt;
+
+&lt;p&gt;  • DROP DATABASE database_name&lt;/p&gt;
+
+&lt;p&gt;​7. TRUNCATE TABLE Syntax&lt;/p&gt;
+
+&lt;p&gt;  • TRUNCATE TABLE table_name&lt;/p&gt;
+
+&lt;p&gt;​8. ALTER TABLE Synta&lt;/p&gt;
+
+&lt;p&gt;  • ALTER TABLE table_name ADD column_name data_type&lt;/p&gt;
+
+&lt;p&gt;  • ALTER TABLE table_name DROP column_name&lt;/p&gt;
+
+&lt;p&gt;  • ALTER TABLE table_name ALTER COLUMN column_name data_type&lt;/p&gt;
+
+&lt;p&gt;​9. SQL CREATE VIEW&lt;/p&gt;
+
+&lt;p&gt;  (1) a view is a virtual table based on the result-set of an SQL
+statement&lt;/p&gt;
+
+&lt;p&gt;  (2) CREATE VIEW Syntax&lt;/p&gt;
+
+&lt;p&gt;  • CREATE VIEW view_name AS SELECT column_name(s) FROM table_name
+WHERE condition&lt;/p&gt;
+
+&lt;p&gt;  (3) UPDATE VIEW Syntax&lt;/p&gt;
+
+&lt;p&gt;  • CREATE OR REPLACE VIEW view_name AS SELECT column_name(s) FROM
+table_name WHERE condition&lt;/p&gt;
+
+&lt;p&gt;  (4) DROP VIEW Syntax&lt;/p&gt;
+
+&lt;p&gt;  • DROP VIEW view_name&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>SQL学习笔记——DDL</title>
-      <link>http://blog.wenzhixin.net.cn/2012/03/09/sql_study_notes_ddl/</link>
-      <pubDate>Fri, 09 Mar 2012 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/sql_study_notes_ddl</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/03/09/sql_study_notes_ddl/</guid>
-      <description>​1. CREATE DATABASE Syntax • CREATE DATABASE database_name ​2. CREATE TABLE Syntax • CREATE TABLE table_name ( column_name1 data_type, column_name2 data_type, column_name3 data_type, ) ​3. SQL Constraints • NOT NULL - cannot insert a new record, or update a record without adding a value to this field • UNIQUE - uniquely identifies each record in a table • PRIMARY KEY • FOREIGN KEY (REFERENCES)</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/sql_study_notes_ddl</guid>
+      <description>&lt;p&gt;​1. CREATE DATABASE Syntax&lt;/p&gt;
+
+&lt;p&gt;  • CREATE DATABASE database_name&lt;/p&gt;
+
+&lt;p&gt;​2. CREATE TABLE Syntax&lt;/p&gt;
+
+&lt;p&gt;  • CREATE TABLE table_name &lt;/p&gt;
+
+&lt;p&gt;    (&lt;/p&gt;
+
+&lt;p&gt;    column_name1 data_type,&lt;/p&gt;
+
+&lt;p&gt;    column_name2 data_type,&lt;/p&gt;
+
+&lt;p&gt;    column_name3 data_type,&lt;/p&gt;
+
+&lt;p&gt;    )&lt;/p&gt;
+
+&lt;p&gt;​3. SQL Constraints&lt;/p&gt;
+
+&lt;p&gt;  • NOT NULL - cannot insert a new record, or update a record without
+adding a value to this field&lt;/p&gt;
+
+&lt;p&gt;  • UNIQUE - uniquely identifies each record in a table&lt;/p&gt;
+
+&lt;p&gt;  • PRIMARY KEY&lt;/p&gt;
+
+&lt;p&gt;  • FOREIGN KEY (REFERENCES) - points to a PRIMARY KEY in another table&lt;/p&gt;
+
+&lt;p&gt;  • CHECK - is used to limit the value range that can be placed in a
+column&lt;/p&gt;
+
+&lt;p&gt;  • DEFAULT - is used to insert a default value into a column&lt;/p&gt;
+
+&lt;p&gt;​4. SQL Indexs&lt;/p&gt;
+
+&lt;p&gt;  (1) An index can be created in a table to find data more quickly and
+efficiently&lt;/p&gt;
+
+&lt;p&gt;  (2) CREATE INDEX Syntax:&lt;/p&gt;
+
+&lt;p&gt;  • CREATE INDEX index_name ON table_name(column_name)&lt;/p&gt;
+
+&lt;p&gt;  • CREATE UNIQUE INDEX index_name ON table_name(column_name)&lt;/p&gt;
+
+&lt;p&gt;  (3) DROP INDEX Syntax: &lt;/p&gt;
+
+&lt;p&gt;  • DROP INDEX index_name ON table_name&lt;/p&gt;
+
+&lt;p&gt;​5. DROP TABLE Syntax&lt;/p&gt;
+
+&lt;p&gt;  • DROP TABLE table_name&lt;/p&gt;
+
+&lt;p&gt;​6. DROP DATABASE Syntax&lt;/p&gt;
+
+&lt;p&gt;  • DROP DATABASE database_name&lt;/p&gt;
+
+&lt;p&gt;​7. TRUNCATE TABLE Syntax&lt;/p&gt;
+
+&lt;p&gt;  • TRUNCATE TABLE table_name&lt;/p&gt;
+
+&lt;p&gt;​8. ALTER TABLE Synta&lt;/p&gt;
+
+&lt;p&gt;  • ALTER TABLE table_name ADD column_name data_type&lt;/p&gt;
+
+&lt;p&gt;  • ALTER TABLE table_name DROP column_name&lt;/p&gt;
+
+&lt;p&gt;  • ALTER TABLE table_name ALTER COLUMN column_name data_type&lt;/p&gt;
+
+&lt;p&gt;​9. SQL CREATE VIEW&lt;/p&gt;
+
+&lt;p&gt;  (1) a view is a virtual table based on the result-set of an SQL
+statement&lt;/p&gt;
+
+&lt;p&gt;  (2) CREATE VIEW Syntax&lt;/p&gt;
+
+&lt;p&gt;  • CREATE VIEW view_name AS SELECT column_name(s) FROM table_name
+WHERE condition&lt;/p&gt;
+
+&lt;p&gt;  (3) UPDATE VIEW Syntax&lt;/p&gt;
+
+&lt;p&gt;  • CREATE OR REPLACE VIEW view_name AS SELECT column_name(s) FROM
+table_name WHERE condition&lt;/p&gt;
+
+&lt;p&gt;  (4) DROP VIEW Syntax&lt;/p&gt;
+
+&lt;p&gt;  • DROP VIEW view_name&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>SQL学习笔记——DML</title>
-      <link>http://blog.wenzhixin.net.cn/2012/03/09/sql_study_notes_dml/</link>
-      <pubDate>Fri, 09 Mar 2012 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/sql_study_notes_dml</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/03/09/sql_study_notes_dml/</guid>
-      <description>​1. What is SQL (1) SQL stands for Structured Query Language (2) SQL is an ANSI standard (3) RDBMS(Relational Database Managerment System) is the basis for SQL like SQLServer, DB2, Oracle, MySQL, and Access eg. ​2. SQL DML and DDL (1) The query and update commands from the DML(Data Manipulation Language) part of SQL: • SELECT - extracts data from a database • UPDATE - updates</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/sql_study_notes_dml</guid>
+      <description>&lt;p&gt;​1. What is SQL&lt;/p&gt;
+
+&lt;p&gt;  (1) SQL stands for Structured Query Language&lt;/p&gt;
+
+&lt;p&gt;  (2) SQL is an ANSI standard&lt;/p&gt;
+
+&lt;p&gt;  (3) RDBMS(Relational Database Managerment System) is the basis for SQL
+like SQLServer, DB2, Oracle, MySQL, and Access eg.&lt;/p&gt;
+
+&lt;p&gt;​2. SQL DML and DDL&lt;/p&gt;
+
+&lt;p&gt;  (1) The query and update commands from the DML(Data Manipulation
+Language) part of SQL:&lt;/p&gt;
+
+&lt;p&gt;  • SELECT - extracts data from a database&lt;/p&gt;
+
+&lt;p&gt;  • UPDATE - updates data in a database&lt;/p&gt;
+
+&lt;p&gt;  • DELETE - deletes data from a database&lt;/p&gt;
+
+&lt;p&gt;  • INSERT INTO - inserts new data into a database&lt;/p&gt;
+
+&lt;p&gt;  (2) The most important DDL(Data Definition Language) statements in
+SQL:&lt;/p&gt;
+
+&lt;p&gt;  • CREATE DATABASE - creates a new database&lt;/p&gt;
+
+&lt;p&gt;  • ALTER DATABASE - modifies a database&lt;/p&gt;
+
+&lt;p&gt;  • CREATE TABLE - creates a new table&lt;/p&gt;
+
+&lt;p&gt;  • ALTER TABLE - modifies a table&lt;/p&gt;
+
+&lt;p&gt;  • DROP TABLE - deletes a table&lt;/p&gt;
+
+&lt;p&gt;  • CREATE INDEX - creates an index&lt;/p&gt;
+
+&lt;p&gt;  • DROP INDEX - deletes an index&lt;/p&gt;
+
+&lt;p&gt;​3. SELECT Syntax and keywords&lt;/p&gt;
+
+&lt;p&gt;  (1) SELECT Syntax: SELECT column_name(s) FTOM table_name&lt;/p&gt;
+
+&lt;p&gt;  (2) DISTINCT: can be used to return only distinct values&lt;/p&gt;
+
+&lt;p&gt;  (3) WHERE: is used to filter records&lt;/p&gt;
+
+&lt;p&gt;  • Operators allowed in the WHERE clause: =, &amp;lt;&amp;gt;, &amp;gt;, &amp;lt;, &amp;gt;=, &amp;lt;=,
+AND, OR, BETWEEN, LIKE, IN&lt;/p&gt;
+
+&lt;p&gt;  (4) ORDER BY: is used to sort the result-set&lt;/p&gt;
+
+&lt;p&gt;  • Keyworks for ORDER BY: ASC, DESC&lt;/p&gt;
+
+&lt;p&gt;​4. INSERT INTO Syntax&lt;/p&gt;
+
+&lt;p&gt;  • INSERT INTO table_name VALUES(value1, value2, value3, &amp;hellip;) &lt;/p&gt;
+
+&lt;p&gt;  • INSERT INTO table_name(column1, column2, column3, &amp;hellip;)
+VALUES(value1, value2, value3,&amp;hellip;)&lt;/p&gt;
+
+&lt;p&gt;​5. UPDATE Syntax&lt;/p&gt;
+
+&lt;p&gt;  • UPDATE table_name SET column1 = value1, column2 = value2, &amp;hellip; WHERE
+some_column = some_value&lt;/p&gt;
+
+&lt;p&gt;​6. DELETE Syntax&lt;/p&gt;
+
+&lt;p&gt;  • DELETE FROM table_name WHERE some_column = some_value&lt;/p&gt;
+
+&lt;p&gt;​7. SQL Aggregate functions and Syntax&lt;/p&gt;
+
+&lt;p&gt;  (1) AVG() - returns the average value&lt;/p&gt;
+
+&lt;p&gt;  • SELECT AVG(column_name) FROM table_name&lt;/p&gt;
+
+&lt;p&gt;  (2) COUNT() - returns the number of rows&lt;/p&gt;
+
+&lt;p&gt;  • SELECT COUNT(*) FROM table_name&lt;/p&gt;
+
+&lt;p&gt;  • SELECT COUNT(DISTINCT column_name) FROM table_name&lt;/p&gt;
+
+&lt;p&gt;  (3) FIRST() - returns the first value&lt;/p&gt;
+
+&lt;p&gt;  • SELECT FIRST(column_name) FROM table_name&lt;/p&gt;
+
+&lt;p&gt;  (4) LAST() - returns the last value&lt;/p&gt;
+
+&lt;p&gt;  • SELECT LAST(column_name) FROM table_name&lt;/p&gt;
+
+&lt;p&gt;  (5) MAX() - returns the largest value&lt;/p&gt;
+
+&lt;p&gt;  • SELECT MAX(column_name) FROM table_name&lt;/p&gt;
+
+&lt;p&gt;  (6) MIN() - returns the smallest value&lt;/p&gt;
+
+&lt;p&gt;  • SELECT MIN(column_name) FROM table_name&lt;/p&gt;
+
+&lt;p&gt;  (7) SUM() - return the sum&lt;/p&gt;
+
+&lt;p&gt;  • SELECT SUM(column_name) FROM table_name&lt;/p&gt;
+
+&lt;p&gt;  (8) GROUP BY - is used in conjunction with the aggregate functions to
+group the result-set by one or more columns&lt;/p&gt;
+
+&lt;p&gt;  • SELECT column_name, aggregate_function(column_name) FROM
+table_name WHERE column_name operator value GROUP BY column_name&lt;/p&gt;
+
+&lt;p&gt;  (9) HAVING - was added to SQL because the WHERE keyword could not be
+used with aggregate functions&lt;/p&gt;
+
+&lt;p&gt;  • SELECT column_name, agregate_function(column_name) FROM
+table_name WHERE column_name operator value GROUP BY column_name
+HAVING aggregate_function(column_name) operator value&lt;/p&gt;
+
+&lt;p&gt;​8. SQL Scalar functions&lt;/p&gt;
+
+&lt;p&gt;  (1) UCASE() - converts a field to upper case&lt;/p&gt;
+
+&lt;p&gt;  • SELECT UCASE(column_name) FROM table_name&lt;/p&gt;
+
+&lt;p&gt;  (2) LCASE() - converts a field to lower case&lt;/p&gt;
+
+&lt;p&gt;  • SELECT LCASE(column_name) FROM table_name&lt;/p&gt;
+
+&lt;p&gt;  (3) MID() - extract characters from a text field&lt;/p&gt;
+
+&lt;p&gt;  • SELECT MID(column_name, start[, length]) FROM table_name&lt;/p&gt;
+
+&lt;p&gt;  (4) LEN() - returns the length of a text field&lt;/p&gt;
+
+&lt;p&gt;  • SELECT LEN(column_name) FROM table_name&lt;/p&gt;
+
+&lt;p&gt;  (5) ROUND() - rounds a numeric field to the number of decimals
+specified&lt;/p&gt;
+
+&lt;p&gt;  • SELECT ROUND(column_name, decimals) FROM table_name&lt;/p&gt;
+
+&lt;p&gt;  (6) NOW() - returns the current system date and time&lt;/p&gt;
+
+&lt;p&gt;  • SELECT NOW() FROM table_name&lt;/p&gt;
+
+&lt;p&gt;  (7) FORMAT() - formats how a field is to be diaplayed&lt;/p&gt;
+
+&lt;p&gt;  • SELECT FORMAT(column_name, format) FROM table_name&lt;/p&gt;
+
+&lt;p&gt;  (8) TOP - is used to specify the number of records to return&lt;/p&gt;
+
+&lt;p&gt;  • SELECT TOP number|percent column_name(s) FROM table_name&lt;/p&gt;
+
+&lt;p&gt;  (9) LIKE - is used to search for a specified pattern in a column&lt;/p&gt;
+
+&lt;p&gt;  • SELECT column_name(s) FROM table_name WHERE column_name LIKE
+pattern&lt;/p&gt;
+
+&lt;p&gt;  (10) IN - allows you to specify multiple values in a WHERE clause&lt;/p&gt;
+
+&lt;p&gt;  • SELECT column_name(s) FROM table_name WHERE column_name IN
+(value1, value2, &amp;hellip;)&lt;/p&gt;
+
+&lt;p&gt;  (11) BETWEEN AND - selects a range of data between two values&lt;/p&gt;
+
+&lt;p&gt;  • SELECT column_name(s) FROM table_name WHERE column_name BETWEEN
+value1 AND value2&lt;/p&gt;
+
+&lt;p&gt;​9. SQL Wildcard&lt;/p&gt;
+
+&lt;p&gt;  • % - a substitute for zero or more characters&lt;/p&gt;
+
+&lt;p&gt;  • _ - a substitute for exactly one character&lt;/p&gt;
+
+&lt;p&gt;  • [charlist] - any single charater in charlist&lt;/p&gt;
+
+&lt;p&gt;  • [\^charlist] or [!charlist] - any single character not in charlist&lt;/p&gt;
+
+&lt;p&gt;​10. SQL Alias Syntax&lt;/p&gt;
+
+&lt;p&gt;  • SELECT column_name(s) FROM table_name AS alias_name&lt;/p&gt;
+
+&lt;p&gt;  • SELECT column_name AS alias_name FROM table_name&lt;/p&gt;
+
+&lt;p&gt;​11. SQL Joins&lt;/p&gt;
+
+&lt;p&gt;  • SQL joins are used to query data from two or more tables, base on a
+relationship between certain columns in these tablse&lt;/p&gt;
+
+&lt;p&gt;  • Different SQL JOINS:&lt;/p&gt;
+
+&lt;p&gt;  (1) JOIN or INNER JOIN - return rows when there is at least one match
+in both tables&lt;/p&gt;
+
+&lt;p&gt;  • SELECT column_name(s) FROM table_name1 INNER JOIN table_name2 ON
+table_name1.column_name = table_name2.column_name&lt;/p&gt;
+
+&lt;p&gt;  (2) LEFT JOIN - return all rows from the left table, even if there are
+no matches in the right table&lt;/p&gt;
+
+&lt;p&gt;  • SELECT column_name(s) FROM table_name1 LEFT JOIN table_name2 ON
+table_name1.column_name = table_name2.column_name&lt;/p&gt;
+
+&lt;p&gt;  (3) RIGHT JOIN - return all rows from the right table, even if there
+are no matches in the left table&lt;/p&gt;
+
+&lt;p&gt;  • SELECT column_name(s) FROM table_name1 RIGHT JOIN table_name2 ON
+table_name1.column_name = table_name2.column_name&lt;/p&gt;
+
+&lt;p&gt;  (4) FULL JOIN - return rows when there is a match in one of the tables&lt;/p&gt;
+
+&lt;p&gt;  • SELECT column_name(s) FROM table_name1 FULL JOIN table_name2 ON
+table_name1.column_name = table_name2.column_name&lt;/p&gt;
+
+&lt;p&gt;​12. SQL UNION Operator&lt;/p&gt;
+
+&lt;p&gt;  (1) UNION operator is used to combine the result-set of two or more
+SELECT statements&lt;/p&gt;
+
+&lt;p&gt;  (2) Syntax&lt;/p&gt;
+
+&lt;p&gt;  • SELECT column_name(s) FROM table_name1 UNION SELECT
+column_name(s) FROM table_name2&lt;/p&gt;
+
+&lt;p&gt;  • SELECT column_name(s) FROM table_name1 UNION ALL SELECT
+column_name(s) FROM table_name2&lt;/p&gt;
+
+&lt;p&gt;​13. SQL SELECT INTO Statement&lt;/p&gt;
+
+&lt;p&gt;  (1) SELECT INTO statement can be used to create backup copies of
+tables&lt;/p&gt;
+
+&lt;p&gt;  (2) Syntax:&lt;/p&gt;
+
+&lt;p&gt;  • SELECT * INTO new_table_name [IN externaldatabase] FROM
+old_tablename&lt;/p&gt;
+
+&lt;p&gt;  • SELECT column_name(s) INTO new_table_name [IN externaldatabase]
+FROM old_tablename&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>SQL学习笔记——DML</title>
-      <link>http://blog.wenzhixin.net.cn/2012/03/09/sql_study_notes_dml/</link>
-      <pubDate>Fri, 09 Mar 2012 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/sql_study_notes_dml</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/03/09/sql_study_notes_dml/</guid>
-      <description>​1. What is SQL (1) SQL stands for Structured Query Language (2) SQL is an ANSI standard (3) RDBMS(Relational Database Managerment System) is the basis for SQL like SQLServer, DB2, Oracle, MySQL, and Access eg. ​2. SQL DML and DDL (1) The query and update commands from the DML(Data Manipulation Language) part of SQL: • SELECT - extracts data from a database • UPDATE - updates</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/sql_study_notes_dml</guid>
+      <description>&lt;p&gt;​1. What is SQL&lt;/p&gt;
+
+&lt;p&gt;  (1) SQL stands for Structured Query Language&lt;/p&gt;
+
+&lt;p&gt;  (2) SQL is an ANSI standard&lt;/p&gt;
+
+&lt;p&gt;  (3) RDBMS(Relational Database Managerment System) is the basis for SQL
+like SQLServer, DB2, Oracle, MySQL, and Access eg.&lt;/p&gt;
+
+&lt;p&gt;​2. SQL DML and DDL&lt;/p&gt;
+
+&lt;p&gt;  (1) The query and update commands from the DML(Data Manipulation
+Language) part of SQL:&lt;/p&gt;
+
+&lt;p&gt;  • SELECT - extracts data from a database&lt;/p&gt;
+
+&lt;p&gt;  • UPDATE - updates data in a database&lt;/p&gt;
+
+&lt;p&gt;  • DELETE - deletes data from a database&lt;/p&gt;
+
+&lt;p&gt;  • INSERT INTO - inserts new data into a database&lt;/p&gt;
+
+&lt;p&gt;  (2) The most important DDL(Data Definition Language) statements in
+SQL:&lt;/p&gt;
+
+&lt;p&gt;  • CREATE DATABASE - creates a new database&lt;/p&gt;
+
+&lt;p&gt;  • ALTER DATABASE - modifies a database&lt;/p&gt;
+
+&lt;p&gt;  • CREATE TABLE - creates a new table&lt;/p&gt;
+
+&lt;p&gt;  • ALTER TABLE - modifies a table&lt;/p&gt;
+
+&lt;p&gt;  • DROP TABLE - deletes a table&lt;/p&gt;
+
+&lt;p&gt;  • CREATE INDEX - creates an index&lt;/p&gt;
+
+&lt;p&gt;  • DROP INDEX - deletes an index&lt;/p&gt;
+
+&lt;p&gt;​3. SELECT Syntax and keywords&lt;/p&gt;
+
+&lt;p&gt;  (1) SELECT Syntax: SELECT column_name(s) FTOM table_name&lt;/p&gt;
+
+&lt;p&gt;  (2) DISTINCT: can be used to return only distinct values&lt;/p&gt;
+
+&lt;p&gt;  (3) WHERE: is used to filter records&lt;/p&gt;
+
+&lt;p&gt;  • Operators allowed in the WHERE clause: =, &amp;lt;&amp;gt;, &amp;gt;, &amp;lt;, &amp;gt;=, &amp;lt;=,
+AND, OR, BETWEEN, LIKE, IN&lt;/p&gt;
+
+&lt;p&gt;  (4) ORDER BY: is used to sort the result-set&lt;/p&gt;
+
+&lt;p&gt;  • Keyworks for ORDER BY: ASC, DESC&lt;/p&gt;
+
+&lt;p&gt;​4. INSERT INTO Syntax&lt;/p&gt;
+
+&lt;p&gt;  • INSERT INTO table_name VALUES(value1, value2, value3, &amp;hellip;) &lt;/p&gt;
+
+&lt;p&gt;  • INSERT INTO table_name(column1, column2, column3, &amp;hellip;)
+VALUES(value1, value2, value3,&amp;hellip;)&lt;/p&gt;
+
+&lt;p&gt;​5. UPDATE Syntax&lt;/p&gt;
+
+&lt;p&gt;  • UPDATE table_name SET column1 = value1, column2 = value2, &amp;hellip; WHERE
+some_column = some_value&lt;/p&gt;
+
+&lt;p&gt;​6. DELETE Syntax&lt;/p&gt;
+
+&lt;p&gt;  • DELETE FROM table_name WHERE some_column = some_value&lt;/p&gt;
+
+&lt;p&gt;​7. SQL Aggregate functions and Syntax&lt;/p&gt;
+
+&lt;p&gt;  (1) AVG() - returns the average value&lt;/p&gt;
+
+&lt;p&gt;  • SELECT AVG(column_name) FROM table_name&lt;/p&gt;
+
+&lt;p&gt;  (2) COUNT() - returns the number of rows&lt;/p&gt;
+
+&lt;p&gt;  • SELECT COUNT(*) FROM table_name&lt;/p&gt;
+
+&lt;p&gt;  • SELECT COUNT(DISTINCT column_name) FROM table_name&lt;/p&gt;
+
+&lt;p&gt;  (3) FIRST() - returns the first value&lt;/p&gt;
+
+&lt;p&gt;  • SELECT FIRST(column_name) FROM table_name&lt;/p&gt;
+
+&lt;p&gt;  (4) LAST() - returns the last value&lt;/p&gt;
+
+&lt;p&gt;  • SELECT LAST(column_name) FROM table_name&lt;/p&gt;
+
+&lt;p&gt;  (5) MAX() - returns the largest value&lt;/p&gt;
+
+&lt;p&gt;  • SELECT MAX(column_name) FROM table_name&lt;/p&gt;
+
+&lt;p&gt;  (6) MIN() - returns the smallest value&lt;/p&gt;
+
+&lt;p&gt;  • SELECT MIN(column_name) FROM table_name&lt;/p&gt;
+
+&lt;p&gt;  (7) SUM() - return the sum&lt;/p&gt;
+
+&lt;p&gt;  • SELECT SUM(column_name) FROM table_name&lt;/p&gt;
+
+&lt;p&gt;  (8) GROUP BY - is used in conjunction with the aggregate functions to
+group the result-set by one or more columns&lt;/p&gt;
+
+&lt;p&gt;  • SELECT column_name, aggregate_function(column_name) FROM
+table_name WHERE column_name operator value GROUP BY column_name&lt;/p&gt;
+
+&lt;p&gt;  (9) HAVING - was added to SQL because the WHERE keyword could not be
+used with aggregate functions&lt;/p&gt;
+
+&lt;p&gt;  • SELECT column_name, agregate_function(column_name) FROM
+table_name WHERE column_name operator value GROUP BY column_name
+HAVING aggregate_function(column_name) operator value&lt;/p&gt;
+
+&lt;p&gt;​8. SQL Scalar functions&lt;/p&gt;
+
+&lt;p&gt;  (1) UCASE() - converts a field to upper case&lt;/p&gt;
+
+&lt;p&gt;  • SELECT UCASE(column_name) FROM table_name&lt;/p&gt;
+
+&lt;p&gt;  (2) LCASE() - converts a field to lower case&lt;/p&gt;
+
+&lt;p&gt;  • SELECT LCASE(column_name) FROM table_name&lt;/p&gt;
+
+&lt;p&gt;  (3) MID() - extract characters from a text field&lt;/p&gt;
+
+&lt;p&gt;  • SELECT MID(column_name, start[, length]) FROM table_name&lt;/p&gt;
+
+&lt;p&gt;  (4) LEN() - returns the length of a text field&lt;/p&gt;
+
+&lt;p&gt;  • SELECT LEN(column_name) FROM table_name&lt;/p&gt;
+
+&lt;p&gt;  (5) ROUND() - rounds a numeric field to the number of decimals
+specified&lt;/p&gt;
+
+&lt;p&gt;  • SELECT ROUND(column_name, decimals) FROM table_name&lt;/p&gt;
+
+&lt;p&gt;  (6) NOW() - returns the current system date and time&lt;/p&gt;
+
+&lt;p&gt;  • SELECT NOW() FROM table_name&lt;/p&gt;
+
+&lt;p&gt;  (7) FORMAT() - formats how a field is to be diaplayed&lt;/p&gt;
+
+&lt;p&gt;  • SELECT FORMAT(column_name, format) FROM table_name&lt;/p&gt;
+
+&lt;p&gt;  (8) TOP - is used to specify the number of records to return&lt;/p&gt;
+
+&lt;p&gt;  • SELECT TOP number|percent column_name(s) FROM table_name&lt;/p&gt;
+
+&lt;p&gt;  (9) LIKE - is used to search for a specified pattern in a column&lt;/p&gt;
+
+&lt;p&gt;  • SELECT column_name(s) FROM table_name WHERE column_name LIKE
+pattern&lt;/p&gt;
+
+&lt;p&gt;  (10) IN - allows you to specify multiple values in a WHERE clause&lt;/p&gt;
+
+&lt;p&gt;  • SELECT column_name(s) FROM table_name WHERE column_name IN
+(value1, value2, &amp;hellip;)&lt;/p&gt;
+
+&lt;p&gt;  (11) BETWEEN AND - selects a range of data between two values&lt;/p&gt;
+
+&lt;p&gt;  • SELECT column_name(s) FROM table_name WHERE column_name BETWEEN
+value1 AND value2&lt;/p&gt;
+
+&lt;p&gt;​9. SQL Wildcard&lt;/p&gt;
+
+&lt;p&gt;  • % - a substitute for zero or more characters&lt;/p&gt;
+
+&lt;p&gt;  • _ - a substitute for exactly one character&lt;/p&gt;
+
+&lt;p&gt;  • [charlist] - any single charater in charlist&lt;/p&gt;
+
+&lt;p&gt;  • [\^charlist] or [!charlist] - any single character not in charlist&lt;/p&gt;
+
+&lt;p&gt;​10. SQL Alias Syntax&lt;/p&gt;
+
+&lt;p&gt;  • SELECT column_name(s) FROM table_name AS alias_name&lt;/p&gt;
+
+&lt;p&gt;  • SELECT column_name AS alias_name FROM table_name&lt;/p&gt;
+
+&lt;p&gt;​11. SQL Joins&lt;/p&gt;
+
+&lt;p&gt;  • SQL joins are used to query data from two or more tables, base on a
+relationship between certain columns in these tablse&lt;/p&gt;
+
+&lt;p&gt;  • Different SQL JOINS:&lt;/p&gt;
+
+&lt;p&gt;  (1) JOIN or INNER JOIN - return rows when there is at least one match
+in both tables&lt;/p&gt;
+
+&lt;p&gt;  • SELECT column_name(s) FROM table_name1 INNER JOIN table_name2 ON
+table_name1.column_name = table_name2.column_name&lt;/p&gt;
+
+&lt;p&gt;  (2) LEFT JOIN - return all rows from the left table, even if there are
+no matches in the right table&lt;/p&gt;
+
+&lt;p&gt;  • SELECT column_name(s) FROM table_name1 LEFT JOIN table_name2 ON
+table_name1.column_name = table_name2.column_name&lt;/p&gt;
+
+&lt;p&gt;  (3) RIGHT JOIN - return all rows from the right table, even if there
+are no matches in the left table&lt;/p&gt;
+
+&lt;p&gt;  • SELECT column_name(s) FROM table_name1 RIGHT JOIN table_name2 ON
+table_name1.column_name = table_name2.column_name&lt;/p&gt;
+
+&lt;p&gt;  (4) FULL JOIN - return rows when there is a match in one of the tables&lt;/p&gt;
+
+&lt;p&gt;  • SELECT column_name(s) FROM table_name1 FULL JOIN table_name2 ON
+table_name1.column_name = table_name2.column_name&lt;/p&gt;
+
+&lt;p&gt;​12. SQL UNION Operator&lt;/p&gt;
+
+&lt;p&gt;  (1) UNION operator is used to combine the result-set of two or more
+SELECT statements&lt;/p&gt;
+
+&lt;p&gt;  (2) Syntax&lt;/p&gt;
+
+&lt;p&gt;  • SELECT column_name(s) FROM table_name1 UNION SELECT
+column_name(s) FROM table_name2&lt;/p&gt;
+
+&lt;p&gt;  • SELECT column_name(s) FROM table_name1 UNION ALL SELECT
+column_name(s) FROM table_name2&lt;/p&gt;
+
+&lt;p&gt;​13. SQL SELECT INTO Statement&lt;/p&gt;
+
+&lt;p&gt;  (1) SELECT INTO statement can be used to create backup copies of
+tables&lt;/p&gt;
+
+&lt;p&gt;  (2) Syntax:&lt;/p&gt;
+
+&lt;p&gt;  • SELECT * INTO new_table_name [IN externaldatabase] FROM
+old_tablename&lt;/p&gt;
+
+&lt;p&gt;  • SELECT column_name(s) INTO new_table_name [IN externaldatabase]
+FROM old_tablename&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Temporary Tablespace is Empty 解决方法（ORA-25153）</title>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/temporary_tablespace_is_empty</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/temporary_tablespace_is_empty</guid>
+      <description>
+
+&lt;h3 id=&#34;问题:80823c84cfc39e1c08535d0f0ce2d355&#34;&gt;问题：&lt;/h3&gt;
+
+&lt;p&gt;当我们对 Oralce 数据库进行操作的时候，出现了：&lt;/p&gt;
+ORA-25153: Temporary Tablespace is Empty
+
+&lt;p&gt;的错误，提示 temporary 表空间为空。&lt;/p&gt;
+
+&lt;h3 id=&#34;思路:80823c84cfc39e1c08535d0f0ce2d355&#34;&gt;思路：&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;当前用户没有设置表空间权限&lt;/li&gt;
+&lt;li&gt;表空间状态为 offline&lt;/li&gt;
+&lt;li&gt;当前用户没有指定表空间文件&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;解决:80823c84cfc39e1c08535d0f0ce2d355&#34;&gt;解决：&lt;/h3&gt;
+
+&lt;h4 id=&#34;1-查看当前用户:80823c84cfc39e1c08535d0f0ce2d355&#34;&gt;1. 查看当前用户&lt;/h4&gt;
+SQL&gt; show user;
+
+USER is &#34;SYS&#34;
+
+&lt;h4 id=&#34;2-查看当前用户是否已经设置了表空间权限:80823c84cfc39e1c08535d0f0ce2d355&#34;&gt;2. 查看当前用户是否已经设置了表空间权限&lt;/h4&gt;
+SQL&gt; select username,temporary_tablespace from dba_users where username=&#39;sys&#39;;
+
+USERNAME                       TEMPORARY_TABLESPACE
+------------------------------ ------------------------------
+SYS                            TEMP
+
+&lt;p&gt;假如为空，我们需要增加权限：&lt;/p&gt;
+SQL&gt; alter user sys temporary tablespace temp;
+
+&lt;h4 id=&#34;3-查看表空间状态:80823c84cfc39e1c08535d0f0ce2d355&#34;&gt;3. 查看表空间状态&lt;/h4&gt;
+SQL&gt; select tablespace_name, status from dba_tablespaces where tablespace_name=&#39;temp&#39;;
+
+TABLESPACE STATUS
+---------- ---------
+TEMP       ONLINE
+
+&lt;p&gt;假如为 OFFLINE，我们需要改为 ONLINE：&lt;/p&gt;
+SQL&gt; alter tablespace temp online;
+
+&lt;h4 id=&#34;4-查看当前用户是否指定表空间文件:80823c84cfc39e1c08535d0f0ce2d355&#34;&gt;4. 查看当前用户是否指定表空间文件&lt;/h4&gt;
+SQL&gt; select tablespace_name, file_name from dba_temp_files;
+
+TABLESPACE FILE_NAME
+---------- --------------------------------------------------
+TEMP       /opt/oracle/oradata/orcl/temp01.dbf
+
+&lt;p&gt;假如为空，我们需要先查看文件是否存在（windows 下为安装目录下的 oradata/orcl/temp01.dbf）：&lt;/p&gt;
+ls /opt/oracle/oradata/orcl/temp01.dbf
+
+/opt/oracle/oradata/orcl/temp01.dbf
+
+&lt;p&gt;在增加表空间文件：&lt;/p&gt;
+SQL&gt; alter tablespace temp add tempfile &#39;/opt/oracle/oradata/orcl/temp01.dbf&#39;;
+
+&lt;p&gt;搞定！！！&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>ubuntu 下 PostgreSQL 使用小记</title>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/hello_postgresql</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/hello_postgresql</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;http://zh.wikipedia.org/wiki/PostgreSQL&#34;&gt;PostgreSQL&lt;/a&gt; 是自由的对象-关系型数据库服务器（数据库管理系统）。&lt;/p&gt;
+
+&lt;p&gt;刚刚入门，记录下：&lt;/p&gt;
+
+&lt;h4 id=&#34;安装:81e14df784c561d68602426fbaf9a538&#34;&gt;安装&lt;/h4&gt;
+
+&lt;p&gt;安装 PostgreSQL 的服务器和客户端：&lt;/p&gt;
+sudo apt-get install postgresql postgresql-client
+
+&lt;h4 id=&#34;服务:81e14df784c561d68602426fbaf9a538&#34;&gt;服务&lt;/h4&gt;
+
+&lt;p&gt;安装完成后 PostgreSQL 已经自动启动了，我们可以通过命令进行操作：&lt;/p&gt;
+# 查看状态
+sudo /etc/init.d/postgresql status
+
+# 启动
+sudo /etc/init.d/postgresql start
+
+# 停止
+sudo /etc/init.d/postgresql stop
+
+# 重启
+sudo /etc/init.d/postgresql restart
+
+&lt;h4 id=&#34;创建新用户:81e14df784c561d68602426fbaf9a538&#34;&gt;创建新用户&lt;/h4&gt;
+
+&lt;p&gt;创建数据库用户 root，并指定其为超级用户：&lt;/p&gt;
+sudo -u postgres createuser --superuser root
+
+&lt;p&gt;登录数据库控制台，设置 root 用户的密码，退出控制台：&lt;/p&gt;
+sudo -u postgres psql
+\password root
+\q
+
+&lt;p&gt;\password user：表示设置用户的密码&lt;/p&gt;
+
+&lt;h4 id=&#34;创建数据库:81e14df784c561d68602426fbaf9a538&#34;&gt;创建数据库&lt;/h4&gt;
+
+&lt;p&gt;创建 test 数据库，指定用户为 root：&lt;/p&gt;
+sudo -u postgres createdb -O root test
+
+&lt;p&gt;修改数据库 test 为 test1：&lt;/p&gt;
+alter database test rename to test1;
+
+&lt;p&gt;也可以删除不需要的数据库，如：&lt;/p&gt;
+sudo -u postgres dropdb test
+
+&lt;h4 id=&#34;登录数据库:81e14df784c561d68602426fbaf9a538&#34;&gt;登录数据库&lt;/h4&gt;
+
+&lt;p&gt;使用 psql 命令：&lt;/p&gt;
+psql -U root -d test -h 127.0.0.1 -p 5432
+
+&lt;p&gt;-U 指定用户，-d 指定数据库，-h 指定服务器，-p 指定端口。&lt;/p&gt;
+
+&lt;p&gt;实际的使用中，我们创建用户名和数据库跟系统名称一样（系统认证），然后通过：&lt;/p&gt;
+psql
+
+&lt;p&gt;即可登录我们指定的数据库。&lt;/p&gt;
+
+&lt;p&gt;也可以通过环境变量指定默认的数据库（test）：&lt;/p&gt;
+export PGDATABASE=test
+
+&lt;h4 id=&#34;常用控制台命令:81e14df784c561d68602426fbaf9a538&#34;&gt;常用控制台命令&lt;/h4&gt;
+\h：查看SQL命令的解释，比如\h select。
+\?：查看psql命令列表。
+\l：列出所有数据库。
+\c [database_name]：连接其他数据库。
+\d：列出当前数据库的所有表格。
+\d [table_name]：列出某一张表格的结构。
+\du：列出所有用户。
+\e：打开文本编辑器。
+\conninfo：列出当前数据库和连接的信息。
+
+&lt;h4 id=&#34;数据库操作:81e14df784c561d68602426fbaf9a538&#34;&gt;数据库操作&lt;/h4&gt;
+
+&lt;p&gt;数据库操作为普通的 SQL，不过有 PostgreSQL 自己的语法，详细见文档说明。&lt;/p&gt;
+
+&lt;p&gt;创建表：&lt;/p&gt;
+create table users (
+	id serial primary key,
+	username varchar(20),
+	password varchar(20)
+);
+
+&lt;p&gt;插入数据：&lt;/p&gt;
+insert into users(username, password) values(&#39;admin&#39;, &#39;admin&#39;);
+
+&lt;p&gt;查询数据：&lt;/p&gt;
+select * from users;
+</description>
     </item>
     
   </channel>

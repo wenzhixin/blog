@@ -7,18 +7,79 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Tue, 03 Dec 2013 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.wenzhixin.net.cn/tags/mousewheel/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="http://blog.wenzhixin.net.cn/tags/mousewheel/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>鼠标滚轮事件 MouseWheel</title>
-      <link>http://blog.wenzhixin.net.cn/2013/12/03/mousewheel_event/</link>
-      <pubDate>Tue, 03 Dec 2013 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/mousewheel_event</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/12/03/mousewheel_event/</guid>
-      <description>前言 编写 jQuery SideMenu 插件的时候， 对目录过长的进行鼠标滚动操作，因为默认的 scroll 不好看，所以对滚动条进行了自定义。 先看看演示 demo css 设置 首先将 parent 的 overflow 设置为 hi</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/mousewheel_event</guid>
+      <description>
+
+&lt;h3 id=&#34;前言:609e26f4b3393b1a3dbe48608d92ca93&#34;&gt;前言&lt;/h3&gt;
+
+&lt;p&gt;编写 &lt;a href=&#34;https://github.com/wenzhixin/side-menu&#34;&gt;jQuery SideMenu 插件&lt;/a&gt;的时候，
+对目录过长的进行鼠标滚动操作，因为默认的 scroll 不好看，所以对滚动条进行了自定义。&lt;/p&gt;
+
+&lt;p&gt;先看看&lt;a href=&#34;http://blog.wenzhixin.net.cn/demos/mousewheel.html&#34;&gt;演示 demo&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;css-设置:609e26f4b3393b1a3dbe48608d92ca93&#34;&gt;css 设置&lt;/h3&gt;
+
+&lt;p&gt;首先将 parent 的 overflow 设置为 hidden：&lt;/p&gt;
+.parent {
+	position: relative;
+    height: 100px;
+	overflow: hidden;
+}
+.child {
+    position: absolute;
+}
+&lt;/style&gt;
+
+&lt;div class=&#34;parent&#34;&gt;
+  &lt;div class=&#34;child&#34;&gt;
+    &lt;p&gt;数据0&lt;/p&gt;
+    &lt;p&gt;数据1&lt;/p&gt;
+    &lt;p&gt;数据2&lt;/p&gt;
+    &lt;p&gt;数据3&lt;/p&gt;
+    &lt;p&gt;数据4&lt;/p&gt;
+    &lt;p&gt;数据5&lt;/p&gt;
+    &lt;p&gt;数据6&lt;/p&gt;
+    &lt;p&gt;数据7&lt;/p&gt;
+    &lt;p&gt;数据8&lt;/p&gt;
+    &lt;p&gt;数据9&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;这里我们可以通过指定 child 的 top 来显示当前的位置。&lt;/p&gt;
+
+&lt;h3 id=&#34;滚轮事件-mousewheel:609e26f4b3393b1a3dbe48608d92ca93&#34;&gt;滚轮事件 MouseWheel&lt;/h3&gt;
+
+&lt;p&gt;接下来需要对滚轮事件进行监听：&lt;/p&gt;
+var iScroll = 0,
+    maxHeight = $(&#39;.child&#39;).outerHeight(true) - $(&#39;.parent&#39;).outerHeight(true);
+    
+$(&#39;.parent&#39;).on(&#39;mousewheel&#39;, function(e) {
+	var oEvent = event.originalEvent,
+        iDelta = oEvent.wheelDelta ? -oEvent.wheelDelta / 120 : oEvent.detail / 3;
+        
+    iScroll += iDelta * 40;
+    iScroll = Math.min(maxHeight, Math.max(0, iScroll));
+    $(&#39;.child&#39;).css(&#39;top&#39;, -iScroll);
+});
+
+&lt;p&gt;这里只用到了滚轮事件重要的两个属性：wheelDelta 和 detail&lt;/p&gt;
+
+&lt;p&gt;除了 FireFox 之外的浏览器，每次往下滚动，wheelDelta 值都是 -120；&lt;br /&gt;
+对于 FireFox 浏览器，每次往下滚动，detail 值都是 3，所以我们通过：&lt;/p&gt;
+oEvent.wheelDelta ? -oEvent.wheelDelta / 120 : oEvent.detail / 3
+
+&lt;p&gt;判断向下滚动了多少次，而每次滚动：&lt;/p&gt;
+iScroll += iDelta * 40;
+
+&lt;p&gt;再设置 child 的 top 属性就可以了&lt;/p&gt;
+</description>
     </item>
     
   </channel>

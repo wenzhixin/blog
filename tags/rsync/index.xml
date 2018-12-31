@@ -1,60 +1,299 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>rsync on 文翼的博客</title>
+    <title>Rsync on 文翼的博客</title>
     <link>http://blog.wenzhixin.net.cn/tags/rsync/</link>
-    <description>Recent content in rsync on 文翼的博客</description>
+    <description>Recent content in Rsync on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Wed, 15 Jan 2014 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.wenzhixin.net.cn/tags/rsync/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="http://blog.wenzhixin.net.cn/tags/rsync/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>windows7 下 Bad owner or permissions 问题</title>
-      <link>http://blog.wenzhixin.net.cn/2014/01/15/windows7_rsync_error/</link>
-      <pubDate>Wed, 15 Jan 2014 00:00:00 +0000</pubDate>
+      <title>Ubuntu 下无密码访问及文件同步</title>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/ssh_rsync</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/01/15/windows7_rsync_error/</guid>
-      <description>问题： ssh 或者 rsync 的时候出现以下错误： 1 Bad owner or permissions on ~/.ssh/config 原因： 权限问题，需要将配置文件和 key 文件修改成当前用户和 600 解决： 下载 chown.zip， 解压放</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/ssh_rsync</guid>
+      <description>
+
+&lt;h4 id=&#34;服务器端配置-ssh:c438dcfbdb89c88db42e10ae91da1f05&#34;&gt;服务器端配置 ssh&lt;/h4&gt;
+
+&lt;p&gt;修改客户端sshd配置文件&lt;/p&gt;
+sudo vi /etc/ssh/sshd_config
+
+&lt;p&gt;修改为&lt;/p&gt;
+RSAAuthentication yes
+PubkeyAuthentication yes
+AuthorizedKeysFile     %h/.ssh/authorized_keys
+
+&lt;p&gt;重启ssh服务&lt;/p&gt;
+sudo /etc/init.d/sshd restart
+
+&lt;hr /&gt;
+
+&lt;h4 id=&#34;配置密钥:c438dcfbdb89c88db42e10ae91da1f05&#34;&gt;配置密钥&lt;/h4&gt;
+
+&lt;p&gt;在客户端生成公钥和私钥文件&lt;/p&gt;
+ssh-keygen
+cat ~/.ssh/id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys
+
+&lt;p&gt;scp 到服务器端&lt;/p&gt;
+scp ~/.ssh/authorized_keys username@hostname:~/.ssh/authorized_keys
+
+&lt;p&gt;修改 config 文件&lt;/p&gt;
+vi ~/.ssh/config
+
+&lt;p&gt;添加&lt;/p&gt;
+host sshname
+    HostName hostname(ip address)
+    user username
+    IdentityFile ~/.ssh/id_rsa
+
+&lt;p&gt;测试&lt;/p&gt;
+ssh sshname (-p port)
+
+&lt;hr /&gt;
+
+&lt;h4 id=&#34;rsync-同步:c438dcfbdb89c88db42e10ae91da1f05&#34;&gt;rsync 同步&lt;/h4&gt;
+rsync (--exclude=exclude) -avz (-e &#34;ssh -p 22&#34;) ./ sshname:~/path
+
+&lt;hr /&gt;
+
+&lt;p&gt;注：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;括号为可选&lt;/li&gt;
+&lt;li&gt;hostname 指域名或者 IP 地址&lt;/li&gt;
+&lt;li&gt;username 对应服务器的用户名&lt;/li&gt;
+&lt;/ol&gt;
+</description>
     </item>
     
     <item>
       <title>windows 下同步文件到远程服务器中</title>
-      <link>http://blog.wenzhixin.net.cn/2014/01/06/windows_rsync_file/</link>
-      <pubDate>Mon, 06 Jan 2014 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/windows_rsync_file</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/01/06/windows_rsync_file/</guid>
-      <description>安装 cwRsync 下载 cwRsync 客户端 解压并安装到指定目录，例如：C:\Program Files\cwRsync 配置环境变量： 系统变量 Path中后面加入 C:\Program Files\cwRsync\bin; 创建新的系统变量 HOME = C:\Program Files\cwRsync\home (其</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/windows_rsync_file</guid>
+      <description>
+
+&lt;h4 id=&#34;安装-cwrsync:291a7aad37e5ccc2dd943e82e05c00e8&#34;&gt;安装 cwRsync&lt;/h4&gt;
+
+&lt;p&gt;下载 &lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/01/06/cwRsync_4.0.5_Installer.zip&#34;&gt;cwRsync 客户端&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;解压并安装到指定目录，例如：C:\Program Files\cwRsync&lt;/p&gt;
+
+&lt;h4 id=&#34;配置环境变量:291a7aad37e5ccc2dd943e82e05c00e8&#34;&gt;配置环境变量：&lt;/h4&gt;
+
+&lt;p&gt;系统变量 Path中后面加入 C:\Program Files\cwRsync\bin;&lt;/p&gt;
+
+&lt;p&gt;创建新的系统变量 HOME = C:\Program Files\cwRsync\home  (其实这个路径是告诉cygWin本地的home路径在哪里)&lt;/p&gt;
+
+&lt;p&gt;进入 cmd 中：&lt;/p&gt;
+cd C:\Program Files\cwRsync\
+mkdir home
+cd home
+mkdir .ssh
+
+&lt;p&gt;进入 C:\Program Files\cwRsync\home\.ssh 下新建文件 config，输入以下信息&lt;/p&gt;
+host server
+	HostName ip.address
+	User username
+	IdentityFile ~/.ssh/id_rsa
+
+&lt;h4 id=&#34;使用:291a7aad37e5ccc2dd943e82e05c00e8&#34;&gt;使用&lt;/h4&gt;
+rsync -vzr /cygdrive/c/blog/ server:~/blog
+
+&lt;ul&gt;
+&lt;li&gt;-vzr：表示压缩&lt;/li&gt;
+&lt;li&gt;/cygdrive/c/blog：表示需要同步的文件夹，对应c:\blog&lt;/li&gt;
+&lt;li&gt;server：表示配置的远程服务器&lt;/li&gt;
+&lt;li&gt;~/blog：表示远程服务器的地址&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>windows7 下 Bad owner or permissions 问题</title>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/windows7_rsync_error</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/windows7_rsync_error</guid>
+      <description>&lt;p&gt;&lt;strong&gt;问题：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;ssh 或者 rsync 的时候出现以下错误：&lt;/p&gt;
+Bad owner or permissions on ~/.ssh/config
+
+&lt;p&gt;&lt;strong&gt;原因：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;权限问题，需要将配置文件和 key 文件修改成当前用户和 600&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;解决：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;下载 &lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/01/15/chown.zip&#34;&gt;chown.zip&lt;/a&gt;，&lt;/p&gt;
+
+&lt;p&gt;解压放到 C:\Program Files\cwRsync\bin 下，在 cmd 下：&lt;/p&gt;
+cd C:\Program Files\cwRsync\home\.ssh
+
+chmod 600 config id_rsa
+chown user config id_rsa
+
+&lt;p&gt;命令解释：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;chmod：改变文件权限为当前用户可读写&lt;/li&gt;
+&lt;li&gt;chown：改变文件所属用户为 user，用户名为计算机用户，查看：C:\Users 可以看到&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
     
     <item>
       <title>从 ubuntu 同步文件到 windows</title>
-      <link>http://blog.wenzhixin.net.cn/2013/12/01/ubuntu_rsync_to_windows/</link>
-      <pubDate>Sun, 01 Dec 2013 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_rsync_to_windows</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/12/01/ubuntu_rsync_to_windows/</guid>
-      <description>windows 下使用 cwRsync，ubuntu 使用默认的 rsync。 安装 cwRsync 下载 cwRsync 服务端 解压并安装到指定目录，例如：E:\Program Files\ICW 配置 cwRsync 修改 rsyncd.conf 1</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_rsync_to_windows</guid>
+      <description>
+
+&lt;p&gt;windows 下使用 cwRsync，ubuntu 使用默认的 rsync。&lt;/p&gt;
+
+&lt;h3 id=&#34;安装-cwrsync:3b2d6b317dc7ea2e9bfb9d515fecc8dc&#34;&gt;安装 cwRsync&lt;/h3&gt;
+
+&lt;p&gt;下载 &lt;a href=&#34;https://www.itefix.no/i2/cwrsync&#34;&gt;cwRsync 服务端&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;解压并安装到指定目录，例如：E:\Program Files\ICW&lt;/p&gt;
+
+&lt;h3 id=&#34;配置-cwrsync:3b2d6b317dc7ea2e9bfb9d515fecc8dc&#34;&gt;配置 cwRsync&lt;/h3&gt;
+
+&lt;p&gt;修改 rsyncd.conf&lt;/p&gt;
+use chroot = false
+strict modes = false
+hosts allow = *
+log file = rsyncd.log
+auth users = backup
+secrets file = rsyncd.secrets
+transfer logging = yes
+
+uid = 0
+gid = 0
+charset = UTF-8
+read only = false
+
+# Module definitions
+# Remember cygwin naming conventions : c:\work becomes /cygwin/c/work
+#
+[backup]
+path = /cygdrive/e/rsync
+read only = false
+transfer logging = yes
+
+&lt;p&gt;新建 rsyncd.secrets，指定用户名和密码&lt;/p&gt;
+backup:password
+
+&lt;p&gt;启动 RsyncServer 服务（运行——services.msc）&lt;/p&gt;
+
+&lt;h3 id=&#34;同步文件-ubuntu:3b2d6b317dc7ea2e9bfb9d515fecc8dc&#34;&gt;同步文件(ubuntu)&lt;/h3&gt;
+rsync -av file username@ip::moduleName
+
+&lt;ul&gt;
+&lt;li&gt;file：对应需要同步的文件或者文件夹&lt;/li&gt;
+&lt;li&gt;username：对应配置的用户名（backup）&lt;/li&gt;
+&lt;li&gt;ip：对应 windows 服务器的 IP&lt;/li&gt;
+&lt;li&gt;moduleName：对于配置中 Module 的名字（backup）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;其他问题:3b2d6b317dc7ea2e9bfb9d515fecc8dc&#34;&gt;其他问题&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;默认端口为 873（netstat -nao 查看是否已在监听）&lt;/li&gt;
+&lt;li&gt;查看服务 RsyncServer 是否启动&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
     
     <item>
       <title>安卓 ssh 和 rsync 同步客户端的实现</title>
-      <link>http://blog.wenzhixin.net.cn/2013/10/18/android_ssh_rsync_client/</link>
-      <pubDate>Fri, 18 Oct 2013 09:30:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/android_ssh_rsync_client</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/10/18/android_ssh_rsync_client/</guid>
-      <description>1. 介绍 基于安卓的 ssh 和 rsync 客户端，可用于对服务器指定的目录进行同步到手机。 在这里我们使用 Dropbear 的 dbclient 作为 ssh 的客户端。 Dropbear是一个相对较小的S</description>
-    </item>
-    
-    <item>
-      <title>Ubuntu 下无密码访问及文件同步</title>
-      <link>http://blog.wenzhixin.net.cn/2013/03/17/ssh_rsync/</link>
-      <pubDate>Sun, 17 Mar 2013 22:38:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2013/03/17/ssh_rsync/</guid>
-      <description>服务器端配置 ssh 修改客户端sshd配置文件 1 sudo vi /etc/ssh/sshd_config 修改为 1 2 3 RSAAuthentication yes PubkeyAuthentication yes AuthorizedKeysFile %h/.ssh/authorized_keys 重启ssh服务 1 sudo /etc/init.d/sshd restart 配置密钥 在客户端生成公钥和私钥文件 1 2 ssh-keygen cat ~/.ssh/id_rsa.pub &amp;gt;&amp;gt;</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/android_ssh_rsync_client</guid>
+      <description>
+
+&lt;h4 id=&#34;1-介绍:15c86d4aa49fdfafae7a5d6f144fe403&#34;&gt;1. 介绍&lt;/h4&gt;
+
+&lt;p&gt;基于安卓的 ssh 和 rsync 客户端，可用于对服务器指定的目录进行同步到手机。
+在这里我们使用 Dropbear 的 dbclient 作为 ssh 的客户端。&lt;/p&gt;
+
+&lt;p&gt;Dropbear是一个相对较小的SSH服务器和客户端。
+它运行在一个基于POSIX的各种平台。
+Dropbear是开源软件，在麻省理工学院式的许可证。
+Dropbear是特别有用的“嵌入”式的Linux（或其他Unix）系统，如无线路由器。&lt;/p&gt;
+
+&lt;h4 id=&#34;2-准备工作:15c86d4aa49fdfafae7a5d6f144fe403&#34;&gt;2. 准备工作&lt;/h4&gt;
+
+&lt;p&gt;在使用之前，需要先编译 dropbear 的可执行文件，详细的编译步骤见：
+&lt;a href=&#34;http://code.google.com/p/droidsshd/wiki/BuildingDropbear&#34;&gt;BuildingDropbear&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;或者直接下载已经帮我们编译好的文件：
+&lt;a href=&#34;http://code.google.com/p/droidsshd/downloads/detail?name=dropbearmulti&amp;amp;can=2&amp;amp;q=&#34;&gt;dropbearmulti&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;rsync 可以到网站上找到相应的文件：
+&lt;a href=&#34;http://www.samba.org/ftp/rsync/&#34;&gt;Rsync&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;或者直接下载已经编译好的文件：
+&lt;a href=&#34;http://blog.wenzhixin.net.cn/2013/10/18/rsync_gz&#34;&gt;rsync&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;3-如何使用:15c86d4aa49fdfafae7a5d6f144fe403&#34;&gt;3. 如何使用&lt;/h4&gt;
+
+&lt;p&gt;关键代码如下：&lt;/p&gt;
+ArrayList&lt;String&gt; list = new ArrayList&lt;String&gt;();
+list.add(binDir + &#34;/rsync&#34;); // rsync 的 bin 目录
+list.add(&#34;-avzO&#34;); // 同步参数
+list.add(&#34;--progress&#34;); // 显示进度
+list.add(&#34;-e&#34;); // 用于指定端口，或者 key
+list.add(binDir + &#34;/ssh -y -i &#34; + homeDir + &#34;/id_rsa&#34;); // id_rsa 的存放目录
+list.add(Config.SERVER); // 同步服务器地址目录，如 admin@wenzhixin.net.cn:~/
+list.add(Config.ROOT); // 需要同步到的目录
+try {
+    ProcessBuilder pb = new ProcessBuilder(list.toArray(new String[] {}));
+    pb.directory(binDir);
+    Map&lt;String, String&gt; env = pb.environment();
+    env.clear();
+    env.putAll(System.getenv());
+    pb.redirectErrorStream(true);
+    Process p = pb.start();
+
+    BufferedReader bis = new BufferedReader(new InputStreamReader(p.getInputStream()));
+    String line;
+    while ((line = bis.readLine()) != null) {
+        log(line); // 显示日志
+    }
+    bis.close();
+    p.waitFor();
+    p.destroy();
+} catch (Exception e) {
+    log(e.getMessage());
+}
+
+&lt;h4 id=&#34;4-需要注意的问题:15c86d4aa49fdfafae7a5d6f144fe403&#34;&gt;4. 需要注意的问题&lt;/h4&gt;
+
+&lt;p&gt;1) 如何生成 id_rsa 和 authorized_keys，从而跳过密码的验证&lt;/p&gt;
+
+&lt;p&gt;生成 id_rsa，拷贝到手机客户端下：&lt;/p&gt;
+dropbearkey -t rsa -f ~/.ssh/id_rsa
+
+&lt;p&gt;生成 authorized_keys，并拷贝到服务器 ~/.ssh/ 下：&lt;/p&gt;
+dropbearkey -y -f ~/.ssh/id_rsa | grep “^ssh-rsa ” &gt;&gt; authorized_keys
+
+&lt;p&gt;2) 跳过 known_hosts 提示和密码验证&lt;/p&gt;
+ssh -y -i id_rsa
+
+&lt;ul&gt;
+&lt;li&gt;-y 表示跳过 known_hosts&lt;/li&gt;
+&lt;li&gt;-i 指定 id_rsa 进行认证&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
     
   </channel>

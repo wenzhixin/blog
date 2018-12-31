@@ -7,27 +7,247 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Fri, 08 Nov 2013 22:59:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.wenzhixin.net.cn/tags/rss/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="http://blog.wenzhixin.net.cn/tags/rss/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>RSS、Atom、Feed 介绍与简单实现</title>
-      <link>http://blog.wenzhixin.net.cn/2013/11/08/rss_atom_feed_php/</link>
-      <pubDate>Fri, 08 Nov 2013 22:59:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/rss_atom_feed_php</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/11/08/rss_atom_feed_php/</guid>
-      <description>最近接触了 RSS 订阅相关的，做了一些了解与开发，记录下。 RSS是什么 RSS（全称RDF Site Summary，网景的最初定义），RSS也是一种“类网页</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/rss_atom_feed_php</guid>
+      <description>
+
+&lt;p&gt;最近接触了 RSS 订阅相关的，做了一些了解与开发，记录下。&lt;/p&gt;
+
+&lt;h4 id=&#34;rss是什么:ff4596b028a60c1dc5123ad61a0f7a25&#34;&gt;RSS是什么&lt;/h4&gt;
+
+&lt;p&gt;RSS（全称RDF Site Summary，网景的最初定义），RSS也是一种“类网页”描述语言（或叫文档格式），
+最初由网景公司（Netscape）定义，RSS只是有个相对统一的规范（注意只是规范），
+前途未卜（RSS 2.0的版权问题）。RSS作为网站内容分享的一种便利接口，只是从博客（BLOG）风行才开始广为流传。&lt;/p&gt;
+
+&lt;p&gt;关于RSS的更多介绍请参考&lt;a href=&#34;http://zh.wikipedia.org/zh-cn/RSS&#34;&gt;RSS&lt;/a&gt;。&lt;/p&gt;
+
+&lt;h4 id=&#34;atom是什么:ff4596b028a60c1dc5123ad61a0f7a25&#34;&gt;ATOM是什么&lt;/h4&gt;
+
+&lt;p&gt;由于RSS前途未卜，而且RSS标准发展存在诸多问题或不足，于是ATOM横空出世，可理解为RSS的替代品。
+ATOM是IETF的建议标准，Atom Syndication Format是基于XML格式，Atom Publishing Protocol则是基于HTTP协议格式。&lt;/p&gt;
+
+&lt;p&gt;RSS与ATOM比较，请参考：&lt;a href=&#34;http://zh.wikipedia.org/wiki/Atom&#34;&gt;ATOM&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;feed是什么:ff4596b028a60c1dc5123ad61a0f7a25&#34;&gt;FEED是什么&lt;/h4&gt;
+
+&lt;p&gt;FEED只是一个中间过程，所以全世界没人能给FEED下一个准确的定义，所以大家不用关心FEED的定义，其实FEED什么都不是。
+如果非得给个说法，最好还是放到英文环境下理解似乎更加合理，FEED其实就是RSS（或ATOM）和订阅用户之间的“中间商”，
+起到帮忙批发传递信息的作用。所以，FEED的常见格式就是RSS和ATOM，网络上说的FEED订阅，更确切的说法应该仍然是RSS或ATOM订阅。&lt;/p&gt;
+
+&lt;p&gt;FEED更多介绍：&lt;a href=&#34;http://en.wikipedia.org/wiki/Feed&#34;&gt;Feed&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;可用的工具:ff4596b028a60c1dc5123ad61a0f7a25&#34;&gt;可用的工具&lt;/h4&gt;
+
+&lt;p&gt;RSS Feed 检验网站：&lt;a href=&#34;http://feedvalidator.org&#34;&gt;feedvalidator&lt;/a&gt;。可以检验你的 RSS 是否符合标准，假如不符合会给出相应的提示和警告。&lt;/p&gt;
+
+&lt;p&gt;RSS托管服务网站：&lt;a href=&#34;http://feedburner.google.com&#34;&gt;feedburner&lt;/a&gt;。 网站定位：全球最大的RSS托管服务网站。07年被google以1亿美元收购，现在已迁移到Google域名之下。&lt;/p&gt;
+
+&lt;h4 id=&#34;php-简单实现:ff4596b028a60c1dc5123ad61a0f7a25&#34;&gt;php 简单实现&lt;/h4&gt;
+
+&lt;p&gt;feed.php&lt;/p&gt;
+&lt;?php
+
+class Feed {
+
+    protected $entries = array();
+
+    protected $title;
+    protected $url;
+    protected $updated;
+    protected $author;
+
+    public function title($title) {
+        $this-&gt;title = $title;
+        return $this;
+    }
+
+    public function url($url) {
+        $this-&gt;url = $url;
+        return $this;
+    }
+
+    public function updated($updated) {
+        $this-&gt;updated = $updated;
+        return $this;
+    }
+
+    public function author($author) {
+        $this-&gt;author = $author;
+        return $this;
+    }
+
+    public function addEntry($entry) {
+        $this-&gt;entries[] = $entry;
+        return $this;
+    }   
+
+    public function __toString() {
+        $result = &#39;&lt;?xml version=&#34;1.0&#34;&gt;&#39;;
+        $result .= &#39;&lt;feed xmlns=&#34;http://www.w3.org/2005/Atom&#34;&gt;&#39;;
+        $result .= &#39;&lt;title&gt;&#39; . $this-&gt;title . &#39;&lt;/title&gt;&#39;;
+        $result .= &#39;&lt;link href=&#34;&gt;&#39; . $this-&gt;url . &#39;&#34; /&gt;&#39;;
+        $result .= &#39;&lt;updated&gt;&#39; . $this-&gt;updated . &#39;&lt;/updated&gt;&#39;;
+        $result .= &#39;&lt;author&gt;&#39; . $this-&gt;author . &#39;&lt;/author&gt;&#39;;
+
+        foreach ($this-&gt;entries as $entry) {
+            $result .= $entry;
+        }
+
+        return $result;
+    }
+}
+
+class Entry {
+    protected $title;
+    protected $url;
+    protected $updated;
+    protected $author;
+    protected $description;
+
+    public function title($title) {
+        $this-&gt;title = $title;
+        return $this;
+    }
+
+    public function url($url) {
+        $this-&gt;url = $url;
+        return $this;
+    }
+
+    public function updated($updated) {
+        $this-&gt;updated = $updated;
+        return $this;
+    }
+
+    public function author($author) {
+        $this-&gt;author = $author;
+        return $this;
+    }
+
+    public function description($description) {
+        $this-&gt;description = $description;
+        return $this;
+    }
+
+    public function __toString() {
+        $result .= &#39;&lt;entry&gt;&#39;;
+        $result .= &#39;&lt;title&gt;&#39; . $this-&gt;title . &#39;&lt;/title&gt;&#39;;
+        $result .= &#39;&lt;link href=&#34;&gt;&#39; . $this-&gt;url . &#39;&#34; /&gt;&#39;;
+        $result .= &#39;&lt;updated&gt;&#39; . $this-&gt;updated . &#39;&lt;/updated&gt;&#39;;
+        $result .= &#39;&lt;author&gt;&#39; . $this-&gt;author . &#39;&lt;/author&gt;&#39;;
+        $result .= &#39;&lt;description&gt;&#39; . $this-&gt;description . &#39;&lt;/description&gt;&#39;;
+        $result .= &#39;&lt;/entry&gt;&#39;;
+        return $result;
+    }
+}
+?&gt;
+
+&lt;p&gt;test.php&lt;/p&gt;
+&lt;?php
+require_once &#39;feed.php&#39;;
+
+$feed = new Feed();
+$feed-&gt;title(&#39;文翼的博客&#39;)
+    -&gt;url(&#39;http://wenzhixin.net.cn&#39;)
+    -&gt;updated(date(&#39;Y-m-d H:i:s&#39;, time()))
+    -&gt;author(&#39;wenzhixin&#39;);
+echo $feed;
+
+$entry = new Entry();
+$entry-&gt;title(&#39;文章1&#39;)
+    -&gt;description(&#39;这里是文章1的内容&#39;)
+    -&gt;url(&#39;http://wenzhixin.net.cn/1&#39;)
+    -&gt;updated(&#39;2013-11-08 22:55:00&#39;)
+    -&gt;author(&#39;wenzhixin&#39;);
+$feed-&gt;addEntry($entry);
+
+$entry = new Entry();
+$entry-&gt;title(&#39;文章2&#39;)
+    -&gt;description(&#39;这里是文章2的内容&#39;)
+    -&gt;url(&#39;http://wenzhixin.net.cn/2&#39;)
+    -&gt;updated(&#39;2013-11-07 11:33:00&#39;)
+    -&gt;author(&#39;wenzhixin&#39;);
+$feed-&gt;addEntry($entry);
+
+echo $feed;
+?&gt;
+</description>
     </item>
     
     <item>
       <title>简单的博客 RSS 聚合</title>
-      <link>http://blog.wenzhixin.net.cn/2013/11/04/simple_rss_together/</link>
-      <pubDate>Mon, 04 Nov 2013 01:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/simple_rss_together</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/11/04/simple_rss_together/</guid>
-      <description>1. 前言 将博客的 RSS 内容聚合起来，这样方便查看，今天就来研究如何简单的将 RSS 的内容存到数据库（MySQL）中。 2. 创建数据库表 1 2 3 4 5 6 7 8 CREATE TABLE links</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/simple_rss_together</guid>
+      <description>
+
+&lt;h4 id=&#34;1-前言:620c4514ef1d6b73485351aca4a1e232&#34;&gt;1. 前言&lt;/h4&gt;
+
+&lt;p&gt;将博客的 RSS 内容聚合起来，这样方便查看，今天就来研究如何简单的将 RSS 的内容存到数据库（MySQL）中。&lt;/p&gt;
+
+&lt;h4 id=&#34;2-创建数据库表:620c4514ef1d6b73485351aca4a1e232&#34;&gt;2. 创建数据库表&lt;/h4&gt;
+CREATE TABLE links (  
+    id int NOT NULL AUTO_INCREMENT,  
+    name varchar(250) NOT NULL,
+    url varchar(250) NOT NULL,
+    time timestamp NOT NULL DEFAULT current_timestamp,
+    PRIMARY KEY (id),
+    UNIQUE (url)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+&lt;p&gt;数据库表只有名称和链接地址两个字段，这里的 url 是唯一的，可以防止插入重复的数据。&lt;/p&gt;
+
+&lt;h4 id=&#34;3-插入数据-insert-ignore:620c4514ef1d6b73485351aca4a1e232&#34;&gt;3. 插入数据 INSERT IGNORE&lt;/h4&gt;
+
+&lt;p&gt;INSERT IGNORE INTO 与 INSERT INTO 的区别是：
+INSERT IGNORE 会忽略数据库中已经存在的数据。
+如果数据库没有数据，就插入新的数据，
+如果有数据的话就跳过这条数据。&lt;/p&gt;
+
+&lt;p&gt;例如我们连续插入数据：&lt;/p&gt;
+INSERT IGNORE INTO links(name, url) values(&#39;wenyi&#39;, &#39;http://wenzhixin.net.cn&#39;);
+
+&lt;p&gt;第一条是：&lt;/p&gt;
+Query OK, 1 row affected
+
+&lt;p&gt;其他的都是：&lt;/p&gt;
+Query OK, 0 rows affected
+
+&lt;p&gt;查看数据库，也是只有一条记录。&lt;/p&gt;
+
+&lt;h4 id=&#34;4-编写代码:620c4514ef1d6b73485351aca4a1e232&#34;&gt;4. 编写代码&lt;/h4&gt;
+
+&lt;p&gt;使用 nodejs 来编写代码，主要涉及的是对 RSS 订阅源的解析以及将解析出来的文件写进数据库中。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;RSS 解析模块使用 &lt;a href=&#34;https://github.com/danmactough/node-feedparser&#34;&gt;node-feedparser&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;MySQL 模块使用 &lt;a href=&#34;https://github.com/felixge/node-mysql&#34;&gt;node-mysql&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;5-注意的地方:620c4514ef1d6b73485351aca4a1e232&#34;&gt;5. 注意的地方&lt;/h4&gt;
+
+&lt;p&gt;默认情况下，使用 INSERT IGNORE 之后，即使在没有插入数据的情况下，自增长的主键也会变化，这并不是我们想要的。&lt;/p&gt;
+
+&lt;p&gt;可以通过设置 &lt;a href=&#34;http://dev.mysql.com/doc/refman/5.1/en/innodb-auto-increment-handling.html#innodb-auto-increment-configurable&#34;&gt;innodb auto increment configurable&lt;/a&gt;，避免这种情况。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;需要将数据库表的 ENGINE 设置为 InnoDB（ENGINE=InnoDB）&lt;/li&gt;
+&lt;li&gt;需要在 MySQL 的配置文件中添加 innodb_autoinc_lock_mode = 0&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;具体设置方法（Ubuntu 下）：&lt;/p&gt;
+sudo vi /etc/mysql/my.cnf
+
+&lt;p&gt;在 [mysqld] 下增加：&lt;/p&gt;
+innodb_autoinc_lock_mode = 0
+</description>
     </item>
     
   </channel>

@@ -7,18 +7,76 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Mon, 25 Nov 2013 21:41:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.wenzhixin.net.cn/tags/%E6%A0%85%E6%A0%BC%E5%8C%96/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="http://blog.wenzhixin.net.cn/tags/%E6%A0%85%E6%A0%BC%E5%8C%96/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>栅格化布局和常用框架比较</title>
-      <link>http://blog.wenzhixin.net.cn/2013/11/25/grid_system/</link>
-      <pubDate>Mon, 25 Nov 2013 21:41:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/grid_system</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/11/25/grid_system/</guid>
-      <description>在使用了Bootstrap、Foundation 之后，其实已经接触到栅格化布局这一概念。 今天接触了 skeleton 后，特别强调了栅格化布局，那么何为栅格化</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/grid_system</guid>
+      <description>
+
+&lt;p&gt;在使用了Bootstrap、Foundation 之后，其实已经接触到栅格化布局这一概念。&lt;br /&gt;
+今天接触了 skeleton 后，特别强调了栅格化布局，那么何为栅格化布局？&lt;/p&gt;
+
+&lt;h4 id=&#34;1-栅格化布局:988ccd388d71202d7b55f559ce918a2a&#34;&gt;1. 栅格化布局&lt;/h4&gt;
+
+&lt;p&gt;栅格英文为 grid，是一种平面设计的方法与风格。运用固定的格子设计版面布局，其风格工整简洁。&lt;/p&gt;
+
+&lt;p&gt;在样式设计中，把页面等分成N个小的模块，每等份的宽度是Xpx，不同个数的模块组合成不同的栏目宽度，
+分别是：(1*X)px，(2*X)px、(3*X)px、……、(N*X)px。而页面的宽度就是 W = (N*X)px。这就是栅格化布局。&lt;/p&gt;
+
+&lt;p&gt;为什么要使用栅格化布局呢？它有以下的优势：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;能大大提高网页的规范性。在栅格系统下，页面中所有组件的尺寸都是有规律的。
+这对于大型网站的开发和维护来说，能节约不少成本。&lt;/li&gt;
+&lt;li&gt;基于栅格进行设计，可以让整个网站各个页面的布局保持一致。
+这能增加页面的相似度，提升用户体验。&lt;/li&gt;
+&lt;li&gt;对于设计师们来说，灵活地运用栅格系统，能做出很多优秀和独特的设计。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;2-常用框架对比:988ccd388d71202d7b55f559ce918a2a&#34;&gt;2. 常用框架对比&lt;/h4&gt;
+
+&lt;p&gt;这里列举了几种常用的 css 框架，更多信息见起网站：&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;a href=&#34;http://getbootstrap.com&#34;&gt;Bootstrap 3&lt;/a&gt;&lt;/th&gt;
+&lt;th&gt;&lt;a href=&#34;http://getbootstrap.com/2.3.2/&#34;&gt;Bootstrap 2&lt;/a&gt;&lt;/th&gt;
+&lt;th&gt;&lt;a href=&#34;http://foundation.zurb.com/&#34;&gt;Foundation v5&lt;/a&gt;&lt;/th&gt;
+&lt;th&gt;&lt;a href=&#34;http://foundation.zurb.com/docs/v/4.3.2/&#34;&gt;Foundation v4&lt;/a&gt;&lt;/th&gt;
+&lt;th&gt;&lt;a href=&#34;http://foundation.zurb.com/docs/v/3.2.5/&#34;&gt;Foundation v3&lt;/a&gt;&lt;/th&gt;
+&lt;th&gt;&lt;a href=&#34;http://getskeleton.com/&#34;&gt;Skeleton&lt;/a&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;基本宽度&lt;/td&gt;
+&lt;td&gt;浮动布局 (480px, 768px, 992px, 1200px)&lt;/td&gt;
+&lt;td&gt;浮动和固定布局 (724px, 940px, 1170px; 小于 768px 是单行垂直布局)&lt;/td&gt;
+&lt;td&gt;浮动布局 (默认最大宽度为 62.5em)&lt;/td&gt;
+&lt;td&gt;浮动布局 (默认最大宽度为 62.5em)&lt;/td&gt;
+&lt;td&gt;浮动布局 (最大宽度为 100%)&lt;/td&gt;
+&lt;td&gt;960px&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;列数&lt;/td&gt;
+&lt;td&gt;12&lt;/td&gt;
+&lt;td&gt;12&lt;/td&gt;
+&lt;td&gt;自定义 1-16 (默认为 12)&lt;/td&gt;
+&lt;td&gt;自定义 1-16 (默认为 12)&lt;/td&gt;
+&lt;td&gt;自定义 12-24&lt;/td&gt;
+&lt;td&gt;16&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</description>
     </item>
     
   </channel>

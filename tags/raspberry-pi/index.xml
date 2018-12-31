@@ -1,24 +1,112 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>raspberry pi on 文翼的博客</title>
+    <title>Raspberry pi on 文翼的博客</title>
     <link>http://blog.wenzhixin.net.cn/tags/raspberry-pi/</link>
-    <description>Recent content in raspberry pi on 文翼的博客</description>
+    <description>Recent content in Raspberry pi on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Mon, 01 Jul 2013 21:23:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.wenzhixin.net.cn/tags/raspberry-pi/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="http://blog.wenzhixin.net.cn/tags/raspberry-pi/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>搭建小型下载服务器(raspberry pi)</title>
-      <link>http://blog.wenzhixin.net.cn/2013/07/01/raspberry_server/</link>
-      <pubDate>Mon, 01 Jul 2013 21:23:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/raspberry_server</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/07/01/raspberry_server/</guid>
-      <description>1. 购买设备 1) 单板机：我购买的是树莓派raspberry pi B型 512MB，购买地址为（我是在淘宝上购买的，声明不是广告哦）： 官方地址 淘宝地址 2)</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/raspberry_server</guid>
+      <description>
+
+&lt;h4 id=&#34;1-购买设备:d7b97b5b98955b531ff7810f423befd2&#34;&gt;1. 购买设备&lt;/h4&gt;
+
+&lt;p&gt;1) 单板机：我购买的是树莓派raspberry pi B型 512MB，购买地址为（我是在淘宝上购买的，声明不是广告哦）：
+&lt;a href=&#34;http://cn.element14.com/jsp/search/productdetail.jsp?sku=2191863&#34;&gt;官方地址&lt;/a&gt;
+&lt;a href=&#34;http://item.taobao.com/item.htm?spm=a1z09.5.0.39.DeSxZD&amp;amp;id=22893320935&#34;&gt;淘宝地址&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;2) SD 卡：推荐 8G 内存&lt;/p&gt;
+
+&lt;p&gt;3) 电源：可以使用安卓手机的电源，2000mA / 5V 的就OK了&lt;/p&gt;
+
+&lt;h4 id=&#34;2-下载系统:d7b97b5b98955b531ff7810f423befd2&#34;&gt;2. 下载系统&lt;/h4&gt;
+
+&lt;p&gt;下载地址：&lt;a href=&#34;http://www.raspberrypi.org/downloads&#34;&gt;http://www.raspberrypi.org/downloads&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;我下载的是 Raspbian “wheezy”，使用跟 ubuntu 差不多，推荐使用&lt;/p&gt;
+
+&lt;h4 id=&#34;3-安装系统-设置固定-ip:d7b97b5b98955b531ff7810f423befd2&#34;&gt;3. 安装系统，设置固定 IP&lt;/h4&gt;
+
+&lt;p&gt;1) 接上和拔下 SD 卡，通过命令确认 SD 卡的设备号&lt;/p&gt;
+sudo fdisk -l
+
+&lt;p&gt;2) 解压下载的镜象&lt;/p&gt;
+
+&lt;p&gt;3) 用dd命令把镜象文件写入到SD卡，设备块名是/dev/mmcblk0p1，请改为自己对应的设备名称&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;警告！这步将会擦除SD卡内的数据，如果选择了错误的存储设备，会导致硬盘数据丢失。&lt;/strong&gt;&lt;/p&gt;
+dd if=wheezy-raspbian.img of=/dev/mmcblk0p1 bs=512k
+
+&lt;p&gt;4) 设置固定 IP&lt;/p&gt;
+sudo vi /etc/network/interfaces
+
+&lt;p&gt;将内容&lt;/p&gt;
+iface eth0 inet dhcp
+
+&lt;p&gt;改为&lt;/p&gt;
+iface eth0 inet static
+address 192.168.1.10 (此处 192.168.1.10 为分配的固定 ip)
+netmask 255.255.255.0
+gateway 192.168.1.1
+dns-nameservers 192.168.1.1
+
+&lt;p&gt;重启服务&lt;/p&gt;
+sudo /etc/init.d/networking restart
+
+&lt;h4 id=&#34;4-挂载移动硬盘:d7b97b5b98955b531ff7810f423befd2&#34;&gt;4. 挂载移动硬盘&lt;/h4&gt;
+
+&lt;p&gt;1) 安装 ntfs-3g&lt;/p&gt;
+sudo apt-get install ntfs-3g
+
+&lt;p&gt;2) 使用命令查找设备号&lt;/p&gt;
+sudo fdisk -l
+
+&lt;p&gt;3) 创建挂载目录&lt;/p&gt;
+sudo mkdir /media/usb1
+
+&lt;p&gt;4) 挂载硬盘，/dev/sda5 为移动硬盘设备号&lt;/p&gt;
+sudo mount -t ntfs-3g /dev/sda5 /media/usb1
+
+&lt;p&gt;5) 设置开机自动加载&lt;/p&gt;
+sudo vi /etc/fstab
+
+&lt;p&gt;加入内容&lt;/p&gt;
+/dev/sda5      /media/usb1           ntfs-3g defaults         0       0
+
+&lt;h4 id=&#34;5-安装-web-服务器:d7b97b5b98955b531ff7810f423befd2&#34;&gt;5. 安装 web 服务器&lt;/h4&gt;
+
+&lt;p&gt;使用 nginx 作为 web 服务器&lt;/p&gt;
+sudo apt-get install nginx
+
+&lt;h4 id=&#34;6-安装下载工具:d7b97b5b98955b531ff7810f423befd2&#34;&gt;6. 安装下载工具&lt;/h4&gt;
+
+&lt;p&gt;使用 aria2 作为下载工具&lt;/p&gt;
+sudo apt-get install aria2
+
+&lt;p&gt;启动服务&lt;/p&gt;
+aria2c --enable-rpc --rpc-listen-all &amp;
+
+&lt;h4 id=&#34;7-搭建下载管理系统:d7b97b5b98955b531ff7810f423befd2&#34;&gt;7. 搭建下载管理系统&lt;/h4&gt;
+
+&lt;p&gt;使用 &lt;a href=&#34;https://github.com/ziahamza/webui-aria2&#34;&gt;webui-aria2&lt;/a&gt; 作为管理界面&lt;/p&gt;
+
+&lt;p&gt;下载 &lt;a href=&#34;https://github.com/ziahamza/webui-aria2/archive/master.zip&#34;&gt;webui-aria2&lt;/a&gt;
+并解压到 nginx 的 www 目录下即可 /usr/share/nginx/www/&lt;/p&gt;
+
+&lt;h4 id=&#34;8-浏览器访问并设置下载目录:d7b97b5b98955b531ff7810f423befd2&#34;&gt;8. 浏览器访问并设置下载目录&lt;/h4&gt;
+
+&lt;p&gt;访问： &lt;a href=&#34;http://192.168.1.10/webui-aria2&#34;&gt;http://192.168.1.10/webui-aria2&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;通过 Settings 设置下载目录为移动硬盘，便可以开始使用我们的小型服务器啦！&lt;/p&gt;
+</description>
     </item>
     
   </channel>

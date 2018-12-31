@@ -1,33 +1,119 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>meteor on 文翼的博客</title>
+    <title>Meteor on 文翼的博客</title>
     <link>http://blog.wenzhixin.net.cn/tags/meteor/</link>
-    <description>Recent content in meteor on 文翼的博客</description>
+    <description>Recent content in Meteor on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Thu, 07 Jan 2016 22:30:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.wenzhixin.net.cn/tags/meteor/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>备份恢复 Meteor Mongo 数据库</title>
-      <link>http://blog.wenzhixin.net.cn/2016/01/07/meteor_mongo_dump/</link>
-      <pubDate>Thu, 07 Jan 2016 22:30:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2016/01/07/meteor_mongo_dump/</guid>
-      <description>运行 meteor 后使用新的窗口运行 1 meteor mongo 可以看到类似下面的信息： 1 2 MongoDB shell version: 2.6.7 connecting to: 127.0.0.1:4001/meteor Meteor 数据库运行于 127.0.0.1 3001 端口，Ctrl + D 退出即可。 导出： 1 mongodump -h 127.0.0.1 --port 4001 -d meteor</description>
-    </item>
+    <atom:link href="http://blog.wenzhixin.net.cn/tags/meteor/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>在 Ubuntu 14.04 server 上部署 meteor 应用</title>
-      <link>http://blog.wenzhixin.net.cn/2015/07/06/meteor_deploy/</link>
-      <pubDate>Mon, 06 Jul 2015 22:30:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/meteor_deploy</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2015/07/06/meteor_deploy/</guid>
-      <description>关于 Meteor.js Meteor.js Meteor 是一个构建在 Node.js 之上的平台，用来开发实时网页程序。Meteor 位于程序数据库和用户界面之间，保持二者之间的数据同步更新。使用 Mete</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/meteor_deploy</guid>
+      <description>
+
+&lt;h3 id=&#34;关于-meteor-js:a7799df58081dcf48248d422bcf9047b&#34;&gt;关于 Meteor.js&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://meteor.com/&#34;&gt;Meteor.js&lt;/a&gt; Meteor 是一个构建在 Node.js 之上的平台，用来开发实时网页程序。Meteor 位于程序数据库和用户界面之间，保持二者之间的数据同步更新。使用 Meteor，几小时之内就能开发出一个正常运行的实时网页程序。&lt;/p&gt;
+
+&lt;h3 id=&#34;编译部署-meteor-应用到服务器:a7799df58081dcf48248d422bcf9047b&#34;&gt;编译部署 meteor 应用到服务器&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;将我们的应用编译到 build 中&lt;/p&gt;
+cd myapp
+meteor build --directory ../build&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;使用 rsync 同步到服务器上&lt;/p&gt;
+cd ../
+rsync -avz build/bundle hostname:/home/myapp&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;安装-mongodb:a7799df58081dcf48248d422bcf9047b&#34;&gt;安装 mongodb&lt;/h3&gt;
+sudo apt-get install mongodb-server
+
+&lt;h3 id=&#34;编写-upstart-脚本:a7799df58081dcf48248d422bcf9047b&#34;&gt;编写 upstart 脚本&lt;/h3&gt;
+sudo vi /etc/init/myapp.conf
+#!upstart
+description &#34;Meteor Up - myapp&#34;
+author      &#34;Arunoda Susiripala, &lt;arunoda.susiripala@gmail.com&gt;&#34;
+
+start on runlevel [2345]
+stop on runlevel [06]
+
+respawn
+
+limit nofile 65536 65536
+
+script
+
+    # leave as 127.0.0.1 for security
+    export BIND_IP=127.0.0.1
+
+    # the port nginx is proxying requests to
+    export PORT=3000
+
+    # this allows Meteor to figure out correct IP address of visitors
+    export HTTP_FORWARDED_COUNT=1
+
+    # MongoDB connection string using myapp as database name
+    export MONGO_URL=mongodb://localhost:27017/myapp
+
+    # The domain name as configured previously as server_name in nginx
+    export ROOT_URL=https://myapp.wenzhixin.net.cn
+
+    exec node /home/myapp/bundle/main.js
+
+end script
+
+&lt;p&gt;启动：&lt;/p&gt;
+sudo start myapp
+
+&lt;h3 id=&#34;配置-nginx:a7799df58081dcf48248d422bcf9047b&#34;&gt;配置 nginx&lt;/h3&gt;
+server {
+    listen 80; 
+    server_name myapp.wenzhixin.net.cn;
+
+    location / { 
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $http_host;
+        proxy_set_header X-NginX-Proxy true;
+
+        proxy_pass http://127.0.0.1:3000;
+        proxy_redirect off;
+    }
+}
+
+&lt;p&gt;访问 myapp.wenzhixin.net.cn&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>备份恢复 Meteor Mongo 数据库</title>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/meteor_mongo_dump</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/meteor_mongo_dump</guid>
+      <description>&lt;p&gt;运行 &lt;code&gt;meteor&lt;/code&gt; 后使用新的窗口运行&lt;/p&gt;
+meteor mongo
+
+&lt;p&gt;可以看到类似下面的信息：&lt;/p&gt;
+MongoDB shell version: 2.6.7                  
+connecting to: 127.0.0.1:4001/meteor
+
+&lt;p&gt;Meteor 数据库运行于 127.0.0.1 3001 端口，Ctrl + D 退出即可。&lt;/p&gt;
+
+&lt;p&gt;导出：&lt;/p&gt;
+mongodump -h 127.0.0.1 --port 4001 -d meteor
+
+&lt;p&gt;导入：&lt;/p&gt;
+mongorestore -h 127.0.0.1 --port 4001 -d meteor dump/meteor
+</description>
     </item>
     
   </channel>

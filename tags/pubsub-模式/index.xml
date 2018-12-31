@@ -7,18 +7,118 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Wed, 06 Nov 2013 12:54:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.wenzhixin.net.cn/tags/pubsub-%E6%A8%A1%E5%BC%8F/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="http://blog.wenzhixin.net.cn/tags/pubsub-%E6%A8%A1%E5%BC%8F/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>理解并实现 PubSub 模式</title>
-      <link>http://blog.wenzhixin.net.cn/2013/11/06/understand_pubsub/</link>
-      <pubDate>Wed, 06 Nov 2013 12:54:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/understand_pubsub</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/11/06/understand_pubsub/</guid>
-      <description>假如我们正在构建一个类似于 Google Docs 的应用程序，当用户按下一个按键时，需要做的事情有很多： 新字符显示到屏幕上；插入点向后移动；将本次动作加入到撤销</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/understand_pubsub</guid>
+      <description>&lt;p&gt;假如我们正在构建一个类似于 Google Docs 的应用程序，当用户按下一个按键时，需要做的事情有很多：
+新字符显示到屏幕上；插入点向后移动；将本次动作加入到撤销的历史记录中；
+保持与服务器同步；拼写错误检查；统计字数和页数等等。&lt;/p&gt;
+
+&lt;p&gt;按照传统的做法，假如我们监听 keypress 事件，并在一个处理中完成所有的任务，这想想都觉得可怕了。
+那么有没有什么方法可以更好的解决这个问题，答案就是&lt;strong&gt;分布式事件&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;p&gt;PubSub 模式，是 Publish/Subscribe 的缩写，意为“发布/订阅”模式。&lt;/p&gt;
+
+&lt;p&gt;在实际使用中，我们应该也会接触到 PubSub 模式，例如 Nodejs 中的 EventEmitter、Backbone 中的事件模型、以及 jQuery 中的事件。
+以 EventEmitter 为栗子，它提供了 addListener(event, listener)，removeListener(event, listener)，emit(event, [arg1], [arg2], [&amp;hellip;]) 方法。&lt;/p&gt;
+var emitter = new EventEmitter(),
+    fn1 = function(value) {
+        console.log(&#39;fn1:&#39;, value);
+    },
+    fn2 = function(value) {
+        console.log(&#39;fn2:&#39;, value);
+    };
+
+emitter.addListener(&#39;message&#39;, fn1);
+emitter.addListener(&#39;message&#39;, fn2);
+emitter.emit(&#39;message&#39;, &#39;test1&#39;);
+emitter.removeListener(&#39;message&#39;, fn2);
+emitter.emit(&#39;message&#39;, &#39;test2&#39;);
+
+//fn1: test1
+//fn2: test1
+//fn1: test2
+
+&lt;p&gt;当调用 emit 方法时，会触发所有监听的事件。&lt;/p&gt;
+
+&lt;p&gt;就像上面说的，PubSub 其实很简单，现在我们来实现属于我们自己的 PubSub 对象。&lt;/p&gt;
+
+&lt;p&gt;首先创建 PubSub 类，增加 handlers 变量用于保存事件列表：&lt;/p&gt;
+function PubSub() {
+    this.handlers = {};
+}
+
+&lt;p&gt;添加事件时，将监听器加到数组中：&lt;/p&gt;
+PubSub.prototype.on = function(type, listener) {
+    if (!(type in this.handlers)) {
+        this.handlers[type] = [];
+    }
+    this.handlers[type].push(listener);
+};
+
+&lt;p&gt;删除事件时，移除监听器：&lt;/p&gt;
+PubSub.prototype.off = function(type, listener) {
+    var i,
+        position = -1,
+        list = this.handlers[type],
+        length = this.handlers[type].length;
+
+    for (i = 0; i &lt; length; i++) {
+        if (list[i] === listener) {
+            position = i;
+            break;
+        }
+    }
+
+    if (position === -1) {
+        return;
+    }
+
+    if (length === 1) {
+        delete this.handlers[type];
+    } else {
+        this.handlers[type].splice(position, 1);
+    }
+};
+
+&lt;p&gt;触发事件，循环遍历并触发所有的事件：&lt;/p&gt;
+PubSub.prototype.emit = function(type) {
+    var args = Array.prototype.slice.call(arguments, 1),
+        i,
+        list = this.handlers[type],
+        length = this.handlers[type].length;
+
+    for (i = 0; i &lt; length; i++) {
+        list[i].apply(this, args);
+    }
+};
+
+&lt;p&gt;测试：&lt;/p&gt;
+var pubsub = new PubSub(),
+    fn1 = function(value) {
+            console.log(&#39;fn1:&#39;, value);
+    },
+    fn2 = function(value) {
+            console.log(&#39;fn2:&#39;, value);
+    };
+
+pubsub.on(&#39;message&#39;, fn1);
+pubsub.on(&#39;message&#39;, fn2);
+pubsub.emit(&#39;message&#39;, &#39;test1&#39;);
+pubsub.off(&#39;message&#39;, fn2);
+pubsub.emit(&#39;message&#39;, &#39;test2&#39;);
+
+//fn1: test1
+//fn2: test1
+//fn1: test2
+
+&lt;p&gt;注：更多的实现请看 Nodejs 中的 &lt;a href=&#34;https://github.com/joyent/node/blob/master/lib/events.js&#34;&gt;events.js&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
     
   </channel>

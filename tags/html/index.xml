@@ -7,27 +7,286 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Thu, 15 Mar 2012 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.wenzhixin.net.cn/tags/html/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="http://blog.wenzhixin.net.cn/tags/html/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>编写高质量代码——高质量的HTML</title>
-      <link>http://blog.wenzhixin.net.cn/2012/03/15/write_high_quality_code_high_quality_html/</link>
-      <pubDate>Thu, 15 Mar 2012 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/write_high_quality_code_high_quality_html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/03/15/write_high_quality_code_high_quality_html/</guid>
-      <description>1、使用语义化标签 • div-division：分隔 • span：范围 • ol-ordered list：排序列表 • ul-unordered list：不排序列表 • li-list item：列表项目 • dl-definition l</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/write_high_quality_code_high_quality_html</guid>
+      <description>&lt;p&gt;&lt;strong&gt;1、使用语义化标签&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt; • div-division：分隔&lt;/p&gt;
+
+&lt;p&gt; • span：范围&lt;/p&gt;
+
+&lt;p&gt; • ol-ordered list：排序列表&lt;/p&gt;
+
+&lt;p&gt; • ul-unordered list：不排序列表&lt;/p&gt;
+
+&lt;p&gt; • li-list item：列表项目&lt;/p&gt;
+
+&lt;p&gt; • dl-definition list：定义列表&lt;/p&gt;
+
+&lt;p&gt; • dt-definition term：定义术语&lt;/p&gt;
+
+&lt;p&gt; • dd-definition description：定义描述&lt;/p&gt;
+
+&lt;p&gt; • del-delete：删除&lt;/p&gt;
+
+&lt;p&gt; • ins-insert：插入&lt;/p&gt;
+
+&lt;p&gt; • h1~h6-header 1 to header 6：标题 1 到标题 6&lt;/p&gt;
+
+&lt;p&gt; • p-paragraph：段落&lt;/p&gt;
+
+&lt;p&gt; • hr-horizontal rule：水平尺&lt;/p&gt;
+
+&lt;p&gt; • a-anchor：锚&lt;/p&gt;
+
+&lt;p&gt; • abbr-abbreviation：缩写词&lt;/p&gt;
+
+&lt;p&gt; • acronym：取首字母的缩写词&lt;/p&gt;
+
+&lt;p&gt; • address：地址&lt;/p&gt;
+
+&lt;p&gt; • var-variable：变量&lt;/p&gt;
+
+&lt;p&gt; • pre-preformatter：预定义格式&lt;/p&gt;
+
+&lt;p&gt; • blockquote：区块引用语&lt;/p&gt;
+
+&lt;p&gt; • strong：加重&lt;/p&gt;
+
+&lt;p&gt; • em-emphasized：加重&lt;/p&gt;
+
+&lt;p&gt; • b-bold：粗体&lt;/p&gt;
+
+&lt;p&gt; • i-italic：斜体&lt;/p&gt;
+
+&lt;p&gt; • big：变大&lt;/p&gt;
+
+&lt;p&gt; • small：变小&lt;/p&gt;
+
+&lt;p&gt; • sup-superscripted：上标&lt;/p&gt;
+
+&lt;p&gt; • sub-subscripted：下标&lt;/p&gt;
+
+&lt;p&gt; • br-break：换行&lt;/p&gt;
+
+&lt;p&gt; • center：区中&lt;/p&gt;
+
+&lt;p&gt; • font：字体&lt;/p&gt;
+
+&lt;p&gt; • u-underline：下划线&lt;/p&gt;
+
+&lt;p&gt; • s-strikethrough：删除线&lt;/p&gt;
+
+&lt;p&gt; • fieldset：域集&lt;/p&gt;
+
+&lt;p&gt; • lengend：图标&lt;/p&gt;
+
+&lt;p&gt; • caption：标题&lt;/p&gt;
+
+&lt;p&gt;   注意：有两个无语义的标签 div 和
+span，当页面内标签无法满则设计需要时，才使用无语义标签。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;2、使用语义化标签的重要性&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt; •
+搜索引擎是通过标签来判断内容的语义，使用语义化标签有利于搜索引擎找到网站&lt;/p&gt;
+
+&lt;p&gt; • 使用结构精简、语义清晰的标签有利于维护，降低维护成本&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;3、如何检测标签是否语义良好？&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt; •
+因为浏览器会根据标签的语义给定一个默认的样式，所以判断一个网页标签语义是否良好的方法是：去掉样式，看网页结构是否组织良好有序，是否仍然后良好的可读性。&lt;/p&gt;
+
+&lt;p&gt; • 使用工具：Web Developer&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;4、常见模块&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;（1）标题和内容&lt;/p&gt;
+
+&lt;p&gt;    &lt;h1&gt;标题1&lt;h1&gt;&lt;/p&gt;
+
+&lt;p&gt;    &lt;h2&gt;标题2&lt;h2&gt;&lt;/p&gt;
+
+&lt;p&gt;    &lt;p&gt;段落1&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;    &lt;p&gt;段落2&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;（2）表单&lt;/p&gt;
+
+&lt;p&gt;    &lt;form&gt;
+        &lt;fieldset&gt;
+            &lt;legend&gt;表单名称：表示用途&lt;/legend&gt;
+            &lt;p&gt;
+                &lt;label for=&#34;input1&#34;&gt;输入框1&lt;/label&gt;&lt;input type=&#34;text&#34; id=&#34;input1&#34;/&gt;
+            &lt;p&gt;
+            &lt;p&gt;
+                &lt;label for=&#34;input2&#34;&gt;输入框2&lt;/label&gt;&lt;input type=&#34;text&#34; id=&#34;input2&#34;/&gt;
+            &lt;p&gt;
+            &amp;hellip;
+        &lt;/fieldset&gt;
+    &lt;/form&gt;&lt;/p&gt;
+
+&lt;p&gt;（3）表格&lt;/p&gt;
+
+&lt;p&gt;表格标题要用 caption，表头要用 thead 包围，主题部分用 tbody
+包围，尾部用 tfoot 包围，表头和一般单元格要区分开，表头用 th，一般单元格用
+td。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;5、语义化标签应该注意的问题：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;（1）尽可能的少用无语义标签 div 和 span&lt;/p&gt;
+
+&lt;p&gt;（2）在语义不明显，既可以用 p 也可以用 div 的地方，尽量用 p&lt;/p&gt;
+
+&lt;p&gt;（3）不要使用纯样式标签，如：b、font 和 u 等，改用 CSS 设置&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>编写高质量代码——高质量的HTML</title>
-      <link>http://blog.wenzhixin.net.cn/2012/03/15/write_high_quality_code_high_quality_html/</link>
-      <pubDate>Thu, 15 Mar 2012 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/write_high_quality_code_high_quality_html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/03/15/write_high_quality_code_high_quality_html/</guid>
-      <description>1、使用语义化标签 • div-division：分隔 • span：范围 • ol-ordered list：排序列表 • ul-unordered list：不排序列表 • li-list item：列表项目 • dl-definition l</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/write_high_quality_code_high_quality_html</guid>
+      <description>&lt;p&gt;&lt;strong&gt;1、使用语义化标签&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt; • div-division：分隔&lt;/p&gt;
+
+&lt;p&gt; • span：范围&lt;/p&gt;
+
+&lt;p&gt; • ol-ordered list：排序列表&lt;/p&gt;
+
+&lt;p&gt; • ul-unordered list：不排序列表&lt;/p&gt;
+
+&lt;p&gt; • li-list item：列表项目&lt;/p&gt;
+
+&lt;p&gt; • dl-definition list：定义列表&lt;/p&gt;
+
+&lt;p&gt; • dt-definition term：定义术语&lt;/p&gt;
+
+&lt;p&gt; • dd-definition description：定义描述&lt;/p&gt;
+
+&lt;p&gt; • del-delete：删除&lt;/p&gt;
+
+&lt;p&gt; • ins-insert：插入&lt;/p&gt;
+
+&lt;p&gt; • h1~h6-header 1 to header 6：标题 1 到标题 6&lt;/p&gt;
+
+&lt;p&gt; • p-paragraph：段落&lt;/p&gt;
+
+&lt;p&gt; • hr-horizontal rule：水平尺&lt;/p&gt;
+
+&lt;p&gt; • a-anchor：锚&lt;/p&gt;
+
+&lt;p&gt; • abbr-abbreviation：缩写词&lt;/p&gt;
+
+&lt;p&gt; • acronym：取首字母的缩写词&lt;/p&gt;
+
+&lt;p&gt; • address：地址&lt;/p&gt;
+
+&lt;p&gt; • var-variable：变量&lt;/p&gt;
+
+&lt;p&gt; • pre-preformatter：预定义格式&lt;/p&gt;
+
+&lt;p&gt; • blockquote：区块引用语&lt;/p&gt;
+
+&lt;p&gt; • strong：加重&lt;/p&gt;
+
+&lt;p&gt; • em-emphasized：加重&lt;/p&gt;
+
+&lt;p&gt; • b-bold：粗体&lt;/p&gt;
+
+&lt;p&gt; • i-italic：斜体&lt;/p&gt;
+
+&lt;p&gt; • big：变大&lt;/p&gt;
+
+&lt;p&gt; • small：变小&lt;/p&gt;
+
+&lt;p&gt; • sup-superscripted：上标&lt;/p&gt;
+
+&lt;p&gt; • sub-subscripted：下标&lt;/p&gt;
+
+&lt;p&gt; • br-break：换行&lt;/p&gt;
+
+&lt;p&gt; • center：区中&lt;/p&gt;
+
+&lt;p&gt; • font：字体&lt;/p&gt;
+
+&lt;p&gt; • u-underline：下划线&lt;/p&gt;
+
+&lt;p&gt; • s-strikethrough：删除线&lt;/p&gt;
+
+&lt;p&gt; • fieldset：域集&lt;/p&gt;
+
+&lt;p&gt; • lengend：图标&lt;/p&gt;
+
+&lt;p&gt; • caption：标题&lt;/p&gt;
+
+&lt;p&gt;   注意：有两个无语义的标签 div 和
+span，当页面内标签无法满则设计需要时，才使用无语义标签。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;2、使用语义化标签的重要性&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt; •
+搜索引擎是通过标签来判断内容的语义，使用语义化标签有利于搜索引擎找到网站&lt;/p&gt;
+
+&lt;p&gt; • 使用结构精简、语义清晰的标签有利于维护，降低维护成本&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;3、如何检测标签是否语义良好？&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt; •
+因为浏览器会根据标签的语义给定一个默认的样式，所以判断一个网页标签语义是否良好的方法是：去掉样式，看网页结构是否组织良好有序，是否仍然后良好的可读性。&lt;/p&gt;
+
+&lt;p&gt; • 使用工具：Web Developer&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;4、常见模块&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;（1）标题和内容&lt;/p&gt;
+
+&lt;p&gt;    &lt;h1&gt;标题1&lt;h1&gt;&lt;/p&gt;
+
+&lt;p&gt;    &lt;h2&gt;标题2&lt;h2&gt;&lt;/p&gt;
+
+&lt;p&gt;    &lt;p&gt;段落1&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;    &lt;p&gt;段落2&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;（2）表单&lt;/p&gt;
+
+&lt;p&gt;    &lt;form&gt;
+        &lt;fieldset&gt;
+            &lt;legend&gt;表单名称：表示用途&lt;/legend&gt;
+            &lt;p&gt;
+                &lt;label for=&#34;input1&#34;&gt;输入框1&lt;/label&gt;&lt;input type=&#34;text&#34; id=&#34;input1&#34;/&gt;
+            &lt;p&gt;
+            &lt;p&gt;
+                &lt;label for=&#34;input2&#34;&gt;输入框2&lt;/label&gt;&lt;input type=&#34;text&#34; id=&#34;input2&#34;/&gt;
+            &lt;p&gt;
+            &amp;hellip;
+        &lt;/fieldset&gt;
+    &lt;/form&gt;&lt;/p&gt;
+
+&lt;p&gt;（3）表格&lt;/p&gt;
+
+&lt;p&gt;表格标题要用 caption，表头要用 thead 包围，主题部分用 tbody
+包围，尾部用 tfoot 包围，表头和一般单元格要区分开，表头用 th，一般单元格用
+td。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;5、语义化标签应该注意的问题：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;（1）尽可能的少用无语义标签 div 和 span&lt;/p&gt;
+
+&lt;p&gt;（2）在语义不明显，既可以用 p 也可以用 div 的地方，尽量用 p&lt;/p&gt;
+
+&lt;p&gt;（3）不要使用纯样式标签，如：b、font 和 u 等，改用 CSS 设置&lt;/p&gt;
+</description>
     </item>
     
   </channel>

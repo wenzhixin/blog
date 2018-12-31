@@ -7,27 +7,402 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Sat, 01 Dec 2012 02:31:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.wenzhixin.net.cn/tags/%E7%BC%96%E7%A0%81%E7%BA%A6%E5%AE%9A/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="http://blog.wenzhixin.net.cn/tags/%E7%BC%96%E7%A0%81%E7%BA%A6%E5%AE%9A/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Javascript 编码约定</title>
-      <link>http://blog.wenzhixin.net.cn/2012/12/01/javascript_coding_convention/</link>
-      <pubDate>Sat, 01 Dec 2012 02:31:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/javascript_coding_convention</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/12/01/javascript_coding_convention/</guid>
-      <description>1、使用 strict 模式 在一个作用域(包括函数作用域、全局作用域)中，可以使用 1 &amp;#34;use strict&amp;#34;; 来开启 strict 模式。 2、缩进 用 Tab 键进行代码缩进，以节约代码大小，使用4个</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/javascript_coding_convention</guid>
+      <description>
+
+&lt;h3 id=&#34;1-使用-strict-模式:836cea178bfb064078d8ffcccd8f85ca&#34;&gt;1、使用 strict 模式&lt;/h3&gt;
+
+&lt;p&gt;在一个作用域(包括函数作用域、全局作用域)中，可以使用&lt;/p&gt;
+&#34;use strict&#34;;
+
+&lt;p&gt;来开启 strict 模式。&lt;/p&gt;
+
+&lt;h3 id=&#34;2-缩进:836cea178bfb064078d8ffcccd8f85ca&#34;&gt;2、缩进&lt;/h3&gt;
+
+&lt;p&gt;用 Tab 键进行代码缩进，以节约代码大小，使用4个空格的宽度来进行缩进(JSLint 建议)。&lt;/p&gt;
+
+&lt;h3 id=&#34;3-符号:836cea178bfb064078d8ffcccd8f85ca&#34;&gt;3、符号&lt;/h3&gt;
+
+&lt;p&gt;1) 大括号&lt;/p&gt;
+
+&lt;p&gt;与语句放同一行，放于最后面；仅有一行语句，也使用大括号：&lt;/p&gt;
+if (true) {
+    //true
+} else {
+    //false
+}
+
+while (true) {
+    //alert(1);
+}
+
+&lt;p&gt;2) 空格&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;在逗号、分号、冒号后加空格&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;在操作符前后加空格&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;在大括号开始符之前&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;在大括号结束符和 else、while 或 catch 之间&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;在 for 的各个部分&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;如：&lt;/p&gt;
+var a = [1, 2, 3];
+var obj = {
+    name: &#39;name&#39;,
+    value: &#39;value&#39;
+};
+for (var i = 0; i &lt; 10; i++) {}
+function func(a, b, c) {}
+
+c = a + b;
+if (a &amp;&amp; b || c) {
+    //if
+} else {
+    //else
+}
+
+try {
+    //try
+} catch(err) {
+    //catch
+}
+
+&lt;p&gt;3) 所有语句结束后，使用 ; 号结束&lt;/p&gt;
+
+&lt;h3 id=&#34;4-命名:836cea178bfb064078d8ffcccd8f85ca&#34;&gt;4、命名&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;对象：使用驼峰式，如：MyClass&lt;/li&gt;
+&lt;li&gt;方法、变量：使用混合式，如：getName(), myName&lt;/li&gt;
+&lt;li&gt;常量：大写加下划线，如：MY_NAME&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;5-单一-var-模式:836cea178bfb064078d8ffcccd8f85ca&#34;&gt;5、单一 var 模式&lt;/h3&gt;
+
+&lt;p&gt;只使用一个 var 在函数顶部进行变量声明，作用如下：&lt;/p&gt;
+
+&lt;p&gt;1) 提供一个单一的地址已查找到函数需要的所有局部变量&lt;br /&gt;
+2) 防止出现变量在定义前就被使用的逻辑错误&lt;br /&gt;
+3) 帮助牢记要声明变量，尽可能少地使用全局变量&lt;br /&gt;
+4) 更少的编码&lt;/p&gt;
+function func() {
+    var a = 1,
+        b = 2, 
+        sum = a + b,
+        obj = {
+            name: &#39;name&#39;,
+            value: &#39;value&#39;
+        },
+    $btn = $(&#39;#btn&#39;);
+    //函数体
+}
+
+&lt;h3 id=&#34;6-循环:836cea178bfb064078d8ffcccd8f85ca&#34;&gt;6、循环&lt;/h3&gt;
+
+&lt;p&gt;1) for 循环&lt;/p&gt;
+var i, arr = [];
+for (i = arr.length; i--;) {
+    //arr[i];
+}
+
+&lt;p&gt;注:&lt;/p&gt;
+for (var i = 0; i &lt; document.getElementsByName().length; i++) {
+    //document.getElementsByName()[0];
+}
+
+&lt;p&gt;这种方式每次对 i 进行长度比较的使用对会进行 document 的查询，而通常 DOM 操作是非常耗时的。&lt;/p&gt;
+
+&lt;p&gt;2) while 循环&lt;/p&gt;
+var arr = [], 
+    i = arr.length;
+while (i--) {
+    //处理
+}
+
+&lt;p&gt;3) for-in 循环&lt;/p&gt;
+var i,
+    hasOwn = Object.prototype.hasOwnProperty;
+for (i in man) {
+    if (hasOwn.call(man, i)) { //过滤
+        console.log(i, &#39;:&#39;, man[i]);
+    }
+}
+
+&lt;h3 id=&#34;7-switch-选择:836cea178bfb064078d8ffcccd8f85ca&#34;&gt;7、switch 选择&lt;/h3&gt;
+switch (num) {
+case 0:
+    //do something
+    break;
+case 1:
+    //do something
+    break;
+...
+default:
+    //do default
+}
+
+&lt;p&gt;建议使用：&lt;/p&gt;
+var obj = {
+    &#39;0&#39;: function() {
+        //do somethins
+    },
+    &#39;1&#39;: function() {
+        // do somethis
+    }, ...
+}
+if (obj.hasOwnProperty(num)) {
+    obj[num]();
+} else {
+    //do default
+}
+
+&lt;h3 id=&#34;8-使用-parseint-的数值约定:836cea178bfb064078d8ffcccd8f85ca&#34;&gt;8、使用 parseInt() 的数值约定&lt;/h3&gt;
+
+&lt;p&gt;1) 每次都具体指定进制参数：&lt;/p&gt;
+var month = &#39;09&#39;, day = &#39;08&#39;;
+month = parseInt(month, 10); //不加进制参数便会转换为八进制
+day = parseInt(day, 10);
+
+&lt;p&gt;2) 其他常用的将字符串转换为数值的方法：&lt;/p&gt;
++&#39;08&#39;;
+Number(&#39;08&#39;);
+
+&lt;h3 id=&#34;9-字面量模式:836cea178bfb064078d8ffcccd8f85ca&#34;&gt;9、字面量模式&lt;/h3&gt;
+
+&lt;p&gt;不建议使用构造函数来定义：&lt;/p&gt;
+// built in constructors (avoid)
+var o = new Object();
+var a = new Array();
+var re = new RegExp(&#39;[a-z]&#39;, &#39;g&#39;);
+var s = new String();
+var n = new Number();
+var b = new Boolean();
+throw new Error(&#39;message&#39;);
+
+&lt;p&gt;建议使用更优的字面量模式：&lt;/p&gt;
+// literals and primitives (prefer)
+var o = {};
+var a = [];
+var re = /[a-z]/g;
+var s = &#39;&#39;;
+var n = 0;
+var b = false;
+throw {
+    name: &#39;Error&#39;,
+    message: &#39;message&#39;
+}
+
+&lt;h3 id=&#34;10-其他:836cea178bfb064078d8ffcccd8f85ca&#34;&gt;10、其他&lt;/h3&gt;
+
+&lt;p&gt;1) 变量内的简写单词如果在开头则全小写：xmlDocument，如果不在开头则全大写：loadXML&lt;br /&gt;
+2) 变量必须是有意义的英文，禁止拼音&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>Javascript 编码约定</title>
-      <link>http://blog.wenzhixin.net.cn/2012/12/01/javascript_coding_convention/</link>
-      <pubDate>Sat, 01 Dec 2012 02:31:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/javascript_coding_convention</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/12/01/javascript_coding_convention/</guid>
-      <description>1、使用 strict 模式 在一个作用域(包括函数作用域、全局作用域)中，可以使用 1 &amp;#34;use strict&amp;#34;; 来开启 strict 模式。 2、缩进 用 Tab 键进行代码缩进，以节约代码大小，使用4个</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/javascript_coding_convention</guid>
+      <description>
+
+&lt;h3 id=&#34;1-使用-strict-模式:836cea178bfb064078d8ffcccd8f85ca&#34;&gt;1、使用 strict 模式&lt;/h3&gt;
+
+&lt;p&gt;在一个作用域(包括函数作用域、全局作用域)中，可以使用&lt;/p&gt;
+&#34;use strict&#34;;
+
+&lt;p&gt;来开启 strict 模式。&lt;/p&gt;
+
+&lt;h3 id=&#34;2-缩进:836cea178bfb064078d8ffcccd8f85ca&#34;&gt;2、缩进&lt;/h3&gt;
+
+&lt;p&gt;用 Tab 键进行代码缩进，以节约代码大小，使用4个空格的宽度来进行缩进(JSLint 建议)。&lt;/p&gt;
+
+&lt;h3 id=&#34;3-符号:836cea178bfb064078d8ffcccd8f85ca&#34;&gt;3、符号&lt;/h3&gt;
+
+&lt;p&gt;1) 大括号&lt;/p&gt;
+
+&lt;p&gt;与语句放同一行，放于最后面；仅有一行语句，也使用大括号：&lt;/p&gt;
+if (true) {
+    //true
+} else {
+    //false
+}
+
+while (true) {
+    //alert(1);
+}
+
+&lt;p&gt;2) 空格&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;在逗号、分号、冒号后加空格&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;在操作符前后加空格&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;在大括号开始符之前&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;在大括号结束符和 else、while 或 catch 之间&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;在 for 的各个部分&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;如：&lt;/p&gt;
+var a = [1, 2, 3];
+var obj = {
+    name: &#39;name&#39;,
+    value: &#39;value&#39;
+};
+for (var i = 0; i &lt; 10; i++) {}
+function func(a, b, c) {}
+
+c = a + b;
+if (a &amp;&amp; b || c) {
+    //if
+} else {
+    //else
+}
+
+try {
+    //try
+} catch(err) {
+    //catch
+}
+
+&lt;p&gt;3) 所有语句结束后，使用 ; 号结束&lt;/p&gt;
+
+&lt;h3 id=&#34;4-命名:836cea178bfb064078d8ffcccd8f85ca&#34;&gt;4、命名&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;对象：使用驼峰式，如：MyClass&lt;/li&gt;
+&lt;li&gt;方法、变量：使用混合式，如：getName(), myName&lt;/li&gt;
+&lt;li&gt;常量：大写加下划线，如：MY_NAME&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;5-单一-var-模式:836cea178bfb064078d8ffcccd8f85ca&#34;&gt;5、单一 var 模式&lt;/h3&gt;
+
+&lt;p&gt;只使用一个 var 在函数顶部进行变量声明，作用如下：&lt;/p&gt;
+
+&lt;p&gt;1) 提供一个单一的地址已查找到函数需要的所有局部变量&lt;br /&gt;
+2) 防止出现变量在定义前就被使用的逻辑错误&lt;br /&gt;
+3) 帮助牢记要声明变量，尽可能少地使用全局变量&lt;br /&gt;
+4) 更少的编码&lt;/p&gt;
+function func() {
+    var a = 1,
+        b = 2, 
+        sum = a + b,
+        obj = {
+            name: &#39;name&#39;,
+            value: &#39;value&#39;
+        },
+    $btn = $(&#39;#btn&#39;);
+    //函数体
+}
+
+&lt;h3 id=&#34;6-循环:836cea178bfb064078d8ffcccd8f85ca&#34;&gt;6、循环&lt;/h3&gt;
+
+&lt;p&gt;1) for 循环&lt;/p&gt;
+var i, arr = [];
+for (i = arr.length; i--;) {
+    //arr[i];
+}
+
+&lt;p&gt;注:&lt;/p&gt;
+for (var i = 0; i &lt; document.getElementsByName().length; i++) {
+    //document.getElementsByName()[0];
+}
+
+&lt;p&gt;这种方式每次对 i 进行长度比较的使用对会进行 document 的查询，而通常 DOM 操作是非常耗时的。&lt;/p&gt;
+
+&lt;p&gt;2) while 循环&lt;/p&gt;
+var arr = [], 
+    i = arr.length;
+while (i--) {
+    //处理
+}
+
+&lt;p&gt;3) for-in 循环&lt;/p&gt;
+var i,
+    hasOwn = Object.prototype.hasOwnProperty;
+for (i in man) {
+    if (hasOwn.call(man, i)) { //过滤
+        console.log(i, &#39;:&#39;, man[i]);
+    }
+}
+
+&lt;h3 id=&#34;7-switch-选择:836cea178bfb064078d8ffcccd8f85ca&#34;&gt;7、switch 选择&lt;/h3&gt;
+switch (num) {
+case 0:
+    //do something
+    break;
+case 1:
+    //do something
+    break;
+...
+default:
+    //do default
+}
+
+&lt;p&gt;建议使用：&lt;/p&gt;
+var obj = {
+    &#39;0&#39;: function() {
+        //do somethins
+    },
+    &#39;1&#39;: function() {
+        // do somethis
+    }, ...
+}
+if (obj.hasOwnProperty(num)) {
+    obj[num]();
+} else {
+    //do default
+}
+
+&lt;h3 id=&#34;8-使用-parseint-的数值约定:836cea178bfb064078d8ffcccd8f85ca&#34;&gt;8、使用 parseInt() 的数值约定&lt;/h3&gt;
+
+&lt;p&gt;1) 每次都具体指定进制参数：&lt;/p&gt;
+var month = &#39;09&#39;, day = &#39;08&#39;;
+month = parseInt(month, 10); //不加进制参数便会转换为八进制
+day = parseInt(day, 10);
+
+&lt;p&gt;2) 其他常用的将字符串转换为数值的方法：&lt;/p&gt;
++&#39;08&#39;;
+Number(&#39;08&#39;);
+
+&lt;h3 id=&#34;9-字面量模式:836cea178bfb064078d8ffcccd8f85ca&#34;&gt;9、字面量模式&lt;/h3&gt;
+
+&lt;p&gt;不建议使用构造函数来定义：&lt;/p&gt;
+// built in constructors (avoid)
+var o = new Object();
+var a = new Array();
+var re = new RegExp(&#39;[a-z]&#39;, &#39;g&#39;);
+var s = new String();
+var n = new Number();
+var b = new Boolean();
+throw new Error(&#39;message&#39;);
+
+&lt;p&gt;建议使用更优的字面量模式：&lt;/p&gt;
+// literals and primitives (prefer)
+var o = {};
+var a = [];
+var re = /[a-z]/g;
+var s = &#39;&#39;;
+var n = 0;
+var b = false;
+throw {
+    name: &#39;Error&#39;,
+    message: &#39;message&#39;
+}
+
+&lt;h3 id=&#34;10-其他:836cea178bfb064078d8ffcccd8f85ca&#34;&gt;10、其他&lt;/h3&gt;
+
+&lt;p&gt;1) 变量内的简写单词如果在开头则全小写：xmlDocument，如果不在开头则全大写：loadXML&lt;br /&gt;
+2) 变量必须是有意义的英文，禁止拼音&lt;/p&gt;
+</description>
     </item>
     
   </channel>

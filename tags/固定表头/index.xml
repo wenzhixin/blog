@@ -7,18 +7,68 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Sun, 10 Aug 2014 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.wenzhixin.net.cn/tags/%E5%9B%BA%E5%AE%9A%E8%A1%A8%E5%A4%B4/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="http://blog.wenzhixin.net.cn/tags/%E5%9B%BA%E5%AE%9A%E8%A1%A8%E5%A4%B4/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>表格固定表头的问题和解决方案</title>
-      <link>http://blog.wenzhixin.net.cn/2014/08/10/fixed_table/</link>
-      <pubDate>Sun, 10 Aug 2014 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/fixed_table</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/08/10/fixed_table/</guid>
-      <description>在写插件bootstrap table的时候，当数据过多的时候，需要对表格的 thead进行固定，然后滚动表格的tbody。但是在实际的操作上，</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/fixed_table</guid>
+      <description>
+
+&lt;p&gt;在写插件&lt;a href=&#34;https://github.com/wenzhixin/bootstrap-table&#34;&gt;bootstrap table&lt;/a&gt;的时候，当数据过多的时候，需要对表格的 &lt;code&gt;thead&lt;/code&gt;进行固定，然后滚动表格的&lt;code&gt;tbody&lt;/code&gt;。但是在实际的操作上，花了很多的时间在这个问题上，到现在也没有找到完美的解决方案，在这里记录下这个问题。&lt;/p&gt;
+
+&lt;h3 id=&#34;方案一-1-0-6:073e6e06b9c5ef2c807de43d88ce5036&#34;&gt;方案一(&amp;lt;=1.0.6)&lt;/h3&gt;
+
+&lt;p&gt;最开始的解决方法是通过设置&lt;code&gt;th&lt;/code&gt;中的&lt;code&gt;div&lt;/code&gt;的 &lt;code&gt;position&lt;/code&gt;为&lt;code&gt;absolute&lt;/code&gt;，从而达到固定表头的效果：&lt;/p&gt;
+&lt;thead&gt;
+    &lt;tr&gt;
+        &lt;th&gt;
+            &lt;div class=&#34;th-inner&#34; style=&#34;position: absolute; width: 197px;&#34;&gt;
+                Item ID
+            &lt;/div&gt;
+        &lt;/th&gt;
+        &lt;th&gt;
+            &lt;div class=&#34;th-inner&#34; style=&#34;position: absolute; width: 346px;&#34;&gt;
+                Item Name
+            &lt;/div&gt;
+        &lt;/th&gt;
+        &lt;th&gt;
+            &lt;div class=&#34;th-inner&#34; style=&#34;position: absolute; width: 255px;&#34;&gt;
+                Item Price
+            &lt;/div&gt;
+        &lt;/th&gt;
+    &lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;p&gt;这里的&lt;code&gt;width&lt;/code&gt;，是需要通过对&lt;code&gt;tbody&lt;/code&gt;的第一行元素的宽度进行计算出来的。&lt;/p&gt;
+
+&lt;p&gt;这个方法虽然可行，但是会出现如：
+&lt;a href=&#34;https://github.com/wenzhixin/bootstrap-table/issues/34&#34;&gt;https://github.com/wenzhixin/bootstrap-table/issues/34&lt;/a&gt; 这个问题所描述的当表头文字过长，而表格内容过短，就会显示 &amp;hellip; 的问题，显然这种方法是存在很大的问题的。&lt;/p&gt;
+
+&lt;h3 id=&#34;方案二-1-1-2:073e6e06b9c5ef2c807de43d88ce5036&#34;&gt;方案二(&amp;lt;=1.1.2)&lt;/h3&gt;
+
+&lt;p&gt;参考了很多方法，方案二使用 jQuery 的`&lt;code&gt;clone&lt;/code&gt;方法生成两个相同的 table，并将第一个 table 的&lt;code&gt;tbody&lt;/code&gt;和第二个 table 的&lt;code&gt;thead&lt;/code&gt;隐藏起来，这里需要将第一个 table 的&lt;code&gt;overflow&lt;/code&gt;设置为&lt;code&gt;hidden&lt;/code&gt;，第二个 table 的&lt;code&gt;margin-top&lt;/code&gt;设置为第一个 table 表头的负高度。&lt;/p&gt;
+
+&lt;p&gt;这个方案适应所有的浏览器，但是会出现如：
+&lt;a href=&#34;https://github.com/wenzhixin/bootstrap-table/issues/52&#34;&gt;https://github.com/wenzhixin/bootstrap-table/issues/52&lt;/a&gt; 这个问题所描述的当使用浏览器自带的搜索时，会出现两处相同的内容，并且出现在表头处（overflow 会自动调整），显然这种方法会对用户造成困扰和极大的影响用户体验。&lt;/p&gt;
+
+&lt;h3 id=&#34;方案三:073e6e06b9c5ef2c807de43d88ce5036&#34;&gt;方案三&lt;/h3&gt;
+
+&lt;p&gt;方案三参考了许多 GitHub 上其他实现固定表头的 jQuery 插件，例如：&lt;a href=&#34;http://www.fixedheadertable.com/&#34;&gt;fixedheadertable&lt;/a&gt;和&lt;a href=&#34;http://datatables.net/extensions/fixedheader/&#34;&gt;datatables&lt;/a&gt;，跟方案二有点类似，他们都是通过 clone 表格的&lt;code&gt;thead&lt;/code&gt;，然后将其固定住，并根据原来 table 的每一列的宽度重新计算设置固定表头的宽度，关键代码如下：&lt;/p&gt;
+this.$body.find(&#39;tr:first-child:not(.no-records-found) &gt; *&#39;).each(function(i) {
+    that.$header_.find(&#39;div.fht-cell&#39;).eq(i).width($(this).innerWidth());
+});
+
+&lt;p&gt;这个办法是可行的，但是发现了一个小瑕疵，那就是使用 firefox （其他浏览器都正常使用）的时候，即使表头的宽度和原来表格的宽度一模一样，有时候会渲染的不是很完美（刚刚提到的其他插件也存在这个问题），如下图显示。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/08/10/1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;PS: 或许有更好的实现方法，不断改进。。。&lt;/p&gt;
+</description>
     </item>
     
   </channel>

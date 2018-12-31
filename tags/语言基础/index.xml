@@ -7,18 +7,212 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Wed, 27 Mar 2013 19:46:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.wenzhixin.net.cn/tags/%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="http://blog.wenzhixin.net.cn/tags/%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>改善 JavaScript 的建议——语言基础</title>
-      <link>http://blog.wenzhixin.net.cn/2013/03/27/javascript_base_advice/</link>
-      <pubDate>Wed, 27 Mar 2013 19:46:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/javascript_base_advice</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/03/27/javascript_base_advice/</guid>
-      <description>1. 减少全局变量污染 建议：在应用程序中创建唯一一个全局变量，定义该变量为当前应用的容器 1 2 3 4 5 6 7 8 9 var My = {}; My.name = &amp;#39;wenzhixin&amp;#39;; My.work = { number: 123, list: [{ name: &amp;#39;web&amp;#39;, time: &amp;#39;2010.05.01&amp;#39; }]</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/javascript_base_advice</guid>
+      <description>
+
+&lt;h3 id=&#34;1-减少全局变量污染:6e30c1a8fa84aefe9200651849fae33e&#34;&gt;1. 减少全局变量污染&lt;/h3&gt;
+
+&lt;p&gt;建议：在应用程序中创建唯一一个全局变量，定义该变量为当前应用的容器&lt;/p&gt;
+var My = {};
+My.name = &#39;wenzhixin&#39;;
+My.work = {
+    number: 123,
+    list: [{
+        name: &#39;web&#39;,
+        time: &#39;2010.05.01&#39;
+    }]
+};
+
+&lt;h3 id=&#34;2-变量声明:6e30c1a8fa84aefe9200651849fae33e&#34;&gt;2. 变量声明&lt;/h3&gt;
+
+&lt;p&gt;建议：在函数体顶部声明可能用到的所有变量&lt;/p&gt;
+function test() {
+    var a = 1,
+        b = &#39;wen&#39;,
+        c = {
+            name: &#39;zhixin&#39;
+        };
+    // use a, b ,c
+}
+
+&lt;h3 id=&#34;3-慎用-javascript-类型自动转换-运算符:6e30c1a8fa84aefe9200651849fae33e&#34;&gt;3. 慎用 JavaScript 类型自动转换、运算符&lt;/h3&gt;
+
+&lt;p&gt;建议：明确变量类型，使用 === 来进行比较，不用 ==&lt;/p&gt;
+var a = 1,
+    b = &#39;1&#39;;
+if (a == b) {
+    //
+}
+//or
+if (a === b) {
+    //
+}
+//or
+switch (b) {
+case 1:
+    //
+}
+0 == &#39;&#39;; //true
+&#39;&#39; == &#39;0&#39;; //false
+0 == &#39;0&#39;; //true
+
+&lt;h3 id=&#34;4-避免误用-parseint:6e30c1a8fa84aefe9200651849fae33e&#34;&gt;4. 避免误用 parseInt&lt;/h3&gt;
+
+&lt;p&gt;建议：强制使用基数参数 parseInt(str, base)&lt;/p&gt;
+parseInt(&#39;08&#39;); //0
+parseInt(&#39;09&#39;); //0
+parseInt(&#39;09&#39;, 10); //9
+
+&lt;h3 id=&#34;5-防止自动插入分号:6e30c1a8fa84aefe9200651849fae33e&#34;&gt;5. 防止自动插入分号&lt;/h3&gt;
+
+&lt;p&gt;建议：完整的语句都增加分号以表示句子结束，将 { 放于语句尾部&lt;/p&gt;
+// 相当于 return;
+function test() {
+    return 
+    {
+        status: true
+    };
+}
+
+&lt;h3 id=&#34;6-不要过于信任-hasownproperty:6e30c1a8fa84aefe9200651849fae33e&#34;&gt;6. 不要过于信任 hasOwnProperty&lt;/h3&gt;
+
+&lt;p&gt;建议：防止 hasOwnProperty 方法是否被重定义&lt;/p&gt;
+var obj = {
+    name: &#39;test&#39;,
+    hasOwnProperty: null
+};
+for (var key in obj) {
+    if (obj.hasOwnProperty(key)) {
+        //error
+    }
+}
+
+&lt;h3 id=&#34;7-谨记对象非空特性:6e30c1a8fa84aefe9200651849fae33e&#34;&gt;7. 谨记对象非空特性&lt;/h3&gt;
+
+&lt;p&gt;建议：使用 hasOwnProperty 和 typeof 来检查成员&lt;/p&gt;
+var arr = [&#39;on&#39;, &#39;off&#39;, &#39;constructor&#39;, &#39;on&#39;, &#39;off&#39;, &#39;constructor&#39;],
+    i, word, count = {};
+for (i = 0; i &lt; arr.length; i++) {
+    word = arr[i];
+    if (count[word]) {
+        count[word] += 1;
+    } else {
+        count[word] = 1;
+    }
+}
+console.log(count[&#39;on&#39;]); //3
+console.log(count[&#39;off&#39;]); //3
+console.log(count[&#39;constructor&#39;]); //function Object(){[native code]}
+
+//use:
+if (typeof count[word] === &#39;number&#39;) {
+}
+
+&lt;h3 id=&#34;8-谨慎使用伪数组:6e30c1a8fa84aefe9200651849fae33e&#34;&gt;8. 谨慎使用伪数组&lt;/h3&gt;
+
+&lt;p&gt;建议：使用 constructor 判断是否为数组&lt;/p&gt;
+function isArray(value) {
+    return value &amp;&amp; typeof value === &#39;object&#39; &amp;&amp; value.constructor === Array;
+}
+
+console.log(isArray(arguments));
+
+&lt;h3 id=&#34;9-避免使用-with:6e30c1a8fa84aefe9200651849fae33e&#34;&gt;9. 避免使用 with&lt;/h3&gt;
+
+&lt;p&gt;建议： 不使用 with&lt;/p&gt;
+var name = &#39;wenyi&#39;,
+    obj = {
+        name = &#39;wenzhixin&#39;,
+        age = 26
+    };
+
+with (obj) {
+    alert(name); //速度慢
+    alert(age);
+}
+
+with (obj) {
+    a = b; //结果不可预料
+}
+
+&lt;h3 id=&#34;10-不滥用-eval:6e30c1a8fa84aefe9200651849fae33e&#34;&gt;10. 不滥用 eval&lt;/h3&gt;
+
+&lt;p&gt;建议： 尽量不使用 eval&lt;/p&gt;
+eval(&#39;value = obj.&#39; + key + &#39;;&#39;); //错的写法
+value = obj[key]; //对的写法
+
+&lt;h3 id=&#34;11-块标志并非多余:6e30c1a8fa84aefe9200651849fae33e&#34;&gt;11. 块标志并非多余&lt;/h3&gt;
+
+&lt;p&gt;建议：单行语句也加上大括号&lt;/p&gt;
+if (0) 
+    if (1)
+        alert(1);
+else
+    alert(0);
+
+//实际上使用最近原则解析
+if (0) 
+    if (1)
+        alert(1);
+    else 
+        alert(0);
+
+//应该加上大括号
+if (0) {
+    if (1) {
+        alert(1);
+    }
+} else {
+    alert(0);
+}
+
+&lt;h3 id=&#34;12-避免条件结构的多重嵌套:6e30c1a8fa84aefe9200651849fae33e&#34;&gt;12. 避免条件结构的多重嵌套&lt;/h3&gt;
+
+&lt;p&gt;建议：使用排除法&lt;/p&gt;
+//多重嵌套
+if (a) {
+    if (b) {
+        if (c) {
+            if (d) {
+                alert(&#39;所有成立&#39;);
+            } else {
+                alert(&#39;d不成立&#39;);
+            }
+        } else {
+            alert(&#39;c不成立&#39;);
+        }
+    } else {
+        alert(&#39;b不成立&#39;);
+    }
+} else {
+    alert(&#39;a不成立&#39;);
+}
+//排除法
+if (!a) {
+    alert(&#39;a不成立&#39;);
+    return;
+}
+if (!b) {
+    alert(&#39;b不成立&#39;);
+    return;
+}
+if (!c) {
+    alert(&#39;c不成立&#39;);
+    return;
+}
+if (!d) {
+    alert(&#39;d不成立&#39;);
+    return;
+}
+alert(&#39;所有成立&#39;);
+</description>
     </item>
     
   </channel>

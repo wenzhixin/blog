@@ -7,27 +7,122 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Mon, 22 Oct 2012 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.wenzhixin.net.cn/tags/ror/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="http://blog.wenzhixin.net.cn/tags/ror/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Ubuntu 搭建 Ruby on Rails 开发环境</title>
-      <link>http://blog.wenzhixin.net.cn/2012/10/22/ubuntu_ruby_on_rails_development_environment_set_up/</link>
-      <pubDate>Mon, 22 Oct 2012 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_ruby_on_rails_development_environment_set_up</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/10/22/ubuntu_ruby_on_rails_development_environment_set_up/</guid>
-      <description>安装 ruby： 1 sudo apt-get install ruby1.9.1 ruby1.9.1-dev 安装 rubygems： 1 sudo apt-get install rubygems 安装 mysql 1 sudo apt-get install mysql 安装 ruby-mysql 1）下载：http://www.tmtm.org/en/ru</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_ruby_on_rails_development_environment_set_up</guid>
+      <description>
+
+&lt;h4 id=&#34;安装-ruby:035bb69e15437290d6db321e2bbb2769&#34;&gt;安装 ruby：&lt;/h4&gt;
+sudo apt-get install ruby1.9.1 ruby1.9.1-dev
+
+&lt;h4 id=&#34;安装-rubygems:035bb69e15437290d6db321e2bbb2769&#34;&gt;安装 rubygems：&lt;/h4&gt;
+sudo apt-get install rubygems
+
+&lt;h4 id=&#34;安装-mysql:035bb69e15437290d6db321e2bbb2769&#34;&gt;安装 mysql&lt;/h4&gt;
+sudo apt-get install mysql
+
+&lt;h4 id=&#34;安装-ruby-mysql:035bb69e15437290d6db321e2bbb2769&#34;&gt;安装 ruby-mysql&lt;/h4&gt;
+
+&lt;p&gt;1）下载：&lt;a href=&#34;http://www.tmtm.org/en/ruby/mysql/ruby-mysql-0.2.6.tar.gz&#34;&gt;http://www.tmtm.org/en/ruby/mysql/ruby-mysql-0.2.6.tar.gz&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;2）解压安装：&lt;/p&gt;
+ruby setup.rb
+ruby test.rb hostname user passwd 
+ruby install.rb
+
+&lt;h4 id=&#34;安装-rails:035bb69e15437290d6db321e2bbb2769&#34;&gt;安装 rails&lt;/h4&gt;
+sudo apt-get install rails
+
+&lt;h4 id=&#34;更新-rake:035bb69e15437290d6db321e2bbb2769&#34;&gt;更新 rake&lt;/h4&gt;
+sudo gem install rake
+
+&lt;h4 id=&#34;遇到的问题:035bb69e15437290d6db321e2bbb2769&#34;&gt;遇到的问题：&lt;/h4&gt;
+
+&lt;p&gt;问题1：&lt;/p&gt;
+mysql_config: command not found
+
+&lt;p&gt;解决：&lt;/p&gt;
+sudo apt-get install libmysqlclient-dev
+
+&lt;p&gt;问题2：&lt;/p&gt;
+Client does not support authentication protocol requested by server
+
+&lt;p&gt;解决：&lt;/p&gt;
+
+&lt;p&gt;登录 mysql，重设密码&lt;/p&gt;
+set password for &#39;root&#39;@&#39;localhost&#39;=old_password(&#39;password&#39;);
+
+&lt;p&gt;问题3：&lt;/p&gt;
+undefinedmethod `more_results&#39; for #&lt;Mysql&gt;
+
+&lt;p&gt;解决：&lt;/p&gt;
+
+&lt;p&gt;注释 mysql_adapter.rb 中的 318 行和 642 行&lt;/p&gt;
+/usr/lib/ruby/vendor_ruby/active_record/connection_adapters/mysql_adapter.rb 
+</description>
     </item>
     
     <item>
       <title>Ubuntu 搭建 Ruby on Rails 开发环境</title>
-      <link>http://blog.wenzhixin.net.cn/2012/10/22/ubuntu_ruby_on_rails_development_environment_set_up/</link>
-      <pubDate>Mon, 22 Oct 2012 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_ruby_on_rails_development_environment_set_up</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/10/22/ubuntu_ruby_on_rails_development_environment_set_up/</guid>
-      <description>安装 ruby： 1 sudo apt-get install ruby1.9.1 ruby1.9.1-dev 安装 rubygems： 1 sudo apt-get install rubygems 安装 mysql 1 sudo apt-get install mysql 安装 ruby-mysql 1）下载：http://www.tmtm.org/en/ru</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_ruby_on_rails_development_environment_set_up</guid>
+      <description>
+
+&lt;h4 id=&#34;安装-ruby:035bb69e15437290d6db321e2bbb2769&#34;&gt;安装 ruby：&lt;/h4&gt;
+sudo apt-get install ruby1.9.1 ruby1.9.1-dev
+
+&lt;h4 id=&#34;安装-rubygems:035bb69e15437290d6db321e2bbb2769&#34;&gt;安装 rubygems：&lt;/h4&gt;
+sudo apt-get install rubygems
+
+&lt;h4 id=&#34;安装-mysql:035bb69e15437290d6db321e2bbb2769&#34;&gt;安装 mysql&lt;/h4&gt;
+sudo apt-get install mysql
+
+&lt;h4 id=&#34;安装-ruby-mysql:035bb69e15437290d6db321e2bbb2769&#34;&gt;安装 ruby-mysql&lt;/h4&gt;
+
+&lt;p&gt;1）下载：&lt;a href=&#34;http://www.tmtm.org/en/ruby/mysql/ruby-mysql-0.2.6.tar.gz&#34;&gt;http://www.tmtm.org/en/ruby/mysql/ruby-mysql-0.2.6.tar.gz&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;2）解压安装：&lt;/p&gt;
+ruby setup.rb
+ruby test.rb hostname user passwd 
+ruby install.rb
+
+&lt;h4 id=&#34;安装-rails:035bb69e15437290d6db321e2bbb2769&#34;&gt;安装 rails&lt;/h4&gt;
+sudo apt-get install rails
+
+&lt;h4 id=&#34;更新-rake:035bb69e15437290d6db321e2bbb2769&#34;&gt;更新 rake&lt;/h4&gt;
+sudo gem install rake
+
+&lt;h4 id=&#34;遇到的问题:035bb69e15437290d6db321e2bbb2769&#34;&gt;遇到的问题：&lt;/h4&gt;
+
+&lt;p&gt;问题1：&lt;/p&gt;
+mysql_config: command not found
+
+&lt;p&gt;解决：&lt;/p&gt;
+sudo apt-get install libmysqlclient-dev
+
+&lt;p&gt;问题2：&lt;/p&gt;
+Client does not support authentication protocol requested by server
+
+&lt;p&gt;解决：&lt;/p&gt;
+
+&lt;p&gt;登录 mysql，重设密码&lt;/p&gt;
+set password for &#39;root&#39;@&#39;localhost&#39;=old_password(&#39;password&#39;);
+
+&lt;p&gt;问题3：&lt;/p&gt;
+undefinedmethod `more_results&#39; for #&lt;Mysql&gt;
+
+&lt;p&gt;解决：&lt;/p&gt;
+
+&lt;p&gt;注释 mysql_adapter.rb 中的 318 行和 642 行&lt;/p&gt;
+/usr/lib/ruby/vendor_ruby/active_record/connection_adapters/mysql_adapter.rb 
+</description>
     </item>
     
   </channel>

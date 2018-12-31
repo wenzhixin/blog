@@ -7,18 +7,23 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Mon, 14 Jan 2013 11:20:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.wenzhixin.net.cn/tags/%E5%AD%97%E4%BD%93/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="http://blog.wenzhixin.net.cn/tags/%E5%AD%97%E4%BD%93/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>CSS 设置中英文混合字体</title>
-      <link>http://blog.wenzhixin.net.cn/2013/01/14/css_font_setting/</link>
-      <pubDate>Mon, 14 Jan 2013 11:20:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/css_font_setting</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/01/14/css_font_setting/</guid>
-      <description>统一设置网站的中英文混合字体： 由于英文字体 Arial 没有中文的，这样英文便显示为 Arial 字体，中文显示为 微软雅黑 字体。 1 2 3 body { font-family: Arial, &amp;#34;微软雅黑&amp;#</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/css_font_setting</guid>
+      <description>
+
+&lt;h4 id=&#34;统一设置网站的中英文混合字体:859f55ebbc05be1b1eabcdb9087af2e4&#34;&gt;统一设置网站的中英文混合字体：&lt;/h4&gt;
+
+&lt;p&gt;由于英文字体 Arial 没有中文的，这样英文便显示为 Arial 字体，中文显示为 微软雅黑 字体。&lt;/p&gt;
+body {
+    font-family: Arial, &#34;微软雅黑&#34;;
+}
+</description>
     </item>
     
   </channel>

@@ -7,18 +7,45 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Thu, 05 Dec 2013 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.wenzhixin.net.cn/tags/%E6%8F%92%E5%85%A5%E6%88%96%E6%9B%B4%E6%96%B0/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="http://blog.wenzhixin.net.cn/tags/%E6%8F%92%E5%85%A5%E6%88%96%E6%9B%B4%E6%96%B0/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>ON DUPLICATE KEY UPDATE</title>
-      <link>http://blog.wenzhixin.net.cn/2013/12/05/on_duplicate_key_update/</link>
-      <pubDate>Thu, 05 Dec 2013 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/on_duplicate_key_update</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/12/05/on_duplicate_key_update/</guid>
-      <description>有些时候，操作 sql 语句需要判断记录是否存在，不存在则插入存在则更新，可以考虑使用 ON DUPLICATE KEY UPDATE。 在 INSERT INTO 语句末尾指定了 ON DUPLICATE KEY UPDATE，并</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/on_duplicate_key_update</guid>
+      <description>&lt;p&gt;有些时候，操作 sql 语句需要判断记录是否存在，不存在则插入存在则更新，可以考虑使用 ON DUPLICATE KEY UPDATE。&lt;/p&gt;
+
+&lt;p&gt;在 INSERT INTO 语句末尾指定了 ON DUPLICATE KEY UPDATE，并且插入行后，
+如何导致在一个 UNIQUE 索引或 PRIMARY KEY 中出现重复值，则在出现重复值的行执行 UPDATE 语句；
+如果不会导致唯一值列重复的问题，则插入新行。&lt;/p&gt;
+
+&lt;p&gt;例如，现有有个很简单的表：&lt;/p&gt;
+create table user (
+	id int not null auto_increment,
+	username varchar(250) not null,
+	primary key (id)
+) engine=innodb default charset=utf8;
+
+&lt;p&gt;按照正常的思路，先判断是否存在：&lt;/p&gt;
+select * from user where id = 1;
+
+&lt;p&gt;不存在则：&lt;/p&gt;
+insert into user(username) values(&#39;wenyi&#39;);
+
+&lt;p&gt;存在则：&lt;/p&gt;
+update user set username = &#39;wenyi&#39; where id = 1;
+
+&lt;p&gt;那么使用 ON DUPLICATE KEY UPDATE 就可以用一条语句表示：&lt;/p&gt;
+insert into user(id, username) values(1, &#39;wenyi&#39;) on duplicate key update username = &#39;wenyi&#39;;
+
+&lt;hr /&gt;
+
+&lt;p&gt;注：ON DUPLICATE KEY UPDATE只是MySQL的特有语法，并不是SQL标准语法。&lt;/p&gt;
+
+&lt;p&gt;更多信息见 &lt;a href=&#34;http://dev.mysql.com/doc/refman/5.1/zh/sql-syntax.html#insert&#34;&gt;http://dev.mysql.com/doc/refman/5.1/zh/sql-syntax.html#insert&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
     
   </channel>

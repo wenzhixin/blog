@@ -1,24 +1,115 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>web 前端 on 文翼的博客</title>
+    <title>Web 前端 on 文翼的博客</title>
     <link>http://blog.wenzhixin.net.cn/tags/web-%E5%89%8D%E7%AB%AF/</link>
-    <description>Recent content in web 前端 on 文翼的博客</description>
+    <description>Recent content in Web 前端 on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Wed, 08 Jan 2014 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.wenzhixin.net.cn/tags/web-%E5%89%8D%E7%AB%AF/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="http://blog.wenzhixin.net.cn/tags/web-%E5%89%8D%E7%AB%AF/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>web 前端开发学习资料</title>
-      <link>http://blog.wenzhixin.net.cn/2014/01/08/web_study/</link>
-      <pubDate>Wed, 08 Jan 2014 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/web_study</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/01/08/web_study/</guid>
-      <description>知识结构 编程语言 HTML/CSS JavaScript 开发IDE与插件 Eclipse webstorm Aptana Emmet 调试工具 Firebug Chrome Dev Tools IETester Fiddler Coding style JSLint JSHint CSSLint 前端库/框架 jQuery Underscore Backbone AngularJS Boostrap 类库模块化 Seajs Require.js 项目构建 spmjs Grunt FIS Google Clousure Complier 代码测试 QUnit</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/web_study</guid>
+      <description>
+
+&lt;h4 id=&#34;知识结构:585e1501925dab3fa67e148ce41c3f35&#34;&gt;知识结构&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;编程语言&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.w3school.com.cn/h.asp&#34;&gt;HTML/CSS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://developer.mozilla.org/zh-CN/docs/JavaScript&#34;&gt;JavaScript&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;开发IDE与插件&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.eclipse.org&#34;&gt;Eclipse&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.jetbrains.com/webstorm/&#34;&gt;webstorm&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.aptana.com/&#34;&gt;Aptana&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://docs.emmet.io/&#34;&gt;Emmet&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;调试工具&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://getfirebug.com/&#34;&gt;Firebug&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://developers.google.com/chrome-developer-tools/&#34;&gt;Chrome Dev Tools&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.my-debugbar.com/wiki/IETester/HomePage&#34;&gt;IETester&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.fiddler2.com/fiddler2/&#34;&gt;Fiddler&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Coding style&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.jslint.com/&#34;&gt;JSLint&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.jshint.com/&#34;&gt;JSHint&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://csslint.net/&#34;&gt;CSSLint&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;前端库/框架&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://jquery.com/&#34;&gt;jQuery&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://underscorejs.org/&#34;&gt;Underscore&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://backbonejs.org/&#34;&gt;Backbone&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://angularjs.org/&#34;&gt;AngularJS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://getbootstrap.com/&#34;&gt;Boostrap&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;类库模块化&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://seajs.org/&#34;&gt;Seajs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://requirejs.org/&#34;&gt;Require.js&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;项目构建&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://spmjs.org/&#34;&gt;spmjs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://gruntjs.com/&#34;&gt;Grunt&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://fis.baidu.com/&#34;&gt;FIS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://developers.google.com/closure/compiler/&#34;&gt;Google Clousure Complier&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;代码测试&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://qunitjs.com/&#34;&gt;QUnit&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/karma-runner/karma&#34;&gt;Karma Runner&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://phantomjs.org/&#34;&gt;phantomjs&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&#34;书籍推荐:585e1501925dab3fa67e148ce41c3f35&#34;&gt;书籍推荐&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;HTML&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;《编写高质量代码 web前端开发修炼之道》&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;CSS&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;《彻底设计研究CSS》和《CSS禅意花园》&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;JavaScript&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;《JavaScript高级程序设计》&lt;/li&gt;
+&lt;li&gt;《锋利的jQuery》&lt;/li&gt;
+&lt;li&gt;《基于MVC的JavaScript Web富应用开发》&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
     
   </channel>

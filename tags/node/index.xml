@@ -1,33 +1,168 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>node on 文翼的博客</title>
+    <title>Node on 文翼的博客</title>
     <link>http://blog.wenzhixin.net.cn/tags/node/</link>
-    <description>Recent content in node on 文翼的博客</description>
+    <description>Recent content in Node on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Mon, 30 Dec 2013 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.wenzhixin.net.cn/tags/node/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="http://blog.wenzhixin.net.cn/tags/node/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Ubuntu 12.10 添加 node 应用为自启动服务</title>
-      <link>http://blog.wenzhixin.net.cn/2013/12/30/ubuntu_node_app_service/</link>
-      <pubDate>Mon, 30 Dec 2013 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_node_app_service</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/12/30/ubuntu_node_app_service/</guid>
-      <description>开发 node 应用之后，启动的方式一般是通过 node app 或者 node app &amp;amp; 来运行， 十分不方便，这里将以本 blog 应用为例介绍如何添加为自启动的服务。 环境 用户名：usern</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_node_app_service</guid>
+      <description>&lt;p&gt;开发 node 应用之后，启动的方式一般是通过 &lt;code&gt;node app&lt;/code&gt; 或者 &lt;code&gt;node app &amp;amp;&lt;/code&gt; 来运行，
+十分不方便，这里将以本 blog 应用为例介绍如何添加为自启动的服务。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;环境&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;用户名：username&lt;/li&gt;
+&lt;li&gt;blog 位置：/home/username/blog&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;首先服务名取为 blog：&lt;/p&gt;
+sudo vi /etc/init/blog.conf
+
+&lt;p&gt;输入以下内容：&lt;/p&gt;
+# blog
+
+description &#34;blog&#34;
+
+start on filesystem or runlevel [2345]
+stop on runlevel [!2345]
+
+setuid useranme
+chdir /home/username/blog
+
+respawn
+
+exec /usr/bin/nodejs /home/useranme/blog/app.js
+
+&lt;p&gt;保存，便可以使用以下命令了：&lt;/p&gt;
+sudo service blog start
+sudo service blog restart
+sudo service blog stop
+sudo service blog status
+</description>
     </item>
     
     <item>
       <title>使用 js 自动生成博客首页文件列表</title>
-      <link>http://blog.wenzhixin.net.cn/2013/10/20/auto_create_blog_index/</link>
-      <pubDate>Sun, 20 Oct 2013 00:17:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/auto_create_blog_index</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/10/20/auto_create_blog_index/</guid>
-      <description>1. 介绍 因为每次写完文章后，都需要手动更新主页文件，打算每天至少写一篇文章。 所以这种重复工作还是交给机器去完成吧。 2. 步骤 1) 遍历文章存放文件夹列</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/auto_create_blog_index</guid>
+      <description>
+
+&lt;h4 id=&#34;1-介绍:dac355f9e2d6aeccfea684591a874802&#34;&gt;1. 介绍&lt;/h4&gt;
+
+&lt;p&gt;因为每次写完文章后，都需要手动更新主页文件，打算每天至少写一篇文章。
+所以这种重复工作还是交给机器去完成吧。&lt;/p&gt;
+
+&lt;h4 id=&#34;2-步骤:dac355f9e2d6aeccfea684591a874802&#34;&gt;2. 步骤&lt;/h4&gt;
+
+&lt;p&gt;1) 遍历文章存放文件夹列表，生成所需要的文章列表&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;使用 fs.readdir(path, callback) 来读取文件夹的内容。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;使用 fs.stat(path, callback) 来判断文件的属性&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;写了一半的代码之后发现 github 上有开源的遍历目录下（包括子目录）的所有文件，
+于是直接拿来用了，多谢作者，该项目为：&lt;a href=&#34;https://github.com/leizongmin/node-rd&#34;&gt;https://github.com/leizongmin/node-rd&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;2) 解析文件，提取文章名称、分类和日期信息&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;使用 fs.readFile(filename, [options], callback) 读取文件内容&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;使用正则表达式匹配想要的内容（最后木有用正则，字符串解析了。。。）&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;3) 生成 index.md 文件&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;使用 fs.writeFile(filename, data, [options], callback) 写入内容&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;3-最终成果:dac355f9e2d6aeccfea684591a874802&#34;&gt;3. 最终成果&lt;/h4&gt;
+var fs = require(&#39;fs&#39;),
+    rd = require(&#39;rd&#39;),
+
+    POST_DIR = __dirname + &#39;/html/posts/&#39;;
+
+
+function list() {
+    rd.read(POST_DIR, function(err, files) {
+        if (err) {
+            console.log(err);
+            return;
+        }
+        files = files.filter(function(file) {
+            if (endWith(file, &#39;/index.md&#39;)) { // 过滤 index.md
+                return false;
+            }
+            return endWith(file, &#39;.md&#39;); // 查找 md 结尾的文件
+        });
+        files.sort().reverse(); // 按日期排序
+        parse(files);
+    });
+}
+
+function endWith(name, str) {
+    return name.substring(name.length - str.length) === str;
+}
+
+function parse(files) {
+    var posts = [];
+    for (var i in files) {
+        var content = fs.readFileSync(files[i]).toString();
+            lines = content.split(&#39;\n&#39;);
+
+        posts.push(getPost(files[i], lines[0], lines[2]));
+    }
+    create(posts);
+}
+
+function getPost(file, title, desc) {
+    var arr = desc.split(&#39; | &#39;),
+        post = {
+            path: file.substring(POST_DIR.length, file.length - 3),
+            title: title.substring(3),
+            category: &#39;个人作品&#39;,
+            time: &#39;置顶&#39;
+        };
+
+    if (arr.length === 3) {
+        post.category = arr[0].split(&#39;：&#39;)[1];    
+        post.time = arr[2].split(&#39;：&#39;)[1].split(&#39; &#39;)[0];
+    }
+    return post;
+}
+
+function create(posts) {
+    var content = [&#39;## 全部文章 (&#39; + (posts.length + 50) + &#39;)&#39;];
+    for (var i in posts) {
+        var post = posts[i];
+        content.push([
+            &#39;* &#39;,
+            &#39;(&#39; + post.time + &#39;)&#39;,
+            &#39;[&#39; + post.title + &#39;](&#39; + post.path + &#39;)&#39;,
+            &#39;【&#39; + post.category + &#39;】&#39;
+        ].join(&#39; &#39;));
+    }
+    content.push(&#39;* (其他)[更多文章...](http://qing.weibo.com/2292826740/profile) &#39;)
+    fs.writeFile(POST_DIR + &#39;index.md&#39;, content.join(&#39;\n\n&#39;));
+}
+
+list();
+</description>
     </item>
     
   </channel>

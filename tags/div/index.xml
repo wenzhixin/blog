@@ -1,24 +1,58 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>div on 文翼的博客</title>
+    <title>Div on 文翼的博客</title>
     <link>http://blog.wenzhixin.net.cn/tags/div/</link>
-    <description>Recent content in div on 文翼的博客</description>
+    <description>Recent content in Div on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Sun, 04 May 2014 22:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.wenzhixin.net.cn/tags/div/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="http://blog.wenzhixin.net.cn/tags/div/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>如何获取 div 的实际高度</title>
-      <link>http://blog.wenzhixin.net.cn/2014/05/04/get_div_outer_height/</link>
-      <pubDate>Sun, 04 May 2014 22:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/get_div_outer_height</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/05/04/get_div_outer_height/</guid>
-      <description>在实际开发中，需要对 div 的高度进行计算并自动设置高度，但是遇到了这样的一个问题： 1 2 3 4 5 &amp;lt;div id=&amp;#34;outer&amp;#34;&amp;gt; &amp;lt;div id=&amp;#34;inner&amp;#34; style=&amp;#34;height: 50px; margin-top: 20px; margin-bottom: 20px;&amp;#34;&amp;gt; 如何获取 div 的实际高度 &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; 1 2 3 4</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/get_div_outer_height</guid>
+      <description>&lt;p&gt;在实际开发中，需要对 div 的高度进行计算并自动设置高度，但是遇到了这样的一个问题：&lt;/p&gt;
+&lt;div id=&#34;outer&#34;&gt;
+    &lt;div id=&#34;inner&#34; style=&#34;height: 50px; margin-top: 20px; margin-bottom: 20px;&#34;&gt;
+        如何获取 div 的实际高度
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+    $(function() {
+        console.log($(&#39;#outer&#39;).outerHeight(true)); // 50
+        console.log($(&#39;#inner&#39;).outerHeight(true)); // 90
+    });
+&lt;/script&gt;
+
+&lt;p&gt;可以看到，&lt;code&gt;outer&lt;/code&gt; 的高度为 50，而 &lt;code&gt;inner&lt;/code&gt; 的高度为 90，并非是我们想要的结果。&lt;/p&gt;
+
+&lt;p&gt;通过查看 &lt;a href=&#34;http://www.w3.org/TR/CSS21/box.html#collapsing-margins&#34;&gt;W3C 相关文档&lt;/a&gt;，可以发现这并不是 jQuery 的 bug，
+当父元素包含多个子元素的，并且第一个子元素有 &lt;code&gt;margin-top&lt;/code&gt;，最后一个子元素有 &lt;code&gt;margin-bottom&lt;/code&gt; 属性的时候，
+就会出现以上的问题。&lt;/p&gt;
+
+&lt;p&gt;根据 W3C 的标准，假如目标 div 有对应的 &lt;code&gt;border-width&lt;/code&gt; 或者 &lt;code&gt;padding&lt;/code&gt;属性，例如对于第一个子元素，
+有 &lt;code&gt;border-top-width&lt;/code&gt; 或者 &lt;code&gt;padding-top&lt;/code&gt;（最后一个子元素同理），就可以避免这种情况的发生。&lt;/p&gt;
+
+&lt;p&gt;由此，我们有了通用的&lt;strong&gt;解决方法&lt;/strong&gt;：&lt;/p&gt;
+function realHeight($el) {
+    var height = $el.wrap(&#39;&lt;div style=&#34;border: 1px solid transparent;&#34;&gt;&lt;/div&gt;&#39;).parent().outerHeight(true);
+    $el.unwrap();
+    return height - 2; // 减去 border 的高度
+}
+
+&lt;p&gt;&lt;strong&gt;注：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;这里的 $el 不仅仅为 div 元素，其他元素也一样。&lt;/li&gt;
+&lt;li&gt;你可能会觉得干嘛不设置目标元素的 &lt;code&gt;border-top-width&lt;/code&gt; 就可以了，
+这里使用 &lt;code&gt;wrap&lt;/code&gt;，是避免目标元素本身就有设置 border 属性，从而计算错误的高度。&lt;/li&gt;
+&lt;li&gt;或者有更好的做法？有的话请告知。&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
     
   </channel>

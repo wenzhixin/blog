@@ -1,24 +1,107 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>underscore on 文翼的博客</title>
+    <title>Underscore on 文翼的博客</title>
     <link>http://blog.wenzhixin.net.cn/tags/underscore/</link>
-    <description>Recent content in underscore on 文翼的博客</description>
+    <description>Recent content in Underscore on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Fri, 01 Nov 2013 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.wenzhixin.net.cn/tags/underscore/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="http://blog.wenzhixin.net.cn/tags/underscore/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>理解并实现 underscore 中的 bind 和 bindAll 函数</title>
-      <link>http://blog.wenzhixin.net.cn/2013/11/01/understanding_bind_bindall/</link>
-      <pubDate>Fri, 01 Nov 2013 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/understanding_bind_bindall</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/11/01/understanding_bind_bindall/</guid>
-      <description>在开始之前，我们定义了 Person 类： 1 2 3 4 5 6 function Person(name) { this.name = name; } Person.prototype.say = function() { console.log(this.name); } 首先，新建 person 对象： 1 2 var wenyi = new Person(&amp;#39;wenyi&amp;#39;); wenyi.say(); // wenyi 可以看到这里输出的结果是 wenyi，</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/understanding_bind_bindall</guid>
+      <description>&lt;p&gt;在开始之前，我们定义了 Person 类：&lt;/p&gt;
+function Person(name) {
+    this.name = name;
+}
+Person.prototype.say = function() {
+    console.log(this.name);
+}
+
+&lt;p&gt;首先，新建 person 对象：&lt;/p&gt;
+var wenyi = new Person(&#39;wenyi&#39;);
+wenyi.say(); // wenyi
+
+&lt;p&gt;可以看到这里输出的结果是 wenyi，没什么好说的，因为这里的 this 指向的是 wenyi 这个对象。&lt;/p&gt;
+
+&lt;p&gt;接下来，我将 say 函数赋值给一个变量，会怎么样呢？&lt;/p&gt;
+var func = wenyi.say;
+func(); // 空
+
+&lt;p&gt;可以看到输出的结果为空，因为赋值给 func 后，这里的 this 指向的是 window，而 window.name 为空。&lt;/p&gt;
+
+&lt;p&gt;为了改变 this 的指向，我们可以使用 &lt;strong&gt;apply&lt;/strong&gt; 方法：&lt;/p&gt;
+func.apply(wenyi); // wenyi
+
+&lt;p&gt;在实际的使用中，我们常常看到这样的代码：&lt;/p&gt;
+$(&#39;button&#39;).click(function() {
+    wenyi.say();
+});
+
+&lt;ul&gt;
+&lt;li&gt;它并不美观，因为还得嵌套多一层 function 来解决 this 的指向问题&lt;/li&gt;
+&lt;li&gt;像上面将 say 函数赋值给 func 变量后，转移的责任者并不能正确的使用原来的函数&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;而使用 bind 和 bindAll 函数可以很好的解决上面的问题：&lt;/p&gt;
+var func = bind(wenyi, wenyi.say);
+func(); // wenyi
+
+bindAll(wenyi, &#39;say&#39;);
+var func = wenyi.say;
+func(); // wenyi
+
+&lt;p&gt;那么，要怎么&lt;strong&gt;实现&lt;/strong&gt; bind 和 bindAll 函数呢？&lt;/p&gt;
+function bind(obj, func) {
+    return function() {
+        return func.apply(obj, Array.prototype.slice.call(arguments));
+    };
+}
+function bindAll(obj) {
+    var funcs = Array.prototype.slice.call(arguments, 1);
+    for (var i = 0; i &lt; funcs.length; i++) {
+        obj[funcs[i]] = bind(obj, obj[funcs[i]]);
+    }
+    return obj;
+}
+
+&lt;ul&gt;
+&lt;li&gt;bind 的实现就是通过 apply 方法&lt;/li&gt;
+&lt;li&gt;bindAll 的实现是利用 bind 将所有方法重新赋值&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;最后，附上一个实际使用到完整的&lt;strong&gt;例子&lt;/strong&gt;：&lt;/p&gt;
+function Person(name, age) {
+    this.name = name;
+    this.age = age;
+
+    bindAll(this, &#39;sayName&#39;, &#39;sayAge&#39;);
+}
+Person.prototype.sayName = function() {
+    console.log(this.name);
+}
+Person.prototype.sayAge = function() {
+    console.log(this.age);
+}
+
+var wenyi = new Person(&#39;wenyi&#39;, 26);
+
+var func = wenyi.sayName;
+func(); // wenyi
+
+$(&#39;button&#39;).click(wenyi.sayAge); // 26
+
+&lt;hr /&gt;
+
+&lt;p&gt;注：&lt;br /&gt;
+以上为个人的理解，如有不准确的地方，欢迎有相关研究的同行指正。&lt;br /&gt;
+完整的实现请查看 &lt;a href=&#34;https://github.com/jashkenas/underscore/blob/master/underscore.js&#34;&gt;underscore&lt;/a&gt; 的源码。&lt;/p&gt;
+</description>
     </item>
     
   </channel>

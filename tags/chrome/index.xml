@@ -7,18 +7,48 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Sat, 16 Nov 2013 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.wenzhixin.net.cn/tags/chrome/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="http://blog.wenzhixin.net.cn/tags/chrome/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>使用 Chrome 调试和模拟 android 上的页面</title>
-      <link>http://blog.wenzhixin.net.cn/2013/11/16/android_chrome_debug/</link>
-      <pubDate>Sat, 16 Nov 2013 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/android_chrome_debug</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/11/16/android_chrome_debug/</guid>
-      <description>介绍 通过电脑调试手机上的页面，对于开发移动页面或者开发自适应的界面很有帮助。 本文主要介绍如何使用 chrome 浏览器调试和模拟 android 上的页面。 1. 如何调试 1) 打</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/android_chrome_debug</guid>
+      <description>
+
+&lt;h4 id=&#34;介绍:0ca1c52bb4f19e2d2d8cdc3f27257a26&#34;&gt;介绍&lt;/h4&gt;
+
+&lt;p&gt;通过电脑调试手机上的页面，对于开发移动页面或者开发自适应的界面很有帮助。&lt;/p&gt;
+
+&lt;p&gt;本文主要介绍如何使用 chrome 浏览器调试和模拟 android 上的页面。&lt;/p&gt;
+
+&lt;h4 id=&#34;1-如何调试:0ca1c52bb4f19e2d2d8cdc3f27257a26&#34;&gt;1. 如何调试&lt;/h4&gt;
+
+&lt;p&gt;1) 打开手机 chrome 设置 —— 开发者工具 —— 开启 USB 网页调试
+&lt;img src=&#34;http://blog.wenzhixin.net.cn/2013/11/16/1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;2) 在终端下（sdk/platform-tools/ 目录下）运行&lt;/p&gt;
+./adb forward tcp:9222 localabstract:chrome_devtools_remote
+
+&lt;p&gt;3) 在电脑 chrome 中输入&lt;/p&gt;
+http://localhost:9222
+
+&lt;p&gt;然后选择需要调试的页面即可
+&lt;img src=&#34;http://blog.wenzhixin.net.cn/2013/11/16/2.png&#34; alt=&#34;&#34; /&gt;
+&lt;img src=&#34;http://blog.wenzhixin.net.cn/2013/11/16/3.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;2-如何模拟:0ca1c52bb4f19e2d2d8cdc3f27257a26&#34;&gt;2. 如何模拟&lt;/h4&gt;
+
+&lt;p&gt;1) 打开 chrome 的开发者工具（F12）—— 右下角设置 —— Overrides&lt;/p&gt;
+
+&lt;p&gt;2) 开启 User Agent —— 选择 Chrome（android mobile） —— 并且勾上 Emulate touch events
+&lt;img src=&#34;http://blog.wenzhixin.net.cn/2013/11/16/4.png&#34; alt=&#34;&#34; /&gt;
+&lt;img src=&#34;http://blog.wenzhixin.net.cn/2013/11/16/5.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;3) 打开想要调试的页面即可
+&lt;img src=&#34;http://blog.wenzhixin.net.cn/2013/11/16/6.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+</description>
     </item>
     
   </channel>

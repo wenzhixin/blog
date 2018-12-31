@@ -1,42 +1,291 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ant on 文翼的博客</title>
+    <title>Ant on 文翼的博客</title>
     <link>http://blog.wenzhixin.net.cn/tags/ant/</link>
-    <description>Recent content in ant on 文翼的博客</description>
+    <description>Recent content in Ant on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Tue, 26 Feb 2013 00:23:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.wenzhixin.net.cn/tags/ant/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="http://blog.wenzhixin.net.cn/tags/ant/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Android ant 编译问题收集</title>
-      <link>http://blog.wenzhixin.net.cn/2013/02/26/android_ant_problem/</link>
-      <pubDate>Tue, 26 Feb 2013 00:23:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/android_ant_problem</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/02/26/android_ant_problem/</guid>
-      <description>问题： 1 aapt not found under the right path 解决： 1 2 sudo apt-get install ia32-libs # 12.04 sudo apt-get install lib32z1 # 14.04 问题： 1 Perhaps JAVA_HOME does not point to the JDK. It is currently set to &amp;#34;/usr/lib/jvm/java-6-openjdk/jre&amp;#34; 解决： Fixed it by installing the open jdk: 1 sudo apt-get install openjdk-7-jdk</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/android_ant_problem</guid>
+      <description>
+
+&lt;h4 id=&#34;问题:6edc530cf689cf0a05aea6add3f6e7b3&#34;&gt;问题：&lt;/h4&gt;
+aapt not found under the right path
+
+&lt;h4 id=&#34;解决:6edc530cf689cf0a05aea6add3f6e7b3&#34;&gt;解决：&lt;/h4&gt;
+sudo apt-get install ia32-libs # 12.04
+sudo apt-get install lib32z1 # 14.04
+
+&lt;h4 id=&#34;问题-1:6edc530cf689cf0a05aea6add3f6e7b3&#34;&gt;问题：&lt;/h4&gt;
+ Perhaps JAVA_HOME does not point to the JDK. It is currently set to &#34;/usr/lib/jvm/java-6-openjdk/jre&#34;
+
+&lt;h4 id=&#34;解决-1:6edc530cf689cf0a05aea6add3f6e7b3&#34;&gt;解决：&lt;/h4&gt;
+
+&lt;p&gt;Fixed it by installing the open jdk:&lt;/p&gt;
+sudo apt-get install openjdk-7-jdk
+</description>
     </item>
     
     <item>
       <title>Ant 关键元素和常用命令</title>
-      <link>http://blog.wenzhixin.net.cn/2012/06/07/ant_key_elements_and_common_commands/</link>
-      <pubDate>Thu, 07 Jun 2012 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/ant_key_elements_and_common_commands</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/06/07/ant_key_elements_and_common_commands/</guid>
-      <description>一、Ant 关键元素 1、project元素 project 元素是 Ant 构件文件的根元素， Ant 构件文件至少应该包含一个 project 元素，否则会发生错误。在每个 project 元素下，可包含</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/ant_key_elements_and_common_commands</guid>
+      <description>
+
+&lt;h3 id=&#34;一-ant-关键元素:f780f29a8db5f7945ac4d44588e8e9f7&#34;&gt;一、Ant 关键元素&lt;/h3&gt;
+
+&lt;h4 id=&#34;1-project元素:f780f29a8db5f7945ac4d44588e8e9f7&#34;&gt;1、project元素&lt;/h4&gt;
+
+&lt;p&gt;project 元素是 Ant 构件文件的根元素， Ant 构件文件至少应该包含一个 project 元素，否则会发生错误。在每个 project 元素下，可包含多个 target 元素。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;name 属性：用于指定 project 元素的名称。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;default 属性：用于指定 project 默认执行时所执行的 target 的名称。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;basedir 属性：用于指定基路径的位置。该属性没有指定时，使用 Ant 的构件文件的附目录作为基准目录。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;2-target-元素:f780f29a8db5f7945ac4d44588e8e9f7&#34;&gt;2. target 元素&lt;/h4&gt;
+
+&lt;p&gt;target为Ant的基本执行单元，它可以包含一个或多个具体的任务。多个target 可以存在相互依赖关系。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;name 属性：指定 target 元素的名称，这个属性在一个 project 元素中是唯一的。我们可以通过指定 target 元素的名称来指定某个 target 。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;depends 属性：用于描述 target 之间的依赖关系，若与多个 target 存在依赖关系时，需要以“,”间隔。 Ant 会依照 depends 属性中 target 出现的顺序依次执行每个 target 。被依赖的 target 会先执行。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;if 属性：用于验证指定的属性是否存在，若不存在，所在 target 将不会被执行。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;unless 属性：该属性的功能与 if 属性的功能正好相反，它也用于验证指定的属性是否存在，若不存在，所在 target 将会被执行。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;description 属性：该属性是关于 target 功能的简短描述和说明。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;3-property-元素:f780f29a8db5f7945ac4d44588e8e9f7&#34;&gt;3. property 元素&lt;/h4&gt;
+
+&lt;p&gt;property元素可看作参量或者参数的定义，project 的属性可以通过 property 元素来设定，也可在 Ant 之外设定。若要在外部引入某文件，例如 build.properties 文件，可以通过如下内容将其引入：&lt;property file=” build.properties”/&gt;。&lt;/p&gt;
+
+&lt;p&gt;property 元素可用作 task 的属性值。在 task 中是通过将属性名放在“ ${ ”和“ } ”之间，并放在 task 属性值的位置来实现的。&lt;/p&gt;
+
+&lt;p&gt;Ant 提供了一些内置的属性，它能得到的系统属性的列表与 Java 文档中 System.getPropertis() 方法得到的属性一致，这些系统属性可参考 sun 网站的说明。同时， Ant 还提供了一些它自己的内置属性，如下：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;basedir: project 基目录的绝对路径；   &lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;ant.file: buildfile的绝对路径&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;ant.version: Ant 的版本信息&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;ant.project.name: 当前指定的project的名字，project的name属性值&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;ant.java.version: Ant 检测到的JDK版本&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;二-ant-常用命令:f780f29a8db5f7945ac4d44588e8e9f7&#34;&gt;二、Ant 常用命令&lt;/h3&gt;
+
+&lt;h4 id=&#34;1-copy-命令:f780f29a8db5f7945ac4d44588e8e9f7&#34;&gt;1. copy 命令&lt;/h4&gt;
+
+&lt;p&gt;copy主要用来对文件和目录的复制功能&lt;/p&gt;
+
+&lt;p&gt;例子：&lt;/p&gt;
+
+&lt;p&gt;1) 复制单个文件：&lt;/p&gt;
+&lt;copy file=&#34;original.txt&#34; tofile=&#34;copied.txt&#34;/&gt;
+
+&lt;p&gt;2) 对文件目录进行复制：&lt;/p&gt;
+&lt;copy todir=&#34;../dest_dir&#34;&gt;
+    &lt;fileset dir=&#34;src_dir&#34;/&gt;
+&lt;/copy&gt;
+
+&lt;p&gt;3) 将文件复制到另外的目录：&lt;/p&gt;
+&lt;copy file=&#34;source.txt&#34; todir=&#34;/home/wenyi&#34;/&gt;
+
+&lt;h4 id=&#34;2-delete-命令:f780f29a8db5f7945ac4d44588e8e9f7&#34;&gt;2. delete 命令&lt;/h4&gt;
+
+&lt;p&gt;对文件或目录进行删除&lt;/p&gt;
+
+&lt;p&gt;例子：&lt;/p&gt;
+
+&lt;p&gt;1) 删除某个文件：&lt;/p&gt;
+&lt;delete file=&#34;/home/wenyi/photos/wenyi.jpg&#34;/&gt;
+
+&lt;p&gt;2) 删除某个目录：&lt;/p&gt;
+&lt;delete dir=&#34;/home/wenyi/photos&#34;/&gt;
+
+&lt;p&gt;3) 删除所有的备份目录或空目录：&lt;/p&gt;
+&lt;delete includeEmptyDirs=&#34;true&#34;&gt;
+    &lt;fileset dir=&#34;.&#34; includes=&#34;**/*.bak&#34;/&gt;
+&lt;/delete&gt;
+
+&lt;h4 id=&#34;3-mkdir-命令:f780f29a8db5f7945ac4d44588e8e9f7&#34;&gt;3. mkdir 命令&lt;/h4&gt;
+
+&lt;p&gt;创建目录&lt;/p&gt;
+
+&lt;p&gt;例子：&lt;/p&gt;
+&lt;mkdir dir=&#34;/home/wenyi/build/classes&#34;/&gt;
+
+&lt;h4 id=&#34;4-move-命令:f780f29a8db5f7945ac4d44588e8e9f7&#34;&gt;4. move 命令&lt;/h4&gt;
+
+&lt;p&gt;移动文件或目录&lt;/p&gt;
+
+&lt;p&gt;例子：&lt;/p&gt;
+
+&lt;p&gt;1） 移动单个文件：&lt;/p&gt;
+&lt;move file=&#34;sourcefile&#34; tofile=”destfile”/&gt;
+
+&lt;p&gt;2） 移动单个文件到另一个目录：&lt;/p&gt;
+&lt;move file=&#34;sourcefile&#34; todir=”movedir”/&gt;
+
+&lt;p&gt;3） 移动某个目录到另一个目录：&lt;/p&gt;
+&lt;move todir=&#34;newdir&#34;&gt;
+    &lt;fileset dir=&#34;olddir&#34;/&gt;
+&lt;/move&gt;
+
+&lt;h4 id=&#34;5-echo-命令:f780f29a8db5f7945ac4d44588e8e9f7&#34;&gt;5. echo 命令&lt;/h4&gt;
+
+&lt;p&gt;该任务的作用是根据日志或监控器的级别输出信息。它包括 message 、 file 、 append 和 level 四个属性&lt;/p&gt;
+
+&lt;p&gt;例子：&lt;/p&gt;
+&lt;echo message=&#34;Hello,ANT&#34; file=&#34;/home/wenyi/logs/ant.log&#34; append=&#34;true&#34;&gt; 
+</description>
     </item>
     
     <item>
       <title>Ant 关键元素和常用命令</title>
-      <link>http://blog.wenzhixin.net.cn/2012/06/07/ant_key_elements_and_common_commands/</link>
-      <pubDate>Thu, 07 Jun 2012 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/ant_key_elements_and_common_commands</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/06/07/ant_key_elements_and_common_commands/</guid>
-      <description>一、Ant 关键元素 1、project元素 project 元素是 Ant 构件文件的根元素， Ant 构件文件至少应该包含一个 project 元素，否则会发生错误。在每个 project 元素下，可包含</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/ant_key_elements_and_common_commands</guid>
+      <description>
+
+&lt;h3 id=&#34;一-ant-关键元素:f780f29a8db5f7945ac4d44588e8e9f7&#34;&gt;一、Ant 关键元素&lt;/h3&gt;
+
+&lt;h4 id=&#34;1-project元素:f780f29a8db5f7945ac4d44588e8e9f7&#34;&gt;1、project元素&lt;/h4&gt;
+
+&lt;p&gt;project 元素是 Ant 构件文件的根元素， Ant 构件文件至少应该包含一个 project 元素，否则会发生错误。在每个 project 元素下，可包含多个 target 元素。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;name 属性：用于指定 project 元素的名称。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;default 属性：用于指定 project 默认执行时所执行的 target 的名称。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;basedir 属性：用于指定基路径的位置。该属性没有指定时，使用 Ant 的构件文件的附目录作为基准目录。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;2-target-元素:f780f29a8db5f7945ac4d44588e8e9f7&#34;&gt;2. target 元素&lt;/h4&gt;
+
+&lt;p&gt;target为Ant的基本执行单元，它可以包含一个或多个具体的任务。多个target 可以存在相互依赖关系。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;name 属性：指定 target 元素的名称，这个属性在一个 project 元素中是唯一的。我们可以通过指定 target 元素的名称来指定某个 target 。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;depends 属性：用于描述 target 之间的依赖关系，若与多个 target 存在依赖关系时，需要以“,”间隔。 Ant 会依照 depends 属性中 target 出现的顺序依次执行每个 target 。被依赖的 target 会先执行。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;if 属性：用于验证指定的属性是否存在，若不存在，所在 target 将不会被执行。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;unless 属性：该属性的功能与 if 属性的功能正好相反，它也用于验证指定的属性是否存在，若不存在，所在 target 将会被执行。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;description 属性：该属性是关于 target 功能的简短描述和说明。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;3-property-元素:f780f29a8db5f7945ac4d44588e8e9f7&#34;&gt;3. property 元素&lt;/h4&gt;
+
+&lt;p&gt;property元素可看作参量或者参数的定义，project 的属性可以通过 property 元素来设定，也可在 Ant 之外设定。若要在外部引入某文件，例如 build.properties 文件，可以通过如下内容将其引入：&lt;property file=” build.properties”/&gt;。&lt;/p&gt;
+
+&lt;p&gt;property 元素可用作 task 的属性值。在 task 中是通过将属性名放在“ ${ ”和“ } ”之间，并放在 task 属性值的位置来实现的。&lt;/p&gt;
+
+&lt;p&gt;Ant 提供了一些内置的属性，它能得到的系统属性的列表与 Java 文档中 System.getPropertis() 方法得到的属性一致，这些系统属性可参考 sun 网站的说明。同时， Ant 还提供了一些它自己的内置属性，如下：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;basedir: project 基目录的绝对路径；   &lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;ant.file: buildfile的绝对路径&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;ant.version: Ant 的版本信息&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;ant.project.name: 当前指定的project的名字，project的name属性值&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;ant.java.version: Ant 检测到的JDK版本&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;二-ant-常用命令:f780f29a8db5f7945ac4d44588e8e9f7&#34;&gt;二、Ant 常用命令&lt;/h3&gt;
+
+&lt;h4 id=&#34;1-copy-命令:f780f29a8db5f7945ac4d44588e8e9f7&#34;&gt;1. copy 命令&lt;/h4&gt;
+
+&lt;p&gt;copy主要用来对文件和目录的复制功能&lt;/p&gt;
+
+&lt;p&gt;例子：&lt;/p&gt;
+
+&lt;p&gt;1) 复制单个文件：&lt;/p&gt;
+&lt;copy file=&#34;original.txt&#34; tofile=&#34;copied.txt&#34;/&gt;
+
+&lt;p&gt;2) 对文件目录进行复制：&lt;/p&gt;
+&lt;copy todir=&#34;../dest_dir&#34;&gt;
+    &lt;fileset dir=&#34;src_dir&#34;/&gt;
+&lt;/copy&gt;
+
+&lt;p&gt;3) 将文件复制到另外的目录：&lt;/p&gt;
+&lt;copy file=&#34;source.txt&#34; todir=&#34;/home/wenyi&#34;/&gt;
+
+&lt;h4 id=&#34;2-delete-命令:f780f29a8db5f7945ac4d44588e8e9f7&#34;&gt;2. delete 命令&lt;/h4&gt;
+
+&lt;p&gt;对文件或目录进行删除&lt;/p&gt;
+
+&lt;p&gt;例子：&lt;/p&gt;
+
+&lt;p&gt;1) 删除某个文件：&lt;/p&gt;
+&lt;delete file=&#34;/home/wenyi/photos/wenyi.jpg&#34;/&gt;
+
+&lt;p&gt;2) 删除某个目录：&lt;/p&gt;
+&lt;delete dir=&#34;/home/wenyi/photos&#34;/&gt;
+
+&lt;p&gt;3) 删除所有的备份目录或空目录：&lt;/p&gt;
+&lt;delete includeEmptyDirs=&#34;true&#34;&gt;
+    &lt;fileset dir=&#34;.&#34; includes=&#34;**/*.bak&#34;/&gt;
+&lt;/delete&gt;
+
+&lt;h4 id=&#34;3-mkdir-命令:f780f29a8db5f7945ac4d44588e8e9f7&#34;&gt;3. mkdir 命令&lt;/h4&gt;
+
+&lt;p&gt;创建目录&lt;/p&gt;
+
+&lt;p&gt;例子：&lt;/p&gt;
+&lt;mkdir dir=&#34;/home/wenyi/build/classes&#34;/&gt;
+
+&lt;h4 id=&#34;4-move-命令:f780f29a8db5f7945ac4d44588e8e9f7&#34;&gt;4. move 命令&lt;/h4&gt;
+
+&lt;p&gt;移动文件或目录&lt;/p&gt;
+
+&lt;p&gt;例子：&lt;/p&gt;
+
+&lt;p&gt;1） 移动单个文件：&lt;/p&gt;
+&lt;move file=&#34;sourcefile&#34; tofile=”destfile”/&gt;
+
+&lt;p&gt;2） 移动单个文件到另一个目录：&lt;/p&gt;
+&lt;move file=&#34;sourcefile&#34; todir=”movedir”/&gt;
+
+&lt;p&gt;3） 移动某个目录到另一个目录：&lt;/p&gt;
+&lt;move todir=&#34;newdir&#34;&gt;
+    &lt;fileset dir=&#34;olddir&#34;/&gt;
+&lt;/move&gt;
+
+&lt;h4 id=&#34;5-echo-命令:f780f29a8db5f7945ac4d44588e8e9f7&#34;&gt;5. echo 命令&lt;/h4&gt;
+
+&lt;p&gt;该任务的作用是根据日志或监控器的级别输出信息。它包括 message 、 file 、 append 和 level 四个属性&lt;/p&gt;
+
+&lt;p&gt;例子：&lt;/p&gt;
+&lt;echo message=&#34;Hello,ANT&#34; file=&#34;/home/wenyi/logs/ant.log&#34; append=&#34;true&#34;&gt; 
+</description>
     </item>
     
   </channel>

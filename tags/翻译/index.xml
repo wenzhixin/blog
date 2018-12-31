@@ -7,18 +7,112 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Wed, 13 Nov 2013 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.wenzhixin.net.cn/tags/%E7%BF%BB%E8%AF%91/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="http://blog.wenzhixin.net.cn/tags/%E7%BF%BB%E8%AF%91/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>nodejs 使用百度翻译 API</title>
-      <link>http://blog.wenzhixin.net.cn/2013/11/13/nodejs_use_baidu_translate_api/</link>
-      <pubDate>Wed, 13 Nov 2013 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/nodejs_use_baidu_translate_api</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/11/13/nodejs_use_baidu_translate_api/</guid>
-      <description>博客（网站）中需要对文章标题进行翻译成英文显示，要求可以批量翻译。 这里使用 nodejs 来对指定内容进行翻译，主要用到的知识点有两个： 使用百度翻译 API</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/nodejs_use_baidu_translate_api</guid>
+      <description>
+
+&lt;p&gt;博客（网站）中需要对文章标题进行翻译成英文显示，要求可以批量翻译。&lt;/p&gt;
+
+&lt;p&gt;这里使用 nodejs 来对指定内容进行翻译，主要用到的知识点有两个：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;使用百度翻译 API：&lt;a href=&#34;http://fanyi.baidu.com/v2transapi&#34;&gt;http://fanyi.baidu.com/v2transapi&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;使用 node 中的 http.request 接口&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;1-百度-api:b569662c89762206d43f59e81b537561&#34;&gt;1. 百度 API&lt;/h4&gt;
+
+&lt;p&gt;地址为：&lt;a href=&#34;http://fanyi.baidu.com/v2transapi&#34;&gt;http://fanyi.baidu.com/v2transapi&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;方法：POST&lt;/p&gt;
+
+&lt;p&gt;参数格式：&lt;/p&gt;
+{
+    from: &#39;zh&#39;,
+    to: &#39;en&#39;,
+    query: &#39;这里是内容&#39;
+}
+
+&lt;p&gt;from：表示源语言（zh表示中文）&lt;/p&gt;
+
+&lt;p&gt;to：表示想要翻译的语言（en表示为英文）&lt;/p&gt;
+
+&lt;p&gt;query：表示需要翻译的内容&lt;/p&gt;
+
+&lt;h4 id=&#34;2-http-request-接口:b569662c89762206d43f59e81b537561&#34;&gt;2. http.request 接口&lt;/h4&gt;
+
+&lt;p&gt;http.request(options, callback)&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;host: A domain name or IP address of the server to issue the request to. Defaults to &amp;lsquo;localhost&amp;rsquo;.&lt;/li&gt;
+&lt;li&gt;hostname: To support url.parse() hostname is preferred over host&lt;/li&gt;
+&lt;li&gt;port: Port of remote server. Defaults to 80.&lt;/li&gt;
+&lt;li&gt;localAddress: Local interface to bind for network connections.&lt;/li&gt;
+&lt;li&gt;socketPath: Unix Domain Socket (use one of host:port or socketPath)&lt;/li&gt;
+&lt;li&gt;method: A string specifying the HTTP request method. Defaults to &amp;lsquo;GET&amp;rsquo;.&lt;/li&gt;
+&lt;li&gt;path: Request path. Defaults to &amp;lsquo;/&amp;rsquo;. Should include query string if any. E.G. &amp;lsquo;/index.html?page=12&amp;rsquo;&lt;/li&gt;
+&lt;li&gt;headers: An object containing request headers.&lt;/li&gt;
+&lt;li&gt;auth: Basic authentication i.e. &amp;lsquo;user:password&amp;rsquo; to compute an Authorization header.&lt;/li&gt;
+&lt;li&gt;agent: Controls Agent behavior.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;3-实现:b569662c89762206d43f59e81b537561&#34;&gt;3. 实现&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/wenzhixin/baidu-translate-api&#34;&gt;github 源码&lt;/a&gt;&lt;/p&gt;
+function translate(query, callback) {
+
+    var params = {
+            from: &#39;zh&#39;,
+            to: &#39;en&#39;,
+            query: query
+        },
+        data = querystring.stringify(params);
+        options = {
+            host: &#39;fanyi.baidu.com&#39;,
+            port: 80,
+            path: &#39;/v2transapi&#39;,
+            method: &#39;POST&#39;,
+            headers: {
+                &#39;Content-Type&#39;:&#39;application/x-www-form-urlencoded&#39;,
+                &#39;Content-Length&#39;: data.length
+            }
+        };
+
+    var req = http.request(options, function(res) {
+        var result = &#39;&#39;;
+
+        res.setEncoding(&#39;utf8&#39;);
+        res.on(&#39;data&#39;, function(data) {
+            result += data;
+        });
+        res.on(&#39;end&#39;, function() {
+            var obj = JSON.parse(result),
+                str = obj.trans_result.data[0].dst;
+
+            str = str.replace(/\&#34;/g, &#39;&#39;);
+            str = str.toLowerCase().split(&#39; &#39;).join(&#39;_&#39;);
+            console.log(str);
+        });
+    });
+
+    req.on(&#39;error&#39;, function(err) {
+        console.log(err);
+        setTimeout(function() {
+            translation(query, callback);
+        }, 3000);
+    });
+
+    req.write(data);
+    req.end();
+
+}
+</description>
     </item>
     
   </channel>

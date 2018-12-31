@@ -7,36 +7,331 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Tue, 22 Oct 2013 08:50:00 +0000</lastBuildDate>
+    <atom:link href="http://blog.wenzhixin.net.cn/tags/%E5%8D%9A%E5%AE%A2/index.xml" rel="self" type="application/rss+xml" />
     
-	<atom:link href="http://blog.wenzhixin.net.cn/tags/%E5%8D%9A%E5%AE%A2/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>快速搭建自己的博客(markdown)</title>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/build_markdown_blog</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/build_markdown_blog</guid>
+      <description>
+
+&lt;p&gt;PS：基于 jQuery、markdown 的 html 博客，无涉及后台，如此简单，你也可以拥有!!!&lt;/p&gt;
+
+&lt;h3 id=&#34;目录结构:00d32dba2a4e81a38a7b3fbd9382984f&#34;&gt;目录结构&lt;/h3&gt;
+├── js
+|    ├── jquery-1.8.3.min.js
+|    ├── markdown.js
+|    ├── js-url.js
+|    └── index.js
+├── index.html
+└── posts
+     ├── index.md
+     └── 2012/11/30
+          └── hello_world.md
+
+&lt;h3 id=&#34;1-创建-index-html:00d32dba2a4e81a38a7b3fbd9382984f&#34;&gt;1、创建 index.html&lt;/h3&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&#34;en&#34;&gt;
+&lt;head&gt;
+  &lt;meta charset=&#34;utf-8&#34; /&gt;
+  &lt;title&gt;文翼的博客&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div id=&#34;post&#34;&gt;&lt;/div&gt;
+  &lt;script type=&#34;text/javascript&#34; src=&#34;js/jquery-1.8.3.min.js&#34;&gt;&lt;/script&gt;
+  &lt;script type=&#34;text/javascript&#34; src=&#34;js/markdown.js&#34;&gt;&lt;/script&gt;
+  &lt;script type=&#34;text/javascript&#34; src=&#34;js/js-url.js&#34;&gt;&lt;/script&gt;
+  &lt;script type=&#34;text/javascript&#34; src=&#34;js/index.js&#34;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+&lt;p&gt;分别引入&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;1) jQuery，这里使用 jquery-1.8.3，详细见 &lt;a href=&#34;http://www.jquery.com&#34;&gt;http://www.jquery.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;2) markdown，用于解析 md 文件，详细见 &lt;a href=&#34;https://github.com/evilstreak/markdown-js&#34;&gt;https://github.com/evilstreak/markdown-js&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;3) url，用于解析 url 地址，详细见 &lt;a href=&#34;https://github.com/websanova/js-url&#34;&gt;https://github.com/websanova/js-url&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;4) index.js&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;2-创建-index-js:00d32dba2a4e81a38a7b3fbd9382984f&#34;&gt;2、创建 index.js&lt;/h3&gt;
+$(function() {
+    &#39;use strict&#39;;
+
+    function getPost(url) {
+        if (!url) {
+            getPost(&#39;index&#39;);
+            return;
+        }
+        $.ajax({
+            url: &#39;posts/&#39; + url + &#39;.md&#39;,
+            success: function(data) {
+                $(&#39;#post&#39;).html(markdown.toHTML(data));
+            },
+            error: function(data) {
+                getPost(&#39;index&#39;);
+            }
+        });
+    }
+
+    getPost(url(&#39;?&#39;));
+});
+
+&lt;h3 id=&#34;3-创建-index-md:00d32dba2a4e81a38a7b3fbd9382984f&#34;&gt;3、创建 index.md&lt;/h3&gt;
+## 文章列表
+
+* [我的第一篇文章哦](/2012/11/30/hello_world) (2012-11-30)
+
+&lt;h3 id=&#34;4-增加第一篇文章-hello-world-md:00d32dba2a4e81a38a7b3fbd9382984f&#34;&gt;4、增加第一篇文章 hello_world.md&lt;/h3&gt;
+## 我的第一篇文章哦
+
+分类：分类 | 发布时间：2012-11-30 02:20:00
+
+___
+
+### hello world!
+
+这是我的第一篇文章哦
+我的文章内容
+
+&lt;p&gt;注：这里的目录结构以日期来命名，以防止冲突，如：2012/11/30/文章名称.md&lt;/p&gt;
+
+&lt;h3 id=&#34;5-大功告成:00d32dba2a4e81a38a7b3fbd9382984f&#34;&gt;5、大功告成&lt;/h3&gt;
+
+&lt;p&gt;最后，将整个 blog 目录放到服务器上（nodejs, apache2, nginx, IIS, &amp;hellip;）,输入地址便可以看到:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2012/11/30/build_markdown_blog1.jpeg&#34; alt=&#34;index&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2012/11/30/build_markdown_blog2.jpeg&#34; alt=&#34;hello_world&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;6-最后的最后:00d32dba2a4e81a38a7b3fbd9382984f&#34;&gt;6、最后的最后&amp;gt;&amp;gt;&amp;gt;&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;你可以加入自己的 CSS 进行美化，以及其他信息&lt;/li&gt;
+&lt;li&gt;你可以考虑将 md 文件内容存在数据库（例如：mongodb）中，并加入评论等其他的功能&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&#34;附件下载:00d32dba2a4e81a38a7b3fbd9382984f&#34;&gt;附件下载：&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2012/11/30/build_markdown_blog.zip&#34;&gt;blog.zip&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
     
+    <item>
+      <title>快速搭建自己的博客(markdown)</title>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/build_markdown_blog</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/build_markdown_blog</guid>
+      <description>
+
+&lt;p&gt;PS：基于 jQuery、markdown 的 html 博客，无涉及后台，如此简单，你也可以拥有!!!&lt;/p&gt;
+
+&lt;h3 id=&#34;目录结构:00d32dba2a4e81a38a7b3fbd9382984f&#34;&gt;目录结构&lt;/h3&gt;
+├── js
+|    ├── jquery-1.8.3.min.js
+|    ├── markdown.js
+|    ├── js-url.js
+|    └── index.js
+├── index.html
+└── posts
+     ├── index.md
+     └── 2012/11/30
+          └── hello_world.md
+
+&lt;h3 id=&#34;1-创建-index-html:00d32dba2a4e81a38a7b3fbd9382984f&#34;&gt;1、创建 index.html&lt;/h3&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&#34;en&#34;&gt;
+&lt;head&gt;
+  &lt;meta charset=&#34;utf-8&#34; /&gt;
+  &lt;title&gt;文翼的博客&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div id=&#34;post&#34;&gt;&lt;/div&gt;
+  &lt;script type=&#34;text/javascript&#34; src=&#34;js/jquery-1.8.3.min.js&#34;&gt;&lt;/script&gt;
+  &lt;script type=&#34;text/javascript&#34; src=&#34;js/markdown.js&#34;&gt;&lt;/script&gt;
+  &lt;script type=&#34;text/javascript&#34; src=&#34;js/js-url.js&#34;&gt;&lt;/script&gt;
+  &lt;script type=&#34;text/javascript&#34; src=&#34;js/index.js&#34;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+&lt;p&gt;分别引入&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;1) jQuery，这里使用 jquery-1.8.3，详细见 &lt;a href=&#34;http://www.jquery.com&#34;&gt;http://www.jquery.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;2) markdown，用于解析 md 文件，详细见 &lt;a href=&#34;https://github.com/evilstreak/markdown-js&#34;&gt;https://github.com/evilstreak/markdown-js&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;3) url，用于解析 url 地址，详细见 &lt;a href=&#34;https://github.com/websanova/js-url&#34;&gt;https://github.com/websanova/js-url&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;4) index.js&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;2-创建-index-js:00d32dba2a4e81a38a7b3fbd9382984f&#34;&gt;2、创建 index.js&lt;/h3&gt;
+$(function() {
+    &#39;use strict&#39;;
+
+    function getPost(url) {
+        if (!url) {
+            getPost(&#39;index&#39;);
+            return;
+        }
+        $.ajax({
+            url: &#39;posts/&#39; + url + &#39;.md&#39;,
+            success: function(data) {
+                $(&#39;#post&#39;).html(markdown.toHTML(data));
+            },
+            error: function(data) {
+                getPost(&#39;index&#39;);
+            }
+        });
+    }
+
+    getPost(url(&#39;?&#39;));
+});
+
+&lt;h3 id=&#34;3-创建-index-md:00d32dba2a4e81a38a7b3fbd9382984f&#34;&gt;3、创建 index.md&lt;/h3&gt;
+## 文章列表
+
+* [我的第一篇文章哦](/2012/11/30/hello_world) (2012-11-30)
+
+&lt;h3 id=&#34;4-增加第一篇文章-hello-world-md:00d32dba2a4e81a38a7b3fbd9382984f&#34;&gt;4、增加第一篇文章 hello_world.md&lt;/h3&gt;
+## 我的第一篇文章哦
+
+分类：分类 | 发布时间：2012-11-30 02:20:00
+
+___
+
+### hello world!
+
+这是我的第一篇文章哦
+我的文章内容
+
+&lt;p&gt;注：这里的目录结构以日期来命名，以防止冲突，如：2012/11/30/文章名称.md&lt;/p&gt;
+
+&lt;h3 id=&#34;5-大功告成:00d32dba2a4e81a38a7b3fbd9382984f&#34;&gt;5、大功告成&lt;/h3&gt;
+
+&lt;p&gt;最后，将整个 blog 目录放到服务器上（nodejs, apache2, nginx, IIS, &amp;hellip;）,输入地址便可以看到:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2012/11/30/build_markdown_blog1.jpeg&#34; alt=&#34;index&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2012/11/30/build_markdown_blog2.jpeg&#34; alt=&#34;hello_world&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;6-最后的最后:00d32dba2a4e81a38a7b3fbd9382984f&#34;&gt;6、最后的最后&amp;gt;&amp;gt;&amp;gt;&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;你可以加入自己的 CSS 进行美化，以及其他信息&lt;/li&gt;
+&lt;li&gt;你可以考虑将 md 文件内容存在数据库（例如：mongodb）中，并加入评论等其他的功能&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&#34;附件下载:00d32dba2a4e81a38a7b3fbd9382984f&#34;&gt;附件下载：&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2012/11/30/build_markdown_blog.zip&#34;&gt;blog.zip&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>让你的网站支持自适应界面</title>
-      <link>http://blog.wenzhixin.net.cn/2013/10/22/responsive_web/</link>
-      <pubDate>Tue, 22 Oct 2013 08:50:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/responsive_web</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/10/22/responsive_web/</guid>
-      <description>1. 介绍 随着智能手机的普及，越来越多的人使用手机上网。 我自己就是，经常懒得开电脑，直接用手机查看网页，简单又方便。 那么，如何才能把自己的博客做</description>
-    </item>
-    
-    <item>
-      <title>快速搭建自己的博客(markdown)</title>
-      <link>http://blog.wenzhixin.net.cn/2012/11/30/build_markdown_blog/</link>
-      <pubDate>Fri, 30 Nov 2012 01:54:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/11/30/build_markdown_blog/</guid>
-      <description>PS：基于 jQuery、markdown 的 html 博客，无涉及后台，如此简单，你也可以拥有!!! 目录结构 1 2 3 4 5 6 7 8 9 10 ├── js | ├── jquery-1.8.3.min.js | ├</description>
-    </item>
-    
-    <item>
-      <title>快速搭建自己的博客(markdown)</title>
-      <link>http://blog.wenzhixin.net.cn/2012/11/30/build_markdown_blog/</link>
-      <pubDate>Fri, 30 Nov 2012 01:54:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/11/30/build_markdown_blog/</guid>
-      <description>PS：基于 jQuery、markdown 的 html 博客，无涉及后台，如此简单，你也可以拥有!!! 目录结构 1 2 3 4 5 6 7 8 9 10 ├── js | ├── jquery-1.8.3.min.js | ├</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/responsive_web</guid>
+      <description>
+
+&lt;h4 id=&#34;1-介绍:be5e1839066e83ead1c56c385e620bf2&#34;&gt;1. 介绍&lt;/h4&gt;
+
+&lt;p&gt;随着智能手机的普及，越来越多的人使用手机上网。
+我自己就是，经常懒得开电脑，直接用手机查看网页，简单又方便。
+那么，如何才能把自己的博客做成在不同大小的设备上呈现同样的界面？&lt;/p&gt;
+
+&lt;h4 id=&#34;2-如何做:be5e1839066e83ead1c56c385e620bf2&#34;&gt;2. 如何做&lt;/h4&gt;
+
+&lt;p&gt;1) 在网页代码的头部，加入 viewport 元标签&lt;/p&gt;
+&lt;meta name=&#34;viewport&#34; content=&#34;width=device-width; initial-scale=1.0&#34; /&gt;
+
+&lt;p&gt;viewport 是页面默认的宽度和高度，上面代码的意思是：
+页面宽度默认等于屏幕宽度（width=device-width），
+并且原始缩放比例（initial-scale=1.0）为1.0，即页面初始大小占屏幕面积的100%。&lt;/p&gt;
+
+&lt;p&gt;这样，我们在手机上查看就可以看到整个页面的大小了。&lt;/p&gt;
+
+&lt;p&gt;2) 设置 CSS 的 @media 规则&lt;/p&gt;
+
+&lt;p&gt;在同一个CSS文件中，可以根据不同的屏幕分辨率，选择应用不同的CSS规则。&lt;/p&gt;
+
+&lt;p&gt;例如：&lt;/p&gt;
+@media (min-width: 768px) and (max-width: 979px) {
+    /* CSS1 */
+}
+
+@media (max-width: 767px) {
+    /* CSS2 */
+}
+
+&lt;p&gt;分别表示屏幕在 768px-979px 之间显示 CSS1 内容 和 屏幕宽度小于 767 像素显示 CSS2 内容。&lt;/p&gt;
+
+&lt;p&gt;由于博客用到了 bootstrap，所以我引入了 bootstrap-responsive.css 样式，它已经帮我做了大部分工作了。&lt;/p&gt;
+
+&lt;p&gt;3) 加入自定义样式&lt;/p&gt;
+@media (max-width: 767px) {
+    body {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .header_content {
+          padding-left: 10px;
+    }
+    .fork_me, .header_top, .wenyi-logo, .weibo_content, #bdshare, .bulletin {
+          display: none;
+    }
+    .post_content {
+        padding: 10px;
+    }
+}
+
+&lt;p&gt;这段代码的意思是，如果屏幕宽度小于 767 像素，那么 body 的左右间距都为 0，博客的标题和文章的间距为 10 像素，
+并且隐藏 fork me 图片、标题图片、博客的 logo、微博、百度分享和公告功能。&lt;/p&gt;
+
+&lt;p&gt;这样，我们在手机上查看就可以看到我们自己想要的内容了。&lt;/p&gt;
+
+&lt;p&gt;4) 设置 js 代码&lt;/p&gt;
+
+&lt;p&gt;由于“返回顶部”按钮在电脑以及手机上的显示位置不同，所以无法用css来进行设置（知道的人麻烦告诉我下），
+所以只能用 js 来进行设置，代码如下：&lt;/p&gt;
+$(window).resize(showGotoTop);
+
+function showGotoTop() {
+    if ($(window).width() &gt; 767) {
+        $gotoTop.css({
+            &#39;left&#39;: &#39;50%&#39;,
+            &#39;margin-left&#39;: $(&#39;.posts&#39;).width() / 2 + &#39;px&#39;,
+            &#39;right&#39;: &#39;auto&#39;
+        });
+    } else {
+        $gotoTop.css({
+            &#39;left&#39;: &#39;auto&#39;,
+            &#39;margin-left&#39;: &#39;0&#39;,
+            &#39;right&#39;: &#39;0&#39;
+        });
+    }
+}
+
+&lt;p&gt;代码监听了界面改变大小时的事件，并且计算出“返回顶部”的位置。&lt;/p&gt;
+
+&lt;h4 id=&#34;3-其他问题:be5e1839066e83ead1c56c385e620bf2&#34;&gt;3. 其他问题&lt;/h4&gt;
+
+&lt;p&gt;由于 IE6-8 等浏览器不支持 CSS3 Media，这里推荐使用 github 上的开源项目 &lt;a href=&#34;https://github.com/scottjehl/Respond&#34;&gt;Respond.js&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;Respond.js 是一个快速、轻量的 polyfill，用于为 IE6-8 以及其它不支持 CSS3 Media Queries 的浏览器提供媒体查询的 min-width 和 max-width 特性，实现响应式网页设计（Responsive Web Design）。&lt;/p&gt;
+
+&lt;p&gt;使用：&lt;/p&gt;
+&lt;!--[if lt IE 9]&gt;
+    &lt;script src=&#34;respond.js&#34;&gt;&lt;/script&gt;
+&lt;![endif]--&gt;
+</description>
     </item>
     
   </channel>

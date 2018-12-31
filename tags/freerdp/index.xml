@@ -7,18 +7,64 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Sun, 16 Mar 2014 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.wenzhixin.net.cn/tags/freerdp/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="http://blog.wenzhixin.net.cn/tags/freerdp/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>ubuntu 下使用 FreeRDP 连接 Windows 远程桌面</title>
-      <link>http://blog.wenzhixin.net.cn/2014/03/16/ubuntu_xfreerdp/</link>
-      <pubDate>Sun, 16 Mar 2014 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_xfreerdp</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/03/16/ubuntu_xfreerdp/</guid>
-      <description>简介 FreeRDP 是一款开源的远程桌面系统，支持多种平台， 在 ubuntu 中使用 FreeRDP 可以很方便的登录到 windwos 远程桌面中。 安装 1 sudo apt-get install freerdp 使用 1 xfreerdp -f host:port -u username -p password 参数： -f：表示</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_xfreerdp</guid>
+      <description>
+
+&lt;h4 id=&#34;简介:35719c5fd0b3ab2ac34b47cf0a797513&#34;&gt;简介&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/FreeRDP/FreeRDP&#34;&gt;FreeRDP&lt;/a&gt; 是一款开源的远程桌面系统，支持多种平台，
+在 ubuntu 中使用 FreeRDP 可以很方便的登录到 windwos 远程桌面中。&lt;/p&gt;
+
+&lt;h4 id=&#34;安装:35719c5fd0b3ab2ac34b47cf0a797513&#34;&gt;安装&lt;/h4&gt;
+sudo apt-get install freerdp
+
+&lt;h4 id=&#34;使用:35719c5fd0b3ab2ac34b47cf0a797513&#34;&gt;使用&lt;/h4&gt;
+xfreerdp -f host:port -u username -p password
+
+&lt;p&gt;&lt;strong&gt;参数：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;-f：表示全屏（切换全屏的快捷键为：Ctrl + Alt + Enter）&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;host：远程服务器地址&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;port：端口，默认为 3389&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;-u username：用户名&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;-p password：密码&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;例如：&lt;/p&gt;
+xfreerdp -f 192.168.1.10 -u administrator -p 123456
+
+&lt;p&gt;表示远程桌面到 192.168.1.10&lt;/p&gt;
+
+&lt;h4 id=&#34;常用插件:35719c5fd0b3ab2ac34b47cf0a797513&#34;&gt;常用插件&lt;/h4&gt;
+
+&lt;p&gt;FreeRDP 提供了很多&lt;a href=&#34;https://github.com/FreeRDP/FreeRDP/wiki/Plugins&#34;&gt;插件&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;这里记录我比较常用到的插件：&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;cliprdr（开启粘贴功能）&lt;/strong&gt;&lt;/p&gt;
+--plugin cliprdr
+
+&lt;p&gt;例如：&lt;/p&gt;
+xfreerdp -f --plugin cliprdr 192.168.1.10 -u administrator -p 123456
+
+&lt;p&gt;&lt;strong&gt;rdpdr（开启本地文件夹映射为远程服务器磁盘功能）&lt;/strong&gt;&lt;/p&gt;
+--plugin rdpdr --data disk:&lt;Name&gt;:&lt;Path&gt; --
+
+&lt;p&gt;例如将本地 /home/username/share 作为共享文件夹：&lt;/p&gt;
+xfreerdp -f --plugin rdpdr --data disk:username:~/share -- 192.168.1.10 -u administrator -p 123456
+</description>
     </item>
     
   </channel>

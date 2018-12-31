@@ -1,24 +1,282 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>attr on 文翼的博客</title>
+    <title>Attr on 文翼的博客</title>
     <link>http://blog.wenzhixin.net.cn/tags/attr/</link>
-    <description>Recent content in attr on 文翼的博客</description>
+    <description>Recent content in Attr on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Fri, 24 May 2013 01:11:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.wenzhixin.net.cn/tags/attr/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="http://blog.wenzhixin.net.cn/tags/attr/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>jQuery 中 attr() 和 prop() 方法的区别</title>
-      <link>http://blog.wenzhixin.net.cn/2013/05/24/jquery_attr_prop/</link>
-      <pubDate>Fri, 24 May 2013 01:11:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/jquery_attr_prop</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/05/24/jquery_attr_prop/</guid>
-      <description>前几天，有人给 Multiple Select 插件 提了问题： setSelects doesn&amp;rsquo;t work in Firefox when using jquery 1.9.0 一直都在用 jQuery 1.8.3 的版本，没有尝试过 jQuery 1.9.0 的版本。 于是，开始调试代码，在 1.9.0 的版本中： 1 2 3 4 5 6</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/jquery_attr_prop</guid>
+      <description>&lt;p&gt;前几天，有人给 &lt;a href=&#34;http://wenzhixin.net.cn/p/multiple-select/&#34;&gt;Multiple Select 插件&lt;/a&gt; 提了问题：&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/wenzhixin/multiple-select/issues/2&#34;&gt;setSelects doesn&amp;rsquo;t work in Firefox when using jquery 1.9.0&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;一直都在用 jQuery 1.8.3 的版本，没有尝试过 jQuery 1.9.0 的版本。&lt;/p&gt;
+
+&lt;p&gt;于是，开始调试代码，在 1.9.0 的版本中：&lt;/p&gt;
+&lt;input type=&#34;checkbox&#34; /&gt;
+&lt;script&gt;
+    $(function() {
+        $(&#39;input&#39;).click(function() {
+            $(this).attr(&#39;checked&#39;);
+        });
+    });
+&lt;/script&gt;
+
+&lt;p&gt;点击 checkbox，&lt;strong&gt;结果都是 undefined&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;而在 1.8.3 的版本中，&lt;strong&gt;结果是 checked 和 undefined&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;到这里，问题答案找到了，就是使用 attr() 方法的问题，于是查看官方文档，
+才知道从 jQuery 1.6 开始新增了一个方法 prop()，但是一直都没有使用过。&lt;/p&gt;
+
+&lt;p&gt;从中文意思看，两者分别是获取/设置 attributes 和 properties 的方法，那么为什么还要增加 prop() 方法呢？&lt;/p&gt;
+Before jQuery 1.6, the .attr() method sometimes took property values into account when retrieving some attributes, which could cause inconsistent behavior.
+
+&lt;p&gt;因为在 jQuery 1.6 之前，使用 attr() 有时候会出现不一致的行为。&lt;/p&gt;
+
+&lt;p&gt;那么，什么时候使用attr()，什么时候使用prop()？&lt;/p&gt;
+To retrieve and change DOM properties such as the checked, selected, or disabled state of form elements, use the .prop() method.
+
+&lt;p&gt;根据官方的建议：&lt;strong&gt;具有 true 和 false 两个属性的属性，如 checked, selected 或者 disabled 使用prop()，其他的使用 attr()&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;到此，将 attr(&amp;lsquo;checked&amp;rsquo;) 改成 prop(&amp;lsquo;checked&amp;rsquo;) 即可修复提的 issues 了。&lt;/p&gt;
+
+&lt;p&gt;^_^&lt;/p&gt;
+
+&lt;p&gt;等等，貌似问题还没真正解决，为什么开头例子中 jQuery 1.8.3 和 1.9.0 使用 attr() 会有所区别呢？&lt;/p&gt;
+
+&lt;p&gt;想知道他们的区别，最好的办法还是看他们的源代码：&lt;/p&gt;
+
+&lt;p&gt;1.8.3 attr()：&lt;/p&gt;
+attr: function( elem, name, value, pass ) {
+    var ret, hooks, notxml,
+        nType = elem.nodeType;
+
+    // don&#39;t get/set attributes on text, comment and attribute nodes
+    if ( !elem || nType === 3 || nType === 8 || nType === 2 ) {
+        return;
+    }
+
+    if ( pass &amp;&amp; jQuery.isFunction( jQuery.fn[ name ] ) ) {
+        return jQuery( elem )[ name ]( value );
+    }
+
+    // Fallback to prop when attributes are not supported
+    if ( typeof elem.getAttribute === &#34;undefined&#34; ) {
+        return jQuery.prop( elem, name, value );
+    }
+
+    notxml = nType !== 1 || !jQuery.isXMLDoc( elem );
+
+    // All attributes are lowercase
+    // Grab necessary hook if one is defined
+    if ( notxml ) {
+        name = name.toLowerCase();
+        hooks = jQuery.attrHooks[ name ] || ( rboolean.test( name ) ? boolHook : nodeHook );
+    }
+
+    if ( value !== undefined ) {
+
+        if ( value === null ) {
+            jQuery.removeAttr( elem, name );
+            return;
+
+        } else if ( hooks &amp;&amp; &#34;set&#34; in hooks &amp;&amp; notxml &amp;&amp; (ret = hooks.set( elem, value, name )) !== undefined ) {
+            return ret;
+
+        } else {
+            elem.setAttribute( name, value + &#34;&#34; );
+            return value;
+        }
+
+    } else if ( hooks &amp;&amp; &#34;get&#34; in hooks &amp;&amp; notxml &amp;&amp; (ret = hooks.get( elem, name )) !== null ) {
+        return ret;
+
+    } else {
+
+        ret = elem.getAttribute( name );
+
+        // Non-existent attributes return null, we normalize to undefined
+        return ret === null ?
+            undefined :
+            ret;
+    }
+}
+
+&lt;p&gt;1.9.0 attr()：&lt;/p&gt;
+    attr: function( elem, name, value ) {
+    var ret, hooks, notxml,
+        nType = elem.nodeType;
+
+    // don&#39;t get/set attributes on text, comment and attribute nodes
+    if ( !elem || nType === 3 || nType === 8 || nType === 2 ) {
+        return;
+    }
+
+    // Fallback to prop when attributes are not supported
+    if ( typeof elem.getAttribute === &#34;undefined&#34; ) {
+        return jQuery.prop( elem, name, value );
+    }
+
+    notxml = nType !== 1 || !jQuery.isXMLDoc( elem );
+
+    // All attributes are lowercase
+    // Grab necessary hook if one is defined
+    if ( notxml ) {
+        name = name.toLowerCase();
+        hooks = jQuery.attrHooks[ name ] || ( rboolean.test( name ) ? boolHook : nodeHook );
+    }
+
+    if ( value !== undefined ) {
+
+        if ( value === null ) {
+            jQuery.removeAttr( elem, name );
+
+        } else if ( hooks &amp;&amp; notxml &amp;&amp; &#34;set&#34; in hooks &amp;&amp; (ret = hooks.set( elem, value, name )) !== undefined ) {
+            return ret;
+
+        } else {
+            elem.setAttribute( name, value + &#34;&#34; );
+            return value;
+        }
+
+    } else if ( hooks &amp;&amp; notxml &amp;&amp; &#34;get&#34; in hooks &amp;&amp; (ret = hooks.get( elem, name )) !== null ) {
+        return ret;
+
+    } else {
+
+        // In IE9+, Flash objects don&#39;t have .getAttribute (#12945)
+        // Support: IE9+
+        if ( typeof elem.getAttribute !== &#34;undefined&#34; ) {
+            ret =  elem.getAttribute( name );
+        }
+
+        // Non-existent attributes return null, we normalize to undefined
+        return ret == null ?
+            undefined :
+            ret;
+    }
+}
+
+&lt;p&gt;1.8.3 和 1.9.0 的 prop() 是一样的:&lt;/p&gt;
+prop: function( elem, name, value ) {
+    var ret, hooks, notxml,
+        nType = elem.nodeType;
+
+    // don&#39;t get/set properties on text, comment and attribute nodes
+    if ( !elem || nType === 3 || nType === 8 || nType === 2 ) {
+        return;
+    }
+
+    notxml = nType !== 1 || !jQuery.isXMLDoc( elem );
+
+    if ( notxml ) {
+        // Fix name and attach hooks
+        name = jQuery.propFix[ name ] || name;
+        hooks = jQuery.propHooks[ name ];
+    }
+
+    if ( value !== undefined ) {
+        if ( hooks &amp;&amp; &#34;set&#34; in hooks &amp;&amp; (ret = hooks.set( elem, value, name )) !== undefined ) {
+            return ret;
+
+        } else {
+            return ( elem[ name ] = value );
+        }
+
+    } else {
+        if ( hooks &amp;&amp; &#34;get&#34; in hooks &amp;&amp; (ret = hooks.get( elem, name )) !== null ) {
+            return ret;
+
+        } else {
+            return elem[ name ];
+        }
+    }
+}
+
+&lt;p&gt;首先，我们看下 &lt;strong&gt;attr() 和 prop() 的区别&lt;/strong&gt;：&lt;/p&gt;
+
+&lt;p&gt;attr() 里面，最关键的两行代码&lt;/p&gt;
+elem.setAttribute( name, value + &#34;&#34; );
+
+ret =  elem.getAttribute( name );
+
+&lt;p&gt;很明显的看出来，使用的 DOM 的 API setAttribute() 和 getAttribute() 方法操作的属性元素节点。&lt;/p&gt;
+
+&lt;p&gt;prop() 里面，最关键的两行代码&lt;/p&gt;
+return ( elem[ name ] = value );
+
+return elem[ name ];
+
+&lt;p&gt;可以理解为 document.getElementById(el)[name] = value，这是转化成 element 的一个属性。&lt;/p&gt;
+
+&lt;p&gt;对比调试 &lt;strong&gt;1.9.0 和 1.8.3 的 attr() 方法&lt;/strong&gt;，发现两者的区别在于&lt;/p&gt;
+hooks.get( elem, name ))
+
+&lt;p&gt;返回的值不一样，具体的实现：&lt;/p&gt;
+
+&lt;p&gt;1.8.3 中&lt;/p&gt;
+boolHook = {
+    get: function( elem, name ) {
+        // Align boolean attributes with corresponding properties
+        // Fall back to attribute presence where some booleans are not supported
+        var attrNode,
+            property = jQuery.prop( elem, name );
+        return property === true || typeof property !== &#34;boolean&#34; &amp;&amp; ( attrNode = elem.getAttributeNode(name) ) &amp;&amp; attrNode.nodeValue !== false ?
+            name.toLowerCase() :
+            undefined;
+    }
+}
+
+&lt;p&gt;1.9.0 中&lt;/p&gt;
+boolHook = {
+    get: function( elem, name ) {
+        var
+            // Use .prop to determine if this attribute is understood as boolean
+            prop = jQuery.prop( elem, name ),
+
+            // Fetch it accordingly
+            attr = typeof prop === &#34;boolean&#34; &amp;&amp; elem.getAttribute( name ),
+            detail = typeof prop === &#34;boolean&#34; ?
+
+                getSetInput &amp;&amp; getSetAttribute ?
+                    attr != null :
+                    // oldIE fabricates an empty string for missing boolean attributes
+                    // and conflates checked/selected into attroperties
+                    ruseDefault.test( name ) ?
+                        elem[ jQuery.camelCase( &#34;default-&#34; + name ) ] :
+                        !!attr :
+
+                // fetch an attribute node for properties not recognized as boolean
+                elem.getAttributeNode( name );
+
+        return detail &amp;&amp; detail.value !== false ?
+            name.toLowerCase() :
+            undefined;
+    }
+}
+
+&lt;p&gt;由此可见，1.9.0 开始不建议使用 attr() 来对具有 true 和 false 两个属性的属性进行操作了。&lt;/p&gt;
+
+&lt;p&gt;那么我们的&lt;strong&gt;结论&lt;/strong&gt;是：&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;具有 true 和 false 两个属性的属性，如 checked, selected 或者 disabled 使用prop()，其他的使用 attr()，具体见下表：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2013/05/24/attr_prop.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;注：本文中的大部分观点以及例子属于个人理解，难免还有不准确的地方，欢迎有相关研究的同行指正。&lt;/p&gt;
+</description>
     </item>
     
   </channel>

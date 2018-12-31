@@ -7,54 +7,672 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Wed, 12 Jun 2013 23:07:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.wenzhixin.net.cn/tags/mongodb/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="http://blog.wenzhixin.net.cn/tags/mongodb/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>MongoDB mongoexport 命令的使用及简单实现</title>
-      <link>http://blog.wenzhixin.net.cn/2013/06/12/mongodb_export/</link>
-      <pubDate>Wed, 12 Jun 2013 23:07:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/mongodb_export</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/06/12/mongodb_export/</guid>
-      <description>MongoDB 提供了 mongoexport 命令来导出数据，导出的数据是 json 格式的，当然也可以是 csv 格式。主要可以实现备份和恢复的功能。 具体的使用，我们使用 &amp;ndash;help 查看，主要的参数有：</description>
-    </item>
-    
-    <item>
-      <title>MongoDB 创建、更新及删除文档</title>
-      <link>http://blog.wenzhixin.net.cn/2012/12/08/mongodb_insert_update_remove/</link>
-      <pubDate>Sat, 08 Dec 2012 08:24:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/12/08/mongodb_insert_update_remove/</guid>
-      <description>1、插入文档：insert 1) 基本用法： 1 db.name.insert(文档内容); 例子： 1 db.users.insert({&amp;#34;username&amp;#34;: &amp;#34;wenyi&amp;#34;, &amp;#34;age&amp;#34;: 25}); 2) 从其他数据库导入数据，使用 mongoimport 命令 3) 原理与</description>
-    </item>
-    
-    <item>
-      <title>MongoDB 创建、更新及删除文档</title>
-      <link>http://blog.wenzhixin.net.cn/2012/12/08/mongodb_insert_update_remove/</link>
-      <pubDate>Sat, 08 Dec 2012 08:24:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/12/08/mongodb_insert_update_remove/</guid>
-      <description>1、插入文档：insert 1) 基本用法： 1 db.name.insert(文档内容); 例子： 1 db.users.insert({&amp;#34;username&amp;#34;: &amp;#34;wenyi&amp;#34;, &amp;#34;age&amp;#34;: 25}); 2) 从其他数据库导入数据，使用 mongoimport 命令 3) 原理与</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/mongodb_export</guid>
+      <description>&lt;p&gt;MongoDB 提供了 mongoexport 命令来导出数据，导出的数据是 json 格式的，当然也可以是 csv 格式。主要可以实现&lt;strong&gt;备份和恢复&lt;/strong&gt;的功能。&lt;/p&gt;
+
+&lt;p&gt;具体的使用，我们使用 &amp;ndash;help 查看，主要的参数有：&lt;/p&gt;
+-h [ --host ] arg         要连接的服务器，例如 127.0.0.1 或者 localhost
+
+--port arg                要连接服务器的端口，也可以使用 --host hostname:port
+
+-u [ --username ] arg     用户名
+
+-p [ --password ] arg     密码
+
+-d [ --db ] arg           使用的数据库（database）名称
+
+-c [ --collection ] arg   使用的集合（collection）
+
+-o [ --out ] arg          导出的文件名
+
+-f [ --fields ] arg       字段名称，使用逗号分隔，例如 -f name,age
+
+-q [ --query ] arg        查询过滤器
+
+--csv                     导出为 csv 格式
+
+&lt;p&gt;例如，我们要导出 tests 数据库中的 users 集合，可以使用：&lt;/p&gt;
+mongoexport -d tests -c users -o users.dat
+
+&lt;p&gt;现在，针对这几个简单的参数，我们自己使用 nodejs 来进行对 mongoexport 简单的实现，&lt;strong&gt;大概思路&lt;/strong&gt;如下：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;1. 使用 nodejs 的 mongodb 库 &lt;a href=&#34;https://github.com/mongodb/node-mongodb-native&#34;&gt;node-mongodb-native&lt;/a&gt; 来连接 MongoDB。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;安装 mongodb：&lt;/p&gt;
+npm install mongodb
+
+&lt;p&gt;连接 MongoDB 的主要代码：&lt;/p&gt;
+var mongoClient = new MongoClient(new Server(&#39;localhost&#39;, 27017));
+
+mongoClient.open(function(err, mongoclient) {
+
+});
+
+&lt;ul&gt;
+&lt;li&gt;&lt;ol&gt;
+&lt;li&gt;使用 process.argv 来接收输入的参数&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;ol&gt;
+&lt;li&gt;使用 fs.writeFile 来输出 json 数据文件&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;具体实现&lt;/strong&gt;如下：&lt;/p&gt;
+var fs = require(&#39;fs&#39;),
+    MongoClient = require(&#39;mongodb&#39;).MongoClient,
+    Server = require(&#39;mongodb&#39;).Server,
+
+    options = null;
+    mongoClient = null;
+
+if (process.argv.length &lt;= 2 || process.argv.indexOf(&#39;--help&#39;) !== -1) {
+    showHelp();
+    return;
+}
+
+options = getOptions();
+exportFile();
+
+function showHelp() {
+    console.error([
+        &#39;Export MongoDB data to JSON files.&#39;,
+        &#39;&#39;,
+        &#39;options:&#39;,
+          &#39; --help                                produce help message&#39;,
+          &#39; -h [ --host ] arg                     mongo host to connect to&#39;,
+          &#39; --port arg                            server port&#39;,
+          &#39; -u [ --username ] arg                 username&#39;,
+          &#39; -p [ --password ] arg                 password&#39;,
+          &#39; -d [ --db ] arg                       database to use&#39;,
+          &#39; -c [ --collection ] arg               collection to use (some commands)&#39;,
+          &#39; -o [ --out ] arg                      output file&#39;
+    ].join(&#39;\n&#39;));
+}
+
+function getOptions() {
+    var args = process.argv,
+        options = {
+            host: &#39;127.0.0.1&#39;,
+            port: 27017
+        },
+        keys = {
+            &#39;-h&#39;: &#39;host&#39;,
+            &#39;--host&#39;: &#39;host&#39;,
+            &#39;--port&#39;: &#39;port&#39;,
+            &#39;-u&#39;: &#39;username&#39;,
+            &#39;--username&#39;: &#39;username&#39;,
+            &#39;-p&#39;: &#39;password&#39;,
+            &#39;--password&#39;: &#39;password&#39;,
+            &#39;-d&#39;: &#39;db&#39;,
+            &#39;--db&#39;: &#39;db&#39;,
+            &#39;-c&#39;: &#39;collection&#39;,
+            &#39;--collection&#39;: &#39;collection&#39;,
+            &#39;-o&#39;: &#39;output&#39;,
+            &#39;--out&#39;: &#39;output&#39;
+        };
+    for (var i = 2; i &lt; args.length; i += 2) {
+        if (keys.hasOwnProperty(args[i])) {
+            options[keys[args[i]]] = args[i + 1];
+        }
+    }
+    return options;
+}
+
+function exportFile() {
+    mongoClient = new MongoClient(new Server(options.host, options.port, {native_parse: true}));
+    mongoClient.open(function(err, mongoclient) {
+        var db = mongoclient.db(options.db);
+        db.collection(options.collection).find().toArray(function(err, results) {
+            if (err) {
+                console.log(err);
+                return;
+            }
+            fs.writeFile(options.output, JSON.stringify(results), function(err) {
+                if (err) {
+                    console.log(err);
+                    return;
+                }
+                console.log([
+                    &#39;connected to: &#39; + options.host,
+                    &#39;exported &#39; + results.length + &#39; records&#39;
+                ].join(&#39;\n&#39;));
+                mongoClient.close();
+            });
+        });    
+    });
+}
+
+&lt;p&gt;&lt;strong&gt;如何使用&lt;/strong&gt;：&lt;/p&gt;
+node mongoexport.js -d tests -c users -o users.dat
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/demos/mongoexport.js&#34;&gt;源码下载&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>MongoDB 入门</title>
-      <link>http://blog.wenzhixin.net.cn/2012/12/06/mongodb_started/</link>
-      <pubDate>Thu, 06 Dec 2012 22:39:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/mongodb_started</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/12/06/mongodb_started/</guid>
-      <description>1、文档 1) 概念：文档是将多个键及其关联的值有序地放置在一起。 1 {&amp;#34;name&amp;#34;: &amp;#34;wenyi&amp;#34;, &amp;#34;say&amp;#34;: &amp;#34;Hello, world!&amp;#34;} 2) 特性： 文档中的键值对是有序的 文档的键是字符串 文档不能有重复的键 3) 键</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/mongodb_started</guid>
+      <description>
+
+&lt;h4 id=&#34;1-文档:dce783b64be9377b18562728f7c30112&#34;&gt;1、文档&lt;/h4&gt;
+
+&lt;p&gt;1) 概念：文档是将多个键及其关联的值有序地放置在一起。&lt;/p&gt;
+{&#34;name&#34;: &#34;wenyi&#34;, &#34;say&#34;: &#34;Hello, world!&#34;}
+
+&lt;p&gt;2) 特性：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;文档中的键值对是有序的&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;文档的键是字符串&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;文档不能有重复的键&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;3) 键的命名：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;不能含有 \0 (空字符)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;不能包含 . 和 $ 等有意义的字符&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;以下划线 _ 开头的键是保留的&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;2-集合:dce783b64be9377b18562728f7c30112&#34;&gt;2、集合&lt;/h4&gt;
+
+&lt;p&gt;1) 概念：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;集合是一组文档。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;子集合是使用 . 字符分开的俺命名空间划分的集合。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;2) 特性：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;集合是无模式的。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;建议将同种类型的文档放入同个集合中，可以更有效的索引。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;建议使用子集合来组织数据。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;3) 集合的命名：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;不能是空字符串&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;不能含有 \0 (空字符)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;不能以系统保留前缀 system. 开头&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;不能含有保留字符 $&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;3-数据库:dce783b64be9377b18562728f7c30112&#34;&gt;3、数据库&lt;/h4&gt;
+
+&lt;p&gt;1) 多个集合组成数据库，不同的数据库放置在不同的文件中，建议将一个应用的所有数据都存储到同个数据库中。&lt;/p&gt;
+
+&lt;p&gt;2) 命名：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;不能是空字符串&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;不得含有 空格 . $ / \ 和 \0 (空字符)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;应全部为小写&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;最多 64 字节&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;4-mongodb-shell:dce783b64be9377b18562728f7c30112&#34;&gt;4、MongoDB shell&lt;/h4&gt;
+
+&lt;p&gt;1) 运行 shell&lt;/p&gt;
+mongo
+
+&lt;p&gt;2) shell 的基本操作&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;创建： insert()&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;读取： find(), findOne()&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;更新：update()&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;删除： remove()&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;3) 帮助命令&lt;/p&gt;
+help
+db.help()
+
+&lt;h4 id=&#34;5-数据类型:dce783b64be9377b18562728f7c30112&#34;&gt;5、数据类型&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;null：表示空值或者不存在的字段&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;布尔值：true 和 false&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;32 位整数&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;64 位整数&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;64 位浮点数&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;字符串&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;符号&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;对象 id：ObjectId(), 文档的 12 字节的唯一 ID &amp;ldquo;_id&amp;rdquo;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;日期：存储从标准纪元开始的毫秒数&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;正则表达式：采用 JavaScript 正则表达式语法&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;代码：采用 JavaScript 代码&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;二进制数据&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;最大值&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;最小值&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;undefined：未定义&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;数组&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;内嵌文档：文档包含文档&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
     
     <item>
       <title>MongoDB 入门</title>
-      <link>http://blog.wenzhixin.net.cn/2012/12/06/mongodb_started/</link>
-      <pubDate>Thu, 06 Dec 2012 22:39:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/mongodb_started</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/12/06/mongodb_started/</guid>
-      <description>1、文档 1) 概念：文档是将多个键及其关联的值有序地放置在一起。 1 {&amp;#34;name&amp;#34;: &amp;#34;wenyi&amp;#34;, &amp;#34;say&amp;#34;: &amp;#34;Hello, world!&amp;#34;} 2) 特性： 文档中的键值对是有序的 文档的键是字符串 文档不能有重复的键 3) 键</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/mongodb_started</guid>
+      <description>
+
+&lt;h4 id=&#34;1-文档:dce783b64be9377b18562728f7c30112&#34;&gt;1、文档&lt;/h4&gt;
+
+&lt;p&gt;1) 概念：文档是将多个键及其关联的值有序地放置在一起。&lt;/p&gt;
+{&#34;name&#34;: &#34;wenyi&#34;, &#34;say&#34;: &#34;Hello, world!&#34;}
+
+&lt;p&gt;2) 特性：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;文档中的键值对是有序的&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;文档的键是字符串&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;文档不能有重复的键&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;3) 键的命名：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;不能含有 \0 (空字符)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;不能包含 . 和 $ 等有意义的字符&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;以下划线 _ 开头的键是保留的&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;2-集合:dce783b64be9377b18562728f7c30112&#34;&gt;2、集合&lt;/h4&gt;
+
+&lt;p&gt;1) 概念：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;集合是一组文档。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;子集合是使用 . 字符分开的俺命名空间划分的集合。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;2) 特性：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;集合是无模式的。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;建议将同种类型的文档放入同个集合中，可以更有效的索引。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;建议使用子集合来组织数据。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;3) 集合的命名：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;不能是空字符串&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;不能含有 \0 (空字符)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;不能以系统保留前缀 system. 开头&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;不能含有保留字符 $&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;3-数据库:dce783b64be9377b18562728f7c30112&#34;&gt;3、数据库&lt;/h4&gt;
+
+&lt;p&gt;1) 多个集合组成数据库，不同的数据库放置在不同的文件中，建议将一个应用的所有数据都存储到同个数据库中。&lt;/p&gt;
+
+&lt;p&gt;2) 命名：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;不能是空字符串&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;不得含有 空格 . $ / \ 和 \0 (空字符)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;应全部为小写&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;最多 64 字节&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;4-mongodb-shell:dce783b64be9377b18562728f7c30112&#34;&gt;4、MongoDB shell&lt;/h4&gt;
+
+&lt;p&gt;1) 运行 shell&lt;/p&gt;
+mongo
+
+&lt;p&gt;2) shell 的基本操作&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;创建： insert()&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;读取： find(), findOne()&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;更新：update()&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;删除： remove()&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;3) 帮助命令&lt;/p&gt;
+help
+db.help()
+
+&lt;h4 id=&#34;5-数据类型:dce783b64be9377b18562728f7c30112&#34;&gt;5、数据类型&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;null：表示空值或者不存在的字段&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;布尔值：true 和 false&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;32 位整数&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;64 位整数&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;64 位浮点数&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;字符串&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;符号&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;对象 id：ObjectId(), 文档的 12 字节的唯一 ID &amp;ldquo;_id&amp;rdquo;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;日期：存储从标准纪元开始的毫秒数&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;正则表达式：采用 JavaScript 正则表达式语法&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;代码：采用 JavaScript 代码&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;二进制数据&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;最大值&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;最小值&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;undefined：未定义&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;数组&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;内嵌文档：文档包含文档&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>MongoDB 创建、更新及删除文档</title>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/mongodb_insert_update_remove</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/mongodb_insert_update_remove</guid>
+      <description>
+
+&lt;h4 id=&#34;1-插入文档-insert:da56ffb607df7734e09bf82346cedf76&#34;&gt;1、插入文档：insert&lt;/h4&gt;
+
+&lt;p&gt;1) 基本用法：&lt;/p&gt;
+db.name.insert(文档内容);
+
+&lt;p&gt;例子：&lt;/p&gt;
+db.users.insert({&#34;username&#34;: &#34;wenyi&#34;, &#34;age&#34;: 25});
+
+&lt;p&gt;2) 从其他数据库导入数据，使用 mongoimport 命令&lt;/p&gt;
+
+&lt;p&gt;3) 原理与作用:&lt;/p&gt;
+
+&lt;p&gt;插入数据时只检查文档大小（不超过 4M），不做别的数据验证，简单地将文档原样存进数据库中。
+这种方式可以让数据库更加安全，远离注入式攻击。&lt;/p&gt;
+
+&lt;h4 id=&#34;2-删除文档-remove:da56ffb607df7734e09bf82346cedf76&#34;&gt;2、删除文档：remove&lt;/h4&gt;
+
+&lt;p&gt;1) 基本用法：&lt;/p&gt;
+db.name.remove(索引);
+
+&lt;p&gt;例子：&lt;/p&gt;
+db.users.remove();
+db.users.remove({&#34;username&#34;: &#34;wenyi&#34;});
+
+&lt;p&gt;2) db.users.remove() 与 db.drop_collection(&amp;ldquo;users&amp;rdquo;) 的区别：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;两者都是删除整个集合&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;前者会保留所有的索引，后者删除所有的索引&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;前者删除速度慢，后者删除速度快&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;3-更新文档-update:da56ffb607df7734e09bf82346cedf76&#34;&gt;3、更新文档：update&lt;/h4&gt;
+
+&lt;p&gt;1) 基本用法：&lt;/p&gt;
+db.name.update(索引, 修改的文档);
+
+&lt;p&gt;例子：&lt;/p&gt;
+db.users.update({&#34;username&#34;: &#34;wenyi&#34;}, {&#34;username&#34;: &#34;wenyi&#34;, &#34;age&#34;: 26}});
+
+&lt;p&gt;2) 使用修改器：是种特殊的键，用来指定复杂的更新操作，更新文档部分内容&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;$set: 用来指定一个键的值，如果该键不存在，则创建它。用于更新模式或增加用户自定义键&lt;/li&gt;
+&lt;li&gt;$unset: 用来删除某个键&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;例子：&lt;/p&gt;
+db.users.update({&#34;username&#34;: &#34;wenyi&#34;}, {&#34;$set&#34;: {&#34;age&#34;: 26}}});
+db.users.update({&#34;username&#34;: &#34;wenyi&#34;}, {&#34;$set&#34;: {&#34;blog&#34;: &#34;wenyi.tk&#34;}}});
+db.users.update({&#34;username&#34;: &#34;wenyi&#34;}, {&#34;$unset&#34;: {&#34;blog&#34;: 1}}});
+
+&lt;ul&gt;
+&lt;li&gt;$inc: 用来增加已有键的值，或者在键不存在时创建一个键。用于分析数据、因果关系、投票或者有变化数值的地方&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;例子：&lt;/p&gt;
+db.users.update({&#34;username&#34;: &#34;wenyi&#34;}, {&#34;$inc&#34;: {&#34;age&#34;: 1}}});
+db.games.update({&#34;name&#34;: &#34;my_game&#34;}, {&#34;$inc&#34;: {&#34;score&#34;: 100}}});
+
+&lt;p&gt;注：只能用于整数、长整数或双精度浮点数&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;$push: 向一有数组末尾加入元素，不存在则创建新数组&lt;/li&gt;
+&lt;li&gt;$pop: 从数组任何一端删除元素。{$pop: {key: 1}} 从末尾删除一个元素；{$pop: {key: -1}} 从头尾删除一个元素&lt;/li&gt;
+&lt;li&gt;$pull: 基于特定的条件来删除元素&lt;/li&gt;
+&lt;li&gt;$: 用来定位查询文档已经匹配的元素&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;例子：&lt;/p&gt;
+db.posts.update({&#34;name&#34;: &#34;my_blog&#34;}, {&#34;$push&#34;, {&#34;comments&#34;: {&#34;name&#34;: &#34;test&#34;, &#34;content&#34;: &#34;这是一条评论&#34;}});
+db.posts.update({&#34;name&#34;: &#34;my_blog&#34;}, {&#34;$pop&#34;, {&#34;comments&#34;: 1});
+db.posts.update({&#34;name&#34;: &#34;my_blog&#34;}, {&#34;$pull&#34;, {&#34;comments.$.name&#34;: &#34;test&#34;});
+
+&lt;p&gt;3) upsert: 特殊的更新，没有符合更新条件的文档，便会以创建一个新的文档。&lt;/p&gt;
+
+&lt;p&gt;4) 其他命令：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;getLastError: 查看上次更新信息&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;参数:&lt;/p&gt;
+{
+    &#34;err&#34;: &#34;err&#34;, //错误信息
+    &#34;updatedExisting&#34;: true / fase,
+    &#34;n&#34;: n, //文档更新条数
+    &#34;ok&#34;: true / false //更新结果
+
+&lt;ul&gt;
+&lt;li&gt;findAndModify: 返回已更新的文档&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;用法：&lt;/p&gt;
+db.name.findAndModify({
+    &#34;findAndModify&#34;: &#34;string&#34;, //集合名
+    &#34;query&#34;: &#34;string&#34;, //查询文档
+    &#34;sort&#34;: string&#34;, //排序条件
+    &#34;update&#34;: &#34;string&#34;, //更新文档
+    &#34;remove&#34;: bool, //是否删除文档
+    &#34;new&#34;: bool //返回更新前（默认）和更新后的文档
+} 
+</description>
+    </item>
+    
+    <item>
+      <title>MongoDB 创建、更新及删除文档</title>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/mongodb_insert_update_remove</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/mongodb_insert_update_remove</guid>
+      <description>
+
+&lt;h4 id=&#34;1-插入文档-insert:da56ffb607df7734e09bf82346cedf76&#34;&gt;1、插入文档：insert&lt;/h4&gt;
+
+&lt;p&gt;1) 基本用法：&lt;/p&gt;
+db.name.insert(文档内容);
+
+&lt;p&gt;例子：&lt;/p&gt;
+db.users.insert({&#34;username&#34;: &#34;wenyi&#34;, &#34;age&#34;: 25});
+
+&lt;p&gt;2) 从其他数据库导入数据，使用 mongoimport 命令&lt;/p&gt;
+
+&lt;p&gt;3) 原理与作用:&lt;/p&gt;
+
+&lt;p&gt;插入数据时只检查文档大小（不超过 4M），不做别的数据验证，简单地将文档原样存进数据库中。
+这种方式可以让数据库更加安全，远离注入式攻击。&lt;/p&gt;
+
+&lt;h4 id=&#34;2-删除文档-remove:da56ffb607df7734e09bf82346cedf76&#34;&gt;2、删除文档：remove&lt;/h4&gt;
+
+&lt;p&gt;1) 基本用法：&lt;/p&gt;
+db.name.remove(索引);
+
+&lt;p&gt;例子：&lt;/p&gt;
+db.users.remove();
+db.users.remove({&#34;username&#34;: &#34;wenyi&#34;});
+
+&lt;p&gt;2) db.users.remove() 与 db.drop_collection(&amp;ldquo;users&amp;rdquo;) 的区别：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;两者都是删除整个集合&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;前者会保留所有的索引，后者删除所有的索引&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;前者删除速度慢，后者删除速度快&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;3-更新文档-update:da56ffb607df7734e09bf82346cedf76&#34;&gt;3、更新文档：update&lt;/h4&gt;
+
+&lt;p&gt;1) 基本用法：&lt;/p&gt;
+db.name.update(索引, 修改的文档);
+
+&lt;p&gt;例子：&lt;/p&gt;
+db.users.update({&#34;username&#34;: &#34;wenyi&#34;}, {&#34;username&#34;: &#34;wenyi&#34;, &#34;age&#34;: 26}});
+
+&lt;p&gt;2) 使用修改器：是种特殊的键，用来指定复杂的更新操作，更新文档部分内容&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;$set: 用来指定一个键的值，如果该键不存在，则创建它。用于更新模式或增加用户自定义键&lt;/li&gt;
+&lt;li&gt;$unset: 用来删除某个键&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;例子：&lt;/p&gt;
+db.users.update({&#34;username&#34;: &#34;wenyi&#34;}, {&#34;$set&#34;: {&#34;age&#34;: 26}}});
+db.users.update({&#34;username&#34;: &#34;wenyi&#34;}, {&#34;$set&#34;: {&#34;blog&#34;: &#34;wenyi.tk&#34;}}});
+db.users.update({&#34;username&#34;: &#34;wenyi&#34;}, {&#34;$unset&#34;: {&#34;blog&#34;: 1}}});
+
+&lt;ul&gt;
+&lt;li&gt;$inc: 用来增加已有键的值，或者在键不存在时创建一个键。用于分析数据、因果关系、投票或者有变化数值的地方&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;例子：&lt;/p&gt;
+db.users.update({&#34;username&#34;: &#34;wenyi&#34;}, {&#34;$inc&#34;: {&#34;age&#34;: 1}}});
+db.games.update({&#34;name&#34;: &#34;my_game&#34;}, {&#34;$inc&#34;: {&#34;score&#34;: 100}}});
+
+&lt;p&gt;注：只能用于整数、长整数或双精度浮点数&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;$push: 向一有数组末尾加入元素，不存在则创建新数组&lt;/li&gt;
+&lt;li&gt;$pop: 从数组任何一端删除元素。{$pop: {key: 1}} 从末尾删除一个元素；{$pop: {key: -1}} 从头尾删除一个元素&lt;/li&gt;
+&lt;li&gt;$pull: 基于特定的条件来删除元素&lt;/li&gt;
+&lt;li&gt;$: 用来定位查询文档已经匹配的元素&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;例子：&lt;/p&gt;
+db.posts.update({&#34;name&#34;: &#34;my_blog&#34;}, {&#34;$push&#34;, {&#34;comments&#34;: {&#34;name&#34;: &#34;test&#34;, &#34;content&#34;: &#34;这是一条评论&#34;}});
+db.posts.update({&#34;name&#34;: &#34;my_blog&#34;}, {&#34;$pop&#34;, {&#34;comments&#34;: 1});
+db.posts.update({&#34;name&#34;: &#34;my_blog&#34;}, {&#34;$pull&#34;, {&#34;comments.$.name&#34;: &#34;test&#34;});
+
+&lt;p&gt;3) upsert: 特殊的更新，没有符合更新条件的文档，便会以创建一个新的文档。&lt;/p&gt;
+
+&lt;p&gt;4) 其他命令：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;getLastError: 查看上次更新信息&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;参数:&lt;/p&gt;
+{
+    &#34;err&#34;: &#34;err&#34;, //错误信息
+    &#34;updatedExisting&#34;: true / fase,
+    &#34;n&#34;: n, //文档更新条数
+    &#34;ok&#34;: true / false //更新结果
+
+&lt;ul&gt;
+&lt;li&gt;findAndModify: 返回已更新的文档&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;用法：&lt;/p&gt;
+db.name.findAndModify({
+    &#34;findAndModify&#34;: &#34;string&#34;, //集合名
+    &#34;query&#34;: &#34;string&#34;, //查询文档
+    &#34;sort&#34;: string&#34;, //排序条件
+    &#34;update&#34;: &#34;string&#34;, //更新文档
+    &#34;remove&#34;: bool, //是否删除文档
+    &#34;new&#34;: bool //返回更新前（默认）和更新后的文档
+} 
+</description>
     </item>
     
   </channel>

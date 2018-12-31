@@ -7,18 +7,106 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Sun, 12 Jan 2014 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.wenzhixin.net.cn/tags/postgresql/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="http://blog.wenzhixin.net.cn/tags/postgresql/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>ubuntu 下 PostgreSQL 使用小记</title>
-      <link>http://blog.wenzhixin.net.cn/2014/01/12/hello_postgresql/</link>
-      <pubDate>Sun, 12 Jan 2014 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/hello_postgresql</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/01/12/hello_postgresql/</guid>
-      <description>PostgreSQL 是自由的对象-关系型数据库服务器（数据库管理系统）。 刚刚入门，记录下： 安装 安装 PostgreSQL 的服务器和客户端： 1 sudo apt-get install postgresql postgresql-client 服务 安装完成后 PostgreSQL 已经自动启动</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/hello_postgresql</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;http://zh.wikipedia.org/wiki/PostgreSQL&#34;&gt;PostgreSQL&lt;/a&gt; 是自由的对象-关系型数据库服务器（数据库管理系统）。&lt;/p&gt;
+
+&lt;p&gt;刚刚入门，记录下：&lt;/p&gt;
+
+&lt;h4 id=&#34;安装:81e14df784c561d68602426fbaf9a538&#34;&gt;安装&lt;/h4&gt;
+
+&lt;p&gt;安装 PostgreSQL 的服务器和客户端：&lt;/p&gt;
+sudo apt-get install postgresql postgresql-client
+
+&lt;h4 id=&#34;服务:81e14df784c561d68602426fbaf9a538&#34;&gt;服务&lt;/h4&gt;
+
+&lt;p&gt;安装完成后 PostgreSQL 已经自动启动了，我们可以通过命令进行操作：&lt;/p&gt;
+# 查看状态
+sudo /etc/init.d/postgresql status
+
+# 启动
+sudo /etc/init.d/postgresql start
+
+# 停止
+sudo /etc/init.d/postgresql stop
+
+# 重启
+sudo /etc/init.d/postgresql restart
+
+&lt;h4 id=&#34;创建新用户:81e14df784c561d68602426fbaf9a538&#34;&gt;创建新用户&lt;/h4&gt;
+
+&lt;p&gt;创建数据库用户 root，并指定其为超级用户：&lt;/p&gt;
+sudo -u postgres createuser --superuser root
+
+&lt;p&gt;登录数据库控制台，设置 root 用户的密码，退出控制台：&lt;/p&gt;
+sudo -u postgres psql
+\password root
+\q
+
+&lt;p&gt;\password user：表示设置用户的密码&lt;/p&gt;
+
+&lt;h4 id=&#34;创建数据库:81e14df784c561d68602426fbaf9a538&#34;&gt;创建数据库&lt;/h4&gt;
+
+&lt;p&gt;创建 test 数据库，指定用户为 root：&lt;/p&gt;
+sudo -u postgres createdb -O root test
+
+&lt;p&gt;修改数据库 test 为 test1：&lt;/p&gt;
+alter database test rename to test1;
+
+&lt;p&gt;也可以删除不需要的数据库，如：&lt;/p&gt;
+sudo -u postgres dropdb test
+
+&lt;h4 id=&#34;登录数据库:81e14df784c561d68602426fbaf9a538&#34;&gt;登录数据库&lt;/h4&gt;
+
+&lt;p&gt;使用 psql 命令：&lt;/p&gt;
+psql -U root -d test -h 127.0.0.1 -p 5432
+
+&lt;p&gt;-U 指定用户，-d 指定数据库，-h 指定服务器，-p 指定端口。&lt;/p&gt;
+
+&lt;p&gt;实际的使用中，我们创建用户名和数据库跟系统名称一样（系统认证），然后通过：&lt;/p&gt;
+psql
+
+&lt;p&gt;即可登录我们指定的数据库。&lt;/p&gt;
+
+&lt;p&gt;也可以通过环境变量指定默认的数据库（test）：&lt;/p&gt;
+export PGDATABASE=test
+
+&lt;h4 id=&#34;常用控制台命令:81e14df784c561d68602426fbaf9a538&#34;&gt;常用控制台命令&lt;/h4&gt;
+\h：查看SQL命令的解释，比如\h select。
+\?：查看psql命令列表。
+\l：列出所有数据库。
+\c [database_name]：连接其他数据库。
+\d：列出当前数据库的所有表格。
+\d [table_name]：列出某一张表格的结构。
+\du：列出所有用户。
+\e：打开文本编辑器。
+\conninfo：列出当前数据库和连接的信息。
+
+&lt;h4 id=&#34;数据库操作:81e14df784c561d68602426fbaf9a538&#34;&gt;数据库操作&lt;/h4&gt;
+
+&lt;p&gt;数据库操作为普通的 SQL，不过有 PostgreSQL 自己的语法，详细见文档说明。&lt;/p&gt;
+
+&lt;p&gt;创建表：&lt;/p&gt;
+create table users (
+	id serial primary key,
+	username varchar(20),
+	password varchar(20)
+);
+
+&lt;p&gt;插入数据：&lt;/p&gt;
+insert into users(username, password) values(&#39;admin&#39;, &#39;admin&#39;);
+
+&lt;p&gt;查询数据：&lt;/p&gt;
+select * from users;
+</description>
     </item>
     
   </channel>

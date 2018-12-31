@@ -7,18 +7,72 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Fri, 22 Nov 2013 22:50:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.wenzhixin.net.cn/tags/%E5%9B%BE%E7%89%87/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="http://blog.wenzhixin.net.cn/tags/%E5%9B%BE%E7%89%87/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>jQuery 判断所有图片加载完成</title>
-      <link>http://blog.wenzhixin.net.cn/2013/11/22/all_images_is_loaded/</link>
-      <pubDate>Fri, 22 Nov 2013 22:50:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/all_images_is_loaded</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/11/22/all_images_is_loaded/</guid>
-      <description>对于图片的处理，例如幻灯片播放、缩放等，都是依赖于在所有图片完成之后再进行操作。 今天来看下如何判断所有的图片加载完成，而在加载完成之前可以使</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/all_images_is_loaded</guid>
+      <description>
+
+&lt;p&gt;对于图片的处理，例如幻灯片播放、缩放等，都是依赖于在所有图片完成之后再进行操作。&lt;/p&gt;
+
+&lt;p&gt;今天来看下如何判断所有的图片加载完成，而在加载完成之前可以使用 loading 的 gif 图表示正在加载中。&lt;/p&gt;
+
+&lt;h4 id=&#34;一-普通方法:d0abd25c36a201df07d98b9e370caeb7&#34;&gt;一、普通方法&lt;/h4&gt;
+
+&lt;p&gt;监听 img 的 load 方法，每 load 一张图片比较一次。关键代码如下：&lt;/p&gt;
+var num = $img.length;
+
+$imgs.load(function() {
+	num--;
+	if (num &gt; 0) {
+		return;
+	}
+	console.log(&#39;load compeleted&#39;);
+}
+
+&lt;h4 id=&#34;二-使用-jquery-中的-deferred-对象:d0abd25c36a201df07d98b9e370caeb7&#34;&gt;二、使用 jQuery 中的 Deferred 对象&lt;/h4&gt;
+
+&lt;p&gt;Deferred 对象是从 jQuery 1.5.0 版本开始引入的一个新功能，详细介绍可以见
+&lt;a href=&#34;http://api.jquery.com/category/deferred-object/&#34;&gt;官方文档&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;简单的说，Deferred 对象就是jQuery的回调函数解决方案，它解决了如何处理耗时操作的问题，
+对那些操作提供了更好的控制，以及统一的编程接口。&lt;/p&gt;
+
+&lt;p&gt;阮一峰有一篇文章是介绍 Deferred 对象的，写的比较详细，对于入门比较有用。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.ruanyifeng.com/blog/2011/08/a_detailed_explanation_of_jquery_deferred_object.html&#34;&gt;jQuery的deferred对象详解&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;在这里，我们用到了：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;deferred.resolve(): Resolve a Deferred object and call any doneCallbacks with the given args.&lt;/li&gt;
+&lt;li&gt;deferred.when(): Provides a way to execute callback functions based on one or more objects, usually Deferred objects that represent asynchronous events.&lt;/li&gt;
+&lt;li&gt;deferred.done(): Add handlers to be called when the Deferred object is resolved.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;关键代码：&lt;/p&gt;
+var defereds = [];
+
+$imgs.each(function() {
+	var dfd = $.Deferred();
+	
+	$(this).load(dfd.resolve);
+	defereds.push(dfd);
+});
+$.when.apply(null, defereds).done(function() {
+	console.log(&#39;load compeleted&#39;);
+});
+
+&lt;p&gt;&lt;strong&gt;基本思路：&lt;/strong&gt;&lt;br /&gt;
+每加载完一张图片 resolve()，when() 当所有的 Deferred 完成便执行 done()。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;注：&lt;/strong&gt;
+因为 $.when 支持的参数是 $.when(dfd1, dfd2, dfd3, &amp;hellip;)，所以我们这里使用了 apply 来接受数组参数。&lt;/p&gt;
+</description>
     </item>
     
   </channel>

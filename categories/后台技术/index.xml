@@ -7,360 +7,1751 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Sun, 21 Sep 2014 21:20:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.wenzhixin.net.cn/categories/%E5%90%8E%E5%8F%B0%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="http://blog.wenzhixin.net.cn/categories/%E5%90%8E%E5%8F%B0%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>如何批量读取 word 的内容和图片</title>
-      <link>http://blog.wenzhixin.net.cn/2014/09/21/node_docx/</link>
-      <pubDate>Sun, 21 Sep 2014 21:20:00 +0000</pubDate>
+      <title>Ant 关键元素和常用命令</title>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/ant_key_elements_and_common_commands</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/09/21/node_docx/</guid>
-      <description>今天朋友说需要对100份 word 文件的内容进行录入工作，问我是否有什么方便的方法。假如最少1份按2分钟的速度算，也需要200分钟才可以录入完成。我</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/ant_key_elements_and_common_commands</guid>
+      <description>
+
+&lt;h3 id=&#34;一-ant-关键元素:f780f29a8db5f7945ac4d44588e8e9f7&#34;&gt;一、Ant 关键元素&lt;/h3&gt;
+
+&lt;h4 id=&#34;1-project元素:f780f29a8db5f7945ac4d44588e8e9f7&#34;&gt;1、project元素&lt;/h4&gt;
+
+&lt;p&gt;project 元素是 Ant 构件文件的根元素， Ant 构件文件至少应该包含一个 project 元素，否则会发生错误。在每个 project 元素下，可包含多个 target 元素。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;name 属性：用于指定 project 元素的名称。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;default 属性：用于指定 project 默认执行时所执行的 target 的名称。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;basedir 属性：用于指定基路径的位置。该属性没有指定时，使用 Ant 的构件文件的附目录作为基准目录。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;2-target-元素:f780f29a8db5f7945ac4d44588e8e9f7&#34;&gt;2. target 元素&lt;/h4&gt;
+
+&lt;p&gt;target为Ant的基本执行单元，它可以包含一个或多个具体的任务。多个target 可以存在相互依赖关系。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;name 属性：指定 target 元素的名称，这个属性在一个 project 元素中是唯一的。我们可以通过指定 target 元素的名称来指定某个 target 。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;depends 属性：用于描述 target 之间的依赖关系，若与多个 target 存在依赖关系时，需要以“,”间隔。 Ant 会依照 depends 属性中 target 出现的顺序依次执行每个 target 。被依赖的 target 会先执行。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;if 属性：用于验证指定的属性是否存在，若不存在，所在 target 将不会被执行。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;unless 属性：该属性的功能与 if 属性的功能正好相反，它也用于验证指定的属性是否存在，若不存在，所在 target 将会被执行。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;description 属性：该属性是关于 target 功能的简短描述和说明。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;3-property-元素:f780f29a8db5f7945ac4d44588e8e9f7&#34;&gt;3. property 元素&lt;/h4&gt;
+
+&lt;p&gt;property元素可看作参量或者参数的定义，project 的属性可以通过 property 元素来设定，也可在 Ant 之外设定。若要在外部引入某文件，例如 build.properties 文件，可以通过如下内容将其引入：&lt;property file=” build.properties”/&gt;。&lt;/p&gt;
+
+&lt;p&gt;property 元素可用作 task 的属性值。在 task 中是通过将属性名放在“ ${ ”和“ } ”之间，并放在 task 属性值的位置来实现的。&lt;/p&gt;
+
+&lt;p&gt;Ant 提供了一些内置的属性，它能得到的系统属性的列表与 Java 文档中 System.getPropertis() 方法得到的属性一致，这些系统属性可参考 sun 网站的说明。同时， Ant 还提供了一些它自己的内置属性，如下：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;basedir: project 基目录的绝对路径；   &lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;ant.file: buildfile的绝对路径&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;ant.version: Ant 的版本信息&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;ant.project.name: 当前指定的project的名字，project的name属性值&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;ant.java.version: Ant 检测到的JDK版本&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;二-ant-常用命令:f780f29a8db5f7945ac4d44588e8e9f7&#34;&gt;二、Ant 常用命令&lt;/h3&gt;
+
+&lt;h4 id=&#34;1-copy-命令:f780f29a8db5f7945ac4d44588e8e9f7&#34;&gt;1. copy 命令&lt;/h4&gt;
+
+&lt;p&gt;copy主要用来对文件和目录的复制功能&lt;/p&gt;
+
+&lt;p&gt;例子：&lt;/p&gt;
+
+&lt;p&gt;1) 复制单个文件：&lt;/p&gt;
+&lt;copy file=&#34;original.txt&#34; tofile=&#34;copied.txt&#34;/&gt;
+
+&lt;p&gt;2) 对文件目录进行复制：&lt;/p&gt;
+&lt;copy todir=&#34;../dest_dir&#34;&gt;
+    &lt;fileset dir=&#34;src_dir&#34;/&gt;
+&lt;/copy&gt;
+
+&lt;p&gt;3) 将文件复制到另外的目录：&lt;/p&gt;
+&lt;copy file=&#34;source.txt&#34; todir=&#34;/home/wenyi&#34;/&gt;
+
+&lt;h4 id=&#34;2-delete-命令:f780f29a8db5f7945ac4d44588e8e9f7&#34;&gt;2. delete 命令&lt;/h4&gt;
+
+&lt;p&gt;对文件或目录进行删除&lt;/p&gt;
+
+&lt;p&gt;例子：&lt;/p&gt;
+
+&lt;p&gt;1) 删除某个文件：&lt;/p&gt;
+&lt;delete file=&#34;/home/wenyi/photos/wenyi.jpg&#34;/&gt;
+
+&lt;p&gt;2) 删除某个目录：&lt;/p&gt;
+&lt;delete dir=&#34;/home/wenyi/photos&#34;/&gt;
+
+&lt;p&gt;3) 删除所有的备份目录或空目录：&lt;/p&gt;
+&lt;delete includeEmptyDirs=&#34;true&#34;&gt;
+    &lt;fileset dir=&#34;.&#34; includes=&#34;**/*.bak&#34;/&gt;
+&lt;/delete&gt;
+
+&lt;h4 id=&#34;3-mkdir-命令:f780f29a8db5f7945ac4d44588e8e9f7&#34;&gt;3. mkdir 命令&lt;/h4&gt;
+
+&lt;p&gt;创建目录&lt;/p&gt;
+
+&lt;p&gt;例子：&lt;/p&gt;
+&lt;mkdir dir=&#34;/home/wenyi/build/classes&#34;/&gt;
+
+&lt;h4 id=&#34;4-move-命令:f780f29a8db5f7945ac4d44588e8e9f7&#34;&gt;4. move 命令&lt;/h4&gt;
+
+&lt;p&gt;移动文件或目录&lt;/p&gt;
+
+&lt;p&gt;例子：&lt;/p&gt;
+
+&lt;p&gt;1） 移动单个文件：&lt;/p&gt;
+&lt;move file=&#34;sourcefile&#34; tofile=”destfile”/&gt;
+
+&lt;p&gt;2） 移动单个文件到另一个目录：&lt;/p&gt;
+&lt;move file=&#34;sourcefile&#34; todir=”movedir”/&gt;
+
+&lt;p&gt;3） 移动某个目录到另一个目录：&lt;/p&gt;
+&lt;move todir=&#34;newdir&#34;&gt;
+    &lt;fileset dir=&#34;olddir&#34;/&gt;
+&lt;/move&gt;
+
+&lt;h4 id=&#34;5-echo-命令:f780f29a8db5f7945ac4d44588e8e9f7&#34;&gt;5. echo 命令&lt;/h4&gt;
+
+&lt;p&gt;该任务的作用是根据日志或监控器的级别输出信息。它包括 message 、 file 、 append 和 level 四个属性&lt;/p&gt;
+
+&lt;p&gt;例子：&lt;/p&gt;
+&lt;echo message=&#34;Hello,ANT&#34; file=&#34;/home/wenyi/logs/ant.log&#34; append=&#34;true&#34;&gt; 
+</description>
     </item>
     
     <item>
-      <title>如何为 NodeJs 设置 Nginx 代理服务器</title>
-      <link>http://blog.wenzhixin.net.cn/2014/09/18/nginx_as_proxy_nodejs/</link>
-      <pubDate>Thu, 18 Sep 2014 13:45:00 +0000</pubDate>
+      <title>Ant 关键元素和常用命令</title>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/ant_key_elements_and_common_commands</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/09/18/nginx_as_proxy_nodejs/</guid>
-      <description>很多时候，我们需要为 NodeJs 设置反向代理，例如本博客后台 NodeJs 的应用监听的端口为 3333，通过 Nginx 便可以轻松代理为 80 端口，那么应该如何设置呢？ 首先设置 u</description>
-    </item>
-    
-    <item>
-      <title>使用 apache2 作为代理服务器轻松解决 Ajax 跨域问题</title>
-      <link>http://blog.wenzhixin.net.cn/2014/06/05/apache_proxy/</link>
-      <pubDate>Thu, 05 Jun 2014 13:45:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2014/06/05/apache_proxy/</guid>
-      <description>介绍 我们知道，使用 JavaScript 进行开发 Ajax 应用的时候会有跨域访问的问题，而用代理便可以解决跨域访问的问题。 那么应该如何开启 apache2 的 http 代理模块呢？ 模块 mod_</description>
-    </item>
-    
-    <item>
-      <title>SVN 如何恢复被删除的文件夹</title>
-      <link>http://blog.wenzhixin.net.cn/2014/04/24/svn_undelete_folder/</link>
-      <pubDate>Thu, 24 Apr 2014 23:30:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2014/04/24/svn_undelete_folder/</guid>
-      <description>问题： 你删除了 SVN 版本库上的文件夹，那么你要怎么恢复呢？ 尝试办法： 通过 svn revert folder，会发现找不到该文件夹 通过 svn merge，从上个版本恢复回</description>
-    </item>
-    
-    <item>
-      <title>Ubuntu 下搭建 JavaEE 环境</title>
-      <link>http://blog.wenzhixin.net.cn/2014/04/02/ubuntu_java_ee/</link>
-      <pubDate>Wed, 02 Apr 2014 13:30:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2014/04/02/ubuntu_java_ee/</guid>
-      <description>在 Ubuntu 下搭建 JavaEE 的环境稍微有些麻烦，这里记录下。 1. 安装 eclipse 和 tomcat7 1 2 sudo apt-get install eclipse sudo apt-get install tomcat7 注：安装 eclipse 后会把依赖的 jdk 安装好，使用 apt-get 安装的 eclipse 是最精简的版本。 2.</description>
-    </item>
-    
-    <item>
-      <title>使用 nodejs 发送邮件</title>
-      <link>http://blog.wenzhixin.net.cn/2014/01/23/node_send_email/</link>
-      <pubDate>Thu, 23 Jan 2014 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2014/01/23/node_send_email/</guid>
-      <description>平时在开发应用的时候，很多时候会用到邮件，来通知我们， 这里介绍 nodejs 如何发送邮件，比较简单。 使用 Nodemailer 库来发送邮件。 安装： 1 npm install nodemailer --save 增加配置信息 co</description>
-    </item>
-    
-    <item>
-      <title>PHP 代码规范</title>
-      <link>http://blog.wenzhixin.net.cn/2014/01/20/php_code_standard/</link>
-      <pubDate>Mon, 20 Jan 2014 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2014/01/20/php_code_standard/</guid>
-      <description>通用规范 代码缩进全部用 tab / 四个空格 SVN / Git 中新建文件编码类型统一用 utf-8 编码 行宽：80 字符 PHP 代码划分 PHP 代码总是用完整的标准的 PHP 标签定界： 1 2 3 4 5</description>
-    </item>
-    
-    <item>
-      <title>nodeJS 和 Nginx 解决客户端发送大数据的问题</title>
-      <link>http://blog.wenzhixin.net.cn/2014/01/18/large_body_error/</link>
-      <pubDate>Sat, 18 Jan 2014 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2014/01/18/large_body_error/</guid>
-      <description>nodeJS 和 Nginx 默认情况下都只支持 1MB 的 body 数据，当客户端发送大数据的时候，分别会出现以下错误： nodeJS： 1 Error: request entity too large 解决： 1 2 3 app.use(express.bodyParser({ limit: 1024 * 1024 * 64 // 64M }));</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/ant_key_elements_and_common_commands</guid>
+      <description>
+
+&lt;h3 id=&#34;一-ant-关键元素:f780f29a8db5f7945ac4d44588e8e9f7&#34;&gt;一、Ant 关键元素&lt;/h3&gt;
+
+&lt;h4 id=&#34;1-project元素:f780f29a8db5f7945ac4d44588e8e9f7&#34;&gt;1、project元素&lt;/h4&gt;
+
+&lt;p&gt;project 元素是 Ant 构件文件的根元素， Ant 构件文件至少应该包含一个 project 元素，否则会发生错误。在每个 project 元素下，可包含多个 target 元素。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;name 属性：用于指定 project 元素的名称。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;default 属性：用于指定 project 默认执行时所执行的 target 的名称。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;basedir 属性：用于指定基路径的位置。该属性没有指定时，使用 Ant 的构件文件的附目录作为基准目录。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;2-target-元素:f780f29a8db5f7945ac4d44588e8e9f7&#34;&gt;2. target 元素&lt;/h4&gt;
+
+&lt;p&gt;target为Ant的基本执行单元，它可以包含一个或多个具体的任务。多个target 可以存在相互依赖关系。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;name 属性：指定 target 元素的名称，这个属性在一个 project 元素中是唯一的。我们可以通过指定 target 元素的名称来指定某个 target 。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;depends 属性：用于描述 target 之间的依赖关系，若与多个 target 存在依赖关系时，需要以“,”间隔。 Ant 会依照 depends 属性中 target 出现的顺序依次执行每个 target 。被依赖的 target 会先执行。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;if 属性：用于验证指定的属性是否存在，若不存在，所在 target 将不会被执行。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;unless 属性：该属性的功能与 if 属性的功能正好相反，它也用于验证指定的属性是否存在，若不存在，所在 target 将会被执行。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;description 属性：该属性是关于 target 功能的简短描述和说明。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;3-property-元素:f780f29a8db5f7945ac4d44588e8e9f7&#34;&gt;3. property 元素&lt;/h4&gt;
+
+&lt;p&gt;property元素可看作参量或者参数的定义，project 的属性可以通过 property 元素来设定，也可在 Ant 之外设定。若要在外部引入某文件，例如 build.properties 文件，可以通过如下内容将其引入：&lt;property file=” build.properties”/&gt;。&lt;/p&gt;
+
+&lt;p&gt;property 元素可用作 task 的属性值。在 task 中是通过将属性名放在“ ${ ”和“ } ”之间，并放在 task 属性值的位置来实现的。&lt;/p&gt;
+
+&lt;p&gt;Ant 提供了一些内置的属性，它能得到的系统属性的列表与 Java 文档中 System.getPropertis() 方法得到的属性一致，这些系统属性可参考 sun 网站的说明。同时， Ant 还提供了一些它自己的内置属性，如下：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;basedir: project 基目录的绝对路径；   &lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;ant.file: buildfile的绝对路径&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;ant.version: Ant 的版本信息&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;ant.project.name: 当前指定的project的名字，project的name属性值&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;ant.java.version: Ant 检测到的JDK版本&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;二-ant-常用命令:f780f29a8db5f7945ac4d44588e8e9f7&#34;&gt;二、Ant 常用命令&lt;/h3&gt;
+
+&lt;h4 id=&#34;1-copy-命令:f780f29a8db5f7945ac4d44588e8e9f7&#34;&gt;1. copy 命令&lt;/h4&gt;
+
+&lt;p&gt;copy主要用来对文件和目录的复制功能&lt;/p&gt;
+
+&lt;p&gt;例子：&lt;/p&gt;
+
+&lt;p&gt;1) 复制单个文件：&lt;/p&gt;
+&lt;copy file=&#34;original.txt&#34; tofile=&#34;copied.txt&#34;/&gt;
+
+&lt;p&gt;2) 对文件目录进行复制：&lt;/p&gt;
+&lt;copy todir=&#34;../dest_dir&#34;&gt;
+    &lt;fileset dir=&#34;src_dir&#34;/&gt;
+&lt;/copy&gt;
+
+&lt;p&gt;3) 将文件复制到另外的目录：&lt;/p&gt;
+&lt;copy file=&#34;source.txt&#34; todir=&#34;/home/wenyi&#34;/&gt;
+
+&lt;h4 id=&#34;2-delete-命令:f780f29a8db5f7945ac4d44588e8e9f7&#34;&gt;2. delete 命令&lt;/h4&gt;
+
+&lt;p&gt;对文件或目录进行删除&lt;/p&gt;
+
+&lt;p&gt;例子：&lt;/p&gt;
+
+&lt;p&gt;1) 删除某个文件：&lt;/p&gt;
+&lt;delete file=&#34;/home/wenyi/photos/wenyi.jpg&#34;/&gt;
+
+&lt;p&gt;2) 删除某个目录：&lt;/p&gt;
+&lt;delete dir=&#34;/home/wenyi/photos&#34;/&gt;
+
+&lt;p&gt;3) 删除所有的备份目录或空目录：&lt;/p&gt;
+&lt;delete includeEmptyDirs=&#34;true&#34;&gt;
+    &lt;fileset dir=&#34;.&#34; includes=&#34;**/*.bak&#34;/&gt;
+&lt;/delete&gt;
+
+&lt;h4 id=&#34;3-mkdir-命令:f780f29a8db5f7945ac4d44588e8e9f7&#34;&gt;3. mkdir 命令&lt;/h4&gt;
+
+&lt;p&gt;创建目录&lt;/p&gt;
+
+&lt;p&gt;例子：&lt;/p&gt;
+&lt;mkdir dir=&#34;/home/wenyi/build/classes&#34;/&gt;
+
+&lt;h4 id=&#34;4-move-命令:f780f29a8db5f7945ac4d44588e8e9f7&#34;&gt;4. move 命令&lt;/h4&gt;
+
+&lt;p&gt;移动文件或目录&lt;/p&gt;
+
+&lt;p&gt;例子：&lt;/p&gt;
+
+&lt;p&gt;1） 移动单个文件：&lt;/p&gt;
+&lt;move file=&#34;sourcefile&#34; tofile=”destfile”/&gt;
+
+&lt;p&gt;2） 移动单个文件到另一个目录：&lt;/p&gt;
+&lt;move file=&#34;sourcefile&#34; todir=”movedir”/&gt;
+
+&lt;p&gt;3） 移动某个目录到另一个目录：&lt;/p&gt;
+&lt;move todir=&#34;newdir&#34;&gt;
+    &lt;fileset dir=&#34;olddir&#34;/&gt;
+&lt;/move&gt;
+
+&lt;h4 id=&#34;5-echo-命令:f780f29a8db5f7945ac4d44588e8e9f7&#34;&gt;5. echo 命令&lt;/h4&gt;
+
+&lt;p&gt;该任务的作用是根据日志或监控器的级别输出信息。它包括 message 、 file 、 append 和 level 四个属性&lt;/p&gt;
+
+&lt;p&gt;例子：&lt;/p&gt;
+&lt;echo message=&#34;Hello,ANT&#34; file=&#34;/home/wenyi/logs/ant.log&#34; append=&#34;true&#34;&gt; 
+</description>
     </item>
     
     <item>
       <title>Nginx rewrite query string</title>
-      <link>http://blog.wenzhixin.net.cn/2013/12/31/nginx_rewrite_query_string/</link>
-      <pubDate>Tue, 31 Dec 2013 09:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/nginx_rewrite_query_string</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/12/31/nginx_rewrite_query_string/</guid>
-      <description>rewrite 的正则是不匹配 query string 的， 默认情况下，query string 会自动追加到rewrite 后的地址上。 例如： 1 rewrite ^/read.php$ /api.php 那么： 访问 read.php?tid=123 的时候实际上已经 rewrite 到了 api.php?tid=123 上了</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/nginx_rewrite_query_string</guid>
+      <description>&lt;p&gt;&lt;strong&gt;rewrite 的正则是不匹配 query string 的&lt;/strong&gt;，&lt;br /&gt;
+默认情况下，query string 会自动追加到rewrite 后的地址上。&lt;/p&gt;
+
+&lt;p&gt;例如：&lt;/p&gt;
+rewrite ^/read.php$ /api.php
+
+&lt;p&gt;那么：&lt;/p&gt;
+
+&lt;p&gt;访问 read.php?tid=123 的时候实际上已经 rewrite 到了 api.php?tid=123 上了&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;nginx 中 $args 变量保存了 query string 中的值&lt;/strong&gt;,&lt;br /&gt;
+例如 ?tid=123，那么可以使用 $arg_tid 来匹配 tid 的值&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;而不想自动追加 query string，则在 rewrite 地址的末尾添加 ?&lt;/strong&gt;&lt;/p&gt;
+rewrite ^/read.php$ /api.php?tid=$arg_tid&amp;func=post?
+</description>
     </item>
     
     <item>
-      <title>apache 重写链接</title>
-      <link>http://blog.wenzhixin.net.cn/2013/12/31/apache_rewrite/</link>
-      <pubDate>Tue, 31 Dec 2013 00:00:00 +0000</pubDate>
+      <title>PHP 代码规范</title>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/php_code_standard</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/12/31/apache_rewrite/</guid>
-      <description>安装启用 mod_rewrite 在安装启用之前，编写 info.php 文件 1 2 &amp;lt;?php phpinfo();?&amp;gt; 从浏览器中打开，使用 Ctrl + F 进行查找 mod_rewrite 是否在 Loaded Modules 中， 已经存在就表示我们已经安装，不存在的话，那么，</description>
-    </item>
-    
-    <item>
-      <title>Wordpress 打造 CMS 系统小记</title>
-      <link>http://blog.wenzhixin.net.cn/2013/12/04/wordpress_cms/</link>
-      <pubDate>Wed, 04 Dec 2013 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2013/12/04/wordpress_cms/</guid>
-      <description>关闭文章评论： 设置-讨论下，去掉“允许他人在新文章上发表评论”选项 关闭页面评论： 到具体页面编辑，打开显示选项中的讨论，去掉“允许评论”选项 添</description>
-    </item>
-    
-    <item>
-      <title>为你的网站开启 gzip 压缩功能（nodejs、nginx）</title>
-      <link>http://blog.wenzhixin.net.cn/2013/11/10/server_gzip_on/</link>
-      <pubDate>Sun, 10 Nov 2013 23:22:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2013/11/10/server_gzip_on/</guid>
-      <description>开启网站的 gzip 压缩功能，通常可以高达70%，也就是说，如果你的网页有30K，压缩之后就变成9K， 对于大部分网站，显然可以明显提高浏览速度（注：</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/php_code_standard</guid>
+      <description>
+
+&lt;h3 id=&#34;通用规范:ed497f5f7762bd3c3ecc61d8f0720d1b&#34;&gt;通用规范&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;代码缩进全部用 tab / 四个空格&lt;/li&gt;
+&lt;li&gt;SVN / Git 中新建文件编码类型统一用 utf-8 编码&lt;/li&gt;
+&lt;li&gt;行宽：80 字符&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;php-代码划分:ed497f5f7762bd3c3ecc61d8f0720d1b&#34;&gt;PHP 代码划分&lt;/h3&gt;
+
+&lt;p&gt;PHP 代码总是用完整的标准的 PHP 标签定界：&lt;/p&gt;
+&lt;?php
+// 开头必须使用 &lt;?php
+
+// php文件必须以 ?&gt; 结尾，并且保证其后面没有空格或空行。
+?&gt;
+
+&lt;h3 id=&#34;注明作者信息:ed497f5f7762bd3c3ecc61d8f0720d1b&#34;&gt;注明作者信息&lt;/h3&gt;
+
+&lt;p&gt;每个文件必须注明作者的信息和邮箱&lt;/p&gt;
+&lt;?php
+/*
+ * @author: zhixin &lt;wenzhixin2010@gmail.com&gt;
+ */
+?&gt;
+
+&lt;h3 id=&#34;字符串文字:ed497f5f7762bd3c3ecc61d8f0720d1b&#34;&gt;字符串文字&lt;/h3&gt;
+
+&lt;p&gt;当字符串是文字（不包含变量），应当用单引号（apostrophe）来括起来：&lt;/p&gt;
+$a = &#39;Example String&#39;;
+
+&lt;h3 id=&#34;操作符前后都要有空格:ed497f5f7762bd3c3ecc61d8f0720d1b&#34;&gt;操作符前后都要有空格&lt;/h3&gt;
+$c = $a + $b; // 操作符前后都要有空格
+
+$company = &#39;Zend&#39; . &#39; &#39; . &#39;Technologies&#39;; // 字符串必需用 &#34;.&#34; 操作符连接，在它的前后加上空格以提高可读性
+
+&lt;h3 id=&#34;函数:ed497f5f7762bd3c3ecc61d8f0720d1b&#34;&gt;函数&lt;/h3&gt;
+function foo($i, $list) { // 定义函数，( 前面没有空格，） 后面需要空格
+
+}
+
+require_once(&#39;config.inc.php&#39;); //  调用函数，() 前后没有空格
+
+threeArguments(1, 2, 3); // 多个参数，如果有逗号，那么逗号后面要有空格
+
+&lt;h3 id=&#34;控制语句:ed497f5f7762bd3c3ecc61d8f0720d1b&#34;&gt;控制语句&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;使用控制语句在语句的圆括号前后都必须有一个空格。&lt;/li&gt;
+&lt;/ul&gt;
+if ($i &gt; 0) { // if后面加空格
+
+} else { // else前后也要有空格
+
+}
+
+for ($j = 0; $j &lt; $i; $j++) { // for后面加空格
+
+}
+
+switch ($numPeople) { // switch后面加空格
+    case 1: // 缩进
+        break;
+
+    case 2:
+        break;
+
+    default: // switch 语句应当有 default
+        break;
+}
+
+&lt;h3 id=&#34;数组:ed497f5f7762bd3c3ecc61d8f0720d1b&#34;&gt;数组：&lt;/h3&gt;
+$number = array(1, 2, 3, 4); // 简单数组，放一行
+
+// 数组格式
+$color = array(
+    &#39;1&#39; =&gt; &#39;red&#39;, // 缩进一次
+    &#39;2&#39; =&gt; &#39;blue&#39;,
+    &#39;3&#39; =&gt; &#39;yellow&#39;,
+    &#39;4&#39; =&gt; array(
+        &#39;1&#39; =&gt; &#39;green&#39;,	// 缩进一次
+        &#39;2&#39; =&gt; &#39;gray&#39;
+    ) // 数组的结尾与声明的变量最前面对齐
+); // 数组的结尾与数组变量声明的地方对齐
+
+&lt;h3 id=&#34;类:ed497f5f7762bd3c3ecc61d8f0720d1b&#34;&gt;类&lt;/h3&gt;
+class CodingStandard { // 大括号前面加空格，类名开头字母大写，多个字母首字母大写
+    private $attribute; // 命名使用驼峰原则
+
+    public function testFunction() { // 方法命名都遵守驼峰原则
+
+    }
+}
+
+$s = new CodingStandard(); // new 一个对象，后面必须加括弧
+
+&lt;hr /&gt;
+
+&lt;p&gt;参考：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://framework.zend.com/manual/1.12/zh/coding-standard.coding-style.html&#34;&gt;编码风格&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
     
     <item>
       <title>RSS、Atom、Feed 介绍与简单实现</title>
-      <link>http://blog.wenzhixin.net.cn/2013/11/08/rss_atom_feed_php/</link>
-      <pubDate>Fri, 08 Nov 2013 22:59:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/rss_atom_feed_php</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/11/08/rss_atom_feed_php/</guid>
-      <description>最近接触了 RSS 订阅相关的，做了一些了解与开发，记录下。 RSS是什么 RSS（全称RDF Site Summary，网景的最初定义），RSS也是一种“类网页</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/rss_atom_feed_php</guid>
+      <description>
+
+&lt;p&gt;最近接触了 RSS 订阅相关的，做了一些了解与开发，记录下。&lt;/p&gt;
+
+&lt;h4 id=&#34;rss是什么:ff4596b028a60c1dc5123ad61a0f7a25&#34;&gt;RSS是什么&lt;/h4&gt;
+
+&lt;p&gt;RSS（全称RDF Site Summary，网景的最初定义），RSS也是一种“类网页”描述语言（或叫文档格式），
+最初由网景公司（Netscape）定义，RSS只是有个相对统一的规范（注意只是规范），
+前途未卜（RSS 2.0的版权问题）。RSS作为网站内容分享的一种便利接口，只是从博客（BLOG）风行才开始广为流传。&lt;/p&gt;
+
+&lt;p&gt;关于RSS的更多介绍请参考&lt;a href=&#34;http://zh.wikipedia.org/zh-cn/RSS&#34;&gt;RSS&lt;/a&gt;。&lt;/p&gt;
+
+&lt;h4 id=&#34;atom是什么:ff4596b028a60c1dc5123ad61a0f7a25&#34;&gt;ATOM是什么&lt;/h4&gt;
+
+&lt;p&gt;由于RSS前途未卜，而且RSS标准发展存在诸多问题或不足，于是ATOM横空出世，可理解为RSS的替代品。
+ATOM是IETF的建议标准，Atom Syndication Format是基于XML格式，Atom Publishing Protocol则是基于HTTP协议格式。&lt;/p&gt;
+
+&lt;p&gt;RSS与ATOM比较，请参考：&lt;a href=&#34;http://zh.wikipedia.org/wiki/Atom&#34;&gt;ATOM&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;feed是什么:ff4596b028a60c1dc5123ad61a0f7a25&#34;&gt;FEED是什么&lt;/h4&gt;
+
+&lt;p&gt;FEED只是一个中间过程，所以全世界没人能给FEED下一个准确的定义，所以大家不用关心FEED的定义，其实FEED什么都不是。
+如果非得给个说法，最好还是放到英文环境下理解似乎更加合理，FEED其实就是RSS（或ATOM）和订阅用户之间的“中间商”，
+起到帮忙批发传递信息的作用。所以，FEED的常见格式就是RSS和ATOM，网络上说的FEED订阅，更确切的说法应该仍然是RSS或ATOM订阅。&lt;/p&gt;
+
+&lt;p&gt;FEED更多介绍：&lt;a href=&#34;http://en.wikipedia.org/wiki/Feed&#34;&gt;Feed&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;可用的工具:ff4596b028a60c1dc5123ad61a0f7a25&#34;&gt;可用的工具&lt;/h4&gt;
+
+&lt;p&gt;RSS Feed 检验网站：&lt;a href=&#34;http://feedvalidator.org&#34;&gt;feedvalidator&lt;/a&gt;。可以检验你的 RSS 是否符合标准，假如不符合会给出相应的提示和警告。&lt;/p&gt;
+
+&lt;p&gt;RSS托管服务网站：&lt;a href=&#34;http://feedburner.google.com&#34;&gt;feedburner&lt;/a&gt;。 网站定位：全球最大的RSS托管服务网站。07年被google以1亿美元收购，现在已迁移到Google域名之下。&lt;/p&gt;
+
+&lt;h4 id=&#34;php-简单实现:ff4596b028a60c1dc5123ad61a0f7a25&#34;&gt;php 简单实现&lt;/h4&gt;
+
+&lt;p&gt;feed.php&lt;/p&gt;
+&lt;?php
+
+class Feed {
+
+    protected $entries = array();
+
+    protected $title;
+    protected $url;
+    protected $updated;
+    protected $author;
+
+    public function title($title) {
+        $this-&gt;title = $title;
+        return $this;
+    }
+
+    public function url($url) {
+        $this-&gt;url = $url;
+        return $this;
+    }
+
+    public function updated($updated) {
+        $this-&gt;updated = $updated;
+        return $this;
+    }
+
+    public function author($author) {
+        $this-&gt;author = $author;
+        return $this;
+    }
+
+    public function addEntry($entry) {
+        $this-&gt;entries[] = $entry;
+        return $this;
+    }   
+
+    public function __toString() {
+        $result = &#39;&lt;?xml version=&#34;1.0&#34;&gt;&#39;;
+        $result .= &#39;&lt;feed xmlns=&#34;http://www.w3.org/2005/Atom&#34;&gt;&#39;;
+        $result .= &#39;&lt;title&gt;&#39; . $this-&gt;title . &#39;&lt;/title&gt;&#39;;
+        $result .= &#39;&lt;link href=&#34;&gt;&#39; . $this-&gt;url . &#39;&#34; /&gt;&#39;;
+        $result .= &#39;&lt;updated&gt;&#39; . $this-&gt;updated . &#39;&lt;/updated&gt;&#39;;
+        $result .= &#39;&lt;author&gt;&#39; . $this-&gt;author . &#39;&lt;/author&gt;&#39;;
+
+        foreach ($this-&gt;entries as $entry) {
+            $result .= $entry;
+        }
+
+        return $result;
+    }
+}
+
+class Entry {
+    protected $title;
+    protected $url;
+    protected $updated;
+    protected $author;
+    protected $description;
+
+    public function title($title) {
+        $this-&gt;title = $title;
+        return $this;
+    }
+
+    public function url($url) {
+        $this-&gt;url = $url;
+        return $this;
+    }
+
+    public function updated($updated) {
+        $this-&gt;updated = $updated;
+        return $this;
+    }
+
+    public function author($author) {
+        $this-&gt;author = $author;
+        return $this;
+    }
+
+    public function description($description) {
+        $this-&gt;description = $description;
+        return $this;
+    }
+
+    public function __toString() {
+        $result .= &#39;&lt;entry&gt;&#39;;
+        $result .= &#39;&lt;title&gt;&#39; . $this-&gt;title . &#39;&lt;/title&gt;&#39;;
+        $result .= &#39;&lt;link href=&#34;&gt;&#39; . $this-&gt;url . &#39;&#34; /&gt;&#39;;
+        $result .= &#39;&lt;updated&gt;&#39; . $this-&gt;updated . &#39;&lt;/updated&gt;&#39;;
+        $result .= &#39;&lt;author&gt;&#39; . $this-&gt;author . &#39;&lt;/author&gt;&#39;;
+        $result .= &#39;&lt;description&gt;&#39; . $this-&gt;description . &#39;&lt;/description&gt;&#39;;
+        $result .= &#39;&lt;/entry&gt;&#39;;
+        return $result;
+    }
+}
+?&gt;
+
+&lt;p&gt;test.php&lt;/p&gt;
+&lt;?php
+require_once &#39;feed.php&#39;;
+
+$feed = new Feed();
+$feed-&gt;title(&#39;文翼的博客&#39;)
+    -&gt;url(&#39;http://wenzhixin.net.cn&#39;)
+    -&gt;updated(date(&#39;Y-m-d H:i:s&#39;, time()))
+    -&gt;author(&#39;wenzhixin&#39;);
+echo $feed;
+
+$entry = new Entry();
+$entry-&gt;title(&#39;文章1&#39;)
+    -&gt;description(&#39;这里是文章1的内容&#39;)
+    -&gt;url(&#39;http://wenzhixin.net.cn/1&#39;)
+    -&gt;updated(&#39;2013-11-08 22:55:00&#39;)
+    -&gt;author(&#39;wenzhixin&#39;);
+$feed-&gt;addEntry($entry);
+
+$entry = new Entry();
+$entry-&gt;title(&#39;文章2&#39;)
+    -&gt;description(&#39;这里是文章2的内容&#39;)
+    -&gt;url(&#39;http://wenzhixin.net.cn/2&#39;)
+    -&gt;updated(&#39;2013-11-07 11:33:00&#39;)
+    -&gt;author(&#39;wenzhixin&#39;);
+$feed-&gt;addEntry($entry);
+
+echo $feed;
+?&gt;
+</description>
     </item>
     
     <item>
-      <title>nginx 开启 http 下载服务器认证</title>
-      <link>http://blog.wenzhixin.net.cn/2013/10/19/nginx_http_auth/</link>
-      <pubDate>Sat, 19 Oct 2013 01:40:00 +0000</pubDate>
+      <title>SVN 如何恢复被删除的文件夹</title>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/svn_undelete_folder</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/10/19/nginx_http_auth/</guid>
-      <description>1. 介绍 有时候，我们需要提供下载服务器给别人文件，但是又不想给所有人看到，从而保证安全性。 这种时候，对目录访问进行认证，并且每天改变随机密码，</description>
-    </item>
-    
-    <item>
-      <title>nginx 安装与配置详解</title>
-      <link>http://blog.wenzhixin.net.cn/2013/09/21/nginx_install_settings/</link>
-      <pubDate>Sat, 21 Sep 2013 11:28:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2013/09/21/nginx_install_settings/</guid>
-      <description>安装（需要支持 php）： 1 2 sudo apt-get install nginx sudo apt-get install php5-fpm nginx 的基本配置（/etc/nginx/nginx.conf）与参数说明： 1 2 3 4 5 6 7 8 9 10 11 12 13</description>
-    </item>
-    
-    <item>
-      <title>nginx 配置 SSL（https）</title>
-      <link>http://blog.wenzhixin.net.cn/2013/09/01/nginx_ssl_settings/</link>
-      <pubDate>Sun, 01 Sep 2013 11:45:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2013/09/01/nginx_ssl_settings/</guid>
-      <description>配置信息： 1 2 3 4 5 6 7 8 listen 443; server_name wenzhixin.net.cn; ssl on; ssl_certificate /etc/ssl/certs/wenzhixin_net_cn.crt; ssl_certificate_key /etc/ssl/private/wenzhixin_net_cn.key; ssl_client_certificate /etc/ssl/certs/wenzhixin_net_cn-bundle; ssl_verify_client optional; 配置下面： 1 2 ssl_client_certificate /etc/ssl/certs/wenzhixin_net_cn-bundle; ssl_verify_client optional; 是为了解决： 1 unable to get local issuer certificate 的问题。</description>
-    </item>
-    
-    <item>
-      <title>使用 nginx 作为代理服务器的路径问题</title>
-      <link>http://blog.wenzhixin.net.cn/2013/07/17/nginx_proxy/</link>
-      <pubDate>Wed, 17 Jul 2013 15:31:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2013/07/17/nginx_proxy/</guid>
-      <description>继上篇文章：使用 nginx 作为代理服务器轻松解决 Ajax 跨域问题， 使用 proxy 来解决 Ajax 跨域的问题，方便我们开发测试。 但是很多时候，我们的服务器地址是这样的： 1 2</description>
-    </item>
-    
-    <item>
-      <title>搭建小型下载服务器(raspberry pi)</title>
-      <link>http://blog.wenzhixin.net.cn/2013/07/01/raspberry_server/</link>
-      <pubDate>Mon, 01 Jul 2013 21:23:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2013/07/01/raspberry_server/</guid>
-      <description>1. 购买设备 1) 单板机：我购买的是树莓派raspberry pi B型 512MB，购买地址为（我是在淘宝上购买的，声明不是广告哦）： 官方地址 淘宝地址 2)</description>
-    </item>
-    
-    <item>
-      <title>Ubuntu 安装 QT 4.8</title>
-      <link>http://blog.wenzhixin.net.cn/2013/04/01/installing_qt/</link>
-      <pubDate>Mon, 01 Apr 2013 22:30:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2013/04/01/installing_qt/</guid>
-      <description>1. 下载并解压安装包 下载：Qt libraries 4.8.4 for Linux/X11 解压： 1 tar xvf qt-everywhere-opensource-src-4.8.4.tar 2. 编译库并安装 Library 1 2 3 4 5 6 7 8 cd qt-everywhere-opensource-src-4.8.4 ./configure //o: opensource make make install 3. 设置 QT Creator 选择：工具 - 选项 - 构建并执行 设置</description>
-    </item>
-    
-    <item>
-      <title>vtiger5.2 问题修复</title>
-      <link>http://blog.wenzhixin.net.cn/2013/01/17/vtiger_bug/</link>
-      <pubDate>Thu, 17 Jan 2013 22:52:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2013/01/17/vtiger_bug/</guid>
-      <description>图表乱码： 下载 Simsun 解压 将 Simsun.ttf 文件复制到 Image/Canvas/Fonts 目录下 修改 Image/Canvas/Fonts/fontmap.txt，最后增加一行： Simsun, Simsun.ttf 修改 inclu</description>
-    </item>
-    
-    <item>
-      <title>wordpress 插件开发</title>
-      <link>http://blog.wenzhixin.net.cn/2013/01/15/wordpress_plugin/</link>
-      <pubDate>Tue, 15 Jan 2013 22:59:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2013/01/15/wordpress_plugin/</guid>
-      <description>1. 创建插件 在目录 wp-content/plugins 下创建自己的插件 新建目录 plugin-demo 新建文件 plugin-demo.php 1 2 3 4 5 6 7 8 9 &amp;lt;?php /* Plugin Name: Plugin Demo Description: 此插件用于插件演示 Version: 1.0 Author: zhixin wen Author URI: http://wenzhixin.net.cn */ ?&amp;gt; 2. 添加实现类和添</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/svn_undelete_folder</guid>
+      <description>
+
+&lt;h3 id=&#34;问题:e361e7dd74fd97e49c47e3988690836d&#34;&gt;问题：&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;你删除了 SVN 版本库上的文件夹，那么你要怎么恢复呢？&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;尝试办法:e361e7dd74fd97e49c47e3988690836d&#34;&gt;尝试办法：&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;通过 &lt;code&gt;svn revert folder&lt;/code&gt;，会发现找不到该文件夹&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;通过 &lt;code&gt;svn merge&lt;/code&gt;，从上个版本恢复回来，但是发现也是有找不到的问题&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;通过从上个版本恢复，然后 &lt;code&gt;svn add foler&lt;/code&gt; 到现有版本库中，这样会导致 log 失效，并不是我们想要的&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;最终解决办法:e361e7dd74fd97e49c47e3988690836d&#34;&gt;最终解决办法：&lt;/h3&gt;
+
+&lt;p&gt;通过尝试发现把自己的思路给限死了，有时候就应该这样，换个角度思考问题，
+我们所要做的事情很简单，就是恢复文件夹，并且保证 log 的正确性，那么 copy 就能解决这个问题：&lt;/p&gt;
+svn copy svn://svnserver/project/tags@100 http://svnserver/project/tags -m &#34;undeleted folder&#34;
+
+&lt;p&gt;表示从 url 为 svn://svnserver/project 的项目中恢复版本号为 100 的 tags 文件夹，并且信息为 &amp;ldquo;undeleted folder&amp;rdquo;。&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>Ubuntu 11.10 搭建 gitlab 服务器</title>
-      <link>http://blog.wenzhixin.net.cn/2013/01/14/gitlab_installation/</link>
-      <pubDate>Mon, 14 Jan 2013 15:55:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/gitlab_installation</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/01/14/gitlab_installation/</guid>
-      <description>ps: 请按照顺序一步一步来，并注意查看提示，确保成功！ 1. 更新系统 1 2 sudo apt-get update sudo apt-get upgrade 2. 安装必要的包 1 sudo apt-get install -y build-essential zlib1g-dev libyaml-dev libssl-dev libgdbm-dev libreadline-dev libncurses5-dev libffi-dev wget curl git-core openssh-server redis-server postfix checkinstall libxml2-dev libxslt-dev libcurl4-openssl-dev libicu-dev 3.</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/gitlab_installation</guid>
+      <description>
+
+&lt;p&gt;ps: 请按照顺序一步一步来，并注意查看提示，确保成功！&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&#34;1-更新系统:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;1. 更新系统&lt;/h4&gt;
+sudo apt-get update
+sudo apt-get upgrade
+
+&lt;h4 id=&#34;2-安装必要的包:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;2. 安装必要的包&lt;/h4&gt;
+sudo apt-get install -y build-essential zlib1g-dev libyaml-dev libssl-dev libgdbm-dev libreadline-dev libncurses5-dev libffi-dev  wget curl git-core openssh-server redis-server postfix checkinstall libxml2-dev libxslt-dev libcurl4-openssl-dev libicu-dev
+
+&lt;h4 id=&#34;3-安装-python-一般已经安装了:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;3. 安装 python  (一般已经安装了)&lt;/h4&gt;
+sudo apt-get install python2.7
+
+# 查看 python 版本 ( 2.5 &lt;= version &lt; 3.0)
+python2 --version
+
+sudo ln -s /usr/bin/python /usr/bin/python2
+
+&lt;h4 id=&#34;4-下载编译并安装-ruby-1-9-3-apt-get-install-的有问题:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;4. 下载编译并安装 ruby 1.9.3 (apt-get install 的有问题)&lt;/h4&gt;
+mkdir /tmp/ruby &amp;&amp; cd /tmp/ruby
+
+# 太慢了可以从 ftp 上下载 ftp://192.168.88.104/temp/ruby-1.9.3-p327.tar.gz
+wget http://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.3-p327.tar.gz
+
+tar xfvz ruby-1.9.3-p327.tar.gz
+cd ruby-1.9.3-p327
+
+# 编译 (可以去喝杯茶再说)
+./configure
+make
+
+# 安装
+sudo make install
+
+&lt;h4 id=&#34;5-安装-bundler:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;5. 安装 bundler&lt;/h4&gt;
+sudo gem install bundler
+
+&lt;h4 id=&#34;6-新建-git-和-gitolite-的用户:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;6. 新建 git 和 gitolite 的用户&lt;/h4&gt;
+sudo adduser --system --shell /bin/sh --gecos &#39;Git Version Control&#39; --group --disabled-password --home /home/git git
+
+&lt;h4 id=&#34;7-新建-gitlab-用户:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;7. 新建 gitlab 用户&lt;/h4&gt;
+sudo adduser --disabled-login --gecos &#39;GitLab&#39; gitlab
+
+# 添加到 git 组
+sudo usermod -a -G git gitlab
+
+# 创建 SSH 密钥
+sudo -u gitlab -H ssh-keygen -q -N &#39;&#39; -t rsa -f /home/gitlab/.ssh/id_rsa
+
+&lt;h4 id=&#34;8-克隆-gitolite-源码:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;8. 克隆 gitolite 源码&lt;/h4&gt;
+cd /home/git
+sudo -u git -H git clone -b gl-v320 https://github.com/gitlabhq/gitolite.git /home/git/gitolite
+
+&lt;h4 id=&#34;9-设置-gitolite:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;9. 设置 gitolite&lt;/h4&gt;
+# 添加 gitolite 脚本到 $PATH
+sudo -u git -H mkdir /home/git/bin
+sudo -u git -H sh -c &#39;printf &#34;%b\n%b\n&#34; &#34;PATH=\$PATH:/home/git/bin&#34; &#34;export PATH&#34; &gt;&gt; /home/git/.profile&#39;
+sudo -u git -H sh -c &#39;gitolite/install -ln /home/git/bin&#39;
+
+# 设置 SSH 密钥
+sudo cp /home/gitlab/.ssh/id_rsa.pub /home/git/gitlab.pub
+sudo chmod 0444 /home/git/gitlab.pub
+sudo -u git -H sh -c &#34;PATH=/home/git/bin:$PATH; gitolite setup -pk /home/git/gitlab.pub&#34;
+
+# 修改文件夹权限
+sudo chmod 750 /home/git/.gitolite/
+sudo chown -R git:git /home/git/.gitolite/
+sudo chmod -R ug+rwXs,o-rwx /home/git/repositories/
+sudo chown -R git:git /home/git/repositories/
+
+&lt;h4 id=&#34;10-测试-gitolite:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;10. 测试 gitolite&lt;/h4&gt;
+sudo -u gitlab -H git clone git@localhost:gitolite-admin.git /tmp/gitolite-admin
+sudo rm -rf /tmp/gitolite-admin
+
+&lt;p&gt;出现以下提示表示配置 gitolite 成功：&lt;/p&gt;
+Cloning into /tmp/gitolite-admin...
+remote: Counting objects: 6, done.
+remote: Compressing objects: 100% (4/4), done.
+Receiving objects: 100% (6/6), 740 bytes, done.
+remote: Total 6 (delta 0), reused 0 (delta 0)
+
+&lt;h4 id=&#34;11-安装-mysql-服务器:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;11. 安装 mysql 服务器&lt;/h4&gt;
+sudo apt-get install -y mysql-server mysql-client libmysqlclient-dev
+
+&lt;h4 id=&#34;12-设置-mysql:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;12. 设置 mysql&lt;/h4&gt;
+# 登陆 mysql
+mysql -u root -p password
+
+# 添加 gitlab 用户 (记得修改 password 为自己的密码)
+CREATE USER &#39;gitlab&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;password&#39;;
+
+&lt;h4 id=&#34;13-克隆-gitlab-源码:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;13. 克隆 gitlab 源码&lt;/h4&gt;
+cd /home/gitlab
+sudo -u gitlab -H git clone https://github.com/gitlabhq/gitlabhq.git gitlab
+cd /home/gitlab/gitlab
+sudo -u gitlab -H git checkout 4-0-stable
+
+&lt;h4 id=&#34;14-设置-gitlab:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;14. 设置 gitlab&lt;/h4&gt;
+sudo -u gitlab -H cp config/gitlab.yml.example config/gitlab.yml
+sudo -u gitlab -H cp config/unicorn.rb.example config/unicorn.rb
+
+# 修改 gitlab 文件夹权限
+sudo chown -R gitlab log/
+sudo chown -R gitlab tmp/
+sudo chmod -R u+rwX  log/
+sudo chmod -R u+rwX  tmp/
+
+&lt;h4 id=&#34;15-设置-gitlab-数据库-mysql-连接:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;15. 设置 gitlab 数据库 (mysql) 连接&lt;/h4&gt;
+sudo -u gitlab cp config/database.yml.mysql config/database.yml
+
+# 安装 gems (可以再去喝杯茶)
+sudo gem install charlock_holmes --version &#39;0.6.9&#39;
+sudo -u gitlab -H bundle install --deployment --without development test postgres
+
+&lt;h4 id=&#34;16-设置-git:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;16. 设置 git&lt;/h4&gt;
+sudo -u gitlab -H git config --global user.name &#34;GitLab&#34;
+sudo -u gitlab -H git config --global user.email &#34;gitlab@localhost&#34;
+
+&lt;h4 id=&#34;17-设置-gitlab-钩子:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;17. 设置 gitlab 钩子&lt;/h4&gt;
+sudo cp ./lib/hooks/post-receive /home/git/.gitolite/hooks/common/post-receive
+sudo chown git:git /home/git/.gitolite/hooks/common/post-receive
+
+&lt;h4 id=&#34;18-初始化数据库:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;18. 初始化数据库&lt;/h4&gt;
+sudo -u gitlab -H bundle exec rake gitlab:app:setup RAILS_ENV=production
+
+&lt;h4 id=&#34;19-设置-gitlab-开机启动脚本:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;19. 设置 gitlab 开机启动脚本&lt;/h4&gt;
+sudo wget https://raw.github.com/gitlabhq/gitlab-recipes/4-0-stable/init.d/gitlab -P /etc/init.d/
+sudo chmod +x /etc/init.d/gitlab
+sudo update-rc.d gitlab defaults 21
+
+&lt;h4 id=&#34;20-启动-gitlab:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;20. 启动 gitlab&lt;/h4&gt;
+sudo /etc/init.d/gitlab start
+# 或者 sudo /etc/init.d/gitlab restart
+
+&lt;h4 id=&#34;21-安装-nginx:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;21. 安装 nginx&lt;/h4&gt;
+sudo apt-get install nginx
+
+&lt;h4 id=&#34;22-设置-gitlab-的网站配置:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;22. 设置 gitlab 的网站配置&lt;/h4&gt;
+sudo wget https://raw.github.com/gitlabhq/gitlab-recipes/4-0-stable/nginx/gitlab -P /etc/nginx/sites-available/
+sudo ln -s /etc/nginx/sites-available/gitlab /etc/nginx/sites-enabled/gitlab
+
+&lt;h4 id=&#34;23-修改配置文件-并重启-nginx:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;23. 修改配置文件，并重启 nginx&lt;/h4&gt;
+# 修改 listen server_IP:80 default_server; 为服务器 IP
+sudo vim /etc/nginx/sites-enabled/gitlab
+# 重启
+sudo /etc/init.d/nginx restart
+
+&lt;h4 id=&#34;24-查看和测试服务器状态:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;24. 查看和测试服务器状态&lt;/h4&gt;
+sudo -u gitlab -H bundle exec rake gitlab:env:info RAILS_ENV=production
+sudo -u gitlab -H bundle exec rake gitlab:check RAILS_ENV=production
+
+&lt;p&gt;&amp;mdash;&amp;mdash;&amp;mdash;-服务器端至此搞定！以下为客户端&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;-&lt;/p&gt;
+
+&lt;h4 id=&#34;25-在浏览器中输入地址:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;25. 在浏览器中输入地址：&lt;/h4&gt;
+http://server_IP/users/sign_in
+
+&lt;h5 id=&#34;登录用户名和密码:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;登录用户名和密码：&lt;/h5&gt;
+username: admin@local.host
+password: 5iveL!fe
+
+&lt;h4 id=&#34;26-最后-设置-ssh-key:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;26. 最后，设置 SSH key&lt;/h4&gt;
+# 邮箱与登录名称保持一致
+ssh-keygen -t rsa -C &#34;admin@local.host&#34;
+
+cat ~/.ssh/id_rsa.pub
+
+&lt;p&gt;选择 Your Profile -&amp;gt; SSH key -&amp;gt; Add new，将 id_rsa.pub 中的内容复制到 Key 输入框中，Save&lt;/p&gt;
+
+&lt;h5 id=&#34;配置-id-rsa:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;配置 id_rsa&lt;/h5&gt;
+cd ~/.ssh
+mkdir gitlab
+mv id_rsa gitlab/
+chmod 600 gitlab/id_rsa
+
+&lt;h5 id=&#34;配置-config-修改相应的-server-ip:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;配置 config (修改相应的 server_IP)&lt;/h5&gt;
+host gitlab
+    HostName server_IP
+    User git
+    IdentityFile ~/.ssh/gitlab/id_rsa
+
+&lt;h4 id=&#34;27-最后的最后-创建提交项目:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;27. 最后的最后，创建提交项目&lt;/h4&gt;
+
+&lt;p&gt;选择 New Project -&amp;gt; Create Project&lt;/p&gt;
+
+&lt;h5 id=&#34;提交:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;提交&lt;/h5&gt;
+# 修改下面命令为：
+# git remote add origin git@localhost
+git remote add origin gitlab
+</description>
     </item>
     
     <item>
-      <title>完全禁用 Wordpress 后台的更新提示和功能</title>
-      <link>http://blog.wenzhixin.net.cn/2013/01/14/hidden_wordpress_update/</link>
-      <pubDate>Mon, 14 Jan 2013 10:48:00 +0000</pubDate>
+      <title>Ubuntu 下搭建 JavaEE 环境</title>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_java_ee</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/01/14/hidden_wordpress_update/</guid>
-      <description>为了防止误操作，需要禁用后台的更新提示以及更新功能 需要禁用的更新包括： 1. 头部更新提示 (wp-includes/admin-bar.php) 注释第 618 行： 1 2 3 4 5 6 7 8 $wp_admin_bar-&amp;gt;add_menu( array( &amp;#39;id&amp;#39; =&amp;gt; &amp;#39;updates&amp;#39;, &amp;#39;title&amp;#39; =&amp;gt; $title, &amp;#39;href&amp;#39; =&amp;gt; network_admin_url( &amp;#39;update-core.php&amp;#39; ),</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_java_ee</guid>
+      <description>
+
+&lt;p&gt;在 Ubuntu 下搭建 JavaEE 的环境稍微有些麻烦，这里记录下。&lt;/p&gt;
+
+&lt;h3 id=&#34;1-安装-eclipse-和-tomcat7:2d9f64794b91e20ce48f94cc6b696e20&#34;&gt;1. 安装 eclipse 和 tomcat7&lt;/h3&gt;
+sudo apt-get install eclipse
+sudo apt-get install tomcat7
+
+&lt;p&gt;注：安装 eclipse 后会把依赖的 jdk 安装好，使用 apt-get 安装的 eclipse 是最精简的版本。&lt;/p&gt;
+
+&lt;h3 id=&#34;2-安装-eclipse-的-javaee-插件:2d9f64794b91e20ce48f94cc6b696e20&#34;&gt;2. 安装 eclipse 的 JavaEE 插件&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;依次点击：Help -&amp;gt; Install New Software&amp;hellip; -&amp;gt; Add&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;输入：&lt;a href=&#34;http://download.eclipse.org/releases/indigo&#34;&gt;http://download.eclipse.org/releases/indigo&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;选择：Eclipse Java EE Developer Tools、JST Server Adapters、JST Server Adapters Extentions 并进行安装&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;重启 eclipse&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;注：不安装 JST Server Adapters 的话，在 Eclipse Server Runtime Environments 选择不了 tomcat&lt;/p&gt;
+
+&lt;h3 id=&#34;3-create-new-server-wizard:2d9f64794b91e20ce48f94cc6b696e20&#34;&gt;3. create new server wizard&lt;/h3&gt;
+
+&lt;p&gt;会出现 &lt;code&gt;Cannot create a server using the selected type&lt;/code&gt; 的问题，解决：&lt;/p&gt;
+cd .metadata/.plugins/org.eclipse.core.runtime/.settings/
+rm org.eclipse.jst.server.tomcat.core.prefs
+rm org.eclipse.wst.server.core.prefs
+
+&lt;p&gt;修改 tomcat7 的配置和文件权限：&lt;/p&gt;
+cd /usr/share/tomcat7
+sudo ln -s /var/lib/tomcat7/conf conf
+sudo ln -s /etc/tomcat7/policy.d/03catalina.policy conf/catalina.policy
+sudo ln -s /var/log/tomcat7 log
+sudo chmod -R 777 /usr/share/tomcat7/conf
+
+&lt;p&gt;禁用 tomcat7 自启动：&lt;/p&gt;
+sudo service tomcat7 stop
+sudo update-rc.d tomcat7 disable
+
+&lt;p&gt;注：至此，已经搞定了，假如还有问题那还需要：&lt;/p&gt;
+cd /usr/share/tomcat7
+sudo ln -s /var/lib/tomcat7/common common
+sudo ln -s /var/lib/tomcat7/server server
+sudo ln -s /var/lib/tomcat7/shared shared
+</description>
     </item>
     
     <item>
-      <title>wordpress 修改IP地址后进不去后台的解决方法</title>
-      <link>http://blog.wenzhixin.net.cn/2012/09/14/solution_wordpress_to_change_the_ip_address_after_not_go_back/</link>
-      <pubDate>Fri, 14 Sep 2012 00:00:00 +0000</pubDate>
+      <title>Ubuntu 安装 QT 4.8</title>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/installing_qt</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/09/14/solution_wordpress_to_change_the_ip_address_after_not_go_back/</guid>
-      <description>1、登录数据库 1 mysql -uroot -ppassword wordpress 2、更新 wp_options 表 1 update wp_options set option_value = &amp;#39;http://newip/wordpress&amp;#39; where option_name = &amp;#39;siteurl&amp;#39; or option_name = &amp;#39;home&amp;#39;; 注：使用 shell 脚本 1 vi setwordpress 输入内容： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 #! /bin/bash # set wordpress admin ip param=$#</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/installing_qt</guid>
+      <description>
+
+&lt;h3 id=&#34;1-下载并解压安装包:a139f3fd97157b6ba6a6bca80379b293&#34;&gt;1. 下载并解压安装包&lt;/h3&gt;
+
+&lt;p&gt;下载：&lt;a href=&#34;http://releases.qt-project.org/qt4/source/qt-everywhere-opensource-src-4.8.4.tar.gz&#34;&gt;Qt libraries 4.8.4 for Linux/X11&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;解压：&lt;/p&gt;
+tar xvf qt-everywhere-opensource-src-4.8.4.tar
+
+&lt;h3 id=&#34;2-编译库并安装-library:a139f3fd97157b6ba6a6bca80379b293&#34;&gt;2. 编译库并安装 Library&lt;/h3&gt;
+cd qt-everywhere-opensource-src-4.8.4
+./configure
+
+//o: opensource
+
+make
+
+make install
+
+&lt;h3 id=&#34;3-设置-qt-creator:a139f3fd97157b6ba6a6bca80379b293&#34;&gt;3. 设置 QT Creator&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;选择：工具 - 选项 - 构建并执行&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;设置QT版本：新增，选择目录&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;设置 Kits&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;出现的问题:a139f3fd97157b6ba6a6bca80379b293&#34;&gt;出现的问题&lt;/h3&gt;
+
+&lt;h4 id=&#34;1-basic-xlib-functionality-test-failed:a139f3fd97157b6ba6a6bca80379b293&#34;&gt;1. Basic XLib functionality test failed!&lt;/h4&gt;
+
+&lt;p&gt;错误：&lt;/p&gt;
+Basic XLib functionality test failed!
+You might need to modify the include and library search paths by editing
+QMAKE_INCDIR_X11 and QMAKE_LIBDIR_X11 in /home/zhu/Qt/qt-x11-opensource-src-4.5.2/mkspecs/linux-g++
+
+&lt;p&gt;解决：&lt;/p&gt;
+sudo apt-get install libX11-dev libXext-dev libXtst-dev
+</description>
     </item>
     
     <item>
-      <title>wordpress 修改IP地址后进不去后台的解决方法</title>
-      <link>http://blog.wenzhixin.net.cn/2012/09/14/solution_wordpress_to_change_the_ip_address_after_not_go_back/</link>
-      <pubDate>Fri, 14 Sep 2012 00:00:00 +0000</pubDate>
+      <title>Wordpress 打造 CMS 系统小记</title>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/wordpress_cms</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/09/14/solution_wordpress_to_change_the_ip_address_after_not_go_back/</guid>
-      <description>1、登录数据库 1 mysql -uroot -ppassword wordpress 2、更新 wp_options 表 1 update wp_options set option_value = &amp;#39;http://newip/wordpress&amp;#39; where option_name = &amp;#39;siteurl&amp;#39; or option_name = &amp;#39;home&amp;#39;; 注：使用 shell 脚本 1 vi setwordpress 输入内容： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 #! /bin/bash # set wordpress admin ip param=$#</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/wordpress_cms</guid>
+      <description>
+
+&lt;h3 id=&#34;关闭文章评论:8acb684cc5673a49730e1ea02c21df7d&#34;&gt;关闭文章评论：&lt;/h3&gt;
+
+&lt;p&gt;设置-讨论下，去掉“允许他人在新文章上发表评论”选项&lt;/p&gt;
+
+&lt;h3 id=&#34;关闭页面评论:8acb684cc5673a49730e1ea02c21df7d&#34;&gt;关闭页面评论：&lt;/h3&gt;
+
+&lt;p&gt;到具体页面编辑，打开显示选项中的讨论，去掉“允许评论”选项&lt;/p&gt;
+
+&lt;h3 id=&#34;添加上一篇-下一篇:8acb684cc5673a49730e1ea02c21df7d&#34;&gt;添加上一篇、下一篇：&lt;/h3&gt;
+
+&lt;p&gt;打开 single.php 页面，在 footer 中加入&lt;/p&gt;
+&lt;div&gt;
+	&lt;div class=&#34;left&#34;&gt;
+		&lt;?php if (get_previous_post()) { previous_post_link(&#39;上一篇：%link&#39;); } else { echo &#39;上一篇：没有了！&#39;; }?&gt;
+	&lt;/div&gt;
+	&lt;div class=&#34;right&#34;&gt;
+		&lt;?php if (get_next_post()) { next_post_link(&#39;下一篇：%link&#39;); } else { echo &#39;下一篇：没有了！&#39;; } ?&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;clear&#34;&gt;&lt;/div&gt;
+
+&lt;p&gt;在 style.css 中加入&lt;/p&gt;
+.entry-utility .left {
+	float: left;
+}
+.entry-utility .right {
+	float: right;
+}
+
+&lt;h3 id=&#34;隐藏文章底部分享信息:8acb684cc5673a49730e1ea02c21df7d&#34;&gt;隐藏文章底部分享信息：&lt;/h3&gt;
+
+&lt;p&gt;打开 functions.php，找到 pinboard_social_bookmarks 函数&lt;/p&gt;
+function pinboard_social_bookmarks() {
+	return false;
+}
+
+&lt;h3 id=&#34;自定义首页:8acb684cc5673a49730e1ea02c21df7d&#34;&gt;自定义首页：&lt;/h3&gt;
+
+&lt;p&gt;新建 home.php&lt;/p&gt;
+&lt;?php
+/*
+Template Name: Home
+*/
+?&gt;
+&lt;?php get_header(); ?&gt;
+&lt;?php if( is_front_page() ) : ?&gt;
+	&lt;?php if( pinboard_get_option( &#39;slider&#39; ) ) : ?&gt;
+		&lt;?php get_template_part( &#39;slider&#39; ); ?&gt;
+	&lt;?php endif; ?&gt;
+	&lt;?php get_sidebar( &#39;wide&#39; ); ?&gt;
+	&lt;?php get_sidebar( &#39;boxes&#39; ); ?&gt;
+&lt;?php endif; ?&gt;
+&lt;div id=&#34;container&#34;&gt;
+&lt;/div&gt;
+&lt;?php get_footer(); ?&gt;
+
+&lt;p&gt;页面-新建，选择模板 home，标题为首页，内容为空。&lt;/p&gt;
+
+&lt;p&gt;设置-阅读中，首页显示选择“一个静态页面”，主页选择“首页”。&lt;/p&gt;
+
+&lt;h3 id=&#34;添加首页幻灯片:8acb684cc5673a49730e1ea02c21df7d&#34;&gt;添加首页幻灯片：&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://wordpress.org/plugins/ml-slider/&#34;&gt;Meta Slider&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;下载解压到 wp-content/plugins，并启用。&lt;/p&gt;
+
+&lt;p&gt;设置大小为：1140px * 350px&lt;/p&gt;
+
+&lt;p&gt;在 home.php 加入(id 为幻灯片的ID)&lt;/p&gt;
+&lt;?php echo do_shortcode(&#34;[metaslider id=id]&#34;); ?&gt;
+
+&lt;h3 id=&#34;其他:8acb684cc5673a49730e1ea02c21df7d&#34;&gt;其他&lt;/h3&gt;
+
+&lt;h4 id=&#34;content-php:8acb684cc5673a49730e1ea02c21df7d&#34;&gt;content.php&lt;/h4&gt;
+
+&lt;p&gt;第1行去掉&lt;/p&gt;
+&lt;?php post_class(); ?&gt;
+
+&lt;h4 id=&#34;functions-php:8acb684cc5673a49730e1ea02c21df7d&#34;&gt;functions.php&lt;/h4&gt;
+
+&lt;p&gt;第760行去掉&lt;/p&gt;
+$content.imagesLoaded(function() {
+	$content.masonry({
+		itemSelector : &#39;.hentry, #infscr-loading&#39;,
+		columnWidth : container.querySelector(&#39;.&lt;?php echo pinboard_teaser_class(); ?&gt;&#39;),
+	});
+});
+function pinboard_entry_meta () {
+}
+
+&lt;p&gt;the_author_link() 改为 the_author()&lt;/p&gt;
+&lt;span class=&#34;entry-date&#34;&gt;&lt;span rel=&#34;bookmark&#34; title=&#34;&lt;?php the_title_attribute(); ?&gt;&#34;&gt;&lt;?php the_time( get_option( &#39;date_format&#39; ) ); ?&gt;&lt;/span&gt;&lt;/span&gt;
+
+&lt;p&gt;Permalink 改为 更多&amp;hellip;&lt;/p&gt;
+function pinboard_excerpt_length() 改为 return 100;
+
+&lt;h4 id=&#34;sytle-css:8acb684cc5673a49730e1ea02c21df7d&#34;&gt;sytle.css&lt;/h4&gt;
+
+&lt;p&gt;#header #searchform 加上&lt;/p&gt;
+display: none;
+</description>
     </item>
     
     <item>
-      <title>Ant 关键元素和常用命令</title>
-      <link>http://blog.wenzhixin.net.cn/2012/06/07/ant_key_elements_and_common_commands/</link>
-      <pubDate>Thu, 07 Jun 2012 00:00:00 +0000</pubDate>
+      <title>apache 重写链接</title>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/apache_rewrite</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/06/07/ant_key_elements_and_common_commands/</guid>
-      <description>一、Ant 关键元素 1、project元素 project 元素是 Ant 构件文件的根元素， Ant 构件文件至少应该包含一个 project 元素，否则会发生错误。在每个 project 元素下，可包含</description>
-    </item>
-    
-    <item>
-      <title>Ant 关键元素和常用命令</title>
-      <link>http://blog.wenzhixin.net.cn/2012/06/07/ant_key_elements_and_common_commands/</link>
-      <pubDate>Thu, 07 Jun 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/06/07/ant_key_elements_and_common_commands/</guid>
-      <description>一、Ant 关键元素 1、project元素 project 元素是 Ant 构件文件的根元素， Ant 构件文件至少应该包含一个 project 元素，否则会发生错误。在每个 project 元素下，可包含</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/apache_rewrite</guid>
+      <description>
+
+&lt;h4 id=&#34;安装启用-mod-rewrite:1c9366477c365c5b0e6d0f98aacfd555&#34;&gt;安装启用 mod_rewrite&lt;/h4&gt;
+
+&lt;p&gt;在安装启用之前，编写 info.php 文件&lt;/p&gt;
+&lt;?php phpinfo();?&gt;
+
+&lt;p&gt;从浏览器中打开，使用 Ctrl + F 进行查找 mod_rewrite 是否在 Loaded Modules 中，
+已经存在就表示我们已经安装，不存在的话，那么，需要进行安装：&lt;/p&gt;
+sudo a2enmod rewrite
+
+&lt;p&gt;修改 AllowOverRide 为 AllowOverRide All&lt;/p&gt;
+sudo vi /etc/apache2/sites-enabled/default
+
+&lt;h4 id=&#34;使用正则重写链接:1c9366477c365c5b0e6d0f98aacfd555&#34;&gt;使用正则重写链接&lt;/h4&gt;
+
+&lt;p&gt;这里我们将 restfull 的 url 转发为 php 文件。&lt;/p&gt;
+
+&lt;p&gt;新建 .htaccess 文件&lt;/p&gt;
+RewriteEngine on
+RewriteRule ^/api/.*$ /api.php [L]
+
+&lt;ul&gt;
+&lt;li&gt;RewriteEngine：表示启用 rewrite&lt;/li&gt;
+&lt;li&gt;RewriteRule：表示这是一条 rewrite 规则&lt;/li&gt;
+&lt;li&gt;L：该属性表示规则匹配成功后就不需要匹配其他规则了&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;在 api.php 中，通过下面的变量来获取想要的值&lt;/p&gt;
+$request_method = $_SERVER[&#39;REQUEST_METHOD&#39;];
+$request_uri = $_SERVER[&#39;REQUEST_URI&#39;];
+$request_query = $_GET;
+$request_data = file_get_contents(&#39;php://input&#39;);
+
+&lt;h4 id=&#34;迁移网站重写规则:1c9366477c365c5b0e6d0f98aacfd555&#34;&gt;迁移网站重写规则&lt;/h4&gt;
+
+&lt;p&gt;迁移网站的时候，我们需要将旧地址都重写到新地址上去&lt;/p&gt;
+RewriteEngine on
+RewriteRule ^/old.php$ /new.php [R=301,L]
+
+&lt;p&gt;R=301：该属性表示请求 old.php 的时候返回一个 301 的重定向&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>linux shell编程</title>
-      <link>http://blog.wenzhixin.net.cn/2012/05/29/linux_shell_programming/</link>
-      <pubDate>Tue, 29 May 2012 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/linux_shell_programming</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/05/29/linux_shell_programming/</guid>
-      <description>1、shell结构 * #!指定执行脚本的shell * #注释行 * 命令和控制结构 2、创建shell程序的步骤 * 创建一个包含命令和控制结构的文件 * 修</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/linux_shell_programming</guid>
+      <description>&lt;p&gt;1、shell结构&lt;/p&gt;
+
+&lt;p&gt; * #!指定执行脚本的shell&lt;/p&gt;
+
+&lt;p&gt; * #注释行&lt;/p&gt;
+
+&lt;p&gt; * 命令和控制结构&lt;/p&gt;
+
+&lt;p&gt;2、创建shell程序的步骤&lt;/p&gt;
+
+&lt;p&gt; * 创建一个包含命令和控制结构的文件&lt;/p&gt;
+
+&lt;p&gt; * 修改这个文件的权限使它可以执行：chmod u+x&lt;/p&gt;
+
+&lt;p&gt; * 执行 ./shell (sh shell)&lt;/p&gt;
+
+&lt;p&gt;3、shell变量&lt;/p&gt;
+
+&lt;p&gt; * 变量是shell传递数据的一种方法，用来代表每个取值的符号名&lt;/p&gt;
+
+&lt;p&gt; * 变量包括：临时变量和永久变量&lt;/p&gt;
+
+&lt;p&gt; * 自定义变量由字母或下划线开头，由字母、数字或下划线组成，区分大小写&lt;/p&gt;
+
+&lt;p&gt; * 使用变量时，需要在变量名前加上前缀 $&lt;/p&gt;
+
+&lt;p&gt; * set：查看所有的变量；unset：删除变量&lt;/p&gt;
+
+&lt;p&gt;4、位置变量和特殊变量&lt;/p&gt;
+
+&lt;p&gt; * 位置参数：出现在命令行上的位置确定的参数&lt;/p&gt;
+
+&lt;p&gt; * $0：表示这个脚本的文件名&lt;/p&gt;
+
+&lt;p&gt; * $n：表示这个脚本的第 n 个参数值，n=1-9&lt;/p&gt;
+
+&lt;p&gt; * $*：该脚本的所有参数&lt;/p&gt;
+
+&lt;p&gt; * $#：该脚本的参数个数&lt;/p&gt;
+
+&lt;p&gt; * $$：该脚本的PID&lt;/p&gt;
+
+&lt;p&gt; * $!：执行删一个后台命令的PID&lt;/p&gt;
+
+&lt;p&gt; * $?：执行上一个命令的返回值&lt;/p&gt;
+
+&lt;p&gt;5、shell命令&lt;/p&gt;
+
+&lt;p&gt; * read命令：从键盘中读入数据，赋给变量&lt;/p&gt;
+
+&lt;p&gt; * expr命令：对整数型变量进行算术运算&lt;/p&gt;
+
+&lt;p&gt;6、变量测试&lt;/p&gt;
+
+&lt;p&gt; * test命令：用于测试变量是否相等、是否为空、文件类型等&lt;/p&gt;
+
+&lt;p&gt; * 格式：test 测试条件&lt;/p&gt;
+
+&lt;p&gt; * 范围：整数、字符串、文件&lt;/p&gt;
+
+&lt;p&gt; * 字符串测试：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://ww1.sinaimg.cn/mw600/88a9c274jw1dtfl7dgfzmg.gif&#34; alt=&#34;linux
+shell编程&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt; * 整数测试：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://ww3.sinaimg.cn/mw600/88a9c274jw1dtfl7iy4ufg.gif&#34; alt=&#34;linux
+shell编程&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt; * 文件测试：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://ww3.sinaimg.cn/mw600/88a9c274jw1dtfl7petoxg.gif&#34; alt=&#34;linux
+shell编程&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt; * 简化：用[]进行简化 test 语句 等价于 [ 语句 ]&lt;/p&gt;
+
+&lt;p&gt;7、流控制语句&lt;/p&gt;
+
+&lt;p&gt; * 流控制语句：用于控制shell程序的流程&lt;/p&gt;
+
+&lt;p&gt; * exit语句：退出程序执行，返回一个返回值，0表示正常退出，非0表示非正常退出&lt;/p&gt;
+
+&lt;p&gt;8、if语句&lt;/p&gt;
+
+&lt;p&gt; * 语法：&lt;/p&gt;
+   if 条件1 ; then
+
+      命令1
+
+   elif 条件2 ; then
+
+      命令2
+
+   else
+
+      命令3
+
+   fi
+
+&lt;p&gt; * -a：逻辑与，仅当两个条件都成立时，结果为真&lt;/p&gt;
+
+&lt;p&gt; * -o：逻辑或，两个条件只要一个为真，结果为真&lt;/p&gt;
+
+&lt;p&gt;9、for语句&lt;/p&gt;
+
+&lt;p&gt; * 语法：&lt;/p&gt;
+   for 变量 in 名字表
+
+   do
+
+      命令列表
+
+   done
+
+&lt;p&gt;10、case语句&lt;/p&gt;
+
+&lt;p&gt; * 语法：&lt;/p&gt;
+   case 变量 in
+
+      字符串1) 命令列表1
+
+      ;;
+
+      字符串n) 命令列表n
+
+      ;;
+
+      \*) 命令列表（default）
+
+      ;;
+
+   esac
+
+      ;;
+
+&lt;p&gt;11、while语句：&lt;/p&gt;
+
+&lt;p&gt; * 语法：&lt;/p&gt;
+   while 条件
+
+   do
+
+      命令
+
+   done
+
+&lt;p&gt;12、until语句：&lt;/p&gt;
+
+&lt;p&gt; * 语法：&lt;/p&gt;
+   until 条件
+
+   do
+
+      命令
+
+   done
+
+&lt;p&gt;13、跳出循环&lt;/p&gt;
+
+&lt;p&gt; * break：跳出真个循环&lt;/p&gt;
+
+&lt;p&gt; * continue：跳出本次循环，进行下次循环&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>linux shell编程</title>
-      <link>http://blog.wenzhixin.net.cn/2012/05/29/linux_shell_programming/</link>
-      <pubDate>Tue, 29 May 2012 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/linux_shell_programming</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/05/29/linux_shell_programming/</guid>
-      <description>1、shell结构 * #!指定执行脚本的shell * #注释行 * 命令和控制结构 2、创建shell程序的步骤 * 创建一个包含命令和控制结构的文件 * 修</description>
-    </item>
-    
-    <item>
-      <title>linux常用命令——压缩解压命令</title>
-      <link>http://blog.wenzhixin.net.cn/2012/05/23/commonly_used_linux_commands_compression_decompression_command/</link>
-      <pubDate>Wed, 23 May 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/05/23/commonly_used_linux_commands_compression_decompression_command/</guid>
-      <description>命令：gzip (GNU zip) 功能：压缩文件 权限：所有用户 语法：gzip 选项[文件] 压缩后格式：.gz 说明：只能压缩文件，不保存源文件 命令：gunzip</description>
-    </item>
-    
-    <item>
-      <title>linux常用命令——压缩解压命令</title>
-      <link>http://blog.wenzhixin.net.cn/2012/05/23/commonly_used_linux_commands_compression_decompression_command/</link>
-      <pubDate>Wed, 23 May 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/05/23/commonly_used_linux_commands_compression_decompression_command/</guid>
-      <description>命令：gzip (GNU zip) 功能：压缩文件 权限：所有用户 语法：gzip 选项[文件] 压缩后格式：.gz 说明：只能压缩文件，不保存源文件 命令：gunzip</description>
-    </item>
-    
-    <item>
-      <title>linux常用命令——帮助命令</title>
-      <link>http://blog.wenzhixin.net.cn/2012/05/22/commonly_used_linux_commands_help_command/</link>
-      <pubDate>Tue, 22 May 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/05/22/commonly_used_linux_commands_help_command/</guid>
-      <description>命令：man (manual) 功能：获得帮助信息 权限：所有用户 语法：man [命令或配置文件] 例子：man ls 查看 ls 命令的帮助信息 man services 查看配置文件 services 的帮助信息 命</description>
-    </item>
-    
-    <item>
-      <title>linux常用命令——帮助命令</title>
-      <link>http://blog.wenzhixin.net.cn/2012/05/22/commonly_used_linux_commands_help_command/</link>
-      <pubDate>Tue, 22 May 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/05/22/commonly_used_linux_commands_help_command/</guid>
-      <description>命令：man (manual) 功能：获得帮助信息 权限：所有用户 语法：man [命令或配置文件] 例子：man ls 查看 ls 命令的帮助信息 man services 查看配置文件 services 的帮助信息 命</description>
-    </item>
-    
-    <item>
-      <title>linux常用命令——文件搜索命令</title>
-      <link>http://blog.wenzhixin.net.cn/2012/05/22/commonly_used_linux_commands_file_search_command/</link>
-      <pubDate>Tue, 22 May 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/05/22/commonly_used_linux_commands_file_search_command/</guid>
-      <description>命令：which / whereis 功能：显示系统命令所在目录 权限：所有用户 语法：which / whereis [命令名称] 命令：find 功能：查找文件或目录 权限：所有用户</description>
-    </item>
-    
-    <item>
-      <title>linux常用命令——文件搜索命令</title>
-      <link>http://blog.wenzhixin.net.cn/2012/05/22/commonly_used_linux_commands_file_search_command/</link>
-      <pubDate>Tue, 22 May 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/05/22/commonly_used_linux_commands_file_search_command/</guid>
-      <description>命令：which / whereis 功能：显示系统命令所在目录 权限：所有用户 语法：which / whereis [命令名称] 命令：find 功能：查找文件或目录 权限：所有用户</description>
-    </item>
-    
-    <item>
-      <title>linux常用命令——权限管理命令</title>
-      <link>http://blog.wenzhixin.net.cn/2012/05/20/commonly_used_linux_commands_permission_management_command/</link>
-      <pubDate>Sun, 20 May 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/05/20/commonly_used_linux_commands_permission_management_command/</guid>
-      <description>命令：chmod (change the permissions mode of a file) 功能：改变文件或目录权限 权限：所有用户 语法：chmod [{ugo}{+-=}{rwx}][文件或目录] chmod [mo</description>
-    </item>
-    
-    <item>
-      <title>linux常用命令——权限管理命令</title>
-      <link>http://blog.wenzhixin.net.cn/2012/05/20/commonly_used_linux_commands_permission_management_command/</link>
-      <pubDate>Sun, 20 May 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/05/20/commonly_used_linux_commands_permission_management_command/</guid>
-      <description>命令：chmod (change the permissions mode of a file) 功能：改变文件或目录权限 权限：所有用户 语法：chmod [{ugo}{+-=}{rwx}][文件或目录] chmod [mo</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/linux_shell_programming</guid>
+      <description>&lt;p&gt;1、shell结构&lt;/p&gt;
+
+&lt;p&gt; * #!指定执行脚本的shell&lt;/p&gt;
+
+&lt;p&gt; * #注释行&lt;/p&gt;
+
+&lt;p&gt; * 命令和控制结构&lt;/p&gt;
+
+&lt;p&gt;2、创建shell程序的步骤&lt;/p&gt;
+
+&lt;p&gt; * 创建一个包含命令和控制结构的文件&lt;/p&gt;
+
+&lt;p&gt; * 修改这个文件的权限使它可以执行：chmod u+x&lt;/p&gt;
+
+&lt;p&gt; * 执行 ./shell (sh shell)&lt;/p&gt;
+
+&lt;p&gt;3、shell变量&lt;/p&gt;
+
+&lt;p&gt; * 变量是shell传递数据的一种方法，用来代表每个取值的符号名&lt;/p&gt;
+
+&lt;p&gt; * 变量包括：临时变量和永久变量&lt;/p&gt;
+
+&lt;p&gt; * 自定义变量由字母或下划线开头，由字母、数字或下划线组成，区分大小写&lt;/p&gt;
+
+&lt;p&gt; * 使用变量时，需要在变量名前加上前缀 $&lt;/p&gt;
+
+&lt;p&gt; * set：查看所有的变量；unset：删除变量&lt;/p&gt;
+
+&lt;p&gt;4、位置变量和特殊变量&lt;/p&gt;
+
+&lt;p&gt; * 位置参数：出现在命令行上的位置确定的参数&lt;/p&gt;
+
+&lt;p&gt; * $0：表示这个脚本的文件名&lt;/p&gt;
+
+&lt;p&gt; * $n：表示这个脚本的第 n 个参数值，n=1-9&lt;/p&gt;
+
+&lt;p&gt; * $*：该脚本的所有参数&lt;/p&gt;
+
+&lt;p&gt; * $#：该脚本的参数个数&lt;/p&gt;
+
+&lt;p&gt; * $$：该脚本的PID&lt;/p&gt;
+
+&lt;p&gt; * $!：执行删一个后台命令的PID&lt;/p&gt;
+
+&lt;p&gt; * $?：执行上一个命令的返回值&lt;/p&gt;
+
+&lt;p&gt;5、shell命令&lt;/p&gt;
+
+&lt;p&gt; * read命令：从键盘中读入数据，赋给变量&lt;/p&gt;
+
+&lt;p&gt; * expr命令：对整数型变量进行算术运算&lt;/p&gt;
+
+&lt;p&gt;6、变量测试&lt;/p&gt;
+
+&lt;p&gt; * test命令：用于测试变量是否相等、是否为空、文件类型等&lt;/p&gt;
+
+&lt;p&gt; * 格式：test 测试条件&lt;/p&gt;
+
+&lt;p&gt; * 范围：整数、字符串、文件&lt;/p&gt;
+
+&lt;p&gt; * 字符串测试：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://ww1.sinaimg.cn/mw600/88a9c274jw1dtfl7dgfzmg.gif&#34; alt=&#34;linux
+shell编程&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt; * 整数测试：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://ww3.sinaimg.cn/mw600/88a9c274jw1dtfl7iy4ufg.gif&#34; alt=&#34;linux
+shell编程&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt; * 文件测试：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://ww3.sinaimg.cn/mw600/88a9c274jw1dtfl7petoxg.gif&#34; alt=&#34;linux
+shell编程&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt; * 简化：用[]进行简化 test 语句 等价于 [ 语句 ]&lt;/p&gt;
+
+&lt;p&gt;7、流控制语句&lt;/p&gt;
+
+&lt;p&gt; * 流控制语句：用于控制shell程序的流程&lt;/p&gt;
+
+&lt;p&gt; * exit语句：退出程序执行，返回一个返回值，0表示正常退出，非0表示非正常退出&lt;/p&gt;
+
+&lt;p&gt;8、if语句&lt;/p&gt;
+
+&lt;p&gt; * 语法：&lt;/p&gt;
+   if 条件1 ; then
+
+      命令1
+
+   elif 条件2 ; then
+
+      命令2
+
+   else
+
+      命令3
+
+   fi
+
+&lt;p&gt; * -a：逻辑与，仅当两个条件都成立时，结果为真&lt;/p&gt;
+
+&lt;p&gt; * -o：逻辑或，两个条件只要一个为真，结果为真&lt;/p&gt;
+
+&lt;p&gt;9、for语句&lt;/p&gt;
+
+&lt;p&gt; * 语法：&lt;/p&gt;
+   for 变量 in 名字表
+
+   do
+
+      命令列表
+
+   done
+
+&lt;p&gt;10、case语句&lt;/p&gt;
+
+&lt;p&gt; * 语法：&lt;/p&gt;
+   case 变量 in
+
+      字符串1) 命令列表1
+
+      ;;
+
+      字符串n) 命令列表n
+
+      ;;
+
+      \*) 命令列表（default）
+
+      ;;
+
+   esac
+
+      ;;
+
+&lt;p&gt;11、while语句：&lt;/p&gt;
+
+&lt;p&gt; * 语法：&lt;/p&gt;
+   while 条件
+
+   do
+
+      命令
+
+   done
+
+&lt;p&gt;12、until语句：&lt;/p&gt;
+
+&lt;p&gt; * 语法：&lt;/p&gt;
+   until 条件
+
+   do
+
+      命令
+
+   done
+
+&lt;p&gt;13、跳出循环&lt;/p&gt;
+
+&lt;p&gt; * break：跳出真个循环&lt;/p&gt;
+
+&lt;p&gt; * continue：跳出本次循环，进行下次循环&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>linux 常用命令——文件处理命令</title>
-      <link>http://blog.wenzhixin.net.cn/2012/05/19/commonly_used_linux_commands_file_command/</link>
-      <pubDate>Sat, 19 May 2012 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/commonly_used_linux_commands_file_command</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/05/19/commonly_used_linux_commands_file_command/</guid>
-      <description>命令：ls (list) 功能：显示目录文件 权限：所有用户 语法：ls 选项[-ald] [文件或目录] -a 显示所有文件，包括隐藏文件 -l 显示详细信息 -d 查看目录属性</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/commonly_used_linux_commands_file_command</guid>
+      <description>&lt;p&gt;命令：ls (list)&lt;/p&gt;
+
+&lt;p&gt;功能：显示目录文件&lt;/p&gt;
+
+&lt;p&gt;权限：所有用户&lt;/p&gt;
+
+&lt;p&gt;语法：ls 选项[-ald] [文件或目录]&lt;/p&gt;
+
+&lt;p&gt;-a 显示所有文件，包括隐藏文件&lt;/p&gt;
+
+&lt;p&gt;-l 显示详细信息&lt;/p&gt;
+
+&lt;p&gt;-d 查看目录属性&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;命令：cd (change directory)&lt;/p&gt;
+
+&lt;p&gt;功能：切换目录&lt;/p&gt;
+
+&lt;p&gt;权限：所有用户&lt;/p&gt;
+
+&lt;p&gt;语法：cd [目录]&lt;/p&gt;
+
+&lt;p&gt;说明：. 和 .. 表示为两个特殊的目录，分别是当前目录和父目录&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;命令：pwd (print working directory)&lt;/p&gt;
+
+&lt;p&gt;功能：显示当前所在的工作目录&lt;/p&gt;
+
+&lt;p&gt;权限：所有用户&lt;/p&gt;
+
+&lt;p&gt;语法：pwd&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;命令：touch&lt;/p&gt;
+
+&lt;p&gt;功能：创建空文件&lt;/p&gt;
+
+&lt;p&gt;权限：所有用户&lt;/p&gt;
+
+&lt;p&gt;语法：touch [文件名]&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;命令：mkdir (make directories)&lt;/p&gt;
+
+&lt;p&gt;功能：创建新目录&lt;/p&gt;
+
+&lt;p&gt;权限：所有用户&lt;/p&gt;
+
+&lt;p&gt;语法：mkdir [目录名]&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;命令：cp (copy)&lt;/p&gt;
+
+&lt;p&gt;功能：复制文件或目录&lt;/p&gt;
+
+&lt;p&gt;权限：所有用户&lt;/p&gt;
+
+&lt;p&gt;语法：cp 选项[-R] [源文件或目录][目的目录]&lt;/p&gt;
+
+&lt;p&gt;-R 复制整个目录&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;命令：mv (move)&lt;/p&gt;
+
+&lt;p&gt;功能：移动文件、更改文件名（重命名）&lt;/p&gt;
+
+&lt;p&gt;权限：所有用户&lt;/p&gt;
+
+&lt;p&gt;语法：mv [源文件或目录][目的目录]&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;命令：rm (remove)&lt;/p&gt;
+
+&lt;p&gt;功能：删除文件&lt;/p&gt;
+
+&lt;p&gt;权限：所有用户&lt;/p&gt;
+
+&lt;p&gt;语法：rm 选项[-rf][文件或目录]&lt;/p&gt;
+
+&lt;p&gt;-r 删除目录&lt;/p&gt;
+
+&lt;p&gt;-f &amp;ndash;force 强制删除，不提示确认&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;命令：cat (noncatenate and display)&lt;/p&gt;
+
+&lt;p&gt;功能：显示文件内容&lt;/p&gt;
+
+&lt;p&gt;权限：所有用户&lt;/p&gt;
+
+&lt;p&gt;语法：cat [文件名]&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;命令：more&lt;/p&gt;
+
+&lt;p&gt;功能：分页显示文件内容&lt;/p&gt;
+
+&lt;p&gt;权限：所有用户&lt;/p&gt;
+
+&lt;p&gt;语法：more [文件名]&lt;/p&gt;
+
+&lt;p&gt;操作：空格 或 f —— 显示下一页&lt;/p&gt;
+
+&lt;p&gt;enter —— 显示下一行&lt;/p&gt;
+
+&lt;p&gt;q 或 Q —— 退出&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;命令：head&lt;/p&gt;
+
+&lt;p&gt;功能：查看文件的前几行&lt;/p&gt;
+
+&lt;p&gt;权限：所有用户&lt;/p&gt;
+
+&lt;p&gt;语法：head 选项[-num] [文件名]&lt;/p&gt;
+
+&lt;p&gt;-num 显示文件的前 num 行&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;命令：tail&lt;/p&gt;
+
+&lt;p&gt;功能：查看文件的后几行&lt;/p&gt;
+
+&lt;p&gt;权限：所有用户&lt;/p&gt;
+
+&lt;p&gt;语法：tail 选项[-num/-f] [文件名]&lt;/p&gt;
+
+&lt;p&gt;-num 显示文件的后 num 行&lt;/p&gt;
+
+&lt;p&gt;-f 动态显示文件的内容&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;命令：ln (link)&lt;/p&gt;
+
+&lt;p&gt;功能：产生链接文件&lt;/p&gt;
+
+&lt;p&gt;权限：所有用户&lt;/p&gt;
+
+&lt;p&gt;语法：ln 选项[-s] [源文件][目标文件]&lt;/p&gt;
+
+&lt;p&gt;不加参数 表示创建硬链接&lt;/p&gt;
+
+&lt;p&gt;-s 创建软链接&lt;/p&gt;
+
+&lt;p&gt;说明：软链接相当于快捷方式，硬链接相当于拷贝+同步&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>linux 常用命令——文件处理命令</title>
-      <link>http://blog.wenzhixin.net.cn/2012/05/19/commonly_used_linux_commands_file_command/</link>
-      <pubDate>Sat, 19 May 2012 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/commonly_used_linux_commands_file_command</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/05/19/commonly_used_linux_commands_file_command/</guid>
-      <description>命令：ls (list) 功能：显示目录文件 权限：所有用户 语法：ls 选项[-ald] [文件或目录] -a 显示所有文件，包括隐藏文件 -l 显示详细信息 -d 查看目录属性</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/commonly_used_linux_commands_file_command</guid>
+      <description>&lt;p&gt;命令：ls (list)&lt;/p&gt;
+
+&lt;p&gt;功能：显示目录文件&lt;/p&gt;
+
+&lt;p&gt;权限：所有用户&lt;/p&gt;
+
+&lt;p&gt;语法：ls 选项[-ald] [文件或目录]&lt;/p&gt;
+
+&lt;p&gt;-a 显示所有文件，包括隐藏文件&lt;/p&gt;
+
+&lt;p&gt;-l 显示详细信息&lt;/p&gt;
+
+&lt;p&gt;-d 查看目录属性&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;命令：cd (change directory)&lt;/p&gt;
+
+&lt;p&gt;功能：切换目录&lt;/p&gt;
+
+&lt;p&gt;权限：所有用户&lt;/p&gt;
+
+&lt;p&gt;语法：cd [目录]&lt;/p&gt;
+
+&lt;p&gt;说明：. 和 .. 表示为两个特殊的目录，分别是当前目录和父目录&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;命令：pwd (print working directory)&lt;/p&gt;
+
+&lt;p&gt;功能：显示当前所在的工作目录&lt;/p&gt;
+
+&lt;p&gt;权限：所有用户&lt;/p&gt;
+
+&lt;p&gt;语法：pwd&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;命令：touch&lt;/p&gt;
+
+&lt;p&gt;功能：创建空文件&lt;/p&gt;
+
+&lt;p&gt;权限：所有用户&lt;/p&gt;
+
+&lt;p&gt;语法：touch [文件名]&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;命令：mkdir (make directories)&lt;/p&gt;
+
+&lt;p&gt;功能：创建新目录&lt;/p&gt;
+
+&lt;p&gt;权限：所有用户&lt;/p&gt;
+
+&lt;p&gt;语法：mkdir [目录名]&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;命令：cp (copy)&lt;/p&gt;
+
+&lt;p&gt;功能：复制文件或目录&lt;/p&gt;
+
+&lt;p&gt;权限：所有用户&lt;/p&gt;
+
+&lt;p&gt;语法：cp 选项[-R] [源文件或目录][目的目录]&lt;/p&gt;
+
+&lt;p&gt;-R 复制整个目录&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;命令：mv (move)&lt;/p&gt;
+
+&lt;p&gt;功能：移动文件、更改文件名（重命名）&lt;/p&gt;
+
+&lt;p&gt;权限：所有用户&lt;/p&gt;
+
+&lt;p&gt;语法：mv [源文件或目录][目的目录]&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;命令：rm (remove)&lt;/p&gt;
+
+&lt;p&gt;功能：删除文件&lt;/p&gt;
+
+&lt;p&gt;权限：所有用户&lt;/p&gt;
+
+&lt;p&gt;语法：rm 选项[-rf][文件或目录]&lt;/p&gt;
+
+&lt;p&gt;-r 删除目录&lt;/p&gt;
+
+&lt;p&gt;-f &amp;ndash;force 强制删除，不提示确认&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;命令：cat (noncatenate and display)&lt;/p&gt;
+
+&lt;p&gt;功能：显示文件内容&lt;/p&gt;
+
+&lt;p&gt;权限：所有用户&lt;/p&gt;
+
+&lt;p&gt;语法：cat [文件名]&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;命令：more&lt;/p&gt;
+
+&lt;p&gt;功能：分页显示文件内容&lt;/p&gt;
+
+&lt;p&gt;权限：所有用户&lt;/p&gt;
+
+&lt;p&gt;语法：more [文件名]&lt;/p&gt;
+
+&lt;p&gt;操作：空格 或 f —— 显示下一页&lt;/p&gt;
+
+&lt;p&gt;enter —— 显示下一行&lt;/p&gt;
+
+&lt;p&gt;q 或 Q —— 退出&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;命令：head&lt;/p&gt;
+
+&lt;p&gt;功能：查看文件的前几行&lt;/p&gt;
+
+&lt;p&gt;权限：所有用户&lt;/p&gt;
+
+&lt;p&gt;语法：head 选项[-num] [文件名]&lt;/p&gt;
+
+&lt;p&gt;-num 显示文件的前 num 行&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;命令：tail&lt;/p&gt;
+
+&lt;p&gt;功能：查看文件的后几行&lt;/p&gt;
+
+&lt;p&gt;权限：所有用户&lt;/p&gt;
+
+&lt;p&gt;语法：tail 选项[-num/-f] [文件名]&lt;/p&gt;
+
+&lt;p&gt;-num 显示文件的后 num 行&lt;/p&gt;
+
+&lt;p&gt;-f 动态显示文件的内容&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;命令：ln (link)&lt;/p&gt;
+
+&lt;p&gt;功能：产生链接文件&lt;/p&gt;
+
+&lt;p&gt;权限：所有用户&lt;/p&gt;
+
+&lt;p&gt;语法：ln 选项[-s] [源文件][目标文件]&lt;/p&gt;
+
+&lt;p&gt;不加参数 表示创建硬链接&lt;/p&gt;
+
+&lt;p&gt;-s 创建软链接&lt;/p&gt;
+
+&lt;p&gt;说明：软链接相当于快捷方式，硬链接相当于拷贝+同步&lt;/p&gt;
+</description>
     </item>
     
   </channel>

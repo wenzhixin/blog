@@ -7,18 +7,98 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Sun, 21 Sep 2014 21:20:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.wenzhixin.net.cn/tags/%E6%89%B9%E9%87%8F/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="http://blog.wenzhixin.net.cn/tags/%E6%89%B9%E9%87%8F/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>如何批量读取 word 的内容和图片</title>
-      <link>http://blog.wenzhixin.net.cn/2014/09/21/node_docx/</link>
-      <pubDate>Sun, 21 Sep 2014 21:20:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/node_docx</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/09/21/node_docx/</guid>
-      <description>今天朋友说需要对100份 word 文件的内容进行录入工作，问我是否有什么方便的方法。假如最少1份按2分钟的速度算，也需要200分钟才可以录入完成。我</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/node_docx</guid>
+      <description>
+
+&lt;p&gt;今天朋友说需要对100份 word 文件的内容进行录入工作，问我是否有什么方便的方法。假如最少1份按2分钟的速度算，也需要200分钟才可以录入完成。我一直都不喜欢做重复又无意义的工作，就想着能否用程序来对其进行处理，后面虽然也花了快一个钟的时间来编写代码和测试，但是当程序用了几分钟的时间就将需要的内容全部录入完成时，觉得还是挺开心的，而自己也学到了许多的东西，在这里记录下，我想以后应该也会用到。&lt;/p&gt;
+
+&lt;h3 id=&#34;使用-unoconv-处理-word:7f17c56fe3862cd59715dd8ba3bba088&#34;&gt;使用 unoconv 处理 word&lt;/h3&gt;
+
+&lt;p&gt;首先 word 文件是 &lt;code&gt;.docx&lt;/code&gt;，在 Ubuntu 上，我们可以使用 &lt;code&gt;unoconv&lt;/code&gt; 命令来解析 word 的文件，安装命令如下：&lt;/p&gt;
+sudo apt-get install unoconv
+
+&lt;p&gt;通过 &lt;code&gt;--help&lt;/code&gt;，我们可以知道 &lt;code&gt;unoconv&lt;/code&gt; 的用法如下：&lt;/p&gt;
+unoconv --stdout --format=html ./docx/test.docx
+
+&lt;p&gt;解析 &lt;code&gt;test.docx&lt;/code&gt; 文件的内容，设置格式为 html，并且输出到标准输出中。&lt;/p&gt;
+
+&lt;h3 id=&#34;使用-shelljs-运行-shell-命令:7f17c56fe3862cd59715dd8ba3bba088&#34;&gt;使用 shelljs 运行 shell 命令&lt;/h3&gt;
+
+&lt;p&gt;这里使用的是熟悉的 nodejs 进行开发，而运行 shell 命令我使用的是 &lt;a href=&#34;https://github.com/arturadib/shelljs&#34;&gt;shelljs&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;安装：&lt;/p&gt;
+npm install shelljs
+
+&lt;p&gt;使用：&lt;/p&gt;
+shelljs.exec(&#39;unoconv --stdout --format=html ./docx/test.docx&#39;, {silent: true}, function (code, result) {
+    if (code) {
+        console.log(&#39;Error code: &#39; + code);
+        return;
+    }
+    console.log(result);
+});
+
+&lt;p&gt;到这里已经可以将 word 的内容输出到 console 中了。&lt;/p&gt;
+
+&lt;h3 id=&#34;使用-jquery-解析-html-内容:7f17c56fe3862cd59715dd8ba3bba088&#34;&gt;使用 jQuery 解析 html 内容&lt;/h3&gt;
+
+&lt;p&gt;可以看到输入的内容为 html 代码，我们需要对其进行处理，这里使用的是熟悉的 &lt;a href=&#34;https://github.com/UncoolAJ86/node-jquery&#34;&gt;jQuery&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;安装：&lt;/p&gt;
+npm install -S &#39;jquery@&gt;=2.1&#39;
+npm install -S &#39;jsdom@latest&#39;
+
+&lt;p&gt;关键代码：&lt;/p&gt;
+env(data, function (errors, window) {
+    var $ = require(&#39;jquery&#39;)(window);
+
+    $(&#39;p&#39;).each(function (i) {
+        var text = $.trim($(this).text());
+        // 这里一行一行读取文本，可以根据需要自己解析文本
+    });
+
+    $(&#39;img&#39;).each(function (i) {
+        var matches = $(this).attr(&#39;src&#39;).match(/^data:image\/([A-Za-z]+);base64,(.+)$/);
+
+        if (matches.length !== 3) {
+            return new Error(&#39;Invalid input string&#39;);
+        }
+
+        var type = matches[1]; // 图片的类型
+        var data = new Buffer(matches[2], &#39;base64&#39;);
+
+        fs.writeFile(&#39;./images/&#39; + i + &#39;.jpg&#39;, data);
+        // 将图片保存到 images 中，可以根据需要生成不同的名称
+    });
+});
+
+&lt;h3 id=&#34;使用-async-批量读取-word-文件:7f17c56fe3862cd59715dd8ba3bba088&#34;&gt;使用 async 批量读取 word 文件&lt;/h3&gt;
+
+&lt;p&gt;假如直接使用 forEach 的话会导致内存溢出，所以我们需要对每个文件进行排队处理，这里使用 &lt;a href=&#34;https://github.com/caolan/async&#34;&gt;async&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;安装：&lt;/p&gt;
+npm install async
+
+&lt;p&gt;使用：&lt;/p&gt;
+fs.readdir(&#39;./docx&#39;, function (err, files) {
+    async.eachSeries(files, parse, function () {
+        console.log(&#39;OK!!!&#39;);
+    });
+});
+
+function parse(file, callback) {
+    // 处理 file，完成之后调用 callback
+}
+
+&lt;p&gt;搞定！！！当然这里只是简单的记录了大概的思路和代码，实际上需要根据不同的需要做对应的处理。&lt;/p&gt;
+</description>
     </item>
     
   </channel>

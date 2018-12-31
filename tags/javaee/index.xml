@@ -7,18 +7,62 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Wed, 02 Apr 2014 13:30:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.wenzhixin.net.cn/tags/javaee/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="http://blog.wenzhixin.net.cn/tags/javaee/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Ubuntu 下搭建 JavaEE 环境</title>
-      <link>http://blog.wenzhixin.net.cn/2014/04/02/ubuntu_java_ee/</link>
-      <pubDate>Wed, 02 Apr 2014 13:30:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_java_ee</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/04/02/ubuntu_java_ee/</guid>
-      <description>在 Ubuntu 下搭建 JavaEE 的环境稍微有些麻烦，这里记录下。 1. 安装 eclipse 和 tomcat7 1 2 sudo apt-get install eclipse sudo apt-get install tomcat7 注：安装 eclipse 后会把依赖的 jdk 安装好，使用 apt-get 安装的 eclipse 是最精简的版本。 2.</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_java_ee</guid>
+      <description>
+
+&lt;p&gt;在 Ubuntu 下搭建 JavaEE 的环境稍微有些麻烦，这里记录下。&lt;/p&gt;
+
+&lt;h3 id=&#34;1-安装-eclipse-和-tomcat7:2d9f64794b91e20ce48f94cc6b696e20&#34;&gt;1. 安装 eclipse 和 tomcat7&lt;/h3&gt;
+sudo apt-get install eclipse
+sudo apt-get install tomcat7
+
+&lt;p&gt;注：安装 eclipse 后会把依赖的 jdk 安装好，使用 apt-get 安装的 eclipse 是最精简的版本。&lt;/p&gt;
+
+&lt;h3 id=&#34;2-安装-eclipse-的-javaee-插件:2d9f64794b91e20ce48f94cc6b696e20&#34;&gt;2. 安装 eclipse 的 JavaEE 插件&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;依次点击：Help -&amp;gt; Install New Software&amp;hellip; -&amp;gt; Add&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;输入：&lt;a href=&#34;http://download.eclipse.org/releases/indigo&#34;&gt;http://download.eclipse.org/releases/indigo&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;选择：Eclipse Java EE Developer Tools、JST Server Adapters、JST Server Adapters Extentions 并进行安装&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;重启 eclipse&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;注：不安装 JST Server Adapters 的话，在 Eclipse Server Runtime Environments 选择不了 tomcat&lt;/p&gt;
+
+&lt;h3 id=&#34;3-create-new-server-wizard:2d9f64794b91e20ce48f94cc6b696e20&#34;&gt;3. create new server wizard&lt;/h3&gt;
+
+&lt;p&gt;会出现 &lt;code&gt;Cannot create a server using the selected type&lt;/code&gt; 的问题，解决：&lt;/p&gt;
+cd .metadata/.plugins/org.eclipse.core.runtime/.settings/
+rm org.eclipse.jst.server.tomcat.core.prefs
+rm org.eclipse.wst.server.core.prefs
+
+&lt;p&gt;修改 tomcat7 的配置和文件权限：&lt;/p&gt;
+cd /usr/share/tomcat7
+sudo ln -s /var/lib/tomcat7/conf conf
+sudo ln -s /etc/tomcat7/policy.d/03catalina.policy conf/catalina.policy
+sudo ln -s /var/log/tomcat7 log
+sudo chmod -R 777 /usr/share/tomcat7/conf
+
+&lt;p&gt;禁用 tomcat7 自启动：&lt;/p&gt;
+sudo service tomcat7 stop
+sudo update-rc.d tomcat7 disable
+
+&lt;p&gt;注：至此，已经搞定了，假如还有问题那还需要：&lt;/p&gt;
+cd /usr/share/tomcat7
+sudo ln -s /var/lib/tomcat7/common common
+sudo ln -s /var/lib/tomcat7/server server
+sudo ln -s /var/lib/tomcat7/shared shared
+</description>
     </item>
     
   </channel>

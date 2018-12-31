@@ -1,24 +1,59 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>lxc on 文翼的博客</title>
+    <title>Lxc on 文翼的博客</title>
     <link>http://blog.wenzhixin.net.cn/tags/lxc/</link>
-    <description>Recent content in lxc on 文翼的博客</description>
+    <description>Recent content in Lxc on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Wed, 04 Mar 2015 09:56:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.wenzhixin.net.cn/tags/lxc/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="http://blog.wenzhixin.net.cn/tags/lxc/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>lxc 小贴士：创建、自动启动、设置存放目录</title>
-      <link>http://blog.wenzhixin.net.cn/2015/03/04/lxc_tips/</link>
-      <pubDate>Wed, 04 Mar 2015 09:56:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/lxc_tips</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2015/03/04/lxc_tips/</guid>
-      <description>平时使用 lxc 比较多，在这里记录下容易忘记的点。 创建 很简单，创建一个 ubuntu 系统（trusty），详细见LXC简介。 创建文件：vi trusty.con</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/lxc_tips</guid>
+      <description>
+
+&lt;p&gt;平时使用 lxc 比较多，在这里记录下容易忘记的点。&lt;/p&gt;
+
+&lt;h3 id=&#34;创建:b90732aadcfdaa809d1b030b65523295&#34;&gt;创建&lt;/h3&gt;
+
+&lt;p&gt;很简单，创建一个 ubuntu 系统（trusty），详细见&lt;a href=&#34;http://www.malike.net.cn/blog/2013/11/10/lxc-tutorial/&#34;&gt;LXC简介&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;创建文件：&lt;code&gt;vi trusty.conf&lt;/code&gt;：&lt;/p&gt;
+lxc.network.type = veth
+lxc.network.flags = up
+lxc.network.name = eth0
+lxc.network.link = lxcbr0
+sudo MIRROR=&#34;http://ftp.cuhk.edu.hk/pub/Linux/ubuntu&#34; \
+     SECURITY_MIRROR=&#34;http://ftp.cuhk.edu.hk/pub/Linux/ubuntu&#34; \
+     lxc-create -n trusty -f trusty.conf -t ubuntu -- -r trusty
+
+&lt;p&gt;接着，启动 lxc：&lt;/p&gt;
+lxc-start -d -n trusty
+
+&lt;p&gt;这里的参数 &lt;code&gt;-d&lt;/code&gt; 是必要的，表示以 daemon 的方式运行。&lt;/p&gt;
+
+&lt;p&gt;所有的 lxc 容器创建后的默认用户名密码为：ubuntu。&lt;/p&gt;
+
+&lt;h3 id=&#34;自动启动:b90732aadcfdaa809d1b030b65523295&#34;&gt;自动启动&lt;/h3&gt;
+
+&lt;p&gt;我想让我的 lxc 容器自动启动，可以通过编辑 &lt;code&gt;/var/lib/lxc/[container_name]/config&lt;/code&gt; 文件：&lt;/p&gt;
+# Autostart
+lxc.start.auto = 1
+lxc.start.delay = 5
+
+&lt;p&gt;这里假如有多个容器的话会等待 5 秒。&lt;/p&gt;
+
+&lt;h3 id=&#34;设置存放目录:b90732aadcfdaa809d1b030b65523295&#34;&gt;设置存放目录&lt;/h3&gt;
+
+&lt;p&gt;由于 lxc 默认的存放目录为 &lt;code&gt;/var/lib/lxc&lt;/code&gt;，很容易导致 &lt;code&gt;/&lt;/code&gt; 容量不足，这里可以通过软链接的方式进行设置：&lt;/p&gt;
+sudo mv /var/lib/lxc ~/lxc
+ln -s ~/lxc /var/lib/lxc
+</description>
     </item>
     
   </channel>

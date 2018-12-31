@@ -7,36 +7,114 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Wed, 16 Jan 2013 00:18:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.wenzhixin.net.cn/tags/ie/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="http://blog.wenzhixin.net.cn/tags/ie/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>IE 下 splice 的 bug</title>
-      <link>http://blog.wenzhixin.net.cn/2013/01/16/splice_in_ie/</link>
-      <pubDate>Wed, 16 Jan 2013 00:18:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/splice_in_ie</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/01/16/splice_in_ie/</guid>
-      <description>引用： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 array.splice() in Internet Explorer I finally got around to investigating an IE bug I’ve been meaning to look into. The root cause was a difference between JScript and ECMAScript as regards array.splice(). The signature for this handy method that removes and inserts array elements in place: splice(start, deleteCount, value, ...)</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/splice_in_ie</guid>
+      <description>
+
+&lt;p&gt;引用：&lt;/p&gt;
+array.splice() in Internet Explorer
+I finally got around to investigating an IE bug I’ve been meaning to look into. The root cause was a difference between JScript and ECMAScript as regards array.splice(). The signature for this handy method that removes and inserts array elements in place:
+
+splice(start, deleteCount, value, ...)
+
+According to the standard, only start (the index at which to start removing elements) is a required argument. So:
+
+var a = [&#34;e1&#34;, &#34;e2&#34;, &#34;e3&#34;];
+a.splice(1);
+
+should result in a being a single-element array containing “e1″. But of course, IE does not see it that way. According to MSDN, deleteCount is also required argument. Thus, the above would have to be:
+
+var a = [&#34;e1&#34;, &#34;e2&#34;, &#34;e3&#34;];
+a.splice(1, a.length-1);
+
+&lt;h4 id=&#34;问题:828165d955b49a5a0cab0507962366b5&#34;&gt;问题：&lt;/h4&gt;
+
+&lt;p&gt;使用 markdown.js 在 IE 下无法正常显示 pre 代码&lt;/p&gt;
+
+&lt;h4 id=&#34;原因:828165d955b49a5a0cab0507962366b5&#34;&gt;原因：&lt;/h4&gt;
+
+&lt;p&gt;array.splice() 在 IE 下的 bug 引起的&lt;/p&gt;
+
+&lt;h4 id=&#34;解决:828165d955b49a5a0cab0507962366b5&#34;&gt;解决：&lt;/h4&gt;
+
+&lt;p&gt;将 markdown.js 中的第 1495 行：&lt;/p&gt;
+code.push.apply( code, jsonml.splice( i ) );
+
+&lt;p&gt;改为&lt;/p&gt;
+code.push.apply( code, jsonml.splice( i, jsonml.length - 1) );
+</description>
     </item>
     
     <item>
       <title>IE 下使用 button 时 Enter 的问题</title>
-      <link>http://blog.wenzhixin.net.cn/2012/12/03/ie_enter_button_bug/</link>
-      <pubDate>Mon, 03 Dec 2012 20:21:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/ie_enter_button_bug</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/12/03/ie_enter_button_bug/</guid>
-      <description>问题： 当页面中有 1 &amp;lt;button&amp;gt;&amp;lt;/button&amp;gt; 的时候，IE 浏览器按 Enter 便会触发 button 按钮的点击事件，导致不必要的麻烦出现（例如对 input 的检查）。 解决： 使用 1 &amp;lt;a class=&amp;#34;button&amp;#34; href=&amp;#34;javascript:void(0)&amp;#34;&amp;gt;&amp;lt;/a&amp;gt; 来代替，并设置</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/ie_enter_button_bug</guid>
+      <description>
+
+&lt;h4 id=&#34;问题:b5cd3a6e8e8182cad0d2dff4a7361175&#34;&gt;问题：&lt;/h4&gt;
+
+&lt;p&gt;当页面中有&lt;/p&gt;
+&lt;button&gt;&lt;/button&gt; 
+
+&lt;p&gt;的时候，IE 浏览器按 Enter 便会触发 button 按钮的点击事件，导致不必要的麻烦出现（例如对 input 的检查）。&lt;/p&gt;
+
+&lt;h4 id=&#34;解决:b5cd3a6e8e8182cad0d2dff4a7361175&#34;&gt;解决：&lt;/h4&gt;
+
+&lt;p&gt;使用&lt;/p&gt;
+&lt;a class=&#34;button&#34; href=&#34;javascript:void(0)&#34;&gt;&lt;/a&gt;
+
+&lt;p&gt;来代替，并设置其 css (根据需要进行其他的设置)：&lt;/p&gt;
+.button {
+    display: inline-block;
+    font-size: 14px;
+    line-height: 25px;
+    text-align: center;
+    color: #333;
+    text-decoration: none;
+    background: url(images/button_sprite.png) no-repeat;
+}
+</description>
     </item>
     
     <item>
       <title>IE 下使用 button 时 Enter 的问题</title>
-      <link>http://blog.wenzhixin.net.cn/2012/12/03/ie_enter_button_bug/</link>
-      <pubDate>Mon, 03 Dec 2012 20:21:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/ie_enter_button_bug</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/12/03/ie_enter_button_bug/</guid>
-      <description>问题： 当页面中有 1 &amp;lt;button&amp;gt;&amp;lt;/button&amp;gt; 的时候，IE 浏览器按 Enter 便会触发 button 按钮的点击事件，导致不必要的麻烦出现（例如对 input 的检查）。 解决： 使用 1 &amp;lt;a class=&amp;#34;button&amp;#34; href=&amp;#34;javascript:void(0)&amp;#34;&amp;gt;&amp;lt;/a&amp;gt; 来代替，并设置</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/ie_enter_button_bug</guid>
+      <description>
+
+&lt;h4 id=&#34;问题:b5cd3a6e8e8182cad0d2dff4a7361175&#34;&gt;问题：&lt;/h4&gt;
+
+&lt;p&gt;当页面中有&lt;/p&gt;
+&lt;button&gt;&lt;/button&gt; 
+
+&lt;p&gt;的时候，IE 浏览器按 Enter 便会触发 button 按钮的点击事件，导致不必要的麻烦出现（例如对 input 的检查）。&lt;/p&gt;
+
+&lt;h4 id=&#34;解决:b5cd3a6e8e8182cad0d2dff4a7361175&#34;&gt;解决：&lt;/h4&gt;
+
+&lt;p&gt;使用&lt;/p&gt;
+&lt;a class=&#34;button&#34; href=&#34;javascript:void(0)&#34;&gt;&lt;/a&gt;
+
+&lt;p&gt;来代替，并设置其 css (根据需要进行其他的设置)：&lt;/p&gt;
+.button {
+    display: inline-block;
+    font-size: 14px;
+    line-height: 25px;
+    text-align: center;
+    color: #333;
+    text-decoration: none;
+    background: url(images/button_sprite.png) no-repeat;
+}
+</description>
     </item>
     
   </channel>

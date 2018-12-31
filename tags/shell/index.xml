@@ -1,33 +1,356 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>shell on 文翼的博客</title>
+    <title>Shell on 文翼的博客</title>
     <link>http://blog.wenzhixin.net.cn/tags/shell/</link>
-    <description>Recent content in shell on 文翼的博客</description>
+    <description>Recent content in Shell on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Tue, 29 May 2012 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.wenzhixin.net.cn/tags/shell/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="http://blog.wenzhixin.net.cn/tags/shell/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>linux shell编程</title>
-      <link>http://blog.wenzhixin.net.cn/2012/05/29/linux_shell_programming/</link>
-      <pubDate>Tue, 29 May 2012 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/linux_shell_programming</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/05/29/linux_shell_programming/</guid>
-      <description>1、shell结构 * #!指定执行脚本的shell * #注释行 * 命令和控制结构 2、创建shell程序的步骤 * 创建一个包含命令和控制结构的文件 * 修</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/linux_shell_programming</guid>
+      <description>&lt;p&gt;1、shell结构&lt;/p&gt;
+
+&lt;p&gt; * #!指定执行脚本的shell&lt;/p&gt;
+
+&lt;p&gt; * #注释行&lt;/p&gt;
+
+&lt;p&gt; * 命令和控制结构&lt;/p&gt;
+
+&lt;p&gt;2、创建shell程序的步骤&lt;/p&gt;
+
+&lt;p&gt; * 创建一个包含命令和控制结构的文件&lt;/p&gt;
+
+&lt;p&gt; * 修改这个文件的权限使它可以执行：chmod u+x&lt;/p&gt;
+
+&lt;p&gt; * 执行 ./shell (sh shell)&lt;/p&gt;
+
+&lt;p&gt;3、shell变量&lt;/p&gt;
+
+&lt;p&gt; * 变量是shell传递数据的一种方法，用来代表每个取值的符号名&lt;/p&gt;
+
+&lt;p&gt; * 变量包括：临时变量和永久变量&lt;/p&gt;
+
+&lt;p&gt; * 自定义变量由字母或下划线开头，由字母、数字或下划线组成，区分大小写&lt;/p&gt;
+
+&lt;p&gt; * 使用变量时，需要在变量名前加上前缀 $&lt;/p&gt;
+
+&lt;p&gt; * set：查看所有的变量；unset：删除变量&lt;/p&gt;
+
+&lt;p&gt;4、位置变量和特殊变量&lt;/p&gt;
+
+&lt;p&gt; * 位置参数：出现在命令行上的位置确定的参数&lt;/p&gt;
+
+&lt;p&gt; * $0：表示这个脚本的文件名&lt;/p&gt;
+
+&lt;p&gt; * $n：表示这个脚本的第 n 个参数值，n=1-9&lt;/p&gt;
+
+&lt;p&gt; * $*：该脚本的所有参数&lt;/p&gt;
+
+&lt;p&gt; * $#：该脚本的参数个数&lt;/p&gt;
+
+&lt;p&gt; * $$：该脚本的PID&lt;/p&gt;
+
+&lt;p&gt; * $!：执行删一个后台命令的PID&lt;/p&gt;
+
+&lt;p&gt; * $?：执行上一个命令的返回值&lt;/p&gt;
+
+&lt;p&gt;5、shell命令&lt;/p&gt;
+
+&lt;p&gt; * read命令：从键盘中读入数据，赋给变量&lt;/p&gt;
+
+&lt;p&gt; * expr命令：对整数型变量进行算术运算&lt;/p&gt;
+
+&lt;p&gt;6、变量测试&lt;/p&gt;
+
+&lt;p&gt; * test命令：用于测试变量是否相等、是否为空、文件类型等&lt;/p&gt;
+
+&lt;p&gt; * 格式：test 测试条件&lt;/p&gt;
+
+&lt;p&gt; * 范围：整数、字符串、文件&lt;/p&gt;
+
+&lt;p&gt; * 字符串测试：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://ww1.sinaimg.cn/mw600/88a9c274jw1dtfl7dgfzmg.gif&#34; alt=&#34;linux
+shell编程&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt; * 整数测试：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://ww3.sinaimg.cn/mw600/88a9c274jw1dtfl7iy4ufg.gif&#34; alt=&#34;linux
+shell编程&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt; * 文件测试：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://ww3.sinaimg.cn/mw600/88a9c274jw1dtfl7petoxg.gif&#34; alt=&#34;linux
+shell编程&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt; * 简化：用[]进行简化 test 语句 等价于 [ 语句 ]&lt;/p&gt;
+
+&lt;p&gt;7、流控制语句&lt;/p&gt;
+
+&lt;p&gt; * 流控制语句：用于控制shell程序的流程&lt;/p&gt;
+
+&lt;p&gt; * exit语句：退出程序执行，返回一个返回值，0表示正常退出，非0表示非正常退出&lt;/p&gt;
+
+&lt;p&gt;8、if语句&lt;/p&gt;
+
+&lt;p&gt; * 语法：&lt;/p&gt;
+   if 条件1 ; then
+
+      命令1
+
+   elif 条件2 ; then
+
+      命令2
+
+   else
+
+      命令3
+
+   fi
+
+&lt;p&gt; * -a：逻辑与，仅当两个条件都成立时，结果为真&lt;/p&gt;
+
+&lt;p&gt; * -o：逻辑或，两个条件只要一个为真，结果为真&lt;/p&gt;
+
+&lt;p&gt;9、for语句&lt;/p&gt;
+
+&lt;p&gt; * 语法：&lt;/p&gt;
+   for 变量 in 名字表
+
+   do
+
+      命令列表
+
+   done
+
+&lt;p&gt;10、case语句&lt;/p&gt;
+
+&lt;p&gt; * 语法：&lt;/p&gt;
+   case 变量 in
+
+      字符串1) 命令列表1
+
+      ;;
+
+      字符串n) 命令列表n
+
+      ;;
+
+      \*) 命令列表（default）
+
+      ;;
+
+   esac
+
+      ;;
+
+&lt;p&gt;11、while语句：&lt;/p&gt;
+
+&lt;p&gt; * 语法：&lt;/p&gt;
+   while 条件
+
+   do
+
+      命令
+
+   done
+
+&lt;p&gt;12、until语句：&lt;/p&gt;
+
+&lt;p&gt; * 语法：&lt;/p&gt;
+   until 条件
+
+   do
+
+      命令
+
+   done
+
+&lt;p&gt;13、跳出循环&lt;/p&gt;
+
+&lt;p&gt; * break：跳出真个循环&lt;/p&gt;
+
+&lt;p&gt; * continue：跳出本次循环，进行下次循环&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>linux shell编程</title>
-      <link>http://blog.wenzhixin.net.cn/2012/05/29/linux_shell_programming/</link>
-      <pubDate>Tue, 29 May 2012 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/linux_shell_programming</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/05/29/linux_shell_programming/</guid>
-      <description>1、shell结构 * #!指定执行脚本的shell * #注释行 * 命令和控制结构 2、创建shell程序的步骤 * 创建一个包含命令和控制结构的文件 * 修</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/linux_shell_programming</guid>
+      <description>&lt;p&gt;1、shell结构&lt;/p&gt;
+
+&lt;p&gt; * #!指定执行脚本的shell&lt;/p&gt;
+
+&lt;p&gt; * #注释行&lt;/p&gt;
+
+&lt;p&gt; * 命令和控制结构&lt;/p&gt;
+
+&lt;p&gt;2、创建shell程序的步骤&lt;/p&gt;
+
+&lt;p&gt; * 创建一个包含命令和控制结构的文件&lt;/p&gt;
+
+&lt;p&gt; * 修改这个文件的权限使它可以执行：chmod u+x&lt;/p&gt;
+
+&lt;p&gt; * 执行 ./shell (sh shell)&lt;/p&gt;
+
+&lt;p&gt;3、shell变量&lt;/p&gt;
+
+&lt;p&gt; * 变量是shell传递数据的一种方法，用来代表每个取值的符号名&lt;/p&gt;
+
+&lt;p&gt; * 变量包括：临时变量和永久变量&lt;/p&gt;
+
+&lt;p&gt; * 自定义变量由字母或下划线开头，由字母、数字或下划线组成，区分大小写&lt;/p&gt;
+
+&lt;p&gt; * 使用变量时，需要在变量名前加上前缀 $&lt;/p&gt;
+
+&lt;p&gt; * set：查看所有的变量；unset：删除变量&lt;/p&gt;
+
+&lt;p&gt;4、位置变量和特殊变量&lt;/p&gt;
+
+&lt;p&gt; * 位置参数：出现在命令行上的位置确定的参数&lt;/p&gt;
+
+&lt;p&gt; * $0：表示这个脚本的文件名&lt;/p&gt;
+
+&lt;p&gt; * $n：表示这个脚本的第 n 个参数值，n=1-9&lt;/p&gt;
+
+&lt;p&gt; * $*：该脚本的所有参数&lt;/p&gt;
+
+&lt;p&gt; * $#：该脚本的参数个数&lt;/p&gt;
+
+&lt;p&gt; * $$：该脚本的PID&lt;/p&gt;
+
+&lt;p&gt; * $!：执行删一个后台命令的PID&lt;/p&gt;
+
+&lt;p&gt; * $?：执行上一个命令的返回值&lt;/p&gt;
+
+&lt;p&gt;5、shell命令&lt;/p&gt;
+
+&lt;p&gt; * read命令：从键盘中读入数据，赋给变量&lt;/p&gt;
+
+&lt;p&gt; * expr命令：对整数型变量进行算术运算&lt;/p&gt;
+
+&lt;p&gt;6、变量测试&lt;/p&gt;
+
+&lt;p&gt; * test命令：用于测试变量是否相等、是否为空、文件类型等&lt;/p&gt;
+
+&lt;p&gt; * 格式：test 测试条件&lt;/p&gt;
+
+&lt;p&gt; * 范围：整数、字符串、文件&lt;/p&gt;
+
+&lt;p&gt; * 字符串测试：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://ww1.sinaimg.cn/mw600/88a9c274jw1dtfl7dgfzmg.gif&#34; alt=&#34;linux
+shell编程&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt; * 整数测试：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://ww3.sinaimg.cn/mw600/88a9c274jw1dtfl7iy4ufg.gif&#34; alt=&#34;linux
+shell编程&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt; * 文件测试：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://ww3.sinaimg.cn/mw600/88a9c274jw1dtfl7petoxg.gif&#34; alt=&#34;linux
+shell编程&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt; * 简化：用[]进行简化 test 语句 等价于 [ 语句 ]&lt;/p&gt;
+
+&lt;p&gt;7、流控制语句&lt;/p&gt;
+
+&lt;p&gt; * 流控制语句：用于控制shell程序的流程&lt;/p&gt;
+
+&lt;p&gt; * exit语句：退出程序执行，返回一个返回值，0表示正常退出，非0表示非正常退出&lt;/p&gt;
+
+&lt;p&gt;8、if语句&lt;/p&gt;
+
+&lt;p&gt; * 语法：&lt;/p&gt;
+   if 条件1 ; then
+
+      命令1
+
+   elif 条件2 ; then
+
+      命令2
+
+   else
+
+      命令3
+
+   fi
+
+&lt;p&gt; * -a：逻辑与，仅当两个条件都成立时，结果为真&lt;/p&gt;
+
+&lt;p&gt; * -o：逻辑或，两个条件只要一个为真，结果为真&lt;/p&gt;
+
+&lt;p&gt;9、for语句&lt;/p&gt;
+
+&lt;p&gt; * 语法：&lt;/p&gt;
+   for 变量 in 名字表
+
+   do
+
+      命令列表
+
+   done
+
+&lt;p&gt;10、case语句&lt;/p&gt;
+
+&lt;p&gt; * 语法：&lt;/p&gt;
+   case 变量 in
+
+      字符串1) 命令列表1
+
+      ;;
+
+      字符串n) 命令列表n
+
+      ;;
+
+      \*) 命令列表（default）
+
+      ;;
+
+   esac
+
+      ;;
+
+&lt;p&gt;11、while语句：&lt;/p&gt;
+
+&lt;p&gt; * 语法：&lt;/p&gt;
+   while 条件
+
+   do
+
+      命令
+
+   done
+
+&lt;p&gt;12、until语句：&lt;/p&gt;
+
+&lt;p&gt; * 语法：&lt;/p&gt;
+   until 条件
+
+   do
+
+      命令
+
+   done
+
+&lt;p&gt;13、跳出循环&lt;/p&gt;
+
+&lt;p&gt; * break：跳出真个循环&lt;/p&gt;
+
+&lt;p&gt; * continue：跳出本次循环，进行下次循环&lt;/p&gt;
+</description>
     </item>
     
   </channel>

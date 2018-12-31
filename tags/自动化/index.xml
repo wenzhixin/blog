@@ -7,18 +7,144 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Mon, 11 Nov 2013 23:31:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.wenzhixin.net.cn/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="http://blog.wenzhixin.net.cn/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>使用 js 脚本自动安装最新安备客户端</title>
-      <link>http://blog.wenzhixin.net.cn/2013/11/11/js_anbay_agent_auto_install/</link>
-      <pubDate>Mon, 11 Nov 2013 23:31:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/js_anbay_agent_auto_install</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/11/11/js_anbay_agent_auto_install/</guid>
-      <description>每次安备客户端的代码一更新（即使是一行代码），那么我需要做的事情包括： 从 FTP 上下载最新的安装包（包括打开 ftp，输入用户名密码，复制，粘贴等）</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/js_anbay_agent_auto_install</guid>
+      <description>
+
+&lt;p&gt;每次安备客户端的代码一更新（即使是一行代码），那么我需要做的事情包括：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;从 FTP 上下载最新的安装包（包括打开 ftp，输入用户名密码，复制，粘贴等）&lt;/li&gt;
+&lt;li&gt;安装客户端软件（双击，下一步，下一步）&lt;/li&gt;
+&lt;li&gt;修改配置文件中的路径指向开发路径（找到配置文件，打开，修改）&lt;/li&gt;
+&lt;li&gt;重启客户端服务（打开服务，找到相应的服务，右击重启）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;本着懒人的原则，计算机是我们最好的朋友，应该将重复的事情应该交给计算机去做。&lt;/p&gt;
+
+&lt;p&gt;个人比较喜欢 js，坚信 python 能做的，js 照样能做（很简单），有兴趣的话可以一同学习。&lt;/p&gt;
+
+&lt;p&gt;花了点时间记录下如何用 js 自动安装最新安备客户端，希望可以举一反三，用到更多的地方，让电脑帮助我们做更多重复的事情。&lt;/p&gt;
+
+&lt;h4 id=&#34;1-安装-nodejs:c646875b99bd607cdcbf40926a2eb18a&#34;&gt;1. 安装 nodejs&lt;/h4&gt;
+
+&lt;p&gt;打开&lt;a href=&#34;http://nodejs.org/&#34;&gt;http://nodejs.org/&lt;/a&gt;，点击 INSTALL 即可。&lt;/p&gt;
+
+&lt;h4 id=&#34;2-安装模块:c646875b99bd607cdcbf40926a2eb18a&#34;&gt;2. 安装模块&lt;/h4&gt;
+
+&lt;p&gt;我们使用到了 &lt;a href=&#34;https://github.com/mscdex/node-ftp&#34;&gt;ftp 模块&lt;/a&gt;，打开 cmd 命令行，进入开发目录，输入：&lt;/p&gt;
+npm install ftp
+
+&lt;p&gt;即可完成模块的安装。&lt;/p&gt;
+
+&lt;h4 id=&#34;3-编写代码:c646875b99bd607cdcbf40926a2eb18a&#34;&gt;3. 编写代码&lt;/h4&gt;
+
+&lt;p&gt;新建文件 app.js，这里对代码进行了详细的注释&lt;/p&gt;
+var fs = require(&#39;fs&#39;), // 引入文件系统模块（自带模块）
+    Client = require(&#39;ftp&#39;), // 引入安装的 ftp 模块
+    exec = require(&#39;child_process&#39;).exec, // 引入 exec 模块，用于运行 cmd 命令
+    config = require(&#39;./config&#39;), // 引入配置文件，例如 ftp 信息等
+    client = new Client();
+
+function getPackage(callback) {
+    client.on(&#39;ready&#39;, function() { // 连接 ftp 成功
+        var year = (new Date()).getFullYear(), // 当前的年份
+            path = &#39;ftp_product_installer/onlinebackup/&#39; + year + &#39;/anbay&#39;; // 软件存放到 ftp 的目录
+
+        client.cwd(path, function(err) { // cd 到 ftp 目录
+            client.list(function(err, list) { // 列表文件
+                client.cwd(getMaxVersion(list), function(err) { // 进入最大版本号的目录下
+                    client.list(function(err, list) { // 列表所有文件
+                        var name = &#39;&#39;,
+                            version = 0;
+
+                        // 判断并得到最高版本的 exe 文件名称
+                        list.forEach(function(item) {
+                            var m = item.name.match(/^anbay-agent_\d+.\d+.(\d+).\d+.exe$/); // 安装包的格式
+
+                            if (m &amp;&amp; version &lt; +m[1]) {
+                                name = item.name;
+                                version = +m[1];
+                            }
+                        });
+                        // 下载保存安装包到当前目录
+                        client.get(name, function(err, stream) {
+                            stream.on(&#39;close&#39;, function() {
+                                client.end();
+                                callback(__dirname + &#39;\\&#39; + name); // 下载完成
+                            });
+                            stream.pipe(fs.createWriteStream(name));
+                        });
+                    });
+                });
+            });
+        });
+    });
+    client.connect(config.ftp); // 连接 ftp
+}
+
+// 获得最大版本号目录
+function getMaxVersion(list) {
+    var max = &#39;0.0.0&#39;,
+        compare = function(a, b) { // 比较版本号
+            if (+a[0] &lt; b[0]) return true;
+            if (+a[1] &lt; b[1]) return true;
+            if (+a[2] &lt; b[2]) return true;
+            return false;
+        };
+
+    list.forEach(function(item) {
+        if (compare(max.split(&#39;.&#39;), item.name.split(&#39;.&#39;))) {
+            max = item.name;
+        }
+    });
+    return max;
+}
+
+function installPackage(path, callback) {
+    var cmd = path + &#39; /qn /norestart QUIET=1&#39;; // 执行静默安装命令
+
+    exec(cmd, function(err, stdout, stderr) {
+        if (err) throw err;
+        exec(&#39;del &#39; + path, callback); // 安装完成执行删除下载的安装包
+    });
+}
+
+// 修改配置文件并重启服务
+function updateConfig() {
+    var configFile = &#39;C:/ProgramData/scutech/AnBay/mongoose.conf&#39;,
+        content = fs.readFileSync(configFile).toString(); // 读取文件内容
+
+    content = content.replace(config.install_path, config.debug_path); // 替换文件内容
+    fs.writeFileSync(configFile, content); // 重新将内容写入到文件
+
+    // 重启服务
+    exec(&#39;sc stop ScutechAnBayAgent&#39;, function(err, stdout, stderr) {
+        exec(&#39;sc start ScutechAnBayAgent&#39;, function(err, stdout, stderr) {
+            console.log(&#39;ok&#39;);
+        });
+    });
+}
+
+getPackage(function(path) {
+    installPackage(path, function(err) {
+        updateConfig();
+    });
+});
+
+&lt;h4 id=&#34;4-运行脚本:c646875b99bd607cdcbf40926a2eb18a&#34;&gt;4. 运行脚本&lt;/h4&gt;
+node app
+
+&lt;hr /&gt;
+
+&lt;p&gt;最后附上完整的脚本下载 &lt;a href=&#34;http://blog.wenzhixin.net.cn/2013/11/11/anbay-agent-auto-install.zip&#34;&gt;anbay-agent-auto-install.zip&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
     
   </channel>

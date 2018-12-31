@@ -7,18 +7,85 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Thu, 31 Oct 2013 00:51:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.wenzhixin.net.cn/tags/%E6%8D%A2%E8%A1%8C/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="http://blog.wenzhixin.net.cn/tags/%E6%8D%A2%E8%A1%8C/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>html 标签 title 换行方法</title>
-      <link>http://blog.wenzhixin.net.cn/2013/10/31/html_title_wrap/</link>
-      <pubDate>Thu, 31 Oct 2013 00:51:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/html_title_wrap</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/10/31/html_title_wrap/</guid>
-      <description>1. 使用换行符换行 换行符分别为：&amp;amp;#10; 或 &amp;amp;#13; 例如： 1 &amp;lt;a href=&amp;#34;http://wenzhixin.net.cn&amp;#34; title=&amp;#34;前端技术&amp;amp;#10;交互设计&amp;amp;#13;移</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/html_title_wrap</guid>
+      <description>
+
+&lt;h4 id=&#34;1-使用换行符换行:548105be9a74e22b181602bef2a685f9&#34;&gt;1. 使用换行符换行&lt;/h4&gt;
+
+&lt;p&gt;换行符分别为：&lt;code&gt;&amp;amp;#10;&lt;/code&gt; 或 &lt;code&gt;&amp;amp;#13;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;例如：&lt;/p&gt;
+&lt;a href=&#34;http://wenzhixin.net.cn&#34; title=&#34;前端技术
+交互设计移动开发&#34;&gt;文翼的博客&lt;/a&gt;
+
+&lt;h4 id=&#34;2-使用-jquery-attr-title-的情况:548105be9a74e22b181602bef2a685f9&#34;&gt;2. 使用 jQuery.attr(&amp;lsquo;title&amp;rsquo;, &amp;ldquo;) 的情况&lt;/h4&gt;
+
+&lt;p&gt;实际项目应用中，我们常常会使用 jQuery 的 attr 方法来设置 title 属性。&lt;/p&gt;
+
+&lt;p&gt;例如：&lt;/p&gt;
+$(&#39;a&#39;).attr(&#39;title&#39;, &#39;前端技术
+交互设计移动开发&#39;);
+
+&lt;p&gt;可以发现并没有得到我们想要的结果，这是因为 jquery 对 &amp;amp; 进行了编码，这样显示出来并没有换行。&lt;/p&gt;
+
+&lt;p&gt;在这里，可以使用下面的代码解决该问题：&lt;/p&gt;
+var title = $(&#39;&lt;div/&gt;&#39;).html(&#39;前端技术
+交互设计移动开发&#39;).text();
+$(&#39;a&#39;).attr(&#39;title&#39;, title);
+
+&lt;h4 id=&#34;3-解决浏览器兼容问题:548105be9a74e22b181602bef2a685f9&#34;&gt;3. 解决浏览器兼容问题&lt;/h4&gt;
+
+&lt;p&gt;测试了 chrome 和 firefox，貌似没什么问题，不过为了更好的解决浏览器兼容性，决定用 jQuery 来解决。&lt;/p&gt;
+
+&lt;p&gt;新建文件（&lt;a href=&#34;http://blog.wenzhixin.net.cn/2013/10/31/jquery.wrap.title.js&#34;&gt;jquery.wrap.title.js&lt;/a&gt;）：&lt;/p&gt;
+$(function() {
+    $(document).on(&#39;mouseover&#39;, &#39;[title]&#39;, function(e) {
+        var $this = $(this),
+            title = $this.attr(&#39;title&#39;),
+            titles = [],
+            $div = $(&#39;&lt;div class=&#34;wrap-title&#34;&gt;&lt;/div&gt;&#39;);
+
+        $this.attr(&#39;data-title&#39;, title);
+        $this.removeAttr(&#39;title&#39;);
+
+        $.each(title.split(&#39;\r&#39;), function(i, item) {
+            $.each(item.split(&#39;\n&#39;), function(j, t) {
+                titles.push(t);
+            });
+        });
+
+        $div.html(titles.join(&#39;&lt;br/&gt;&#39;)).css({
+            &#39;left&#39;: e.pageX + &#39;px&#39;,
+            &#39;top&#39;: e.pageY + &#39;px&#39;,
+            &#39;position&#39;: &#39;absolute&#39;,
+            &#39;padding&#39;: &#39;5px&#39;,
+            &#39;background&#39;: &#39;#000&#39;,
+            &#39;color&#39;: &#39;#fff&#39;,
+            &#39;font-size&#39;: &#39;14px&#39;,
+            &#39;border-radius&#39;: &#39;5px&#39;
+        });
+        $(this).append($div);
+    });
+    $(document).on(&#39;mouseout&#39;, &#39;[data-title]&#39;, function() {
+        var $this = $(this),
+            title = $this.attr(&#39;data-title&#39;);
+
+        $this.attr(&#39;title&#39;, title);
+        $this.find(&#39;.wrap-title&#39;).remove();
+    });
+});
+
+&lt;p&gt;代码兼容上面两种设置 title 的方法，不用修改任何 html 代码，使用：&lt;/p&gt;
+&lt;script src=&#34;js/jquery.min.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;js/jquery.wrap.title.js&#34;&gt;&lt;/script&gt;
+</description>
     </item>
     
   </channel>

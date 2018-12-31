@@ -7,108 +7,815 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Thu, 20 Mar 2014 21:58:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.wenzhixin.net.cn/tags/%E6%8F%92%E4%BB%B6/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="http://blog.wenzhixin.net.cn/tags/%E6%8F%92%E4%BB%B6/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Cordova 开发属于自己的插件（plugin）</title>
-      <link>http://blog.wenzhixin.net.cn/2014/03/20/cordova_my_plugin/</link>
-      <pubDate>Thu, 20 Mar 2014 21:58:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/cordova_my_plugin</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/03/20/cordova_my_plugin/</guid>
-      <description>在上一篇文章 cordova 初识之命令行工具 中，我们讲到了如何使用命令行快速地创建我们的 app 应用，并添加和运行各种平台。 在实际的项目开发中，需要用到 cordova 的插件</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/cordova_my_plugin</guid>
+      <description>&lt;p&gt;在上一篇文章 &lt;a href=&#34;http://wenzhixin.net.cn/2014/02/11/cordova_command_line&#34;&gt;cordova 初识之命令行工具&lt;/a&gt; 中，我们讲到了如何使用命令行快速地创建我们的 app 应用，并添加和运行各种平台。&lt;/p&gt;
+
+&lt;p&gt;在实际的项目开发中，需要用到 cordova 的插件，进行各个不同平台的辅助开发，我们可以通过 &lt;a href=&#34;http://plugins.cordova.io/&#34;&gt;plugins.cordova.io&lt;/a&gt; 对现有插件的搜索，以及安装。&lt;/p&gt;
+
+&lt;p&gt;插件的安装和使用，详细可以通过查阅 Cordova 的官网文档 &lt;a href=&#34;http://cordova.apache.org/docs/en/3.4.0/guide_cli_index.md.html#The%20Command-Line%20Interface&#34;&gt;The Command-Line Interface&lt;/a&gt; 以及某前端大大张鑫旭的文章：&lt;a href=&#34;http://www.zhangxinxu.com/wordpress/2014/03/phonegap-cordova-ios-statusbar-style/&#34;&gt;PhoneGap/Cordova控制iOS7状态栏的显隐/颜色&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;但是更多的时候，我们需要开发属于我们自己的插件。通过查看官方文档 &lt;a href=&#34;http://cordova.apache.org/docs/en/3.4.0/guide_hybrid_plugins_index.md.html#Plugin%20Development%20Guide&#34;&gt;Plugin Development Guide&lt;/a&gt;，你会发现，&lt;strong&gt;坑爹&lt;/strong&gt;啊，这文档怎么还是以前 2.x 的开发文档？？自己在编写插件的过程中，花了不少时间，在这里讲一下如何开发属于自己的插件。&lt;/p&gt;
+
+&lt;p&gt;通过命令行创建 app 应用之后，你会发现目录结构是这样子的：&lt;/p&gt;
+├── platforms
+|    ├── android
+|    ├── ios
+|    ├── wp7
+|    └── ...
+├── plugins
+|    ├── org.apache.cordova.device
+|    └── ...
+├── config.xml
+└── www
+
+&lt;p&gt;这里的 &lt;code&gt;platforms&lt;/code&gt; 是我们应用支持的平台目录，&lt;code&gt;plugins&lt;/code&gt; 是我们安装的插件目录，&lt;code&gt;config.xml&lt;/code&gt; 是应用的配置信息（应用名称、描述等），&lt;code&gt;www&lt;/code&gt; 是我们的 web 工程目录。&lt;/p&gt;
+
+&lt;p&gt;我们知道，Cordova 3.x 的插件机制改变了，只需要通过简单的命令行即可安装和删除所需要的插件，而我们自己开发的插件，最终是要添加到 &lt;code&gt;plugins&lt;/code&gt; 目录中的。&lt;/p&gt;
+
+&lt;p&gt;那么，就让一起开始，&lt;strong&gt;制作属于我们自己的插件&lt;/strong&gt; 吧，这里以 ExtraInfo（获取 app 额外信息） 为例子，我们在当前目录下（当然可以放在别的目录下）创建 ExtraInfo 文件夹，先看下具体的目录结构：&lt;/p&gt;
+ExtraInfo
+├── src
+|    ├── android
+|    |    └── ExtraInfo.java
+|    ├── ios
+|    └── ...
+├── www
+|    └── ExtraInfo.js
+└── plugin.xml
+
+&lt;p&gt;这里的 &lt;code&gt;src&lt;/code&gt; 对应不同的平台，&lt;code&gt;www&lt;/code&gt; 放我们的 javascript 文件，&lt;code&gt;plugin.xml&lt;/code&gt; 是插件的配置文件。&lt;/p&gt;
+
+&lt;p&gt;先来看看 &lt;code&gt;plugin.xml&lt;/code&gt; 的内容：&lt;/p&gt;
+&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;
+&lt;plugin id=&#34;cn.net.wenzhixin.cordova&#34; version=&#34;0.0.1&#34; 
+        xmlns=&#34;http://apache.org/cordova/ns/plugins/1.0&#34;
+        xmlns:android=&#34;http://schemas.android.com/apk/res/android&#34;&gt;
+    &lt;name&gt;ExtraInfo&lt;/name&gt;
+    &lt;description&gt;Description&lt;/description&gt;
+    &lt;js-module name=&#34;ExtraInfo&#34; src=&#34;www/ExtraInfo.js&#34;&gt;
+        &lt;clobbers target=&#34;cordova.plugins.ExtraInfo&#34;/&gt;
+    &lt;/js-module&gt;
+    &lt;platform name=&#34;android&#34;&gt;
+        &lt;config-file parent=&#34;/*&#34; target=&#34;res/xml/config.xml&#34;&gt;
+            &lt;feature name=&#34;ExtraInfo&#34;&gt;
+                &lt;param name=&#34;android-package&#34; value=&#34;cn.net.wenzhixin.cordova.ExtraInfo&#34;/&gt;
+            &lt;/feature&gt;
+        &lt;/config-file&gt;
+        &lt;source-file src=&#34;src/android/ExtraInfo.java&#34; target-dir=&#34;src/cn/net/wenzhixin/cordova&#34;/&gt;
+    &lt;/platform&gt;
+&lt;/plugin&gt;
+
+&lt;p&gt;有几个关键的字段需要解释下：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;id: 插件的标识，即发布到 &lt;a href=&#34;http://plugins.cordova.io/&#34;&gt;plugins.cordova.io&lt;/a&gt; 的 ID&lt;/li&gt;
+&lt;li&gt;name：插件的名称&lt;/li&gt;
+&lt;li&gt;description：描述信息&lt;/li&gt;
+&lt;li&gt;js-module：对应我们的 javascript 文件，&lt;code&gt;src&lt;/code&gt; 属性指向 &lt;code&gt;www/ExtraInfo.js&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;platform：支持的平台，这里仅仅用到了 android&lt;/li&gt;
+&lt;/ul&gt;
+&lt;config-file parent=&#34;/*&#34; target=&#34;res/xml/config.xml&#34;&gt;
+    &lt;feature name=&#34;ExtraInfo&#34;&gt;
+        &lt;param name=&#34;android-package&#34; value=&#34;cn.net.wenzhixin.cordova.ExtraInfo&#34;/&gt;
+    &lt;/feature&gt;
+&lt;/config-file&gt;
+&lt;source-file src=&#34;src/android/ExtraInfo.java&#34; target-dir=&#34;src/cn/net/wenzhixin/cordova&#34;/&gt;
+
+&lt;p&gt;这里是插件的配置信息，最后会添加到 &lt;code&gt;res/xml/config.xml&lt;/code&gt; 文件中，并且将我们的 &lt;code&gt;src/android/ExtraInfo.java&lt;/code&gt;，复制到 android 的 package 包中。&lt;/p&gt;
+
+&lt;p&gt;接下来，&lt;code&gt;ExtraInfo.js&lt;/code&gt; 的内容很简单：&lt;/p&gt;
+var exec = require(&#39;cordova/exec&#39;);
+
+exports.getExtra = function(success, error) {
+    exec(success, error, &#34;ExtraInfo&#34;, &#34;getExtra&#34;, []);
+};
+
+&lt;p&gt;用过 Nodejs 或者了解过 AMD、CMD 的话（当然，没了解过也没关系），一定会觉得很熟悉。简单的说，&lt;code&gt;require&lt;/code&gt; 用于引入我们的类，&lt;code&gt;exports&lt;/code&gt; 用于导出我们的方法。这里对外公开了 &lt;code&gt;getExtra&lt;/code&gt; 方法，以便我们在 app 中可以用到。&lt;/p&gt;
+
+&lt;p&gt;最后看 &lt;code&gt;ExtraInfo.java&lt;/code&gt; 的内容：&lt;/p&gt;
+public class ExtraInfo extends CordovaPlugin {
+    
+    public boolean execute(String action, JSONArray args, CallbackContext callbackContext) 
+            throws JSONException {
+        Activity activity = this.cordova.getActivity();
+        if (action.equals(&#34;getExtra&#34;)) {
+            Intent i = activity.getIntent();
+            if (i.hasExtra(Intent.EXTRA_TEXT)) {
+                callbackContext.success(i.getStringExtra(Intent.EXTRA_TEXT));
+            } else {
+                callbackContext.error(&#34;&#34;);
+            }
+            return true;
+        }
+        return false;
+    }
+}
+
+&lt;p&gt;继承了 CordovaPlugin 类，并重写 &lt;code&gt;execute&lt;/code&gt; 方法，使用 action 来判断我们在 javascript 中调用的方法名，成功的话调用 &lt;code&gt;callbackContext.success(message)&lt;/code&gt;，失败调用 &lt;code&gt;callbackContext.error(message)&lt;/code&gt; 方法，分别对应 javascript 文件中的 &lt;code&gt;success&lt;/code&gt; 和 &lt;code&gt;error&lt;/code&gt; 回调函数。&lt;/p&gt;
+
+&lt;p&gt;当然，这里只用到 android 平台，其他的平台也是一样的，ios 使用 object-c、wp7 使用 c# 语言，例子见&lt;a href=&#34;http://cordova.apache.org/docs/en/3.4.0/guide_hybrid_plugins_index.md.html#Plugin%20Development%20Guide&#34;&gt;Plugin Development Guide&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;到了这里，我们的插件就编写完成了。可以通过下面的命令添加插件：&lt;/p&gt;
+cordova plugin add ExtraInfo #目录名称，也可以是 git 的地址
+
+&lt;p&gt;查看我们的 &lt;code&gt;plugins&lt;/code&gt; 目录，会发现在该目录下已经华丽丽地生成我们自己的插件 &lt;code&gt;cn.net.wenzhixin.cordova&lt;/code&gt; 了。&lt;/p&gt;
+
+&lt;p&gt;对了，好像把最关键的事情给忘记了，这里貌似还没提到我们应该如何在 app 中使用自己的插件呢。前面提到说按照文档来坑爹了，是因为使用 &lt;code&gt;window.getExtra&lt;/code&gt;，会报 &lt;code&gt;getExtra is not defined&lt;/code&gt; 的错误。&lt;/p&gt;
+
+&lt;p&gt;通过查看生成的文件信息，可以知道，应该这样使用我们的插件：&lt;/p&gt;
+document.addEventListener(&#39;deviceready&#39;, function() {
+    var extraInfo = cordova.require(&#39;cn.net.wenzhixin.cordova.ExtraInfo&#39;);
+
+    extraInfo.getExtra(function(message) {
+        // alert(message);
+    }, function(message) {
+        // alert(message);
+    });
+});
+
+&lt;p&gt;最后，像平时的开发，觉得及时更新文档还是比较重要的，虽然自己花了不少时间，不过至少更加明白了 Cordova 插件的原理，同时也希望本文可以帮到你。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Eclipse 安装插件(aptana、svn 、git、Java EE、JSHint)</title>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/eclipse_install_the_plugin_aptana_svn_git_java_ee_jshint</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/eclipse_install_the_plugin_aptana_svn_git_java_ee_jshint</guid>
+      <description>&lt;p&gt;1、安装 aptana 插件：&lt;/p&gt;
+
+&lt;p&gt; * 依次点击：Help -&amp;gt; Install New Software&amp;hellip; -&amp;gt; Add&lt;/p&gt;
+
+&lt;p&gt; * 输入：&lt;a href=&#34;http://download.aptana.com/studio3/plugin/install&#34;&gt;http://download.aptana.com/studio3/plugin/install&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt; * 选择：Aptana Studio 3 Plugin，并进行安装&lt;/p&gt;
+
+&lt;p&gt; * 重启 eclipse&lt;/p&gt;
+
+&lt;p&gt;2、安装 svn 插件：&lt;/p&gt;
+
+&lt;p&gt; * 依次点击：Help -&amp;gt; Install New Software&amp;hellip; -&amp;gt; Add&lt;/p&gt;
+
+&lt;p&gt; * 输入：&lt;a href=&#34;http://subclipse.tigris.org/update_1.6.x&#34;&gt;http://subclipse.tigris.org/update_1.6.x&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt; * 选择：Subclipse (Required)、Subversion Client Adapter
+(Required)、Subversion JavaHL Native Library Adapter
+(Required)，并进行安装&lt;/p&gt;
+
+&lt;p&gt; * 安装libsvn-java（Ubuntu 下需要安装）：sudo apt-get install libsvn-java&lt;/p&gt;
+
+&lt;p&gt; * 重启 eclipse&lt;/p&gt;
+
+&lt;p&gt;3、安装 git 插件：&lt;/p&gt;
+
+&lt;p&gt; * 依次点击：Help -&amp;gt; Install New Software&amp;hellip; -&amp;gt; Add&lt;/p&gt;
+
+&lt;p&gt; * 输入：&lt;a href=&#34;http://download.eclipse.org/egit/updates&#34;&gt;http://download.eclipse.org/egit/updates&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt; * 选择：Eclipse EGit，并进行安装&lt;/p&gt;
+
+&lt;p&gt; * 重启 eclipse&lt;/p&gt;
+
+&lt;p&gt;4、安装 Java EE 插件：&lt;/p&gt;
+
+&lt;p&gt; * 依次点击：Help -&amp;gt; Install New Software&amp;hellip; -&amp;gt; Add&lt;/p&gt;
+
+&lt;p&gt; * 输入：&lt;a href=&#34;http://download.eclipse.org/releases/indigo&#34;&gt;http://download.eclipse.org/releases/indigo&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt; * 选择：Eclipse Java EE Developer Tools，并进行安装&lt;/p&gt;
+
+&lt;p&gt; * 重启 eclipse&lt;/p&gt;
+
+&lt;p&gt;5、安装 JSHint 插件：
+* 依次点击：Help -&amp;gt; Install New Software&amp;hellip; -&amp;gt; Add&lt;/p&gt;
+
+&lt;p&gt; * 输入：&lt;a href=&#34;http://github.eclipsesource.com/jshint-eclipse/updates/&#34;&gt;http://github.eclipsesource.com/jshint-eclipse/updates/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt; * 选择：JSHint，并进行安装&lt;/p&gt;
+
+&lt;p&gt; * 重启 eclipse&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Eclipse 安装插件(aptana、svn 、git、Java EE、JSHint)</title>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/eclipse_install_the_plugin_aptana_svn_git_java_ee_jshint</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/eclipse_install_the_plugin_aptana_svn_git_java_ee_jshint</guid>
+      <description>&lt;p&gt;1、安装 aptana 插件：&lt;/p&gt;
+
+&lt;p&gt; * 依次点击：Help -&amp;gt; Install New Software&amp;hellip; -&amp;gt; Add&lt;/p&gt;
+
+&lt;p&gt; * 输入：&lt;a href=&#34;http://download.aptana.com/studio3/plugin/install&#34;&gt;http://download.aptana.com/studio3/plugin/install&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt; * 选择：Aptana Studio 3 Plugin，并进行安装&lt;/p&gt;
+
+&lt;p&gt; * 重启 eclipse&lt;/p&gt;
+
+&lt;p&gt;2、安装 svn 插件：&lt;/p&gt;
+
+&lt;p&gt; * 依次点击：Help -&amp;gt; Install New Software&amp;hellip; -&amp;gt; Add&lt;/p&gt;
+
+&lt;p&gt; * 输入：&lt;a href=&#34;http://subclipse.tigris.org/update_1.6.x&#34;&gt;http://subclipse.tigris.org/update_1.6.x&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt; * 选择：Subclipse (Required)、Subversion Client Adapter
+(Required)、Subversion JavaHL Native Library Adapter
+(Required)，并进行安装&lt;/p&gt;
+
+&lt;p&gt; * 安装libsvn-java（Ubuntu 下需要安装）：sudo apt-get install libsvn-java&lt;/p&gt;
+
+&lt;p&gt; * 重启 eclipse&lt;/p&gt;
+
+&lt;p&gt;3、安装 git 插件：&lt;/p&gt;
+
+&lt;p&gt; * 依次点击：Help -&amp;gt; Install New Software&amp;hellip; -&amp;gt; Add&lt;/p&gt;
+
+&lt;p&gt; * 输入：&lt;a href=&#34;http://download.eclipse.org/egit/updates&#34;&gt;http://download.eclipse.org/egit/updates&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt; * 选择：Eclipse EGit，并进行安装&lt;/p&gt;
+
+&lt;p&gt; * 重启 eclipse&lt;/p&gt;
+
+&lt;p&gt;4、安装 Java EE 插件：&lt;/p&gt;
+
+&lt;p&gt; * 依次点击：Help -&amp;gt; Install New Software&amp;hellip; -&amp;gt; Add&lt;/p&gt;
+
+&lt;p&gt; * 输入：&lt;a href=&#34;http://download.eclipse.org/releases/indigo&#34;&gt;http://download.eclipse.org/releases/indigo&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt; * 选择：Eclipse Java EE Developer Tools，并进行安装&lt;/p&gt;
+
+&lt;p&gt; * 重启 eclipse&lt;/p&gt;
+
+&lt;p&gt;5、安装 JSHint 插件：
+* 依次点击：Help -&amp;gt; Install New Software&amp;hellip; -&amp;gt; Add&lt;/p&gt;
+
+&lt;p&gt; * 输入：&lt;a href=&#34;http://github.eclipsesource.com/jshint-eclipse/updates/&#34;&gt;http://github.eclipsesource.com/jshint-eclipse/updates/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt; * 选择：JSHint，并进行安装&lt;/p&gt;
+
+&lt;p&gt; * 重启 eclipse&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>bootstrap menu 插件介绍</title>
-      <link>http://blog.wenzhixin.net.cn/2013/12/29/bootstrap_menu_guide/</link>
-      <pubDate>Sun, 29 Dec 2013 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/bootstrap_menu_guide</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/12/29/bootstrap_menu_guide/</guid>
-      <description>前言 平时在定义目录菜单的时候会使用 ul、li 等，定义和维护起来不是很方便， 所以就写成了 bootstrap 的 jQuery 的插件。 如何使用 使用起来非常简单，先来看看如何使</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/bootstrap_menu_guide</guid>
+      <description>
+
+&lt;h3 id=&#34;前言:39d60e384587fa13715ba353a1183d76&#34;&gt;前言&lt;/h3&gt;
+
+&lt;p&gt;平时在定义目录菜单的时候会使用 ul、li 等，定义和维护起来不是很方便，
+所以就写成了 bootstrap 的 jQuery 的&lt;a href=&#34;https://github.com/wenzhixin/bootstrap-menu&#34;&gt;插件&lt;/a&gt;。&lt;/p&gt;
+
+&lt;h3 id=&#34;如何使用:39d60e384587fa13715ba353a1183d76&#34;&gt;如何使用&lt;/h3&gt;
+
+&lt;p&gt;使用起来非常简单，先来看看如何使用吧：&lt;/p&gt;
+
+&lt;p&gt;首先引入需要的文件&lt;/p&gt;
+&lt;link rel=&#34;stylesheet&#34; href=&#34;bootstrap-menu.css&#34; /&gt;
+&lt;script src=&#34;bootstrap-menu.js&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;接着定义一个 div&lt;/p&gt;
+&lt;div id=&#34;menu&#34; class=&#34;bs-menu&#34;&gt;&lt;/div&gt;
+
+&lt;p&gt;使用 js 初始化插件，定义了 Menu1 的菜单&lt;/p&gt;
+$(&#39;#menu&#39;).bootstrapMenu({
+	data: [{
+		name: &#39;menu1&#39;,
+		title: &#39;Menu1&#39;,
+		icon: &#39;images/1.png&#39;
+	}]
+});
+
+&lt;p&gt;效果可以查看 &lt;a href=&#34;http://wenzhixin.net.cn/p/bootstrap-menu/&#34;&gt;demo&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;属性:39d60e384587fa13715ba353a1183d76&#34;&gt;属性&lt;/h3&gt;
+
+&lt;h4 id=&#34;width:39d60e384587fa13715ba353a1183d76&#34;&gt;width&lt;/h4&gt;
+
+&lt;p&gt;定义菜单的宽度&lt;/p&gt;
+
+&lt;p&gt;类型：整数值&lt;/p&gt;
+
+&lt;p&gt;默认：180&lt;/p&gt;
+
+&lt;h4 id=&#34;isopen:39d60e384587fa13715ba353a1183d76&#34;&gt;isOpen&lt;/h4&gt;
+
+&lt;p&gt;定义是否展开菜单&lt;/p&gt;
+
+&lt;p&gt;类型：布尔值&lt;/p&gt;
+
+&lt;p&gt;默认：false&lt;/p&gt;
+
+&lt;h4 id=&#34;data:39d60e384587fa13715ba353a1183d76&#34;&gt;data&lt;/h4&gt;
+
+&lt;p&gt;定义菜单数据&lt;/p&gt;
+
+&lt;p&gt;类型：对象数组&lt;/p&gt;
+
+&lt;p&gt;默认：[]&lt;/p&gt;
+
+&lt;p&gt;对象属性值：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;name: 菜单的 name，用于标志&lt;/li&gt;
+&lt;li&gt;title：菜单的标题&lt;/li&gt;
+&lt;li&gt;icon：菜单的图标&lt;/li&gt;
+&lt;li&gt;url：菜单的链接，不填可以通过事件监听&lt;/li&gt;
+&lt;li&gt;children：子菜单（有 name、title、url 三个属性）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;事件:39d60e384587fa13715ba353a1183d76&#34;&gt;事件&lt;/h3&gt;
+
+&lt;h4 id=&#34;ontoggle:39d60e384587fa13715ba353a1183d76&#34;&gt;onToggle&lt;/h4&gt;
+
+&lt;p&gt;切换主菜单的时候触发&lt;/p&gt;
+
+&lt;p&gt;index：点击菜单的 index 值&lt;/p&gt;
+
+&lt;p&gt;例子：&lt;/p&gt;
+$(&#39;#menu&#39;).bootstrapMenu({
+	onToggle: function(index) {
+		console.log(index);
+	}
+});
+
+&lt;h4 id=&#34;onselect:39d60e384587fa13715ba353a1183d76&#34;&gt;onSelect&lt;/h4&gt;
+
+&lt;p&gt;点击子菜单的时候触发&lt;/p&gt;
+
+&lt;p&gt;name：点击的子菜单的 name 指&lt;/p&gt;
+
+&lt;p&gt;例子：&lt;/p&gt;
+$(&#39;#menu&#39;).bootstrapMenu({
+	onSelect: function(name) {
+		console.log(name);
+	}
+});
+</description>
+    </item>
+    
+    <item>
+      <title>jQuery 插件使用小记（使用、问题、解决）</title>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/using_jquery_plugin</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/using_jquery_plugin</guid>
+      <description>
+
+&lt;h4 id=&#34;1-bootstrap-js-v2-1-0:2f6fc3fb562ad847d5e63a610c7d2114&#34;&gt;1、bootstrap.js (v2.1.0)&lt;/h4&gt;
+
+&lt;p&gt;问题：&lt;/p&gt;
+
+&lt;p&gt;bootstrap dropdown 菜单使用 on 或者 live 无效&lt;/p&gt;
+
+&lt;p&gt;解决：&lt;/p&gt;
+
+&lt;p&gt;注释 .on(&amp;lsquo;click.dropdown touchstart.dropdown.data-api&amp;rsquo;, &amp;lsquo;.dropdown&amp;rsquo;, function (e) { e.stopPropagation() }) (第 720 行)&lt;/p&gt;
+
+&lt;p&gt;2、&amp;hellip;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>jQuery 插件使用小记（使用、问题、解决）</title>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/using_jquery_plugin</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/using_jquery_plugin</guid>
+      <description>
+
+&lt;h4 id=&#34;1-bootstrap-js-v2-1-0:2f6fc3fb562ad847d5e63a610c7d2114&#34;&gt;1、bootstrap.js (v2.1.0)&lt;/h4&gt;
+
+&lt;p&gt;问题：&lt;/p&gt;
+
+&lt;p&gt;bootstrap dropdown 菜单使用 on 或者 live 无效&lt;/p&gt;
+
+&lt;p&gt;解决：&lt;/p&gt;
+
+&lt;p&gt;注释 .on(&amp;lsquo;click.dropdown touchstart.dropdown.data-api&amp;rsquo;, &amp;lsquo;.dropdown&amp;rsquo;, function (e) { e.stopPropagation() }) (第 720 行)&lt;/p&gt;
+
+&lt;p&gt;2、&amp;hellip;&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>wordpress 插件开发</title>
-      <link>http://blog.wenzhixin.net.cn/2013/01/15/wordpress_plugin/</link>
-      <pubDate>Tue, 15 Jan 2013 22:59:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/wordpress_plugin</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/01/15/wordpress_plugin/</guid>
-      <description>1. 创建插件 在目录 wp-content/plugins 下创建自己的插件 新建目录 plugin-demo 新建文件 plugin-demo.php 1 2 3 4 5 6 7 8 9 &amp;lt;?php /* Plugin Name: Plugin Demo Description: 此插件用于插件演示 Version: 1.0 Author: zhixin wen Author URI: http://wenzhixin.net.cn */ ?&amp;gt; 2. 添加实现类和添</description>
-    </item>
-    
-    <item>
-      <title>图片查看弹出框 (jQuery 插件)</title>
-      <link>http://blog.wenzhixin.net.cn/2012/12/02/jquery_imagebox/</link>
-      <pubDate>Sun, 02 Dec 2012 21:11:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/12/02/jquery_imagebox/</guid>
-      <description>参数 linkTitle: 点击图片提示信息，默认为 &amp;lsquo;点击查看原图&amp;rsquo; direction: 箭头显示方向，水平方向 (horizontal) 和垂直方向 (vertical)，默认为 &amp;lsquo;horizontal&amp;rsquo; 如何</description>
-    </item>
-    
-    <item>
-      <title>图片查看弹出框 (jQuery 插件)</title>
-      <link>http://blog.wenzhixin.net.cn/2012/12/02/jquery_imagebox/</link>
-      <pubDate>Sun, 02 Dec 2012 21:11:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/12/02/jquery_imagebox/</guid>
-      <description>参数 linkTitle: 点击图片提示信息，默认为 &amp;lsquo;点击查看原图&amp;rsquo; direction: 箭头显示方向，水平方向 (horizontal) 和垂直方向 (vertical)，默认为 &amp;lsquo;horizontal&amp;rsquo; 如何</description>
-    </item>
-    
-    <item>
-      <title>jQuery 插件使用小记（使用、问题、解决）</title>
-      <link>http://blog.wenzhixin.net.cn/2012/09/16/using_jquery_plugin/</link>
-      <pubDate>Sun, 16 Sep 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/09/16/using_jquery_plugin/</guid>
-      <description>1、bootstrap.js (v2.1.0) 问题： bootstrap dropdown 菜单使用 on 或者 live 无效 解决： 注释 .on(&amp;lsquo;click.dropdown touchstart.dropdown.data-api&amp;rsquo;, &amp;lsquo;.dropdown&amp;rsquo;, function (e) { e.stopPropagation() }) (第 720 行) 2、&amp;hellip;</description>
-    </item>
-    
-    <item>
-      <title>jQuery 插件使用小记（使用、问题、解决）</title>
-      <link>http://blog.wenzhixin.net.cn/2012/09/16/using_jquery_plugin/</link>
-      <pubDate>Sun, 16 Sep 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/09/16/using_jquery_plugin/</guid>
-      <description>1、bootstrap.js (v2.1.0) 问题： bootstrap dropdown 菜单使用 on 或者 live 无效 解决： 注释 .on(&amp;lsquo;click.dropdown touchstart.dropdown.data-api&amp;rsquo;, &amp;lsquo;.dropdown&amp;rsquo;, function (e) { e.stopPropagation() }) (第 720 行) 2、&amp;hellip;</description>
-    </item>
-    
-    <item>
-      <title>Eclipse 安装插件(aptana、svn 、git、Java EE、JSHint)</title>
-      <link>http://blog.wenzhixin.net.cn/2012/05/08/eclipse_install_the_plugin_aptana_svn_git_java_ee_jshint/</link>
-      <pubDate>Tue, 08 May 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/05/08/eclipse_install_the_plugin_aptana_svn_git_java_ee_jshint/</guid>
-      <description>1、安装 aptana 插件： * 依次点击：Help -&amp;gt; Install New Software&amp;hellip; -&amp;gt; Add * 输入：http://download.aptana.com/studio3/plugin/</description>
-    </item>
-    
-    <item>
-      <title>Eclipse 安装插件(aptana、svn 、git、Java EE、JSHint)</title>
-      <link>http://blog.wenzhixin.net.cn/2012/05/08/eclipse_install_the_plugin_aptana_svn_git_java_ee_jshint/</link>
-      <pubDate>Tue, 08 May 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/05/08/eclipse_install_the_plugin_aptana_svn_git_java_ee_jshint/</guid>
-      <description>1、安装 aptana 插件： * 依次点击：Help -&amp;gt; Install New Software&amp;hellip; -&amp;gt; Add * 输入：http://download.aptana.com/studio3/plugin/</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/wordpress_plugin</guid>
+      <description>
+
+&lt;h4 id=&#34;1-创建插件:c0b8d5a98f9234ad6795d441ab0605e0&#34;&gt;1. 创建插件&lt;/h4&gt;
+
+&lt;p&gt;在目录 wp-content/plugins 下创建自己的插件&lt;/p&gt;
+
+&lt;p&gt;新建目录 plugin-demo&lt;/p&gt;
+
+&lt;p&gt;新建文件 plugin-demo.php&lt;/p&gt;
+&lt;?php
+/*
+Plugin Name: Plugin Demo
+Description: 此插件用于插件演示
+Version: 1.0
+Author: zhixin wen
+Author URI: http://wenzhixin.net.cn
+*/
+?&gt;
+
+&lt;h4 id=&#34;2-添加实现类和添加菜单:c0b8d5a98f9234ad6795d441ab0605e0&#34;&gt;2. 添加实现类和添加菜单&lt;/h4&gt;
+class PluginDemo {
+
+    //现实版本号
+    function version() {
+        return 1.0;
+    }
+
+    //添加菜单
+    function addMenu() {
+        add_submenu_page(&#39;edit.php&#39;, &#39;插件演示&#39;, &#39;演插件演示&#39;, 8, __FILE__, array(&#39;PluginDemo&#39;, &#39;settings&#39;));
+    }
+
+    function settings() {
+        echo file_get_contents(plugins_url(&#39;&#39;, __FILE__) . &#39;/index.tpl&#39;);
+    }
+}
+
+add_action(&#39;admin_menu&#39;, array(&#39;PluginDemo&#39;, &#39;addMenu&#39;));
+
+&lt;h4 id=&#34;3-新建文件-index-tpl-用于显示插件界面:c0b8d5a98f9234ad6795d441ab0605e0&#34;&gt;3. 新建文件 index.tpl 用于显示插件界面&lt;/h4&gt;
+&lt;h2&gt;插件演示&lt;/div&gt;
+&lt;div&gt;演示内容&lt;/div&gt;
+
+&lt;h4 id=&#34;4-添加-javascript-文件:c0b8d5a98f9234ad6795d441ab0605e0&#34;&gt;4. 添加 javascript 文件&lt;/h4&gt;
+class PluginDemo {
+
+    ...
+
+    function addScripts() {
+        self::addScript(&#39;jquery.js&#39;);
+        self::addScript(&#39;index.js&#39;);
+    }
+
+    function addScript($script) {
+        $file = plugins_url(&#39;&#39;, __FILE__) . &#39;/js/&#39; . $script;
+        wp_register_script($script, $file);
+        wp_enqueue_script($script);
+    }
+   }
+
+add_action(&#39;admin_print_scripts&#39;, array(&#39;PluginDemo&#39;, &#39;addScripts&#39;));
+
+&lt;h4 id=&#34;5-使用-ajax-请求:c0b8d5a98f9234ad6795d441ab0605e0&#34;&gt;5. 使用 ajax 请求&lt;/h4&gt;
+
+&lt;p&gt;新建 index.js&lt;/p&gt;
+$(function() {
+    ...
+
+    $.get(URI, function(data) {
+
+    });
+
+    $.post(URI, params, function(data) {
+
+    });
+});
+
+&lt;h4 id=&#34;6-添加接口文件:c0b8d5a98f9234ad6795d441ab0605e0&#34;&gt;6. 添加接口文件&lt;/h4&gt;
+
+&lt;p&gt;新建 api.php&lt;/p&gt;
+switch ($_SERVER[&#39;REQUEST_METHOD&#39;]) {
+    case &#39;GET&#39;:
+        echo &#39;get data&#39;;
+        break;
+    case &#39;POST&#39;:
+        $input = file_get_contents(&#34;php://input&#34;);
+        break;
+}
+
+&lt;h4 id=&#34;7-启用插件:c0b8d5a98f9234ad6795d441ab0605e0&#34;&gt;7. 启用插件&lt;/h4&gt;
+
+&lt;p&gt;到插件管理界面，点击启用，搞定！&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>《锋利的jQuery》学习笔记——jQuery插件</title>
-      <link>http://blog.wenzhixin.net.cn/2012/03/14/sharp_jquery_study_notes_jquery_plugin/</link>
-      <pubDate>Wed, 14 Mar 2012 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/sharp_jquery_study_notes_jquery_plugin</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/03/14/sharp_jquery_study_notes_jquery_plugin/</guid>
-      <description>​1. 插件的种类 (1)封装对象方法的插件：将对象方法封装起来，用于对通过选择器获取的 jQuery 对象进行操作 (2)封装全局函数的插件：将独立的函数加到</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/sharp_jquery_study_notes_jquery_plugin</guid>
+      <description>&lt;p&gt;​&lt;strong&gt;1. 插件的种类&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;(1)封装对象方法的插件：将对象方法封装起来，用于对通过选择器获取的 jQuery
+对象进行操作&lt;/p&gt;
+
+&lt;p&gt;(2)封装全局函数的插件：将独立的函数加到 jQuery 命名空间下&lt;/p&gt;
+
+&lt;p&gt;(3)选择器插件&lt;/p&gt;
+
+&lt;p&gt;​&lt;strong&gt;2. 插件的基本要点&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt; • jQuery 插件的文件名推荐命名为 jquery.[插件名].js&lt;/p&gt;
+
+&lt;p&gt; • 所有的对象方法都应当附加到 jQuery.fn
+对象上，而所有的全局函数都应当附加到 jQuery 对象本身上&lt;/p&gt;
+
+&lt;p&gt; • 在插件内部，this 指向的是当前通过选择器获取的 jQuery 对象&lt;/p&gt;
+
+&lt;p&gt; • 可以用 this.each 来遍历所有元素&lt;/p&gt;
+
+&lt;p&gt; • 所有的方法或函数插件，都应当以分号结尾&lt;/p&gt;
+
+&lt;p&gt; • 插件应该返回一个 jQuery 对象，以保证插件的可链式操作&lt;/p&gt;
+
+&lt;p&gt; • 避免在插件内部使用作为 jQuery 对象的别名，而应使用完整的 jQuery
+来表示&lt;/p&gt;
+
+&lt;p&gt; • 使用闭包技巧&lt;/p&gt;
+
+&lt;p&gt;​&lt;strong&gt;3. 插件中的闭包&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;(1)闭包指的是：允许使用内部函数，这些内部函数可以访问它们所在的外部函数中的所有局部变量、参数和生命的其他内部函数，当其中一个这样的内部函数在包含它们的外部函数之外被调用时，就会形成闭包&lt;/p&gt;
+(function() {
+	/\*这里置放代码\*/
+})();
+
+&lt;p&gt;(2)jQuery 中的闭包，为了更好的兼容性，在开始前加分号&lt;/p&gt;
+;(function() {
+	/\*这里置放代码\*/
+})(jQuery);
+
+&lt;p&gt;​&lt;strong&gt;4. jQuery 插件的机制&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;(1)jQuery.fn.extend(Object)-封装对象方法&lt;/p&gt;
+;(function() {
+	$.fn.exetend({
+		func1: function() {
+			/\*这里置放代码\*/
+			return this;
+		},
+
+		func2: function() {
+			/\*这里置放代码\*/
+			return this.each(function() {
+				/\*这里置放代码\*/
+			});
+		},
+		
+		...
+	}
+})(jQuery);
+
+&lt;p&gt; • 插件内部的 this 指向的是 jQuery 对象&lt;/p&gt;
+
+&lt;p&gt; • 插件扩展函数应该返回 jQuery 对象，即
+this，从而使其具有可链接性；当选择器匹配多个元素时，应返回每个匹配匹配元素，即
+this.each(function)&lt;/p&gt;
+
+&lt;p&gt; • 使用：(&amp;ldquo;element&amp;rdquo;).func1(), (&amp;ldquo;element&amp;rdquo;).func2(), &amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;(2)jQuery.extend(Object)-封装全局函数或者封装选择器&lt;/p&gt;
+;(function() {
+	$.exetend({
+		func1: function() {
+			/\*这里置放代码\*/
+			return this;
+		},
+
+		func2: function() {
+			/\*这里置放代码\*/
+			return this;
+		},
+		...
+	});
+})(jQuery);
+
+&lt;p&gt; • 使用：.func1(), .func2(), &amp;hellip; 或者 jQuery.func1(), jQuery.func2(),
+&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;(3)jQuery.extend(target, obj1, obj2, &amp;hellip;)-用于扩展已有的 Object
+对象，用一个或多个对象来扩展一个对象，返回被扩展的对象。经常被用于设置插件方法的一系列默认参数，如：&lt;/p&gt;
+function func(options) {
+    options = jQuery.exetend({
+        key1: value1,
+        key2: value2,
+        ...                /\*默认参数\*/
+    }, options);
+}
+</description>
     </item>
     
     <item>
       <title>《锋利的jQuery》学习笔记——jQuery插件</title>
-      <link>http://blog.wenzhixin.net.cn/2012/03/14/sharp_jquery_study_notes_jquery_plugin/</link>
-      <pubDate>Wed, 14 Mar 2012 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/sharp_jquery_study_notes_jquery_plugin</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/03/14/sharp_jquery_study_notes_jquery_plugin/</guid>
-      <description>​1. 插件的种类 (1)封装对象方法的插件：将对象方法封装起来，用于对通过选择器获取的 jQuery 对象进行操作 (2)封装全局函数的插件：将独立的函数加到</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/sharp_jquery_study_notes_jquery_plugin</guid>
+      <description>&lt;p&gt;​&lt;strong&gt;1. 插件的种类&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;(1)封装对象方法的插件：将对象方法封装起来，用于对通过选择器获取的 jQuery
+对象进行操作&lt;/p&gt;
+
+&lt;p&gt;(2)封装全局函数的插件：将独立的函数加到 jQuery 命名空间下&lt;/p&gt;
+
+&lt;p&gt;(3)选择器插件&lt;/p&gt;
+
+&lt;p&gt;​&lt;strong&gt;2. 插件的基本要点&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt; • jQuery 插件的文件名推荐命名为 jquery.[插件名].js&lt;/p&gt;
+
+&lt;p&gt; • 所有的对象方法都应当附加到 jQuery.fn
+对象上，而所有的全局函数都应当附加到 jQuery 对象本身上&lt;/p&gt;
+
+&lt;p&gt; • 在插件内部，this 指向的是当前通过选择器获取的 jQuery 对象&lt;/p&gt;
+
+&lt;p&gt; • 可以用 this.each 来遍历所有元素&lt;/p&gt;
+
+&lt;p&gt; • 所有的方法或函数插件，都应当以分号结尾&lt;/p&gt;
+
+&lt;p&gt; • 插件应该返回一个 jQuery 对象，以保证插件的可链式操作&lt;/p&gt;
+
+&lt;p&gt; • 避免在插件内部使用作为 jQuery 对象的别名，而应使用完整的 jQuery
+来表示&lt;/p&gt;
+
+&lt;p&gt; • 使用闭包技巧&lt;/p&gt;
+
+&lt;p&gt;​&lt;strong&gt;3. 插件中的闭包&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;(1)闭包指的是：允许使用内部函数，这些内部函数可以访问它们所在的外部函数中的所有局部变量、参数和生命的其他内部函数，当其中一个这样的内部函数在包含它们的外部函数之外被调用时，就会形成闭包&lt;/p&gt;
+(function() {
+	/\*这里置放代码\*/
+})();
+
+&lt;p&gt;(2)jQuery 中的闭包，为了更好的兼容性，在开始前加分号&lt;/p&gt;
+;(function() {
+	/\*这里置放代码\*/
+})(jQuery);
+
+&lt;p&gt;​&lt;strong&gt;4. jQuery 插件的机制&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;(1)jQuery.fn.extend(Object)-封装对象方法&lt;/p&gt;
+;(function() {
+	$.fn.exetend({
+		func1: function() {
+			/\*这里置放代码\*/
+			return this;
+		},
+
+		func2: function() {
+			/\*这里置放代码\*/
+			return this.each(function() {
+				/\*这里置放代码\*/
+			});
+		},
+		
+		...
+	}
+})(jQuery);
+
+&lt;p&gt; • 插件内部的 this 指向的是 jQuery 对象&lt;/p&gt;
+
+&lt;p&gt; • 插件扩展函数应该返回 jQuery 对象，即
+this，从而使其具有可链接性；当选择器匹配多个元素时，应返回每个匹配匹配元素，即
+this.each(function)&lt;/p&gt;
+
+&lt;p&gt; • 使用：(&amp;ldquo;element&amp;rdquo;).func1(), (&amp;ldquo;element&amp;rdquo;).func2(), &amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;(2)jQuery.extend(Object)-封装全局函数或者封装选择器&lt;/p&gt;
+;(function() {
+	$.exetend({
+		func1: function() {
+			/\*这里置放代码\*/
+			return this;
+		},
+
+		func2: function() {
+			/\*这里置放代码\*/
+			return this;
+		},
+		...
+	});
+})(jQuery);
+
+&lt;p&gt; • 使用：.func1(), .func2(), &amp;hellip; 或者 jQuery.func1(), jQuery.func2(),
+&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;(3)jQuery.extend(target, obj1, obj2, &amp;hellip;)-用于扩展已有的 Object
+对象，用一个或多个对象来扩展一个对象，返回被扩展的对象。经常被用于设置插件方法的一系列默认参数，如：&lt;/p&gt;
+function func(options) {
+    options = jQuery.exetend({
+        key1: value1,
+        key2: value2,
+        ...                /\*默认参数\*/
+    }, options);
+}
+</description>
+    </item>
+    
+    <item>
+      <title>图片查看弹出框 (jQuery 插件)</title>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/jquery_imagebox</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/jquery_imagebox</guid>
+      <description>
+
+&lt;h3 id=&#34;参数:fa269ff73629026d8a4c5a02cd855e66&#34;&gt;参数&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;linkTitle: 点击图片提示信息，默认为 &amp;lsquo;点击查看原图&amp;rsquo;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;direction: 箭头显示方向，水平方向 (horizontal) 和垂直方向 (vertical)，默认为 &amp;lsquo;horizontal&amp;rsquo;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;如何使用:fa269ff73629026d8a4c5a02cd855e66&#34;&gt;如何使用&lt;/h3&gt;
+
+&lt;h4 id=&#34;1-导入:fa269ff73629026d8a4c5a02cd855e66&#34;&gt;1、导入&lt;/h4&gt;
+&lt;link rel=&#34;stylesheet&#34; href=&#34;css/jquery.imagebox.css&#34; /&gt;
+&lt;script type=&#34;text/javascript&#34; src=&#34;js/jquery.imagebox.js&#34;&gt;&lt;/script&gt;
+
+&lt;h4 id=&#34;2-使用:fa269ff73629026d8a4c5a02cd855e66&#34;&gt;2、使用&lt;/h4&gt;
+$(&#39;element&#39;).imagebox();
+
+$(&#39;element&#39;).imagebox({
+    linkTitle: &#39;查看原图&#39;,
+    direction: &#39;vertical&#39;
+});
+
+&lt;h4 id=&#34;3-截图:fa269ff73629026d8a4c5a02cd855e66&#34;&gt;3、截图&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2012/12/02/2.png&#34; alt=&#34;截图2&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2012/12/02/1.png&#34; alt=&#34;截图1&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;源码:fa269ff73629026d8a4c5a02cd855e66&#34;&gt;源码&lt;/h3&gt;
+
+&lt;p&gt;源码见 &lt;a href=&#34;https://github.com/wenzhixin/jquery.imagebox&#34;&gt;github&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;特别感谢：&lt;a href=&#34;http://weibo.com/u/2191714780&#34;&gt;echo&lt;/a&gt; 的提供的图片切换功能，以及图片素材&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>图片查看弹出框 (jQuery 插件)</title>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/jquery_imagebox</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/jquery_imagebox</guid>
+      <description>
+
+&lt;h3 id=&#34;参数:fa269ff73629026d8a4c5a02cd855e66&#34;&gt;参数&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;linkTitle: 点击图片提示信息，默认为 &amp;lsquo;点击查看原图&amp;rsquo;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;direction: 箭头显示方向，水平方向 (horizontal) 和垂直方向 (vertical)，默认为 &amp;lsquo;horizontal&amp;rsquo;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;如何使用:fa269ff73629026d8a4c5a02cd855e66&#34;&gt;如何使用&lt;/h3&gt;
+
+&lt;h4 id=&#34;1-导入:fa269ff73629026d8a4c5a02cd855e66&#34;&gt;1、导入&lt;/h4&gt;
+&lt;link rel=&#34;stylesheet&#34; href=&#34;css/jquery.imagebox.css&#34; /&gt;
+&lt;script type=&#34;text/javascript&#34; src=&#34;js/jquery.imagebox.js&#34;&gt;&lt;/script&gt;
+
+&lt;h4 id=&#34;2-使用:fa269ff73629026d8a4c5a02cd855e66&#34;&gt;2、使用&lt;/h4&gt;
+$(&#39;element&#39;).imagebox();
+
+$(&#39;element&#39;).imagebox({
+    linkTitle: &#39;查看原图&#39;,
+    direction: &#39;vertical&#39;
+});
+
+&lt;h4 id=&#34;3-截图:fa269ff73629026d8a4c5a02cd855e66&#34;&gt;3、截图&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2012/12/02/2.png&#34; alt=&#34;截图2&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2012/12/02/1.png&#34; alt=&#34;截图1&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;源码:fa269ff73629026d8a4c5a02cd855e66&#34;&gt;源码&lt;/h3&gt;
+
+&lt;p&gt;源码见 &lt;a href=&#34;https://github.com/wenzhixin/jquery.imagebox&#34;&gt;github&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;特别感谢：&lt;a href=&#34;http://weibo.com/u/2191714780&#34;&gt;echo&lt;/a&gt; 的提供的图片切换功能，以及图片素材&lt;/p&gt;
+</description>
     </item>
     
   </channel>

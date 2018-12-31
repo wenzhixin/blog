@@ -7,27 +7,266 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Fri, 07 Dec 2012 23:01:00 +0000</lastBuildDate>
-    
-	<atom:link href="http://blog.wenzhixin.net.cn/tags/css3/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="http://blog.wenzhixin.net.cn/tags/css3/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>使用 CSS3 制作自己的博客 Logo</title>
-      <link>http://blog.wenzhixin.net.cn/2012/12/07/css3_blog_logo/</link>
-      <pubDate>Fri, 07 Dec 2012 23:01:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/css3_blog_logo</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/12/07/css3_blog_logo/</guid>
-      <description>1、html 代码 1 2 3 4 5 6 7 8 9 10 11 12 &amp;lt;div class=&amp;#34;wenyi-logo&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;border&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;circle&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;wy&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;wen&amp;#34;&amp;gt;文&amp;lt;/div&amp;gt; &amp;lt;div clas</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/css3_blog_logo</guid>
+      <description>
+
+&lt;h4 id=&#34;1-html-代码:7cff488f911e98b8c65f501a64c9d1c5&#34;&gt;1、html 代码&lt;/h4&gt;
+&lt;div class=&#34;wenyi-logo&#34;&gt;
+    &lt;div class=&#34;border&#34;&gt;
+        &lt;div class=&#34;circle&#34;&gt;
+            &lt;div class=&#34;wy&#34;&gt;
+                &lt;div class=&#34;wen&#34;&gt;文&lt;/div&gt;
+                &lt;div class=&#34;yi&#34;&gt;翼&lt;/div&gt;
+                &lt;div class=&#34;bo&#34;&gt;博&lt;/div&gt;
+                &lt;div class=&#34;ke&#34;&gt;客&lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&#34;2-设置-logo-大小为-180px-设置所有的-div-为绝对定位:7cff488f911e98b8c65f501a64c9d1c5&#34;&gt;2、设置 logo 大小为 180px，设置所有的 div 为绝对定位&lt;/h4&gt;
+.wenyi-logo {
+    width: 180px;
+    position: relative;
+}
+.wenyi-logo div {
+    position: absolute;
+}
+
+&lt;h4 id=&#34;3-设置-border-样式:7cff488f911e98b8c65f501a64c9d1c5&#34;&gt;3、设置 border 样式&lt;/h4&gt;
+.wenyi-logo .border {
+    width: 180px;
+    height: 180px;
+    background: #b1e4ff;
+    border: 2px solid #789cb6;
+    border-radius: 90px;
+    box-shadow: 0 0 15px #fff;
+}
+
+&lt;p&gt;可以看到，现在的效果：
+&lt;img src=&#34;http://blog.wenzhixin.net.cn/2012/12/07/images/1.jpeg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;4-设置-circle-样式:7cff488f911e98b8c65f501a64c9d1c5&#34;&gt;4、设置 circle 样式&lt;/h4&gt;
+.wenyi-logo .circle {
+    width: 170px;
+    height: 170px;
+    top: 5px;
+    left: 5px;
+    background: #3b99e3;
+    border-radius: 85px;
+}
+
+&lt;p&gt;可以看到，现在的效果：
+&lt;img src=&#34;http://blog.wenzhixin.net.cn/2012/12/07/images/2.jpeg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;5-设置字体的大小以及定位:7cff488f911e98b8c65f501a64c9d1c5&#34;&gt;5、设置字体的大小以及定位&lt;/h4&gt;
+.wenyi-logo .wy {
+    font-weight: bold;
+    font-size: 70px;
+    color: white;
+}
+.wenyi-logo .wy div {
+    width: 96px;
+    line-height: 96px;
+    text-align: center;
+}
+.wenyi-logo .wen {
+    font-size: 32px;
+    top: 37px;
+    right: -85px;
+}
+.wenyi-logo .yi {
+    font-size: 32px;
+    top: 37px;
+    left: 88px;
+}
+.wenyi-logo .bo {
+    left: 37px;
+    top: 9px;
+}
+.wenyi-logo .ke {
+    left: 37px;
+    top: 69px;
+}
+
+&lt;p&gt;可以看到，现在的效果：
+&lt;img src=&#34;http://blog.wenzhixin.net.cn/2012/12/07/images/3.jpeg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;6-最后加上鼠标经过的样式:7cff488f911e98b8c65f501a64c9d1c5&#34;&gt;6、最后加上鼠标经过的样式&lt;/h4&gt;
+.wenyi-logo .border {
+    transition: all .8s ease-in-out;
+}
+
+.wenyi-logo .border:hover {
+    transform: rotate(360deg) scale(1.1);
+}
+
+&lt;h4 id=&#34;7-最后的最后:7cff488f911e98b8c65f501a64c9d1c5&#34;&gt;7、最后的最后&amp;gt;&amp;gt;&amp;gt;&lt;/h4&gt;
+
+&lt;p&gt;加上对多浏览器的支持，列出了用到的 css3 属性：&lt;/p&gt;
+-moz-border-radius
+-webkit-border-radius
+-o-border-radius
+border-radius
+
+-moz-box-shadow
+-webkit-box-shadow
+-o-box-shadow
+box-shadow
+
+-webkit-transition
+-moz-transition
+-o-transition
+transition
+
+-webkit-transform
+-moz-transform
+-o-transform
+transform
+
+&lt;p&gt;注：想支持 IE 的话可以考虑 &lt;a href=&#34;http://fetchak.com/ie-css3/&#34;&gt;ie-css3.htc&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;源码：&lt;a href=&#34;http://blog.wenzhixin.net.cn/2012/12/07/demo.html&#34;&gt;查看demo&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
     
     <item>
       <title>使用 CSS3 制作自己的博客 Logo</title>
-      <link>http://blog.wenzhixin.net.cn/2012/12/07/css3_blog_logo/</link>
-      <pubDate>Fri, 07 Dec 2012 23:01:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/1/01/01/css3_blog_logo</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/12/07/css3_blog_logo/</guid>
-      <description>1、html 代码 1 2 3 4 5 6 7 8 9 10 11 12 &amp;lt;div class=&amp;#34;wenyi-logo&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;border&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;circle&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;wy&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;wen&amp;#34;&amp;gt;文&amp;lt;/div&amp;gt; &amp;lt;div clas</description>
+      <guid>http://blog.wenzhixin.net.cn/1/01/01/css3_blog_logo</guid>
+      <description>
+
+&lt;h4 id=&#34;1-html-代码:7cff488f911e98b8c65f501a64c9d1c5&#34;&gt;1、html 代码&lt;/h4&gt;
+&lt;div class=&#34;wenyi-logo&#34;&gt;
+    &lt;div class=&#34;border&#34;&gt;
+        &lt;div class=&#34;circle&#34;&gt;
+            &lt;div class=&#34;wy&#34;&gt;
+                &lt;div class=&#34;wen&#34;&gt;文&lt;/div&gt;
+                &lt;div class=&#34;yi&#34;&gt;翼&lt;/div&gt;
+                &lt;div class=&#34;bo&#34;&gt;博&lt;/div&gt;
+                &lt;div class=&#34;ke&#34;&gt;客&lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&#34;2-设置-logo-大小为-180px-设置所有的-div-为绝对定位:7cff488f911e98b8c65f501a64c9d1c5&#34;&gt;2、设置 logo 大小为 180px，设置所有的 div 为绝对定位&lt;/h4&gt;
+.wenyi-logo {
+    width: 180px;
+    position: relative;
+}
+.wenyi-logo div {
+    position: absolute;
+}
+
+&lt;h4 id=&#34;3-设置-border-样式:7cff488f911e98b8c65f501a64c9d1c5&#34;&gt;3、设置 border 样式&lt;/h4&gt;
+.wenyi-logo .border {
+    width: 180px;
+    height: 180px;
+    background: #b1e4ff;
+    border: 2px solid #789cb6;
+    border-radius: 90px;
+    box-shadow: 0 0 15px #fff;
+}
+
+&lt;p&gt;可以看到，现在的效果：
+&lt;img src=&#34;http://blog.wenzhixin.net.cn/2012/12/07/images/1.jpeg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;4-设置-circle-样式:7cff488f911e98b8c65f501a64c9d1c5&#34;&gt;4、设置 circle 样式&lt;/h4&gt;
+.wenyi-logo .circle {
+    width: 170px;
+    height: 170px;
+    top: 5px;
+    left: 5px;
+    background: #3b99e3;
+    border-radius: 85px;
+}
+
+&lt;p&gt;可以看到，现在的效果：
+&lt;img src=&#34;http://blog.wenzhixin.net.cn/2012/12/07/images/2.jpeg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;5-设置字体的大小以及定位:7cff488f911e98b8c65f501a64c9d1c5&#34;&gt;5、设置字体的大小以及定位&lt;/h4&gt;
+.wenyi-logo .wy {
+    font-weight: bold;
+    font-size: 70px;
+    color: white;
+}
+.wenyi-logo .wy div {
+    width: 96px;
+    line-height: 96px;
+    text-align: center;
+}
+.wenyi-logo .wen {
+    font-size: 32px;
+    top: 37px;
+    right: -85px;
+}
+.wenyi-logo .yi {
+    font-size: 32px;
+    top: 37px;
+    left: 88px;
+}
+.wenyi-logo .bo {
+    left: 37px;
+    top: 9px;
+}
+.wenyi-logo .ke {
+    left: 37px;
+    top: 69px;
+}
+
+&lt;p&gt;可以看到，现在的效果：
+&lt;img src=&#34;http://blog.wenzhixin.net.cn/2012/12/07/images/3.jpeg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;6-最后加上鼠标经过的样式:7cff488f911e98b8c65f501a64c9d1c5&#34;&gt;6、最后加上鼠标经过的样式&lt;/h4&gt;
+.wenyi-logo .border {
+    transition: all .8s ease-in-out;
+}
+
+.wenyi-logo .border:hover {
+    transform: rotate(360deg) scale(1.1);
+}
+
+&lt;h4 id=&#34;7-最后的最后:7cff488f911e98b8c65f501a64c9d1c5&#34;&gt;7、最后的最后&amp;gt;&amp;gt;&amp;gt;&lt;/h4&gt;
+
+&lt;p&gt;加上对多浏览器的支持，列出了用到的 css3 属性：&lt;/p&gt;
+-moz-border-radius
+-webkit-border-radius
+-o-border-radius
+border-radius
+
+-moz-box-shadow
+-webkit-box-shadow
+-o-box-shadow
+box-shadow
+
+-webkit-transition
+-moz-transition
+-o-transition
+transition
+
+-webkit-transform
+-moz-transform
+-o-transform
+transform
+
+&lt;p&gt;注：想支持 IE 的话可以考虑 &lt;a href=&#34;http://fetchak.com/ie-css3/&#34;&gt;ie-css3.htc&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;源码：&lt;a href=&#34;http://blog.wenzhixin.net.cn/2012/12/07/demo.html&#34;&gt;查看demo&lt;/a&gt;&lt;/p&gt;
+</description>
     </item>
     
   </channel>
