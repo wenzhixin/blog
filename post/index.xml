@@ -1,0 +1,2995 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on 文翼的博客</title>
+    <link>http://wenzhixin.net.cn/post/</link>
+    <description>Recent content in Posts on 文翼的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Mon, 11 Jan 2016 13:30:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://wenzhixin.net.cn/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>通过 css 设置图片的高度与宽度相等</title>
+      <link>http://wenzhixin.net.cn/2016/01/11/css_height_equals_width_with_css/</link>
+      <pubDate>Mon, 11 Jan 2016 13:30:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2016/01/11/css_height_equals_width_with_css/</guid>
+      <description>在图片长宽不相等的情况下，想将长宽设置为相等并且自适应屏幕，可以通过 js 的方式进行设置并通过监听 resize 来实时更新，但是这种方式很麻烦。 这里通过 css 来</description>
+    </item>
+    
+    <item>
+      <title>备份恢复 Meteor Mongo 数据库</title>
+      <link>http://wenzhixin.net.cn/2016/01/07/meteor_mongo_dump/</link>
+      <pubDate>Thu, 07 Jan 2016 22:30:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2016/01/07/meteor_mongo_dump/</guid>
+      <description>运行 meteor 后使用新的窗口运行 1 meteor mongo 可以看到类似下面的信息： 1 2 MongoDB shell version: 2.6.7 connecting to: 127.0.0.1:4001/meteor Meteor 数据库运行于 127.0.0.1 3001 端口，Ctrl + D 退出即可。 导出： 1 mongodump -h 127.0.0.1 --port 4001 -d meteor</description>
+    </item>
+    
+    <item>
+      <title>ldap 管理指南</title>
+      <link>http://wenzhixin.net.cn/2015/11/10/slapd_slurpd/</link>
+      <pubDate>Tue, 10 Nov 2015 16:07:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2015/11/10/slapd_slurpd/</guid>
+      <description>1. slapd 和 slurpd 介绍 本章介绍如何编译、配置和运行独立的 LDAP 守护进程（slapd）和独立的更新复制守护进程（slurpd），该内容主要是针对系统管理员。</description>
+    </item>
+    
+    <item>
+      <title>Installing Virtualbox On Ubuntu Server 14.04</title>
+      <link>http://wenzhixin.net.cn/2015/09/07/installing_vbox_on_ubuntu_server/</link>
+      <pubDate>Mon, 07 Sep 2015 16:07:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2015/09/07/installing_vbox_on_ubuntu_server/</guid>
+      <description>For some reasons, my computer just only installed Ubuntu Server 14.04 system. But sometimes I need to use Windows system to test our project, so I think if I can install virtualbox on the Ubuntu Server, and then manage the virtualbox by website. How to do that? Install Virtualbox First we go to the website, and download the latest verion(5.0.2) of Virtualbox: 1 2 wget http://download.virtualbox.org/virtualbox/5.0.2/virtualbox-5.0_5.0.2-102096~Ubuntu~trusty_amd64.deb wget http://download.virtualbox.org/virtualbox/5.0.2/Oracle_VM_VirtualBox_Extension_Pack-5.0.2-102096.vbox-extpack Install: 1</description>
+    </item>
+    
+    <item>
+      <title>在 Ubuntu 14.04 server 上部署 meteor 应用</title>
+      <link>http://wenzhixin.net.cn/2015/07/06/meteor_deploy/</link>
+      <pubDate>Mon, 06 Jul 2015 22:30:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2015/07/06/meteor_deploy/</guid>
+      <description>关于 Meteor.js Meteor.js Meteor 是一个构建在 Node.js 之上的平台，用来开发实时网页程序。Meteor 位于程序数据库和用户界面之间，保持二者之间的数据同步更新。使用 Mete</description>
+    </item>
+    
+    <item>
+      <title>react-memory：基于 nodejs &#43; bower &#43; react 的文字记忆游戏</title>
+      <link>http://wenzhixin.net.cn/2015/06/07/react_memory/</link>
+      <pubDate>Sun, 07 Jun 2015 13:30:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2015/06/07/react_memory/</guid>
+      <description>前言 现在最热门的前端框架，毫无疑问是 React，React 是由 Facebook 出品的 JavaScript 框架，由于该框架比较新，比较少中文的资料。这几天看了很多篇关于 react 的英</description>
+    </item>
+    
+    <item>
+      <title>lxc 小贴士：创建、自动启动、设置存放目录</title>
+      <link>http://wenzhixin.net.cn/2015/03/04/lxc_tips/</link>
+      <pubDate>Wed, 04 Mar 2015 09:56:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2015/03/04/lxc_tips/</guid>
+      <description>平时使用 lxc 比较多，在这里记录下容易忘记的点。 创建 很简单，创建一个 ubuntu 系统（trusty），详细见LXC简介。 创建文件：vi trusty.con</description>
+    </item>
+    
+    <item>
+      <title>论“偷懒”的重要性</title>
+      <link>http://wenzhixin.net.cn/2014/11/23/lazy_is_important/</link>
+      <pubDate>Sun, 23 Nov 2014 08:29:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/11/23/lazy_is_important/</guid>
+      <description>早上使用了 gulp 工具来自动完成开发后，强烈的意识到作为程序猿“偷懒”的重要性！偷懒是一个贬义词，平时说到偷懒这个词总是和懒惰、不思进取、缺乏主动</description>
+    </item>
+    
+    <item>
+      <title>KVM 虚拟机的学习和使用</title>
+      <link>http://wenzhixin.net.cn/2014/11/21/kvm_study/</link>
+      <pubDate>Fri, 21 Nov 2014 22:20:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/11/21/kvm_study/</guid>
+      <description>KVM 是 Kernel-based Virtual Machine的简称，是一个开源的系统虚拟化模块，是基于硬件的完全虚拟化。 查看硬件是否支持 通过命令行可以查看硬件是否支持： 1 2 3 4 5</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 下不能访问 Windows 文件系统</title>
+      <link>http://wenzhixin.net.cn/2014/11/20/ubuntu_unable_to_access_windows/</link>
+      <pubDate>Thu, 20 Nov 2014 15:07:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/11/20/ubuntu_unable_to_access_windows/</guid>
+      <description>Ubuntu 和 Windows 双系统下，Ubuntu 不能访问 Windows 下的分区，例如：/dev/sdb1，显示如下错误： 1 2 3 4 5 6 Error mounting /dev/sdb1 exited with non-zero exit status 14: The disk contains an unclean file system (0, 0). Metadata kept</description>
+    </item>
+    
+    <item>
+      <title>开源所带来的——记 DBackup 4.0 发布和 Bootstrap Table 插件的开发</title>
+      <link>http://wenzhixin.net.cn/2014/11/08/bootstrap-table/</link>
+      <pubDate>Sat, 08 Nov 2014 02:14:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/11/08/bootstrap-table/</guid>
+      <description>源起 最最开始的时候，在写公司的考勤系统，系统的功能十分简单，只需要简单地查询数据和展示数据（无需增加、修改和删除），后台接口使用的是标准的 Restful</description>
+    </item>
+    
+    <item>
+      <title>crontab 学习笔记</title>
+      <link>http://wenzhixin.net.cn/2014/11/07/crontab_study/</link>
+      <pubDate>Fri, 07 Nov 2014 21:35:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/11/07/crontab_study/</guid>
+      <description>crontab 常见于 Unix 和类 Unix 的操作系统之中，用于设置周期性被执行的指令。该命令从标准输入设备读取指令，并将其存放于crontab文件中，以供之后读取和执</description>
+    </item>
+    
+    <item>
+      <title>编写 WebStorm 实用工具</title>
+      <link>http://wenzhixin.net.cn/2014/11/04/webstorm_tools/</link>
+      <pubDate>Tue, 04 Nov 2014 23:29:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/11/04/webstorm_tools/</guid>
+      <description>在写代码的时候，很多时候（例如写 jQuery 插件）需要将 html 代码转换为 js 模板。例如将下面的 html 代码： 1 2 3 4 5 &amp;lt;ul&amp;gt; &amp;lt;li class=&amp;#34;item&amp;#34;&amp;gt; &amp;lt;a href=&amp;#34;#&amp;#34;&amp;gt;Item 1&amp;lt;/a&amp;gt; &amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; 放到 js 中： 1 2 3 4 5 6 7 8 var</description>
+    </item>
+    
+    <item>
+      <title>chrome 浏览器 console 面板直接使用 JSON 数据进行调试错误问题</title>
+      <link>http://wenzhixin.net.cn/2014/11/02/chrome_console_error/</link>
+      <pubDate>Sun, 02 Nov 2014 23:49:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/11/02/chrome_console_error/</guid>
+      <description>今天在微博上看到小鱼在问：https://gist.github.com/sofish/c250881989aaa10c029d 为什么会出错</description>
+    </item>
+    
+    <item>
+      <title>2014-10-21</title>
+      <link>http://wenzhixin.net.cn/2014/10/21/2014-10-21/</link>
+      <pubDate>Tue, 21 Oct 2014 22:29:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/10/21/2014-10-21/</guid>
+      <description>时常会听到身边的朋友对还单身的人说，找不到女朋友（或男朋友）的原因就是你的要求太高了。外貌、学历、年龄、身高、体重等外在条件，加上人品、性格</description>
+    </item>
+    
+    <item>
+      <title>2014-10-20</title>
+      <link>http://wenzhixin.net.cn/2014/10/20/2014-10-20/</link>
+      <pubDate>Mon, 20 Oct 2014 23:58:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/10/20/2014-10-20/</guid>
+      <description>前两天试了下使用 kinddle 来阅读电子书，下载了第一本书《读书这件小事》，里面讲了很多关于如何寻找好书以及如何更好的读书的方法，例如顺藤摸瓜、多看名人</description>
+    </item>
+    
+    <item>
+      <title>2014-10-19</title>
+      <link>http://wenzhixin.net.cn/2014/10/19/2014-10-19/</link>
+      <pubDate>Sun, 19 Oct 2014 23:58:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/10/19/2014-10-19/</guid>
+      <description>人生一世，不过是一个又一个二十四小时的叠积，在这样宝贵的光阴里，我们必须明白自己所做的选择，是读一本好书、记两三感慨、听几曲好歌、还是做感兴</description>
+    </item>
+    
+    <item>
+      <title>关于付出与成长</title>
+      <link>http://wenzhixin.net.cn/2014/10/09/national_day_note/</link>
+      <pubDate>Thu, 09 Oct 2014 00:50:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/10/09/national_day_note/</guid>
+      <description>关于付出 常常有人说：“只要你付出了，就会有所收获”。也常听到有人说：“一分耕耘，一分收获”。 话虽如此，但是很多时候，现实却不是这样，因为很多</description>
+    </item>
+    
+    <item>
+      <title>如何不用 eval 的方式通过字符串调用 JavaScript 的方法</title>
+      <link>http://wenzhixin.net.cn/2014/10/03/call_string_function/</link>
+      <pubDate>Fri, 03 Oct 2014 23:28:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/10/03/call_string_function/</guid>
+      <description>由于 bootstrap-table 插件需要支持data-name=&amp;quot;functionName&amp;quot;的方式，所以在实现的过程中使用了eval的方法。我们知</description>
+    </item>
+    
+    <item>
+      <title>给朋友的香港出行小贴士</title>
+      <link>http://wenzhixin.net.cn/2014/09/26/hong_kong_tips/</link>
+      <pubDate>Fri, 26 Sep 2014 23:12:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/09/26/hong_kong_tips/</guid>
+      <description>衣 国庆后，天气有些小冷了呢，查了下，那边的平均气温为摄氏23℃，湿度约72％。你好像说需要穿正装，不过最好也带几件长袖或者薄外套，还有长裤和</description>
+    </item>
+    
+    <item>
+      <title>如何批量读取 word 的内容和图片</title>
+      <link>http://wenzhixin.net.cn/2014/09/21/node_docx/</link>
+      <pubDate>Sun, 21 Sep 2014 21:20:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/09/21/node_docx/</guid>
+      <description>今天朋友说需要对100份 word 文件的内容进行录入工作，问我是否有什么方便的方法。假如最少1份按2分钟的速度算，也需要200分钟才可以录入完成。我</description>
+    </item>
+    
+    <item>
+      <title>如何为 NodeJs 设置 Nginx 代理服务器</title>
+      <link>http://wenzhixin.net.cn/2014/09/18/nginx_as_proxy_nodejs/</link>
+      <pubDate>Thu, 18 Sep 2014 13:45:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/09/18/nginx_as_proxy_nodejs/</guid>
+      <description>很多时候，我们需要为 NodeJs 设置反向代理，例如本博客后台 NodeJs 的应用监听的端口为 3333，通过 Nginx 便可以轻松代理为 80 端口，那么应该如何设置呢？ 首先设置 u</description>
+    </item>
+    
+    <item>
+      <title>使用 JavaScript 转换数据单位</title>
+      <link>http://wenzhixin.net.cn/2014/09/03/convert_size_using_javascript/</link>
+      <pubDate>Wed, 03 Sep 2014 17:31:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/09/03/convert_size_using_javascript/</guid>
+      <description>我们知道，千字节是一个计量单位，虽然从字面上理解代表着1000，但是专业术语kilobyte在计算机科学和信息技术等领域有两种含义，分别代表</description>
+    </item>
+    
+    <item>
+      <title>通过 vim 编辑网页文本输入框</title>
+      <link>http://wenzhixin.net.cn/2014/08/30/edit_text_gvim/</link>
+      <pubDate>Sat, 30 Aug 2014 14:58:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/08/30/edit_text_gvim/</guid>
+      <description>对于文本编辑和编写代码，我们常常会用到 vim，使用 vim 的好处在这里就不多说了。那么能不能在浏览器中的文本输入框中也使用 vim 来编辑呢，编辑完之后再</description>
+    </item>
+    
+    <item>
+      <title>表格固定表头的问题和解决方案</title>
+      <link>http://wenzhixin.net.cn/2014/08/10/fixed_table/</link>
+      <pubDate>Sun, 10 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/08/10/fixed_table/</guid>
+      <description>在写插件bootstrap table的时候，当数据过多的时候，需要对表格的 thead进行固定，然后滚动表格的tbody。但是在实际的操作上，</description>
+    </item>
+    
+    <item>
+      <title>如何使用 python 连接 Oracle（网站）</title>
+      <link>http://wenzhixin.net.cn/2014/08/04/python_oracle/</link>
+      <pubDate>Mon, 04 Aug 2014 23:55:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/08/04/python_oracle/</guid>
+      <description>首先，由于网站部署在远程服务器的局域网上面，所以需要通过 ssh tunnel（隧道） 的方式进行本地的映射，主要映射两个端口： Oracle 服务：ssh -fN -L 1521:ip:1521 server</description>
+    </item>
+    
+    <item>
+      <title>理解 JavaScript 中的 Array.prototype.slice.apply(arguments)</title>
+      <link>http://wenzhixin.net.cn/2014/08/03/slice_arguments/</link>
+      <pubDate>Sun, 03 Aug 2014 23:28:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/08/03/slice_arguments/</guid>
+      <description>假如你是一个 JavaScript 开发者，你可能见到过 Array.prototype.slice.apply(arguments) 这样的用法，然后你会问，这么写是什么意思呢？ 这个语法其实不难理解，只是它有些不好看。Array 是 JavaScript 的基本</description>
+    </item>
+    
+    <item>
+      <title>2014.08.02</title>
+      <link>http://wenzhixin.net.cn/2014/08/02/qixi/</link>
+      <pubDate>Sat, 02 Aug 2014 23:58:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/08/02/qixi/</guid>
+      <description>今天是七夕，一个特殊的日子。貌似还是比较多想法的，稍微记录下好了。 可能单身久了，对于感情，有些畏手畏脚，也变现实了，朋友们说我的要求太高了。</description>
+    </item>
+    
+    <item>
+      <title>设置 viewport 实现定宽网页 WebApp 下布局自适应</title>
+      <link>http://wenzhixin.net.cn/2014/08/01/viewport_mobile/</link>
+      <pubDate>Fri, 01 Aug 2014 23:13:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/08/01/viewport_mobile/</guid>
+      <description>一般来说，我们实现布局自适应可以有以下几种方式： 使用流动布局（fluid grid） 根据屏幕大小选择加载不同的CSS 使用 CSS 的@media规则 详</description>
+    </item>
+    
+    <item>
+      <title>VirtualBox 设置 Host-Only 上网</title>
+      <link>http://wenzhixin.net.cn/2014/07/31/virtual_box_host_only_settings/</link>
+      <pubDate>Thu, 31 Jul 2014 15:33:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/07/31/virtual_box_host_only_settings/</guid>
+      <description>我们平时在使用 VirtualBox 虚拟机的时候，工作场所内部网和家里内部网的网段不相同，使用 DHCP 获取 IP 地址的方式导致虚拟机的地址会经常改变，从而不方便使用，特别</description>
+    </item>
+    
+    <item>
+      <title>IE8 文件上传问题分析小记</title>
+      <link>http://wenzhixin.net.cn/2014/07/30/ie8_file_problem/</link>
+      <pubDate>Wed, 30 Jul 2014 23:31:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/07/30/ie8_file_problem/</guid>
+      <description>先吐槽一番，IE 浏览器让前端开发人员又恨又郁闷，但是没有办法，谁让中国如此多的用户呢。很多时候，一个简单的问题，可能需要花上大半天的时间才能</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 无法找到更新源的问题</title>
+      <link>http://wenzhixin.net.cn/2014/07/21/ubuntu_source_list_not_found/</link>
+      <pubDate>Mon, 21 Jul 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/07/21/ubuntu_source_list_not_found/</guid>
+      <description>问题： 前段时间，Ubuntu 官方源已经停止了对非长期维护版（如 11.10，12.04，12.10 和 13.04）的支持，并且从归档服务器上移除</description>
+    </item>
+    
+    <item>
+      <title>读《Backbone.js 实战》</title>
+      <link>http://wenzhixin.net.cn/2014/07/06/backbone_book/</link>
+      <pubDate>Sun, 06 Jul 2014 07:31:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/07/06/backbone_book/</guid>
+      <description>Backbone 是一个轻量级 JavaScript 的 MVC 框架，配合 Underscore 这个依赖库，我们可以打造出强大的 MVC 应用程序。其实很早就用到 Backbone + Underscore 进行网站和应用程序的开发了，只是国内一直没有</description>
+    </item>
+    
+    <item>
+      <title>Bootstrap a 标签按钮使用 prop 方法</title>
+      <link>http://wenzhixin.net.cn/2014/06/18/a_prop_problem/</link>
+      <pubDate>Wed, 18 Jun 2014 13:31:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/06/18/a_prop_problem/</guid>
+      <description>问题 将 jQuery 从 1.5.2 升级到 1.7.2 之后，统一将attr(&#39;disabled&#39;, &#39;disabled&#39;)改为prop(&#39;disabled&#39;, true)，将at</description>
+    </item>
+    
+    <item>
+      <title>在 Backbone.js 中自定义 fetch 错误处理</title>
+      <link>http://wenzhixin.net.cn/2014/06/14/backbone_custom_fetch_errors/</link>
+      <pubDate>Sat, 14 Jun 2014 23:55:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/06/14/backbone_custom_fetch_errors/</guid>
+      <description>Backbone 作为 JavaScript MVC 框架的一个优势是它可以通过监听事件来处理事情。但是根据 Collection 的相关文档，可以看到：当你使用fetch方法来进行 Ajax 请求的时候，假如发生了</description>
+    </item>
+    
+    <item>
+      <title>为什么写博客？</title>
+      <link>http://wenzhixin.net.cn/2014/06/11/why_blog/</link>
+      <pubDate>Wed, 11 Jun 2014 22:08:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/06/11/why_blog/</guid>
+      <description>一直以来，阮一峰的个人博客是比较关注的博客之一，读他的博客源于IT技术，博主从2003年开始在网络上写日志，文章包含的内容非常广博，涉及读书</description>
+    </item>
+    
+    <item>
+      <title>使用 apache2 作为代理服务器轻松解决 Ajax 跨域问题</title>
+      <link>http://wenzhixin.net.cn/2014/06/05/apache_proxy/</link>
+      <pubDate>Thu, 05 Jun 2014 13:45:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/06/05/apache_proxy/</guid>
+      <description>介绍 我们知道，使用 JavaScript 进行开发 Ajax 应用的时候会有跨域访问的问题，而用代理便可以解决跨域访问的问题。 那么应该如何开启 apache2 的 http 代理模块呢？ 模块 mod_</description>
+    </item>
+    
+    <item>
+      <title>在 JavaScript 中定义常量（不可修改）</title>
+      <link>http://wenzhixin.net.cn/2014/05/07/javascript_define_const/</link>
+      <pubDate>Wed, 07 May 2014 23:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/05/07/javascript_define_const/</guid>
+      <description>define-const.js 在《JavaScript 启示录》的最后一章中提到: &amp;gt; Math 属性是无法改变的常数。这与 JavaScript 可变性质相悖，因此这些属性全部大写。 于是在浏览器（包括 I</description>
+    </item>
+    
+    <item>
+      <title>判断浏览器是否为 IE11</title>
+      <link>http://wenzhixin.net.cn/2014/05/05/detect_ie11/</link>
+      <pubDate>Mon, 05 May 2014 23:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/05/05/detect_ie11/</guid>
+      <description>项目中需要判断对浏览器的支持，使用 jQuery 去判断一个浏览器是否为 IE11 的时候，会识别错误。 这是因为 IE11 使用了和之前版本不一样的 User-agent： 1 Mozilla/5.0</description>
+    </item>
+    
+    <item>
+      <title>如何获取 div 的实际高度</title>
+      <link>http://wenzhixin.net.cn/2014/05/04/get_div_outer_height/</link>
+      <pubDate>Sun, 04 May 2014 22:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/05/04/get_div_outer_height/</guid>
+      <description>在实际开发中，需要对 div 的高度进行计算并自动设置高度，但是遇到了这样的一个问题： 1 2 3 4 5 &amp;lt;div id=&amp;#34;outer&amp;#34;&amp;gt; &amp;lt;div id=&amp;#34;inner&amp;#34; style=&amp;#34;height: 50px; margin-top: 20px; margin-bottom: 20px;&amp;#34;&amp;gt; 如何获取 div 的实际高度 &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; 1 2 3 4</description>
+    </item>
+    
+    <item>
+      <title>Temporary Tablespace is Empty 解决方法（ORA-25153）</title>
+      <link>http://wenzhixin.net.cn/2014/04/28/temporary_tablespace_is_empty/</link>
+      <pubDate>Mon, 28 Apr 2014 22:05:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/04/28/temporary_tablespace_is_empty/</guid>
+      <description>问题： 当我们对 Oralce 数据库进行操作的时候，出现了： 1 ORA-25153: Temporary Tablespace is Empty 的错误，提示 temporary 表空间为空。 思路： 当前用户没有设置表空间权限 表空间状态为 offline 当前用户没</description>
+    </item>
+    
+    <item>
+      <title>SVN 如何恢复被删除的文件夹</title>
+      <link>http://wenzhixin.net.cn/2014/04/24/svn_undelete_folder/</link>
+      <pubDate>Thu, 24 Apr 2014 23:30:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/04/24/svn_undelete_folder/</guid>
+      <description>问题： 你删除了 SVN 版本库上的文件夹，那么你要怎么恢复呢？ 尝试办法： 通过 svn revert folder，会发现找不到该文件夹 通过 svn merge，从上个版本恢复回</description>
+    </item>
+    
+    <item>
+      <title>何为努力？怎样算进步？</title>
+      <link>http://wenzhixin.net.cn/2014/04/23/strive_and_foreward/</link>
+      <pubDate>Wed, 23 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/04/23/strive_and_foreward/</guid>
+      <description>一直以来，很喜欢这样的一句话：每天努力一点点，进步一点点！ 那么努力了就能进步了吗？什么是努力，而怎样才算有进步呢？你是不是有时候也会喊着我要</description>
+    </item>
+    
+    <item>
+      <title>一步一步学习 AngularJS（八）</title>
+      <link>http://wenzhixin.net.cn/2014/04/22/angular_scutech_step7/</link>
+      <pubDate>Tue, 22 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/04/22/angular_scutech_step7/</guid>
+      <description>上一节 在这一小节，我们将学习如何创建布局模板，和如何通过添加路由来创建多页面的应用， 将使用新的 Angular 模块ngRoute。 在开始之前，我们先来看看</description>
+    </item>
+    
+    <item>
+      <title>CSS 自定义字体</title>
+      <link>http://wenzhixin.net.cn/2014/04/21/css_font_face/</link>
+      <pubDate>Mon, 21 Apr 2014 13:22:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/04/21/css_font_face/</guid>
+      <description>介绍 通过 CSS 的 @font-face 属性可以实现在网页中嵌入任意字体，例如自定字体、或者是自定义图标（bootstrap）。 为了能在主流浏览器中都能正常显示自定义</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 下搭建 JavaEE 环境</title>
+      <link>http://wenzhixin.net.cn/2014/04/02/ubuntu_java_ee/</link>
+      <pubDate>Wed, 02 Apr 2014 13:30:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/04/02/ubuntu_java_ee/</guid>
+      <description>在 Ubuntu 下搭建 JavaEE 的环境稍微有些麻烦，这里记录下。 1. 安装 eclipse 和 tomcat7 1 2 sudo apt-get install eclipse sudo apt-get install tomcat7 注：安装 eclipse 后会把依赖的 jdk 安装好，使用 apt-get 安装的 eclipse 是最精简的版本。 2.</description>
+    </item>
+    
+    <item>
+      <title>Cordova 开发属于自己的插件（plugin）</title>
+      <link>http://wenzhixin.net.cn/2014/03/20/cordova_my_plugin/</link>
+      <pubDate>Thu, 20 Mar 2014 21:58:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/03/20/cordova_my_plugin/</guid>
+      <description>在上一篇文章 cordova 初识之命令行工具 中，我们讲到了如何使用命令行快速地创建我们的 app 应用，并添加和运行各种平台。 在实际的项目开发中，需要用到 cordova 的插件</description>
+    </item>
+    
+    <item>
+      <title>人生至简，知足常乐</title>
+      <link>http://wenzhixin.net.cn/2014/03/19/life_is_simple/</link>
+      <pubDate>Wed, 19 Mar 2014 22:52:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/03/19/life_is_simple/</guid>
+      <description>许多人，爱上了这么一句话：“繁华近处，寻一无人山谷，建一木质小屋，铺一青石小路，晨钟暮鼓，安之若素。”多少人，向往着这样的一种宁静如水的生活</description>
+    </item>
+    
+    <item>
+      <title>ubuntu 下使用 FreeRDP 连接 Windows 远程桌面</title>
+      <link>http://wenzhixin.net.cn/2014/03/16/ubuntu_xfreerdp/</link>
+      <pubDate>Sun, 16 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/03/16/ubuntu_xfreerdp/</guid>
+      <description>简介 FreeRDP 是一款开源的远程桌面系统，支持多种平台， 在 ubuntu 中使用 FreeRDP 可以很方便的登录到 windwos 远程桌面中。 安装 1 sudo apt-get install freerdp 使用 1 xfreerdp -f host:port -u username -p password 参数： -f：表示</description>
+    </item>
+    
+    <item>
+      <title>ssh tunnel（隧道）</title>
+      <link>http://wenzhixin.net.cn/2014/03/15/ssh_tunnel/</link>
+      <pubDate>Sat, 15 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/03/15/ssh_tunnel/</guid>
+      <description>问题描述： 公司内部机器限制了登录，只能通过某台指定的机器才能上网，我们这里叫做中转服务器。 例如邮件服务器，而一般中转服务器是 linux 系统。 你想要登</description>
+    </item>
+    
+    <item>
+      <title>vim 添加批量注释</title>
+      <link>http://wenzhixin.net.cn/2014/03/14/vim_batch_notes/</link>
+      <pubDate>Fri, 14 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/03/14/vim_batch_notes/</guid>
+      <description>在配置服务器的过程中，经常会用到 vim 作为我们的编辑器，批量注释这一功能很常用到。 这里记录 vim 如何添加批量注释的方法。 Ctrl + v 使用方向键上下选择范围</description>
+    </item>
+    
+    <item>
+      <title>没那么简单</title>
+      <link>http://wenzhixin.net.cn/2014/03/13/not_simple/</link>
+      <pubDate>Thu, 13 Mar 2014 21:52:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/03/13/not_simple/</guid>
+      <description>还是挺喜欢黄小琥的《没那么简单》这首歌的，之前舍友看相亲节目的时候，男嘉宾没有牵手成功，总会响起这首歌。 是的，就像歌词所说，相爱没有那么容易</description>
+    </item>
+    
+    <item>
+      <title>一步一步学习 AngularJS（七）</title>
+      <link>http://wenzhixin.net.cn/2014/03/10/angular_scutech_step6/</link>
+      <pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/03/10/angular_scutech_step6/</guid>
+      <description>上一节 在这一小节，我们为列表中的产品添加图片和链接，下一小节将使用链接跳转到详细的页面。 在开始之前，我们先来看看 演示， 也可以通过链接下载 zip 包</description>
+    </item>
+    
+    <item>
+      <title>好好珍惜现在</title>
+      <link>http://wenzhixin.net.cn/2014/03/08/cherish_the_present/</link>
+      <pubDate>Sat, 08 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/03/08/cherish_the_present/</guid>
+      <description>每一个现在，都会是我们以后的记忆。例如我们说过的话，做过的事，走过的路，遇过的人，都是我们以后的回忆。 很喜欢一句话：人生岁月尔尔，我们的生活</description>
+    </item>
+    
+    <item>
+      <title>2014-03-03</title>
+      <link>http://wenzhixin.net.cn/2014/03/03/2014-03-03/</link>
+      <pubDate>Mon, 03 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/03/03/2014-03-03/</guid>
+      <description>好久没坐从家里直接到广州的车了，可能这么多年也就坐过一两次吧。想着一个人又要去市区等几个钟的车，怪可怜的，在老表的提议下决定重新体验下。 发现</description>
+    </item>
+    
+    <item>
+      <title>2014-03-01</title>
+      <link>http://wenzhixin.net.cn/2014/03/01/2014-03-01/</link>
+      <pubDate>Sat, 01 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/03/01/2014-03-01/</guid>
+      <description>好多年没回家过大劳热：“二月戏”了，想想，高中到现在了吧。第一次坐高铁，还是挺方便的，有公车直接到市区，半个钟。 谢谢好哥们带我逛了那么多景点</description>
+    </item>
+    
+    <item>
+      <title>拒绝恐惧和固定思维</title>
+      <link>http://wenzhixin.net.cn/2014/02/28/rejecting_fear_and_fixed_thinking/</link>
+      <pubDate>Fri, 28 Feb 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/02/28/rejecting_fear_and_fixed_thinking/</guid>
+      <description>在成长的路上，我们常常习惯了用恐惧去包裹想要去实现的事情， 以为那些事情就是未可企及的梦。 对很多人来说，未来的不可预测性和失败同样的可怕，我们</description>
+    </item>
+    
+    <item>
+      <title>人生与路</title>
+      <link>http://wenzhixin.net.cn/2014/02/26/life_and_road/</link>
+      <pubDate>Wed, 26 Feb 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/02/26/life_and_road/</guid>
+      <description>你有没有听过这样的故事？ 有个女孩，站在青春的路口，前方有条小路，若隐若现，远远召唤着她。 可是，母亲拦住了她：“那条路你走不得。” “为什么？”</description>
+    </item>
+    
+    <item>
+      <title>时间去哪里啦</title>
+      <link>http://wenzhixin.net.cn/2014/02/25/where_is_your_time/</link>
+      <pubDate>Tue, 25 Feb 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/02/25/where_is_your_time/</guid>
+      <description>我们每天都有很多事情要做，工作、学习、看书、看节目等等， 经常会感慨时间不够用，最近看了一些关于时间去哪里了的视频和文章， 在这里结合自己的自身</description>
+    </item>
+    
+    <item>
+      <title>一步一步学习 AngularJS（六）</title>
+      <link>http://wenzhixin.net.cn/2014/02/23/angular_scutech_step5/</link>
+      <pubDate>Sun, 23 Feb 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/02/23/angular_scutech_step5/</guid>
+      <description>上一节 下一节 在之前几个小节中，我们的列表都是使用固定的数据。 在这一小节，我们使用 $http 请求从后台获取数据。 在开始之前，我们先来看看 演示， 也可以通</description>
+    </item>
+    
+    <item>
+      <title>一步一步学习 AngularJS（五）</title>
+      <link>http://wenzhixin.net.cn/2014/02/22/angular_scutech_step4/</link>
+      <pubDate>Sat, 22 Feb 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/02/22/angular_scutech_step4/</guid>
+      <description>上一节 下一节 在这一小节，我们增加一个功能可以用来对列表进行排序。 在开始之前，我们先来看看 演示， 也可以通过链接下载 zip 包。 可以看到在搜索框下面，</description>
+    </item>
+    
+    <item>
+      <title>一步一步学习 AngularJS（四）</title>
+      <link>http://wenzhixin.net.cn/2014/02/21/angular_scutech_step3/</link>
+      <pubDate>Fri, 21 Feb 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/02/21/angular_scutech_step3/</guid>
+      <description>上一节 下一节 在这一小节，我们增加一个简单的input输入框，用于搜索。 在开始之前，我们先来看看 演示， 也可以通过链接下载 zip 包。 控制器 我们没有改</description>
+    </item>
+    
+    <item>
+      <title>一步一步学习 AngularJS（三）</title>
+      <link>http://wenzhixin.net.cn/2014/02/20/angular_scutech_step2/</link>
+      <pubDate>Thu, 20 Feb 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/02/20/angular_scutech_step2/</guid>
+      <description>上一节 下一节 在这一小节，我们使用 Angular 来动态生成上一节的页面。 在开始之前，我们先来看看 演示， 也可以通过链接下载 zip 包。 一个应用可以有很多种代码结构</description>
+    </item>
+    
+    <item>
+      <title>一步一步学习 AngularJS（二）</title>
+      <link>http://wenzhixin.net.cn/2014/02/19/angular_scutech_step1/</link>
+      <pubDate>Wed, 19 Feb 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/02/19/angular_scutech_step1/</guid>
+      <description>上一节 下一节 在这一小节，为了说明 Angular 是如何增强标准 HTML 的，这一节我们来创建静态的 HTML 页面， 顺便也会用到 bootstrap 相关的组件，然后下一节我们将使用 Angul</description>
+    </item>
+    
+    <item>
+      <title>一步一步学习 AngularJS（一）</title>
+      <link>http://wenzhixin.net.cn/2014/02/18/angular_scutech_step0/</link>
+      <pubDate>Tue, 18 Feb 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/02/18/angular_scutech_step0/</guid>
+      <description>下一节 今天开始一步一步学习 AngularJS 的教程之旅。 在这一小节中，我们将学习最基础、同时也是重要的代码结构和数据绑定。 在开始之前，我们先来看看 演示， 也可</description>
+    </item>
+    
+    <item>
+      <title>ubuntu 设置环境变量问题</title>
+      <link>http://wenzhixin.net.cn/2014/02/17/ubuntu_path/</link>
+      <pubDate>Mon, 17 Feb 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/02/17/ubuntu_path/</guid>
+      <description>开发的时候需要设置环境变量，但是发现设置了之后，每次重启却没有起作用。 首先，将环境加入 1 export PATH=${PATH}:$HOME/bin 到 ~/.bash_profile 文件中，运行 1 source ~/.bash_profile 即可让设置的环境变量生效。</description>
+    </item>
+    
+    <item>
+      <title>canvas 如何在保留 background 的情况下重置画布</title>
+      <link>http://wenzhixin.net.cn/2014/02/16/canvas_background/</link>
+      <pubDate>Sun, 16 Feb 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/02/16/canvas_background/</guid>
+      <description>前几天在用 canvas 实现动画的时候，因为是需要设置画图的背景， 所以一开始想到的就是使用 canvas 的 drawImage() 方法： 1 context.drawImage(img, x, y, width, height); 但是后面发现了在此基础上画动画的话，假</description>
+    </item>
+    
+    <item>
+      <title>多培养一些好习惯</title>
+      <link>http://wenzhixin.net.cn/2014/02/15/habit/</link>
+      <pubDate>Sat, 15 Feb 2014 23:58:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/02/15/habit/</guid>
+      <description>每天起床，默念自己最大的梦想三遍。 不赖床，然后起来喝一杯温开水。 一日之计在于晨，在便携笔记本上记录今天要做的重要的事情的列表， 然后做完一个划</description>
+    </item>
+    
+    <item>
+      <title>邂逅</title>
+      <link>http://wenzhixin.net.cn/2014/02/14/encounter/</link>
+      <pubDate>Fri, 14 Feb 2014 21:58:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/02/14/encounter/</guid>
+      <description>今天看到这么一句话挺有感触的，关于相遇的，关于你的。 假如人生不曾相遇，我还是那个我，没事写写代码，看看书， 偶尔练练吉他，做做梦。然后，开始了</description>
+    </item>
+    
+    <item>
+      <title>Oracle 获取DDL语句入门小记</title>
+      <link>http://wenzhixin.net.cn/2014/02/13/oracle_ddl/</link>
+      <pubDate>Thu, 13 Feb 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/02/13/oracle_ddl/</guid>
+      <description>sqlplus 登录 在操作系统命令行下： 方法1： 1 2 sqlplus / as sysdba #这是典型的操作系统认证，不需要listener进程 sqlplus system/password as sysdba #这种连接方式只能连接本机数据库，</description>
+    </item>
+    
+    <item>
+      <title>早春</title>
+      <link>http://wenzhixin.net.cn/2014/02/12/zaochun/</link>
+      <pubDate>Wed, 12 Feb 2014 10:35:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/02/12/zaochun/</guid>
+      <description>早春 二月羊城天气冷，可怜春景似冬华。 霜轻雨淡草萋萋，天低云重风潇潇。 春露寒水忽袭来，晓起桃花恣意笑。 莫怨天公无情冷，君尚嫣红又一朝。</description>
+    </item>
+    
+    <item>
+      <title>cordova 初识之命令行工具</title>
+      <link>http://wenzhixin.net.cn/2014/02/11/cordova_command_line/</link>
+      <pubDate>Tue, 11 Feb 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/02/11/cordova_command_line/</guid>
+      <description>1. 准备工作 在使用 cordova 的命令行之前，需要安装各平台对应的 SDK，各个平台对应的操作系统如下： iOS (Mac) Amazon Fire OS (Mac, Linux, Windows) Android (Mac, Linux) BlackBerry 10 (Mac, Linux, Windows) Windows Phone 7 (Windows) Windows Phone 8 (Windows) Windows 8</description>
+    </item>
+    
+    <item>
+      <title>VirtualBox 安装 Mac OS X 10.9 Mavericks 小记</title>
+      <link>http://wenzhixin.net.cn/2014/02/10/vbox_mac_install/</link>
+      <pubDate>Mon, 10 Feb 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/02/10/vbox_mac_install/</guid>
+      <description>1. 准备工作 安装虚拟机和下载需要的 iso： 联想 Y470 I5、8G内存 Ubuntu 12.10 VirtualBox 虚拟机（4.3.6） HackBoot_Mav.iso OSXMavericks2.iso 2. 新建 Mac 虚拟机 跟着新向导一步一步即可 3. 设置虚拟机 去</description>
+    </item>
+    
+    <item>
+      <title>看见</title>
+      <link>http://wenzhixin.net.cn/2014/02/02/kanjian/</link>
+      <pubDate>Sun, 02 Feb 2014 12:45:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/02/02/kanjian/</guid>
+      <description>桌子上静静躺着的柴静的《看见》这本书，虽然买了好一段时间了，但却没真正的开始翻过。记得当时这本书在排行榜上还排到了第一名的位置，一开始也不知</description>
+    </item>
+    
+    <item>
+      <title>也谈写文章</title>
+      <link>http://wenzhixin.net.cn/2014/01/27/write_article/</link>
+      <pubDate>Mon, 27 Jan 2014 09:10:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/01/27/write_article/</guid>
+      <description>自从有了自己的博客之后，陆陆续续写了 100 多篇文章， 定的小目标虽然说已经完成。但是对于写作来说，从一开始的害怕无话可说， 到现在的一天一篇文章，还</description>
+    </item>
+    
+    <item>
+      <title>梦里梦外的我</title>
+      <link>http://wenzhixin.net.cn/2014/01/26/dreams_and_reality/</link>
+      <pubDate>Sun, 26 Jan 2014 08:45:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/01/26/dreams_and_reality/</guid>
+      <description>做了个奇怪的梦，睡梦中我是个能言善道的人，从分析别人的心理，到说服别人，再到给别人建议，都说的头头是道， 别人也纷纷点头称是。依稀记得，讲到了</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 下安装音乐播放器</title>
+      <link>http://wenzhixin.net.cn/2014/01/25/ubuntu_music_player/</link>
+      <pubDate>Sat, 25 Jan 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/01/25/ubuntu_music_player/</guid>
+      <description>对于喜欢听歌的人来说，音乐播放器还是挺重要的， 但是不像 windows 一样，很多流行的播放器都没有 ubuntu 版。 这里记录下安装 Audacious 播放器，还是比较强大的，可以支持 ape</description>
+    </item>
+    
+    <item>
+      <title>制作漂亮的邮件模板</title>
+      <link>http://wenzhixin.net.cn/2014/01/24/send_email_template/</link>
+      <pubDate>Fri, 24 Jan 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/01/24/send_email_template/</guid>
+      <description>上一篇中讲到如何通过 nodejs 发送通知邮件，在发送通知邮件的时候， 假如可以有漂亮的邮件模板就更好了，但是出于安全的原因， 邮件一般不支持 link 或者 style 样式，</description>
+    </item>
+    
+    <item>
+      <title>使用 nodejs 发送邮件</title>
+      <link>http://wenzhixin.net.cn/2014/01/23/node_send_email/</link>
+      <pubDate>Thu, 23 Jan 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/01/23/node_send_email/</guid>
+      <description>平时在开发应用的时候，很多时候会用到邮件，来通知我们， 这里介绍 nodejs 如何发送邮件，比较简单。 使用 Nodemailer 库来发送邮件。 安装： 1 npm install nodemailer --save 增加配置信息 co</description>
+    </item>
+    
+    <item>
+      <title>随笔</title>
+      <link>http://wenzhixin.net.cn/2014/01/22/2014-01-22/</link>
+      <pubDate>Wed, 22 Jan 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/01/22/2014-01-22/</guid>
+      <description>临近过年了，想买点礼物给爸妈，但是挑了好一会不知道要买什么好， 每次打电话回去他们都说什么都不需要，回来的时候空手就行了， 什么都不用买。其实我</description>
+    </item>
+    
+    <item>
+      <title>Web 开发——实现滑动特效</title>
+      <link>http://wenzhixin.net.cn/2014/01/21/mobile_transition/</link>
+      <pubDate>Tue, 21 Jan 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/01/21/mobile_transition/</guid>
+      <description>先看下 demo 声明 html 标记和 css 样式： 1 2 3 4 5 6 7 8 9 10 11 &amp;lt;div class=&amp;#34;container&amp;#34;&amp;gt; &amp;lt;div id=&amp;#34;home&amp;#34; class=&amp;#34;page stage-center&amp;#34;&amp;gt; &amp;lt;h1&amp;gt;Home Page&amp;lt;/h1&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div id=&amp;#34;products&amp;#34; class=&amp;#34;page stage-right&amp;#34;&amp;gt; &amp;lt;h1&amp;gt;Products Page&amp;lt;/h1&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div id=&amp;#34;about&amp;#34; class=&amp;#34;page stage-right&amp;#34;&amp;gt; &amp;lt;h1&amp;gt;About Page&amp;lt;/h1&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 .container { overflow:</description>
+    </item>
+    
+    <item>
+      <title>PHP 代码规范</title>
+      <link>http://wenzhixin.net.cn/2014/01/20/php_code_standard/</link>
+      <pubDate>Mon, 20 Jan 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/01/20/php_code_standard/</guid>
+      <description>通用规范 代码缩进全部用 tab / 四个空格 SVN / Git 中新建文件编码类型统一用 utf-8 编码 行宽：80 字符 PHP 代码划分 PHP 代码总是用完整的标准的 PHP 标签定界： 1 2 3 4 5</description>
+    </item>
+    
+    <item>
+      <title>也谈逛街</title>
+      <link>http://wenzhixin.net.cn/2014/01/19/shopping/</link>
+      <pubDate>Sun, 19 Jan 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/01/19/shopping/</guid>
+      <description>今晚在跟老表聊电话，才发现原来19了，下周就可以坐车回家了， 时间真的很快，看来决定今天去逛街买衣服是对的，不然接下来就没什么时间了。 于是昨晚</description>
+    </item>
+    
+    <item>
+      <title>nodeJS 和 Nginx 解决客户端发送大数据的问题</title>
+      <link>http://wenzhixin.net.cn/2014/01/18/large_body_error/</link>
+      <pubDate>Sat, 18 Jan 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/01/18/large_body_error/</guid>
+      <description>nodeJS 和 Nginx 默认情况下都只支持 1MB 的 body 数据，当客户端发送大数据的时候，分别会出现以下错误： nodeJS： 1 Error: request entity too large 解决： 1 2 3 app.use(express.bodyParser({ limit: 1024 * 1024 * 64 // 64M }));</description>
+    </item>
+    
+    <item>
+      <title>详解 jQuery.extend() 方法</title>
+      <link>http://wenzhixin.net.cn/2014/01/17/jquery_extend/</link>
+      <pubDate>Fri, 17 Jan 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/01/17/jquery_extend/</guid>
+      <description>今天在写插件，使用$.extend({}, defaults, options)的时候发现漏写了 {}，浪费了一些时间， 所以详细记录下该方法的 API 和使用。 API 如下： jQuery.extend(</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 使用 WebStorm IDE 小记</title>
+      <link>http://wenzhixin.net.cn/2014/01/16/use_webstorm/</link>
+      <pubDate>Thu, 16 Jan 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/01/16/use_webstorm/</guid>
+      <description>WebStorm 是 jetbrains 公司旗下一款 JavaScript 开发工具，被广大 JS 开发者誉为“Web前端开发神器”。 安装 下载：http://www.jetbrains.com/webs</description>
+    </item>
+    
+    <item>
+      <title>windows7 下 Bad owner or permissions 问题</title>
+      <link>http://wenzhixin.net.cn/2014/01/15/windows7_rsync_error/</link>
+      <pubDate>Wed, 15 Jan 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/01/15/windows7_rsync_error/</guid>
+      <description>问题： ssh 或者 rsync 的时候出现以下错误： 1 Bad owner or permissions on ~/.ssh/config 原因： 权限问题，需要将配置文件和 key 文件修改成当前用户和 600 解决： 下载 chown.zip， 解压放</description>
+    </item>
+    
+    <item>
+      <title>使用 requestAnimationFrame 实现动画</title>
+      <link>http://wenzhixin.net.cn/2014/01/14/canvas_fps_frame/</link>
+      <pubDate>Tue, 14 Jan 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/01/14/canvas_fps_frame/</guid>
+      <description>requestAnimationFrame 函数是主流浏览器推出来的用来代替旧的setTimeout和setInterval方法， 从而提高动作的性能。 该函数把绘制动画的任务直接交给浏</description>
+    </item>
+    
+    <item>
+      <title>随便写写</title>
+      <link>http://wenzhixin.net.cn/2014/01/13/write_something/</link>
+      <pubDate>Mon, 13 Jan 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/01/13/write_something/</guid>
+      <description>昨天大学同学聚会，很多同学都是毕业之后就没见过了，一晃就毕业3年半了， 感慨时间走的太快，不过大家似乎都没什么变化，风趣的一样很风趣，幽默的一</description>
+    </item>
+    
+    <item>
+      <title>ubuntu 下 PostgreSQL 使用小记</title>
+      <link>http://wenzhixin.net.cn/2014/01/12/hello_postgresql/</link>
+      <pubDate>Sun, 12 Jan 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/01/12/hello_postgresql/</guid>
+      <description>PostgreSQL 是自由的对象-关系型数据库服务器（数据库管理系统）。 刚刚入门，记录下： 安装 安装 PostgreSQL 的服务器和客户端： 1 sudo apt-get install postgresql postgresql-client 服务 安装完成后 PostgreSQL 已经自动启动</description>
+    </item>
+    
+    <item>
+      <title>ubuntu 解决语言设置错误的问题</title>
+      <link>http://wenzhixin.net.cn/2014/01/11/ubuntu_setting_locale_failed/</link>
+      <pubDate>Sat, 11 Jan 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/01/11/ubuntu_setting_locale_failed/</guid>
+      <description>在使用 ubuntu 命令行登录的时候，出现： 1 2 3 4 5 6 7 8 perl: warning: Setting locale failed. perl: warning: Please check that your locale settings: LANGUAGE = (unset), LC_ALL = (unset), LC_MESSAGES = &amp;#34;zh_CN.UTF-8&amp;#34;, LANG = &amp;#34;zh_CN.UTF-8&amp;#34; are supported and installed on your system. perl: warning: Falling back to the standard locale (&amp;#34;C&amp;#34;). 这样的错误</description>
+    </item>
+    
+    <item>
+      <title>AngularJS学习笔记——购物车实例与解析</title>
+      <link>http://wenzhixin.net.cn/2014/01/10/angular_cart_demo/</link>
+      <pubDate>Fri, 10 Jan 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/01/10/angular_cart_demo/</guid>
+      <description>通过构建一款实例来了解 AngularJS 的特性，貌似还是比较有效的。 先来看看效果。 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 &amp;lt;!doctype html&amp;gt; &amp;lt;html ng-app&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;UTF-8&amp;#34;</description>
+    </item>
+    
+    <item>
+      <title>web 前端开发学习资料</title>
+      <link>http://wenzhixin.net.cn/2014/01/08/web_study/</link>
+      <pubDate>Wed, 08 Jan 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/01/08/web_study/</guid>
+      <description>知识结构 编程语言 HTML/CSS JavaScript 开发IDE与插件 Eclipse webstorm Aptana Emmet 调试工具 Firebug Chrome Dev Tools IETester Fiddler Coding style JSLint JSHint CSSLint 前端库/框架 jQuery Underscore Backbone AngularJS Boostrap 类库模块化 Seajs Require.js 项目构建 spmjs Grunt FIS Google Clousure Complier 代码测试 QUnit</description>
+    </item>
+    
+    <item>
+      <title>AngularJS学习笔记——AngularJS简介</title>
+      <link>http://wenzhixin.net.cn/2014/01/07/angularjs_study_note_introduction/</link>
+      <pubDate>Tue, 07 Jan 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/01/07/angularjs_study_note_introduction/</guid>
+      <description>自己在前端开发中还有很多新知识要学习，今天开始进入《用 AngularJS 开发下一代 Web 应用》一书的学习之旅。 AngularJS是一款开源 JavaScript函</description>
+    </item>
+    
+    <item>
+      <title>windows 下同步文件到远程服务器中</title>
+      <link>http://wenzhixin.net.cn/2014/01/06/windows_rsync_file/</link>
+      <pubDate>Mon, 06 Jan 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/01/06/windows_rsync_file/</guid>
+      <description>安装 cwRsync 下载 cwRsync 客户端 解压并安装到指定目录，例如：C:\Program Files\cwRsync 配置环境变量： 系统变量 Path中后面加入 C:\Program Files\cwRsync\bin; 创建新的系统变量 HOME = C:\Program Files\cwRsync\home (其</description>
+    </item>
+    
+    <item>
+      <title>想法与行动</title>
+      <link>http://wenzhixin.net.cn/2014/01/04/thoughts_and_actions/</link>
+      <pubDate>Sat, 04 Jan 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/01/04/thoughts_and_actions/</guid>
+      <description>经常脑袋中会蹦出一些想法， 例如今天在用手机看word格式的书的时候就想要是可以做成网页的那该多好， 随时随地看，分目录并自动保存进度。 假如去付</description>
+    </item>
+    
+    <item>
+      <title>ubuntu 下将 word 文件转换为 markdown</title>
+      <link>http://wenzhixin.net.cn/2014/01/03/convert_word_to_markdown/</link>
+      <pubDate>Fri, 03 Jan 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/01/03/convert_word_to_markdown/</guid>
+      <description>主要介绍如何将 word 文件转换为 markdown 文件。 第一步：安装 unoconv 和 pandoc 1 sudo apt-get install unoconv pandoc 第二步：将 word 文件转换 html 1 unoconv -f html -o file.html file.docx -f html：指定我们要转为 html 格式（for</description>
+    </item>
+    
+    <item>
+      <title>lscache 介绍</title>
+      <link>http://wenzhixin.net.cn/2014/01/02/lscache_introduction/</link>
+      <pubDate>Thu, 02 Jan 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/01/02/lscache_introduction/</guid>
+      <description>介绍 lscache 是一个带有时间戳的缓存库，提供类似内存缓存行为。 使用 html5 localStorage 模拟内存缓冲功能，这样就可以在客户端缓冲数据， 并对每块数据关联一个过期时间。如</description>
+    </item>
+    
+    <item>
+      <title>2014-01-01</title>
+      <link>http://wenzhixin.net.cn/2014/01/01/summary/</link>
+      <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/01/01/summary/</guid>
+      <description>送走了 2013 年，迎来了新的一年，今天 2014 的第一天，主题是“宅”和“睡”。 想写点总结的，不过也不知道该写什么好，工作的总结要做成 PPT 上去讲。 只稍微总结</description>
+    </item>
+    
+    <item>
+      <title>Nginx rewrite query string</title>
+      <link>http://wenzhixin.net.cn/2013/12/31/nginx_rewrite_query_string/</link>
+      <pubDate>Tue, 31 Dec 2013 09:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/12/31/nginx_rewrite_query_string/</guid>
+      <description>rewrite 的正则是不匹配 query string 的， 默认情况下，query string 会自动追加到rewrite 后的地址上。 例如： 1 rewrite ^/read.php$ /api.php 那么： 访问 read.php?tid=123 的时候实际上已经 rewrite 到了 api.php?tid=123 上了</description>
+    </item>
+    
+    <item>
+      <title>apache 重写链接</title>
+      <link>http://wenzhixin.net.cn/2013/12/31/apache_rewrite/</link>
+      <pubDate>Tue, 31 Dec 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/12/31/apache_rewrite/</guid>
+      <description>安装启用 mod_rewrite 在安装启用之前，编写 info.php 文件 1 2 &amp;lt;?php phpinfo();?&amp;gt; 从浏览器中打开，使用 Ctrl + F 进行查找 mod_rewrite 是否在 Loaded Modules 中， 已经存在就表示我们已经安装，不存在的话，那么，</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 12.10 添加 node 应用为自启动服务</title>
+      <link>http://wenzhixin.net.cn/2013/12/30/ubuntu_node_app_service/</link>
+      <pubDate>Mon, 30 Dec 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/12/30/ubuntu_node_app_service/</guid>
+      <description>开发 node 应用之后，启动的方式一般是通过 node app 或者 node app &amp;amp; 来运行， 十分不方便，这里将以本 blog 应用为例介绍如何添加为自启动的服务。 环境 用户名：usern</description>
+    </item>
+    
+    <item>
+      <title>bootstrap menu 插件介绍</title>
+      <link>http://wenzhixin.net.cn/2013/12/29/bootstrap_menu_guide/</link>
+      <pubDate>Sun, 29 Dec 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/12/29/bootstrap_menu_guide/</guid>
+      <description>前言 平时在定义目录菜单的时候会使用 ul、li 等，定义和维护起来不是很方便， 所以就写成了 bootstrap 的 jQuery 的插件。 如何使用 使用起来非常简单，先来看看如何使</description>
+    </item>
+    
+    <item>
+      <title>管理 ubuntu 服务器用户</title>
+      <link>http://wenzhixin.net.cn/2013/12/28/ubuntu_new_user/</link>
+      <pubDate>Sat, 28 Dec 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/12/28/ubuntu_new_user/</guid>
+      <description>前言 对于刚刚安装（或者购买）的服务器，一般只有 root 用户，那我们需要对其进行用户管理设置。 创建新的用户 创建一个名为 username 的新用户（自己替换为想要的名</description>
+    </item>
+    
+    <item>
+      <title>也谈动漫与梦想</title>
+      <link>http://wenzhixin.net.cn/2013/12/27/anime_and_dreams/</link>
+      <pubDate>Fri, 27 Dec 2013 07:46:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/12/27/anime_and_dreams/</guid>
+      <description>《火影忍者》，从高中开始追了好多年了，后面又开始追《海贼王》，每周一集， 有时候会觉得，还是挺不错的，至少每周还有点小期待。 说到动漫，小时候开</description>
+    </item>
+    
+    <item>
+      <title>需要具备的好习惯</title>
+      <link>http://wenzhixin.net.cn/2013/12/07/note/</link>
+      <pubDate>Sat, 07 Dec 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/12/07/note/</guid>
+      <description>清楚地了解做每一件事情的目的。 事情的结果虽然重要，但事情的目的更重要，目的的清楚有助于达到结果并且享受做事情的过程。 下决定迅速果断。 要十分清</description>
+    </item>
+    
+    <item>
+      <title>使用 jQuery 修复 IE7 z-index 的 bug</title>
+      <link>http://wenzhixin.net.cn/2013/12/06/jquery_ie7_zindex/</link>
+      <pubDate>Fri, 06 Dec 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/12/06/jquery_ie7_zindex/</guid>
+      <description>现象： 先来看下这段代码： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 td { text-align: center; } .parent { width: 300px; height: 30px; position: relative;</description>
+    </item>
+    
+    <item>
+      <title>ON DUPLICATE KEY UPDATE</title>
+      <link>http://wenzhixin.net.cn/2013/12/05/on_duplicate_key_update/</link>
+      <pubDate>Thu, 05 Dec 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/12/05/on_duplicate_key_update/</guid>
+      <description>有些时候，操作 sql 语句需要判断记录是否存在，不存在则插入存在则更新，可以考虑使用 ON DUPLICATE KEY UPDATE。 在 INSERT INTO 语句末尾指定了 ON DUPLICATE KEY UPDATE，并</description>
+    </item>
+    
+    <item>
+      <title>Wordpress 打造 CMS 系统小记</title>
+      <link>http://wenzhixin.net.cn/2013/12/04/wordpress_cms/</link>
+      <pubDate>Wed, 04 Dec 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/12/04/wordpress_cms/</guid>
+      <description>关闭文章评论： 设置-讨论下，去掉“允许他人在新文章上发表评论”选项 关闭页面评论： 到具体页面编辑，打开显示选项中的讨论，去掉“允许评论”选项 添</description>
+    </item>
+    
+    <item>
+      <title>鼠标滚轮事件 MouseWheel</title>
+      <link>http://wenzhixin.net.cn/2013/12/03/mousewheel_event/</link>
+      <pubDate>Tue, 03 Dec 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/12/03/mousewheel_event/</guid>
+      <description>前言 编写 jQuery SideMenu 插件的时候， 对目录过长的进行鼠标滚动操作，因为默认的 scroll 不好看，所以对滚动条进行了自定义。 先看看演示 demo css 设置 首先将 parent 的 overflow 设置为 hi</description>
+    </item>
+    
+    <item>
+      <title>《心灵密码》小记</title>
+      <link>http://wenzhixin.net.cn/2013/12/02/xin_lin_mi_ma/</link>
+      <pubDate>Mon, 02 Dec 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/12/02/xin_lin_mi_ma/</guid>
+      <description>《心灵密码》是毕淑敏的著作，凭借丰富的人生阅历与专业的心理学识， 梳理了人生、讲述了生命、解锁了心灵。看完后有些小感触，记录下。 烹调乃展示心情</description>
+    </item>
+    
+    <item>
+      <title>从 ubuntu 同步文件到 windows</title>
+      <link>http://wenzhixin.net.cn/2013/12/01/ubuntu_rsync_to_windows/</link>
+      <pubDate>Sun, 01 Dec 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/12/01/ubuntu_rsync_to_windows/</guid>
+      <description>windows 下使用 cwRsync，ubuntu 使用默认的 rsync。 安装 cwRsync 下载 cwRsync 服务端 解压并安装到指定目录，例如：E:\Program Files\ICW 配置 cwRsync 修改 rsyncd.conf 1</description>
+    </item>
+    
+    <item>
+      <title>周末小记</title>
+      <link>http://wenzhixin.net.cn/2013/11/30/note/</link>
+      <pubDate>Sat, 30 Nov 2013 23:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/11/30/note/</guid>
+      <description>每周五都会去打一两个钟的乒乓球，其实乒乓球还是挺考验一个人的耐心和细心的，觉得不过瘾，就去了东圃小区继续开战，两个人足足打了两个钟，还是挺爽</description>
+    </item>
+    
+    <item>
+      <title>解决 jshint 的语法警告</title>
+      <link>http://wenzhixin.net.cn/2013/11/29/jshint_warnings_resolve/</link>
+      <pubDate>Fri, 29 Nov 2013 09:12:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/11/29/jshint_warnings_resolve/</guid>
+      <description>问题： Wrap the regexp literal in parens to disambiguate the slash operator 示例代码： 1 2 3 function isMe(name) { return /^wenzhixin$/.test(name); } 警告原因： 虽然 JavaScript 解析器可以正常工作，但是对于解析器来说，解析 “/” 的完整含义是比较困</description>
+    </item>
+    
+    <item>
+      <title>Ajax 文件上传——通过 html5 的方法</title>
+      <link>http://wenzhixin.net.cn/2013/11/28/ajax_file_upload_html5/</link>
+      <pubDate>Thu, 28 Nov 2013 21:17:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/11/28/ajax_file_upload_html5/</guid>
+      <description>html5 方法 上篇文章讲到 Ajax 文件上传是如何通过 iframe 的方法，这里我们通过 html5 的方法来进行文件的上传。 在 html5 标准中，XMLHttpRequest 对象被重新定义</description>
+    </item>
+    
+    <item>
+      <title>Ajax 文件上传——通过 iframe 的方法</title>
+      <link>http://wenzhixin.net.cn/2013/11/27/ajax_file_upload_iframe/</link>
+      <pubDate>Wed, 27 Nov 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/11/27/ajax_file_upload_iframe/</guid>
+      <description>前言 由于安全问题，浏览器不允许通过 XMLHttpRequest（又名XHR）的方式上传文件。 那么如何在不刷新界面的情况下实现文件的上传呢？ 解</description>
+    </item>
+    
+    <item>
+      <title>jQuery file upload 插件 change 只生效一次</title>
+      <link>http://wenzhixin.net.cn/2013/11/26/jquery_file_upload_change_once/</link>
+      <pubDate>Tue, 26 Nov 2013 21:32:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/11/26/jquery_file_upload_change_once/</guid>
+      <description>1. 前言 在使用 AjaxFileUpload 插件的时候， 发现使用 jQuery 监听 change 事件只生效一次 1 2 3 4 $(&amp;#39;#upload&amp;#39;).change(function() { }); 那么是为什么呢？ 2. 原因 找了下原因，原来是 130 行对事件进行了 unbind 1 2 jQuery(io).unbind() 3. 解决</description>
+    </item>
+    
+    <item>
+      <title>栅格化布局和常用框架比较</title>
+      <link>http://wenzhixin.net.cn/2013/11/25/grid_system/</link>
+      <pubDate>Mon, 25 Nov 2013 21:41:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/11/25/grid_system/</guid>
+      <description>在使用了Bootstrap、Foundation 之后，其实已经接触到栅格化布局这一概念。 今天接触了 skeleton 后，特别强调了栅格化布局，那么何为栅格化</description>
+    </item>
+    
+    <item>
+      <title>百万葵园游</title>
+      <link>http://wenzhixin.net.cn/2013/11/24/bai_wan_kui_yuan/</link>
+      <pubDate>Sun, 24 Nov 2013 20:33:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/11/24/bai_wan_kui_yuan/</guid>
+      <description>其实7、8月就买好了票的，但是由于一个同学去出差了没回来，票又快到期了，所以叫了东莞的同学过来。 于是把路线等都筹划好了之后，5个屌丝男，启程</description>
+    </item>
+    
+    <item>
+      <title>jQuery 打造月份选择器插件</title>
+      <link>http://wenzhixin.net.cn/2013/11/23/jquery_month_picker/</link>
+      <pubDate>Sat, 23 Nov 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/11/23/jquery_month_picker/</guid>
+      <description>项目中需要用到月份选择器，找到了几款日期选择器 datepicker， 但是我不需要选择具体的日期，虽然有个可以支持只显示月份的，但是显得比较臃</description>
+    </item>
+    
+    <item>
+      <title>jQuery 判断所有图片加载完成</title>
+      <link>http://wenzhixin.net.cn/2013/11/22/all_images_is_loaded/</link>
+      <pubDate>Fri, 22 Nov 2013 22:50:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/11/22/all_images_is_loaded/</guid>
+      <description>对于图片的处理，例如幻灯片播放、缩放等，都是依赖于在所有图片完成之后再进行操作。 今天来看下如何判断所有的图片加载完成，而在加载完成之前可以使</description>
+    </item>
+    
+    <item>
+      <title>Android 界面不支持 position fixed 问题</title>
+      <link>http://wenzhixin.net.cn/2013/11/21/android_position_fixed/</link>
+      <pubDate>Thu, 21 Nov 2013 21:50:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/11/21/android_position_fixed/</guid>
+      <description>在 Android 中，部分浏览器不支持 css 的 position: fixed 属性。 详细的支持情况见：http://caniuse.com/css-fixed 对于不支持的情况，我们可以通</description>
+    </item>
+    
+    <item>
+      <title>使用 canvas 绘制时钟</title>
+      <link>http://wenzhixin.net.cn/2013/11/20/canvas_draw_clock/</link>
+      <pubDate>Wed, 20 Nov 2013 23:10:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/11/20/canvas_draw_clock/</guid>
+      <description>今天我们利用 canvas 来画一个基本的时钟程序。通过一边实践一边学习新的知识。 准备工作，我们先定义需要用到的变量： 1 2 &amp;lt;canvas id=&amp;#34;canvas&amp;#34; width=&amp;#34;300&amp;#34; height=&amp;#34;300&amp;#34;&amp;gt;&amp;lt;/canvas&amp;gt; &amp;lt;script src=&amp;#34;clock.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; 1 2 3 4 5 6 7 8 9 10</description>
+    </item>
+    
+    <item>
+      <title>post 提交数据到新窗口中</title>
+      <link>http://wenzhixin.net.cn/2013/11/19/post_blank_window/</link>
+      <pubDate>Tue, 19 Nov 2013 13:08:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/11/19/post_blank_window/</guid>
+      <description>在很多时候，我们需要 post 数据到新的窗口中，例如在需要提交大数据到后台中但是无法通过 url 的时候，或者打印报表等等。 这里记录了 flex 和 js 中如何使用 post 方法</description>
+    </item>
+    
+    <item>
+      <title>手机 web 开发之 Touch 入门</title>
+      <link>http://wenzhixin.net.cn/2013/11/18/hello_touch_event/</link>
+      <pubDate>Mon, 18 Nov 2013 22:55:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/11/18/hello_touch_event/</guid>
+      <description>微博应用上用手向左滑动，便可以触发返回事件，这一小小的功能虽说很简单， 但是却大大提高了用户体验（特别是用左手拿手机的人）。 今天来研究在 web 上模</description>
+    </item>
+    
+    <item>
+      <title>也谈缘分</title>
+      <link>http://wenzhixin.net.cn/2013/11/17/fate_and_future/</link>
+      <pubDate>Sun, 17 Nov 2013 23:04:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/11/17/fate_and_future/</guid>
+      <description>今天在车上遇见一女孩，就坐在隔壁座的后面，但是却始终没敢说上一句话。 半途休息的时候，我靠在窗边等车，没想到她还走到我的旁边，可惜最后也没聊上</description>
+    </item>
+    
+    <item>
+      <title>使用 Chrome 调试和模拟 android 上的页面</title>
+      <link>http://wenzhixin.net.cn/2013/11/16/android_chrome_debug/</link>
+      <pubDate>Sat, 16 Nov 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/11/16/android_chrome_debug/</guid>
+      <description>介绍 通过电脑调试手机上的页面，对于开发移动页面或者开发自适应的界面很有帮助。 本文主要介绍如何使用 chrome 浏览器调试和模拟 android 上的页面。 1. 如何调试 1) 打</description>
+    </item>
+    
+    <item>
+      <title>使用 google analytics 和显示页面浏览量</title>
+      <link>http://wenzhixin.net.cn/2013/11/15/use_google_analytics_and_display_visits/</link>
+      <pubDate>Fri, 15 Nov 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/11/15/use_google_analytics_and_display_visits/</guid>
+      <description>Google Analytics 的强大就不说了，因为它代表了这个领域的最高水平。 我们这里主要讲安装和显示每个页面的浏览量。 1. 安装 Google Analytics 注册统计帐号：https://www</description>
+    </item>
+    
+    <item>
+      <title>导出或者备份新浪轻博客</title>
+      <link>http://wenzhixin.net.cn/2013/11/14/sina_qing_export_or_backup/</link>
+      <pubDate>Thu, 14 Nov 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/11/14/sina_qing_export_or_backup/</guid>
+      <description>新浪轻博客没有提供 RSS 或者导出等功能，很不方便对博客进行备份或者迁移。 不过我们可以换种思路，那就是对博客网页进行解析从而得到我们想要的内容，包</description>
+    </item>
+    
+    <item>
+      <title>nodejs 使用百度翻译 API</title>
+      <link>http://wenzhixin.net.cn/2013/11/13/nodejs_use_baidu_translate_api/</link>
+      <pubDate>Wed, 13 Nov 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/11/13/nodejs_use_baidu_translate_api/</guid>
+      <description>博客（网站）中需要对文章标题进行翻译成英文显示，要求可以批量翻译。 这里使用 nodejs 来对指定内容进行翻译，主要用到的知识点有两个： 使用百度翻译 API</description>
+    </item>
+    
+    <item>
+      <title>html5 canvas 画布入门</title>
+      <link>http://wenzhixin.net.cn/2013/11/12/hello_canvas/</link>
+      <pubDate>Tue, 12 Nov 2013 23:13:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/11/12/hello_canvas/</guid>
+      <description>今天开始学点新东西，canvas 画布，它是一个 HTML5 的一个新元素， 它没有自己的行为，但是定义了一个 API 支持脚本化客户端绘图操作。 既然是入门，也来个</description>
+    </item>
+    
+    <item>
+      <title>使用 js 脚本自动安装最新安备客户端</title>
+      <link>http://wenzhixin.net.cn/2013/11/11/js_anbay_agent_auto_install/</link>
+      <pubDate>Mon, 11 Nov 2013 23:31:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/11/11/js_anbay_agent_auto_install/</guid>
+      <description>每次安备客户端的代码一更新（即使是一行代码），那么我需要做的事情包括： 从 FTP 上下载最新的安装包（包括打开 ftp，输入用户名密码，复制，粘贴等）</description>
+    </item>
+    
+    <item>
+      <title>为你的网站开启 gzip 压缩功能（nodejs、nginx）</title>
+      <link>http://wenzhixin.net.cn/2013/11/10/server_gzip_on/</link>
+      <pubDate>Sun, 10 Nov 2013 23:22:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/11/10/server_gzip_on/</guid>
+      <description>开启网站的 gzip 压缩功能，通常可以高达70%，也就是说，如果你的网页有30K，压缩之后就变成9K， 对于大部分网站，显然可以明显提高浏览速度（注：</description>
+    </item>
+    
+    <item>
+      <title>承诺与坚持</title>
+      <link>http://wenzhixin.net.cn/2013/11/09/commitment_and_persistence/</link>
+      <pubDate>Sat, 09 Nov 2013 23:04:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/11/09/commitment_and_persistence/</guid>
+      <description>今天考了一天的试，其实挺累的，没有想写东西的心情。 今天的论文写了不到1/3就交卷了，三门考试放弃了其中一门就等于整个都 say good bye 了。 一直以来都很</description>
+    </item>
+    
+    <item>
+      <title>RSS、Atom、Feed 介绍与简单实现</title>
+      <link>http://wenzhixin.net.cn/2013/11/08/rss_atom_feed_php/</link>
+      <pubDate>Fri, 08 Nov 2013 22:59:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/11/08/rss_atom_feed_php/</guid>
+      <description>最近接触了 RSS 订阅相关的，做了一些了解与开发，记录下。 RSS是什么 RSS（全称RDF Site Summary，网景的最初定义），RSS也是一种“类网页</description>
+    </item>
+    
+    <item>
+      <title>前端工程师必备工具 livejs</title>
+      <link>http://wenzhixin.net.cn/2013/11/07/front_end_tool_livejs/</link>
+      <pubDate>Thu, 07 Nov 2013 13:13:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/11/07/front_end_tool_livejs/</guid>
+      <description>公司的台式机一直没有用到，于是乎想到能否重复利用起来，在笔记本上做开发，在大显示器上看效果。 有了这样的想法之后，找到了 Live.js， 它可以</description>
+    </item>
+    
+    <item>
+      <title>理解并实现 PubSub 模式</title>
+      <link>http://wenzhixin.net.cn/2013/11/06/understand_pubsub/</link>
+      <pubDate>Wed, 06 Nov 2013 12:54:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/11/06/understand_pubsub/</guid>
+      <description>假如我们正在构建一个类似于 Google Docs 的应用程序，当用户按下一个按键时，需要做的事情有很多： 新字符显示到屏幕上；插入点向后移动；将本次动作加入到撤销</description>
+    </item>
+    
+    <item>
+      <title>将本地时间转换为 GMT 时间</title>
+      <link>http://wenzhixin.net.cn/2013/11/05/local_time_to_timezone/</link>
+      <pubDate>Tue, 05 Nov 2013 13:30:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/11/05/local_time_to_timezone/</guid>
+      <description>在写 RSS 订阅接口的时候，发现最终输出文章的 RSS 时间（GMT时间），在本地上显示的时间和在服务器上显示的时间不一致。 原因是时区不一致，那么在 JavaScript 中，</description>
+    </item>
+    
+    <item>
+      <title>简单的博客 RSS 聚合</title>
+      <link>http://wenzhixin.net.cn/2013/11/04/simple_rss_together/</link>
+      <pubDate>Mon, 04 Nov 2013 01:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/11/04/simple_rss_together/</guid>
+      <description>1. 前言 将博客的 RSS 内容聚合起来，这样方便查看，今天就来研究如何简单的将 RSS 的内容存到数据库（MySQL）中。 2. 创建数据库表 1 2 3 4 5 6 7 8 CREATE TABLE links</description>
+    </item>
+    
+    <item>
+      <title>耕耘与收获</title>
+      <link>http://wenzhixin.net.cn/2013/11/03/ploughing_and_harvesting/</link>
+      <pubDate>Sun, 03 Nov 2013 15:04:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/11/03/ploughing_and_harvesting/</guid>
+      <description>自接触 github 平台以来，收获良多。 别人把自己辛辛苦苦写出来的代码开源给其他人用，并且不断地维护和完善自己的代码。 这种无私的贡献精神是很值得学习的。</description>
+    </item>
+    
+    <item>
+      <title>markdown 介绍、解析与编辑器</title>
+      <link>http://wenzhixin.net.cn/2013/11/02/markdown_and_markdown_editor/</link>
+      <pubDate>Sat, 02 Nov 2013 10:42:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/11/02/markdown_and_markdown_editor/</guid>
+      <description>markdown 是一种轻量级标记语言，它允许使用易读易写的纯文本格式编写文档，然后转换成html文档。 markdown 强调可读性高于一切。其实网上有很多介绍 markdown 的文章，这</description>
+    </item>
+    
+    <item>
+      <title>理解并实现 underscore 中的 bind 和 bindAll 函数</title>
+      <link>http://wenzhixin.net.cn/2013/11/01/understanding_bind_bindall/</link>
+      <pubDate>Fri, 01 Nov 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/11/01/understanding_bind_bindall/</guid>
+      <description>在开始之前，我们定义了 Person 类： 1 2 3 4 5 6 function Person(name) { this.name = name; } Person.prototype.say = function() { console.log(this.name); } 首先，新建 person 对象： 1 2 var wenyi = new Person(&amp;#39;wenyi&amp;#39;); wenyi.say(); // wenyi 可以看到这里输出的结果是 wenyi，</description>
+    </item>
+    
+    <item>
+      <title>html 标签 title 换行方法</title>
+      <link>http://wenzhixin.net.cn/2013/10/31/html_title_wrap/</link>
+      <pubDate>Thu, 31 Oct 2013 00:51:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/10/31/html_title_wrap/</guid>
+      <description>1. 使用换行符换行 换行符分别为：&amp;amp;#10; 或 &amp;amp;#13; 例如： 1 &amp;lt;a href=&amp;#34;http://wenzhixin.net.cn&amp;#34; title=&amp;#34;前端技术&amp;amp;#10;交互设计&amp;amp;#13;移</description>
+    </item>
+    
+    <item>
+      <title>Debian 添加自启动服务</title>
+      <link>http://wenzhixin.net.cn/2013/10/30/debian_script_init/</link>
+      <pubDate>Wed, 30 Oct 2013 07:46:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/10/30/debian_script_init/</guid>
+      <description>1. 新建脚本文件 在 /etc/init.d 下加入脚本文件 1 sudo vi /etc/init.d/aria2c 输入内容： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45</description>
+    </item>
+    
+    <item>
+      <title>Debian 安装 nodejs 环境</title>
+      <link>http://wenzhixin.net.cn/2013/10/29/debian_node_install/</link>
+      <pubDate>Tue, 29 Oct 2013 00:30:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/10/29/debian_node_install/</guid>
+      <description>1. 安装编译包 1 sudo apt-get install python g++ make checkinstall 2. 获取最新的 node 源码 1 2 3 mkdir ~/src &amp;amp;&amp;amp; cd ~/src wget -N http://nodejs.org/dist/node-latest.tar.gz tar xzvf node-latest.tar.gz &amp;amp;&amp;amp; cd node-v* 3. 配置编译源码 1 2 ./configure sudo checkinstall 注意，运行 checkinstall 需要 sudo，之后选择 3</description>
+    </item>
+    
+    <item>
+      <title>nodejs 获取路由的主机列表</title>
+      <link>http://wenzhixin.net.cn/2013/10/28/node_agents/</link>
+      <pubDate>Mon, 28 Oct 2013 00:30:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/10/28/node_agents/</guid>
+      <description>1. 介绍 接着之前，今天的目标是通过 nodejs 获取使用路由的主机名称列表。 路由器的默认登录地址为：http://192.168.1.1 默认的用户名密码都</description>
+    </item>
+    
+    <item>
+      <title>nodejs 通过 JSON-RPC 调用 aria2 接口</title>
+      <link>http://wenzhixin.net.cn/2013/10/27/nodejs_json_rpc_aria2/</link>
+      <pubDate>Sun, 27 Oct 2013 12:50:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/10/27/nodejs_json_rpc_aria2/</guid>
+      <description>今天继续之前的下载服务器的开发，第一步是调用文件的 API，第二步是列出应用目录下的所有文件，今天的目标是调用后台接口进行下载。 1. aria2 配置 这里，</description>
+    </item>
+    
+    <item>
+      <title>梦与乡愁</title>
+      <link>http://wenzhixin.net.cn/2013/10/26/dream_and_homesickness/</link>
+      <pubDate>Sat, 26 Oct 2013 00:09:45 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/10/26/dream_and_homesickness/</guid>
+      <description>回到家，老妈已经准备了我最爱吃的东西，就等着我开饭了。 记得小的时候，很喜欢吃四季豆、玉米、芋头、土豆等等，家里自己种菜，老妈都会种我喜欢吃的</description>
+    </item>
+    
+    <item>
+      <title>nodejs 异步递归</title>
+      <link>http://wenzhixin.net.cn/2013/10/26/nodejs_async/</link>
+      <pubDate>Sat, 26 Oct 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/10/26/nodejs_async/</guid>
+      <description>今天继续之前的下载服务器的开发，第一步调用文件的 API 已经成功了，那么今天的目标是列出应用目录下的所有文件（包括子目录）。 1. 最初代码实现 代码的实</description>
+    </item>
+    
+    <item>
+      <title>关于选择与幸福</title>
+      <link>http://wenzhixin.net.cn/2013/10/25/about_choice_and_happiness/</link>
+      <pubDate>Fri, 25 Oct 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/10/25/about_choice_and_happiness/</guid>
+      <description>看了《林清玄》的飞蛾与蝙蝠， 飞舞于林间的蝙蝠，时时刻刻都在避免撞到树，却偶尔会不小心撞树。 在林间飞舞的彩蛾，却一再去扑火，直到丧命为止。 眼盲</description>
+    </item>
+    
+    <item>
+      <title>使用百度云接口</title>
+      <link>http://wenzhixin.net.cn/2013/10/24/call_baidu_pan/</link>
+      <pubDate>Thu, 24 Oct 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/10/24/call_baidu_pan/</guid>
+      <description>树莓派 raspberry pi 已经买了好一段时间了，但是实际上却没怎么用到。 一开始买的时候就是打算重复利用宿舍网络资源的，但是却一直没有时间去做开发。 有些事情，</description>
+    </item>
+    
+    <item>
+      <title>移动硬盘安全吗？备份数据真的很重要！</title>
+      <link>http://wenzhixin.net.cn/2013/10/23/hdd_is_not_safe/</link>
+      <pubDate>Wed, 23 Oct 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/10/23/hdd_is_not_safe/</guid>
+      <description>我的移动硬盘居然挂掉了，简直不敢相信！才买了不到一年的时间，平时也很少用到。 因为之前笔记本硬盘坏了，所以买了移动硬盘（还是有牌子的），买它就</description>
+    </item>
+    
+    <item>
+      <title>让你的网站支持自适应界面</title>
+      <link>http://wenzhixin.net.cn/2013/10/22/responsive_web/</link>
+      <pubDate>Tue, 22 Oct 2013 08:50:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/10/22/responsive_web/</guid>
+      <description>1. 介绍 随着智能手机的普及，越来越多的人使用手机上网。 我自己就是，经常懒得开电脑，直接用手机查看网页，简单又方便。 那么，如何才能把自己的博客做</description>
+    </item>
+    
+    <item>
+      <title>程序猿也有梦</title>
+      <link>http://wenzhixin.net.cn/2013/10/21/have_dream/</link>
+      <pubDate>Mon, 21 Oct 2013 00:15:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/10/21/have_dream/</guid>
+      <description>一座城，灯火流作河，心绪谱成歌。 提笔斟酌字句，我知道我是在整理心中的情愫，或者是在寻找那份不可预知的爱情。 秋，转凉了，他们说，夜里会很冷。 但</description>
+    </item>
+    
+    <item>
+      <title>使用 js 自动生成博客首页文件列表</title>
+      <link>http://wenzhixin.net.cn/2013/10/20/auto_create_blog_index/</link>
+      <pubDate>Sun, 20 Oct 2013 00:17:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/10/20/auto_create_blog_index/</guid>
+      <description>1. 介绍 因为每次写完文章后，都需要手动更新主页文件，打算每天至少写一篇文章。 所以这种重复工作还是交给机器去完成吧。 2. 步骤 1) 遍历文章存放文件夹列</description>
+    </item>
+    
+    <item>
+      <title>nginx 开启 http 下载服务器认证</title>
+      <link>http://wenzhixin.net.cn/2013/10/19/nginx_http_auth/</link>
+      <pubDate>Sat, 19 Oct 2013 01:40:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/10/19/nginx_http_auth/</guid>
+      <description>1. 介绍 有时候，我们需要提供下载服务器给别人文件，但是又不想给所有人看到，从而保证安全性。 这种时候，对目录访问进行认证，并且每天改变随机密码，</description>
+    </item>
+    
+    <item>
+      <title>安卓 ssh 和 rsync 同步客户端的实现</title>
+      <link>http://wenzhixin.net.cn/2013/10/18/android_ssh_rsync_client/</link>
+      <pubDate>Fri, 18 Oct 2013 09:30:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/10/18/android_ssh_rsync_client/</guid>
+      <description>1. 介绍 基于安卓的 ssh 和 rsync 客户端，可用于对服务器指定的目录进行同步到手机。 在这里我们使用 Dropbear 的 dbclient 作为 ssh 的客户端。 Dropbear是一个相对较小的S</description>
+    </item>
+    
+    <item>
+      <title>nginx 安装与配置详解</title>
+      <link>http://wenzhixin.net.cn/2013/09/21/nginx_install_settings/</link>
+      <pubDate>Sat, 21 Sep 2013 11:28:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/09/21/nginx_install_settings/</guid>
+      <description>安装（需要支持 php）： 1 2 sudo apt-get install nginx sudo apt-get install php5-fpm nginx 的基本配置（/etc/nginx/nginx.conf）与参数说明： 1 2 3 4 5 6 7 8 9 10 11 12 13</description>
+    </item>
+    
+    <item>
+      <title>nginx 配置 SSL（https）</title>
+      <link>http://wenzhixin.net.cn/2013/09/01/nginx_ssl_settings/</link>
+      <pubDate>Sun, 01 Sep 2013 11:45:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/09/01/nginx_ssl_settings/</guid>
+      <description>配置信息： 1 2 3 4 5 6 7 8 listen 443; server_name wenzhixin.net.cn; ssl on; ssl_certificate /etc/ssl/certs/wenzhixin_net_cn.crt; ssl_certificate_key /etc/ssl/private/wenzhixin_net_cn.key; ssl_client_certificate /etc/ssl/certs/wenzhixin_net_cn-bundle; ssl_verify_client optional; 配置下面： 1 2 ssl_client_certificate /etc/ssl/certs/wenzhixin_net_cn-bundle; ssl_verify_client optional; 是为了解决： 1 unable to get local issuer certificate 的问题。</description>
+    </item>
+    
+    <item>
+      <title>Bootstrap 禁用 a 按钮</title>
+      <link>http://wenzhixin.net.cn/2013/08/12/disable_link/</link>
+      <pubDate>Mon, 12 Aug 2013 00:31:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/08/12/disable_link/</guid>
+      <description>问题描述： 使用 Bootstrap 的 btn 时，可以使用添加 class=&amp;ldquo;disabled&amp;rdquo; 或者 disabled=&amp;ldquo;disabled&amp;rdquo; 来禁用按钮，可以看到 bootstrap.css 中的代码： 1 2 3 4 5 6 7 8 9 10 11 .btn.disabled, .btn[disabled] { cursor: default; background-color: #e6e6e6; background-image: none; opacity: 0.65; filter: alpha(opacity=65); -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; } 假</description>
+    </item>
+    
+    <item>
+      <title>firefox 利用 Selenium IDE 对 DBackup 进行自动化测试</title>
+      <link>http://wenzhixin.net.cn/2013/07/30/firefox_selenium_ide/</link>
+      <pubDate>Tue, 30 Jul 2013 01:02:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/07/30/firefox_selenium_ide/</guid>
+      <description>今天看《编写可维护的JavaScript》的时候有一章是专门讲 Selenium 对 JavaScript 进行自动化测试的。 在了解了 Selenium 的强大之后，动手试验了一下 firefox 中的 Selenium IDE，还</description>
+    </item>
+    
+    <item>
+      <title>使用 nginx 作为代理服务器的路径问题</title>
+      <link>http://wenzhixin.net.cn/2013/07/17/nginx_proxy/</link>
+      <pubDate>Wed, 17 Jul 2013 15:31:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/07/17/nginx_proxy/</guid>
+      <description>继上篇文章：使用 nginx 作为代理服务器轻松解决 Ajax 跨域问题， 使用 proxy 来解决 Ajax 跨域的问题，方便我们开发测试。 但是很多时候，我们的服务器地址是这样的： 1 2</description>
+    </item>
+    
+    <item>
+      <title>搭建小型下载服务器(raspberry pi)</title>
+      <link>http://wenzhixin.net.cn/2013/07/01/raspberry_server/</link>
+      <pubDate>Mon, 01 Jul 2013 21:23:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/07/01/raspberry_server/</guid>
+      <description>1. 购买设备 1) 单板机：我购买的是树莓派raspberry pi B型 512MB，购买地址为（我是在淘宝上购买的，声明不是广告哦）： 官方地址 淘宝地址 2)</description>
+    </item>
+    
+    <item>
+      <title>Web 前端开发有用的代码片段</title>
+      <link>http://wenzhixin.net.cn/2013/06/20/web_code_gist/</link>
+      <pubDate>Thu, 20 Jun 2013 23:43:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/06/20/web_code_gist/</guid>
+      <description>1. 定时器 经常会用到 setTimeout 和 setInterval 函数，假如可以整合起来，会方便很多： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 function timer(func, start, interval, end) { start = start || 0; if (arguments.length &amp;lt;= 2) { setTimeout(func, start); } else { var repeat = function() {</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 系统下 android 连接小米2进行开发</title>
+      <link>http://wenzhixin.net.cn/2013/06/14/ubuntu_android_xiaomi2/</link>
+      <pubDate>Fri, 14 Jun 2013 01:30:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/06/14/ubuntu_android_xiaomi2/</guid>
+      <description>问题： 小米2 通过 USB 连接到 Ubuntu 12.10 系统进行开发，发现 adb devices 不能看到设备。 解决： 1. 运行下面的命令： 1 lsusb 通过对比发现，Bus 002 Device 010: ID 2717:9039 就是小米2的设备号</description>
+    </item>
+    
+    <item>
+      <title>MongoDB mongoexport 命令的使用及简单实现</title>
+      <link>http://wenzhixin.net.cn/2013/06/12/mongodb_export/</link>
+      <pubDate>Wed, 12 Jun 2013 23:07:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/06/12/mongodb_export/</guid>
+      <description>MongoDB 提供了 mongoexport 命令来导出数据，导出的数据是 json 格式的，当然也可以是 csv 格式。主要可以实现备份和恢复的功能。 具体的使用，我们使用 &amp;ndash;help 查看，主要的参数有：</description>
+    </item>
+    
+    <item>
+      <title>jQuery 中 attr() 和 prop() 方法的区别</title>
+      <link>http://wenzhixin.net.cn/2013/05/24/jquery_attr_prop/</link>
+      <pubDate>Fri, 24 May 2013 01:11:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/05/24/jquery_attr_prop/</guid>
+      <description>前几天，有人给 Multiple Select 插件 提了问题： setSelects doesn&amp;rsquo;t work in Firefox when using jquery 1.9.0 一直都在用 jQuery 1.8.3 的版本，没有尝试过 jQuery 1.9.0 的版本。 于是，开始调试代码，在 1.9.0 的版本中： 1 2 3 4 5 6</description>
+    </item>
+    
+    <item>
+      <title>客户端数据存储之 Web Storage</title>
+      <link>http://wenzhixin.net.cn/2013/04/09/data_storage/</link>
+      <pubDate>Tue, 09 Apr 2013 23:52:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/04/09/data_storage/</guid>
+      <description>Web Storage Web Storage 有两种形式：localStorage (本地存储) 和 sessionStorage (会话存储)。 与 cookie 相似，都是使用键值对来对数据进行存储和读取。 这里对 cookie 与 Web Storage 进行</description>
+    </item>
+    
+    <item>
+      <title>制作在线聊天室</title>
+      <link>http://wenzhixin.net.cn/2013/04/02/node_chat/</link>
+      <pubDate>Tue, 02 Apr 2013 20:41:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/04/02/node_chat/</guid>
+      <description>先上效果图： 登录 聊天 主要接口： join：用户加入聊天室 users: 发送用户列表 message: 发送聊天信息 server 端主要代码： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 安装 QT 4.8</title>
+      <link>http://wenzhixin.net.cn/2013/04/01/installing_qt/</link>
+      <pubDate>Mon, 01 Apr 2013 22:30:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/04/01/installing_qt/</guid>
+      <description>1. 下载并解压安装包 下载：Qt libraries 4.8.4 for Linux/X11 解压： 1 tar xvf qt-everywhere-opensource-src-4.8.4.tar 2. 编译库并安装 Library 1 2 3 4 5 6 7 8 cd qt-everywhere-opensource-src-4.8.4 ./configure //o: opensource make make install 3. 设置 QT Creator 选择：工具 - 选项 - 构建并执行 设置</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 12.10 VirtualBox 问题</title>
+      <link>http://wenzhixin.net.cn/2013/04/01/ubuntu_vbox_install/</link>
+      <pubDate>Mon, 01 Apr 2013 00:29:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/04/01/ubuntu_vbox_install/</guid>
+      <description>问题： Ubuntu 12.10 unable to find sources of your current kernel 错误信息： 1 2 3 4 5 6 7 Kernel driver not installed (rc=-1908) The VirtualBox Linux kernel driver (vboxdrv) is either not loaded or there is a permission problem with /dev/vboxdrv. Please reinstall the kernel module by executing &amp;#39;/etc/init.d/vboxdrv setup&amp;#39; as root. If it is available in your distribution, you should install the</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 12.10 桌面美化及软件安装</title>
+      <link>http://wenzhixin.net.cn/2013/03/29/ubuntu_desktop/</link>
+      <pubDate>Fri, 29 Mar 2013 11:01:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/03/29/ubuntu_desktop/</guid>
+      <description>1. 安装 QQ 聊天工具 下载安装包 deb wine qq 2012 for linux Ubuntu 安装： 1 sudo dpkg -i WineQQ2012-20121221-Longene.deb 效果图： 2. 安装 cairo dock 工具栏 1 2 3 sudo add-apt-repository ppa:cairo-dock-team/ppa sudo apt-get update sudo apt-get install cairo-dock cairo-dock-plug-ins 效果图： 3. 隐藏 unity 工具栏 安装 CompizConfig Settings M</description>
+    </item>
+    
+    <item>
+      <title>游玩什么的</title>
+      <link>http://wenzhixin.net.cn/2013/03/27/what_to_play/</link>
+      <pubDate>Wed, 27 Mar 2013 23:36:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/03/27/what_to_play/</guid>
+      <description>游玩，对身为宅男的我来说，顿悟的比较晚。想想大学四年，除了毕业旅游之外，貌似也没去过其他地方了吧。现在想起来多多少少有些遗憾，人，总有顿悟的</description>
+    </item>
+    
+    <item>
+      <title>改善 JavaScript 的建议——语言基础</title>
+      <link>http://wenzhixin.net.cn/2013/03/27/javascript_base_advice/</link>
+      <pubDate>Wed, 27 Mar 2013 19:46:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/03/27/javascript_base_advice/</guid>
+      <description>1. 减少全局变量污染 建议：在应用程序中创建唯一一个全局变量，定义该变量为当前应用的容器 1 2 3 4 5 6 7 8 9 var My = {}; My.name = &amp;#39;wenzhixin&amp;#39;; My.work = { number: 123, list: [{ name: &amp;#39;web&amp;#39;, time: &amp;#39;2010.05.01&amp;#39; }]</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 安装配置 vim</title>
+      <link>http://wenzhixin.net.cn/2013/03/26/ubuntu_vim/</link>
+      <pubDate>Tue, 26 Mar 2013 16:57:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/03/26/ubuntu_vim/</guid>
+      <description>安装 1 sudo apt-get install vim 配置 1 sudo vi ～/.vimrc 内容（显示行数、不备份）： 1 2 3 source $VIMRUNTIME/vimrc_example.vim set nu set nobackup 资料：简明 Vim 练级攻略</description>
+    </item>
+    
+    <item>
+      <title>Android 静默安装 apk</title>
+      <link>http://wenzhixin.net.cn/2013/03/18/android_install/</link>
+      <pubDate>Mon, 18 Mar 2013 23:38:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/03/18/android_install/</guid>
+      <description>获取 root 权限 1 su 安装 apk 1 pm install -r package 具体代码 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 下无密码访问及文件同步</title>
+      <link>http://wenzhixin.net.cn/2013/03/17/ssh_rsync/</link>
+      <pubDate>Sun, 17 Mar 2013 22:38:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/03/17/ssh_rsync/</guid>
+      <description>服务器端配置 ssh 修改客户端sshd配置文件 1 sudo vi /etc/ssh/sshd_config 修改为 1 2 3 RSAAuthentication yes PubkeyAuthentication yes AuthorizedKeysFile %h/.ssh/authorized_keys 重启ssh服务 1 sudo /etc/init.d/sshd restart 配置密钥 在客户端生成公钥和私钥文件 1 2 ssh-keygen cat ~/.ssh/id_rsa.pub &amp;gt;&amp;gt;</description>
+    </item>
+    
+    <item>
+      <title>我的一天</title>
+      <link>http://wenzhixin.net.cn/2013/03/12/my_daily/</link>
+      <pubDate>Tue, 12 Mar 2013 21:22:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/03/12/my_daily/</guid>
+      <description>早晨，是一日的开始，由于睡在窗边，习惯性地在阳光洒进房间时醒来，常常是定了闹钟却还来不及响。因为怕吵到舍友，醒来的第一件事不是洗涮，而是坐在</description>
+    </item>
+    
+    <item>
+      <title>青春已逝，迷茫依旧…</title>
+      <link>http://wenzhixin.net.cn/2013/03/05/youth_is_gone/</link>
+      <pubDate>Tue, 05 Mar 2013 21:17:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/03/05/youth_is_gone/</guid>
+      <description>用心说出来的话，或许只有有心的人才听得懂吧。 有两种不联系，一种是忘记了，一种是放在回忆里。 每一个玩笑的背后，都带着认真的意味。 因为年轻，所以</description>
+    </item>
+    
+    <item>
+      <title>jQuery 如何获取 iframe 的内容</title>
+      <link>http://wenzhixin.net.cn/2013/03/01/access_iframe/</link>
+      <pubDate>Fri, 01 Mar 2013 09:38:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/03/01/access_iframe/</guid>
+      <description>现有 iframe，内容如下： 1 2 3 &amp;lt;iframe id=&amp;#34;iframeID&amp;#34; ...&amp;gt; &amp;lt;div id=&amp;#34;someID&amp;#34;&amp;gt;Hello world!&amp;lt;/div&amp;gt; &amp;lt;/iframe&amp;gt; 使用 jQuery 获取 div 的内容： 1 $(&amp;#39;#iframeID&amp;#39;).contents().find(&amp;#39;#someID&amp;#39;).html();</description>
+    </item>
+    
+    <item>
+      <title>Android ant 编译问题收集</title>
+      <link>http://wenzhixin.net.cn/2013/02/26/android_ant_problem/</link>
+      <pubDate>Tue, 26 Feb 2013 00:23:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/02/26/android_ant_problem/</guid>
+      <description>问题： 1 aapt not found under the right path 解决： 1 2 sudo apt-get install ia32-libs # 12.04 sudo apt-get install lib32z1 # 14.04 问题： 1 Perhaps JAVA_HOME does not point to the JDK. It is currently set to &amp;#34;/usr/lib/jvm/java-6-openjdk/jre&amp;#34; 解决： Fixed it by installing the open jdk: 1 sudo apt-get install openjdk-7-jdk</description>
+    </item>
+    
+    <item>
+      <title>JavaScript 语言基础知识点</title>
+      <link>http://wenzhixin.net.cn/2013/02/25/javascript_base/</link>
+      <pubDate>Mon, 25 Feb 2013 01:11:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/02/25/javascript_base/</guid>
+      <description>JavaScript 数据类型 JavaScript 变量 Javascript 运算符 JavaScript 流程控制 JavaScript 函数基础 JavaScript数组 JavaScript 字符串函数 JavaScript 正则表达式 Window对象 DOM 基本操作</description>
+    </item>
+    
+    <item>
+      <title>Java 获取当前路径</title>
+      <link>http://wenzhixin.net.cn/2013/02/21/java_get_cur_path/</link>
+      <pubDate>Thu, 21 Feb 2013 23:32:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/02/21/java_get_cur_path/</guid>
+      <description>1. 利用 System.getProperty( )函数获取当前路径： 1 System.out.println(System.getProperty(&amp;#34;user.dir&amp;#34</description>
+    </item>
+    
+    <item>
+      <title>2013-02-16</title>
+      <link>http://wenzhixin.net.cn/2013/02/16/2013-02-16/</link>
+      <pubDate>Sat, 16 Feb 2013 23:12:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/02/16/2013-02-16/</guid>
+      <description>时间过得真快，假期就这样结束了，明天早上就要启程去广州了，好久没坐过白天的车了，怕塞车，不过可以多陪陪父母，也是值得的。 细数这16天的假期点</description>
+    </item>
+    
+    <item>
+      <title>2013-01-30</title>
+      <link>http://wenzhixin.net.cn/2013/01/30/2013-01-30/</link>
+      <pubDate>Wed, 30 Jan 2013 22:48:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/01/30/2013-01-30/</guid>
+      <description>这两天回宿舍都不太想动，过两天就要回家了，发现还有好多事情还没做完。花了几分钟时间将这两天必须完成的包括生活、工作、以及未看完的书等事情，一</description>
+    </item>
+    
+    <item>
+      <title>2013-01-25</title>
+      <link>http://wenzhixin.net.cn/2013/01/25/2013-01-25/</link>
+      <pubDate>Fri, 25 Jan 2013 22:59:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/01/25/2013-01-25/</guid>
+      <description>貌似好久没有上火喉咙痛了，因为聚餐吃了超辣的菜，喝了快半包凉茶了，却没有效果，真怀疑是不是乌糖水呢，还真怕又咳嗽了。对于咳嗽，还是有一定阴影</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 终端下使用 sshproxy 代理</title>
+      <link>http://wenzhixin.net.cn/2013/01/23/terminal_sshproxy_socks/</link>
+      <pubDate>Wed, 23 Jan 2013 20:43:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/01/23/terminal_sshproxy_socks/</guid>
+      <description>1. 安装 tsocks 1 sudo apt-get install tsocks 2. 修改配置信息 1 sudo vi /etc/tsocks.conf 找到最后几行，修改 1 2 server = 192.168.0.1 server_port = 1080 为 1 2 server = 127.0.0.1 server_port = 12345 3. 使用代理（命令前加上 tsocks） 1 2 tsocks wget https://github.com tsocks</description>
+    </item>
+    
+    <item>
+      <title>vtiger5.2 问题修复</title>
+      <link>http://wenzhixin.net.cn/2013/01/17/vtiger_bug/</link>
+      <pubDate>Thu, 17 Jan 2013 22:52:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/01/17/vtiger_bug/</guid>
+      <description>图表乱码： 下载 Simsun 解压 将 Simsun.ttf 文件复制到 Image/Canvas/Fonts 目录下 修改 Image/Canvas/Fonts/fontmap.txt，最后增加一行： Simsun, Simsun.ttf 修改 inclu</description>
+    </item>
+    
+    <item>
+      <title>IE 下 splice 的 bug</title>
+      <link>http://wenzhixin.net.cn/2013/01/16/splice_in_ie/</link>
+      <pubDate>Wed, 16 Jan 2013 00:18:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/01/16/splice_in_ie/</guid>
+      <description>引用： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 array.splice() in Internet Explorer I finally got around to investigating an IE bug I’ve been meaning to look into. The root cause was a difference between JScript and ECMAScript as regards array.splice(). The signature for this handy method that removes and inserts array elements in place: splice(start, deleteCount, value, ...)</description>
+    </item>
+    
+    <item>
+      <title>wordpress 插件开发</title>
+      <link>http://wenzhixin.net.cn/2013/01/15/wordpress_plugin/</link>
+      <pubDate>Tue, 15 Jan 2013 22:59:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/01/15/wordpress_plugin/</guid>
+      <description>1. 创建插件 在目录 wp-content/plugins 下创建自己的插件 新建目录 plugin-demo 新建文件 plugin-demo.php 1 2 3 4 5 6 7 8 9 &amp;lt;?php /* Plugin Name: Plugin Demo Description: 此插件用于插件演示 Version: 1.0 Author: zhixin wen Author URI: http://wenzhixin.net.cn */ ?&amp;gt; 2. 添加实现类和添</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 11.10 搭建 gitlab 服务器</title>
+      <link>http://wenzhixin.net.cn/2013/01/14/gitlab_installation/</link>
+      <pubDate>Mon, 14 Jan 2013 15:55:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/01/14/gitlab_installation/</guid>
+      <description>ps: 请按照顺序一步一步来，并注意查看提示，确保成功！ 1. 更新系统 1 2 sudo apt-get update sudo apt-get upgrade 2. 安装必要的包 1 sudo apt-get install -y build-essential zlib1g-dev libyaml-dev libssl-dev libgdbm-dev libreadline-dev libncurses5-dev libffi-dev wget curl git-core openssh-server redis-server postfix checkinstall libxml2-dev libxslt-dev libcurl4-openssl-dev libicu-dev 3.</description>
+    </item>
+    
+    <item>
+      <title>CSS 设置中英文混合字体</title>
+      <link>http://wenzhixin.net.cn/2013/01/14/css_font_setting/</link>
+      <pubDate>Mon, 14 Jan 2013 11:20:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/01/14/css_font_setting/</guid>
+      <description>统一设置网站的中英文混合字体： 由于英文字体 Arial 没有中文的，这样英文便显示为 Arial 字体，中文显示为 微软雅黑 字体。 1 2 3 body { font-family: Arial, &amp;#34;微软雅黑&amp;#</description>
+    </item>
+    
+    <item>
+      <title>完全禁用 Wordpress 后台的更新提示和功能</title>
+      <link>http://wenzhixin.net.cn/2013/01/14/hidden_wordpress_update/</link>
+      <pubDate>Mon, 14 Jan 2013 10:48:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/01/14/hidden_wordpress_update/</guid>
+      <description>为了防止误操作，需要禁用后台的更新提示以及更新功能 需要禁用的更新包括： 1. 头部更新提示 (wp-includes/admin-bar.php) 注释第 618 行： 1 2 3 4 5 6 7 8 $wp_admin_bar-&amp;gt;add_menu( array( &amp;#39;id&amp;#39; =&amp;gt; &amp;#39;updates&amp;#39;, &amp;#39;title&amp;#39; =&amp;gt; $title, &amp;#39;href&amp;#39; =&amp;gt; network_admin_url( &amp;#39;update-core.php&amp;#39; ),</description>
+    </item>
+    
+    <item>
+      <title>胡话</title>
+      <link>http://wenzhixin.net.cn/2013/01/13/hu_hua/</link>
+      <pubDate>Sun, 13 Jan 2013 22:44:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/01/13/hu_hua/</guid>
+      <description>在想要不要随便写些只有自己才能看得懂的胡话呢，可是发现现在很难写出东西来了，也很懒去写。 今晚一个人走路的时候特意把速度放的好慢，然后想想人生</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 12.04 设置 VPN</title>
+      <link>http://wenzhixin.net.cn/2013/01/12/ubuntu_set_vpn/</link>
+      <pubDate>Sat, 12 Jan 2013 10:55:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/01/12/ubuntu_set_vpn/</guid>
+      <description>1. 设置 - 网络 - VPN 连接 - 配置 VPN 2. 添加 VPN - 新建 PPTP 3. 输入正确的网关、用户名、密码 4. 选择高级 - 勾选使用点到点加密(MPPE)(P) 5. 设置 IPv4 路由，添加</description>
+    </item>
+    
+    <item>
+      <title>设置存在特殊字符的 tooltip</title>
+      <link>http://wenzhixin.net.cn/2013/01/12/title_special_character/</link>
+      <pubDate>Sat, 12 Jan 2013 10:21:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/01/12/title_special_character/</guid>
+      <description>问题： 通过 $(&amp;lsquo;element&amp;rsquo;).html(html) 来生成页面元素时，假如 title 信息存在 &amp;lsquo; 或者 &amp;ldquo; 等特殊字符时便会出现显示错误的问题 解决： 1 2 3 4 5 6 7 8 9 function getHtml(html, title, el) { $div = $(&amp;#39;&amp;lt;div&amp;gt;&amp;lt;/div&amp;gt;&amp;#39;).html(html); if (el) { $div.find(el).attr(&amp;#39;title&amp;#39;, title); } else</description>
+    </item>
+    
+    <item>
+      <title>泰囧台词生成器（html5 版）</title>
+      <link>http://wenzhixin.net.cn/2013/01/10/fill_text/</link>
+      <pubDate>Thu, 10 Jan 2013 20:23:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/01/10/fill_text/</guid>
+      <description>最近经常看到别人 PS 来恶搞&amp;rdquo;泰囧&amp;rdquo;电影中的台词，觉得挺好玩的 先上效果图： 就想用 html5 自己也做一个来玩玩，查了下 API，发现</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 12.04 安装 Nodejs</title>
+      <link>http://wenzhixin.net.cn/2013/01/07/installing_node_on_ubuntu/</link>
+      <pubDate>Mon, 07 Jan 2013 10:12:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/01/07/installing_node_on_ubuntu/</guid>
+      <description>命令行： 1 2 3 4 sudo apt-get install python-software-properties sudo add-apt-repository ppa:chris-lea/node.js sudo apt-get update sudo apt-get install nodejs npm Installing Node.js via package manager</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 12.04 安装 Subversion 1.7</title>
+      <link>http://wenzhixin.net.cn/2013/01/07/installing_subversion_on_ubuntu/</link>
+      <pubDate>Mon, 07 Jan 2013 10:07:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/01/07/installing_subversion_on_ubuntu/</guid>
+      <description>命令行： 1 2 3 4 sudo apt-get install python-software-properties sudo apt-add-repository ppa:dominik-stadler/subversion-1.7 sudo apt-get update sudo apt-get install subversion</description>
+    </item>
+    
+    <item>
+      <title>Windows 使用 ssh proxy 翻墙</title>
+      <link>http://wenzhixin.net.cn/2013/01/06/windows_bitvise/</link>
+      <pubDate>Sun, 06 Jan 2013 16:02:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/01/06/windows_bitvise/</guid>
+      <description>1. 下载并安装 bitvise： bitvise 链接 2. 设置 Login 和 SOCKS 1 2 3 4 5 6 Host: host Username: username Password: password Listen Interface: 127.0.0.1 Listen Port: 12345 3. 使用 Chrome 插件 proxy-switchysharp proxy-switchysharp 链接 4. 导入配置信息 SwitchyOptions</description>
+    </item>
+    
+    <item>
+      <title>VirtualBox 虚拟机设置共享文件夹</title>
+      <link>http://wenzhixin.net.cn/2013/01/06/vbox_share/</link>
+      <pubDate>Sun, 06 Jan 2013 12:34:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/01/06/vbox_share/</guid>
+      <description>Windows7 x64 下安装 Ubuntu12.04 x64 虚拟机，设置共享文件夹： 1. 安装 VirtualBox 的 VBoxGuestAddition.iso。在 “设备”-&amp;gt;“安装增强功能”，安装完成后</description>
+    </item>
+    
+    <item>
+      <title>git for windows 安装和配置</title>
+      <link>http://wenzhixin.net.cn/2013/01/04/git_for_windows/</link>
+      <pubDate>Fri, 04 Jan 2013 09:49:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/01/04/git_for_windows/</guid>
+      <description>1. 安装 msysgit: msysgit 2. 配置用户信息和 alias gitconfig 1 2 3 4 5 6 7 8 9 10 [user] name = zhixin email = wenzhixin2010@gmail.com [alias] co = checkout ci = commit -a st = status br = branch oneline = log --pretty=oneline --since=&amp;#39;2 days ago&amp;#39; onelog = log -p -1</description>
+    </item>
+    
+    <item>
+      <title>读《十四堂人生创意课》</title>
+      <link>http://wenzhixin.net.cn/2012/12/23/zhuangtai/</link>
+      <pubDate>Sun, 23 Dec 2012 09:33:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/12/23/zhuangtai/</guid>
+      <description>大学的时候，常常会看到老师放的令人拍案叫绝的创意广告，看的时候很过瘾，但是每到要自己想创意的时候，就会一片茫然。 直到现在，一直都是认为创意是</description>
+    </item>
+    
+    <item>
+      <title>读《十四堂人生创意课》</title>
+      <link>http://wenzhixin.net.cn/2012/12/23/zhuangtai/</link>
+      <pubDate>Sun, 23 Dec 2012 09:33:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/12/23/zhuangtai/</guid>
+      <description>大学的时候，常常会看到老师放的令人拍案叫绝的创意广告，看的时候很过瘾，但是每到要自己想创意的时候，就会一片茫然。 直到现在，一直都是认为创意是</description>
+    </item>
+    
+    <item>
+      <title>读《雨季不再来》</title>
+      <link>http://wenzhixin.net.cn/2012/12/21/yu_ji_bu_zai_lai/</link>
+      <pubDate>Fri, 21 Dec 2012 22:21:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/12/21/yu_ji_bu_zai_lai/</guid>
+      <description>《当三毛还是二毛的时候》 人的一生，是要一格一格地爬着梯子，才能到达某种高度。而在那个高度上，满江风月，青山绿水，尽入眼前。 我唯一契而不舍，愿</description>
+    </item>
+    
+    <item>
+      <title>读《雨季不再来》</title>
+      <link>http://wenzhixin.net.cn/2012/12/21/yu_ji_bu_zai_lai/</link>
+      <pubDate>Fri, 21 Dec 2012 22:21:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/12/21/yu_ji_bu_zai_lai/</guid>
+      <description>《当三毛还是二毛的时候》 人的一生，是要一格一格地爬着梯子，才能到达某种高度。而在那个高度上，满江风月，青山绿水，尽入眼前。 我唯一契而不舍，愿</description>
+    </item>
+    
+    <item>
+      <title>淡定</title>
+      <link>http://wenzhixin.net.cn/2012/12/10/dan_ding/</link>
+      <pubDate>Mon, 10 Dec 2012 23:33:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/12/10/dan_ding/</guid>
+      <description>“春有百花秋有月，夏有秋凉冬有雪。若无闲事挂心头，便是人间好时节。” “宠辱不惊，看庭前花开花落；去留无意，望空中云卷云舒。” “人生不如意事，</description>
+    </item>
+    
+    <item>
+      <title>淡定</title>
+      <link>http://wenzhixin.net.cn/2012/12/10/dan_ding/</link>
+      <pubDate>Mon, 10 Dec 2012 23:33:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/12/10/dan_ding/</guid>
+      <description>“春有百花秋有月，夏有秋凉冬有雪。若无闲事挂心头，便是人间好时节。” “宠辱不惊，看庭前花开花落；去留无意，望空中云卷云舒。” “人生不如意事，</description>
+    </item>
+    
+    <item>
+      <title>MongoDB 创建、更新及删除文档</title>
+      <link>http://wenzhixin.net.cn/2012/12/08/mongodb_insert_update_remove/</link>
+      <pubDate>Sat, 08 Dec 2012 08:24:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/12/08/mongodb_insert_update_remove/</guid>
+      <description>1、插入文档：insert 1) 基本用法： 1 db.name.insert(文档内容); 例子： 1 db.users.insert({&amp;#34;username&amp;#34;: &amp;#34;wenyi&amp;#34;, &amp;#34;age&amp;#34;: 25}); 2) 从其他数据库导入数据，使用 mongoimport 命令 3) 原理与</description>
+    </item>
+    
+    <item>
+      <title>MongoDB 创建、更新及删除文档</title>
+      <link>http://wenzhixin.net.cn/2012/12/08/mongodb_insert_update_remove/</link>
+      <pubDate>Sat, 08 Dec 2012 08:24:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/12/08/mongodb_insert_update_remove/</guid>
+      <description>1、插入文档：insert 1) 基本用法： 1 db.name.insert(文档内容); 例子： 1 db.users.insert({&amp;#34;username&amp;#34;: &amp;#34;wenyi&amp;#34;, &amp;#34;age&amp;#34;: 25}); 2) 从其他数据库导入数据，使用 mongoimport 命令 3) 原理与</description>
+    </item>
+    
+    <item>
+      <title>使用 CSS3 制作自己的博客 Logo</title>
+      <link>http://wenzhixin.net.cn/2012/12/07/css3_blog_logo/</link>
+      <pubDate>Fri, 07 Dec 2012 23:01:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/12/07/css3_blog_logo/</guid>
+      <description>1、html 代码 1 2 3 4 5 6 7 8 9 10 11 12 &amp;lt;div class=&amp;#34;wenyi-logo&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;border&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;circle&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;wy&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;wen&amp;#34;&amp;gt;文&amp;lt;/div&amp;gt; &amp;lt;div clas</description>
+    </item>
+    
+    <item>
+      <title>使用 CSS3 制作自己的博客 Logo</title>
+      <link>http://wenzhixin.net.cn/2012/12/07/css3_blog_logo/</link>
+      <pubDate>Fri, 07 Dec 2012 23:01:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/12/07/css3_blog_logo/</guid>
+      <description>1、html 代码 1 2 3 4 5 6 7 8 9 10 11 12 &amp;lt;div class=&amp;#34;wenyi-logo&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;border&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;circle&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;wy&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;wen&amp;#34;&amp;gt;文&amp;lt;/div&amp;gt; &amp;lt;div clas</description>
+    </item>
+    
+    <item>
+      <title>MongoDB 入门</title>
+      <link>http://wenzhixin.net.cn/2012/12/06/mongodb_started/</link>
+      <pubDate>Thu, 06 Dec 2012 22:39:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/12/06/mongodb_started/</guid>
+      <description>1、文档 1) 概念：文档是将多个键及其关联的值有序地放置在一起。 1 {&amp;#34;name&amp;#34;: &amp;#34;wenyi&amp;#34;, &amp;#34;say&amp;#34;: &amp;#34;Hello, world!&amp;#34;} 2) 特性： 文档中的键值对是有序的 文档的键是字符串 文档不能有重复的键 3) 键</description>
+    </item>
+    
+    <item>
+      <title>MongoDB 入门</title>
+      <link>http://wenzhixin.net.cn/2012/12/06/mongodb_started/</link>
+      <pubDate>Thu, 06 Dec 2012 22:39:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/12/06/mongodb_started/</guid>
+      <description>1、文档 1) 概念：文档是将多个键及其关联的值有序地放置在一起。 1 {&amp;#34;name&amp;#34;: &amp;#34;wenyi&amp;#34;, &amp;#34;say&amp;#34;: &amp;#34;Hello, world!&amp;#34;} 2) 特性： 文档中的键值对是有序的 文档的键是字符串 文档不能有重复的键 3) 键</description>
+    </item>
+    
+    <item>
+      <title>《UCD 火花集》读书笔记（二）</title>
+      <link>http://wenzhixin.net.cn/2012/12/05/ucd_book2/</link>
+      <pubDate>Wed, 05 Dec 2012 23:11:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/12/05/ucd_book2/</guid>
+      <description>七、注意界面上的文字 界面内容优化： 文字应该清楚而准确地向用户传达信息 文字应该便于用户阅读并快速理解其含义 整个产品不同位置的文字应该统一 文字应</description>
+    </item>
+    
+    <item>
+      <title>《UCD 火花集》读书笔记（二）</title>
+      <link>http://wenzhixin.net.cn/2012/12/05/ucd_book2/</link>
+      <pubDate>Wed, 05 Dec 2012 23:11:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/12/05/ucd_book2/</guid>
+      <description>七、注意界面上的文字 界面内容优化： 文字应该清楚而准确地向用户传达信息 文字应该便于用户阅读并快速理解其含义 整个产品不同位置的文字应该统一 文字应</description>
+    </item>
+    
+    <item>
+      <title>《UCD 火花集》读书笔记（一）</title>
+      <link>http://wenzhixin.net.cn/2012/12/04/ucd_book1/</link>
+      <pubDate>Tue, 04 Dec 2012 22:17:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/12/04/ucd_book1/</guid>
+      <description>一、用户体验设计在团队中 用户体验的特性： 对于用户——帮助分析和挖掘用户潜意识的需要和习性，力求产品设计给用户带来本质上的满足，以及顺畅自然的</description>
+    </item>
+    
+    <item>
+      <title>《UCD 火花集》读书笔记（一）</title>
+      <link>http://wenzhixin.net.cn/2012/12/04/ucd_book1/</link>
+      <pubDate>Tue, 04 Dec 2012 22:17:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/12/04/ucd_book1/</guid>
+      <description>一、用户体验设计在团队中 用户体验的特性： 对于用户——帮助分析和挖掘用户潜意识的需要和习性，力求产品设计给用户带来本质上的满足，以及顺畅自然的</description>
+    </item>
+    
+    <item>
+      <title>IE 下使用 button 时 Enter 的问题</title>
+      <link>http://wenzhixin.net.cn/2012/12/03/ie_enter_button_bug/</link>
+      <pubDate>Mon, 03 Dec 2012 20:21:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/12/03/ie_enter_button_bug/</guid>
+      <description>问题： 当页面中有 1 &amp;lt;button&amp;gt;&amp;lt;/button&amp;gt; 的时候，IE 浏览器按 Enter 便会触发 button 按钮的点击事件，导致不必要的麻烦出现（例如对 input 的检查）。 解决： 使用 1 &amp;lt;a class=&amp;#34;button&amp;#34; href=&amp;#34;javascript:void(0)&amp;#34;&amp;gt;&amp;lt;/a&amp;gt; 来代替，并设置</description>
+    </item>
+    
+    <item>
+      <title>IE 下使用 button 时 Enter 的问题</title>
+      <link>http://wenzhixin.net.cn/2012/12/03/ie_enter_button_bug/</link>
+      <pubDate>Mon, 03 Dec 2012 20:21:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/12/03/ie_enter_button_bug/</guid>
+      <description>问题： 当页面中有 1 &amp;lt;button&amp;gt;&amp;lt;/button&amp;gt; 的时候，IE 浏览器按 Enter 便会触发 button 按钮的点击事件，导致不必要的麻烦出现（例如对 input 的检查）。 解决： 使用 1 &amp;lt;a class=&amp;#34;button&amp;#34; href=&amp;#34;javascript:void(0)&amp;#34;&amp;gt;&amp;lt;/a&amp;gt; 来代替，并设置</description>
+    </item>
+    
+    <item>
+      <title>图片查看弹出框 (jQuery 插件)</title>
+      <link>http://wenzhixin.net.cn/2012/12/02/jquery_imagebox/</link>
+      <pubDate>Sun, 02 Dec 2012 21:11:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/12/02/jquery_imagebox/</guid>
+      <description>参数 linkTitle: 点击图片提示信息，默认为 &amp;lsquo;点击查看原图&amp;rsquo; direction: 箭头显示方向，水平方向 (horizontal) 和垂直方向 (vertical)，默认为 &amp;lsquo;horizontal&amp;rsquo; 如何</description>
+    </item>
+    
+    <item>
+      <title>图片查看弹出框 (jQuery 插件)</title>
+      <link>http://wenzhixin.net.cn/2012/12/02/jquery_imagebox/</link>
+      <pubDate>Sun, 02 Dec 2012 21:11:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/12/02/jquery_imagebox/</guid>
+      <description>参数 linkTitle: 点击图片提示信息，默认为 &amp;lsquo;点击查看原图&amp;rsquo; direction: 箭头显示方向，水平方向 (horizontal) 和垂直方向 (vertical)，默认为 &amp;lsquo;horizontal&amp;rsquo; 如何</description>
+    </item>
+    
+    <item>
+      <title>天鹿湖森林公园单车游(失败告终)</title>
+      <link>http://wenzhixin.net.cn/2012/12/01/tianluhu_cycle_trip/</link>
+      <pubDate>Sat, 01 Dec 2012 20:19:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/12/01/tianluhu_cycle_trip/</guid>
+      <description>2点钟从宿舍出发，因为上周的杯具遭遇，这次带了伞，穿上凉鞋，并做好了风雨无阻的心理准备。 还没出发的时候在开玩笑说等会出去就下雨了，果然没多久</description>
+    </item>
+    
+    <item>
+      <title>Javascript 编码约定</title>
+      <link>http://wenzhixin.net.cn/2012/12/01/javascript_coding_convention/</link>
+      <pubDate>Sat, 01 Dec 2012 02:31:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/12/01/javascript_coding_convention/</guid>
+      <description>1、使用 strict 模式 在一个作用域(包括函数作用域、全局作用域)中，可以使用 1 &amp;#34;use strict&amp;#34;; 来开启 strict 模式。 2、缩进 用 Tab 键进行代码缩进，以节约代码大小，使用4个</description>
+    </item>
+    
+    <item>
+      <title>Javascript 编码约定</title>
+      <link>http://wenzhixin.net.cn/2012/12/01/javascript_coding_convention/</link>
+      <pubDate>Sat, 01 Dec 2012 02:31:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/12/01/javascript_coding_convention/</guid>
+      <description>1、使用 strict 模式 在一个作用域(包括函数作用域、全局作用域)中，可以使用 1 &amp;#34;use strict&amp;#34;; 来开启 strict 模式。 2、缩进 用 Tab 键进行代码缩进，以节约代码大小，使用4个</description>
+    </item>
+    
+    <item>
+      <title>快速搭建自己的博客(markdown)</title>
+      <link>http://wenzhixin.net.cn/2012/11/30/build_markdown_blog/</link>
+      <pubDate>Fri, 30 Nov 2012 01:54:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/11/30/build_markdown_blog/</guid>
+      <description>PS：基于 jQuery、markdown 的 html 博客，无涉及后台，如此简单，你也可以拥有!!! 目录结构 1 2 3 4 5 6 7 8 9 10 ├── js | ├── jquery-1.8.3.min.js | ├</description>
+    </item>
+    
+    <item>
+      <title>快速搭建自己的博客(markdown)</title>
+      <link>http://wenzhixin.net.cn/2012/11/30/build_markdown_blog/</link>
+      <pubDate>Fri, 30 Nov 2012 01:54:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/11/30/build_markdown_blog/</guid>
+      <description>PS：基于 jQuery、markdown 的 html 博客，无涉及后台，如此简单，你也可以拥有!!! 目录结构 1 2 3 4 5 6 7 8 9 10 ├── js | ├── jquery-1.8.3.min.js | ├</description>
+    </item>
+    
+    <item>
+      <title>因为“不容易”</title>
+      <link>http://wenzhixin.net.cn/2012/11/16/because_not_easy/</link>
+      <pubDate>Fri, 16 Nov 2012 01:12:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/11/16/because_not_easy/</guid>
+      <description>熬夜写码后， 敲了敲自己坚硬的肩膀， 对着笔记本发呆， 也不知发了多久的呆。 看着屏幕中的自己， 就这么静静的看着， “谢谢你在25年的时间里， 一直支持</description>
+    </item>
+    
+    <item>
+      <title>因为“不容易”</title>
+      <link>http://wenzhixin.net.cn/2012/11/16/because_not_easy/</link>
+      <pubDate>Fri, 16 Nov 2012 01:12:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/11/16/because_not_easy/</guid>
+      <description>熬夜写码后， 敲了敲自己坚硬的肩膀， 对着笔记本发呆， 也不知发了多久的呆。 看着屏幕中的自己， 就这么静静的看着， “谢谢你在25年的时间里， 一直支持</description>
+    </item>
+    
+    <item>
+      <title>Nodejs 应用部署小记</title>
+      <link>http://wenzhixin.net.cn/2012/11/09/nodejs_deploy/</link>
+      <pubDate>Fri, 09 Nov 2012 00:05:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/11/09/nodejs_deploy/</guid>
+      <description>1、日志功能 1) 加入 access.log 1 2 3 4 5 var accessLogfile = fs.createWriteStream(&amp;#39;access.log&amp;#39;, {flags: &amp;#39;a&amp;#39;}); app.configure(function() { app.use(express.logger({stream: accessLogfile})); } 2) 加入 error.log 首先，添加 helpers/error.js 文件： 1 2 3 4 5 6 7 8 9 10 11 12 var fs = require(&amp;#39;fs&amp;#39;); var errorLogfile = fs.createWriteStream(&amp;#39;logs/error.log&amp;#39;, {flags: &amp;#39;a&amp;#39;}); exports.handler = function(err, req, res, status) { console.log(err); var</description>
+    </item>
+    
+    <item>
+      <title>Nodejs 应用部署小记</title>
+      <link>http://wenzhixin.net.cn/2012/11/09/nodejs_deploy/</link>
+      <pubDate>Fri, 09 Nov 2012 00:05:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/11/09/nodejs_deploy/</guid>
+      <description>1、日志功能 1) 加入 access.log 1 2 3 4 5 var accessLogfile = fs.createWriteStream(&amp;#39;access.log&amp;#39;, {flags: &amp;#39;a&amp;#39;}); app.configure(function() { app.use(express.logger({stream: accessLogfile})); } 2) 加入 error.log 首先，添加 helpers/error.js 文件： 1 2 3 4 5 6 7 8 9 10 11 12 var fs = require(&amp;#39;fs&amp;#39;); var errorLogfile = fs.createWriteStream(&amp;#39;logs/error.log&amp;#39;, {flags: &amp;#39;a&amp;#39;}); exports.handler = function(err, req, res, status) { console.log(err); var</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 开发 Nodejs 入门小记</title>
+      <link>http://wenzhixin.net.cn/2012/10/25/nodejs_get_started/</link>
+      <pubDate>Thu, 25 Oct 2012 22:40:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/10/25/nodejs_get_started/</guid>
+      <description>Nodejs 之搭建环境 1) 安装 nodejs、npm 1 2 3 4 sudo apt-get install python-software-properties sudo add-apt-repository ppa:chris-lea/node.js sudo apt-get update sudo apt-get install nodejs npm 2) 安装 express​ - web application framework for node 1 sudo npm install -g express 3) 安装 supervisor - is used to restart</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 开发 Nodejs 入门小记</title>
+      <link>http://wenzhixin.net.cn/2012/10/25/nodejs_get_started/</link>
+      <pubDate>Thu, 25 Oct 2012 22:40:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/10/25/nodejs_get_started/</guid>
+      <description>Nodejs 之搭建环境 1) 安装 nodejs、npm 1 2 3 4 sudo apt-get install python-software-properties sudo add-apt-repository ppa:chris-lea/node.js sudo apt-get update sudo apt-get install nodejs npm 2) 安装 express​ - web application framework for node 1 sudo npm install -g express 3) 安装 supervisor - is used to restart</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 设置 sshproxy 代理</title>
+      <link>http://wenzhixin.net.cn/2012/10/24/ubuntu_sshproxy/</link>
+      <pubDate>Wed, 24 Oct 2012 22:39:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/10/24/ubuntu_sshproxy/</guid>
+      <description>服务器端 1. 添加用户，并切换到该用户： 1 2 adduser sshproxy su - sshproxy 2. 生成 key： 1 2 3 ssh-keygen cd .ssh mv id_rsa.pub authorized_keys 3. 禁止 sshproxy 用户登录： 1 chsh -s /bin/false sshproxy 客户端： 1. 拷贝密钥 id_rsa 到客户端，</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 设置 sshproxy 代理</title>
+      <link>http://wenzhixin.net.cn/2012/10/24/ubuntu_sshproxy/</link>
+      <pubDate>Wed, 24 Oct 2012 22:39:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/10/24/ubuntu_sshproxy/</guid>
+      <description>服务器端 1. 添加用户，并切换到该用户： 1 2 adduser sshproxy su - sshproxy 2. 生成 key： 1 2 3 ssh-keygen cd .ssh mv id_rsa.pub authorized_keys 3. 禁止 sshproxy 用户登录： 1 chsh -s /bin/false sshproxy 客户端： 1. 拷贝密钥 id_rsa 到客户端，</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 搭建 Ruby on Rails 开发环境</title>
+      <link>http://wenzhixin.net.cn/2012/10/22/ubuntu_ruby_on_rails_development_environment_set_up/</link>
+      <pubDate>Mon, 22 Oct 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/10/22/ubuntu_ruby_on_rails_development_environment_set_up/</guid>
+      <description>安装 ruby： 1 sudo apt-get install ruby1.9.1 ruby1.9.1-dev 安装 rubygems： 1 sudo apt-get install rubygems 安装 mysql 1 sudo apt-get install mysql 安装 ruby-mysql 1）下载：http://www.tmtm.org/en/ru</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 搭建 Ruby on Rails 开发环境</title>
+      <link>http://wenzhixin.net.cn/2012/10/22/ubuntu_ruby_on_rails_development_environment_set_up/</link>
+      <pubDate>Mon, 22 Oct 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/10/22/ubuntu_ruby_on_rails_development_environment_set_up/</guid>
+      <description>安装 ruby： 1 sudo apt-get install ruby1.9.1 ruby1.9.1-dev 安装 rubygems： 1 sudo apt-get install rubygems 安装 mysql 1 sudo apt-get install mysql 安装 ruby-mysql 1）下载：http://www.tmtm.org/en/ru</description>
+    </item>
+    
+    <item>
+      <title>ubuntu vim gedit 乱码解决</title>
+      <link>http://wenzhixin.net.cn/2012/09/24/ubuntu_vim_gedit_garbled_solution/</link>
+      <pubDate>Mon, 24 Sep 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/09/24/ubuntu_vim_gedit_garbled_solution/</guid>
+      <description>添加中文字符编码： 1 sudo vi /var/lib/locales/supported.d/local 添加下面的中文字符集： 1 2 3 zh_CN.GBK GBK zh_CN.GB2312 GB2312 zh_CN.GB18030 GB18030 使其生效： 1 sudo dpkg-reconfigure locales vim： 1 sudo vi /etc/vim/vimrc 打开vim的配置文件，在其中加入： 1 2 3</description>
+    </item>
+    
+    <item>
+      <title>ubuntu vim gedit 乱码解决</title>
+      <link>http://wenzhixin.net.cn/2012/09/24/ubuntu_vim_gedit_garbled_solution/</link>
+      <pubDate>Mon, 24 Sep 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/09/24/ubuntu_vim_gedit_garbled_solution/</guid>
+      <description>添加中文字符编码： 1 sudo vi /var/lib/locales/supported.d/local 添加下面的中文字符集： 1 2 3 zh_CN.GBK GBK zh_CN.GB2312 GB2312 zh_CN.GB18030 GB18030 使其生效： 1 sudo dpkg-reconfigure locales vim： 1 sudo vi /etc/vim/vimrc 打开vim的配置文件，在其中加入： 1 2 3</description>
+    </item>
+    
+    <item>
+      <title>Twitter Bootstrap 资源汇总</title>
+      <link>http://wenzhixin.net.cn/2012/09/18/twitter_bootstrap_resources_aggregation/</link>
+      <pubDate>Tue, 18 Sep 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/09/18/twitter_bootstrap_resources_aggregation/</guid>
+      <description>1、Twitter Bootstrap 2、Bootstrap 插件 日期选择器：Datepicker for Bootstrap​ 颜色选择器：Colorpicker for Bo</description>
+    </item>
+    
+    <item>
+      <title>Twitter Bootstrap 资源汇总</title>
+      <link>http://wenzhixin.net.cn/2012/09/18/twitter_bootstrap_resources_aggregation/</link>
+      <pubDate>Tue, 18 Sep 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/09/18/twitter_bootstrap_resources_aggregation/</guid>
+      <description>1、Twitter Bootstrap 2、Bootstrap 插件 日期选择器：Datepicker for Bootstrap​ 颜色选择器：Colorpicker for Bo</description>
+    </item>
+    
+    <item>
+      <title>jQuery 插件使用小记（使用、问题、解决）</title>
+      <link>http://wenzhixin.net.cn/2012/09/16/using_jquery_plugin/</link>
+      <pubDate>Sun, 16 Sep 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/09/16/using_jquery_plugin/</guid>
+      <description>1、bootstrap.js (v2.1.0) 问题： bootstrap dropdown 菜单使用 on 或者 live 无效 解决： 注释 .on(&amp;lsquo;click.dropdown touchstart.dropdown.data-api&amp;rsquo;, &amp;lsquo;.dropdown&amp;rsquo;, function (e) { e.stopPropagation() }) (第 720 行) 2、&amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>jQuery 插件使用小记（使用、问题、解决）</title>
+      <link>http://wenzhixin.net.cn/2012/09/16/using_jquery_plugin/</link>
+      <pubDate>Sun, 16 Sep 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/09/16/using_jquery_plugin/</guid>
+      <description>1、bootstrap.js (v2.1.0) 问题： bootstrap dropdown 菜单使用 on 或者 live 无效 解决： 注释 .on(&amp;lsquo;click.dropdown touchstart.dropdown.data-api&amp;rsquo;, &amp;lsquo;.dropdown&amp;rsquo;, function (e) { e.stopPropagation() }) (第 720 行) 2、&amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>wordpress 修改IP地址后进不去后台的解决方法</title>
+      <link>http://wenzhixin.net.cn/2012/09/14/solution_wordpress_to_change_the_ip_address_after_not_go_back/</link>
+      <pubDate>Fri, 14 Sep 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/09/14/solution_wordpress_to_change_the_ip_address_after_not_go_back/</guid>
+      <description>1、登录数据库 1 mysql -uroot -ppassword wordpress 2、更新 wp_options 表 1 update wp_options set option_value = &amp;#39;http://newip/wordpress&amp;#39; where option_name = &amp;#39;siteurl&amp;#39; or option_name = &amp;#39;home&amp;#39;; 注：使用 shell 脚本 1 vi setwordpress 输入内容： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 #! /bin/bash # set wordpress admin ip param=$#</description>
+    </item>
+    
+    <item>
+      <title>wordpress 修改IP地址后进不去后台的解决方法</title>
+      <link>http://wenzhixin.net.cn/2012/09/14/solution_wordpress_to_change_the_ip_address_after_not_go_back/</link>
+      <pubDate>Fri, 14 Sep 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/09/14/solution_wordpress_to_change_the_ip_address_after_not_go_back/</guid>
+      <description>1、登录数据库 1 mysql -uroot -ppassword wordpress 2、更新 wp_options 表 1 update wp_options set option_value = &amp;#39;http://newip/wordpress&amp;#39; where option_name = &amp;#39;siteurl&amp;#39; or option_name = &amp;#39;home&amp;#39;; 注：使用 shell 脚本 1 vi setwordpress 输入内容： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 #! /bin/bash # set wordpress admin ip param=$#</description>
+    </item>
+    
+    <item>
+      <title>PhoneGap Plugin 之 Hello World</title>
+      <link>http://wenzhixin.net.cn/2012/08/01/phonegap_plugin_hello_world/</link>
+      <pubDate>Wed, 01 Aug 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/08/01/phonegap_plugin_hello_world/</guid>
+      <description>1、编写Java类并继承Plugin： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 public class MyPlugin extends Plugin { @SuppressWarnings(&amp;#34;deprecation&amp;#34;) @Override public PluginResult execute(String action, JSONArray args, String callbackId) { PluginResult result = new PluginResult(Status.INVALID_ACTION); if (action.equals(&amp;#34;hello&amp;#34;)) { try { Toast.makeText(cordova.getContext(), &amp;#34;Hello World!&amp;#34;, Toast.LENGTH_SHORT).show();</description>
+    </item>
+    
+    <item>
+      <title>PhoneGap Plugin 之 Hello World</title>
+      <link>http://wenzhixin.net.cn/2012/08/01/phonegap_plugin_hello_world/</link>
+      <pubDate>Wed, 01 Aug 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/08/01/phonegap_plugin_hello_world/</guid>
+      <description>1、编写Java类并继承Plugin： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 public class MyPlugin extends Plugin { @SuppressWarnings(&amp;#34;deprecation&amp;#34;) @Override public PluginResult execute(String action, JSONArray args, String callbackId) { PluginResult result = new PluginResult(Status.INVALID_ACTION); if (action.equals(&amp;#34;hello&amp;#34;)) { try { Toast.makeText(cordova.getContext(), &amp;#34;Hello World!&amp;#34;, Toast.LENGTH_SHORT).show();</description>
+    </item>
+    
+    <item>
+      <title>使用 nginx 作为代理服务器轻松解决 Ajax 跨域问题</title>
+      <link>http://wenzhixin.net.cn/2012/08/01/the_use_of_nginx_as_a_proxy_server_easily_solve_the_cross_domain_ajax_problem/</link>
+      <pubDate>Wed, 01 Aug 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/08/01/the_use_of_nginx_as_a_proxy_server_easily_solve_the_cross_domain_ajax_problem/</guid>
+      <description>1、安装 nginx： 1 sudo apt-get install nginx 2、配置 nginx： 1 sudo vi /etc/nginx/sites-enabled/default 输入内容： 1 2 3 4 5 6 7 8 server { listen 8080; location /api { proxy_pass http://myserver/api; access_log off; } } 3、重启 1 sudo /etc/init.d/nginx restart 4、使用： 1 var</description>
+    </item>
+    
+    <item>
+      <title>使用 nginx 作为代理服务器轻松解决 Ajax 跨域问题</title>
+      <link>http://wenzhixin.net.cn/2012/08/01/the_use_of_nginx_as_a_proxy_server_easily_solve_the_cross_domain_ajax_problem/</link>
+      <pubDate>Wed, 01 Aug 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/08/01/the_use_of_nginx_as_a_proxy_server_easily_solve_the_cross_domain_ajax_problem/</guid>
+      <description>1、安装 nginx： 1 sudo apt-get install nginx 2、配置 nginx： 1 sudo vi /etc/nginx/sites-enabled/default 输入内容： 1 2 3 4 5 6 7 8 server { listen 8080; location /api { proxy_pass http://myserver/api; access_log off; } } 3、重启 1 sudo /etc/init.d/nginx restart 4、使用： 1 var</description>
+    </item>
+    
+    <item>
+      <title>Ant 关键元素和常用命令</title>
+      <link>http://wenzhixin.net.cn/2012/06/07/ant_key_elements_and_common_commands/</link>
+      <pubDate>Thu, 07 Jun 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/06/07/ant_key_elements_and_common_commands/</guid>
+      <description>一、Ant 关键元素 1、project元素 project 元素是 Ant 构件文件的根元素， Ant 构件文件至少应该包含一个 project 元素，否则会发生错误。在每个 project 元素下，可包含</description>
+    </item>
+    
+    <item>
+      <title>Ant 关键元素和常用命令</title>
+      <link>http://wenzhixin.net.cn/2012/06/07/ant_key_elements_and_common_commands/</link>
+      <pubDate>Thu, 07 Jun 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/06/07/ant_key_elements_and_common_commands/</guid>
+      <description>一、Ant 关键元素 1、project元素 project 元素是 Ant 构件文件的根元素， Ant 构件文件至少应该包含一个 project 元素，否则会发生错误。在每个 project 元素下，可包含</description>
+    </item>
+    
+    <item>
+      <title>ubuntu 连接平板进行 Android 开发的问题</title>
+      <link>http://wenzhixin.net.cn/2012/06/05/the_ubuntu_connection_plate_for_the_development_of_android_problem/</link>
+      <pubDate>Tue, 05 Jun 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/06/05/the_ubuntu_connection_plate_for_the_development_of_android_problem/</guid>
+      <description>ubuntu 下连接平板进行 Android 开发，在 eclipse 下会显示乱码(???)并无法使用，解决方法如下： 1、设置平板： 系统设置-应用程序-开发-USB调试，打勾该选项 2</description>
+    </item>
+    
+    <item>
+      <title>ubuntu 连接平板进行 Android 开发的问题</title>
+      <link>http://wenzhixin.net.cn/2012/06/05/the_ubuntu_connection_plate_for_the_development_of_android_problem/</link>
+      <pubDate>Tue, 05 Jun 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/06/05/the_ubuntu_connection_plate_for_the_development_of_android_problem/</guid>
+      <description>ubuntu 下连接平板进行 Android 开发，在 eclipse 下会显示乱码(???)并无法使用，解决方法如下： 1、设置平板： 系统设置-应用程序-开发-USB调试，打勾该选项 2</description>
+    </item>
+    
+    <item>
+      <title>ubuntu 连接华为 C8650 进行 Android 开发的问题</title>
+      <link>http://wenzhixin.net.cn/2012/06/04/the_ubuntu_connection_c8650_android_development_of_huawei/</link>
+      <pubDate>Mon, 04 Jun 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/06/04/the_ubuntu_connection_c8650_android_development_of_huawei/</guid>
+      <description>ubuntu 下连接华为 C8650 进行 Android 开发，在 eclipse 下会显示乱码(???)并无法使用，解决方法如下： 1、使用电话拨打##2846579## 2、然后选择 projec</description>
+    </item>
+    
+    <item>
+      <title>ubuntu 连接华为 C8650 进行 Android 开发的问题</title>
+      <link>http://wenzhixin.net.cn/2012/06/04/the_ubuntu_connection_c8650_android_development_of_huawei/</link>
+      <pubDate>Mon, 04 Jun 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/06/04/the_ubuntu_connection_c8650_android_development_of_huawei/</guid>
+      <description>ubuntu 下连接华为 C8650 进行 Android 开发，在 eclipse 下会显示乱码(???)并无法使用，解决方法如下： 1、使用电话拨打##2846579## 2、然后选择 projec</description>
+    </item>
+    
+    <item>
+      <title>虚拟机安装 Android_x86 系统，用于开发、测试 Android 程序</title>
+      <link>http://wenzhixin.net.cn/2012/06/02/install_android_x86_virtual_machine_for_the_development_testing_android_applications/</link>
+      <pubDate>Sat, 02 Jun 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/06/02/install_android_x86_virtual_machine_for_the_development_testing_android_applications/</guid>
+      <description>1、下载镜像： 从 http://www.android-x86.org/download 下载 android_x86 iso 镜像（例如 android-x86-2.3-RC1-eeepc.iso） 2、安装系统： 使用虚拟机 VirtualBox 来安装系统，步骤如</description>
+    </item>
+    
+    <item>
+      <title>虚拟机安装 Android_x86 系统，用于开发、测试 Android 程序</title>
+      <link>http://wenzhixin.net.cn/2012/06/02/install_android_x86_virtual_machine_for_the_development_testing_android_applications/</link>
+      <pubDate>Sat, 02 Jun 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/06/02/install_android_x86_virtual_machine_for_the_development_testing_android_applications/</guid>
+      <description>1、下载镜像： 从 http://www.android-x86.org/download 下载 android_x86 iso 镜像（例如 android-x86-2.3-RC1-eeepc.iso） 2、安装系统： 使用虚拟机 VirtualBox 来安装系统，步骤如</description>
+    </item>
+    
+    <item>
+      <title>linux shell编程</title>
+      <link>http://wenzhixin.net.cn/2012/05/29/linux_shell_programming/</link>
+      <pubDate>Tue, 29 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/05/29/linux_shell_programming/</guid>
+      <description>1、shell结构 * #!指定执行脚本的shell * #注释行 * 命令和控制结构 2、创建shell程序的步骤 * 创建一个包含命令和控制结构的文件 * 修</description>
+    </item>
+    
+    <item>
+      <title>linux shell编程</title>
+      <link>http://wenzhixin.net.cn/2012/05/29/linux_shell_programming/</link>
+      <pubDate>Tue, 29 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/05/29/linux_shell_programming/</guid>
+      <description>1、shell结构 * #!指定执行脚本的shell * #注释行 * 命令和控制结构 2、创建shell程序的步骤 * 创建一个包含命令和控制结构的文件 * 修</description>
+    </item>
+    
+    <item>
+      <title>linux常用命令——压缩解压命令</title>
+      <link>http://wenzhixin.net.cn/2012/05/23/commonly_used_linux_commands_compression_decompression_command/</link>
+      <pubDate>Wed, 23 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/05/23/commonly_used_linux_commands_compression_decompression_command/</guid>
+      <description>命令：gzip (GNU zip) 功能：压缩文件 权限：所有用户 语法：gzip 选项[文件] 压缩后格式：.gz 说明：只能压缩文件，不保存源文件 命令：gunzip</description>
+    </item>
+    
+    <item>
+      <title>linux常用命令——压缩解压命令</title>
+      <link>http://wenzhixin.net.cn/2012/05/23/commonly_used_linux_commands_compression_decompression_command/</link>
+      <pubDate>Wed, 23 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/05/23/commonly_used_linux_commands_compression_decompression_command/</guid>
+      <description>命令：gzip (GNU zip) 功能：压缩文件 权限：所有用户 语法：gzip 选项[文件] 压缩后格式：.gz 说明：只能压缩文件，不保存源文件 命令：gunzip</description>
+    </item>
+    
+    <item>
+      <title>linux常用命令——帮助命令</title>
+      <link>http://wenzhixin.net.cn/2012/05/22/commonly_used_linux_commands_help_command/</link>
+      <pubDate>Tue, 22 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/05/22/commonly_used_linux_commands_help_command/</guid>
+      <description>命令：man (manual) 功能：获得帮助信息 权限：所有用户 语法：man [命令或配置文件] 例子：man ls 查看 ls 命令的帮助信息 man services 查看配置文件 services 的帮助信息 命</description>
+    </item>
+    
+    <item>
+      <title>linux常用命令——帮助命令</title>
+      <link>http://wenzhixin.net.cn/2012/05/22/commonly_used_linux_commands_help_command/</link>
+      <pubDate>Tue, 22 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/05/22/commonly_used_linux_commands_help_command/</guid>
+      <description>命令：man (manual) 功能：获得帮助信息 权限：所有用户 语法：man [命令或配置文件] 例子：man ls 查看 ls 命令的帮助信息 man services 查看配置文件 services 的帮助信息 命</description>
+    </item>
+    
+    <item>
+      <title>linux常用命令——文件搜索命令</title>
+      <link>http://wenzhixin.net.cn/2012/05/22/commonly_used_linux_commands_file_search_command/</link>
+      <pubDate>Tue, 22 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/05/22/commonly_used_linux_commands_file_search_command/</guid>
+      <description>命令：which / whereis 功能：显示系统命令所在目录 权限：所有用户 语法：which / whereis [命令名称] 命令：find 功能：查找文件或目录 权限：所有用户</description>
+    </item>
+    
+    <item>
+      <title>linux常用命令——文件搜索命令</title>
+      <link>http://wenzhixin.net.cn/2012/05/22/commonly_used_linux_commands_file_search_command/</link>
+      <pubDate>Tue, 22 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/05/22/commonly_used_linux_commands_file_search_command/</guid>
+      <description>命令：which / whereis 功能：显示系统命令所在目录 权限：所有用户 语法：which / whereis [命令名称] 命令：find 功能：查找文件或目录 权限：所有用户</description>
+    </item>
+    
+    <item>
+      <title>html5 canvas 画图实例——rotate</title>
+      <link>http://wenzhixin.net.cn/2012/05/20/html5_canvas_drawing_examples_rotate/</link>
+      <pubDate>Sun, 20 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/05/20/html5_canvas_drawing_examples_rotate/</guid>
+      <description>接口：context.rotate(angle) 功能：按给定的弧度旋转,按顺时针旋转。 说明：rotate 方法旋转的中心始终是canvas 的原</description>
+    </item>
+    
+    <item>
+      <title>html5 canvas 画图实例——rotate</title>
+      <link>http://wenzhixin.net.cn/2012/05/20/html5_canvas_drawing_examples_rotate/</link>
+      <pubDate>Sun, 20 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/05/20/html5_canvas_drawing_examples_rotate/</guid>
+      <description>接口：context.rotate(angle) 功能：按给定的弧度旋转,按顺时针旋转。 说明：rotate 方法旋转的中心始终是canvas 的原</description>
+    </item>
+    
+    <item>
+      <title>linux常用命令——权限管理命令</title>
+      <link>http://wenzhixin.net.cn/2012/05/20/commonly_used_linux_commands_permission_management_command/</link>
+      <pubDate>Sun, 20 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/05/20/commonly_used_linux_commands_permission_management_command/</guid>
+      <description>命令：chmod (change the permissions mode of a file) 功能：改变文件或目录权限 权限：所有用户 语法：chmod [{ugo}{+-=}{rwx}][文件或目录] chmod [mo</description>
+    </item>
+    
+    <item>
+      <title>linux常用命令——权限管理命令</title>
+      <link>http://wenzhixin.net.cn/2012/05/20/commonly_used_linux_commands_permission_management_command/</link>
+      <pubDate>Sun, 20 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/05/20/commonly_used_linux_commands_permission_management_command/</guid>
+      <description>命令：chmod (change the permissions mode of a file) 功能：改变文件或目录权限 权限：所有用户 语法：chmod [{ugo}{+-=}{rwx}][文件或目录] chmod [mo</description>
+    </item>
+    
+    <item>
+      <title>linux 常用命令——文件处理命令</title>
+      <link>http://wenzhixin.net.cn/2012/05/19/commonly_used_linux_commands_file_command/</link>
+      <pubDate>Sat, 19 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/05/19/commonly_used_linux_commands_file_command/</guid>
+      <description>命令：ls (list) 功能：显示目录文件 权限：所有用户 语法：ls 选项[-ald] [文件或目录] -a 显示所有文件，包括隐藏文件 -l 显示详细信息 -d 查看目录属性</description>
+    </item>
+    
+    <item>
+      <title>linux 常用命令——文件处理命令</title>
+      <link>http://wenzhixin.net.cn/2012/05/19/commonly_used_linux_commands_file_command/</link>
+      <pubDate>Sat, 19 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/05/19/commonly_used_linux_commands_file_command/</guid>
+      <description>命令：ls (list) 功能：显示目录文件 权限：所有用户 语法：ls 选项[-ald] [文件或目录] -a 显示所有文件，包括隐藏文件 -l 显示详细信息 -d 查看目录属性</description>
+    </item>
+    
+    <item>
+      <title>MySQL、Postgres 开启远程访问权限（ubuntu）</title>
+      <link>http://wenzhixin.net.cn/2012/05/15/mysql_open_the_remote_access_ubuntu/</link>
+      <pubDate>Tue, 15 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/05/15/mysql_open_the_remote_access_ubuntu/</guid>
+      <description>MySQL 1、编辑 my.cnf 文件： 1 sudo vi /etc/mysql/my.cnf 2、将绑定地址行注释掉或者修改为指定 IP 1 #bind-address = 127.0.0.1 3、登录 MySQL： 1 mysql -uroot -p123 4、添加 root 用户访问权限 1 2 grant all privileges on *.* to &amp;#39;root&amp;#39;@&amp;#39;%&amp;#39;</description>
+    </item>
+    
+    <item>
+      <title>MySQL、Postgres 开启远程访问权限（ubuntu）</title>
+      <link>http://wenzhixin.net.cn/2012/05/15/mysql_open_the_remote_access_ubuntu/</link>
+      <pubDate>Tue, 15 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/05/15/mysql_open_the_remote_access_ubuntu/</guid>
+      <description>MySQL 1、编辑 my.cnf 文件： 1 sudo vi /etc/mysql/my.cnf 2、将绑定地址行注释掉或者修改为指定 IP 1 #bind-address = 127.0.0.1 3、登录 MySQL： 1 mysql -uroot -p123 4、添加 root 用户访问权限 1 2 grant all privileges on *.* to &amp;#39;root&amp;#39;@&amp;#39;%&amp;#39;</description>
+    </item>
+    
+    <item>
+      <title>Eclipse 安装插件(aptana、svn 、git、Java EE、JSHint)</title>
+      <link>http://wenzhixin.net.cn/2012/05/08/eclipse_install_the_plugin_aptana_svn_git_java_ee_jshint/</link>
+      <pubDate>Tue, 08 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/05/08/eclipse_install_the_plugin_aptana_svn_git_java_ee_jshint/</guid>
+      <description>1、安装 aptana 插件： * 依次点击：Help -&amp;gt; Install New Software&amp;hellip; -&amp;gt; Add * 输入：http://download.aptana.com/studio3/plugin/</description>
+    </item>
+    
+    <item>
+      <title>Eclipse 安装插件(aptana、svn 、git、Java EE、JSHint)</title>
+      <link>http://wenzhixin.net.cn/2012/05/08/eclipse_install_the_plugin_aptana_svn_git_java_ee_jshint/</link>
+      <pubDate>Tue, 08 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/05/08/eclipse_install_the_plugin_aptana_svn_git_java_ee_jshint/</guid>
+      <description>1、安装 aptana 插件： * 依次点击：Help -&amp;gt; Install New Software&amp;hellip; -&amp;gt; Add * 输入：http://download.aptana.com/studio3/plugin/</description>
+    </item>
+    
+    <item>
+      <title>div 中无法自动换行、以及单行显示的问题</title>
+      <link>http://wenzhixin.net.cn/2012/05/08/word_wrap_and_one_cannot_display_the_problems_in_div/</link>
+      <pubDate>Tue, 08 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/05/08/word_wrap_and_one_cannot_display_the_problems_in_div/</guid>
+      <description>1、无法自动换行 * 问题：如果 div 输入的是英文字母且没有空格，会导致英文字母不换行直接在同一行输出，导致 div 的宽度远远超出设定的大小。 * 原因：因为</description>
+    </item>
+    
+    <item>
+      <title>div 中无法自动换行、以及单行显示的问题</title>
+      <link>http://wenzhixin.net.cn/2012/05/08/word_wrap_and_one_cannot_display_the_problems_in_div/</link>
+      <pubDate>Tue, 08 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/05/08/word_wrap_and_one_cannot_display_the_problems_in_div/</guid>
+      <description>1、无法自动换行 * 问题：如果 div 输入的是英文字母且没有空格，会导致英文字母不换行直接在同一行输出，导致 div 的宽度远远超出设定的大小。 * 原因：因为</description>
+    </item>
+    
+    <item>
+      <title>彻底研究 CSS ——段落的垂直对齐</title>
+      <link>http://wenzhixin.net.cn/2012/05/06/the_vertical_alignment_of_css_complete_paragraph/</link>
+      <pubDate>Sun, 06 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/05/06/the_vertical_alignment_of_css_complete_paragraph/</guid>
+      <description>如果文字内容只有一行，可以设置 line-height 与height 相同来使文字垂直居中。 * css 代码： 1 2 3 4 5 6 7 8 .one_line { width: 500px; height: 100px; line-height: 100px; background-color: #9bd; margin: 20px; padding: 20px; } * html 代码： 1 2 3</description>
+    </item>
+    
+    <item>
+      <title>彻底研究 CSS ——段落的垂直对齐</title>
+      <link>http://wenzhixin.net.cn/2012/05/06/the_vertical_alignment_of_css_complete_paragraph/</link>
+      <pubDate>Sun, 06 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/05/06/the_vertical_alignment_of_css_complete_paragraph/</guid>
+      <description>如果文字内容只有一行，可以设置 line-height 与height 相同来使文字垂直居中。 * css 代码： 1 2 3 4 5 6 7 8 .one_line { width: 500px; height: 100px; line-height: 100px; background-color: #9bd; margin: 20px; padding: 20px; } * html 代码： 1 2 3</description>
+    </item>
+    
+    <item>
+      <title>彻底研究 CSS——文字与图像</title>
+      <link>http://wenzhixin.net.cn/2012/05/05/a_thorough_study_of_css_text_and_image/</link>
+      <pubDate>Sat, 05 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/05/05/a_thorough_study_of_css_text_and_image/</guid>
+      <description>1、CSS 文字样式 * font-family：用于设置字体。同时声明多种字体时，字体之间用逗号分隔开，字体名称有空格需要用双引号引起来。 * fo</description>
+    </item>
+    
+    <item>
+      <title>彻底研究 CSS——文字与图像</title>
+      <link>http://wenzhixin.net.cn/2012/05/05/a_thorough_study_of_css_text_and_image/</link>
+      <pubDate>Sat, 05 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/05/05/a_thorough_study_of_css_text_and_image/</guid>
+      <description>1、CSS 文字样式 * font-family：用于设置字体。同时声明多种字体时，字体之间用逗号分隔开，字体名称有空格需要用双引号引起来。 * fo</description>
+    </item>
+    
+    <item>
+      <title>彻底研究 CSS—— CSS 核心基础</title>
+      <link>http://wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_css_core_base/</link>
+      <pubDate>Fri, 04 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_css_core_base/</guid>
+      <description>1、HTML 书写规范 * 标记名称必须小写 * 属性名必须小写 * 标记必须严格嵌套 * 标记必须封闭，即使是空元素 * 属性值用双引号括起来，并且使用完整形式</description>
+    </item>
+    
+    <item>
+      <title>彻底研究 CSS—— CSS 核心基础</title>
+      <link>http://wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_css_core_base/</link>
+      <pubDate>Fri, 04 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_css_core_base/</guid>
+      <description>1、HTML 书写规范 * 标记名称必须小写 * 属性名必须小写 * 标记必须严格嵌套 * 标记必须封闭，即使是空元素 * 属性值用双引号括起来，并且使用完整形式</description>
+    </item>
+    
+    <item>
+      <title>彻底研究CSS——深入理解盒子模型</title>
+      <link>http://wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_understanding_the_box_model/</link>
+      <pubDate>Fri, 04 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_understanding_the_box_model/</guid>
+      <description>1、盒子模型的内部结构 * 在 CSS 中，一个独立的盒子模型由 content（内容）、border（边框）、padding（内边距）和 margin（外</description>
+    </item>
+    
+    <item>
+      <title>彻底研究CSS——深入理解盒子模型</title>
+      <link>http://wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_understanding_the_box_model/</link>
+      <pubDate>Fri, 04 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_understanding_the_box_model/</guid>
+      <description>1、盒子模型的内部结构 * 在 CSS 中，一个独立的盒子模型由 content（内容）、border（边框）、padding（内边距）和 margin（外</description>
+    </item>
+    
+    <item>
+      <title>彻底研究CSS——盒子的浮动和定位</title>
+      <link>http://wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_floating_and_positioning_the_box/</link>
+      <pubDate>Fri, 04 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_floating_and_positioning_the_box/</guid>
+      <description>1、盒子的浮动 * CSS 中有一个 float 属性，默认为 none，即标准流。通过设置 float 属性的值为 left 或 right，元素会向其父元素的左侧或右侧靠近，盒子的宽度</description>
+    </item>
+    
+    <item>
+      <title>彻底研究CSS——盒子的浮动和定位</title>
+      <link>http://wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_floating_and_positioning_the_box/</link>
+      <pubDate>Fri, 04 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_floating_and_positioning_the_box/</guid>
+      <description>1、盒子的浮动 * CSS 中有一个 float 属性，默认为 none，即标准流。通过设置 float 属性的值为 left 或 right，元素会向其父元素的左侧或右侧靠近，盒子的宽度</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 11.10 将 OpenJDK 换成 Sun JDK 的步骤</title>
+      <link>http://wenzhixin.net.cn/2012/04/26/ubuntu_11.10_will_be_openjdk_into_sun_jdk_steps/</link>
+      <pubDate>Thu, 26 Apr 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/04/26/ubuntu_11.10_will_be_openjdk_into_sun_jdk_steps/</guid>
+      <description>1、加入repository： sudo add-apt-repository &amp;ldquo;deb http://cz.archive.Ubuntu.com/ubuntu hardy-updates main multiverse&amp;rdquo; (vi /etc/apt/sources.list) 2、更新源： sudo apt-get update 3、安装 jdk 和 jre： sudo apt-get install sun-java6-jdk sun-java6-jre 4、切换为 Sun JDK： sudo update-java-alternatives -s java-6-sun (ls /usr/lib/jvm) 5、查看是否</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 11.10 将 OpenJDK 换成 Sun JDK 的步骤</title>
+      <link>http://wenzhixin.net.cn/2012/04/26/ubuntu_11.10_will_be_openjdk_into_sun_jdk_steps/</link>
+      <pubDate>Thu, 26 Apr 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/04/26/ubuntu_11.10_will_be_openjdk_into_sun_jdk_steps/</guid>
+      <description>1、加入repository： sudo add-apt-repository &amp;ldquo;deb http://cz.archive.Ubuntu.com/ubuntu hardy-updates main multiverse&amp;rdquo; (vi /etc/apt/sources.list) 2、更新源： sudo apt-get update 3、安装 jdk 和 jre： sudo apt-get install sun-java6-jdk sun-java6-jre 4、切换为 Sun JDK： sudo update-java-alternatives -s java-6-sun (ls /usr/lib/jvm) 5、查看是否</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 下 eclipse 搭建 Android 开发环境安装 ADT 的问题</title>
+      <link>http://wenzhixin.net.cn/2012/04/10/ubuntu_eclipse_build_android_development_environment_for_the_installation_adt/</link>
+      <pubDate>Tue, 10 Apr 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/04/10/ubuntu_eclipse_build_android_development_environment_for_the_installation_adt/</guid>
+      <description>1、无法连接到 Repository： https://dl-ssl.google.com/android/eclipse/ 或者 http://dl-ssl.google.com/android/eclipse/ 解决：下载 zip 包进行本地安装（如：ADT-18.0.0）或者通过翻墙设置代理 2、长时间停留在 calculating requirements and</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 下 eclipse 搭建 Android 开发环境安装 ADT 的问题</title>
+      <link>http://wenzhixin.net.cn/2012/04/10/ubuntu_eclipse_build_android_development_environment_for_the_installation_adt/</link>
+      <pubDate>Tue, 10 Apr 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/04/10/ubuntu_eclipse_build_android_development_environment_for_the_installation_adt/</guid>
+      <description>1、无法连接到 Repository： https://dl-ssl.google.com/android/eclipse/ 或者 http://dl-ssl.google.com/android/eclipse/ 解决：下载 zip 包进行本地安装（如：ADT-18.0.0）或者通过翻墙设置代理 2、长时间停留在 calculating requirements and</description>
+    </item>
+    
+    <item>
+      <title>JavaScript 高级程序设计——引用类型（Object、Array、String、Date）</title>
+      <link>http://wenzhixin.net.cn/2012/04/05/javascript_advanced_programming_reference_types_object_array_string_date/</link>
+      <pubDate>Thu, 05 Apr 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/04/05/javascript_advanced_programming_reference_types_object_array_string_date/</guid>
+      <description>一、Object 类型 1、创建 Object 实例的方法：使用 new 操作符接构造函数方法 和 使用对象字面量表示法。 1 2 3 4 var obj = new Object(); obj.name1 = value1; obj.name2 = value2; ... 1 2 3 4 5 var obj =</description>
+    </item>
+    
+    <item>
+      <title>JavaScript 高级程序设计——引用类型（Object、Array、String、Date）</title>
+      <link>http://wenzhixin.net.cn/2012/04/05/javascript_advanced_programming_reference_types_object_array_string_date/</link>
+      <pubDate>Thu, 05 Apr 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/04/05/javascript_advanced_programming_reference_types_object_array_string_date/</guid>
+      <description>一、Object 类型 1、创建 Object 实例的方法：使用 new 操作符接构造函数方法 和 使用对象字面量表示法。 1 2 3 4 var obj = new Object(); obj.name1 = value1; obj.name2 = value2; ... 1 2 3 4 5 var obj =</description>
+    </item>
+    
+    <item>
+      <title>JavaScript 高级程序设计——引用类型（RegExp、Function、Global）</title>
+      <link>http://wenzhixin.net.cn/2012/04/05/javascript_advanced_programming_reference_types_regexp_function_global/</link>
+      <pubDate>Thu, 05 Apr 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/04/05/javascript_advanced_programming_reference_types_regexp_function_global/</guid>
+      <description>一、RegExp 类型 1、创建一个正则表达式 （1）语法： 1 2 var expression = / pattern / flags; var expression = new RegExp(pattern, flags); （2）模式（pattern）部分可以是任何简单或者复杂的</description>
+    </item>
+    
+    <item>
+      <title>JavaScript 高级程序设计——引用类型（RegExp、Function、Global）</title>
+      <link>http://wenzhixin.net.cn/2012/04/05/javascript_advanced_programming_reference_types_regexp_function_global/</link>
+      <pubDate>Thu, 05 Apr 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/04/05/javascript_advanced_programming_reference_types_regexp_function_global/</guid>
+      <description>一、RegExp 类型 1、创建一个正则表达式 （1）语法： 1 2 var expression = / pattern / flags; var expression = new RegExp(pattern, flags); （2）模式（pattern）部分可以是任何简单或者复杂的</description>
+    </item>
+    
+    <item>
+      <title>JavaScript 高级程序设计——继承</title>
+      <link>http://wenzhixin.net.cn/2012/04/04/javascript_advanced_programming_inheritance/</link>
+      <pubDate>Wed, 04 Apr 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/04/04/javascript_advanced_programming_inheritance/</guid>
+      <description>1、JavaScript 中实现继承主要是依靠原型链来实现的。基本思想是利用原型让一个引用类型继承另一个引用类型的属性和方法。 2、实现继承模式</description>
+    </item>
+    
+    <item>
+      <title>JavaScript 高级程序设计——继承</title>
+      <link>http://wenzhixin.net.cn/2012/04/04/javascript_advanced_programming_inheritance/</link>
+      <pubDate>Wed, 04 Apr 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/04/04/javascript_advanced_programming_inheritance/</guid>
+      <description>1、JavaScript 中实现继承主要是依靠原型链来实现的。基本思想是利用原型让一个引用类型继承另一个引用类型的属性和方法。 2、实现继承模式</description>
+    </item>
+    
+    <item>
+      <title>JavaScript 高级程序设计——面向对象</title>
+      <link>http://wenzhixin.net.cn/2012/04/03/javascript_advanced_programming_object_oriented/</link>
+      <pubDate>Tue, 03 Apr 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/04/03/javascript_advanced_programming_object_oriented/</guid>
+      <description>1、JavaScript 把的对象定义成散列表：无序属性的集合，其属性可以包含基本值、对象或者函数。 2、创建对象模式 （1）最简单的方式：创建一</description>
+    </item>
+    
+    <item>
+      <title>JavaScript 高级程序设计——面向对象</title>
+      <link>http://wenzhixin.net.cn/2012/04/03/javascript_advanced_programming_object_oriented/</link>
+      <pubDate>Tue, 03 Apr 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/04/03/javascript_advanced_programming_object_oriented/</guid>
+      <description>1、JavaScript 把的对象定义成散列表：无序属性的集合，其属性可以包含基本值、对象或者函数。 2、创建对象模式 （1）最简单的方式：创建一</description>
+    </item>
+    
+    <item>
+      <title>JavaScript 高级程序设计——变量、作用域和垃圾回收</title>
+      <link>http://wenzhixin.net.cn/2012/03/24/javascript_advanced_programming_variables_scope_and_garbage_collection/</link>
+      <pubDate>Sat, 24 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/03/24/javascript_advanced_programming_variables_scope_and_garbage_collection/</guid>
+      <description>1、变量包含两种不同类型的值：基本类型值和引用类型值。基本类型值是指保存在栈内存中的简单数据段，即完全保存在内存中的一个位置。引用类型值是指</description>
+    </item>
+    
+    <item>
+      <title>JavaScript 高级程序设计——变量、作用域和垃圾回收</title>
+      <link>http://wenzhixin.net.cn/2012/03/24/javascript_advanced_programming_variables_scope_and_garbage_collection/</link>
+      <pubDate>Sat, 24 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/03/24/javascript_advanced_programming_variables_scope_and_garbage_collection/</guid>
+      <description>1、变量包含两种不同类型的值：基本类型值和引用类型值。基本类型值是指保存在栈内存中的简单数据段，即完全保存在内存中的一个位置。引用类型值是指</description>
+    </item>
+    
+    <item>
+      <title>JavaScript 高级程序设计——数据类型</title>
+      <link>http://wenzhixin.net.cn/2012/03/19/javascript_advanced_programming_data_types/</link>
+      <pubDate>Mon, 19 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/03/19/javascript_advanced_programming_data_types/</guid>
+      <description>1、JavaScript 中有 5 种简单数据类型（基本数据类型）：Undefined、Null、Boolean、Number 和 String；1 种</description>
+    </item>
+    
+    <item>
+      <title>JavaScript 高级程序设计——数据类型</title>
+      <link>http://wenzhixin.net.cn/2012/03/19/javascript_advanced_programming_data_types/</link>
+      <pubDate>Mon, 19 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/03/19/javascript_advanced_programming_data_types/</guid>
+      <description>1、JavaScript 中有 5 种简单数据类型（基本数据类型）：Undefined、Null、Boolean、Number 和 String；1 种</description>
+    </item>
+    
+    <item>
+      <title>编写高质量代码——高质量JavaScript</title>
+      <link>http://wenzhixin.net.cn/2012/03/18/write_high_quality_code_high_quality_javascript/</link>
+      <pubDate>Sun, 18 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/03/18/write_high_quality_code_high_quality_javascript/</guid>
+      <description>1、团队合作，如何避免 JavaScript 冲突？ 为了让 JavaScript 不产生冲突，需要避免全局变量的泛滥，合理使用命名空间以及为代码添加必要的注释。 （1）避免全局变量的泛滥</description>
+    </item>
+    
+    <item>
+      <title>编写高质量代码——高质量JavaScript</title>
+      <link>http://wenzhixin.net.cn/2012/03/18/write_high_quality_code_high_quality_javascript/</link>
+      <pubDate>Sun, 18 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/03/18/write_high_quality_code_high_quality_javascript/</guid>
+      <description>1、团队合作，如何避免 JavaScript 冲突？ 为了让 JavaScript 不产生冲突，需要避免全局变量的泛滥，合理使用命名空间以及为代码添加必要的注释。 （1）避免全局变量的泛滥</description>
+    </item>
+    
+    <item>
+      <title>编写高质量代码——高质量的CSS</title>
+      <link>http://wenzhixin.net.cn/2012/03/17/write_high_quality_code_high_quality_css/</link>
+      <pubDate>Sat, 17 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/03/17/write_high_quality_code_high_quality_css/</guid>
+      <description>1、解析网页模式和DTD （1）解析网页模式主要有标准模式和怪异模式。怪异模式是为了兼容老式浏览器下的代码，应该避免触发怪异模式，选用标准模式</description>
+    </item>
+    
+    <item>
+      <title>编写高质量代码——高质量的CSS</title>
+      <link>http://wenzhixin.net.cn/2012/03/17/write_high_quality_code_high_quality_css/</link>
+      <pubDate>Sat, 17 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/03/17/write_high_quality_code_high_quality_css/</guid>
+      <description>1、解析网页模式和DTD （1）解析网页模式主要有标准模式和怪异模式。怪异模式是为了兼容老式浏览器下的代码，应该避免触发怪异模式，选用标准模式</description>
+    </item>
+    
+    <item>
+      <title>JavaScript高级程序设计——在 HTML 中使用 JavaScript</title>
+      <link>http://wenzhixin.net.cn/2012/03/16/javascript_programming_using_javascript_in_html/</link>
+      <pubDate>Fri, 16 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/03/16/javascript_programming_using_javascript_in_html/</guid>
+      <description>1、在 HTML 页面中使用 JavaScript的主要方法：使用 script 元素 1 &amp;lt;script type=&amp;#34;text/javascript&amp;#34; scr=&amp;#34;src.js&amp;#34; charset=&amp;#34;charset&amp;#34; defer=&amp;#34;defer&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; • type：用于表示编写代码使用的脚本语言，一般都是 text/javascript • src：表示</description>
+    </item>
+    
+    <item>
+      <title>JavaScript高级程序设计——在 HTML 中使用 JavaScript</title>
+      <link>http://wenzhixin.net.cn/2012/03/16/javascript_programming_using_javascript_in_html/</link>
+      <pubDate>Fri, 16 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/03/16/javascript_programming_using_javascript_in_html/</guid>
+      <description>1、在 HTML 页面中使用 JavaScript的主要方法：使用 script 元素 1 &amp;lt;script type=&amp;#34;text/javascript&amp;#34; scr=&amp;#34;src.js&amp;#34; charset=&amp;#34;charset&amp;#34; defer=&amp;#34;defer&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; • type：用于表示编写代码使用的脚本语言，一般都是 text/javascript • src：表示</description>
+    </item>
+    
+    <item>
+      <title>编写高质量代码——Web前端开发修炼之道</title>
+      <link>http://wenzhixin.net.cn/2012/03/15/write_high_quality_code_web_front_end_development_practice_of_the_road/</link>
+      <pubDate>Thu, 15 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/03/15/write_high_quality_code_web_front_end_development_practice_of_the_road/</guid>
+      <description>• Web 标准 Web 标准由一系列标准组合而成，其核心理念是将网页的结构、样式和行为分离开来，主要分为：结构标准、样式标准和行为标准。结构标准包括 XML 标准</description>
+    </item>
+    
+    <item>
+      <title>编写高质量代码——Web前端开发修炼之道</title>
+      <link>http://wenzhixin.net.cn/2012/03/15/write_high_quality_code_web_front_end_development_practice_of_the_road/</link>
+      <pubDate>Thu, 15 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/03/15/write_high_quality_code_web_front_end_development_practice_of_the_road/</guid>
+      <description>• Web 标准 Web 标准由一系列标准组合而成，其核心理念是将网页的结构、样式和行为分离开来，主要分为：结构标准、样式标准和行为标准。结构标准包括 XML 标准</description>
+    </item>
+    
+    <item>
+      <title>编写高质量代码——高质量的HTML</title>
+      <link>http://wenzhixin.net.cn/2012/03/15/write_high_quality_code_high_quality_html/</link>
+      <pubDate>Thu, 15 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/03/15/write_high_quality_code_high_quality_html/</guid>
+      <description>1、使用语义化标签 • div-division：分隔 • span：范围 • ol-ordered list：排序列表 • ul-unordered list：不排序列表 • li-list item：列表项目 • dl-definition l</description>
+    </item>
+    
+    <item>
+      <title>编写高质量代码——高质量的HTML</title>
+      <link>http://wenzhixin.net.cn/2012/03/15/write_high_quality_code_high_quality_html/</link>
+      <pubDate>Thu, 15 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/03/15/write_high_quality_code_high_quality_html/</guid>
+      <description>1、使用语义化标签 • div-division：分隔 • span：范围 • ol-ordered list：排序列表 • ul-unordered list：不排序列表 • li-list item：列表项目 • dl-definition l</description>
+    </item>
+    
+    <item>
+      <title>《锋利的jQuery》学习笔记——jQuery插件</title>
+      <link>http://wenzhixin.net.cn/2012/03/14/sharp_jquery_study_notes_jquery_plugin/</link>
+      <pubDate>Wed, 14 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/03/14/sharp_jquery_study_notes_jquery_plugin/</guid>
+      <description>​1. 插件的种类 (1)封装对象方法的插件：将对象方法封装起来，用于对通过选择器获取的 jQuery 对象进行操作 (2)封装全局函数的插件：将独立的函数加到</description>
+    </item>
+    
+    <item>
+      <title>《锋利的jQuery》学习笔记——jQuery插件</title>
+      <link>http://wenzhixin.net.cn/2012/03/14/sharp_jquery_study_notes_jquery_plugin/</link>
+      <pubDate>Wed, 14 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/03/14/sharp_jquery_study_notes_jquery_plugin/</guid>
+      <description>​1. 插件的种类 (1)封装对象方法的插件：将对象方法封装起来，用于对通过选择器获取的 jQuery 对象进行操作 (2)封装全局函数的插件：将独立的函数加到</description>
+    </item>
+    
+    <item>
+      <title>《锋利的jQuery》学习笔记——jQuery与Ajax应用</title>
+      <link>http://wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_and_ajax_application/</link>
+      <pubDate>Tue, 13 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_and_ajax_application/</guid>
+      <description>​1. 什么是 Ajax？ • Ajax 全称为”Asynchronous Javascript and XML”（异步 Javascript 和 XML），并不是指一种单一的技术，而是有机地利用了一系列交互</description>
+    </item>
+    
+    <item>
+      <title>《锋利的jQuery》学习笔记——jQuery与Ajax应用</title>
+      <link>http://wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_and_ajax_application/</link>
+      <pubDate>Tue, 13 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_and_ajax_application/</guid>
+      <description>​1. 什么是 Ajax？ • Ajax 全称为”Asynchronous Javascript and XML”（异步 Javascript 和 XML），并不是指一种单一的技术，而是有机地利用了一系列交互</description>
+    </item>
+    
+    <item>
+      <title>《锋利的jQuery》学习笔记——jQuery中的动画</title>
+      <link>http://wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_in_animation/</link>
+      <pubDate>Tue, 13 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_in_animation/</guid>
+      <description>​1. show和hide方法 • (&amp;ldquo;element&amp;rdquo;).show(speed[, callback])-显示element元素 • (&amp;ldquo;element&amp;rdquo;).hide(speed[, callback])-隐藏element元素 (1)show() 和 hide() 方法同时修</description>
+    </item>
+    
+    <item>
+      <title>《锋利的jQuery》学习笔记——jQuery中的动画</title>
+      <link>http://wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_in_animation/</link>
+      <pubDate>Tue, 13 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_in_animation/</guid>
+      <description>​1. show和hide方法 • (&amp;ldquo;element&amp;rdquo;).show(speed[, callback])-显示element元素 • (&amp;ldquo;element&amp;rdquo;).hide(speed[, callback])-隐藏element元素 (1)show() 和 hide() 方法同时修</description>
+    </item>
+    
+    <item>
+      <title>《锋利的jQuery》学习笔记——jQuery中的DOM操作</title>
+      <link>http://wenzhixin.net.cn/2012/03/12/sharp_jquery_study_notes_dom_operation_in_jquery/</link>
+      <pubDate>Mon, 12 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/03/12/sharp_jquery_study_notes_dom_operation_in_jquery/</guid>
+      <description>​1. 什么是DOM？ • DOM 是 Document Object Model 的缩写，是指文档对象模型 ​2. DOM操作的分类 (1)DOM Core-可用来处理任何一种使用标记语言的文档 • getElementById() • getElementByTagName() • getAttribute() •</description>
+    </item>
+    
+    <item>
+      <title>《锋利的jQuery》学习笔记——jQuery中的DOM操作</title>
+      <link>http://wenzhixin.net.cn/2012/03/12/sharp_jquery_study_notes_dom_operation_in_jquery/</link>
+      <pubDate>Mon, 12 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/03/12/sharp_jquery_study_notes_dom_operation_in_jquery/</guid>
+      <description>​1. 什么是DOM？ • DOM 是 Document Object Model 的缩写，是指文档对象模型 ​2. DOM操作的分类 (1)DOM Core-可用来处理任何一种使用标记语言的文档 • getElementById() • getElementByTagName() • getAttribute() •</description>
+    </item>
+    
+    <item>
+      <title>《锋利的jQuery》学习笔记——jQuery中的事件</title>
+      <link>http://wenzhixin.net.cn/2012/03/12/sharp_jquery_study_notes_events_in_jquery/</link>
+      <pubDate>Mon, 12 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/03/12/sharp_jquery_study_notes_events_in_jquery/</guid>
+      <description>​1. 加载 DOM 1 2 3 $(document).ready(function() { //代码 }); (1)执行时机：window.onload 方法在网页中所有的元素（包括愿你苏的所有关联文件）完全加载后才执行</description>
+    </item>
+    
+    <item>
+      <title>《锋利的jQuery》学习笔记——jQuery中的事件</title>
+      <link>http://wenzhixin.net.cn/2012/03/12/sharp_jquery_study_notes_events_in_jquery/</link>
+      <pubDate>Mon, 12 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/03/12/sharp_jquery_study_notes_events_in_jquery/</guid>
+      <description>​1. 加载 DOM 1 2 3 $(document).ready(function() { //代码 }); (1)执行时机：window.onload 方法在网页中所有的元素（包括愿你苏的所有关联文件）完全加载后才执行</description>
+    </item>
+    
+    <item>
+      <title>《锋利的jQuery》学习笔记——jQuery选择器</title>
+      <link>http://wenzhixin.net.cn/2012/03/11/sharp_jquery_study_notes_jquery_selector/</link>
+      <pubDate>Sun, 11 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/03/11/sharp_jquery_study_notes_jquery_selector/</guid>
+      <description>1. CSS选择器 (1)标签选择器-以文档元素作为选择符 • E { CSS规则 } (2)ID选择器-以文档元素的唯一标识符 ID 作为选择符 • #ID { CSS规则 }</description>
+    </item>
+    
+    <item>
+      <title>《锋利的jQuery》学习笔记——jQuery选择器</title>
+      <link>http://wenzhixin.net.cn/2012/03/11/sharp_jquery_study_notes_jquery_selector/</link>
+      <pubDate>Sun, 11 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/03/11/sharp_jquery_study_notes_jquery_selector/</guid>
+      <description>1. CSS选择器 (1)标签选择器-以文档元素作为选择符 • E { CSS规则 } (2)ID选择器-以文档元素的唯一标识符 ID 作为选择符 • #ID { CSS规则 }</description>
+    </item>
+    
+    <item>
+      <title>《锋利的jQuery》学习笔记——认识jQuery</title>
+      <link>http://wenzhixin.net.cn/2012/03/10/sharp_jquery_study_notes_understanding_of_jquery/</link>
+      <pubDate>Sat, 10 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/03/10/sharp_jquery_study_notes_understanding_of_jquery/</guid>
+      <description>认识jQuery ​1. JavaScript中比较流行的JavaScript库：Prototype、Dojo、YUI、Ext JS、MooToo</description>
+    </item>
+    
+    <item>
+      <title>《锋利的jQuery》学习笔记——认识jQuery</title>
+      <link>http://wenzhixin.net.cn/2012/03/10/sharp_jquery_study_notes_understanding_of_jquery/</link>
+      <pubDate>Sat, 10 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/03/10/sharp_jquery_study_notes_understanding_of_jquery/</guid>
+      <description>认识jQuery ​1. JavaScript中比较流行的JavaScript库：Prototype、Dojo、YUI、Ext JS、MooToo</description>
+    </item>
+    
+    <item>
+      <title>SQL学习笔记——DDL</title>
+      <link>http://wenzhixin.net.cn/2012/03/09/sql_study_notes_ddl/</link>
+      <pubDate>Fri, 09 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/03/09/sql_study_notes_ddl/</guid>
+      <description>​1. CREATE DATABASE Syntax • CREATE DATABASE database_name ​2. CREATE TABLE Syntax • CREATE TABLE table_name ( column_name1 data_type, column_name2 data_type, column_name3 data_type, ) ​3. SQL Constraints • NOT NULL - cannot insert a new record, or update a record without adding a value to this field • UNIQUE - uniquely identifies each record in a table • PRIMARY KEY • FOREIGN KEY (REFERENCES)</description>
+    </item>
+    
+    <item>
+      <title>SQL学习笔记——DDL</title>
+      <link>http://wenzhixin.net.cn/2012/03/09/sql_study_notes_ddl/</link>
+      <pubDate>Fri, 09 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/03/09/sql_study_notes_ddl/</guid>
+      <description>​1. CREATE DATABASE Syntax • CREATE DATABASE database_name ​2. CREATE TABLE Syntax • CREATE TABLE table_name ( column_name1 data_type, column_name2 data_type, column_name3 data_type, ) ​3. SQL Constraints • NOT NULL - cannot insert a new record, or update a record without adding a value to this field • UNIQUE - uniquely identifies each record in a table • PRIMARY KEY • FOREIGN KEY (REFERENCES)</description>
+    </item>
+    
+    <item>
+      <title>SQL学习笔记——DML</title>
+      <link>http://wenzhixin.net.cn/2012/03/09/sql_study_notes_dml/</link>
+      <pubDate>Fri, 09 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/03/09/sql_study_notes_dml/</guid>
+      <description>​1. What is SQL (1) SQL stands for Structured Query Language (2) SQL is an ANSI standard (3) RDBMS(Relational Database Managerment System) is the basis for SQL like SQLServer, DB2, Oracle, MySQL, and Access eg. ​2. SQL DML and DDL (1) The query and update commands from the DML(Data Manipulation Language) part of SQL: • SELECT - extracts data from a database • UPDATE - updates</description>
+    </item>
+    
+    <item>
+      <title>SQL学习笔记——DML</title>
+      <link>http://wenzhixin.net.cn/2012/03/09/sql_study_notes_dml/</link>
+      <pubDate>Fri, 09 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/03/09/sql_study_notes_dml/</guid>
+      <description>​1. What is SQL (1) SQL stands for Structured Query Language (2) SQL is an ANSI standard (3) RDBMS(Relational Database Managerment System) is the basis for SQL like SQLServer, DB2, Oracle, MySQL, and Access eg. ​2. SQL DML and DDL (1) The query and update commands from the DML(Data Manipulation Language) part of SQL: • SELECT - extracts data from a database • UPDATE - updates</description>
+    </item>
+    
+  </channel>
+</rss>

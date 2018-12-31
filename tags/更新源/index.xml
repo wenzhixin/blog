@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>更新源 on 文翼的博客</title>
+    <link>http://wenzhixin.net.cn/tags/%E6%9B%B4%E6%96%B0%E6%BA%90/</link>
+    <description>Recent content in 更新源 on 文翼的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Mon, 21 Jul 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://wenzhixin.net.cn/tags/%E6%9B%B4%E6%96%B0%E6%BA%90/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ubuntu 无法找到更新源的问题</title>
+      <link>http://wenzhixin.net.cn/2014/07/21/ubuntu_source_list_not_found/</link>
+      <pubDate>Mon, 21 Jul 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/07/21/ubuntu_source_list_not_found/</guid>
+      <description>问题： 前段时间，Ubuntu 官方源已经停止了对非长期维护版（如 11.10，12.04，12.10 和 13.04）的支持，并且从归档服务器上移除</description>
+    </item>
+    
+  </channel>
+</rss>

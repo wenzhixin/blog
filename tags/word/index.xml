@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>word on 文翼的博客</title>
+    <link>http://wenzhixin.net.cn/tags/word/</link>
+    <description>Recent content in word on 文翼的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Sun, 21 Sep 2014 21:20:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://wenzhixin.net.cn/tags/word/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>如何批量读取 word 的内容和图片</title>
+      <link>http://wenzhixin.net.cn/2014/09/21/node_docx/</link>
+      <pubDate>Sun, 21 Sep 2014 21:20:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/09/21/node_docx/</guid>
+      <description>今天朋友说需要对100份 word 文件的内容进行录入工作，问我是否有什么方便的方法。假如最少1份按2分钟的速度算，也需要200分钟才可以录入完成。我</description>
+    </item>
+    
+  </channel>
+</rss>

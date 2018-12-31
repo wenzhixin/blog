@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>图片 on 文翼的博客</title>
+    <link>http://wenzhixin.net.cn/tags/%E5%9B%BE%E7%89%87/</link>
+    <description>Recent content in 图片 on 文翼的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Fri, 22 Nov 2013 22:50:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://wenzhixin.net.cn/tags/%E5%9B%BE%E7%89%87/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>jQuery 判断所有图片加载完成</title>
+      <link>http://wenzhixin.net.cn/2013/11/22/all_images_is_loaded/</link>
+      <pubDate>Fri, 22 Nov 2013 22:50:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/11/22/all_images_is_loaded/</guid>
+      <description>对于图片的处理，例如幻灯片播放、缩放等，都是依赖于在所有图片完成之后再进行操作。 今天来看下如何判断所有的图片加载完成，而在加载完成之前可以使</description>
+    </item>
+    
+  </channel>
+</rss>

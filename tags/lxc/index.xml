@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>lxc on 文翼的博客</title>
+    <link>http://wenzhixin.net.cn/tags/lxc/</link>
+    <description>Recent content in lxc on 文翼的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Wed, 04 Mar 2015 09:56:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://wenzhixin.net.cn/tags/lxc/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>lxc 小贴士：创建、自动启动、设置存放目录</title>
+      <link>http://wenzhixin.net.cn/2015/03/04/lxc_tips/</link>
+      <pubDate>Wed, 04 Mar 2015 09:56:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2015/03/04/lxc_tips/</guid>
+      <description>平时使用 lxc 比较多，在这里记录下容易忘记的点。 创建 很简单，创建一个 ubuntu 系统（trusty），详细见LXC简介。 创建文件：vi trusty.con</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>fetch on 文翼的博客</title>
+    <link>http://wenzhixin.net.cn/tags/fetch/</link>
+    <description>Recent content in fetch on 文翼的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Sat, 14 Jun 2014 23:55:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://wenzhixin.net.cn/tags/fetch/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>在 Backbone.js 中自定义 fetch 错误处理</title>
+      <link>http://wenzhixin.net.cn/2014/06/14/backbone_custom_fetch_errors/</link>
+      <pubDate>Sat, 14 Jun 2014 23:55:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/06/14/backbone_custom_fetch_errors/</guid>
+      <description>Backbone 作为 JavaScript MVC 框架的一个优势是它可以通过监听事件来处理事情。但是根据 Collection 的相关文档，可以看到：当你使用fetch方法来进行 Ajax 请求的时候，假如发生了</description>
+    </item>
+    
+  </channel>
+</rss>

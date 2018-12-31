@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>本地时间 on 文翼的博客</title>
+    <link>http://wenzhixin.net.cn/tags/%E6%9C%AC%E5%9C%B0%E6%97%B6%E9%97%B4/</link>
+    <description>Recent content in 本地时间 on 文翼的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Tue, 05 Nov 2013 13:30:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://wenzhixin.net.cn/tags/%E6%9C%AC%E5%9C%B0%E6%97%B6%E9%97%B4/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>将本地时间转换为 GMT 时间</title>
+      <link>http://wenzhixin.net.cn/2013/11/05/local_time_to_timezone/</link>
+      <pubDate>Tue, 05 Nov 2013 13:30:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/11/05/local_time_to_timezone/</guid>
+      <description>在写 RSS 订阅接口的时候，发现最终输出文章的 RSS 时间（GMT时间），在本地上显示的时间和在服务器上显示的时间不一致。 原因是时区不一致，那么在 JavaScript 中，</description>
+    </item>
+    
+  </channel>
+</rss>

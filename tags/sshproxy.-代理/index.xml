@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>sshproxy. 代理 on 文翼的博客</title>
+    <link>http://wenzhixin.net.cn/tags/sshproxy.-%E4%BB%A3%E7%90%86/</link>
+    <description>Recent content in sshproxy. 代理 on 文翼的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Wed, 24 Oct 2012 22:39:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://wenzhixin.net.cn/tags/sshproxy.-%E4%BB%A3%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ubuntu 设置 sshproxy 代理</title>
+      <link>http://wenzhixin.net.cn/2012/10/24/ubuntu_sshproxy/</link>
+      <pubDate>Wed, 24 Oct 2012 22:39:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/10/24/ubuntu_sshproxy/</guid>
+      <description>服务器端 1. 添加用户，并切换到该用户： 1 2 adduser sshproxy su - sshproxy 2. 生成 key： 1 2 3 ssh-keygen cd .ssh mv id_rsa.pub authorized_keys 3. 禁止 sshproxy 用户登录： 1 chsh -s /bin/false sshproxy 客户端： 1. 拷贝密钥 id_rsa 到客户端，</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 设置 sshproxy 代理</title>
+      <link>http://wenzhixin.net.cn/2012/10/24/ubuntu_sshproxy/</link>
+      <pubDate>Wed, 24 Oct 2012 22:39:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/10/24/ubuntu_sshproxy/</guid>
+      <description>服务器端 1. 添加用户，并切换到该用户： 1 2 adduser sshproxy su - sshproxy 2. 生成 key： 1 2 3 ssh-keygen cd .ssh mv id_rsa.pub authorized_keys 3. 禁止 sshproxy 用户登录： 1 chsh -s /bin/false sshproxy 客户端： 1. 拷贝密钥 id_rsa 到客户端，</description>
+    </item>
+    
+  </channel>
+</rss>

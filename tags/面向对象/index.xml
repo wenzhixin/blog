@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>面向对象 on 文翼的博客</title>
+    <link>http://wenzhixin.net.cn/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</link>
+    <description>Recent content in 面向对象 on 文翼的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Tue, 03 Apr 2012 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://wenzhixin.net.cn/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>JavaScript 高级程序设计——面向对象</title>
+      <link>http://wenzhixin.net.cn/2012/04/03/javascript_advanced_programming_object_oriented/</link>
+      <pubDate>Tue, 03 Apr 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/04/03/javascript_advanced_programming_object_oriented/</guid>
+      <description>1、JavaScript 把的对象定义成散列表：无序属性的集合，其属性可以包含基本值、对象或者函数。 2、创建对象模式 （1）最简单的方式：创建一</description>
+    </item>
+    
+    <item>
+      <title>JavaScript 高级程序设计——面向对象</title>
+      <link>http://wenzhixin.net.cn/2012/04/03/javascript_advanced_programming_object_oriented/</link>
+      <pubDate>Tue, 03 Apr 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/04/03/javascript_advanced_programming_object_oriented/</guid>
+      <description>1、JavaScript 把的对象定义成散列表：无序属性的集合，其属性可以包含基本值、对象或者函数。 2、创建对象模式 （1）最简单的方式：创建一</description>
+    </item>
+    
+  </channel>
+</rss>

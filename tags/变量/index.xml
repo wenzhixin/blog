@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>变量 on 文翼的博客</title>
+    <link>http://wenzhixin.net.cn/tags/%E5%8F%98%E9%87%8F/</link>
+    <description>Recent content in 变量 on 文翼的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Sat, 24 Mar 2012 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://wenzhixin.net.cn/tags/%E5%8F%98%E9%87%8F/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>JavaScript 高级程序设计——变量、作用域和垃圾回收</title>
+      <link>http://wenzhixin.net.cn/2012/03/24/javascript_advanced_programming_variables_scope_and_garbage_collection/</link>
+      <pubDate>Sat, 24 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/03/24/javascript_advanced_programming_variables_scope_and_garbage_collection/</guid>
+      <description>1、变量包含两种不同类型的值：基本类型值和引用类型值。基本类型值是指保存在栈内存中的简单数据段，即完全保存在内存中的一个位置。引用类型值是指</description>
+    </item>
+    
+    <item>
+      <title>JavaScript 高级程序设计——变量、作用域和垃圾回收</title>
+      <link>http://wenzhixin.net.cn/2012/03/24/javascript_advanced_programming_variables_scope_and_garbage_collection/</link>
+      <pubDate>Sat, 24 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/03/24/javascript_advanced_programming_variables_scope_and_garbage_collection/</guid>
+      <description>1、变量包含两种不同类型的值：基本类型值和引用类型值。基本类型值是指保存在栈内存中的简单数据段，即完全保存在内存中的一个位置。引用类型值是指</description>
+    </item>
+    
+  </channel>
+</rss>

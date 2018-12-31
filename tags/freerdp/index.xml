@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>FreeRDP on 文翼的博客</title>
+    <link>http://wenzhixin.net.cn/tags/freerdp/</link>
+    <description>Recent content in FreeRDP on 文翼的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Sun, 16 Mar 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://wenzhixin.net.cn/tags/freerdp/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ubuntu 下使用 FreeRDP 连接 Windows 远程桌面</title>
+      <link>http://wenzhixin.net.cn/2014/03/16/ubuntu_xfreerdp/</link>
+      <pubDate>Sun, 16 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/03/16/ubuntu_xfreerdp/</guid>
+      <description>简介 FreeRDP 是一款开源的远程桌面系统，支持多种平台， 在 ubuntu 中使用 FreeRDP 可以很方便的登录到 windwos 远程桌面中。 安装 1 sudo apt-get install freerdp 使用 1 xfreerdp -f host:port -u username -p password 参数： -f：表示</description>
+    </item>
+    
+  </channel>
+</rss>

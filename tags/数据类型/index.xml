@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>数据类型 on 文翼的博客</title>
+    <link>http://wenzhixin.net.cn/tags/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</link>
+    <description>Recent content in 数据类型 on 文翼的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Mon, 19 Mar 2012 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://wenzhixin.net.cn/tags/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>JavaScript 高级程序设计——数据类型</title>
+      <link>http://wenzhixin.net.cn/2012/03/19/javascript_advanced_programming_data_types/</link>
+      <pubDate>Mon, 19 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/03/19/javascript_advanced_programming_data_types/</guid>
+      <description>1、JavaScript 中有 5 种简单数据类型（基本数据类型）：Undefined、Null、Boolean、Number 和 String；1 种</description>
+    </item>
+    
+    <item>
+      <title>JavaScript 高级程序设计——数据类型</title>
+      <link>http://wenzhixin.net.cn/2012/03/19/javascript_advanced_programming_data_types/</link>
+      <pubDate>Mon, 19 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/03/19/javascript_advanced_programming_data_types/</guid>
+      <description>1、JavaScript 中有 5 种简单数据类型（基本数据类型）：Undefined、Null、Boolean、Number 和 String；1 种</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ant on 文翼的博客</title>
+    <link>http://wenzhixin.net.cn/tags/ant/</link>
+    <description>Recent content in ant on 文翼的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Tue, 26 Feb 2013 00:23:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://wenzhixin.net.cn/tags/ant/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Android ant 编译问题收集</title>
+      <link>http://wenzhixin.net.cn/2013/02/26/android_ant_problem/</link>
+      <pubDate>Tue, 26 Feb 2013 00:23:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/02/26/android_ant_problem/</guid>
+      <description>问题： 1 aapt not found under the right path 解决： 1 2 sudo apt-get install ia32-libs # 12.04 sudo apt-get install lib32z1 # 14.04 问题： 1 Perhaps JAVA_HOME does not point to the JDK. It is currently set to &amp;#34;/usr/lib/jvm/java-6-openjdk/jre&amp;#34; 解决： Fixed it by installing the open jdk: 1 sudo apt-get install openjdk-7-jdk</description>
+    </item>
+    
+    <item>
+      <title>Ant 关键元素和常用命令</title>
+      <link>http://wenzhixin.net.cn/2012/06/07/ant_key_elements_and_common_commands/</link>
+      <pubDate>Thu, 07 Jun 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/06/07/ant_key_elements_and_common_commands/</guid>
+      <description>一、Ant 关键元素 1、project元素 project 元素是 Ant 构件文件的根元素， Ant 构件文件至少应该包含一个 project 元素，否则会发生错误。在每个 project 元素下，可包含</description>
+    </item>
+    
+    <item>
+      <title>Ant 关键元素和常用命令</title>
+      <link>http://wenzhixin.net.cn/2012/06/07/ant_key_elements_and_common_commands/</link>
+      <pubDate>Thu, 07 Jun 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/06/07/ant_key_elements_and_common_commands/</guid>
+      <description>一、Ant 关键元素 1、project元素 project 元素是 Ant 构件文件的根元素， Ant 构件文件至少应该包含一个 project 元素，否则会发生错误。在每个 project 元素下，可包含</description>
+    </item>
+    
+  </channel>
+</rss>

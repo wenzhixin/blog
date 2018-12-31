@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>游玩 on 文翼的博客</title>
+    <link>http://wenzhixin.net.cn/tags/%E6%B8%B8%E7%8E%A9/</link>
+    <description>Recent content in 游玩 on 文翼的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Wed, 27 Mar 2013 23:36:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://wenzhixin.net.cn/tags/%E6%B8%B8%E7%8E%A9/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>游玩什么的</title>
+      <link>http://wenzhixin.net.cn/2013/03/27/what_to_play/</link>
+      <pubDate>Wed, 27 Mar 2013 23:36:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/03/27/what_to_play/</guid>
+      <description>游玩，对身为宅男的我来说，顿悟的比较晚。想想大学四年，除了毕业旅游之外，貌似也没去过其他地方了吧。现在想起来多多少少有些遗憾，人，总有顿悟的</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>响应式 on 文翼的博客</title>
+    <link>http://wenzhixin.net.cn/tags/%E5%93%8D%E5%BA%94%E5%BC%8F/</link>
+    <description>Recent content in 响应式 on 文翼的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Tue, 22 Oct 2013 08:50:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://wenzhixin.net.cn/tags/%E5%93%8D%E5%BA%94%E5%BC%8F/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>让你的网站支持自适应界面</title>
+      <link>http://wenzhixin.net.cn/2013/10/22/responsive_web/</link>
+      <pubDate>Tue, 22 Oct 2013 08:50:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/10/22/responsive_web/</guid>
+      <description>1. 介绍 随着智能手机的普及，越来越多的人使用手机上网。 我自己就是，经常懒得开电脑，直接用手机查看网页，简单又方便。 那么，如何才能把自己的博客做</description>
+    </item>
+    
+  </channel>
+</rss>

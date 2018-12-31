@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>环境变量 on 文翼的博客</title>
+    <link>http://wenzhixin.net.cn/tags/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/</link>
+    <description>Recent content in 环境变量 on 文翼的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Mon, 17 Feb 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://wenzhixin.net.cn/tags/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ubuntu 设置环境变量问题</title>
+      <link>http://wenzhixin.net.cn/2014/02/17/ubuntu_path/</link>
+      <pubDate>Mon, 17 Feb 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/02/17/ubuntu_path/</guid>
+      <description>开发的时候需要设置环境变量，但是发现设置了之后，每次重启却没有起作用。 首先，将环境加入 1 export PATH=${PATH}:$HOME/bin 到 ~/.bash_profile 文件中，运行 1 source ~/.bash_profile 即可让设置的环境变量生效。</description>
+    </item>
+    
+  </channel>
+</rss>

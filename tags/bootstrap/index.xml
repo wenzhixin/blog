@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>bootstrap on 文翼的博客</title>
+    <link>http://wenzhixin.net.cn/tags/bootstrap/</link>
+    <description>Recent content in bootstrap on 文翼的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Sun, 06 Jul 2014 07:31:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://wenzhixin.net.cn/tags/bootstrap/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>读《Backbone.js 实战》</title>
+      <link>http://wenzhixin.net.cn/2014/07/06/backbone_book/</link>
+      <pubDate>Sun, 06 Jul 2014 07:31:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/07/06/backbone_book/</guid>
+      <description>Backbone 是一个轻量级 JavaScript 的 MVC 框架，配合 Underscore 这个依赖库，我们可以打造出强大的 MVC 应用程序。其实很早就用到 Backbone + Underscore 进行网站和应用程序的开发了，只是国内一直没有</description>
+    </item>
+    
+    <item>
+      <title>Bootstrap a 标签按钮使用 prop 方法</title>
+      <link>http://wenzhixin.net.cn/2014/06/18/a_prop_problem/</link>
+      <pubDate>Wed, 18 Jun 2014 13:31:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/06/18/a_prop_problem/</guid>
+      <description>问题 将 jQuery 从 1.5.2 升级到 1.7.2 之后，统一将attr(&#39;disabled&#39;, &#39;disabled&#39;)改为prop(&#39;disabled&#39;, true)，将at</description>
+    </item>
+    
+    <item>
+      <title>Bootstrap 禁用 a 按钮</title>
+      <link>http://wenzhixin.net.cn/2013/08/12/disable_link/</link>
+      <pubDate>Mon, 12 Aug 2013 00:31:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/08/12/disable_link/</guid>
+      <description>问题描述： 使用 Bootstrap 的 btn 时，可以使用添加 class=&amp;ldquo;disabled&amp;rdquo; 或者 disabled=&amp;ldquo;disabled&amp;rdquo; 来禁用按钮，可以看到 bootstrap.css 中的代码： 1 2 3 4 5 6 7 8 9 10 11 .btn.disabled, .btn[disabled] { cursor: default; background-color: #e6e6e6; background-image: none; opacity: 0.65; filter: alpha(opacity=65); -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; } 假</description>
+    </item>
+    
+    <item>
+      <title>Twitter Bootstrap 资源汇总</title>
+      <link>http://wenzhixin.net.cn/2012/09/18/twitter_bootstrap_resources_aggregation/</link>
+      <pubDate>Tue, 18 Sep 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/09/18/twitter_bootstrap_resources_aggregation/</guid>
+      <description>1、Twitter Bootstrap 2、Bootstrap 插件 日期选择器：Datepicker for Bootstrap​ 颜色选择器：Colorpicker for Bo</description>
+    </item>
+    
+    <item>
+      <title>Twitter Bootstrap 资源汇总</title>
+      <link>http://wenzhixin.net.cn/2012/09/18/twitter_bootstrap_resources_aggregation/</link>
+      <pubDate>Tue, 18 Sep 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/09/18/twitter_bootstrap_resources_aggregation/</guid>
+      <description>1、Twitter Bootstrap 2、Bootstrap 插件 日期选择器：Datepicker for Bootstrap​ 颜色选择器：Colorpicker for Bo</description>
+    </item>
+    
+  </channel>
+</rss>

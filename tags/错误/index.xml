@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>错误 on 文翼的博客</title>
+    <link>http://wenzhixin.net.cn/tags/%E9%94%99%E8%AF%AF/</link>
+    <description>Recent content in 错误 on 文翼的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Sun, 02 Nov 2014 23:49:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://wenzhixin.net.cn/tags/%E9%94%99%E8%AF%AF/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>chrome 浏览器 console 面板直接使用 JSON 数据进行调试错误问题</title>
+      <link>http://wenzhixin.net.cn/2014/11/02/chrome_console_error/</link>
+      <pubDate>Sun, 02 Nov 2014 23:49:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/11/02/chrome_console_error/</guid>
+      <description>今天在微博上看到小鱼在问：https://gist.github.com/sofish/c250881989aaa10c029d 为什么会出错</description>
+    </item>
+    
+    <item>
+      <title>在 Backbone.js 中自定义 fetch 错误处理</title>
+      <link>http://wenzhixin.net.cn/2014/06/14/backbone_custom_fetch_errors/</link>
+      <pubDate>Sat, 14 Jun 2014 23:55:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/06/14/backbone_custom_fetch_errors/</guid>
+      <description>Backbone 作为 JavaScript MVC 框架的一个优势是它可以通过监听事件来处理事情。但是根据 Collection 的相关文档，可以看到：当你使用fetch方法来进行 Ajax 请求的时候，假如发生了</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>翻译 on 文翼的博客</title>
+    <link>http://wenzhixin.net.cn/tags/%E7%BF%BB%E8%AF%91/</link>
+    <description>Recent content in 翻译 on 文翼的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Wed, 13 Nov 2013 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://wenzhixin.net.cn/tags/%E7%BF%BB%E8%AF%91/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>nodejs 使用百度翻译 API</title>
+      <link>http://wenzhixin.net.cn/2013/11/13/nodejs_use_baidu_translate_api/</link>
+      <pubDate>Wed, 13 Nov 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/11/13/nodejs_use_baidu_translate_api/</guid>
+      <description>博客（网站）中需要对文章标题进行翻译成英文显示，要求可以批量翻译。 这里使用 nodejs 来对指定内容进行翻译，主要用到的知识点有两个： 使用百度翻译 API</description>
+    </item>
+    
+  </channel>
+</rss>

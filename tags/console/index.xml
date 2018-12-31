@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>console on 文翼的博客</title>
+    <link>http://wenzhixin.net.cn/tags/console/</link>
+    <description>Recent content in console on 文翼的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Sun, 02 Nov 2014 23:49:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://wenzhixin.net.cn/tags/console/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>chrome 浏览器 console 面板直接使用 JSON 数据进行调试错误问题</title>
+      <link>http://wenzhixin.net.cn/2014/11/02/chrome_console_error/</link>
+      <pubDate>Sun, 02 Nov 2014 23:49:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/11/02/chrome_console_error/</guid>
+      <description>今天在微博上看到小鱼在问：https://gist.github.com/sofish/c250881989aaa10c029d 为什么会出错</description>
+    </item>
+    
+  </channel>
+</rss>

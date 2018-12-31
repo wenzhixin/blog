@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>插件 on 文翼的博客</title>
+    <link>http://wenzhixin.net.cn/tags/%E6%8F%92%E4%BB%B6/</link>
+    <description>Recent content in 插件 on 文翼的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Thu, 20 Mar 2014 21:58:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://wenzhixin.net.cn/tags/%E6%8F%92%E4%BB%B6/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Cordova 开发属于自己的插件（plugin）</title>
+      <link>http://wenzhixin.net.cn/2014/03/20/cordova_my_plugin/</link>
+      <pubDate>Thu, 20 Mar 2014 21:58:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/03/20/cordova_my_plugin/</guid>
+      <description>在上一篇文章 cordova 初识之命令行工具 中，我们讲到了如何使用命令行快速地创建我们的 app 应用，并添加和运行各种平台。 在实际的项目开发中，需要用到 cordova 的插件</description>
+    </item>
+    
+    <item>
+      <title>bootstrap menu 插件介绍</title>
+      <link>http://wenzhixin.net.cn/2013/12/29/bootstrap_menu_guide/</link>
+      <pubDate>Sun, 29 Dec 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/12/29/bootstrap_menu_guide/</guid>
+      <description>前言 平时在定义目录菜单的时候会使用 ul、li 等，定义和维护起来不是很方便， 所以就写成了 bootstrap 的 jQuery 的插件。 如何使用 使用起来非常简单，先来看看如何使</description>
+    </item>
+    
+    <item>
+      <title>wordpress 插件开发</title>
+      <link>http://wenzhixin.net.cn/2013/01/15/wordpress_plugin/</link>
+      <pubDate>Tue, 15 Jan 2013 22:59:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/01/15/wordpress_plugin/</guid>
+      <description>1. 创建插件 在目录 wp-content/plugins 下创建自己的插件 新建目录 plugin-demo 新建文件 plugin-demo.php 1 2 3 4 5 6 7 8 9 &amp;lt;?php /* Plugin Name: Plugin Demo Description: 此插件用于插件演示 Version: 1.0 Author: zhixin wen Author URI: http://wenzhixin.net.cn */ ?&amp;gt; 2. 添加实现类和添</description>
+    </item>
+    
+    <item>
+      <title>图片查看弹出框 (jQuery 插件)</title>
+      <link>http://wenzhixin.net.cn/2012/12/02/jquery_imagebox/</link>
+      <pubDate>Sun, 02 Dec 2012 21:11:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/12/02/jquery_imagebox/</guid>
+      <description>参数 linkTitle: 点击图片提示信息，默认为 &amp;lsquo;点击查看原图&amp;rsquo; direction: 箭头显示方向，水平方向 (horizontal) 和垂直方向 (vertical)，默认为 &amp;lsquo;horizontal&amp;rsquo; 如何</description>
+    </item>
+    
+    <item>
+      <title>图片查看弹出框 (jQuery 插件)</title>
+      <link>http://wenzhixin.net.cn/2012/12/02/jquery_imagebox/</link>
+      <pubDate>Sun, 02 Dec 2012 21:11:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/12/02/jquery_imagebox/</guid>
+      <description>参数 linkTitle: 点击图片提示信息，默认为 &amp;lsquo;点击查看原图&amp;rsquo; direction: 箭头显示方向，水平方向 (horizontal) 和垂直方向 (vertical)，默认为 &amp;lsquo;horizontal&amp;rsquo; 如何</description>
+    </item>
+    
+    <item>
+      <title>jQuery 插件使用小记（使用、问题、解决）</title>
+      <link>http://wenzhixin.net.cn/2012/09/16/using_jquery_plugin/</link>
+      <pubDate>Sun, 16 Sep 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/09/16/using_jquery_plugin/</guid>
+      <description>1、bootstrap.js (v2.1.0) 问题： bootstrap dropdown 菜单使用 on 或者 live 无效 解决： 注释 .on(&amp;lsquo;click.dropdown touchstart.dropdown.data-api&amp;rsquo;, &amp;lsquo;.dropdown&amp;rsquo;, function (e) { e.stopPropagation() }) (第 720 行) 2、&amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>jQuery 插件使用小记（使用、问题、解决）</title>
+      <link>http://wenzhixin.net.cn/2012/09/16/using_jquery_plugin/</link>
+      <pubDate>Sun, 16 Sep 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/09/16/using_jquery_plugin/</guid>
+      <description>1、bootstrap.js (v2.1.0) 问题： bootstrap dropdown 菜单使用 on 或者 live 无效 解决： 注释 .on(&amp;lsquo;click.dropdown touchstart.dropdown.data-api&amp;rsquo;, &amp;lsquo;.dropdown&amp;rsquo;, function (e) { e.stopPropagation() }) (第 720 行) 2、&amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>Eclipse 安装插件(aptana、svn 、git、Java EE、JSHint)</title>
+      <link>http://wenzhixin.net.cn/2012/05/08/eclipse_install_the_plugin_aptana_svn_git_java_ee_jshint/</link>
+      <pubDate>Tue, 08 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/05/08/eclipse_install_the_plugin_aptana_svn_git_java_ee_jshint/</guid>
+      <description>1、安装 aptana 插件： * 依次点击：Help -&amp;gt; Install New Software&amp;hellip; -&amp;gt; Add * 输入：http://download.aptana.com/studio3/plugin/</description>
+    </item>
+    
+    <item>
+      <title>Eclipse 安装插件(aptana、svn 、git、Java EE、JSHint)</title>
+      <link>http://wenzhixin.net.cn/2012/05/08/eclipse_install_the_plugin_aptana_svn_git_java_ee_jshint/</link>
+      <pubDate>Tue, 08 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/05/08/eclipse_install_the_plugin_aptana_svn_git_java_ee_jshint/</guid>
+      <description>1、安装 aptana 插件： * 依次点击：Help -&amp;gt; Install New Software&amp;hellip; -&amp;gt; Add * 输入：http://download.aptana.com/studio3/plugin/</description>
+    </item>
+    
+    <item>
+      <title>《锋利的jQuery》学习笔记——jQuery插件</title>
+      <link>http://wenzhixin.net.cn/2012/03/14/sharp_jquery_study_notes_jquery_plugin/</link>
+      <pubDate>Wed, 14 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/03/14/sharp_jquery_study_notes_jquery_plugin/</guid>
+      <description>​1. 插件的种类 (1)封装对象方法的插件：将对象方法封装起来，用于对通过选择器获取的 jQuery 对象进行操作 (2)封装全局函数的插件：将独立的函数加到</description>
+    </item>
+    
+    <item>
+      <title>《锋利的jQuery》学习笔记——jQuery插件</title>
+      <link>http://wenzhixin.net.cn/2012/03/14/sharp_jquery_study_notes_jquery_plugin/</link>
+      <pubDate>Wed, 14 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/03/14/sharp_jquery_study_notes_jquery_plugin/</guid>
+      <description>​1. 插件的种类 (1)封装对象方法的插件：将对象方法封装起来，用于对通过选择器获取的 jQuery 对象进行操作 (2)封装全局函数的插件：将独立的函数加到</description>
+    </item>
+    
+  </channel>
+</rss>

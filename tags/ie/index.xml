@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>IE on 文翼的博客</title>
+    <link>http://wenzhixin.net.cn/tags/ie/</link>
+    <description>Recent content in IE on 文翼的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Wed, 16 Jan 2013 00:18:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://wenzhixin.net.cn/tags/ie/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>IE 下 splice 的 bug</title>
+      <link>http://wenzhixin.net.cn/2013/01/16/splice_in_ie/</link>
+      <pubDate>Wed, 16 Jan 2013 00:18:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/01/16/splice_in_ie/</guid>
+      <description>引用： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 array.splice() in Internet Explorer I finally got around to investigating an IE bug I’ve been meaning to look into. The root cause was a difference between JScript and ECMAScript as regards array.splice(). The signature for this handy method that removes and inserts array elements in place: splice(start, deleteCount, value, ...)</description>
+    </item>
+    
+    <item>
+      <title>IE 下使用 button 时 Enter 的问题</title>
+      <link>http://wenzhixin.net.cn/2012/12/03/ie_enter_button_bug/</link>
+      <pubDate>Mon, 03 Dec 2012 20:21:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/12/03/ie_enter_button_bug/</guid>
+      <description>问题： 当页面中有 1 &amp;lt;button&amp;gt;&amp;lt;/button&amp;gt; 的时候，IE 浏览器按 Enter 便会触发 button 按钮的点击事件，导致不必要的麻烦出现（例如对 input 的检查）。 解决： 使用 1 &amp;lt;a class=&amp;#34;button&amp;#34; href=&amp;#34;javascript:void(0)&amp;#34;&amp;gt;&amp;lt;/a&amp;gt; 来代替，并设置</description>
+    </item>
+    
+    <item>
+      <title>IE 下使用 button 时 Enter 的问题</title>
+      <link>http://wenzhixin.net.cn/2012/12/03/ie_enter_button_bug/</link>
+      <pubDate>Mon, 03 Dec 2012 20:21:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/12/03/ie_enter_button_bug/</guid>
+      <description>问题： 当页面中有 1 &amp;lt;button&amp;gt;&amp;lt;/button&amp;gt; 的时候，IE 浏览器按 Enter 便会触发 button 按钮的点击事件，导致不必要的麻烦出现（例如对 input 的检查）。 解决： 使用 1 &amp;lt;a class=&amp;#34;button&amp;#34; href=&amp;#34;javascript:void(0)&amp;#34;&amp;gt;&amp;lt;/a&amp;gt; 来代替，并设置</description>
+    </item>
+    
+  </channel>
+</rss>

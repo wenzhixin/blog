@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>当前路径 on 文翼的博客</title>
+    <link>http://wenzhixin.net.cn/tags/%E5%BD%93%E5%89%8D%E8%B7%AF%E5%BE%84/</link>
+    <description>Recent content in 当前路径 on 文翼的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Thu, 21 Feb 2013 23:32:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://wenzhixin.net.cn/tags/%E5%BD%93%E5%89%8D%E8%B7%AF%E5%BE%84/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Java 获取当前路径</title>
+      <link>http://wenzhixin.net.cn/2013/02/21/java_get_cur_path/</link>
+      <pubDate>Thu, 21 Feb 2013 23:32:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/02/21/java_get_cur_path/</guid>
+      <description>1. 利用 System.getProperty( )函数获取当前路径： 1 System.out.println(System.getProperty(&amp;#34;user.dir&amp;#34</description>
+    </item>
+    
+  </channel>
+</rss>

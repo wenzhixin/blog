@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>文本输入框 on 文翼的博客</title>
+    <link>http://wenzhixin.net.cn/tags/%E6%96%87%E6%9C%AC%E8%BE%93%E5%85%A5%E6%A1%86/</link>
+    <description>Recent content in 文本输入框 on 文翼的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Sat, 30 Aug 2014 14:58:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://wenzhixin.net.cn/tags/%E6%96%87%E6%9C%AC%E8%BE%93%E5%85%A5%E6%A1%86/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>通过 vim 编辑网页文本输入框</title>
+      <link>http://wenzhixin.net.cn/2014/08/30/edit_text_gvim/</link>
+      <pubDate>Sat, 30 Aug 2014 14:58:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/08/30/edit_text_gvim/</guid>
+      <description>对于文本编辑和编写代码，我们常常会用到 vim，使用 vim 的好处在这里就不多说了。那么能不能在浏览器中的文本输入框中也使用 vim 来编辑呢，编辑完之后再</description>
+    </item>
+    
+  </channel>
+</rss>

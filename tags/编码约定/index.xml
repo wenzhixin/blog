@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>编码约定 on 文翼的博客</title>
+    <link>http://wenzhixin.net.cn/tags/%E7%BC%96%E7%A0%81%E7%BA%A6%E5%AE%9A/</link>
+    <description>Recent content in 编码约定 on 文翼的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Sat, 01 Dec 2012 02:31:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://wenzhixin.net.cn/tags/%E7%BC%96%E7%A0%81%E7%BA%A6%E5%AE%9A/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Javascript 编码约定</title>
+      <link>http://wenzhixin.net.cn/2012/12/01/javascript_coding_convention/</link>
+      <pubDate>Sat, 01 Dec 2012 02:31:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/12/01/javascript_coding_convention/</guid>
+      <description>1、使用 strict 模式 在一个作用域(包括函数作用域、全局作用域)中，可以使用 1 &amp;#34;use strict&amp;#34;; 来开启 strict 模式。 2、缩进 用 Tab 键进行代码缩进，以节约代码大小，使用4个</description>
+    </item>
+    
+    <item>
+      <title>Javascript 编码约定</title>
+      <link>http://wenzhixin.net.cn/2012/12/01/javascript_coding_convention/</link>
+      <pubDate>Sat, 01 Dec 2012 02:31:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/12/01/javascript_coding_convention/</guid>
+      <description>1、使用 strict 模式 在一个作用域(包括函数作用域、全局作用域)中，可以使用 1 &amp;#34;use strict&amp;#34;; 来开启 strict 模式。 2、缩进 用 Tab 键进行代码缩进，以节约代码大小，使用4个</description>
+    </item>
+    
+  </channel>
+</rss>

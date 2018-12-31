@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>语法警告 on 文翼的博客</title>
+    <link>http://wenzhixin.net.cn/tags/%E8%AF%AD%E6%B3%95%E8%AD%A6%E5%91%8A/</link>
+    <description>Recent content in 语法警告 on 文翼的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Fri, 29 Nov 2013 09:12:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://wenzhixin.net.cn/tags/%E8%AF%AD%E6%B3%95%E8%AD%A6%E5%91%8A/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>解决 jshint 的语法警告</title>
+      <link>http://wenzhixin.net.cn/2013/11/29/jshint_warnings_resolve/</link>
+      <pubDate>Fri, 29 Nov 2013 09:12:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/11/29/jshint_warnings_resolve/</guid>
+      <description>问题： Wrap the regexp literal in parens to disambiguate the slash operator 示例代码： 1 2 3 function isMe(name) { return /^wenzhixin$/.test(name); } 警告原因： 虽然 JavaScript 解析器可以正常工作，但是对于解析器来说，解析 “/” 的完整含义是比较困</description>
+    </item>
+    
+  </channel>
+</rss>

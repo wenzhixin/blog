@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>部署 on 文翼的博客</title>
+    <link>http://wenzhixin.net.cn/tags/%E9%83%A8%E7%BD%B2/</link>
+    <description>Recent content in 部署 on 文翼的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Mon, 06 Jul 2015 22:30:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://wenzhixin.net.cn/tags/%E9%83%A8%E7%BD%B2/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>在 Ubuntu 14.04 server 上部署 meteor 应用</title>
+      <link>http://wenzhixin.net.cn/2015/07/06/meteor_deploy/</link>
+      <pubDate>Mon, 06 Jul 2015 22:30:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2015/07/06/meteor_deploy/</guid>
+      <description>关于 Meteor.js Meteor.js Meteor 是一个构建在 Node.js 之上的平台，用来开发实时网页程序。Meteor 位于程序数据库和用户界面之间，保持二者之间的数据同步更新。使用 Mete</description>
+    </item>
+    
+    <item>
+      <title>Nodejs 应用部署小记</title>
+      <link>http://wenzhixin.net.cn/2012/11/09/nodejs_deploy/</link>
+      <pubDate>Fri, 09 Nov 2012 00:05:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/11/09/nodejs_deploy/</guid>
+      <description>1、日志功能 1) 加入 access.log 1 2 3 4 5 var accessLogfile = fs.createWriteStream(&amp;#39;access.log&amp;#39;, {flags: &amp;#39;a&amp;#39;}); app.configure(function() { app.use(express.logger({stream: accessLogfile})); } 2) 加入 error.log 首先，添加 helpers/error.js 文件： 1 2 3 4 5 6 7 8 9 10 11 12 var fs = require(&amp;#39;fs&amp;#39;); var errorLogfile = fs.createWriteStream(&amp;#39;logs/error.log&amp;#39;, {flags: &amp;#39;a&amp;#39;}); exports.handler = function(err, req, res, status) { console.log(err); var</description>
+    </item>
+    
+    <item>
+      <title>Nodejs 应用部署小记</title>
+      <link>http://wenzhixin.net.cn/2012/11/09/nodejs_deploy/</link>
+      <pubDate>Fri, 09 Nov 2012 00:05:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/11/09/nodejs_deploy/</guid>
+      <description>1、日志功能 1) 加入 access.log 1 2 3 4 5 var accessLogfile = fs.createWriteStream(&amp;#39;access.log&amp;#39;, {flags: &amp;#39;a&amp;#39;}); app.configure(function() { app.use(express.logger({stream: accessLogfile})); } 2) 加入 error.log 首先，添加 helpers/error.js 文件： 1 2 3 4 5 6 7 8 9 10 11 12 var fs = require(&amp;#39;fs&amp;#39;); var errorLogfile = fs.createWriteStream(&amp;#39;logs/error.log&amp;#39;, {flags: &amp;#39;a&amp;#39;}); exports.handler = function(err, req, res, status) { console.log(err); var</description>
+    </item>
+    
+  </channel>
+</rss>

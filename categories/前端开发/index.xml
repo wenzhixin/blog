@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>前端开发 on 文翼的博客</title>
+    <link>http://wenzhixin.net.cn/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/</link>
+    <description>Recent content in 前端开发 on 文翼的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Tue, 14 Jan 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://wenzhixin.net.cn/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用 requestAnimationFrame 实现动画</title>
+      <link>http://wenzhixin.net.cn/2014/01/14/canvas_fps_frame/</link>
+      <pubDate>Tue, 14 Jan 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/01/14/canvas_fps_frame/</guid>
+      <description>requestAnimationFrame 函数是主流浏览器推出来的用来代替旧的setTimeout和setInterval方法， 从而提高动作的性能。 该函数把绘制动画的任务直接交给浏</description>
+    </item>
+    
+  </channel>
+</rss>

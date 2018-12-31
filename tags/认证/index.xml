@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>认证 on 文翼的博客</title>
+    <link>http://wenzhixin.net.cn/tags/%E8%AE%A4%E8%AF%81/</link>
+    <description>Recent content in 认证 on 文翼的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Sat, 19 Oct 2013 01:40:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://wenzhixin.net.cn/tags/%E8%AE%A4%E8%AF%81/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>nginx 开启 http 下载服务器认证</title>
+      <link>http://wenzhixin.net.cn/2013/10/19/nginx_http_auth/</link>
+      <pubDate>Sat, 19 Oct 2013 01:40:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/10/19/nginx_http_auth/</guid>
+      <description>1. 介绍 有时候，我们需要提供下载服务器给别人文件，但是又不想给所有人看到，从而保证安全性。 这种时候，对目录访问进行认证，并且每天改变随机密码，</description>
+    </item>
+    
+  </channel>
+</rss>

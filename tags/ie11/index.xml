@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>IE11 on 文翼的博客</title>
+    <link>http://wenzhixin.net.cn/tags/ie11/</link>
+    <description>Recent content in IE11 on 文翼的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Mon, 05 May 2014 23:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://wenzhixin.net.cn/tags/ie11/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>判断浏览器是否为 IE11</title>
+      <link>http://wenzhixin.net.cn/2014/05/05/detect_ie11/</link>
+      <pubDate>Mon, 05 May 2014 23:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/05/05/detect_ie11/</guid>
+      <description>项目中需要判断对浏览器的支持，使用 jQuery 去判断一个浏览器是否为 IE11 的时候，会识别错误。 这是因为 IE11 使用了和之前版本不一样的 User-agent： 1 Mozilla/5.0</description>
+    </item>
+    
+  </channel>
+</rss>

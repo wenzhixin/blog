@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>自适应 on 文翼的博客</title>
+    <link>http://wenzhixin.net.cn/tags/%E8%87%AA%E9%80%82%E5%BA%94/</link>
+    <description>Recent content in 自适应 on 文翼的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Fri, 01 Aug 2014 23:13:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://wenzhixin.net.cn/tags/%E8%87%AA%E9%80%82%E5%BA%94/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>设置 viewport 实现定宽网页 WebApp 下布局自适应</title>
+      <link>http://wenzhixin.net.cn/2014/08/01/viewport_mobile/</link>
+      <pubDate>Fri, 01 Aug 2014 23:13:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/08/01/viewport_mobile/</guid>
+      <description>一般来说，我们实现布局自适应可以有以下几种方式： 使用流动布局（fluid grid） 根据屏幕大小选择加载不同的CSS 使用 CSS 的@media规则 详</description>
+    </item>
+    
+    <item>
+      <title>让你的网站支持自适应界面</title>
+      <link>http://wenzhixin.net.cn/2013/10/22/responsive_web/</link>
+      <pubDate>Tue, 22 Oct 2013 08:50:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/10/22/responsive_web/</guid>
+      <description>1. 介绍 随着智能手机的普及，越来越多的人使用手机上网。 我自己就是，经常懒得开电脑，直接用手机查看网页，简单又方便。 那么，如何才能把自己的博客做</description>
+    </item>
+    
+  </channel>
+</rss>

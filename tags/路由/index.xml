@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>路由 on 文翼的博客</title>
+    <link>http://wenzhixin.net.cn/tags/%E8%B7%AF%E7%94%B1/</link>
+    <description>Recent content in 路由 on 文翼的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Mon, 28 Oct 2013 00:30:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://wenzhixin.net.cn/tags/%E8%B7%AF%E7%94%B1/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>nodejs 获取路由的主机列表</title>
+      <link>http://wenzhixin.net.cn/2013/10/28/node_agents/</link>
+      <pubDate>Mon, 28 Oct 2013 00:30:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/10/28/node_agents/</guid>
+      <description>1. 介绍 接着之前，今天的目标是通过 nodejs 获取使用路由的主机名称列表。 路由器的默认登录地址为：http://192.168.1.1 默认的用户名密码都</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>入门 on 文翼的博客</title>
+    <link>http://wenzhixin.net.cn/tags/%E5%85%A5%E9%97%A8/</link>
+    <description>Recent content in 入门 on 文翼的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Tue, 12 Nov 2013 23:13:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://wenzhixin.net.cn/tags/%E5%85%A5%E9%97%A8/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>html5 canvas 画布入门</title>
+      <link>http://wenzhixin.net.cn/2013/11/12/hello_canvas/</link>
+      <pubDate>Tue, 12 Nov 2013 23:13:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/11/12/hello_canvas/</guid>
+      <description>今天开始学点新东西，canvas 画布，它是一个 HTML5 的一个新元素， 它没有自己的行为，但是定义了一个 API 支持脚本化客户端绘图操作。 既然是入门，也来个</description>
+    </item>
+    
+  </channel>
+</rss>

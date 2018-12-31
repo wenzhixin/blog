@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>邮件 on 文翼的博客</title>
+    <link>http://wenzhixin.net.cn/tags/%E9%82%AE%E4%BB%B6/</link>
+    <description>Recent content in 邮件 on 文翼的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Thu, 23 Jan 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://wenzhixin.net.cn/tags/%E9%82%AE%E4%BB%B6/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用 nodejs 发送邮件</title>
+      <link>http://wenzhixin.net.cn/2014/01/23/node_send_email/</link>
+      <pubDate>Thu, 23 Jan 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/01/23/node_send_email/</guid>
+      <description>平时在开发应用的时候，很多时候会用到邮件，来通知我们， 这里介绍 nodejs 如何发送邮件，比较简单。 使用 Nodemailer 库来发送邮件。 安装： 1 npm install nodemailer --save 增加配置信息 co</description>
+    </item>
+    
+  </channel>
+</rss>

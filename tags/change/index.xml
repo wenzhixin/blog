@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>change on 文翼的博客</title>
+    <link>http://wenzhixin.net.cn/tags/change/</link>
+    <description>Recent content in change on 文翼的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Tue, 26 Nov 2013 21:32:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://wenzhixin.net.cn/tags/change/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>jQuery file upload 插件 change 只生效一次</title>
+      <link>http://wenzhixin.net.cn/2013/11/26/jquery_file_upload_change_once/</link>
+      <pubDate>Tue, 26 Nov 2013 21:32:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/11/26/jquery_file_upload_change_once/</guid>
+      <description>1. 前言 在使用 AjaxFileUpload 插件的时候， 发现使用 jQuery 监听 change 事件只生效一次 1 2 3 4 $(&amp;#39;#upload&amp;#39;).change(function() { }); 那么是为什么呢？ 2. 原因 找了下原因，原来是 130 行对事件进行了 unbind 1 2 jQuery(io).unbind() 3. 解决</description>
+    </item>
+    
+  </channel>
+</rss>

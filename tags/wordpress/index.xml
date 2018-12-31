@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>wordpress on 文翼的博客</title>
+    <link>http://wenzhixin.net.cn/tags/wordpress/</link>
+    <description>Recent content in wordpress on 文翼的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Tue, 15 Jan 2013 22:59:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://wenzhixin.net.cn/tags/wordpress/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>wordpress 插件开发</title>
+      <link>http://wenzhixin.net.cn/2013/01/15/wordpress_plugin/</link>
+      <pubDate>Tue, 15 Jan 2013 22:59:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/01/15/wordpress_plugin/</guid>
+      <description>1. 创建插件 在目录 wp-content/plugins 下创建自己的插件 新建目录 plugin-demo 新建文件 plugin-demo.php 1 2 3 4 5 6 7 8 9 &amp;lt;?php /* Plugin Name: Plugin Demo Description: 此插件用于插件演示 Version: 1.0 Author: zhixin wen Author URI: http://wenzhixin.net.cn */ ?&amp;gt; 2. 添加实现类和添</description>
+    </item>
+    
+    <item>
+      <title>wordpress 修改IP地址后进不去后台的解决方法</title>
+      <link>http://wenzhixin.net.cn/2012/09/14/solution_wordpress_to_change_the_ip_address_after_not_go_back/</link>
+      <pubDate>Fri, 14 Sep 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/09/14/solution_wordpress_to_change_the_ip_address_after_not_go_back/</guid>
+      <description>1、登录数据库 1 mysql -uroot -ppassword wordpress 2、更新 wp_options 表 1 update wp_options set option_value = &amp;#39;http://newip/wordpress&amp;#39; where option_name = &amp;#39;siteurl&amp;#39; or option_name = &amp;#39;home&amp;#39;; 注：使用 shell 脚本 1 vi setwordpress 输入内容： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 #! /bin/bash # set wordpress admin ip param=$#</description>
+    </item>
+    
+    <item>
+      <title>wordpress 修改IP地址后进不去后台的解决方法</title>
+      <link>http://wenzhixin.net.cn/2012/09/14/solution_wordpress_to_change_the_ip_address_after_not_go_back/</link>
+      <pubDate>Fri, 14 Sep 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/09/14/solution_wordpress_to_change_the_ip_address_after_not_go_back/</guid>
+      <description>1、登录数据库 1 mysql -uroot -ppassword wordpress 2、更新 wp_options 表 1 update wp_options set option_value = &amp;#39;http://newip/wordpress&amp;#39; where option_name = &amp;#39;siteurl&amp;#39; or option_name = &amp;#39;home&amp;#39;; 注：使用 shell 脚本 1 vi setwordpress 输入内容： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 #! /bin/bash # set wordpress admin ip param=$#</description>
+    </item>
+    
+  </channel>
+</rss>

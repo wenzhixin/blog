@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>自定义字体 on 文翼的博客</title>
+    <link>http://wenzhixin.net.cn/tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/</link>
+    <description>Recent content in 自定义字体 on 文翼的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Mon, 21 Apr 2014 13:22:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://wenzhixin.net.cn/tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CSS 自定义字体</title>
+      <link>http://wenzhixin.net.cn/2014/04/21/css_font_face/</link>
+      <pubDate>Mon, 21 Apr 2014 13:22:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/04/21/css_font_face/</guid>
+      <description>介绍 通过 CSS 的 @font-face 属性可以实现在网页中嵌入任意字体，例如自定字体、或者是自定义图标（bootstrap）。 为了能在主流浏览器中都能正常显示自定义</description>
+    </item>
+    
+  </channel>
+</rss>

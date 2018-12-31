@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>crontab on 文翼的博客</title>
+    <link>http://wenzhixin.net.cn/tags/crontab/</link>
+    <description>Recent content in crontab on 文翼的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Fri, 07 Nov 2014 21:35:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://wenzhixin.net.cn/tags/crontab/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>crontab 学习笔记</title>
+      <link>http://wenzhixin.net.cn/2014/11/07/crontab_study/</link>
+      <pubDate>Fri, 07 Nov 2014 21:35:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/11/07/crontab_study/</guid>
+      <description>crontab 常见于 Unix 和类 Unix 的操作系统之中，用于设置周期性被执行的指令。该命令从标准输入设备读取指令，并将其存放于crontab文件中，以供之后读取和执</description>
+    </item>
+    
+  </channel>
+</rss>

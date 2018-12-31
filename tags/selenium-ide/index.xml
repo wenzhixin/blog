@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Selenium IDE on 文翼的博客</title>
+    <link>http://wenzhixin.net.cn/tags/selenium-ide/</link>
+    <description>Recent content in Selenium IDE on 文翼的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Tue, 30 Jul 2013 01:02:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://wenzhixin.net.cn/tags/selenium-ide/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>firefox 利用 Selenium IDE 对 DBackup 进行自动化测试</title>
+      <link>http://wenzhixin.net.cn/2013/07/30/firefox_selenium_ide/</link>
+      <pubDate>Tue, 30 Jul 2013 01:02:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/07/30/firefox_selenium_ide/</guid>
+      <description>今天看《编写可维护的JavaScript》的时候有一章是专门讲 Selenium 对 JavaScript 进行自动化测试的。 在了解了 Selenium 的强大之后，动手试验了一下 firefox 中的 Selenium IDE，还</description>
+    </item>
+    
+  </channel>
+</rss>

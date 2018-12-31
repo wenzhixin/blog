@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>android on 文翼的博客</title>
+    <link>http://wenzhixin.net.cn/tags/android/</link>
+    <description>Recent content in android on 文翼的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Sat, 16 Nov 2013 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://wenzhixin.net.cn/tags/android/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用 Chrome 调试和模拟 android 上的页面</title>
+      <link>http://wenzhixin.net.cn/2013/11/16/android_chrome_debug/</link>
+      <pubDate>Sat, 16 Nov 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/11/16/android_chrome_debug/</guid>
+      <description>介绍 通过电脑调试手机上的页面，对于开发移动页面或者开发自适应的界面很有帮助。 本文主要介绍如何使用 chrome 浏览器调试和模拟 android 上的页面。 1. 如何调试 1) 打</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 系统下 android 连接小米2进行开发</title>
+      <link>http://wenzhixin.net.cn/2013/06/14/ubuntu_android_xiaomi2/</link>
+      <pubDate>Fri, 14 Jun 2013 01:30:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/06/14/ubuntu_android_xiaomi2/</guid>
+      <description>问题： 小米2 通过 USB 连接到 Ubuntu 12.10 系统进行开发，发现 adb devices 不能看到设备。 解决： 1. 运行下面的命令： 1 lsusb 通过对比发现，Bus 002 Device 010: ID 2717:9039 就是小米2的设备号</description>
+    </item>
+    
+    <item>
+      <title>ubuntu 连接华为 C8650 进行 Android 开发的问题</title>
+      <link>http://wenzhixin.net.cn/2012/06/04/the_ubuntu_connection_c8650_android_development_of_huawei/</link>
+      <pubDate>Mon, 04 Jun 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/06/04/the_ubuntu_connection_c8650_android_development_of_huawei/</guid>
+      <description>ubuntu 下连接华为 C8650 进行 Android 开发，在 eclipse 下会显示乱码(???)并无法使用，解决方法如下： 1、使用电话拨打##2846579## 2、然后选择 projec</description>
+    </item>
+    
+    <item>
+      <title>ubuntu 连接华为 C8650 进行 Android 开发的问题</title>
+      <link>http://wenzhixin.net.cn/2012/06/04/the_ubuntu_connection_c8650_android_development_of_huawei/</link>
+      <pubDate>Mon, 04 Jun 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/06/04/the_ubuntu_connection_c8650_android_development_of_huawei/</guid>
+      <description>ubuntu 下连接华为 C8650 进行 Android 开发，在 eclipse 下会显示乱码(???)并无法使用，解决方法如下： 1、使用电话拨打##2846579## 2、然后选择 projec</description>
+    </item>
+    
+    <item>
+      <title>虚拟机安装 Android_x86 系统，用于开发、测试 Android 程序</title>
+      <link>http://wenzhixin.net.cn/2012/06/02/install_android_x86_virtual_machine_for_the_development_testing_android_applications/</link>
+      <pubDate>Sat, 02 Jun 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/06/02/install_android_x86_virtual_machine_for_the_development_testing_android_applications/</guid>
+      <description>1、下载镜像： 从 http://www.android-x86.org/download 下载 android_x86 iso 镜像（例如 android-x86-2.3-RC1-eeepc.iso） 2、安装系统： 使用虚拟机 VirtualBox 来安装系统，步骤如</description>
+    </item>
+    
+    <item>
+      <title>虚拟机安装 Android_x86 系统，用于开发、测试 Android 程序</title>
+      <link>http://wenzhixin.net.cn/2012/06/02/install_android_x86_virtual_machine_for_the_development_testing_android_applications/</link>
+      <pubDate>Sat, 02 Jun 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/06/02/install_android_x86_virtual_machine_for_the_development_testing_android_applications/</guid>
+      <description>1、下载镜像： 从 http://www.android-x86.org/download 下载 android_x86 iso 镜像（例如 android-x86-2.3-RC1-eeepc.iso） 2、安装系统： 使用虚拟机 VirtualBox 来安装系统，步骤如</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 下 eclipse 搭建 Android 开发环境安装 ADT 的问题</title>
+      <link>http://wenzhixin.net.cn/2012/04/10/ubuntu_eclipse_build_android_development_environment_for_the_installation_adt/</link>
+      <pubDate>Tue, 10 Apr 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/04/10/ubuntu_eclipse_build_android_development_environment_for_the_installation_adt/</guid>
+      <description>1、无法连接到 Repository： https://dl-ssl.google.com/android/eclipse/ 或者 http://dl-ssl.google.com/android/eclipse/ 解决：下载 zip 包进行本地安装（如：ADT-18.0.0）或者通过翻墙设置代理 2、长时间停留在 calculating requirements and</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 下 eclipse 搭建 Android 开发环境安装 ADT 的问题</title>
+      <link>http://wenzhixin.net.cn/2012/04/10/ubuntu_eclipse_build_android_development_environment_for_the_installation_adt/</link>
+      <pubDate>Tue, 10 Apr 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/04/10/ubuntu_eclipse_build_android_development_environment_for_the_installation_adt/</guid>
+      <description>1、无法连接到 Repository： https://dl-ssl.google.com/android/eclipse/ 或者 http://dl-ssl.google.com/android/eclipse/ 解决：下载 zip 包进行本地安装（如：ADT-18.0.0）或者通过翻墙设置代理 2、长时间停留在 calculating requirements and</description>
+    </item>
+    
+  </channel>
+</rss>

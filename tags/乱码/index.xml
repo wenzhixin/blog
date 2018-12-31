@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>乱码 on 文翼的博客</title>
+    <link>http://wenzhixin.net.cn/tags/%E4%B9%B1%E7%A0%81/</link>
+    <description>Recent content in 乱码 on 文翼的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Mon, 24 Sep 2012 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://wenzhixin.net.cn/tags/%E4%B9%B1%E7%A0%81/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ubuntu vim gedit 乱码解决</title>
+      <link>http://wenzhixin.net.cn/2012/09/24/ubuntu_vim_gedit_garbled_solution/</link>
+      <pubDate>Mon, 24 Sep 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/09/24/ubuntu_vim_gedit_garbled_solution/</guid>
+      <description>添加中文字符编码： 1 sudo vi /var/lib/locales/supported.d/local 添加下面的中文字符集： 1 2 3 zh_CN.GBK GBK zh_CN.GB2312 GB2312 zh_CN.GB18030 GB18030 使其生效： 1 sudo dpkg-reconfigure locales vim： 1 sudo vi /etc/vim/vimrc 打开vim的配置文件，在其中加入： 1 2 3</description>
+    </item>
+    
+    <item>
+      <title>ubuntu vim gedit 乱码解决</title>
+      <link>http://wenzhixin.net.cn/2012/09/24/ubuntu_vim_gedit_garbled_solution/</link>
+      <pubDate>Mon, 24 Sep 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/09/24/ubuntu_vim_gedit_garbled_solution/</guid>
+      <description>添加中文字符编码： 1 sudo vi /var/lib/locales/supported.d/local 添加下面的中文字符集： 1 2 3 zh_CN.GBK GBK zh_CN.GB2312 GB2312 zh_CN.GB18030 GB18030 使其生效： 1 sudo dpkg-reconfigure locales vim： 1 sudo vi /etc/vim/vimrc 打开vim的配置文件，在其中加入： 1 2 3</description>
+    </item>
+    
+  </channel>
+</rss>

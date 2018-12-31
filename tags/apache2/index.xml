@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>apache2 on 文翼的博客</title>
+    <link>http://wenzhixin.net.cn/tags/apache2/</link>
+    <description>Recent content in apache2 on 文翼的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Thu, 05 Jun 2014 13:45:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://wenzhixin.net.cn/tags/apache2/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用 apache2 作为代理服务器轻松解决 Ajax 跨域问题</title>
+      <link>http://wenzhixin.net.cn/2014/06/05/apache_proxy/</link>
+      <pubDate>Thu, 05 Jun 2014 13:45:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/06/05/apache_proxy/</guid>
+      <description>介绍 我们知道，使用 JavaScript 进行开发 Ajax 应用的时候会有跨域访问的问题，而用代理便可以解决跨域访问的问题。 那么应该如何开启 apache2 的 http 代理模块呢？ 模块 mod_</description>
+    </item>
+    
+  </channel>
+</rss>

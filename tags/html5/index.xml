@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>html5 on 文翼的博客</title>
+    <link>http://wenzhixin.net.cn/tags/html5/</link>
+    <description>Recent content in html5 on 文翼的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Thu, 28 Nov 2013 21:17:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://wenzhixin.net.cn/tags/html5/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ajax 文件上传——通过 html5 的方法</title>
+      <link>http://wenzhixin.net.cn/2013/11/28/ajax_file_upload_html5/</link>
+      <pubDate>Thu, 28 Nov 2013 21:17:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/11/28/ajax_file_upload_html5/</guid>
+      <description>html5 方法 上篇文章讲到 Ajax 文件上传是如何通过 iframe 的方法，这里我们通过 html5 的方法来进行文件的上传。 在 html5 标准中，XMLHttpRequest 对象被重新定义</description>
+    </item>
+    
+    <item>
+      <title>泰囧台词生成器（html5 版）</title>
+      <link>http://wenzhixin.net.cn/2013/01/10/fill_text/</link>
+      <pubDate>Thu, 10 Jan 2013 20:23:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/01/10/fill_text/</guid>
+      <description>最近经常看到别人 PS 来恶搞&amp;rdquo;泰囧&amp;rdquo;电影中的台词，觉得挺好玩的 先上效果图： 就想用 html5 自己也做一个来玩玩，查了下 API，发现</description>
+    </item>
+    
+    <item>
+      <title>html5 canvas 画图实例——rotate</title>
+      <link>http://wenzhixin.net.cn/2012/05/20/html5_canvas_drawing_examples_rotate/</link>
+      <pubDate>Sun, 20 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/05/20/html5_canvas_drawing_examples_rotate/</guid>
+      <description>接口：context.rotate(angle) 功能：按给定的弧度旋转,按顺时针旋转。 说明：rotate 方法旋转的中心始终是canvas 的原</description>
+    </item>
+    
+    <item>
+      <title>html5 canvas 画图实例——rotate</title>
+      <link>http://wenzhixin.net.cn/2012/05/20/html5_canvas_drawing_examples_rotate/</link>
+      <pubDate>Sun, 20 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/05/20/html5_canvas_drawing_examples_rotate/</guid>
+      <description>接口：context.rotate(angle) 功能：按给定的弧度旋转,按顺时针旋转。 说明：rotate 方法旋转的中心始终是canvas 的原</description>
+    </item>
+    
+  </channel>
+</rss>

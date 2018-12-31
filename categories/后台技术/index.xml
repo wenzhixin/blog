@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>后台技术 on 文翼的博客</title>
+    <link>http://wenzhixin.net.cn/categories/%E5%90%8E%E5%8F%B0%E6%8A%80%E6%9C%AF/</link>
+    <description>Recent content in 后台技术 on 文翼的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Sun, 21 Sep 2014 21:20:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://wenzhixin.net.cn/categories/%E5%90%8E%E5%8F%B0%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>如何批量读取 word 的内容和图片</title>
+      <link>http://wenzhixin.net.cn/2014/09/21/node_docx/</link>
+      <pubDate>Sun, 21 Sep 2014 21:20:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/09/21/node_docx/</guid>
+      <description>今天朋友说需要对100份 word 文件的内容进行录入工作，问我是否有什么方便的方法。假如最少1份按2分钟的速度算，也需要200分钟才可以录入完成。我</description>
+    </item>
+    
+    <item>
+      <title>如何为 NodeJs 设置 Nginx 代理服务器</title>
+      <link>http://wenzhixin.net.cn/2014/09/18/nginx_as_proxy_nodejs/</link>
+      <pubDate>Thu, 18 Sep 2014 13:45:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/09/18/nginx_as_proxy_nodejs/</guid>
+      <description>很多时候，我们需要为 NodeJs 设置反向代理，例如本博客后台 NodeJs 的应用监听的端口为 3333，通过 Nginx 便可以轻松代理为 80 端口，那么应该如何设置呢？ 首先设置 u</description>
+    </item>
+    
+    <item>
+      <title>使用 apache2 作为代理服务器轻松解决 Ajax 跨域问题</title>
+      <link>http://wenzhixin.net.cn/2014/06/05/apache_proxy/</link>
+      <pubDate>Thu, 05 Jun 2014 13:45:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/06/05/apache_proxy/</guid>
+      <description>介绍 我们知道，使用 JavaScript 进行开发 Ajax 应用的时候会有跨域访问的问题，而用代理便可以解决跨域访问的问题。 那么应该如何开启 apache2 的 http 代理模块呢？ 模块 mod_</description>
+    </item>
+    
+    <item>
+      <title>SVN 如何恢复被删除的文件夹</title>
+      <link>http://wenzhixin.net.cn/2014/04/24/svn_undelete_folder/</link>
+      <pubDate>Thu, 24 Apr 2014 23:30:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/04/24/svn_undelete_folder/</guid>
+      <description>问题： 你删除了 SVN 版本库上的文件夹，那么你要怎么恢复呢？ 尝试办法： 通过 svn revert folder，会发现找不到该文件夹 通过 svn merge，从上个版本恢复回</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 下搭建 JavaEE 环境</title>
+      <link>http://wenzhixin.net.cn/2014/04/02/ubuntu_java_ee/</link>
+      <pubDate>Wed, 02 Apr 2014 13:30:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/04/02/ubuntu_java_ee/</guid>
+      <description>在 Ubuntu 下搭建 JavaEE 的环境稍微有些麻烦，这里记录下。 1. 安装 eclipse 和 tomcat7 1 2 sudo apt-get install eclipse sudo apt-get install tomcat7 注：安装 eclipse 后会把依赖的 jdk 安装好，使用 apt-get 安装的 eclipse 是最精简的版本。 2.</description>
+    </item>
+    
+    <item>
+      <title>使用 nodejs 发送邮件</title>
+      <link>http://wenzhixin.net.cn/2014/01/23/node_send_email/</link>
+      <pubDate>Thu, 23 Jan 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/01/23/node_send_email/</guid>
+      <description>平时在开发应用的时候，很多时候会用到邮件，来通知我们， 这里介绍 nodejs 如何发送邮件，比较简单。 使用 Nodemailer 库来发送邮件。 安装： 1 npm install nodemailer --save 增加配置信息 co</description>
+    </item>
+    
+    <item>
+      <title>PHP 代码规范</title>
+      <link>http://wenzhixin.net.cn/2014/01/20/php_code_standard/</link>
+      <pubDate>Mon, 20 Jan 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/01/20/php_code_standard/</guid>
+      <description>通用规范 代码缩进全部用 tab / 四个空格 SVN / Git 中新建文件编码类型统一用 utf-8 编码 行宽：80 字符 PHP 代码划分 PHP 代码总是用完整的标准的 PHP 标签定界： 1 2 3 4 5</description>
+    </item>
+    
+    <item>
+      <title>nodeJS 和 Nginx 解决客户端发送大数据的问题</title>
+      <link>http://wenzhixin.net.cn/2014/01/18/large_body_error/</link>
+      <pubDate>Sat, 18 Jan 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/01/18/large_body_error/</guid>
+      <description>nodeJS 和 Nginx 默认情况下都只支持 1MB 的 body 数据，当客户端发送大数据的时候，分别会出现以下错误： nodeJS： 1 Error: request entity too large 解决： 1 2 3 app.use(express.bodyParser({ limit: 1024 * 1024 * 64 // 64M }));</description>
+    </item>
+    
+    <item>
+      <title>Nginx rewrite query string</title>
+      <link>http://wenzhixin.net.cn/2013/12/31/nginx_rewrite_query_string/</link>
+      <pubDate>Tue, 31 Dec 2013 09:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/12/31/nginx_rewrite_query_string/</guid>
+      <description>rewrite 的正则是不匹配 query string 的， 默认情况下，query string 会自动追加到rewrite 后的地址上。 例如： 1 rewrite ^/read.php$ /api.php 那么： 访问 read.php?tid=123 的时候实际上已经 rewrite 到了 api.php?tid=123 上了</description>
+    </item>
+    
+    <item>
+      <title>apache 重写链接</title>
+      <link>http://wenzhixin.net.cn/2013/12/31/apache_rewrite/</link>
+      <pubDate>Tue, 31 Dec 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/12/31/apache_rewrite/</guid>
+      <description>安装启用 mod_rewrite 在安装启用之前，编写 info.php 文件 1 2 &amp;lt;?php phpinfo();?&amp;gt; 从浏览器中打开，使用 Ctrl + F 进行查找 mod_rewrite 是否在 Loaded Modules 中， 已经存在就表示我们已经安装，不存在的话，那么，</description>
+    </item>
+    
+    <item>
+      <title>Wordpress 打造 CMS 系统小记</title>
+      <link>http://wenzhixin.net.cn/2013/12/04/wordpress_cms/</link>
+      <pubDate>Wed, 04 Dec 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/12/04/wordpress_cms/</guid>
+      <description>关闭文章评论： 设置-讨论下，去掉“允许他人在新文章上发表评论”选项 关闭页面评论： 到具体页面编辑，打开显示选项中的讨论，去掉“允许评论”选项 添</description>
+    </item>
+    
+    <item>
+      <title>为你的网站开启 gzip 压缩功能（nodejs、nginx）</title>
+      <link>http://wenzhixin.net.cn/2013/11/10/server_gzip_on/</link>
+      <pubDate>Sun, 10 Nov 2013 23:22:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/11/10/server_gzip_on/</guid>
+      <description>开启网站的 gzip 压缩功能，通常可以高达70%，也就是说，如果你的网页有30K，压缩之后就变成9K， 对于大部分网站，显然可以明显提高浏览速度（注：</description>
+    </item>
+    
+    <item>
+      <title>RSS、Atom、Feed 介绍与简单实现</title>
+      <link>http://wenzhixin.net.cn/2013/11/08/rss_atom_feed_php/</link>
+      <pubDate>Fri, 08 Nov 2013 22:59:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/11/08/rss_atom_feed_php/</guid>
+      <description>最近接触了 RSS 订阅相关的，做了一些了解与开发，记录下。 RSS是什么 RSS（全称RDF Site Summary，网景的最初定义），RSS也是一种“类网页</description>
+    </item>
+    
+    <item>
+      <title>nginx 开启 http 下载服务器认证</title>
+      <link>http://wenzhixin.net.cn/2013/10/19/nginx_http_auth/</link>
+      <pubDate>Sat, 19 Oct 2013 01:40:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/10/19/nginx_http_auth/</guid>
+      <description>1. 介绍 有时候，我们需要提供下载服务器给别人文件，但是又不想给所有人看到，从而保证安全性。 这种时候，对目录访问进行认证，并且每天改变随机密码，</description>
+    </item>
+    
+    <item>
+      <title>nginx 安装与配置详解</title>
+      <link>http://wenzhixin.net.cn/2013/09/21/nginx_install_settings/</link>
+      <pubDate>Sat, 21 Sep 2013 11:28:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/09/21/nginx_install_settings/</guid>
+      <description>安装（需要支持 php）： 1 2 sudo apt-get install nginx sudo apt-get install php5-fpm nginx 的基本配置（/etc/nginx/nginx.conf）与参数说明： 1 2 3 4 5 6 7 8 9 10 11 12 13</description>
+    </item>
+    
+    <item>
+      <title>nginx 配置 SSL（https）</title>
+      <link>http://wenzhixin.net.cn/2013/09/01/nginx_ssl_settings/</link>
+      <pubDate>Sun, 01 Sep 2013 11:45:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/09/01/nginx_ssl_settings/</guid>
+      <description>配置信息： 1 2 3 4 5 6 7 8 listen 443; server_name wenzhixin.net.cn; ssl on; ssl_certificate /etc/ssl/certs/wenzhixin_net_cn.crt; ssl_certificate_key /etc/ssl/private/wenzhixin_net_cn.key; ssl_client_certificate /etc/ssl/certs/wenzhixin_net_cn-bundle; ssl_verify_client optional; 配置下面： 1 2 ssl_client_certificate /etc/ssl/certs/wenzhixin_net_cn-bundle; ssl_verify_client optional; 是为了解决： 1 unable to get local issuer certificate 的问题。</description>
+    </item>
+    
+    <item>
+      <title>使用 nginx 作为代理服务器的路径问题</title>
+      <link>http://wenzhixin.net.cn/2013/07/17/nginx_proxy/</link>
+      <pubDate>Wed, 17 Jul 2013 15:31:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/07/17/nginx_proxy/</guid>
+      <description>继上篇文章：使用 nginx 作为代理服务器轻松解决 Ajax 跨域问题， 使用 proxy 来解决 Ajax 跨域的问题，方便我们开发测试。 但是很多时候，我们的服务器地址是这样的： 1 2</description>
+    </item>
+    
+    <item>
+      <title>搭建小型下载服务器(raspberry pi)</title>
+      <link>http://wenzhixin.net.cn/2013/07/01/raspberry_server/</link>
+      <pubDate>Mon, 01 Jul 2013 21:23:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/07/01/raspberry_server/</guid>
+      <description>1. 购买设备 1) 单板机：我购买的是树莓派raspberry pi B型 512MB，购买地址为（我是在淘宝上购买的，声明不是广告哦）： 官方地址 淘宝地址 2)</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 安装 QT 4.8</title>
+      <link>http://wenzhixin.net.cn/2013/04/01/installing_qt/</link>
+      <pubDate>Mon, 01 Apr 2013 22:30:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/04/01/installing_qt/</guid>
+      <description>1. 下载并解压安装包 下载：Qt libraries 4.8.4 for Linux/X11 解压： 1 tar xvf qt-everywhere-opensource-src-4.8.4.tar 2. 编译库并安装 Library 1 2 3 4 5 6 7 8 cd qt-everywhere-opensource-src-4.8.4 ./configure //o: opensource make make install 3. 设置 QT Creator 选择：工具 - 选项 - 构建并执行 设置</description>
+    </item>
+    
+    <item>
+      <title>vtiger5.2 问题修复</title>
+      <link>http://wenzhixin.net.cn/2013/01/17/vtiger_bug/</link>
+      <pubDate>Thu, 17 Jan 2013 22:52:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/01/17/vtiger_bug/</guid>
+      <description>图表乱码： 下载 Simsun 解压 将 Simsun.ttf 文件复制到 Image/Canvas/Fonts 目录下 修改 Image/Canvas/Fonts/fontmap.txt，最后增加一行： Simsun, Simsun.ttf 修改 inclu</description>
+    </item>
+    
+    <item>
+      <title>wordpress 插件开发</title>
+      <link>http://wenzhixin.net.cn/2013/01/15/wordpress_plugin/</link>
+      <pubDate>Tue, 15 Jan 2013 22:59:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/01/15/wordpress_plugin/</guid>
+      <description>1. 创建插件 在目录 wp-content/plugins 下创建自己的插件 新建目录 plugin-demo 新建文件 plugin-demo.php 1 2 3 4 5 6 7 8 9 &amp;lt;?php /* Plugin Name: Plugin Demo Description: 此插件用于插件演示 Version: 1.0 Author: zhixin wen Author URI: http://wenzhixin.net.cn */ ?&amp;gt; 2. 添加实现类和添</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 11.10 搭建 gitlab 服务器</title>
+      <link>http://wenzhixin.net.cn/2013/01/14/gitlab_installation/</link>
+      <pubDate>Mon, 14 Jan 2013 15:55:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/01/14/gitlab_installation/</guid>
+      <description>ps: 请按照顺序一步一步来，并注意查看提示，确保成功！ 1. 更新系统 1 2 sudo apt-get update sudo apt-get upgrade 2. 安装必要的包 1 sudo apt-get install -y build-essential zlib1g-dev libyaml-dev libssl-dev libgdbm-dev libreadline-dev libncurses5-dev libffi-dev wget curl git-core openssh-server redis-server postfix checkinstall libxml2-dev libxslt-dev libcurl4-openssl-dev libicu-dev 3.</description>
+    </item>
+    
+    <item>
+      <title>完全禁用 Wordpress 后台的更新提示和功能</title>
+      <link>http://wenzhixin.net.cn/2013/01/14/hidden_wordpress_update/</link>
+      <pubDate>Mon, 14 Jan 2013 10:48:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/01/14/hidden_wordpress_update/</guid>
+      <description>为了防止误操作，需要禁用后台的更新提示以及更新功能 需要禁用的更新包括： 1. 头部更新提示 (wp-includes/admin-bar.php) 注释第 618 行： 1 2 3 4 5 6 7 8 $wp_admin_bar-&amp;gt;add_menu( array( &amp;#39;id&amp;#39; =&amp;gt; &amp;#39;updates&amp;#39;, &amp;#39;title&amp;#39; =&amp;gt; $title, &amp;#39;href&amp;#39; =&amp;gt; network_admin_url( &amp;#39;update-core.php&amp;#39; ),</description>
+    </item>
+    
+    <item>
+      <title>wordpress 修改IP地址后进不去后台的解决方法</title>
+      <link>http://wenzhixin.net.cn/2012/09/14/solution_wordpress_to_change_the_ip_address_after_not_go_back/</link>
+      <pubDate>Fri, 14 Sep 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/09/14/solution_wordpress_to_change_the_ip_address_after_not_go_back/</guid>
+      <description>1、登录数据库 1 mysql -uroot -ppassword wordpress 2、更新 wp_options 表 1 update wp_options set option_value = &amp;#39;http://newip/wordpress&amp;#39; where option_name = &amp;#39;siteurl&amp;#39; or option_name = &amp;#39;home&amp;#39;; 注：使用 shell 脚本 1 vi setwordpress 输入内容： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 #! /bin/bash # set wordpress admin ip param=$#</description>
+    </item>
+    
+    <item>
+      <title>wordpress 修改IP地址后进不去后台的解决方法</title>
+      <link>http://wenzhixin.net.cn/2012/09/14/solution_wordpress_to_change_the_ip_address_after_not_go_back/</link>
+      <pubDate>Fri, 14 Sep 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/09/14/solution_wordpress_to_change_the_ip_address_after_not_go_back/</guid>
+      <description>1、登录数据库 1 mysql -uroot -ppassword wordpress 2、更新 wp_options 表 1 update wp_options set option_value = &amp;#39;http://newip/wordpress&amp;#39; where option_name = &amp;#39;siteurl&amp;#39; or option_name = &amp;#39;home&amp;#39;; 注：使用 shell 脚本 1 vi setwordpress 输入内容： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 #! /bin/bash # set wordpress admin ip param=$#</description>
+    </item>
+    
+    <item>
+      <title>Ant 关键元素和常用命令</title>
+      <link>http://wenzhixin.net.cn/2012/06/07/ant_key_elements_and_common_commands/</link>
+      <pubDate>Thu, 07 Jun 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/06/07/ant_key_elements_and_common_commands/</guid>
+      <description>一、Ant 关键元素 1、project元素 project 元素是 Ant 构件文件的根元素， Ant 构件文件至少应该包含一个 project 元素，否则会发生错误。在每个 project 元素下，可包含</description>
+    </item>
+    
+    <item>
+      <title>Ant 关键元素和常用命令</title>
+      <link>http://wenzhixin.net.cn/2012/06/07/ant_key_elements_and_common_commands/</link>
+      <pubDate>Thu, 07 Jun 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/06/07/ant_key_elements_and_common_commands/</guid>
+      <description>一、Ant 关键元素 1、project元素 project 元素是 Ant 构件文件的根元素， Ant 构件文件至少应该包含一个 project 元素，否则会发生错误。在每个 project 元素下，可包含</description>
+    </item>
+    
+    <item>
+      <title>linux shell编程</title>
+      <link>http://wenzhixin.net.cn/2012/05/29/linux_shell_programming/</link>
+      <pubDate>Tue, 29 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/05/29/linux_shell_programming/</guid>
+      <description>1、shell结构 * #!指定执行脚本的shell * #注释行 * 命令和控制结构 2、创建shell程序的步骤 * 创建一个包含命令和控制结构的文件 * 修</description>
+    </item>
+    
+    <item>
+      <title>linux shell编程</title>
+      <link>http://wenzhixin.net.cn/2012/05/29/linux_shell_programming/</link>
+      <pubDate>Tue, 29 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/05/29/linux_shell_programming/</guid>
+      <description>1、shell结构 * #!指定执行脚本的shell * #注释行 * 命令和控制结构 2、创建shell程序的步骤 * 创建一个包含命令和控制结构的文件 * 修</description>
+    </item>
+    
+    <item>
+      <title>linux常用命令——压缩解压命令</title>
+      <link>http://wenzhixin.net.cn/2012/05/23/commonly_used_linux_commands_compression_decompression_command/</link>
+      <pubDate>Wed, 23 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/05/23/commonly_used_linux_commands_compression_decompression_command/</guid>
+      <description>命令：gzip (GNU zip) 功能：压缩文件 权限：所有用户 语法：gzip 选项[文件] 压缩后格式：.gz 说明：只能压缩文件，不保存源文件 命令：gunzip</description>
+    </item>
+    
+    <item>
+      <title>linux常用命令——压缩解压命令</title>
+      <link>http://wenzhixin.net.cn/2012/05/23/commonly_used_linux_commands_compression_decompression_command/</link>
+      <pubDate>Wed, 23 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/05/23/commonly_used_linux_commands_compression_decompression_command/</guid>
+      <description>命令：gzip (GNU zip) 功能：压缩文件 权限：所有用户 语法：gzip 选项[文件] 压缩后格式：.gz 说明：只能压缩文件，不保存源文件 命令：gunzip</description>
+    </item>
+    
+    <item>
+      <title>linux常用命令——帮助命令</title>
+      <link>http://wenzhixin.net.cn/2012/05/22/commonly_used_linux_commands_help_command/</link>
+      <pubDate>Tue, 22 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/05/22/commonly_used_linux_commands_help_command/</guid>
+      <description>命令：man (manual) 功能：获得帮助信息 权限：所有用户 语法：man [命令或配置文件] 例子：man ls 查看 ls 命令的帮助信息 man services 查看配置文件 services 的帮助信息 命</description>
+    </item>
+    
+    <item>
+      <title>linux常用命令——帮助命令</title>
+      <link>http://wenzhixin.net.cn/2012/05/22/commonly_used_linux_commands_help_command/</link>
+      <pubDate>Tue, 22 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/05/22/commonly_used_linux_commands_help_command/</guid>
+      <description>命令：man (manual) 功能：获得帮助信息 权限：所有用户 语法：man [命令或配置文件] 例子：man ls 查看 ls 命令的帮助信息 man services 查看配置文件 services 的帮助信息 命</description>
+    </item>
+    
+    <item>
+      <title>linux常用命令——文件搜索命令</title>
+      <link>http://wenzhixin.net.cn/2012/05/22/commonly_used_linux_commands_file_search_command/</link>
+      <pubDate>Tue, 22 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/05/22/commonly_used_linux_commands_file_search_command/</guid>
+      <description>命令：which / whereis 功能：显示系统命令所在目录 权限：所有用户 语法：which / whereis [命令名称] 命令：find 功能：查找文件或目录 权限：所有用户</description>
+    </item>
+    
+    <item>
+      <title>linux常用命令——文件搜索命令</title>
+      <link>http://wenzhixin.net.cn/2012/05/22/commonly_used_linux_commands_file_search_command/</link>
+      <pubDate>Tue, 22 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/05/22/commonly_used_linux_commands_file_search_command/</guid>
+      <description>命令：which / whereis 功能：显示系统命令所在目录 权限：所有用户 语法：which / whereis [命令名称] 命令：find 功能：查找文件或目录 权限：所有用户</description>
+    </item>
+    
+    <item>
+      <title>linux常用命令——权限管理命令</title>
+      <link>http://wenzhixin.net.cn/2012/05/20/commonly_used_linux_commands_permission_management_command/</link>
+      <pubDate>Sun, 20 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/05/20/commonly_used_linux_commands_permission_management_command/</guid>
+      <description>命令：chmod (change the permissions mode of a file) 功能：改变文件或目录权限 权限：所有用户 语法：chmod [{ugo}{+-=}{rwx}][文件或目录] chmod [mo</description>
+    </item>
+    
+    <item>
+      <title>linux常用命令——权限管理命令</title>
+      <link>http://wenzhixin.net.cn/2012/05/20/commonly_used_linux_commands_permission_management_command/</link>
+      <pubDate>Sun, 20 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/05/20/commonly_used_linux_commands_permission_management_command/</guid>
+      <description>命令：chmod (change the permissions mode of a file) 功能：改变文件或目录权限 权限：所有用户 语法：chmod [{ugo}{+-=}{rwx}][文件或目录] chmod [mo</description>
+    </item>
+    
+    <item>
+      <title>linux 常用命令——文件处理命令</title>
+      <link>http://wenzhixin.net.cn/2012/05/19/commonly_used_linux_commands_file_command/</link>
+      <pubDate>Sat, 19 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/05/19/commonly_used_linux_commands_file_command/</guid>
+      <description>命令：ls (list) 功能：显示目录文件 权限：所有用户 语法：ls 选项[-ald] [文件或目录] -a 显示所有文件，包括隐藏文件 -l 显示详细信息 -d 查看目录属性</description>
+    </item>
+    
+    <item>
+      <title>linux 常用命令——文件处理命令</title>
+      <link>http://wenzhixin.net.cn/2012/05/19/commonly_used_linux_commands_file_command/</link>
+      <pubDate>Sat, 19 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/05/19/commonly_used_linux_commands_file_command/</guid>
+      <description>命令：ls (list) 功能：显示目录文件 权限：所有用户 语法：ls 选项[-ald] [文件或目录] -a 显示所有文件，包括隐藏文件 -l 显示详细信息 -d 查看目录属性</description>
+    </item>
+    
+  </channel>
+</rss>

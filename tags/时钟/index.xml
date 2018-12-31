@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>时钟 on 文翼的博客</title>
+    <link>http://wenzhixin.net.cn/tags/%E6%97%B6%E9%92%9F/</link>
+    <description>Recent content in 时钟 on 文翼的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Wed, 20 Nov 2013 23:10:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://wenzhixin.net.cn/tags/%E6%97%B6%E9%92%9F/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用 canvas 绘制时钟</title>
+      <link>http://wenzhixin.net.cn/2013/11/20/canvas_draw_clock/</link>
+      <pubDate>Wed, 20 Nov 2013 23:10:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/11/20/canvas_draw_clock/</guid>
+      <description>今天我们利用 canvas 来画一个基本的时钟程序。通过一边实践一边学习新的知识。 准备工作，我们先定义需要用到的变量： 1 2 &amp;lt;canvas id=&amp;#34;canvas&amp;#34; width=&amp;#34;300&amp;#34; height=&amp;#34;300&amp;#34;&amp;gt;&amp;lt;/canvas&amp;gt; &amp;lt;script src=&amp;#34;clock.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; 1 2 3 4 5 6 7 8 9 10</description>
+    </item>
+    
+  </channel>
+</rss>

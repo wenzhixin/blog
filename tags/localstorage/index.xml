@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>localStorage on 文翼的博客</title>
+    <link>http://wenzhixin.net.cn/tags/localstorage/</link>
+    <description>Recent content in localStorage on 文翼的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Thu, 02 Jan 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://wenzhixin.net.cn/tags/localstorage/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>lscache 介绍</title>
+      <link>http://wenzhixin.net.cn/2014/01/02/lscache_introduction/</link>
+      <pubDate>Thu, 02 Jan 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/01/02/lscache_introduction/</guid>
+      <description>介绍 lscache 是一个带有时间戳的缓存库，提供类似内存缓存行为。 使用 html5 localStorage 模拟内存缓冲功能，这样就可以在客户端缓冲数据， 并对每块数据关联一个过期时间。如</description>
+    </item>
+    
+  </channel>
+</rss>

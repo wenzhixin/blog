@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>bitvise on 文翼的博客</title>
+    <link>http://wenzhixin.net.cn/tags/bitvise/</link>
+    <description>Recent content in bitvise on 文翼的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Sun, 06 Jan 2013 16:02:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://wenzhixin.net.cn/tags/bitvise/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Windows 使用 ssh proxy 翻墙</title>
+      <link>http://wenzhixin.net.cn/2013/01/06/windows_bitvise/</link>
+      <pubDate>Sun, 06 Jan 2013 16:02:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/01/06/windows_bitvise/</guid>
+      <description>1. 下载并安装 bitvise： bitvise 链接 2. 设置 Login 和 SOCKS 1 2 3 4 5 6 Host: host Username: username Password: password Listen Interface: 127.0.0.1 Listen Port: 12345 3. 使用 Chrome 插件 proxy-switchysharp proxy-switchysharp 链接 4. 导入配置信息 SwitchyOptions</description>
+    </item>
+    
+  </channel>
+</rss>

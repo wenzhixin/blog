@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Eclipse on 文翼的博客</title>
+    <link>http://wenzhixin.net.cn/tags/eclipse/</link>
+    <description>Recent content in Eclipse on 文翼的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Tue, 08 May 2012 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://wenzhixin.net.cn/tags/eclipse/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Eclipse 安装插件(aptana、svn 、git、Java EE、JSHint)</title>
+      <link>http://wenzhixin.net.cn/2012/05/08/eclipse_install_the_plugin_aptana_svn_git_java_ee_jshint/</link>
+      <pubDate>Tue, 08 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/05/08/eclipse_install_the_plugin_aptana_svn_git_java_ee_jshint/</guid>
+      <description>1、安装 aptana 插件： * 依次点击：Help -&amp;gt; Install New Software&amp;hellip; -&amp;gt; Add * 输入：http://download.aptana.com/studio3/plugin/</description>
+    </item>
+    
+    <item>
+      <title>Eclipse 安装插件(aptana、svn 、git、Java EE、JSHint)</title>
+      <link>http://wenzhixin.net.cn/2012/05/08/eclipse_install_the_plugin_aptana_svn_git_java_ee_jshint/</link>
+      <pubDate>Tue, 08 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/05/08/eclipse_install_the_plugin_aptana_svn_git_java_ee_jshint/</guid>
+      <description>1、安装 aptana 插件： * 依次点击：Help -&amp;gt; Install New Software&amp;hellip; -&amp;gt; Add * 输入：http://download.aptana.com/studio3/plugin/</description>
+    </item>
+    
+  </channel>
+</rss>

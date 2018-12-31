@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>数据单位 on 文翼的博客</title>
+    <link>http://wenzhixin.net.cn/tags/%E6%95%B0%E6%8D%AE%E5%8D%95%E4%BD%8D/</link>
+    <description>Recent content in 数据单位 on 文翼的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Wed, 03 Sep 2014 17:31:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://wenzhixin.net.cn/tags/%E6%95%B0%E6%8D%AE%E5%8D%95%E4%BD%8D/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用 JavaScript 转换数据单位</title>
+      <link>http://wenzhixin.net.cn/2014/09/03/convert_size_using_javascript/</link>
+      <pubDate>Wed, 03 Sep 2014 17:31:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/09/03/convert_size_using_javascript/</guid>
+      <description>我们知道，千字节是一个计量单位，虽然从字面上理解代表着1000，但是专业术语kilobyte在计算机科学和信息技术等领域有两种含义，分别代表</description>
+    </item>
+    
+  </channel>
+</rss>

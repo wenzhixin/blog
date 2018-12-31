@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>attr on 文翼的博客</title>
+    <link>http://wenzhixin.net.cn/tags/attr/</link>
+    <description>Recent content in attr on 文翼的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Fri, 24 May 2013 01:11:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://wenzhixin.net.cn/tags/attr/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>jQuery 中 attr() 和 prop() 方法的区别</title>
+      <link>http://wenzhixin.net.cn/2013/05/24/jquery_attr_prop/</link>
+      <pubDate>Fri, 24 May 2013 01:11:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/05/24/jquery_attr_prop/</guid>
+      <description>前几天，有人给 Multiple Select 插件 提了问题： setSelects doesn&amp;rsquo;t work in Firefox when using jquery 1.9.0 一直都在用 jQuery 1.8.3 的版本，没有尝试过 jQuery 1.9.0 的版本。 于是，开始调试代码，在 1.9.0 的版本中： 1 2 3 4 5 6</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MongoDB on 文翼的博客</title>
+    <link>http://wenzhixin.net.cn/tags/mongodb/</link>
+    <description>Recent content in MongoDB on 文翼的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Wed, 12 Jun 2013 23:07:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://wenzhixin.net.cn/tags/mongodb/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>MongoDB mongoexport 命令的使用及简单实现</title>
+      <link>http://wenzhixin.net.cn/2013/06/12/mongodb_export/</link>
+      <pubDate>Wed, 12 Jun 2013 23:07:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/06/12/mongodb_export/</guid>
+      <description>MongoDB 提供了 mongoexport 命令来导出数据，导出的数据是 json 格式的，当然也可以是 csv 格式。主要可以实现备份和恢复的功能。 具体的使用，我们使用 &amp;ndash;help 查看，主要的参数有：</description>
+    </item>
+    
+    <item>
+      <title>MongoDB 创建、更新及删除文档</title>
+      <link>http://wenzhixin.net.cn/2012/12/08/mongodb_insert_update_remove/</link>
+      <pubDate>Sat, 08 Dec 2012 08:24:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/12/08/mongodb_insert_update_remove/</guid>
+      <description>1、插入文档：insert 1) 基本用法： 1 db.name.insert(文档内容); 例子： 1 db.users.insert({&amp;#34;username&amp;#34;: &amp;#34;wenyi&amp;#34;, &amp;#34;age&amp;#34;: 25}); 2) 从其他数据库导入数据，使用 mongoimport 命令 3) 原理与</description>
+    </item>
+    
+    <item>
+      <title>MongoDB 创建、更新及删除文档</title>
+      <link>http://wenzhixin.net.cn/2012/12/08/mongodb_insert_update_remove/</link>
+      <pubDate>Sat, 08 Dec 2012 08:24:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/12/08/mongodb_insert_update_remove/</guid>
+      <description>1、插入文档：insert 1) 基本用法： 1 db.name.insert(文档内容); 例子： 1 db.users.insert({&amp;#34;username&amp;#34;: &amp;#34;wenyi&amp;#34;, &amp;#34;age&amp;#34;: 25}); 2) 从其他数据库导入数据，使用 mongoimport 命令 3) 原理与</description>
+    </item>
+    
+    <item>
+      <title>MongoDB 入门</title>
+      <link>http://wenzhixin.net.cn/2012/12/06/mongodb_started/</link>
+      <pubDate>Thu, 06 Dec 2012 22:39:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/12/06/mongodb_started/</guid>
+      <description>1、文档 1) 概念：文档是将多个键及其关联的值有序地放置在一起。 1 {&amp;#34;name&amp;#34;: &amp;#34;wenyi&amp;#34;, &amp;#34;say&amp;#34;: &amp;#34;Hello, world!&amp;#34;} 2) 特性： 文档中的键值对是有序的 文档的键是字符串 文档不能有重复的键 3) 键</description>
+    </item>
+    
+    <item>
+      <title>MongoDB 入门</title>
+      <link>http://wenzhixin.net.cn/2012/12/06/mongodb_started/</link>
+      <pubDate>Thu, 06 Dec 2012 22:39:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/12/06/mongodb_started/</guid>
+      <description>1、文档 1) 概念：文档是将多个键及其关联的值有序地放置在一起。 1 {&amp;#34;name&amp;#34;: &amp;#34;wenyi&amp;#34;, &amp;#34;say&amp;#34;: &amp;#34;Hello, world!&amp;#34;} 2) 特性： 文档中的键值对是有序的 文档的键是字符串 文档不能有重复的键 3) 键</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>div on 文翼的博客</title>
+    <link>http://wenzhixin.net.cn/tags/div/</link>
+    <description>Recent content in div on 文翼的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Sun, 04 May 2014 22:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://wenzhixin.net.cn/tags/div/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>如何获取 div 的实际高度</title>
+      <link>http://wenzhixin.net.cn/2014/05/04/get_div_outer_height/</link>
+      <pubDate>Sun, 04 May 2014 22:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/05/04/get_div_outer_height/</guid>
+      <description>在实际开发中，需要对 div 的高度进行计算并自动设置高度，但是遇到了这样的一个问题： 1 2 3 4 5 &amp;lt;div id=&amp;#34;outer&amp;#34;&amp;gt; &amp;lt;div id=&amp;#34;inner&amp;#34; style=&amp;#34;height: 50px; margin-top: 20px; margin-bottom: 20px;&amp;#34;&amp;gt; 如何获取 div 的实际高度 &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; 1 2 3 4</description>
+    </item>
+    
+  </channel>
+</rss>

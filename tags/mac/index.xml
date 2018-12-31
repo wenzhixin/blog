@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mac on 文翼的博客</title>
+    <link>http://wenzhixin.net.cn/tags/mac/</link>
+    <description>Recent content in Mac on 文翼的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Mon, 10 Feb 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://wenzhixin.net.cn/tags/mac/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>VirtualBox 安装 Mac OS X 10.9 Mavericks 小记</title>
+      <link>http://wenzhixin.net.cn/2014/02/10/vbox_mac_install/</link>
+      <pubDate>Mon, 10 Feb 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/02/10/vbox_mac_install/</guid>
+      <description>1. 准备工作 安装虚拟机和下载需要的 iso： 联想 Y470 I5、8G内存 Ubuntu 12.10 VirtualBox 虚拟机（4.3.6） HackBoot_Mav.iso OSXMavericks2.iso 2. 新建 Mac 虚拟机 跟着新向导一步一步即可 3. 设置虚拟机 去</description>
+    </item>
+    
+  </channel>
+</rss>

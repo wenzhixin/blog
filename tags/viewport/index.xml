@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>viewport on 文翼的博客</title>
+    <link>http://wenzhixin.net.cn/tags/viewport/</link>
+    <description>Recent content in viewport on 文翼的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Fri, 01 Aug 2014 23:13:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://wenzhixin.net.cn/tags/viewport/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>设置 viewport 实现定宽网页 WebApp 下布局自适应</title>
+      <link>http://wenzhixin.net.cn/2014/08/01/viewport_mobile/</link>
+      <pubDate>Fri, 01 Aug 2014 23:13:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/08/01/viewport_mobile/</guid>
+      <description>一般来说，我们实现布局自适应可以有以下几种方式： 使用流动布局（fluid grid） 根据屏幕大小选择加载不同的CSS 使用 CSS 的@media规则 详</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>python on 文翼的博客</title>
+    <link>http://wenzhixin.net.cn/tags/python/</link>
+    <description>Recent content in python on 文翼的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Mon, 04 Aug 2014 23:55:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://wenzhixin.net.cn/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>如何使用 python 连接 Oracle（网站）</title>
+      <link>http://wenzhixin.net.cn/2014/08/04/python_oracle/</link>
+      <pubDate>Mon, 04 Aug 2014 23:55:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/08/04/python_oracle/</guid>
+      <description>首先，由于网站部署在远程服务器的局域网上面，所以需要通过 ssh tunnel（隧道） 的方式进行本地的映射，主要映射两个端口： Oracle 服务：ssh -fN -L 1521:ip:1521 server</description>
+    </item>
+    
+  </channel>
+</rss>

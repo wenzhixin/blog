@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tunnel on 文翼的博客</title>
+    <link>http://wenzhixin.net.cn/tags/tunnel/</link>
+    <description>Recent content in tunnel on 文翼的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Sat, 15 Mar 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://wenzhixin.net.cn/tags/tunnel/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ssh tunnel（隧道）</title>
+      <link>http://wenzhixin.net.cn/2014/03/15/ssh_tunnel/</link>
+      <pubDate>Sat, 15 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2014/03/15/ssh_tunnel/</guid>
+      <description>问题描述： 公司内部机器限制了登录，只能通过某台指定的机器才能上网，我们这里叫做中转服务器。 例如邮件服务器，而一般中转服务器是 linux 系统。 你想要登</description>
+    </item>
+    
+  </channel>
+</rss>

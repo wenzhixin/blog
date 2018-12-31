@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>异步 on 文翼的博客</title>
+    <link>http://wenzhixin.net.cn/tags/%E5%BC%82%E6%AD%A5/</link>
+    <description>Recent content in 异步 on 文翼的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Sat, 26 Oct 2013 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://wenzhixin.net.cn/tags/%E5%BC%82%E6%AD%A5/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>nodejs 异步递归</title>
+      <link>http://wenzhixin.net.cn/2013/10/26/nodejs_async/</link>
+      <pubDate>Sat, 26 Oct 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2013/10/26/nodejs_async/</guid>
+      <description>今天继续之前的下载服务器的开发，第一步调用文件的 API 已经成功了，那么今天的目标是列出应用目录下的所有文件（包括子目录）。 1. 最初代码实现 代码的实</description>
+    </item>
+    
+  </channel>
+</rss>

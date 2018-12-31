@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>盒子模型 on 文翼的博客</title>
+    <link>http://wenzhixin.net.cn/tags/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/</link>
+    <description>Recent content in 盒子模型 on 文翼的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Fri, 04 May 2012 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://wenzhixin.net.cn/tags/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>彻底研究CSS——深入理解盒子模型</title>
+      <link>http://wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_understanding_the_box_model/</link>
+      <pubDate>Fri, 04 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_understanding_the_box_model/</guid>
+      <description>1、盒子模型的内部结构 * 在 CSS 中，一个独立的盒子模型由 content（内容）、border（边框）、padding（内边距）和 margin（外</description>
+    </item>
+    
+    <item>
+      <title>彻底研究CSS——深入理解盒子模型</title>
+      <link>http://wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_understanding_the_box_model/</link>
+      <pubDate>Fri, 04 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_understanding_the_box_model/</guid>
+      <description>1、盒子模型的内部结构 * 在 CSS 中，一个独立的盒子模型由 content（内容）、border（边框）、padding（内边距）和 margin（外</description>
+    </item>
+    
+  </channel>
+</rss>
