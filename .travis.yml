@@ -1,0 +1,13 @@
+language: minimal
+
+before_script: apt-get install hugo -y
+script: bash ./deploy.sh
+
+branches:
+  only:
+  - master
+
+env:
+  global:
+  - ENCRYPTION_LABEL: "1d12f124072e"
+  - COMMIT_AUTHOR_EMAIL: "wenzhixin2010@gmail.com"
