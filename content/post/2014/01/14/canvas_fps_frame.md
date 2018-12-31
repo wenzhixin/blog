@@ -1,7 +1,7 @@
 ---
 title: 使用 requestAnimationFrame 实现动画
 date: 2014-01-14
-categories: [前端开发]
+categories: [前端技术]
 tags: [requestAnimationFrame,动画]
 ---
 
