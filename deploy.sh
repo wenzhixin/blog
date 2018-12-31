@@ -29,7 +29,7 @@ git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
 cd ..
 
 # Clean out existing contents
-rm -rf $OUT/**/* || exit 0
+find $OUT -maxdepth 1 -mindepth 1 -not -iwholename '*.git' -exec rm -rf {} \; || exit 0
 
 # Run our compile script
 doCompile
