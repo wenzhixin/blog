@@ -7,14 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Fri, 21 Nov 2014 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/kvm/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>KVM 虚拟机的学习和使用</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/kvm_study</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2014/11/21/kvm_study</link>
+      <pubDate>Fri, 21 Nov 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/kvm_study</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/11/21/kvm_study</guid>
       <description>
 
 &lt;p&gt;KVM 是 Kernel-based Virtual Machine的简称，是一个开源的系统虚拟化模块，是基于硬件的完全虚拟化。&lt;/p&gt;

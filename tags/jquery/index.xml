@@ -7,106 +7,128 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Fri, 17 Jan 2014 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/jquery/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Twitter Bootstrap 资源汇总</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/twitter_bootstrap_resources_aggregation</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>详解 jQuery.extend() 方法</title>
+      <link>http://blog.wenzhixin.net.cn/2014/01/17/jquery_extend</link>
+      <pubDate>Fri, 17 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/twitter_bootstrap_resources_aggregation</guid>
-      <description>
+      <guid>http://blog.wenzhixin.net.cn/2014/01/17/jquery_extend</guid>
+      <description>&lt;p&gt;今天在写插件，使用&lt;code&gt;$.extend({}, defaults, options)&lt;/code&gt;的时候发现漏写了 {}，浪费了一些时间，
+所以详细记录下该方法的 API 和使用。&lt;/p&gt;
 
-&lt;h4 id=&#34;1-twitter-bootstrap:5fa1e0546286371bcbf464f1fdedcc31&#34;&gt;1、Twitter Bootstrap&lt;/h4&gt;
+&lt;p&gt;API 如下：&lt;/p&gt;
 
-&lt;h4 id=&#34;2-bootstrap-插件:5fa1e0546286371bcbf464f1fdedcc31&#34;&gt;2、Bootstrap 插件&lt;/h4&gt;
+&lt;p&gt;jQuery.extend(  [ deep ], target, [ object1 ], [ objectN ] )&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;日期选择器：Datepicker for Bootstrap​&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;颜色选择器：Colorpicker for Bootstrap​&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;对话框：bootboxjs​&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;3-boostrap-主题相关:5fa1e0546286371bcbf464f1fdedcc31&#34;&gt;3、Boostrap 主题相关&lt;/h4&gt;
+&lt;p&gt;描述：合并两个或更多的对象的内容汇集成到第一个对象。&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;颜色定制：Bootswatch&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;deep：如果是true，合并成为递归（又叫做深拷贝）。&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;生成自定义样式：StyleBootstrap​&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;target：一个对象，如果附加的对象被传递给这个方法将那么它将接收新的属性，如果它是唯一的参数将扩展 jQuery 的命名空间。&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;自定义按钮：Beautiful Buttons for Bootstrap&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;object1：一个对象，它包含额外的属性合并到第一个参数&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;bootstrap配套图标：&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;objectN：包含额外的属性合并到第一个参数&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://fortawesome.github.com/Font-Awesome/  &#34;&gt;http://fortawesome.github.com/Font-Awesome/  &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;源码如下：&lt;/p&gt;
+jQuery.extend = jQuery.fn.extend = function() {
+	var src, copyIsArray, copy, name, options, clone,
+		target = arguments[0] || {},
+		i = 1,
+		length = arguments.length,
+		deep = false;
 
-&lt;p&gt;&lt;a href=&#34;http://fontello.com &#34;&gt;http://fontello.com &lt;/a&gt;&lt;/p&gt;
+	// Handle a deep copy situation
+	if ( typeof target === &#34;boolean&#34; ) {
+		deep = target;
+		target = arguments[1] || {};
+		// skip the boolean and the target
+		i = 2;
+	}
 
-&lt;h4 id=&#34;4-jquery-bootstrap:5fa1e0546286371bcbf464f1fdedcc31&#34;&gt;4、jQuery Bootstrap&lt;/h4&gt;
+	// Handle case when target is a string or something (possible in deep copy)
+	if ( typeof target !== &#34;object&#34; &amp;&amp; !jQuery.isFunction(target) ) {
+		target = {};
+	}
 
-&lt;ul&gt;
-&lt;li&gt;jQuery UI Bootstrap 主题：jQuery UI Bootstrap
-​&lt;/li&gt;
-&lt;li&gt;jQuery 手机 Bootstrap 主题：jQuery Mobile Bootstrap Theme&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Twitter Bootstrap 资源汇总</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/twitter_bootstrap_resources_aggregation</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/twitter_bootstrap_resources_aggregation</guid>
-      <description>
+	// extend jQuery itself if only one argument is passed
+	if ( length === i ) {
+		target = this;
+		--i;
+	}
 
-&lt;h4 id=&#34;1-twitter-bootstrap:5fa1e0546286371bcbf464f1fdedcc31&#34;&gt;1、Twitter Bootstrap&lt;/h4&gt;
+	for ( ; i &lt; length; i++ ) {
+		// Only deal with non-null/undefined values
+		if ( (options = arguments[ i ]) != null ) {
+			// Extend the base object
+			for ( name in options ) {
+				src = target[ name ];
+				copy = options[ name ];
 
-&lt;h4 id=&#34;2-bootstrap-插件:5fa1e0546286371bcbf464f1fdedcc31&#34;&gt;2、Bootstrap 插件&lt;/h4&gt;
+				// Prevent never-ending loop
+				if ( target === copy ) {
+					continue;
+				}
 
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;日期选择器：Datepicker for Bootstrap​&lt;/p&gt;&lt;/li&gt;
+				// Recurse if we&#39;re merging plain objects or arrays
+				if ( deep &amp;&amp; copy &amp;&amp; ( jQuery.isPlainObject(copy) || (copyIsArray = jQuery.isArray(copy)) ) ) {
+					if ( copyIsArray ) {
+						copyIsArray = false;
+						clone = src &amp;&amp; jQuery.isArray(src) ? src : [];
 
-&lt;li&gt;&lt;p&gt;颜色选择器：Colorpicker for Bootstrap​&lt;/p&gt;&lt;/li&gt;
+					} else {
+						clone = src &amp;&amp; jQuery.isPlainObject(src) ? src : {};
+					}
 
-&lt;li&gt;&lt;p&gt;对话框：bootboxjs​&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
+					// Never move original objects, clone them
+					target[ name ] = jQuery.extend( deep, clone, copy );
 
-&lt;h4 id=&#34;3-boostrap-主题相关:5fa1e0546286371bcbf464f1fdedcc31&#34;&gt;3、Boostrap 主题相关&lt;/h4&gt;
+				// Don&#39;t bring in undefined values
+				} else if ( copy !== undefined ) {
+					target[ name ] = copy;
+				}
+			}
+		}
+	}
 
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;颜色定制：Bootswatch&lt;/p&gt;&lt;/li&gt;
+	// Return the modified object
+	return target;
+};
 
-&lt;li&gt;&lt;p&gt;生成自定义样式：StyleBootstrap​&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;关键代码为：&lt;/p&gt;
+for ( name in options ) {
+    src = target[ name ];
+    copy = options[ name ];
+    if ( deep ) {
+        clone = src;
+        target[ name ] = jQuery.extend( deep, clone, copy );
+    } else {
+        target[ name ] = copy;
+    }
+}
 
-&lt;li&gt;&lt;p&gt;自定义按钮：Beautiful Buttons for Bootstrap&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;假如 deep 为&lt;code&gt;true&lt;/code&gt;，则递归调用 extend 函数，从而实现深度拷贝。&lt;/p&gt;
 
-&lt;li&gt;&lt;p&gt;bootstrap配套图标：&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;当我们提供两个或多个对象给$.extend()，对象的所有属性都添加到目标对象。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://fortawesome.github.com/Font-Awesome/  &#34;&gt;http://fortawesome.github.com/Font-Awesome/  &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;通过代码可以看到目标对象（第一个参数）将被修改，也将通过 $.extend() 返回。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://fontello.com &#34;&gt;http://fontello.com &lt;/a&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;4-jquery-bootstrap:5fa1e0546286371bcbf464f1fdedcc31&#34;&gt;4、jQuery Bootstrap&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;jQuery UI Bootstrap 主题：jQuery UI Bootstrap
-​&lt;/li&gt;
-&lt;li&gt;jQuery 手机 Bootstrap 主题：jQuery Mobile Bootstrap Theme&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;如果我们想保留原对象，我们可以通过传递一个空对象作为目标：&lt;/p&gt;
+var object = $.extend({}, object1, object2);
 </description>
     </item>
     
     <item>
       <title>jQuery file upload 插件 change 只生效一次</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/jquery_file_upload_change_once</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2013/11/26/jquery_file_upload_change_once</link>
+      <pubDate>Tue, 26 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/jquery_file_upload_change_once</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/26/jquery_file_upload_change_once</guid>
       <description>
 
 &lt;h4 id=&#34;1-前言:0a4244611fc4da1ce3230d8125714dd2&#34;&gt;1. 前言&lt;/h4&gt;
@@ -128,7 +150,7 @@ jQuery(io).unbind()
 
 &lt;p&gt;1) 使用 on() 方法（推荐）：&lt;/p&gt;
 $(document).on(&#39;change&#39;, &#39;#upload&#39;, function() {
-	
+
 });
 
 &lt;p&gt;2) 在 change 起作用之后继续绑定 change 事件&lt;/p&gt;
@@ -139,11 +161,144 @@ $(&#39;#upload&#39;).replaceWidth(&#39;&lt;input id=&#34;upload&#34; type=&#34;f
     </item>
     
     <item>
-      <title>jQuery 中 attr() 和 prop() 方法的区别</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/jquery_attr_prop</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>jQuery 打造月份选择器插件</title>
+      <link>http://blog.wenzhixin.net.cn/2013/11/23/jquery_month_picker</link>
+      <pubDate>Sat, 23 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/jquery_attr_prop</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/23/jquery_month_picker</guid>
+      <description>
+
+&lt;p&gt;项目中需要用到月份选择器，找到了几款日期选择器 datepicker，
+但是我不需要选择具体的日期，虽然有个可以支持只显示月份的，但是显得比较臃肿。&lt;/p&gt;
+
+&lt;p&gt;所以，还是决定自己实现一个吧。最后封装成了 jQuery 的插件，插件地址为：&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://wenzhixin.net.cn/p/bootstrap-monthpicker/&#34;&gt;bootstrap-monthpicker&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;其实编写 jQuery 插件很简单，使用起来也简单，把相同的代码提取出来写成 jQuery 的插件，
+这样不仅仅可以省很多代码量，还可以很好的提高开发速度。&lt;/p&gt;
+
+&lt;p&gt;这里，把自己编写插件的步骤记录下来，希望有需要的人可以参考下。&lt;/p&gt;
+
+&lt;h4 id=&#34;1-编写基本的-html-代码:ad5eee46152d62e3e061bf4e3d35a595&#34;&gt;1. 编写基本的 html 代码&lt;/h4&gt;
+
+&lt;p&gt;日期选择器需要年份选择，以及12个月的月份选择。&lt;/p&gt;
+&lt;div class=&#34;mp-dialog&#34;&gt;
+	&lt;div class=&#34;mp-title&#34;&gt;
+		&lt;i class=&#34;glyphicon glyphicon-circle-arrow-left&#34;&gt;&lt;/i&gt;
+		&lt;span&gt;2013&lt;/span&gt;
+		&lt;i class=&#34;glyphicon glyphicon-circle-arrow-right&#34;&gt;&lt;/i&gt;
+	&lt;/div&gt;
+	&lt;div class=&#34;mp-content&#34;&gt;
+		&lt;ul&gt;
+			&lt;li&gt;一&lt;/li&gt;
+			&lt;li&gt;二&lt;/li&gt;
+			...
+			&lt;li&gt;十二&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&#34;2-编写基本的-css-代码:ad5eee46152d62e3e061bf4e3d35a595&#34;&gt;2. 编写基本的 css 代码&lt;/h4&gt;
+
+&lt;p&gt;根据 html 代码，编写我们所需要的 css 样式。&lt;/p&gt;
+.mp-dialog {
+	position: absolute;
+	z-index: 1000;
+	width: 282px;
+	height: 260px;
+	background: #fff;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	display: none;
+}
+.mp-title {
+	text-align: center;
+	line-height: 40px;
+	background: #92cade;
+	color: #fff;
+	border-radius: 5px 5px 0 0;
+}
+.mp-title i {
+	cursor: pointer;
+}
+.mp-content ul {
+	list-style: none;
+	margin: 0;
+	padding: 20px;
+}
+.mp-content li {
+	text-align: center;
+	line-height: 48px;
+	float: left;
+	margin: 6px;
+	padding: 0;
+	width: 48px;
+	height: 48px;
+	border: 2px dotted #ccc;
+	cursor: pointer;
+	border-radius: 5px;
+}
+.mp-content li:hover, .mp-content li.active {
+	background: #f5f9fc;
+	border: 2px dotted #ffaaaa;
+}
+
+&lt;h4 id=&#34;3-编写基本的-js-事件监听:ad5eee46152d62e3e061bf4e3d35a595&#34;&gt;3. 编写基本的 js 事件监听&lt;/h4&gt;
+
+&lt;p&gt;我们需要对上一年和下一年进行事件监听，并显示我们想要的年份。&lt;/p&gt;
+&lt;div class=&#34;mp-title&#34;&gt;
+	&lt;i class=&#34;mp-year-prev glyphicon glyphicon-circle-arrow-left&#34;&gt;&lt;/i&gt;
+	&lt;span&gt;2013&lt;/span&gt;
+	&lt;i class=&#34;mp-year-next glyphicon glyphicon-circle-arrow-right&#34;&gt;&lt;/i&gt;
+&lt;/div&gt;
+
+&lt;p&gt;这里添加了 mp-year-prev 和 mp-year-next 两个类。&lt;/p&gt;
+var year = 2013;
+$(&#39;.mp-year-prev&#39;).click(function() {
+	year--;
+	$(&#39;.mp-title span&#39;).text(year);
+});
+$(&#39;.mp-year-next&#39;).click(function() {
+	year++;
+	$(&#39;.mp-title span&#39;).text(year);
+});
+
+&lt;p&gt;我们在月份中加上了 data-month 属性，方便知道是选择哪个月份。&lt;/p&gt;
+&lt;li data-month=&#34;0&#34;&gt;一&lt;/li&gt;
+&lt;li data-month=&#34;1&#34;&gt;二&lt;/li&gt;
+...
+&lt;li data-month=&#34;11&#34;&gt;十二&lt;/li&gt;
+
+&lt;p&gt;并添加对月份选择的监听。&lt;/p&gt;
+$(&#39;.mp-content li&#39;).click(function() {
+	console.log($(this).data);
+});
+
+&lt;h4 id=&#34;4-封装成-jquery-插件:ad5eee46152d62e3e061bf4e3d35a595&#34;&gt;4. 封装成 jQuery 插件&lt;/h4&gt;
+
+&lt;p&gt;自己写 jQuery 插件的时候有个基本的模块，详细见
+&lt;a href=&#34;https://gist.github.com/wenzhixin/7634953&#34;&gt;源码&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;需要做的事情：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;将基本的 html 让 js 来自动生成&lt;/li&gt;
+&lt;li&gt;监听事件使用 $el.off(&amp;lsquo;click&amp;rsquo;).on(&amp;lsquo;click&amp;rsquo;) 或者绑定监听&lt;/li&gt;
+&lt;li&gt;将月份选择器加在 input 或者 div、span 选择器中&lt;/li&gt;
+&lt;li&gt;对于 input 使用 val()，对于 div、span 使用 text()&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;至此，我们的&lt;a href=&#34;https://github.com/wenzhixin/bootstrap-monthpicker&#34;&gt;月份选择器插件&lt;/a&gt;就完成了。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>jQuery 中 attr() 和 prop() 方法的区别</title>
+      <link>http://blog.wenzhixin.net.cn/2013/05/24/jquery_attr_prop</link>
+      <pubDate>Fri, 24 May 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2013/05/24/jquery_attr_prop</guid>
       <description>&lt;p&gt;前几天，有人给 &lt;a href=&#34;http://wenzhixin.net.cn/p/multiple-select/&#34;&gt;Multiple Select 插件&lt;/a&gt; 提了问题：&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/wenzhixin/multiple-select/issues/2&#34;&gt;setSelects doesn&amp;rsquo;t work in Firefox when using jquery 1.9.0&lt;/a&gt;&lt;/p&gt;
@@ -409,144 +564,195 @@ boolHook = {
     </item>
     
     <item>
-      <title>jQuery 打造月份选择器插件</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/jquery_month_picker</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>图片查看弹出框 (jQuery 插件)</title>
+      <link>http://blog.wenzhixin.net.cn/2012/12/02/jquery_imagebox</link>
+      <pubDate>Sun, 02 Dec 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/jquery_month_picker</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/12/02/jquery_imagebox</guid>
       <description>
 
-&lt;p&gt;项目中需要用到月份选择器，找到了几款日期选择器 datepicker，
-但是我不需要选择具体的日期，虽然有个可以支持只显示月份的，但是显得比较臃肿。&lt;/p&gt;
-
-&lt;p&gt;所以，还是决定自己实现一个吧。最后封装成了 jQuery 的插件，插件地址为：&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://wenzhixin.net.cn/p/bootstrap-monthpicker/&#34;&gt;bootstrap-monthpicker&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;其实编写 jQuery 插件很简单，使用起来也简单，把相同的代码提取出来写成 jQuery 的插件，
-这样不仅仅可以省很多代码量，还可以很好的提高开发速度。&lt;/p&gt;
-
-&lt;p&gt;这里，把自己编写插件的步骤记录下来，希望有需要的人可以参考下。&lt;/p&gt;
-
-&lt;h4 id=&#34;1-编写基本的-html-代码:ad5eee46152d62e3e061bf4e3d35a595&#34;&gt;1. 编写基本的 html 代码&lt;/h4&gt;
-
-&lt;p&gt;日期选择器需要年份选择，以及12个月的月份选择。&lt;/p&gt;
-&lt;div class=&#34;mp-dialog&#34;&gt;
-	&lt;div class=&#34;mp-title&#34;&gt;
-		&lt;i class=&#34;glyphicon glyphicon-circle-arrow-left&#34;&gt;&lt;/i&gt;
-		&lt;span&gt;2013&lt;/span&gt;
-		&lt;i class=&#34;glyphicon glyphicon-circle-arrow-right&#34;&gt;&lt;/i&gt;
-	&lt;/div&gt;
-	&lt;div class=&#34;mp-content&#34;&gt;
-		&lt;ul&gt;
-			&lt;li&gt;一&lt;/li&gt;
-			&lt;li&gt;二&lt;/li&gt;
-			...
-			&lt;li&gt;十二&lt;/li&gt;
-		&lt;/ul&gt;
-	&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;h4 id=&#34;2-编写基本的-css-代码:ad5eee46152d62e3e061bf4e3d35a595&#34;&gt;2. 编写基本的 css 代码&lt;/h4&gt;
-
-&lt;p&gt;根据 html 代码，编写我们所需要的 css 样式。&lt;/p&gt;
-.mp-dialog {
-	position: absolute;
-	z-index: 1000;
-	width: 282px;
-	height: 260px;
-	background: #fff;
-	border-radius: 5px;
-	border: 1px solid #ccc;
-	display: none;
-}
-.mp-title {
-	text-align: center;
-	line-height: 40px;
-	background: #92cade;
-	color: #fff;
-	border-radius: 5px 5px 0 0;
-}
-.mp-title i {
-	cursor: pointer;
-}
-.mp-content ul {
-	list-style: none;
-	margin: 0;
-	padding: 20px;
-}
-.mp-content li {
-	text-align: center;
-	line-height: 48px;
-	float: left;
-	margin: 6px;
-	padding: 0;
-	width: 48px;
-	height: 48px;
-	border: 2px dotted #ccc;
-	cursor: pointer;
-	border-radius: 5px;
-}
-.mp-content li:hover, .mp-content li.active {
-	background: #f5f9fc;
-	border: 2px dotted #ffaaaa;
-}
-
-&lt;h4 id=&#34;3-编写基本的-js-事件监听:ad5eee46152d62e3e061bf4e3d35a595&#34;&gt;3. 编写基本的 js 事件监听&lt;/h4&gt;
-
-&lt;p&gt;我们需要对上一年和下一年进行事件监听，并显示我们想要的年份。&lt;/p&gt;
-&lt;div class=&#34;mp-title&#34;&gt;
-	&lt;i class=&#34;mp-year-prev glyphicon glyphicon-circle-arrow-left&#34;&gt;&lt;/i&gt;
-	&lt;span&gt;2013&lt;/span&gt;
-	&lt;i class=&#34;mp-year-next glyphicon glyphicon-circle-arrow-right&#34;&gt;&lt;/i&gt;
-&lt;/div&gt;
-
-&lt;p&gt;这里添加了 mp-year-prev 和 mp-year-next 两个类。&lt;/p&gt;
-var year = 2013;
-$(&#39;.mp-year-prev&#39;).click(function() {
-	year--;
-	$(&#39;.mp-title span&#39;).text(year);
-});
-$(&#39;.mp-year-next&#39;).click(function() {
-	year++;
-	$(&#39;.mp-title span&#39;).text(year);
-});
-
-&lt;p&gt;我们在月份中加上了 data-month 属性，方便知道是选择哪个月份。&lt;/p&gt;
-&lt;li data-month=&#34;0&#34;&gt;一&lt;/li&gt;
-&lt;li data-month=&#34;1&#34;&gt;二&lt;/li&gt;
-...
-&lt;li data-month=&#34;11&#34;&gt;十二&lt;/li&gt;
-
-&lt;p&gt;并添加对月份选择的监听。&lt;/p&gt;
-$(&#39;.mp-content li&#39;).click(function() {
-	console.log($(this).data);
-});
-
-&lt;h4 id=&#34;4-封装成-jquery-插件:ad5eee46152d62e3e061bf4e3d35a595&#34;&gt;4. 封装成 jQuery 插件&lt;/h4&gt;
-
-&lt;p&gt;自己写 jQuery 插件的时候有个基本的模块，详细见
-&lt;a href=&#34;https://gist.github.com/wenzhixin/7634953&#34;&gt;源码&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;需要做的事情：&lt;/p&gt;
+&lt;h3 id=&#34;参数:fa269ff73629026d8a4c5a02cd855e66&#34;&gt;参数&lt;/h3&gt;
 
 &lt;ul&gt;
-&lt;li&gt;将基本的 html 让 js 来自动生成&lt;/li&gt;
-&lt;li&gt;监听事件使用 $el.off(&amp;lsquo;click&amp;rsquo;).on(&amp;lsquo;click&amp;rsquo;) 或者绑定监听&lt;/li&gt;
-&lt;li&gt;将月份选择器加在 input 或者 div、span 选择器中&lt;/li&gt;
-&lt;li&gt;对于 input 使用 val()，对于 div、span 使用 text()&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;linkTitle: 点击图片提示信息，默认为 &amp;lsquo;点击查看原图&amp;rsquo;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;direction: 箭头显示方向，水平方向 (horizontal) 和垂直方向 (vertical)，默认为 &amp;lsquo;horizontal&amp;rsquo;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;至此，我们的&lt;a href=&#34;https://github.com/wenzhixin/bootstrap-monthpicker&#34;&gt;月份选择器插件&lt;/a&gt;就完成了。&lt;/p&gt;
+&lt;h3 id=&#34;如何使用:fa269ff73629026d8a4c5a02cd855e66&#34;&gt;如何使用&lt;/h3&gt;
+
+&lt;h4 id=&#34;1-导入:fa269ff73629026d8a4c5a02cd855e66&#34;&gt;1、导入&lt;/h4&gt;
+&lt;link rel=&#34;stylesheet&#34; href=&#34;css/jquery.imagebox.css&#34; /&gt;
+&lt;script type=&#34;text/javascript&#34; src=&#34;js/jquery.imagebox.js&#34;&gt;&lt;/script&gt;
+
+&lt;h4 id=&#34;2-使用:fa269ff73629026d8a4c5a02cd855e66&#34;&gt;2、使用&lt;/h4&gt;
+$(&#39;element&#39;).imagebox();
+
+$(&#39;element&#39;).imagebox({
+    linkTitle: &#39;查看原图&#39;,
+    direction: &#39;vertical&#39;
+});
+
+&lt;h4 id=&#34;3-截图:fa269ff73629026d8a4c5a02cd855e66&#34;&gt;3、截图&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2012/12/02/2.png&#34; alt=&#34;截图2&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2012/12/02/1.png&#34; alt=&#34;截图1&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;源码:fa269ff73629026d8a4c5a02cd855e66&#34;&gt;源码&lt;/h3&gt;
+
+&lt;p&gt;源码见 &lt;a href=&#34;https://github.com/wenzhixin/jquery.imagebox&#34;&gt;github&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;特别感谢：&lt;a href=&#34;http://weibo.com/u/2191714780&#34;&gt;echo&lt;/a&gt; 的提供的图片切换功能，以及图片素材&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>图片查看弹出框 (jQuery 插件)</title>
+      <link>http://blog.wenzhixin.net.cn/2012/12/02/jquery_imagebox</link>
+      <pubDate>Sun, 02 Dec 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2012/12/02/jquery_imagebox</guid>
+      <description>
+
+&lt;h3 id=&#34;参数:fa269ff73629026d8a4c5a02cd855e66&#34;&gt;参数&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;linkTitle: 点击图片提示信息，默认为 &amp;lsquo;点击查看原图&amp;rsquo;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;direction: 箭头显示方向，水平方向 (horizontal) 和垂直方向 (vertical)，默认为 &amp;lsquo;horizontal&amp;rsquo;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;如何使用:fa269ff73629026d8a4c5a02cd855e66&#34;&gt;如何使用&lt;/h3&gt;
+
+&lt;h4 id=&#34;1-导入:fa269ff73629026d8a4c5a02cd855e66&#34;&gt;1、导入&lt;/h4&gt;
+&lt;link rel=&#34;stylesheet&#34; href=&#34;css/jquery.imagebox.css&#34; /&gt;
+&lt;script type=&#34;text/javascript&#34; src=&#34;js/jquery.imagebox.js&#34;&gt;&lt;/script&gt;
+
+&lt;h4 id=&#34;2-使用:fa269ff73629026d8a4c5a02cd855e66&#34;&gt;2、使用&lt;/h4&gt;
+$(&#39;element&#39;).imagebox();
+
+$(&#39;element&#39;).imagebox({
+    linkTitle: &#39;查看原图&#39;,
+    direction: &#39;vertical&#39;
+});
+
+&lt;h4 id=&#34;3-截图:fa269ff73629026d8a4c5a02cd855e66&#34;&gt;3、截图&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2012/12/02/2.png&#34; alt=&#34;截图2&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2012/12/02/1.png&#34; alt=&#34;截图1&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;源码:fa269ff73629026d8a4c5a02cd855e66&#34;&gt;源码&lt;/h3&gt;
+
+&lt;p&gt;源码见 &lt;a href=&#34;https://github.com/wenzhixin/jquery.imagebox&#34;&gt;github&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;特别感谢：&lt;a href=&#34;http://weibo.com/u/2191714780&#34;&gt;echo&lt;/a&gt; 的提供的图片切换功能，以及图片素材&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Twitter Bootstrap 资源汇总</title>
+      <link>http://blog.wenzhixin.net.cn/2012/09/18/twitter_bootstrap_resources_aggregation</link>
+      <pubDate>Tue, 18 Sep 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2012/09/18/twitter_bootstrap_resources_aggregation</guid>
+      <description>
+
+&lt;h4 id=&#34;1-twitter-bootstrap:5fa1e0546286371bcbf464f1fdedcc31&#34;&gt;1、Twitter Bootstrap&lt;/h4&gt;
+
+&lt;h4 id=&#34;2-bootstrap-插件:5fa1e0546286371bcbf464f1fdedcc31&#34;&gt;2、Bootstrap 插件&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;日期选择器：Datepicker for Bootstrap​&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;颜色选择器：Colorpicker for Bootstrap​&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;对话框：bootboxjs​&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;3-boostrap-主题相关:5fa1e0546286371bcbf464f1fdedcc31&#34;&gt;3、Boostrap 主题相关&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;颜色定制：Bootswatch&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;生成自定义样式：StyleBootstrap​&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;自定义按钮：Beautiful Buttons for Bootstrap&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;bootstrap配套图标：&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://fortawesome.github.com/Font-Awesome/  &#34;&gt;http://fortawesome.github.com/Font-Awesome/  &lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://fontello.com &#34;&gt;http://fontello.com &lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;4-jquery-bootstrap:5fa1e0546286371bcbf464f1fdedcc31&#34;&gt;4、jQuery Bootstrap&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;jQuery UI Bootstrap 主题：jQuery UI Bootstrap
+​&lt;/li&gt;
+&lt;li&gt;jQuery 手机 Bootstrap 主题：jQuery Mobile Bootstrap Theme&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Twitter Bootstrap 资源汇总</title>
+      <link>http://blog.wenzhixin.net.cn/2012/09/18/twitter_bootstrap_resources_aggregation</link>
+      <pubDate>Tue, 18 Sep 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2012/09/18/twitter_bootstrap_resources_aggregation</guid>
+      <description>
+
+&lt;h4 id=&#34;1-twitter-bootstrap:5fa1e0546286371bcbf464f1fdedcc31&#34;&gt;1、Twitter Bootstrap&lt;/h4&gt;
+
+&lt;h4 id=&#34;2-bootstrap-插件:5fa1e0546286371bcbf464f1fdedcc31&#34;&gt;2、Bootstrap 插件&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;日期选择器：Datepicker for Bootstrap​&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;颜色选择器：Colorpicker for Bootstrap​&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;对话框：bootboxjs​&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;3-boostrap-主题相关:5fa1e0546286371bcbf464f1fdedcc31&#34;&gt;3、Boostrap 主题相关&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;颜色定制：Bootswatch&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;生成自定义样式：StyleBootstrap​&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;自定义按钮：Beautiful Buttons for Bootstrap&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;bootstrap配套图标：&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://fortawesome.github.com/Font-Awesome/  &#34;&gt;http://fortawesome.github.com/Font-Awesome/  &lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://fontello.com &#34;&gt;http://fontello.com &lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;4-jquery-bootstrap:5fa1e0546286371bcbf464f1fdedcc31&#34;&gt;4、jQuery Bootstrap&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;jQuery UI Bootstrap 主题：jQuery UI Bootstrap
+​&lt;/li&gt;
+&lt;li&gt;jQuery 手机 Bootstrap 主题：jQuery Mobile Bootstrap Theme&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     
     <item>
       <title>jQuery 插件使用小记（使用、问题、解决）</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/using_jquery_plugin</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2012/09/16/using_jquery_plugin</link>
+      <pubDate>Sun, 16 Sep 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/using_jquery_plugin</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/09/16/using_jquery_plugin</guid>
       <description>
 
 &lt;h4 id=&#34;1-bootstrap-js-v2-1-0:2f6fc3fb562ad847d5e63a610c7d2114&#34;&gt;1、bootstrap.js (v2.1.0)&lt;/h4&gt;
@@ -565,10 +771,10 @@ $(&#39;.mp-content li&#39;).click(function() {
     
     <item>
       <title>jQuery 插件使用小记（使用、问题、解决）</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/using_jquery_plugin</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2012/09/16/using_jquery_plugin</link>
+      <pubDate>Sun, 16 Sep 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/using_jquery_plugin</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/09/16/using_jquery_plugin</guid>
       <description>
 
 &lt;h4 id=&#34;1-bootstrap-js-v2-1-0:2f6fc3fb562ad847d5e63a610c7d2114&#34;&gt;1、bootstrap.js (v2.1.0)&lt;/h4&gt;
@@ -582,15 +788,229 @@ $(&#39;.mp-content li&#39;).click(function() {
 &lt;p&gt;注释 .on(&amp;lsquo;click.dropdown touchstart.dropdown.data-api&amp;rsquo;, &amp;lsquo;.dropdown&amp;rsquo;, function (e) { e.stopPropagation() }) (第 720 行)&lt;/p&gt;
 
 &lt;p&gt;2、&amp;hellip;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>《锋利的jQuery》学习笔记——jQuery插件</title>
+      <link>http://blog.wenzhixin.net.cn/2012/03/14/sharp_jquery_study_notes_jquery_plugin</link>
+      <pubDate>Wed, 14 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2012/03/14/sharp_jquery_study_notes_jquery_plugin</guid>
+      <description>&lt;p&gt;​&lt;strong&gt;1. 插件的种类&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;(1)封装对象方法的插件：将对象方法封装起来，用于对通过选择器获取的 jQuery
+对象进行操作&lt;/p&gt;
+
+&lt;p&gt;(2)封装全局函数的插件：将独立的函数加到 jQuery 命名空间下&lt;/p&gt;
+
+&lt;p&gt;(3)选择器插件&lt;/p&gt;
+
+&lt;p&gt;​&lt;strong&gt;2. 插件的基本要点&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt; • jQuery 插件的文件名推荐命名为 jquery.[插件名].js&lt;/p&gt;
+
+&lt;p&gt; • 所有的对象方法都应当附加到 jQuery.fn
+对象上，而所有的全局函数都应当附加到 jQuery 对象本身上&lt;/p&gt;
+
+&lt;p&gt; • 在插件内部，this 指向的是当前通过选择器获取的 jQuery 对象&lt;/p&gt;
+
+&lt;p&gt; • 可以用 this.each 来遍历所有元素&lt;/p&gt;
+
+&lt;p&gt; • 所有的方法或函数插件，都应当以分号结尾&lt;/p&gt;
+
+&lt;p&gt; • 插件应该返回一个 jQuery 对象，以保证插件的可链式操作&lt;/p&gt;
+
+&lt;p&gt; • 避免在插件内部使用作为 jQuery 对象的别名，而应使用完整的 jQuery
+来表示&lt;/p&gt;
+
+&lt;p&gt; • 使用闭包技巧&lt;/p&gt;
+
+&lt;p&gt;​&lt;strong&gt;3. 插件中的闭包&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;(1)闭包指的是：允许使用内部函数，这些内部函数可以访问它们所在的外部函数中的所有局部变量、参数和生命的其他内部函数，当其中一个这样的内部函数在包含它们的外部函数之外被调用时，就会形成闭包&lt;/p&gt;
+(function() {
+	/\*这里置放代码\*/
+})();
+
+&lt;p&gt;(2)jQuery 中的闭包，为了更好的兼容性，在开始前加分号&lt;/p&gt;
+;(function() {
+	/\*这里置放代码\*/
+})(jQuery);
+
+&lt;p&gt;​&lt;strong&gt;4. jQuery 插件的机制&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;(1)jQuery.fn.extend(Object)-封装对象方法&lt;/p&gt;
+;(function() {
+	$.fn.exetend({
+		func1: function() {
+			/\*这里置放代码\*/
+			return this;
+		},
+
+		func2: function() {
+			/\*这里置放代码\*/
+			return this.each(function() {
+				/\*这里置放代码\*/
+			});
+		},
+
+		...
+	}
+})(jQuery);
+
+&lt;p&gt; • 插件内部的 this 指向的是 jQuery 对象&lt;/p&gt;
+
+&lt;p&gt; • 插件扩展函数应该返回 jQuery 对象，即
+this，从而使其具有可链接性；当选择器匹配多个元素时，应返回每个匹配匹配元素，即
+this.each(function)&lt;/p&gt;
+
+&lt;p&gt; • 使用：(&amp;ldquo;element&amp;rdquo;).func1(), (&amp;ldquo;element&amp;rdquo;).func2(), &amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;(2)jQuery.extend(Object)-封装全局函数或者封装选择器&lt;/p&gt;
+;(function() {
+	$.exetend({
+		func1: function() {
+			/\*这里置放代码\*/
+			return this;
+		},
+
+		func2: function() {
+			/\*这里置放代码\*/
+			return this;
+		},
+		...
+	});
+})(jQuery);
+
+&lt;p&gt; • 使用：.func1(), .func2(), &amp;hellip; 或者 jQuery.func1(), jQuery.func2(),
+&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;(3)jQuery.extend(target, obj1, obj2, &amp;hellip;)-用于扩展已有的 Object
+对象，用一个或多个对象来扩展一个对象，返回被扩展的对象。经常被用于设置插件方法的一系列默认参数，如：&lt;/p&gt;
+function func(options) {
+	options = jQuery.exetend({
+		key1: value1,
+		key2: value2,
+		...                /\*默认参数\*/
+	}, options);
+}
+</description>
+    </item>
+    
+    <item>
+      <title>《锋利的jQuery》学习笔记——jQuery插件</title>
+      <link>http://blog.wenzhixin.net.cn/2012/03/14/sharp_jquery_study_notes_jquery_plugin</link>
+      <pubDate>Wed, 14 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2012/03/14/sharp_jquery_study_notes_jquery_plugin</guid>
+      <description>&lt;p&gt;​&lt;strong&gt;1. 插件的种类&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;(1)封装对象方法的插件：将对象方法封装起来，用于对通过选择器获取的 jQuery
+对象进行操作&lt;/p&gt;
+
+&lt;p&gt;(2)封装全局函数的插件：将独立的函数加到 jQuery 命名空间下&lt;/p&gt;
+
+&lt;p&gt;(3)选择器插件&lt;/p&gt;
+
+&lt;p&gt;​&lt;strong&gt;2. 插件的基本要点&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt; • jQuery 插件的文件名推荐命名为 jquery.[插件名].js&lt;/p&gt;
+
+&lt;p&gt; • 所有的对象方法都应当附加到 jQuery.fn
+对象上，而所有的全局函数都应当附加到 jQuery 对象本身上&lt;/p&gt;
+
+&lt;p&gt; • 在插件内部，this 指向的是当前通过选择器获取的 jQuery 对象&lt;/p&gt;
+
+&lt;p&gt; • 可以用 this.each 来遍历所有元素&lt;/p&gt;
+
+&lt;p&gt; • 所有的方法或函数插件，都应当以分号结尾&lt;/p&gt;
+
+&lt;p&gt; • 插件应该返回一个 jQuery 对象，以保证插件的可链式操作&lt;/p&gt;
+
+&lt;p&gt; • 避免在插件内部使用作为 jQuery 对象的别名，而应使用完整的 jQuery
+来表示&lt;/p&gt;
+
+&lt;p&gt; • 使用闭包技巧&lt;/p&gt;
+
+&lt;p&gt;​&lt;strong&gt;3. 插件中的闭包&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;(1)闭包指的是：允许使用内部函数，这些内部函数可以访问它们所在的外部函数中的所有局部变量、参数和生命的其他内部函数，当其中一个这样的内部函数在包含它们的外部函数之外被调用时，就会形成闭包&lt;/p&gt;
+(function() {
+	/\*这里置放代码\*/
+})();
+
+&lt;p&gt;(2)jQuery 中的闭包，为了更好的兼容性，在开始前加分号&lt;/p&gt;
+;(function() {
+	/\*这里置放代码\*/
+})(jQuery);
+
+&lt;p&gt;​&lt;strong&gt;4. jQuery 插件的机制&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;(1)jQuery.fn.extend(Object)-封装对象方法&lt;/p&gt;
+;(function() {
+	$.fn.exetend({
+		func1: function() {
+			/\*这里置放代码\*/
+			return this;
+		},
+
+		func2: function() {
+			/\*这里置放代码\*/
+			return this.each(function() {
+				/\*这里置放代码\*/
+			});
+		},
+
+		...
+	}
+})(jQuery);
+
+&lt;p&gt; • 插件内部的 this 指向的是 jQuery 对象&lt;/p&gt;
+
+&lt;p&gt; • 插件扩展函数应该返回 jQuery 对象，即
+this，从而使其具有可链接性；当选择器匹配多个元素时，应返回每个匹配匹配元素，即
+this.each(function)&lt;/p&gt;
+
+&lt;p&gt; • 使用：(&amp;ldquo;element&amp;rdquo;).func1(), (&amp;ldquo;element&amp;rdquo;).func2(), &amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;(2)jQuery.extend(Object)-封装全局函数或者封装选择器&lt;/p&gt;
+;(function() {
+	$.exetend({
+		func1: function() {
+			/\*这里置放代码\*/
+			return this;
+		},
+
+		func2: function() {
+			/\*这里置放代码\*/
+			return this;
+		},
+		...
+	});
+})(jQuery);
+
+&lt;p&gt; • 使用：.func1(), .func2(), &amp;hellip; 或者 jQuery.func1(), jQuery.func2(),
+&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;(3)jQuery.extend(target, obj1, obj2, &amp;hellip;)-用于扩展已有的 Object
+对象，用一个或多个对象来扩展一个对象，返回被扩展的对象。经常被用于设置插件方法的一系列默认参数，如：&lt;/p&gt;
+function func(options) {
+	options = jQuery.exetend({
+		key1: value1,
+		key2: value2,
+		...                /\*默认参数\*/
+	}, options);
+}
 </description>
     </item>
     
     <item>
       <title>《锋利的jQuery》学习笔记——jQuery与Ajax应用</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/sharp_jquery_study_notes_jquery_and_ajax_application</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_and_ajax_application</link>
+      <pubDate>Tue, 13 Mar 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/sharp_jquery_study_notes_jquery_and_ajax_application</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_and_ajax_application</guid>
       <description>&lt;p&gt;​&lt;strong&gt;1. 什么是 Ajax？&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt; • Ajax 全称为”Asynchronous Javascript and XML”（异步 Javascript 和
@@ -735,10 +1155,10 @@ JSON 格式的数据&lt;/p&gt;
     
     <item>
       <title>《锋利的jQuery》学习笔记——jQuery与Ajax应用</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/sharp_jquery_study_notes_jquery_and_ajax_application</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_and_ajax_application</link>
+      <pubDate>Tue, 13 Mar 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/sharp_jquery_study_notes_jquery_and_ajax_application</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_and_ajax_application</guid>
       <description>&lt;p&gt;​&lt;strong&gt;1. 什么是 Ajax？&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt; • Ajax 全称为”Asynchronous Javascript and XML”（异步 Javascript 和
@@ -882,635 +1302,11 @@ JSON 格式的数据&lt;/p&gt;
     </item>
     
     <item>
-      <title>《锋利的jQuery》学习笔记——jQuery中的DOM操作</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/sharp_jquery_study_notes_dom_operation_in_jquery</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/sharp_jquery_study_notes_dom_operation_in_jquery</guid>
-      <description>&lt;p&gt;​&lt;strong&gt;1. 什么是DOM？&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt; • DOM 是 Document Object Model 的缩写，是指文档对象模型&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;​2. DOM操作的分类&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;(1)DOM Core-可用来处理任何一种使用标记语言的文档&lt;/p&gt;
-
-&lt;p&gt; • getElementById()&lt;/p&gt;
-
-&lt;p&gt; • getElementByTagName()&lt;/p&gt;
-
-&lt;p&gt; • getAttribute()&lt;/p&gt;
-
-&lt;p&gt; • setAttribute()&lt;/p&gt;
-
-&lt;p&gt;(2)HTML_DOM-提供一些简明的记号来描述各种 HTML 元素的属性&lt;/p&gt;
-
-&lt;p&gt;(3)CSS_DOM-针对 CSS 的操作，主要是获取和设置 style 对象的各种属性&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;​3. jQuery中的DOM操作&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;(1)查找节点-通过 jQuery 选择器来进行查找&lt;/p&gt;
-
-&lt;p&gt;(2)创建节点-使用 jQuery 的工厂函数$()来创建&lt;/p&gt;
-
-&lt;p&gt; • $(html)&lt;/p&gt;
-
-&lt;p&gt;(3)插入节点-不仅能创建新的 DOM 元素，也能对原有的 DOM 元素进行移动&lt;/p&gt;
-
-&lt;p&gt; • append()-向每个匹配的元素内部追加内容&lt;/p&gt;
-
-&lt;p&gt; • appendTo()-将所有匹配的元素追加到指定的元素中，与 append 函数相反&lt;/p&gt;
-
-&lt;p&gt; • prepend()-向每个匹配的元素内部前置内容&lt;/p&gt;
-
-&lt;p&gt; • prependTo()-将所有匹配的元素前置到指定的元素中，与 prepend 函数相反&lt;/p&gt;
-
-&lt;p&gt; • after()-在每个匹配的元素之后插入内容&lt;/p&gt;
-
-&lt;p&gt; • insertAfter()-将所有匹配的元素插入到指定元素的后面，与 after 函数相反&lt;/p&gt;
-
-&lt;p&gt; • before()-在每个匹配的元素之前插入内容&lt;/p&gt;
-
-&lt;p&gt; • insertBefore()-将所有匹配的元素插入到指定的元素的前面，与 before
-函数相反&lt;/p&gt;
-
-&lt;p&gt;(4)删除和清空节点&lt;/p&gt;
-
-&lt;p&gt; • remove()-删除所匹配的元素&lt;/p&gt;
-
-&lt;p&gt; • empty()-清空所匹配元素的所有后代节点&lt;/p&gt;
-
-&lt;p&gt;(5)复制节点&lt;/p&gt;
-
-&lt;p&gt; • clone(flag)-flag 表示复制元素的同时是否复制元素中所绑定的事件&lt;/p&gt;
-
-&lt;p&gt;(6)替换节点&lt;/p&gt;
-
-&lt;p&gt; • replaceWith()-将所有匹配的元素都替换成指定的 HTML 或者 DOM 元素&lt;/p&gt;
-
-&lt;p&gt; • replaceAll()-与 replaceWith 函数相反&lt;/p&gt;
-
-&lt;p&gt;(7)包裹节点&lt;/p&gt;
-
-&lt;p&gt; • wrapAll()-将所有匹配的元素用一个元素包裹起来&lt;/p&gt;
-
-&lt;p&gt; • wrap()-将所有的匹配的元素进行单独的包裹&lt;/p&gt;
-
-&lt;p&gt; • wrapInner()-将每一个匹配的元素的子内容用其他结构化的标记包裹起来&lt;/p&gt;
-
-&lt;p&gt;​&lt;strong&gt;4. 属性操作&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;(1)获取和设置属性&lt;/p&gt;
-
-&lt;p&gt; • attr(name)-获取属性 name 的值&lt;/p&gt;
-
-&lt;p&gt; • attr(name, value)-设置属性 name 的值为 value&lt;/p&gt;
-
-&lt;p&gt;(2)删除属性&lt;/p&gt;
-
-&lt;p&gt; • removeAttr(name)-删除属性 name&lt;/p&gt;
-
-&lt;p&gt;​&lt;strong&gt;5. 样式操作&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;(1)获取和设置样式&lt;/p&gt;
-
-&lt;p&gt; • css(name)-获取 css 属性 name 的值&lt;/p&gt;
-
-&lt;p&gt; • css(name, value)-设置 css 属性 name 的值为 value&lt;/p&gt;
-
-&lt;p&gt;(2)追加和移除样式&lt;/p&gt;
-
-&lt;p&gt; • addClass(className)-追加 className 样式到指定元素&lt;/p&gt;
-
-&lt;p&gt; • removeClass(className)-从指定的元素中移除 className 样式&lt;/p&gt;
-
-&lt;p&gt;(3)切换样式&lt;/p&gt;
-
-&lt;p&gt; • toggle(className)-交互切换 clssName 样式&lt;/p&gt;
-
-&lt;p&gt;(4)判断样式&lt;/p&gt;
-
-&lt;p&gt; • hasClass(className)-判断是否含有 className 样式&lt;/p&gt;
-
-&lt;p&gt;​&lt;strong&gt;6. 设置和获取 HTML、文本和表单的值&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;(1)HTML&lt;/p&gt;
-
-&lt;p&gt; • html()-获取指定元素的 html&lt;/p&gt;
-
-&lt;p&gt; • html(html)-设置指定元素的 html&lt;/p&gt;
-
-&lt;p&gt;(2)文本&lt;/p&gt;
-
-&lt;p&gt; • text()-获取指定元素的文本内容&lt;/p&gt;
-
-&lt;p&gt; • text(text)-设置指定元素的文本内容&lt;/p&gt;
-
-&lt;p&gt;(3)表单&lt;/p&gt;
-
-&lt;p&gt; • val()-获取表单的值&lt;/p&gt;
-
-&lt;p&gt; • val(value)-设置表单的值为 value&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;7.遍历节点&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt; • children()-用于取得匹配元素的子元素集合&lt;/p&gt;
-
-&lt;p&gt; • next()-用于取得匹配元素后面紧邻的同辈元素&lt;/p&gt;
-
-&lt;p&gt; • prev()-用于取得匹配元素前面紧邻的同辈元素&lt;/p&gt;
-
-&lt;p&gt; • siblings()-用于取得匹配元素前后所有的同辈元素&lt;/p&gt;
-
-&lt;p&gt; • closest()-取得最近的匹配元素&lt;/p&gt;
-
-&lt;p&gt; • find()、filter()、nextAll()、prevAll()、parent()、parents()&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;8.CSS_DOM 中经常使用的方法&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt; • width()-获取元素的宽度&lt;/p&gt;
-
-&lt;p&gt; • height()-获取元素的高度&lt;/p&gt;
-
-&lt;p&gt; • offset()-获取元素在当前视窗的相对偏移&lt;/p&gt;
-
-&lt;p&gt; • position()-获取元素相对于最近的一个 position 样式属性设置的 relative
-或者 absolute 的祖父节点的相对偏移&lt;/p&gt;
-
-&lt;p&gt; • scrollTop()-获取元素的滚动条距离顶端的距离&lt;/p&gt;
-
-&lt;p&gt; • scrollLeft-获取元素的滚动条距离左侧的距离&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>《锋利的jQuery》学习笔记——jQuery中的DOM操作</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/sharp_jquery_study_notes_dom_operation_in_jquery</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/sharp_jquery_study_notes_dom_operation_in_jquery</guid>
-      <description>&lt;p&gt;​&lt;strong&gt;1. 什么是DOM？&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt; • DOM 是 Document Object Model 的缩写，是指文档对象模型&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;​2. DOM操作的分类&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;(1)DOM Core-可用来处理任何一种使用标记语言的文档&lt;/p&gt;
-
-&lt;p&gt; • getElementById()&lt;/p&gt;
-
-&lt;p&gt; • getElementByTagName()&lt;/p&gt;
-
-&lt;p&gt; • getAttribute()&lt;/p&gt;
-
-&lt;p&gt; • setAttribute()&lt;/p&gt;
-
-&lt;p&gt;(2)HTML_DOM-提供一些简明的记号来描述各种 HTML 元素的属性&lt;/p&gt;
-
-&lt;p&gt;(3)CSS_DOM-针对 CSS 的操作，主要是获取和设置 style 对象的各种属性&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;​3. jQuery中的DOM操作&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;(1)查找节点-通过 jQuery 选择器来进行查找&lt;/p&gt;
-
-&lt;p&gt;(2)创建节点-使用 jQuery 的工厂函数$()来创建&lt;/p&gt;
-
-&lt;p&gt; • $(html)&lt;/p&gt;
-
-&lt;p&gt;(3)插入节点-不仅能创建新的 DOM 元素，也能对原有的 DOM 元素进行移动&lt;/p&gt;
-
-&lt;p&gt; • append()-向每个匹配的元素内部追加内容&lt;/p&gt;
-
-&lt;p&gt; • appendTo()-将所有匹配的元素追加到指定的元素中，与 append 函数相反&lt;/p&gt;
-
-&lt;p&gt; • prepend()-向每个匹配的元素内部前置内容&lt;/p&gt;
-
-&lt;p&gt; • prependTo()-将所有匹配的元素前置到指定的元素中，与 prepend 函数相反&lt;/p&gt;
-
-&lt;p&gt; • after()-在每个匹配的元素之后插入内容&lt;/p&gt;
-
-&lt;p&gt; • insertAfter()-将所有匹配的元素插入到指定元素的后面，与 after 函数相反&lt;/p&gt;
-
-&lt;p&gt; • before()-在每个匹配的元素之前插入内容&lt;/p&gt;
-
-&lt;p&gt; • insertBefore()-将所有匹配的元素插入到指定的元素的前面，与 before
-函数相反&lt;/p&gt;
-
-&lt;p&gt;(4)删除和清空节点&lt;/p&gt;
-
-&lt;p&gt; • remove()-删除所匹配的元素&lt;/p&gt;
-
-&lt;p&gt; • empty()-清空所匹配元素的所有后代节点&lt;/p&gt;
-
-&lt;p&gt;(5)复制节点&lt;/p&gt;
-
-&lt;p&gt; • clone(flag)-flag 表示复制元素的同时是否复制元素中所绑定的事件&lt;/p&gt;
-
-&lt;p&gt;(6)替换节点&lt;/p&gt;
-
-&lt;p&gt; • replaceWith()-将所有匹配的元素都替换成指定的 HTML 或者 DOM 元素&lt;/p&gt;
-
-&lt;p&gt; • replaceAll()-与 replaceWith 函数相反&lt;/p&gt;
-
-&lt;p&gt;(7)包裹节点&lt;/p&gt;
-
-&lt;p&gt; • wrapAll()-将所有匹配的元素用一个元素包裹起来&lt;/p&gt;
-
-&lt;p&gt; • wrap()-将所有的匹配的元素进行单独的包裹&lt;/p&gt;
-
-&lt;p&gt; • wrapInner()-将每一个匹配的元素的子内容用其他结构化的标记包裹起来&lt;/p&gt;
-
-&lt;p&gt;​&lt;strong&gt;4. 属性操作&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;(1)获取和设置属性&lt;/p&gt;
-
-&lt;p&gt; • attr(name)-获取属性 name 的值&lt;/p&gt;
-
-&lt;p&gt; • attr(name, value)-设置属性 name 的值为 value&lt;/p&gt;
-
-&lt;p&gt;(2)删除属性&lt;/p&gt;
-
-&lt;p&gt; • removeAttr(name)-删除属性 name&lt;/p&gt;
-
-&lt;p&gt;​&lt;strong&gt;5. 样式操作&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;(1)获取和设置样式&lt;/p&gt;
-
-&lt;p&gt; • css(name)-获取 css 属性 name 的值&lt;/p&gt;
-
-&lt;p&gt; • css(name, value)-设置 css 属性 name 的值为 value&lt;/p&gt;
-
-&lt;p&gt;(2)追加和移除样式&lt;/p&gt;
-
-&lt;p&gt; • addClass(className)-追加 className 样式到指定元素&lt;/p&gt;
-
-&lt;p&gt; • removeClass(className)-从指定的元素中移除 className 样式&lt;/p&gt;
-
-&lt;p&gt;(3)切换样式&lt;/p&gt;
-
-&lt;p&gt; • toggle(className)-交互切换 clssName 样式&lt;/p&gt;
-
-&lt;p&gt;(4)判断样式&lt;/p&gt;
-
-&lt;p&gt; • hasClass(className)-判断是否含有 className 样式&lt;/p&gt;
-
-&lt;p&gt;​&lt;strong&gt;6. 设置和获取 HTML、文本和表单的值&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;(1)HTML&lt;/p&gt;
-
-&lt;p&gt; • html()-获取指定元素的 html&lt;/p&gt;
-
-&lt;p&gt; • html(html)-设置指定元素的 html&lt;/p&gt;
-
-&lt;p&gt;(2)文本&lt;/p&gt;
-
-&lt;p&gt; • text()-获取指定元素的文本内容&lt;/p&gt;
-
-&lt;p&gt; • text(text)-设置指定元素的文本内容&lt;/p&gt;
-
-&lt;p&gt;(3)表单&lt;/p&gt;
-
-&lt;p&gt; • val()-获取表单的值&lt;/p&gt;
-
-&lt;p&gt; • val(value)-设置表单的值为 value&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;7.遍历节点&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt; • children()-用于取得匹配元素的子元素集合&lt;/p&gt;
-
-&lt;p&gt; • next()-用于取得匹配元素后面紧邻的同辈元素&lt;/p&gt;
-
-&lt;p&gt; • prev()-用于取得匹配元素前面紧邻的同辈元素&lt;/p&gt;
-
-&lt;p&gt; • siblings()-用于取得匹配元素前后所有的同辈元素&lt;/p&gt;
-
-&lt;p&gt; • closest()-取得最近的匹配元素&lt;/p&gt;
-
-&lt;p&gt; • find()、filter()、nextAll()、prevAll()、parent()、parents()&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;8.CSS_DOM 中经常使用的方法&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt; • width()-获取元素的宽度&lt;/p&gt;
-
-&lt;p&gt; • height()-获取元素的高度&lt;/p&gt;
-
-&lt;p&gt; • offset()-获取元素在当前视窗的相对偏移&lt;/p&gt;
-
-&lt;p&gt; • position()-获取元素相对于最近的一个 position 样式属性设置的 relative
-或者 absolute 的祖父节点的相对偏移&lt;/p&gt;
-
-&lt;p&gt; • scrollTop()-获取元素的滚动条距离顶端的距离&lt;/p&gt;
-
-&lt;p&gt; • scrollLeft-获取元素的滚动条距离左侧的距离&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>《锋利的jQuery》学习笔记——jQuery中的事件</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/sharp_jquery_study_notes_events_in_jquery</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/sharp_jquery_study_notes_events_in_jquery</guid>
-      <description>&lt;p&gt;​&lt;strong&gt;1. 加载 DOM&lt;/strong&gt;&lt;/p&gt;
-$(document).ready(function() {
-	//代码
-});
-
-&lt;p&gt;(1)执行时机：window.onload
-方法在网页中所有的元素（包括愿你苏的所有关联文件）完全加载后才执行，而
-$(document).ready() 在 DOM 完全就绪时就可以被调用&lt;/p&gt;
-
-&lt;p&gt; • $(window).load()与 window.onload 等价&lt;/p&gt;
-
-&lt;p&gt;(2)可多次使用：window.onload 方法只能执行一次，而$(document).ready()
-多次使用，根据注册的顺序依次执行&lt;/p&gt;
-
-&lt;p&gt;(3)简写方式&lt;/p&gt;
-$().ready(function() {
-	//代码
-});
-$(function() {
-	//代码
-});
-
-&lt;p&gt;​&lt;strong&gt;2. 事件绑定&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt; • bind(type[ , data], fn)&lt;/p&gt;
-
-&lt;p&gt; • one(type[ ,data], fn)-只执行一次&lt;/p&gt;
-
-&lt;p&gt;(1)第一个参数type表示事件类型：blur、focus、load、resize、scroll、unload、click、dblclick、mousedown、mouseup、mousemove、mouseover、mouseout、mouseenter、mouseleave、change、select、submit、keydown、keypress、keyup和error等&lt;/p&gt;
-
-&lt;p&gt;(2)第二个为可选参数，为做 event.data 属性传递给事件对象的额外数据&lt;/p&gt;
-
-&lt;p&gt;(3)第三个参数是用来绑定的处理函数&lt;/p&gt;
-
-&lt;p&gt; • 事件简写：$(variable).bind(type [, data], fn) 简写为
-$(variable).type(fn)&lt;/p&gt;
-
-&lt;p&gt;​&lt;strong&gt;3. 合成事件&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;(1)hover(fn, fn)方法-是 mouseover(fn) 和 mouseout(fn) 的合成&lt;/p&gt;
-
-&lt;p&gt;(2)toggle(fn1, fn2, &amp;hellip;)&lt;/p&gt;
-
-&lt;p&gt; • 用于模拟鼠标连续单击事件，当点击事件时重复对设置的函数进行调用&lt;/p&gt;
-
-&lt;p&gt; • 用于切换元素的可见状态&lt;/p&gt;
-
-&lt;p&gt;​&lt;strong&gt;4. 事件冒泡&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;(1)事件冒泡是指事件会按照 DOM 的层次结构像水泡一样不断向上直至顶端&lt;/p&gt;
-
-&lt;p&gt;(2)事件冒泡可能会引起预料之外的效果，可以使用&lt;/p&gt;
-
-&lt;p&gt; • event.stopPropagation()-停止事件冒泡&lt;/p&gt;
-
-&lt;p&gt; • event.preventDefault()-阻止默认行为&lt;/p&gt;
-
-&lt;p&gt; • return false-停止事件冒泡或者阻止默认行为&lt;/p&gt;
-
-&lt;p&gt;​&lt;strong&gt;5. 事件对象的属性&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt; • event.type()-获取事件的类型&lt;/p&gt;
-
-&lt;p&gt; • event.target()-获取到触发事件的元素&lt;/p&gt;
-
-&lt;p&gt; • event.relatedTarget()-获取触发事件的相关元素&lt;/p&gt;
-
-&lt;p&gt; • event.pageX()-获取鼠标相对于页面的 x 坐标&lt;/p&gt;
-
-&lt;p&gt; • event.pageY()-获取鼠标相对于页面的 y 坐标&lt;/p&gt;
-
-&lt;p&gt; •
-event.which()-在鼠标单击事件中获取鼠标的左(1)、中(2)、右健(3)；在键盘事件中获取键盘的按键&lt;/p&gt;
-
-&lt;p&gt; • event.metaKey()-键盘事件中获取 ctrl 按键&lt;/p&gt;
-
-&lt;p&gt; • event.originalEvent()-指向原始的事件对象&lt;/p&gt;
-
-&lt;p&gt;​&lt;strong&gt;6. 移除事件&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt; • unbind([type][ ,data])&lt;/p&gt;
-
-&lt;p&gt;(1)第一个参数为事件类型，第二个参数为要移除的函数&lt;/p&gt;
-
-&lt;p&gt;(2)没有参数，删除所有绑定的事件&lt;/p&gt;
-
-&lt;p&gt;(3)提供事件类型为参数，只删除该类型的绑定事件&lt;/p&gt;
-
-&lt;p&gt;(4)提供处理函数作为第二个函数，只删除提供的特定事件&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;7. 模拟事件操作&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;(1)模拟点击事件&lt;/p&gt;
-
-&lt;p&gt; • $(variable).trigger(&amp;ldquo;click&amp;rdquo;)&lt;/p&gt;
-
-&lt;p&gt; • $(variable).click()&lt;/p&gt;
-
-&lt;p&gt;(2)触发自定义事件&lt;/p&gt;
-
-&lt;p&gt; • $(variable).bind(&amp;ldquo;customEvent&amp;rdquo;, fn);&lt;/p&gt;
-
-&lt;p&gt;   $(variable).trigger(&amp;ldquo;customEvent&amp;rdquo;);&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>《锋利的jQuery》学习笔记——jQuery中的事件</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/sharp_jquery_study_notes_events_in_jquery</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/sharp_jquery_study_notes_events_in_jquery</guid>
-      <description>&lt;p&gt;​&lt;strong&gt;1. 加载 DOM&lt;/strong&gt;&lt;/p&gt;
-$(document).ready(function() {
-	//代码
-});
-
-&lt;p&gt;(1)执行时机：window.onload
-方法在网页中所有的元素（包括愿你苏的所有关联文件）完全加载后才执行，而
-$(document).ready() 在 DOM 完全就绪时就可以被调用&lt;/p&gt;
-
-&lt;p&gt; • $(window).load()与 window.onload 等价&lt;/p&gt;
-
-&lt;p&gt;(2)可多次使用：window.onload 方法只能执行一次，而$(document).ready()
-多次使用，根据注册的顺序依次执行&lt;/p&gt;
-
-&lt;p&gt;(3)简写方式&lt;/p&gt;
-$().ready(function() {
-	//代码
-});
-$(function() {
-	//代码
-});
-
-&lt;p&gt;​&lt;strong&gt;2. 事件绑定&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt; • bind(type[ , data], fn)&lt;/p&gt;
-
-&lt;p&gt; • one(type[ ,data], fn)-只执行一次&lt;/p&gt;
-
-&lt;p&gt;(1)第一个参数type表示事件类型：blur、focus、load、resize、scroll、unload、click、dblclick、mousedown、mouseup、mousemove、mouseover、mouseout、mouseenter、mouseleave、change、select、submit、keydown、keypress、keyup和error等&lt;/p&gt;
-
-&lt;p&gt;(2)第二个为可选参数，为做 event.data 属性传递给事件对象的额外数据&lt;/p&gt;
-
-&lt;p&gt;(3)第三个参数是用来绑定的处理函数&lt;/p&gt;
-
-&lt;p&gt; • 事件简写：$(variable).bind(type [, data], fn) 简写为
-$(variable).type(fn)&lt;/p&gt;
-
-&lt;p&gt;​&lt;strong&gt;3. 合成事件&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;(1)hover(fn, fn)方法-是 mouseover(fn) 和 mouseout(fn) 的合成&lt;/p&gt;
-
-&lt;p&gt;(2)toggle(fn1, fn2, &amp;hellip;)&lt;/p&gt;
-
-&lt;p&gt; • 用于模拟鼠标连续单击事件，当点击事件时重复对设置的函数进行调用&lt;/p&gt;
-
-&lt;p&gt; • 用于切换元素的可见状态&lt;/p&gt;
-
-&lt;p&gt;​&lt;strong&gt;4. 事件冒泡&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;(1)事件冒泡是指事件会按照 DOM 的层次结构像水泡一样不断向上直至顶端&lt;/p&gt;
-
-&lt;p&gt;(2)事件冒泡可能会引起预料之外的效果，可以使用&lt;/p&gt;
-
-&lt;p&gt; • event.stopPropagation()-停止事件冒泡&lt;/p&gt;
-
-&lt;p&gt; • event.preventDefault()-阻止默认行为&lt;/p&gt;
-
-&lt;p&gt; • return false-停止事件冒泡或者阻止默认行为&lt;/p&gt;
-
-&lt;p&gt;​&lt;strong&gt;5. 事件对象的属性&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt; • event.type()-获取事件的类型&lt;/p&gt;
-
-&lt;p&gt; • event.target()-获取到触发事件的元素&lt;/p&gt;
-
-&lt;p&gt; • event.relatedTarget()-获取触发事件的相关元素&lt;/p&gt;
-
-&lt;p&gt; • event.pageX()-获取鼠标相对于页面的 x 坐标&lt;/p&gt;
-
-&lt;p&gt; • event.pageY()-获取鼠标相对于页面的 y 坐标&lt;/p&gt;
-
-&lt;p&gt; •
-event.which()-在鼠标单击事件中获取鼠标的左(1)、中(2)、右健(3)；在键盘事件中获取键盘的按键&lt;/p&gt;
-
-&lt;p&gt; • event.metaKey()-键盘事件中获取 ctrl 按键&lt;/p&gt;
-
-&lt;p&gt; • event.originalEvent()-指向原始的事件对象&lt;/p&gt;
-
-&lt;p&gt;​&lt;strong&gt;6. 移除事件&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt; • unbind([type][ ,data])&lt;/p&gt;
-
-&lt;p&gt;(1)第一个参数为事件类型，第二个参数为要移除的函数&lt;/p&gt;
-
-&lt;p&gt;(2)没有参数，删除所有绑定的事件&lt;/p&gt;
-
-&lt;p&gt;(3)提供事件类型为参数，只删除该类型的绑定事件&lt;/p&gt;
-
-&lt;p&gt;(4)提供处理函数作为第二个函数，只删除提供的特定事件&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;7. 模拟事件操作&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;(1)模拟点击事件&lt;/p&gt;
-
-&lt;p&gt; • $(variable).trigger(&amp;ldquo;click&amp;rdquo;)&lt;/p&gt;
-
-&lt;p&gt; • $(variable).click()&lt;/p&gt;
-
-&lt;p&gt;(2)触发自定义事件&lt;/p&gt;
-
-&lt;p&gt; • $(variable).bind(&amp;ldquo;customEvent&amp;rdquo;, fn);&lt;/p&gt;
-
-&lt;p&gt;   $(variable).trigger(&amp;ldquo;customEvent&amp;rdquo;);&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>《锋利的jQuery》学习笔记——jQuery中的动画</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/sharp_jquery_study_notes_jquery_in_animation</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_in_animation</link>
+      <pubDate>Tue, 13 Mar 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/sharp_jquery_study_notes_jquery_in_animation</guid>
-      <description>&lt;p&gt;​&lt;strong&gt;1. show和hide方法&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt; • (&amp;ldquo;element&amp;rdquo;).show(speed[, callback])-显示element元素&lt;/p&gt;
-
-&lt;p&gt; • (&amp;ldquo;element&amp;rdquo;).hide(speed[, callback])-隐藏element元素&lt;/p&gt;
-
-&lt;p&gt;(1)show() 和 hide() 方法同时修改多个样式属性即高度、宽度和不透明度&lt;/p&gt;
-
-&lt;p&gt;(2)hide() 方法在将内容的 display 属性值设置为 none 之前，会记住原先的
-display 属性值，当调用 show() 方法时，会根据之前记住的值来显示元素&lt;/p&gt;
-
-&lt;p&gt;​&lt;strong&gt;2. fadeIn方法和fadeOut方法&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt; • (&amp;ldquo;element&amp;rdquo;).fadeIn(speed[,
-callback])-渐入，在指定事件内增加元素的不透明度&lt;/p&gt;
-
-&lt;p&gt; • (&amp;ldquo;element&amp;rdquo;).fadeOut(speed[,
-callback])-渐出，在指定事件内降低元素的不透明度&lt;/p&gt;
-
-&lt;p&gt;(1)fadeIn() 和 fadeOut() 方法只改变元素的不透明度&lt;/p&gt;
-
-&lt;p&gt;​&lt;strong&gt;3. slideUp方法和slideDown方法&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt; • (&amp;ldquo;element&amp;rdquo;).slideUp(speed[, callback])-元素由下到上缩短隐藏&lt;/p&gt;
-
-&lt;p&gt; • (&amp;ldquo;element&amp;rdquo;).slideDown(speed[, callback])-元素由上至下延伸显示&lt;/p&gt;
-
-&lt;p&gt;(1)slideUp() 和 slideDown() 只改变元素的高度&lt;/p&gt;
-
-&lt;p&gt;​&lt;strong&gt;4. 动画参数&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt; • 在 jQuery 中的任何动画效果，都可以指定 3 种速度参数，即
-“slow”、“normal” 和 “fast”（时间长度分别是 0.6 秒、0.4 秒和 0.2
-秒）；也可以使用数组作为时间参数（单位：毫秒）&lt;/p&gt;
-
-&lt;p&gt;​&lt;strong&gt;5. 自定义动画&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt; • animate(params[, speed][, callback]);&lt;/p&gt;
-
-&lt;p&gt;(1)params: 一个包含样式属性及值的映射，如 {property1: &amp;ldquo;value1&amp;rdquo;,
-property2: &amp;ldquo;value2&amp;rdquo;, &amp;hellip;}&lt;/p&gt;
-
-&lt;p&gt;(2)speed: 速度参数，可选&lt;/p&gt;
-
-&lt;p&gt;(3)callback: 在动画完成时执行的回调函数，可选&lt;/p&gt;
-
-&lt;p&gt;​&lt;strong&gt;6. 停止动画和判断是否处于动画状态&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;(1)停止元素的动画&lt;/p&gt;
-
-&lt;p&gt; • stop([clearQueue][, gotoEnd]);&lt;/p&gt;
-
-&lt;p&gt; •
-参数说明：参数都为可选参数，clearQueue表示是否清空未执行完的动画队列，gotoEnd表示是否直接将正在执行的动画跳转到末状态&lt;/p&gt;
-
-&lt;p&gt;(2)判断元素是否处于动画状态&lt;/p&gt;
-
-&lt;p&gt; • (element).is(&amp;rdquo;:animated&amp;rdquo;)&lt;/p&gt;
-
-&lt;p&gt;​&lt;strong&gt;7. 其他动画方法&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt; • toggle(speed[, callback])-切换元素的可见状态&lt;/p&gt;
-
-&lt;p&gt; • slideToggle(speed[, callback])通过高度变化来切换匹配元素的可见性&lt;/p&gt;
-
-&lt;p&gt; • fadeTo(speed, opacity[,
-callback])-把元素的不透明度以渐进方式调整到指定的值&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>《锋利的jQuery》学习笔记——jQuery中的动画</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/sharp_jquery_study_notes_jquery_in_animation</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/sharp_jquery_study_notes_jquery_in_animation</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_in_animation</guid>
       <description>&lt;p&gt;​&lt;strong&gt;1. show和hide方法&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt; • (&amp;ldquo;element&amp;rdquo;).show(speed[, callback])-显示element元素&lt;/p&gt;

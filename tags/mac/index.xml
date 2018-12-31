@@ -7,14 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Mon, 10 Feb 2014 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/mac/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>VirtualBox 安装 Mac OS X 10.9 Mavericks 小记</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/vbox_mac_install</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2014/02/10/vbox_mac_install</link>
+      <pubDate>Mon, 10 Feb 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/vbox_mac_install</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/02/10/vbox_mac_install</guid>
       <description>
 
 &lt;h3 id=&#34;1-准备工作:28ef1238a24229312bbe9f6fa6b31cf3&#34;&gt;1. 准备工作&lt;/h3&gt;

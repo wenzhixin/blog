@@ -7,14 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Thu, 31 Oct 2013 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/title/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>html 标签 title 换行方法</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/html_title_wrap</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2013/10/31/html_title_wrap</link>
+      <pubDate>Thu, 31 Oct 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/html_title_wrap</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/10/31/html_title_wrap</guid>
       <description>
 
 &lt;h4 id=&#34;1-使用换行符换行:548105be9a74e22b181602bef2a685f9&#34;&gt;1. 使用换行符换行&lt;/h4&gt;

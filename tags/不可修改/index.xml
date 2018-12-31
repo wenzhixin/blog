@@ -7,14 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Wed, 07 May 2014 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/%E4%B8%8D%E5%8F%AF%E4%BF%AE%E6%94%B9/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>在 JavaScript 中定义常量（不可修改）</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/javascript_define_const</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2014/05/07/javascript_define_const</link>
+      <pubDate>Wed, 07 May 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/javascript_define_const</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/05/07/javascript_define_const</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://github.com/wenzhixin/define-const.js&#34;&gt;define-const.js&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;在《JavaScript 启示录》的最后一章中提到:

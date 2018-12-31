@@ -7,14 +7,51 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Thu, 18 Sep 2014 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/http%E4%BB%A3%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>使用 apache2 作为代理服务器轻松解决 Ajax 跨域问题</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/apache_proxy</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>如何为 NodeJs 设置 Nginx 代理服务器</title>
+      <link>http://blog.wenzhixin.net.cn/2014/09/18/nginx_as_proxy_nodejs</link>
+      <pubDate>Thu, 18 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/apache_proxy</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/09/18/nginx_as_proxy_nodejs</guid>
+      <description>&lt;p&gt;很多时候，我们需要为 NodeJs 设置反向代理，例如本博客后台 NodeJs 的应用监听的端口为 3333，通过 Nginx 便可以轻松代理为 80 端口，那么应该如何设置呢？&lt;/p&gt;
+
+&lt;p&gt;首先设置 &lt;code&gt;upstream&lt;/code&gt;：&lt;/p&gt;
+upstream app_blog {
+    server 127.0.0.1:3333;
+}
+
+&lt;p&gt;设置 &lt;code&gt;server&lt;/code&gt;：&lt;/p&gt;
+server {
+    listen 80 default;
+    server_name wenzhixin.net.cn wenzhixin.*;
+
+    location / {
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $http_host;
+        proxy_set_header X-NginX-Proxy true;
+
+        proxy_pass http://app_blog;
+        proxy_redirect off;
+    }
+}
+
+&lt;p&gt;重启 &lt;code&gt;nginx&lt;/code&gt;：&lt;/p&gt;
+sudo service nginx restart
+
+&lt;p&gt;大功告成！根据我们的设置，所有通过 80 的请求（头部信息）都会跳转到 3333 端口。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>使用 apache2 作为代理服务器轻松解决 Ajax 跨域问题</title>
+      <link>http://blog.wenzhixin.net.cn/2014/06/05/apache_proxy</link>
+      <pubDate>Thu, 05 Jun 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2014/06/05/apache_proxy</guid>
       <description>
 
 &lt;h3 id=&#34;介绍:299d40c8bf8f0942a2f38dea542412ab&#34;&gt;介绍&lt;/h3&gt;
@@ -68,42 +105,6 @@ sudo vi /etc/apache2/site-enabled/proxy.conf
 &lt;hr /&gt;
 
 &lt;p&gt;相关问题：&lt;a href=&#34;http://wenzhixin.net.cn/2012/08/01/the_use_of_nginx_as_a_proxy_server_easily_solve_the_cross_domain_ajax_problem&#34;&gt;使用 nginx 作为代理服务器轻松解决 Ajax 跨域问题&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>如何为 NodeJs 设置 Nginx 代理服务器</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/nginx_as_proxy_nodejs</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/nginx_as_proxy_nodejs</guid>
-      <description>&lt;p&gt;很多时候，我们需要为 NodeJs 设置反向代理，例如本博客后台 NodeJs 的应用监听的端口为 3333，通过 Nginx 便可以轻松代理为 80 端口，那么应该如何设置呢？&lt;/p&gt;
-
-&lt;p&gt;首先设置 &lt;code&gt;upstream&lt;/code&gt;：&lt;/p&gt;
-upstream app_blog {
-    server 127.0.0.1:3333;
-}
-
-&lt;p&gt;设置 &lt;code&gt;server&lt;/code&gt;：&lt;/p&gt;
-server {
-    listen 80 default;
-    server_name wenzhixin.net.cn wenzhixin.*;
-
-    location / {
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header Host $http_host;
-        proxy_set_header X-NginX-Proxy true;
-
-        proxy_pass http://app_blog;
-        proxy_redirect off;
-    }
-}
-
-&lt;p&gt;重启 &lt;code&gt;nginx&lt;/code&gt;：&lt;/p&gt;
-sudo service nginx restart
-
-&lt;p&gt;大功告成！根据我们的设置，所有通过 80 的请求（头部信息）都会跳转到 3333 端口。&lt;/p&gt;
 </description>
     </item>
     

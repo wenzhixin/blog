@@ -7,14 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Fri, 15 Nov 2013 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/%E6%B5%8F%E8%A7%88%E9%87%8F/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>使用 google analytics 和显示页面浏览量</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/use_google_analytics_and_display_visits</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2013/11/15/use_google_analytics_and_display_visits</link>
+      <pubDate>Fri, 15 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/use_google_analytics_and_display_visits</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/15/use_google_analytics_and_display_visits</guid>
       <description>
 
 &lt;p&gt;Google Analytics 的强大就不说了，因为它代表了这个领域的最高水平。&lt;/p&gt;

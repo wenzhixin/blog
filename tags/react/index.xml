@@ -7,14 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Sun, 07 Jun 2015 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/react/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>react-memory：基于 nodejs &#43; bower &#43; react 的文字记忆游戏</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/react_memory</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2015/06/07/react_memory</link>
+      <pubDate>Sun, 07 Jun 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/react_memory</guid>
+      <guid>http://blog.wenzhixin.net.cn/2015/06/07/react_memory</guid>
       <description>
 
 &lt;h3 id=&#34;前言:126e5f0c3267828479b5a765d781e066&#34;&gt;前言&lt;/h3&gt;

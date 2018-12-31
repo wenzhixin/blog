@@ -7,46 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Wed, 30 Oct 2013 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/debian/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Debian 安装 nodejs 环境</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/debian_node_install</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/debian_node_install</guid>
-      <description>&lt;p&gt;&lt;strong&gt;1. 安装编译包&lt;/strong&gt;&lt;/p&gt;
-sudo apt-get install python g++ make checkinstall
-
-&lt;p&gt;&lt;strong&gt;2. 获取最新的 node 源码&lt;/strong&gt;&lt;/p&gt;
-mkdir ~/src &amp;&amp; cd ~/src
-wget -N http://nodejs.org/dist/node-latest.tar.gz
-tar xzvf node-latest.tar.gz &amp;&amp; cd node-v*
-
-&lt;p&gt;&lt;strong&gt;3. 配置编译源码&lt;/strong&gt;&lt;/p&gt;
-./configure
-sudo checkinstall
-
-&lt;p&gt;注意，运行 checkinstall 需要 sudo，之后选择 3，将 node 的版本号前的 v 去掉，
-例如，这里安装的版本为 v0.10.21，改为 0.10.21 即可。&lt;br /&gt;
-这里编译会比较久，需要耐心等待，特别是在 pi 下。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;4. 安装（-i）和卸载（-r）&lt;/strong&gt;&lt;/p&gt;
-sudo dpkg -i node_*
-sudo dpkg -r node
-
-&lt;p&gt;&lt;strong&gt;5. 查看 nodejs 和 npm 的版本&lt;/strong&gt;&lt;/p&gt;
-node -v
-npm -v
-</description>
-    </item>
-    
-    <item>
       <title>Debian 添加自启动服务</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/debian_script_init</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2013/10/30/debian_script_init</link>
+      <pubDate>Wed, 30 Oct 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/debian_script_init</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/10/30/debian_script_init</guid>
       <description>
 
 &lt;h4 id=&#34;1-新建脚本文件:5a63f747350973a6bdfac6af85b4c2a9&#34;&gt;1. 新建脚本文件&lt;/h4&gt;
@@ -123,7 +92,7 @@ exit 0
 &lt;li&gt;-R, &amp;ndash;retry timeout|schedule  重试次数&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;需要将 USER 修改为自己的用户名称&lt;br /&gt;
+&lt;p&gt;需要将 USER 修改为自己的用户名称
 配置文件位于 /home/$USER/.aria2/aria2.conf&lt;/p&gt;
 
 &lt;p&gt;更多参数含义可以通过 &lt;code&gt;man start-stop-daemon&lt;/code&gt; 进行查看&lt;/p&gt;
@@ -155,6 +124,38 @@ sudo insserv -r /etc/init.d/aria2c #删除服务
 &lt;/ul&gt;
 sudo reboot
 sudo /etc/init.d/aria2c status
+</description>
+    </item>
+    
+    <item>
+      <title>Debian 安装 nodejs 环境</title>
+      <link>http://blog.wenzhixin.net.cn/2013/10/29/debian_node_install</link>
+      <pubDate>Tue, 29 Oct 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2013/10/29/debian_node_install</guid>
+      <description>&lt;p&gt;&lt;strong&gt;1. 安装编译包&lt;/strong&gt;&lt;/p&gt;
+sudo apt-get install python g++ make checkinstall
+
+&lt;p&gt;&lt;strong&gt;2. 获取最新的 node 源码&lt;/strong&gt;&lt;/p&gt;
+mkdir ~/src &amp;&amp; cd ~/src
+wget -N http://nodejs.org/dist/node-latest.tar.gz
+tar xzvf node-latest.tar.gz &amp;&amp; cd node-v*
+
+&lt;p&gt;&lt;strong&gt;3. 配置编译源码&lt;/strong&gt;&lt;/p&gt;
+./configure
+sudo checkinstall
+
+&lt;p&gt;注意，运行 checkinstall 需要 sudo，之后选择 3，将 node 的版本号前的 v 去掉，
+例如，这里安装的版本为 v0.10.21，改为 0.10.21 即可。
+这里编译会比较久，需要耐心等待，特别是在 pi 下。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;4. 安装（-i）和卸载（-r）&lt;/strong&gt;&lt;/p&gt;
+sudo dpkg -i node_*
+sudo dpkg -r node
+
+&lt;p&gt;&lt;strong&gt;5. 查看 nodejs 和 npm 的版本&lt;/strong&gt;&lt;/p&gt;
+node -v
+npm -v
 </description>
     </item>
     

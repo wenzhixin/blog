@@ -7,14 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Wed, 12 Jun 2013 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/mongodb/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>MongoDB mongoexport 命令的使用及简单实现</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/mongodb_export</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2013/06/12/mongodb_export</link>
+      <pubDate>Wed, 12 Jun 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/mongodb_export</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/06/12/mongodb_export</guid>
       <description>&lt;p&gt;MongoDB 提供了 mongoexport 命令来导出数据，导出的数据是 json 格式的，当然也可以是 csv 格式。主要可以实现&lt;strong&gt;备份和恢复&lt;/strong&gt;的功能。&lt;/p&gt;
 
 &lt;p&gt;具体的使用，我们使用 &amp;ndash;help 查看，主要的参数有：&lt;/p&gt;
@@ -148,7 +149,7 @@ function exportFile() {
                 ].join(&#39;\n&#39;));
                 mongoClient.close();
             });
-        });    
+        });
     });
 }
 
@@ -162,11 +163,241 @@ node mongoexport.js -d tests -c users -o users.dat
     </item>
     
     <item>
-      <title>MongoDB 入门</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/mongodb_started</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>MongoDB 创建、更新及删除文档</title>
+      <link>http://blog.wenzhixin.net.cn/2012/12/08/mongodb_insert_update_remove</link>
+      <pubDate>Sat, 08 Dec 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/mongodb_started</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/12/08/mongodb_insert_update_remove</guid>
+      <description>
+
+&lt;h4 id=&#34;1-插入文档-insert:da56ffb607df7734e09bf82346cedf76&#34;&gt;1、插入文档：insert&lt;/h4&gt;
+
+&lt;p&gt;1) 基本用法：&lt;/p&gt;
+db.name.insert(文档内容);
+
+&lt;p&gt;例子：&lt;/p&gt;
+db.users.insert({&#34;username&#34;: &#34;wenyi&#34;, &#34;age&#34;: 25});
+
+&lt;p&gt;2) 从其他数据库导入数据，使用 mongoimport 命令&lt;/p&gt;
+
+&lt;p&gt;3) 原理与作用:&lt;/p&gt;
+
+&lt;p&gt;插入数据时只检查文档大小（不超过 4M），不做别的数据验证，简单地将文档原样存进数据库中。
+这种方式可以让数据库更加安全，远离注入式攻击。&lt;/p&gt;
+
+&lt;h4 id=&#34;2-删除文档-remove:da56ffb607df7734e09bf82346cedf76&#34;&gt;2、删除文档：remove&lt;/h4&gt;
+
+&lt;p&gt;1) 基本用法：&lt;/p&gt;
+db.name.remove(索引);
+
+&lt;p&gt;例子：&lt;/p&gt;
+db.users.remove();
+db.users.remove({&#34;username&#34;: &#34;wenyi&#34;});
+
+&lt;p&gt;2) db.users.remove() 与 db.drop_collection(&amp;ldquo;users&amp;rdquo;) 的区别：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;两者都是删除整个集合&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;前者会保留所有的索引，后者删除所有的索引&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;前者删除速度慢，后者删除速度快&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;3-更新文档-update:da56ffb607df7734e09bf82346cedf76&#34;&gt;3、更新文档：update&lt;/h4&gt;
+
+&lt;p&gt;1) 基本用法：&lt;/p&gt;
+db.name.update(索引, 修改的文档);
+
+&lt;p&gt;例子：&lt;/p&gt;
+db.users.update({&#34;username&#34;: &#34;wenyi&#34;}, {&#34;username&#34;: &#34;wenyi&#34;, &#34;age&#34;: 26}});
+
+&lt;p&gt;2) 使用修改器：是种特殊的键，用来指定复杂的更新操作，更新文档部分内容&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;$set: 用来指定一个键的值，如果该键不存在，则创建它。用于更新模式或增加用户自定义键&lt;/li&gt;
+&lt;li&gt;$unset: 用来删除某个键&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;例子：&lt;/p&gt;
+db.users.update({&#34;username&#34;: &#34;wenyi&#34;}, {&#34;$set&#34;: {&#34;age&#34;: 26}}});
+db.users.update({&#34;username&#34;: &#34;wenyi&#34;}, {&#34;$set&#34;: {&#34;blog&#34;: &#34;wenyi.tk&#34;}}});
+db.users.update({&#34;username&#34;: &#34;wenyi&#34;}, {&#34;$unset&#34;: {&#34;blog&#34;: 1}}});
+
+&lt;ul&gt;
+&lt;li&gt;$inc: 用来增加已有键的值，或者在键不存在时创建一个键。用于分析数据、因果关系、投票或者有变化数值的地方&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;例子：&lt;/p&gt;
+db.users.update({&#34;username&#34;: &#34;wenyi&#34;}, {&#34;$inc&#34;: {&#34;age&#34;: 1}}});
+db.games.update({&#34;name&#34;: &#34;my_game&#34;}, {&#34;$inc&#34;: {&#34;score&#34;: 100}}});
+
+&lt;p&gt;注：只能用于整数、长整数或双精度浮点数&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;$push: 向一有数组末尾加入元素，不存在则创建新数组&lt;/li&gt;
+&lt;li&gt;$pop: 从数组任何一端删除元素。{$pop: {key: 1}} 从末尾删除一个元素；{$pop: {key: -1}} 从头尾删除一个元素&lt;/li&gt;
+&lt;li&gt;$pull: 基于特定的条件来删除元素&lt;/li&gt;
+&lt;li&gt;$: 用来定位查询文档已经匹配的元素&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;例子：&lt;/p&gt;
+db.posts.update({&#34;name&#34;: &#34;my_blog&#34;}, {&#34;$push&#34;, {&#34;comments&#34;: {&#34;name&#34;: &#34;test&#34;, &#34;content&#34;: &#34;这是一条评论&#34;}});
+db.posts.update({&#34;name&#34;: &#34;my_blog&#34;}, {&#34;$pop&#34;, {&#34;comments&#34;: 1});
+db.posts.update({&#34;name&#34;: &#34;my_blog&#34;}, {&#34;$pull&#34;, {&#34;comments.$.name&#34;: &#34;test&#34;});
+
+&lt;p&gt;3) upsert: 特殊的更新，没有符合更新条件的文档，便会以创建一个新的文档。&lt;/p&gt;
+
+&lt;p&gt;4) 其他命令：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;getLastError: 查看上次更新信息&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;参数:&lt;/p&gt;
+{
+    &#34;err&#34;: &#34;err&#34;, //错误信息
+    &#34;updatedExisting&#34;: true / fase,
+    &#34;n&#34;: n, //文档更新条数
+    &#34;ok&#34;: true / false //更新结果
+
+&lt;ul&gt;
+&lt;li&gt;findAndModify: 返回已更新的文档&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;用法：&lt;/p&gt;
+db.name.findAndModify({
+    &#34;findAndModify&#34;: &#34;string&#34;, //集合名
+    &#34;query&#34;: &#34;string&#34;, //查询文档
+    &#34;sort&#34;: string&#34;, //排序条件
+    &#34;update&#34;: &#34;string&#34;, //更新文档
+    &#34;remove&#34;: bool, //是否删除文档
+    &#34;new&#34;: bool //返回更新前（默认）和更新后的文档
+}
+</description>
+    </item>
+    
+    <item>
+      <title>MongoDB 创建、更新及删除文档</title>
+      <link>http://blog.wenzhixin.net.cn/2012/12/08/mongodb_insert_update_remove</link>
+      <pubDate>Sat, 08 Dec 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2012/12/08/mongodb_insert_update_remove</guid>
+      <description>
+
+&lt;h4 id=&#34;1-插入文档-insert:da56ffb607df7734e09bf82346cedf76&#34;&gt;1、插入文档：insert&lt;/h4&gt;
+
+&lt;p&gt;1) 基本用法：&lt;/p&gt;
+db.name.insert(文档内容);
+
+&lt;p&gt;例子：&lt;/p&gt;
+db.users.insert({&#34;username&#34;: &#34;wenyi&#34;, &#34;age&#34;: 25});
+
+&lt;p&gt;2) 从其他数据库导入数据，使用 mongoimport 命令&lt;/p&gt;
+
+&lt;p&gt;3) 原理与作用:&lt;/p&gt;
+
+&lt;p&gt;插入数据时只检查文档大小（不超过 4M），不做别的数据验证，简单地将文档原样存进数据库中。
+这种方式可以让数据库更加安全，远离注入式攻击。&lt;/p&gt;
+
+&lt;h4 id=&#34;2-删除文档-remove:da56ffb607df7734e09bf82346cedf76&#34;&gt;2、删除文档：remove&lt;/h4&gt;
+
+&lt;p&gt;1) 基本用法：&lt;/p&gt;
+db.name.remove(索引);
+
+&lt;p&gt;例子：&lt;/p&gt;
+db.users.remove();
+db.users.remove({&#34;username&#34;: &#34;wenyi&#34;});
+
+&lt;p&gt;2) db.users.remove() 与 db.drop_collection(&amp;ldquo;users&amp;rdquo;) 的区别：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;两者都是删除整个集合&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;前者会保留所有的索引，后者删除所有的索引&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;前者删除速度慢，后者删除速度快&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;3-更新文档-update:da56ffb607df7734e09bf82346cedf76&#34;&gt;3、更新文档：update&lt;/h4&gt;
+
+&lt;p&gt;1) 基本用法：&lt;/p&gt;
+db.name.update(索引, 修改的文档);
+
+&lt;p&gt;例子：&lt;/p&gt;
+db.users.update({&#34;username&#34;: &#34;wenyi&#34;}, {&#34;username&#34;: &#34;wenyi&#34;, &#34;age&#34;: 26}});
+
+&lt;p&gt;2) 使用修改器：是种特殊的键，用来指定复杂的更新操作，更新文档部分内容&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;$set: 用来指定一个键的值，如果该键不存在，则创建它。用于更新模式或增加用户自定义键&lt;/li&gt;
+&lt;li&gt;$unset: 用来删除某个键&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;例子：&lt;/p&gt;
+db.users.update({&#34;username&#34;: &#34;wenyi&#34;}, {&#34;$set&#34;: {&#34;age&#34;: 26}}});
+db.users.update({&#34;username&#34;: &#34;wenyi&#34;}, {&#34;$set&#34;: {&#34;blog&#34;: &#34;wenyi.tk&#34;}}});
+db.users.update({&#34;username&#34;: &#34;wenyi&#34;}, {&#34;$unset&#34;: {&#34;blog&#34;: 1}}});
+
+&lt;ul&gt;
+&lt;li&gt;$inc: 用来增加已有键的值，或者在键不存在时创建一个键。用于分析数据、因果关系、投票或者有变化数值的地方&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;例子：&lt;/p&gt;
+db.users.update({&#34;username&#34;: &#34;wenyi&#34;}, {&#34;$inc&#34;: {&#34;age&#34;: 1}}});
+db.games.update({&#34;name&#34;: &#34;my_game&#34;}, {&#34;$inc&#34;: {&#34;score&#34;: 100}}});
+
+&lt;p&gt;注：只能用于整数、长整数或双精度浮点数&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;$push: 向一有数组末尾加入元素，不存在则创建新数组&lt;/li&gt;
+&lt;li&gt;$pop: 从数组任何一端删除元素。{$pop: {key: 1}} 从末尾删除一个元素；{$pop: {key: -1}} 从头尾删除一个元素&lt;/li&gt;
+&lt;li&gt;$pull: 基于特定的条件来删除元素&lt;/li&gt;
+&lt;li&gt;$: 用来定位查询文档已经匹配的元素&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;例子：&lt;/p&gt;
+db.posts.update({&#34;name&#34;: &#34;my_blog&#34;}, {&#34;$push&#34;, {&#34;comments&#34;: {&#34;name&#34;: &#34;test&#34;, &#34;content&#34;: &#34;这是一条评论&#34;}});
+db.posts.update({&#34;name&#34;: &#34;my_blog&#34;}, {&#34;$pop&#34;, {&#34;comments&#34;: 1});
+db.posts.update({&#34;name&#34;: &#34;my_blog&#34;}, {&#34;$pull&#34;, {&#34;comments.$.name&#34;: &#34;test&#34;});
+
+&lt;p&gt;3) upsert: 特殊的更新，没有符合更新条件的文档，便会以创建一个新的文档。&lt;/p&gt;
+
+&lt;p&gt;4) 其他命令：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;getLastError: 查看上次更新信息&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;参数:&lt;/p&gt;
+{
+    &#34;err&#34;: &#34;err&#34;, //错误信息
+    &#34;updatedExisting&#34;: true / fase,
+    &#34;n&#34;: n, //文档更新条数
+    &#34;ok&#34;: true / false //更新结果
+
+&lt;ul&gt;
+&lt;li&gt;findAndModify: 返回已更新的文档&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;用法：&lt;/p&gt;
+db.name.findAndModify({
+    &#34;findAndModify&#34;: &#34;string&#34;, //集合名
+    &#34;query&#34;: &#34;string&#34;, //查询文档
+    &#34;sort&#34;: string&#34;, //排序条件
+    &#34;update&#34;: &#34;string&#34;, //更新文档
+    &#34;remove&#34;: bool, //是否删除文档
+    &#34;new&#34;: bool //返回更新前（默认）和更新后的文档
+}
+</description>
+    </item>
+    
+    <item>
+      <title>MongoDB 入门</title>
+      <link>http://blog.wenzhixin.net.cn/2012/12/06/mongodb_started</link>
+      <pubDate>Thu, 06 Dec 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2012/12/06/mongodb_started</guid>
       <description>
 
 &lt;h4 id=&#34;1-文档:dce783b64be9377b18562728f7c30112&#34;&gt;1、文档&lt;/h4&gt;
@@ -305,10 +536,10 @@ db.help()
     
     <item>
       <title>MongoDB 入门</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/mongodb_started</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2012/12/06/mongodb_started</link>
+      <pubDate>Thu, 06 Dec 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/mongodb_started</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/12/06/mongodb_started</guid>
       <description>
 
 &lt;h4 id=&#34;1-文档:dce783b64be9377b18562728f7c30112&#34;&gt;1、文档&lt;/h4&gt;
@@ -442,236 +673,6 @@ db.help()
 
 &lt;li&gt;&lt;p&gt;内嵌文档：文档包含文档&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>MongoDB 创建、更新及删除文档</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/mongodb_insert_update_remove</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/mongodb_insert_update_remove</guid>
-      <description>
-
-&lt;h4 id=&#34;1-插入文档-insert:da56ffb607df7734e09bf82346cedf76&#34;&gt;1、插入文档：insert&lt;/h4&gt;
-
-&lt;p&gt;1) 基本用法：&lt;/p&gt;
-db.name.insert(文档内容);
-
-&lt;p&gt;例子：&lt;/p&gt;
-db.users.insert({&#34;username&#34;: &#34;wenyi&#34;, &#34;age&#34;: 25});
-
-&lt;p&gt;2) 从其他数据库导入数据，使用 mongoimport 命令&lt;/p&gt;
-
-&lt;p&gt;3) 原理与作用:&lt;/p&gt;
-
-&lt;p&gt;插入数据时只检查文档大小（不超过 4M），不做别的数据验证，简单地将文档原样存进数据库中。
-这种方式可以让数据库更加安全，远离注入式攻击。&lt;/p&gt;
-
-&lt;h4 id=&#34;2-删除文档-remove:da56ffb607df7734e09bf82346cedf76&#34;&gt;2、删除文档：remove&lt;/h4&gt;
-
-&lt;p&gt;1) 基本用法：&lt;/p&gt;
-db.name.remove(索引);
-
-&lt;p&gt;例子：&lt;/p&gt;
-db.users.remove();
-db.users.remove({&#34;username&#34;: &#34;wenyi&#34;});
-
-&lt;p&gt;2) db.users.remove() 与 db.drop_collection(&amp;ldquo;users&amp;rdquo;) 的区别：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;两者都是删除整个集合&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;前者会保留所有的索引，后者删除所有的索引&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;前者删除速度慢，后者删除速度快&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;3-更新文档-update:da56ffb607df7734e09bf82346cedf76&#34;&gt;3、更新文档：update&lt;/h4&gt;
-
-&lt;p&gt;1) 基本用法：&lt;/p&gt;
-db.name.update(索引, 修改的文档);
-
-&lt;p&gt;例子：&lt;/p&gt;
-db.users.update({&#34;username&#34;: &#34;wenyi&#34;}, {&#34;username&#34;: &#34;wenyi&#34;, &#34;age&#34;: 26}});
-
-&lt;p&gt;2) 使用修改器：是种特殊的键，用来指定复杂的更新操作，更新文档部分内容&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;$set: 用来指定一个键的值，如果该键不存在，则创建它。用于更新模式或增加用户自定义键&lt;/li&gt;
-&lt;li&gt;$unset: 用来删除某个键&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;例子：&lt;/p&gt;
-db.users.update({&#34;username&#34;: &#34;wenyi&#34;}, {&#34;$set&#34;: {&#34;age&#34;: 26}}});
-db.users.update({&#34;username&#34;: &#34;wenyi&#34;}, {&#34;$set&#34;: {&#34;blog&#34;: &#34;wenyi.tk&#34;}}});
-db.users.update({&#34;username&#34;: &#34;wenyi&#34;}, {&#34;$unset&#34;: {&#34;blog&#34;: 1}}});
-
-&lt;ul&gt;
-&lt;li&gt;$inc: 用来增加已有键的值，或者在键不存在时创建一个键。用于分析数据、因果关系、投票或者有变化数值的地方&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;例子：&lt;/p&gt;
-db.users.update({&#34;username&#34;: &#34;wenyi&#34;}, {&#34;$inc&#34;: {&#34;age&#34;: 1}}});
-db.games.update({&#34;name&#34;: &#34;my_game&#34;}, {&#34;$inc&#34;: {&#34;score&#34;: 100}}});
-
-&lt;p&gt;注：只能用于整数、长整数或双精度浮点数&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;$push: 向一有数组末尾加入元素，不存在则创建新数组&lt;/li&gt;
-&lt;li&gt;$pop: 从数组任何一端删除元素。{$pop: {key: 1}} 从末尾删除一个元素；{$pop: {key: -1}} 从头尾删除一个元素&lt;/li&gt;
-&lt;li&gt;$pull: 基于特定的条件来删除元素&lt;/li&gt;
-&lt;li&gt;$: 用来定位查询文档已经匹配的元素&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;例子：&lt;/p&gt;
-db.posts.update({&#34;name&#34;: &#34;my_blog&#34;}, {&#34;$push&#34;, {&#34;comments&#34;: {&#34;name&#34;: &#34;test&#34;, &#34;content&#34;: &#34;这是一条评论&#34;}});
-db.posts.update({&#34;name&#34;: &#34;my_blog&#34;}, {&#34;$pop&#34;, {&#34;comments&#34;: 1});
-db.posts.update({&#34;name&#34;: &#34;my_blog&#34;}, {&#34;$pull&#34;, {&#34;comments.$.name&#34;: &#34;test&#34;});
-
-&lt;p&gt;3) upsert: 特殊的更新，没有符合更新条件的文档，便会以创建一个新的文档。&lt;/p&gt;
-
-&lt;p&gt;4) 其他命令：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;getLastError: 查看上次更新信息&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;参数:&lt;/p&gt;
-{
-    &#34;err&#34;: &#34;err&#34;, //错误信息
-    &#34;updatedExisting&#34;: true / fase,
-    &#34;n&#34;: n, //文档更新条数
-    &#34;ok&#34;: true / false //更新结果
-
-&lt;ul&gt;
-&lt;li&gt;findAndModify: 返回已更新的文档&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;用法：&lt;/p&gt;
-db.name.findAndModify({
-    &#34;findAndModify&#34;: &#34;string&#34;, //集合名
-    &#34;query&#34;: &#34;string&#34;, //查询文档
-    &#34;sort&#34;: string&#34;, //排序条件
-    &#34;update&#34;: &#34;string&#34;, //更新文档
-    &#34;remove&#34;: bool, //是否删除文档
-    &#34;new&#34;: bool //返回更新前（默认）和更新后的文档
-} 
-</description>
-    </item>
-    
-    <item>
-      <title>MongoDB 创建、更新及删除文档</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/mongodb_insert_update_remove</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/mongodb_insert_update_remove</guid>
-      <description>
-
-&lt;h4 id=&#34;1-插入文档-insert:da56ffb607df7734e09bf82346cedf76&#34;&gt;1、插入文档：insert&lt;/h4&gt;
-
-&lt;p&gt;1) 基本用法：&lt;/p&gt;
-db.name.insert(文档内容);
-
-&lt;p&gt;例子：&lt;/p&gt;
-db.users.insert({&#34;username&#34;: &#34;wenyi&#34;, &#34;age&#34;: 25});
-
-&lt;p&gt;2) 从其他数据库导入数据，使用 mongoimport 命令&lt;/p&gt;
-
-&lt;p&gt;3) 原理与作用:&lt;/p&gt;
-
-&lt;p&gt;插入数据时只检查文档大小（不超过 4M），不做别的数据验证，简单地将文档原样存进数据库中。
-这种方式可以让数据库更加安全，远离注入式攻击。&lt;/p&gt;
-
-&lt;h4 id=&#34;2-删除文档-remove:da56ffb607df7734e09bf82346cedf76&#34;&gt;2、删除文档：remove&lt;/h4&gt;
-
-&lt;p&gt;1) 基本用法：&lt;/p&gt;
-db.name.remove(索引);
-
-&lt;p&gt;例子：&lt;/p&gt;
-db.users.remove();
-db.users.remove({&#34;username&#34;: &#34;wenyi&#34;});
-
-&lt;p&gt;2) db.users.remove() 与 db.drop_collection(&amp;ldquo;users&amp;rdquo;) 的区别：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;两者都是删除整个集合&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;前者会保留所有的索引，后者删除所有的索引&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;前者删除速度慢，后者删除速度快&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;3-更新文档-update:da56ffb607df7734e09bf82346cedf76&#34;&gt;3、更新文档：update&lt;/h4&gt;
-
-&lt;p&gt;1) 基本用法：&lt;/p&gt;
-db.name.update(索引, 修改的文档);
-
-&lt;p&gt;例子：&lt;/p&gt;
-db.users.update({&#34;username&#34;: &#34;wenyi&#34;}, {&#34;username&#34;: &#34;wenyi&#34;, &#34;age&#34;: 26}});
-
-&lt;p&gt;2) 使用修改器：是种特殊的键，用来指定复杂的更新操作，更新文档部分内容&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;$set: 用来指定一个键的值，如果该键不存在，则创建它。用于更新模式或增加用户自定义键&lt;/li&gt;
-&lt;li&gt;$unset: 用来删除某个键&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;例子：&lt;/p&gt;
-db.users.update({&#34;username&#34;: &#34;wenyi&#34;}, {&#34;$set&#34;: {&#34;age&#34;: 26}}});
-db.users.update({&#34;username&#34;: &#34;wenyi&#34;}, {&#34;$set&#34;: {&#34;blog&#34;: &#34;wenyi.tk&#34;}}});
-db.users.update({&#34;username&#34;: &#34;wenyi&#34;}, {&#34;$unset&#34;: {&#34;blog&#34;: 1}}});
-
-&lt;ul&gt;
-&lt;li&gt;$inc: 用来增加已有键的值，或者在键不存在时创建一个键。用于分析数据、因果关系、投票或者有变化数值的地方&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;例子：&lt;/p&gt;
-db.users.update({&#34;username&#34;: &#34;wenyi&#34;}, {&#34;$inc&#34;: {&#34;age&#34;: 1}}});
-db.games.update({&#34;name&#34;: &#34;my_game&#34;}, {&#34;$inc&#34;: {&#34;score&#34;: 100}}});
-
-&lt;p&gt;注：只能用于整数、长整数或双精度浮点数&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;$push: 向一有数组末尾加入元素，不存在则创建新数组&lt;/li&gt;
-&lt;li&gt;$pop: 从数组任何一端删除元素。{$pop: {key: 1}} 从末尾删除一个元素；{$pop: {key: -1}} 从头尾删除一个元素&lt;/li&gt;
-&lt;li&gt;$pull: 基于特定的条件来删除元素&lt;/li&gt;
-&lt;li&gt;$: 用来定位查询文档已经匹配的元素&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;例子：&lt;/p&gt;
-db.posts.update({&#34;name&#34;: &#34;my_blog&#34;}, {&#34;$push&#34;, {&#34;comments&#34;: {&#34;name&#34;: &#34;test&#34;, &#34;content&#34;: &#34;这是一条评论&#34;}});
-db.posts.update({&#34;name&#34;: &#34;my_blog&#34;}, {&#34;$pop&#34;, {&#34;comments&#34;: 1});
-db.posts.update({&#34;name&#34;: &#34;my_blog&#34;}, {&#34;$pull&#34;, {&#34;comments.$.name&#34;: &#34;test&#34;});
-
-&lt;p&gt;3) upsert: 特殊的更新，没有符合更新条件的文档，便会以创建一个新的文档。&lt;/p&gt;
-
-&lt;p&gt;4) 其他命令：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;getLastError: 查看上次更新信息&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;参数:&lt;/p&gt;
-{
-    &#34;err&#34;: &#34;err&#34;, //错误信息
-    &#34;updatedExisting&#34;: true / fase,
-    &#34;n&#34;: n, //文档更新条数
-    &#34;ok&#34;: true / false //更新结果
-
-&lt;ul&gt;
-&lt;li&gt;findAndModify: 返回已更新的文档&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;用法：&lt;/p&gt;
-db.name.findAndModify({
-    &#34;findAndModify&#34;: &#34;string&#34;, //集合名
-    &#34;query&#34;: &#34;string&#34;, //查询文档
-    &#34;sort&#34;: string&#34;, //排序条件
-    &#34;update&#34;: &#34;string&#34;, //更新文档
-    &#34;remove&#34;: bool, //是否删除文档
-    &#34;new&#34;: bool //返回更新前（默认）和更新后的文档
-} 
 </description>
     </item>
     

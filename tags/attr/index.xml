@@ -7,14 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Fri, 24 May 2013 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/attr/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>jQuery 中 attr() 和 prop() 方法的区别</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/jquery_attr_prop</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2013/05/24/jquery_attr_prop</link>
+      <pubDate>Fri, 24 May 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/jquery_attr_prop</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/05/24/jquery_attr_prop</guid>
       <description>&lt;p&gt;前几天，有人给 &lt;a href=&#34;http://wenzhixin.net.cn/p/multiple-select/&#34;&gt;Multiple Select 插件&lt;/a&gt; 提了问题：&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/wenzhixin/multiple-select/issues/2&#34;&gt;setSelects doesn&amp;rsquo;t work in Firefox when using jquery 1.9.0&lt;/a&gt;&lt;/p&gt;

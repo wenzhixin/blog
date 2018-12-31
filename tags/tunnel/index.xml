@@ -7,14 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Sat, 15 Mar 2014 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/tunnel/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>ssh tunnel（隧道）</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/ssh_tunnel</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2014/03/15/ssh_tunnel</link>
+      <pubDate>Sat, 15 Mar 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/ssh_tunnel</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/03/15/ssh_tunnel</guid>
       <description>
 
 &lt;h3 id=&#34;问题描述:409e60413bfcfe8bece1a1e1741b8511&#34;&gt;问题描述：&lt;/h3&gt;

@@ -7,14 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Fri, 08 Nov 2013 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/atom/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>RSS、Atom、Feed 介绍与简单实现</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/rss_atom_feed_php</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2013/11/08/rss_atom_feed_php</link>
+      <pubDate>Fri, 08 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/rss_atom_feed_php</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/08/rss_atom_feed_php</guid>
       <description>
 
 &lt;p&gt;最近接触了 RSS 订阅相关的，做了一些了解与开发，记录下。&lt;/p&gt;
@@ -85,7 +86,7 @@ class Feed {
     public function addEntry($entry) {
         $this-&gt;entries[] = $entry;
         return $this;
-    }   
+    }
 
     public function __toString() {
         $result = &#39;&lt;?xml version=&#34;1.0&#34;&gt;&#39;;

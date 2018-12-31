@@ -7,14 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Mon, 12 Mar 2012 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/dom/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>《锋利的jQuery》学习笔记——jQuery中的DOM操作</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/sharp_jquery_study_notes_dom_operation_in_jquery</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2012/03/12/sharp_jquery_study_notes_dom_operation_in_jquery</link>
+      <pubDate>Mon, 12 Mar 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/sharp_jquery_study_notes_dom_operation_in_jquery</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/03/12/sharp_jquery_study_notes_dom_operation_in_jquery</guid>
       <description>&lt;p&gt;​&lt;strong&gt;1. 什么是DOM？&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt; • DOM 是 Document Object Model 的缩写，是指文档对象模型&lt;/p&gt;
@@ -173,10 +174,10 @@
     
     <item>
       <title>《锋利的jQuery》学习笔记——jQuery中的DOM操作</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/sharp_jquery_study_notes_dom_operation_in_jquery</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2012/03/12/sharp_jquery_study_notes_dom_operation_in_jquery</link>
+      <pubDate>Mon, 12 Mar 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/sharp_jquery_study_notes_dom_operation_in_jquery</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/03/12/sharp_jquery_study_notes_dom_operation_in_jquery</guid>
       <description>&lt;p&gt;​&lt;strong&gt;1. 什么是DOM？&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt; • DOM 是 Document Object Model 的缩写，是指文档对象模型&lt;/p&gt;

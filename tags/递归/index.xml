@@ -7,14 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Sat, 26 Oct 2013 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/%E9%80%92%E5%BD%92/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>nodejs 异步递归</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/nodejs_async</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2013/10/26/nodejs_async</link>
+      <pubDate>Sat, 26 Oct 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/nodejs_async</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/10/26/nodejs_async</guid>
       <description>
 
 &lt;p&gt;今天继续之前的下载服务器的开发，第一步调用文件的 API 已经成功了，那么今天的目标是列出应用目录下的所有文件（包括子目录）。&lt;/p&gt;
@@ -52,14 +53,14 @@ function getList(path) {
 
 getList(config.app_path);
 
-&lt;p&gt;到这里，貌似已经可以获取所有的文件的。&lt;br /&gt;
-但是发现了一个问题，那就是什么时候才完成所有的调用，然后对 list 进行下一步的处理呢？&lt;br /&gt;
+&lt;p&gt;到这里，貌似已经可以获取所有的文件的。
+但是发现了一个问题，那就是什么时候才完成所有的调用，然后对 list 进行下一步的处理呢？
 因为 https.get() 是一个异步的方法，我们无法知道什么时候完成。&lt;/p&gt;
 
 &lt;h4 id=&#34;2-async-each-和-async-eachseries-的实现:5820bbca8bbfa97021cb736ac8a5bf26&#34;&gt;2. async.each 和 async.eachSeries 的实现&lt;/h4&gt;
 
-&lt;p&gt;相信聪明的人已经知道怎么解决上面的问题了，但是我并不聪明，一时半会被卡在了这里。&lt;br /&gt;
-记得之前刚刚看过《JavaScript 异步编程》这本书，里面有提到 &lt;a href=&#34;https://github.com/caolan/async&#34;&gt;async&lt;/a&gt; 和 &lt;a href=&#34;https://github.com/creationix/step&#34;&gt;step&lt;/a&gt;。&lt;br /&gt;
+&lt;p&gt;相信聪明的人已经知道怎么解决上面的问题了，但是我并不聪明，一时半会被卡在了这里。
+记得之前刚刚看过《JavaScript 异步编程》这本书，里面有提到 &lt;a href=&#34;https://github.com/caolan/async&#34;&gt;async&lt;/a&gt; 和 &lt;a href=&#34;https://github.com/creationix/step&#34;&gt;step&lt;/a&gt;。
 其实有用过了 async 了，但是一直是时间去研究源码，既然自己遇到了问题，那不搞懂也不能罢休。&lt;/p&gt;
 
 &lt;p&gt;修改了下，实现很简单：&lt;/p&gt;
@@ -111,7 +112,7 @@ function eachSeries(arr, iterator, callback) {
     iterate();
 };
 
-&lt;p&gt;其实也不难理解，加了 completed 参数统计完成的数量，两个函数都有 callback 作为结束的函数通知。&lt;br /&gt;
+&lt;p&gt;其实也不难理解，加了 completed 参数统计完成的数量，两个函数都有 callback 作为结束的函数通知。
 有所不同的是 eachSeries 的话是在一次异步请求返回之后才进行下一个请求，这样就相当于实现了同步调用。&lt;/p&gt;
 
 &lt;h4 id=&#34;3-最终成果:5820bbca8bbfa97021cb736ac8a5bf26&#34;&gt;3. 最终成果&lt;/h4&gt;

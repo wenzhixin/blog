@@ -7,14 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Tue, 29 Oct 2013 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/%E5%AE%89%E8%A3%85/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Debian 安装 nodejs 环境</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/debian_node_install</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2013/10/29/debian_node_install</link>
+      <pubDate>Tue, 29 Oct 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/debian_node_install</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/10/29/debian_node_install</guid>
       <description>&lt;p&gt;&lt;strong&gt;1. 安装编译包&lt;/strong&gt;&lt;/p&gt;
 sudo apt-get install python g++ make checkinstall
 
@@ -28,7 +29,7 @@ tar xzvf node-latest.tar.gz &amp;&amp; cd node-v*
 sudo checkinstall
 
 &lt;p&gt;注意，运行 checkinstall 需要 sudo，之后选择 3，将 node 的版本号前的 v 去掉，
-例如，这里安装的版本为 v0.10.21，改为 0.10.21 即可。&lt;br /&gt;
+例如，这里安装的版本为 v0.10.21，改为 0.10.21 即可。
 这里编译会比较久，需要耐心等待，特别是在 pi 下。&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;4. 安装（-i）和卸载（-r）&lt;/strong&gt;&lt;/p&gt;
@@ -43,10 +44,10 @@ npm -v
     
     <item>
       <title>nginx 安装与配置详解</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/nginx_install_settings</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2013/09/21/nginx_install_settings</link>
+      <pubDate>Sat, 21 Sep 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/nginx_install_settings</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/09/21/nginx_install_settings</guid>
       <description>
 
 &lt;h4 id=&#34;安装-需要支持-php:423122f9103bca93beea633033533e7b&#34;&gt;安装（需要支持 php）：&lt;/h4&gt;
@@ -65,10 +66,10 @@ pid /var/run/nginx.pid;
 events {
     # epoll是多路复用IO(I/O Multiplexing)中的一种方式,
     # 仅用于linux2.6以上内核,可以大大提高nginx的性能
-    use epoll; 
+    use epoll;
 
-    # 单个后台worker process进程的最大并发链接数    
-    worker_connections 768;    
+    # 单个后台worker process进程的最大并发链接数
+    worker_connections 768;
 
     # 是否允许在得到一个新连接的通知时，接收尽可能更多的连接
     # multi_accept on;
@@ -148,7 +149,7 @@ http {
             expires 30d;
         }
 
-        # PHP 脚本请求全部转发到 fastcgi 来处理。           
+        # PHP 脚本请求全部转发到 fastcgi 来处理。
         location ~ .php$ {
             fastcgi_pass 127.0.0.1:9001;
             fastcgi_index index.php;
@@ -254,7 +255,7 @@ chdir =
 # 重定向运行过程中的stdout和stderr到主要的错误日志文件中。如果没有设置, stdout 和 stderr 将会根据FastCGI的规则被重定向到 /dev/null 。默认值: 空。
 catch_workers_output = yes
 
-&lt;p&gt;注：&lt;br /&gt;
+&lt;p&gt;注：
 安装完后，需要修改 listen = 127.0.0.1:9001&lt;/p&gt;
 </description>
     </item>

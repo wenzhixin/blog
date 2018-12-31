@@ -7,14 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Wed, 13 Nov 2013 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/%E7%BF%BB%E8%AF%91/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>nodejs 使用百度翻译 API</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/nodejs_use_baidu_translate_api</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2013/11/13/nodejs_use_baidu_translate_api</link>
+      <pubDate>Wed, 13 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/nodejs_use_baidu_translate_api</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/13/nodejs_use_baidu_translate_api</guid>
       <description>
 
 &lt;p&gt;博客（网站）中需要对文章标题进行翻译成英文显示，要求可以批量翻译。&lt;/p&gt;

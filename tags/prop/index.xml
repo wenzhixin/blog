@@ -7,14 +7,49 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Sun, 06 Jul 2014 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/prop/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Bootstrap a 标签按钮使用 prop 方法</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/a_prop_problem</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>读《Backbone.js 实战》</title>
+      <link>http://blog.wenzhixin.net.cn/2014/07/06/backbone_book</link>
+      <pubDate>Sun, 06 Jul 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/a_prop_problem</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/07/06/backbone_book</guid>
+      <description>
+
+&lt;p&gt;Backbone 是一个轻量级 JavaScript 的 MVC 框架，配合 Underscore 这个依赖库，我们可以打造出强大的 MVC 应用程序。其实很早就用到 Backbone + Underscore 进行网站和应用程序的开发了，只是国内一直没有相关的书籍，这次看到《Backbone.js 实战》，就买下了。现在对书籍的要求越来越高，对于这本书也认认真真的看了一遍，这里写一下读书的笔记和自己的一些看法。&lt;/p&gt;
+
+&lt;h3 id=&#34;第一章:9665a217439f92224574aec4c262bcea&#34;&gt;第一章&lt;/h3&gt;
+
+&lt;p&gt;是对 Backbone 的介绍以及通过第一个 hello,backbone! 的小应用来介绍如何使用 backbone 进行开发，和其他一些书差不多都是以 hello, world 开篇。&lt;/p&gt;
+
+&lt;h3 id=&#34;第二章:9665a217439f92224574aec4c262bcea&#34;&gt;第二章&lt;/h3&gt;
+
+&lt;p&gt;主要介绍依赖库 Underscore 的常见函数的使用方法，包括了集合、数组、函数、对象和功能：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/07/06/1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/07/06/2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;我觉得像这些函数的介绍在官方的文档中都是有的，而且也有简单的例子，像这种介绍应该可以完善下的，例如加入一些扩展或者对比什么的。如：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;sortBy 函数默认是返回一个按升序排序的副本列表，那我想反序呢？（p17）&lt;/li&gt;
+&lt;li&gt;delay 函数类似于 setTimeout 方法，那为什么还要设计这个函数，它们的区别又是什么？（p22）&lt;/li&gt;
+&lt;li&gt;实例代码 &lt;code&gt;return s ? n + &amp;quot;, 先生&amp;quot; : n + &amp;quot;, 女士&amp;quot;;&lt;/code&gt;是否可以改成&lt;code&gt;return n + &amp;quot;, &amp;quot; + s ? &amp;quot;先生&amp;quot; : &amp;quot;女士&amp;quot;&lt;/code&gt;更简短一些呢？（p23）&lt;/li&gt;
+&lt;li&gt;defaults 函数与 jQuery 中的 extend 有什么区别？（p26）&lt;/li&gt;
+&lt;li&gt;has 函数与 hasOwnProperty 函数有什么区别？（p27）&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Bootstrap a 标签按钮使用 prop 方法</title>
+      <link>http://blog.wenzhixin.net.cn/2014/06/18/a_prop_problem</link>
+      <pubDate>Wed, 18 Jun 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2014/06/18/a_prop_problem</guid>
       <description>
 
 &lt;h3 id=&#34;问题:a28454daa0e071303e4565ef461d5dfa&#34;&gt;问题&lt;/h3&gt;
@@ -61,10 +96,10 @@
     
     <item>
       <title>jQuery 中 attr() 和 prop() 方法的区别</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/jquery_attr_prop</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2013/05/24/jquery_attr_prop</link>
+      <pubDate>Fri, 24 May 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/jquery_attr_prop</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/05/24/jquery_attr_prop</guid>
       <description>&lt;p&gt;前几天，有人给 &lt;a href=&#34;http://wenzhixin.net.cn/p/multiple-select/&#34;&gt;Multiple Select 插件&lt;/a&gt; 提了问题：&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/wenzhixin/multiple-select/issues/2&#34;&gt;setSelects doesn&amp;rsquo;t work in Firefox when using jquery 1.9.0&lt;/a&gt;&lt;/p&gt;
@@ -326,40 +361,6 @@ boolHook = {
 &lt;hr /&gt;
 
 &lt;p&gt;注：本文中的大部分观点以及例子属于个人理解，难免还有不准确的地方，欢迎有相关研究的同行指正。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>读《Backbone.js 实战》</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/backbone_book</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/backbone_book</guid>
-      <description>
-
-&lt;p&gt;Backbone 是一个轻量级 JavaScript 的 MVC 框架，配合 Underscore 这个依赖库，我们可以打造出强大的 MVC 应用程序。其实很早就用到 Backbone + Underscore 进行网站和应用程序的开发了，只是国内一直没有相关的书籍，这次看到《Backbone.js 实战》，就买下了。现在对书籍的要求越来越高，对于这本书也认认真真的看了一遍，这里写一下读书的笔记和自己的一些看法。&lt;/p&gt;
-
-&lt;h3 id=&#34;第一章:9665a217439f92224574aec4c262bcea&#34;&gt;第一章&lt;/h3&gt;
-
-&lt;p&gt;是对 Backbone 的介绍以及通过第一个 hello,backbone! 的小应用来介绍如何使用 backbone 进行开发，和其他一些书差不多都是以 hello, world 开篇。&lt;/p&gt;
-
-&lt;h3 id=&#34;第二章:9665a217439f92224574aec4c262bcea&#34;&gt;第二章&lt;/h3&gt;
-
-&lt;p&gt;主要介绍依赖库 Underscore 的常见函数的使用方法，包括了集合、数组、函数、对象和功能：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/07/06/1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/07/06/2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;我觉得像这些函数的介绍在官方的文档中都是有的，而且也有简单的例子，像这种介绍应该可以完善下的，例如加入一些扩展或者对比什么的。如：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;sortBy 函数默认是返回一个按升序排序的副本列表，那我想反序呢？（p17）&lt;/li&gt;
-&lt;li&gt;delay 函数类似于 setTimeout 方法，那为什么还要设计这个函数，它们的区别又是什么？（p22）&lt;/li&gt;
-&lt;li&gt;实例代码 &lt;code&gt;return s ? n + &amp;quot;, 先生&amp;quot; : n + &amp;quot;, 女士&amp;quot;;&lt;/code&gt;是否可以改成&lt;code&gt;return n + &amp;quot;, &amp;quot; + s ? &amp;quot;先生&amp;quot; : &amp;quot;女士&amp;quot;&lt;/code&gt;更简短一些呢？（p23）&lt;/li&gt;
-&lt;li&gt;defaults 函数与 jQuery 中的 extend 有什么区别？（p26）&lt;/li&gt;
-&lt;li&gt;has 函数与 hasOwnProperty 函数有什么区别？（p27）&lt;/li&gt;
-&lt;/ul&gt;
 </description>
     </item>
     

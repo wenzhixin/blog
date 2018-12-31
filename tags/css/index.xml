@@ -7,14 +7,56 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Mon, 11 Jan 2016 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/css/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>CSS 自定义字体</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/css_font_face</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>通过 css 设置图片的高度与宽度相等</title>
+      <link>http://blog.wenzhixin.net.cn/2016/01/11/css_height_equals_width_with_css</link>
+      <pubDate>Mon, 11 Jan 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/css_font_face</guid>
+      <guid>http://blog.wenzhixin.net.cn/2016/01/11/css_height_equals_width_with_css</guid>
+      <description>&lt;p&gt;在图片长宽不相等的情况下，想将长宽设置为相等并且自适应屏幕，可以通过 js 的方式进行设置并通过监听 resize 来实时更新，但是这种方式很麻烦。&lt;/p&gt;
+
+&lt;p&gt;这里通过 css 来达到我们想要的效果：&lt;/p&gt;
+
+&lt;p&gt;HTML:&lt;/p&gt;
+&lt;div class=&#39;box&#39;&gt;
+	&lt;img src=&#34;...&#34;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;需要添加一个父元素来达到我们的目的。&lt;/p&gt;
+
+&lt;p&gt;CSS:&lt;/p&gt;
+.box {
+	position: relative;
+	width: 50%;		/* desired width */
+}
+.box:before {
+	content: &#34;&#34;;
+	display: block;
+	padding-top: 100%; 	/* initial ratio of 1:1*/
+}
+
+&lt;p&gt;我们在这里定义了一个伪元素并且将其 &lt;code&gt;padding-top&lt;/code&gt; 设置为 100%，因为这里的 padding-top 是相对于元素的 width 的。&lt;/p&gt;
+
+&lt;p&gt;现在我们定义了一个 &lt;code&gt;.box&lt;/code&gt; 元素，它的长和宽是相等的，现在我们只需要设置 img 的 CSS 即可:&lt;/p&gt;
+.box img {
+	position:  absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
+</description>
+    </item>
+    
+    <item>
+      <title>CSS 自定义字体</title>
+      <link>http://blog.wenzhixin.net.cn/2014/04/21/css_font_face</link>
+      <pubDate>Mon, 21 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2014/04/21/css_font_face</guid>
       <description>
 
 &lt;h3 id=&#34;介绍:4084fa00632317148adffee661d6e415&#34;&gt;介绍&lt;/h3&gt;
@@ -57,10 +99,10 @@ body {
     
     <item>
       <title>div 中无法自动换行、以及单行显示的问题</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/word_wrap_and_one_cannot_display_the_problems_in_div</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2012/05/08/word_wrap_and_one_cannot_display_the_problems_in_div</link>
+      <pubDate>Tue, 08 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/word_wrap_and_one_cannot_display_the_problems_in_div</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/05/08/word_wrap_and_one_cannot_display_the_problems_in_div</guid>
       <description>&lt;p&gt;1、无法自动换行&lt;/p&gt;
 
 &lt;p&gt; * 问题：如果 div
@@ -87,10 +129,10 @@ text-overflow: ellipsis; /*超出部分自动用...来表示*/
     
     <item>
       <title>div 中无法自动换行、以及单行显示的问题</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/word_wrap_and_one_cannot_display_the_problems_in_div</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2012/05/08/word_wrap_and_one_cannot_display_the_problems_in_div</link>
+      <pubDate>Tue, 08 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/word_wrap_and_one_cannot_display_the_problems_in_div</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/05/08/word_wrap_and_one_cannot_display_the_problems_in_div</guid>
       <description>&lt;p&gt;1、无法自动换行&lt;/p&gt;
 
 &lt;p&gt; * 问题：如果 div
@@ -117,10 +159,10 @@ text-overflow: ellipsis; /*超出部分自动用...来表示*/
     
     <item>
       <title>彻底研究 CSS ——段落的垂直对齐</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/the_vertical_alignment_of_css_complete_paragraph</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2012/05/06/the_vertical_alignment_of_css_complete_paragraph</link>
+      <pubDate>Sun, 06 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/the_vertical_alignment_of_css_complete_paragraph</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/05/06/the_vertical_alignment_of_css_complete_paragraph</guid>
       <description>&lt;p&gt;如果文字内容只有一行，可以设置 line-height 与height
 相同来使文字垂直居中。&lt;/p&gt;
 
@@ -255,10 +297,10 @@ src=&#34;js/jquery.verticalCenter.js&#34;&gt;&lt;/script&gt;
     
     <item>
       <title>彻底研究 CSS ——段落的垂直对齐</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/the_vertical_alignment_of_css_complete_paragraph</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2012/05/06/the_vertical_alignment_of_css_complete_paragraph</link>
+      <pubDate>Sun, 06 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/the_vertical_alignment_of_css_complete_paragraph</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/05/06/the_vertical_alignment_of_css_complete_paragraph</guid>
       <description>&lt;p&gt;如果文字内容只有一行，可以设置 line-height 与height
 相同来使文字垂直居中。&lt;/p&gt;
 
@@ -392,11 +434,163 @@ src=&#34;js/jquery.verticalCenter.js&#34;&gt;&lt;/script&gt;
     </item>
     
     <item>
-      <title>彻底研究 CSS—— CSS 核心基础</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/a_thorough_study_of_css_css_core_base</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>彻底研究 CSS——文字与图像</title>
+      <link>http://blog.wenzhixin.net.cn/2012/05/05/a_thorough_study_of_css_text_and_image</link>
+      <pubDate>Sat, 05 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/a_thorough_study_of_css_css_core_base</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/05/05/a_thorough_study_of_css_text_and_image</guid>
+      <description>&lt;p&gt;1、CSS 文字样式&lt;/p&gt;
+
+&lt;p&gt; *
+font-family：用于设置字体。同时声明多种字体时，字体之间用逗号分隔开，字体名称有空格需要用双引号引起来。&lt;/p&gt;
+
+&lt;p&gt; * font-size：用于设置文字大小。常见单位：px，表示 1
+个像素的大小；em，表示其父元素中字母 m 的标准宽度；ex，表示字母 x
+的标准高度；%，使用百分比作为单位。&lt;/p&gt;
+
+&lt;p&gt; *
+line-height：用于设置各行文字的高度。不加单位，表示行高与字体大小的比值。&lt;/p&gt;
+
+&lt;p&gt; * color：用于设置文字的颜色。&lt;/p&gt;
+
+&lt;p&gt; * background-color：用于设置背景的颜色。&lt;/p&gt;
+
+&lt;p&gt; * font-weight：用于设置文字是否为粗体。有 normal（正常） 和 bold（粗体）
+两种样式。&lt;/p&gt;
+
+&lt;p&gt; * font-style：用来控制字体倾斜。有 normal（正常）、 oblique（意大利体）和
+italic（倾斜）三种样式。&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt; * text-transform：用于转换英文字母的大小写。有
+capitalize（首字母大写）、uppercase（全部大写）和
+lowercase（全部小写）三种样式。&lt;/p&gt;
+
+&lt;p&gt; * text-decoration：设置文字装饰效果。有
+underline（下划线）、overline（顶划线）、line-through（删除线） 和
+blink（闪烁）四种样式。可以同时设置多个效果，用空格分开。&lt;/p&gt;
+
+&lt;p&gt; * text-align：控制段落的水平对齐方式。有
+left（局左）、center（居中）、right（局右）和 justify（两端对齐）四种样式。&lt;/p&gt;
+
+&lt;p&gt; * text-indent：设置段首缩进。多用于对中文段落，缩进两个空格：p
+{text-indent: 2em;}。&lt;/p&gt;
+
+&lt;p&gt;ps：&lt;/p&gt;
+
+&lt;p&gt; * 可以将三个字体属性组合到一条 CSS 中，语法为：font:
+font-size/line-height font-family;&lt;/p&gt;
+
+&lt;p&gt; * 颜色用 RGB 格式，包括：英文名称、#rrggbb（#rgb）、rgb(rr, gg, bb) 和
+rgb(rr%, gg%, bb%)&lt;/p&gt;
+
+&lt;p&gt;2、CSS 图像样式&lt;/p&gt;
+
+&lt;p&gt; * background-image：给元素设置背景颜色。语法为：background-image:
+url(image.png);&lt;/p&gt;
+
+&lt;p&gt; * background-repeat：设置背景图片平铺方式。有
+repeat（水平和垂直方向平铺）、no-repeat（不平铺）、repeat-x（水平方向平铺）和
+repeat-y（垂直方向平铺）四种样式，默认为 repeat。&lt;/p&gt;
+
+&lt;p&gt; *
+background-position：设置图片位置，并作为起点。取值包括：left、right、top、bottom
+和 center。该属性多用于 Sprite 技术。&lt;/p&gt;
+
+&lt;p&gt;ps：&lt;/p&gt;
+
+&lt;p&gt; *
+同时设置背景图像和背景颜色时，背景图像覆盖的地方显示图像，没有覆盖的地方显示背景颜色。可以根据这个特点制作出非常自然的渐变色背景：将背景颜色设置为背景图像中最下面一排像素的颜色。&lt;/p&gt;
+
+&lt;p&gt; * 背景样式简写：可以将 background-image、background-repeat 和
+background-color 简写为一行样式，即 background: color image repeat;
+中间用空格分开。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>彻底研究 CSS——文字与图像</title>
+      <link>http://blog.wenzhixin.net.cn/2012/05/05/a_thorough_study_of_css_text_and_image</link>
+      <pubDate>Sat, 05 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2012/05/05/a_thorough_study_of_css_text_and_image</guid>
+      <description>&lt;p&gt;1、CSS 文字样式&lt;/p&gt;
+
+&lt;p&gt; *
+font-family：用于设置字体。同时声明多种字体时，字体之间用逗号分隔开，字体名称有空格需要用双引号引起来。&lt;/p&gt;
+
+&lt;p&gt; * font-size：用于设置文字大小。常见单位：px，表示 1
+个像素的大小；em，表示其父元素中字母 m 的标准宽度；ex，表示字母 x
+的标准高度；%，使用百分比作为单位。&lt;/p&gt;
+
+&lt;p&gt; *
+line-height：用于设置各行文字的高度。不加单位，表示行高与字体大小的比值。&lt;/p&gt;
+
+&lt;p&gt; * color：用于设置文字的颜色。&lt;/p&gt;
+
+&lt;p&gt; * background-color：用于设置背景的颜色。&lt;/p&gt;
+
+&lt;p&gt; * font-weight：用于设置文字是否为粗体。有 normal（正常） 和 bold（粗体）
+两种样式。&lt;/p&gt;
+
+&lt;p&gt; * font-style：用来控制字体倾斜。有 normal（正常）、 oblique（意大利体）和
+italic（倾斜）三种样式。&lt;/p&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;p&gt; * text-transform：用于转换英文字母的大小写。有
+capitalize（首字母大写）、uppercase（全部大写）和
+lowercase（全部小写）三种样式。&lt;/p&gt;
+
+&lt;p&gt; * text-decoration：设置文字装饰效果。有
+underline（下划线）、overline（顶划线）、line-through（删除线） 和
+blink（闪烁）四种样式。可以同时设置多个效果，用空格分开。&lt;/p&gt;
+
+&lt;p&gt; * text-align：控制段落的水平对齐方式。有
+left（局左）、center（居中）、right（局右）和 justify（两端对齐）四种样式。&lt;/p&gt;
+
+&lt;p&gt; * text-indent：设置段首缩进。多用于对中文段落，缩进两个空格：p
+{text-indent: 2em;}。&lt;/p&gt;
+
+&lt;p&gt;ps：&lt;/p&gt;
+
+&lt;p&gt; * 可以将三个字体属性组合到一条 CSS 中，语法为：font:
+font-size/line-height font-family;&lt;/p&gt;
+
+&lt;p&gt; * 颜色用 RGB 格式，包括：英文名称、#rrggbb（#rgb）、rgb(rr, gg, bb) 和
+rgb(rr%, gg%, bb%)&lt;/p&gt;
+
+&lt;p&gt;2、CSS 图像样式&lt;/p&gt;
+
+&lt;p&gt; * background-image：给元素设置背景颜色。语法为：background-image:
+url(image.png);&lt;/p&gt;
+
+&lt;p&gt; * background-repeat：设置背景图片平铺方式。有
+repeat（水平和垂直方向平铺）、no-repeat（不平铺）、repeat-x（水平方向平铺）和
+repeat-y（垂直方向平铺）四种样式，默认为 repeat。&lt;/p&gt;
+
+&lt;p&gt; *
+background-position：设置图片位置，并作为起点。取值包括：left、right、top、bottom
+和 center。该属性多用于 Sprite 技术。&lt;/p&gt;
+
+&lt;p&gt;ps：&lt;/p&gt;
+
+&lt;p&gt; *
+同时设置背景图像和背景颜色时，背景图像覆盖的地方显示图像，没有覆盖的地方显示背景颜色。可以根据这个特点制作出非常自然的渐变色背景：将背景颜色设置为背景图像中最下面一排像素的颜色。&lt;/p&gt;
+
+&lt;p&gt; * 背景样式简写：可以将 background-image、background-repeat 和
+background-color 简写为一行样式，即 background: color image repeat;
+中间用空格分开。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>彻底研究 CSS—— CSS 核心基础</title>
+      <link>http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_css_core_base</link>
+      <pubDate>Fri, 04 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_css_core_base</guid>
       <description>&lt;p&gt;1、HTML 书写规范&lt;/p&gt;
 
 &lt;p&gt; * 标记名称必须小写&lt;/p&gt;
@@ -507,10 +701,10 @@ value;}。后代选择器产生的影响不仅限于元素的“直接后代”�
     
     <item>
       <title>彻底研究 CSS—— CSS 核心基础</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/a_thorough_study_of_css_css_core_base</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_css_core_base</link>
+      <pubDate>Fri, 04 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/a_thorough_study_of_css_css_core_base</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_css_core_base</guid>
       <description>&lt;p&gt;1、HTML 书写规范&lt;/p&gt;
 
 &lt;p&gt; * 标记名称必须小写&lt;/p&gt;
@@ -620,163 +814,11 @@ value;}。后代选择器产生的影响不仅限于元素的“直接后代”�
     </item>
     
     <item>
-      <title>彻底研究 CSS——文字与图像</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/a_thorough_study_of_css_text_and_image</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/a_thorough_study_of_css_text_and_image</guid>
-      <description>&lt;p&gt;1、CSS 文字样式&lt;/p&gt;
-
-&lt;p&gt; *
-font-family：用于设置字体。同时声明多种字体时，字体之间用逗号分隔开，字体名称有空格需要用双引号引起来。&lt;/p&gt;
-
-&lt;p&gt; * font-size：用于设置文字大小。常见单位：px，表示 1
-个像素的大小；em，表示其父元素中字母 m 的标准宽度；ex，表示字母 x
-的标准高度；%，使用百分比作为单位。&lt;/p&gt;
-
-&lt;p&gt; *
-line-height：用于设置各行文字的高度。不加单位，表示行高与字体大小的比值。&lt;/p&gt;
-
-&lt;p&gt; * color：用于设置文字的颜色。&lt;/p&gt;
-
-&lt;p&gt; * background-color：用于设置背景的颜色。&lt;/p&gt;
-
-&lt;p&gt; * font-weight：用于设置文字是否为粗体。有 normal（正常） 和 bold（粗体）
-两种样式。&lt;/p&gt;
-
-&lt;p&gt; * font-style：用来控制字体倾斜。有 normal（正常）、 oblique（意大利体）和
-italic（倾斜）三种样式。&lt;/p&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;p&gt; * text-transform：用于转换英文字母的大小写。有
-capitalize（首字母大写）、uppercase（全部大写）和
-lowercase（全部小写）三种样式。&lt;/p&gt;
-
-&lt;p&gt; * text-decoration：设置文字装饰效果。有
-underline（下划线）、overline（顶划线）、line-through（删除线） 和
-blink（闪烁）四种样式。可以同时设置多个效果，用空格分开。&lt;/p&gt;
-
-&lt;p&gt; * text-align：控制段落的水平对齐方式。有
-left（局左）、center（居中）、right（局右）和 justify（两端对齐）四种样式。&lt;/p&gt;
-
-&lt;p&gt; * text-indent：设置段首缩进。多用于对中文段落，缩进两个空格：p
-{text-indent: 2em;}。&lt;/p&gt;
-
-&lt;p&gt;ps：&lt;/p&gt;
-
-&lt;p&gt; * 可以将三个字体属性组合到一条 CSS 中，语法为：font:
-font-size/line-height font-family;&lt;/p&gt;
-
-&lt;p&gt; * 颜色用 RGB 格式，包括：英文名称、#rrggbb（#rgb）、rgb(rr, gg, bb) 和
-rgb(rr%, gg%, bb%)&lt;/p&gt;
-
-&lt;p&gt;2、CSS 图像样式&lt;/p&gt;
-
-&lt;p&gt; * background-image：给元素设置背景颜色。语法为：background-image:
-url(image.png);&lt;/p&gt;
-
-&lt;p&gt; * background-repeat：设置背景图片平铺方式。有
-repeat（水平和垂直方向平铺）、no-repeat（不平铺）、repeat-x（水平方向平铺）和
-repeat-y（垂直方向平铺）四种样式，默认为 repeat。&lt;/p&gt;
-
-&lt;p&gt; *
-background-position：设置图片位置，并作为起点。取值包括：left、right、top、bottom
-和 center。该属性多用于 Sprite 技术。&lt;/p&gt;
-
-&lt;p&gt;ps：&lt;/p&gt;
-
-&lt;p&gt; *
-同时设置背景图像和背景颜色时，背景图像覆盖的地方显示图像，没有覆盖的地方显示背景颜色。可以根据这个特点制作出非常自然的渐变色背景：将背景颜色设置为背景图像中最下面一排像素的颜色。&lt;/p&gt;
-
-&lt;p&gt; * 背景样式简写：可以将 background-image、background-repeat 和
-background-color 简写为一行样式，即 background: color image repeat;
-中间用空格分开。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>彻底研究 CSS——文字与图像</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/a_thorough_study_of_css_text_and_image</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/a_thorough_study_of_css_text_and_image</guid>
-      <description>&lt;p&gt;1、CSS 文字样式&lt;/p&gt;
-
-&lt;p&gt; *
-font-family：用于设置字体。同时声明多种字体时，字体之间用逗号分隔开，字体名称有空格需要用双引号引起来。&lt;/p&gt;
-
-&lt;p&gt; * font-size：用于设置文字大小。常见单位：px，表示 1
-个像素的大小；em，表示其父元素中字母 m 的标准宽度；ex，表示字母 x
-的标准高度；%，使用百分比作为单位。&lt;/p&gt;
-
-&lt;p&gt; *
-line-height：用于设置各行文字的高度。不加单位，表示行高与字体大小的比值。&lt;/p&gt;
-
-&lt;p&gt; * color：用于设置文字的颜色。&lt;/p&gt;
-
-&lt;p&gt; * background-color：用于设置背景的颜色。&lt;/p&gt;
-
-&lt;p&gt; * font-weight：用于设置文字是否为粗体。有 normal（正常） 和 bold（粗体）
-两种样式。&lt;/p&gt;
-
-&lt;p&gt; * font-style：用来控制字体倾斜。有 normal（正常）、 oblique（意大利体）和
-italic（倾斜）三种样式。&lt;/p&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;p&gt; * text-transform：用于转换英文字母的大小写。有
-capitalize（首字母大写）、uppercase（全部大写）和
-lowercase（全部小写）三种样式。&lt;/p&gt;
-
-&lt;p&gt; * text-decoration：设置文字装饰效果。有
-underline（下划线）、overline（顶划线）、line-through（删除线） 和
-blink（闪烁）四种样式。可以同时设置多个效果，用空格分开。&lt;/p&gt;
-
-&lt;p&gt; * text-align：控制段落的水平对齐方式。有
-left（局左）、center（居中）、right（局右）和 justify（两端对齐）四种样式。&lt;/p&gt;
-
-&lt;p&gt; * text-indent：设置段首缩进。多用于对中文段落，缩进两个空格：p
-{text-indent: 2em;}。&lt;/p&gt;
-
-&lt;p&gt;ps：&lt;/p&gt;
-
-&lt;p&gt; * 可以将三个字体属性组合到一条 CSS 中，语法为：font:
-font-size/line-height font-family;&lt;/p&gt;
-
-&lt;p&gt; * 颜色用 RGB 格式，包括：英文名称、#rrggbb（#rgb）、rgb(rr, gg, bb) 和
-rgb(rr%, gg%, bb%)&lt;/p&gt;
-
-&lt;p&gt;2、CSS 图像样式&lt;/p&gt;
-
-&lt;p&gt; * background-image：给元素设置背景颜色。语法为：background-image:
-url(image.png);&lt;/p&gt;
-
-&lt;p&gt; * background-repeat：设置背景图片平铺方式。有
-repeat（水平和垂直方向平铺）、no-repeat（不平铺）、repeat-x（水平方向平铺）和
-repeat-y（垂直方向平铺）四种样式，默认为 repeat。&lt;/p&gt;
-
-&lt;p&gt; *
-background-position：设置图片位置，并作为起点。取值包括：left、right、top、bottom
-和 center。该属性多用于 Sprite 技术。&lt;/p&gt;
-
-&lt;p&gt;ps：&lt;/p&gt;
-
-&lt;p&gt; *
-同时设置背景图像和背景颜色时，背景图像覆盖的地方显示图像，没有覆盖的地方显示背景颜色。可以根据这个特点制作出非常自然的渐变色背景：将背景颜色设置为背景图像中最下面一排像素的颜色。&lt;/p&gt;
-
-&lt;p&gt; * 背景样式简写：可以将 background-image、background-repeat 和
-background-color 简写为一行样式，即 background: color image repeat;
-中间用空格分开。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>彻底研究CSS——深入理解盒子模型</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/a_thorough_study_of_css_understanding_the_box_model</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_understanding_the_box_model</link>
+      <pubDate>Fri, 04 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/a_thorough_study_of_css_understanding_the_box_model</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_understanding_the_box_model</guid>
       <description>&lt;p&gt;1、盒子模型的内部结构&lt;/p&gt;
 
 &lt;p&gt; * 在 CSS 中，一个独立的盒子模型由
@@ -875,10 +917,10 @@ margin：会使被设为附属的快像相反的方向移动，甚至覆盖在�
     
     <item>
       <title>彻底研究CSS——深入理解盒子模型</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/a_thorough_study_of_css_understanding_the_box_model</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_understanding_the_box_model</link>
+      <pubDate>Fri, 04 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/a_thorough_study_of_css_understanding_the_box_model</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_understanding_the_box_model</guid>
       <description>&lt;p&gt;1、盒子模型的内部结构&lt;/p&gt;
 
 &lt;p&gt; * 在 CSS 中，一个独立的盒子模型由
@@ -977,10 +1019,10 @@ margin：会使被设为附属的快像相反的方向移动，甚至覆盖在�
     
     <item>
       <title>彻底研究CSS——盒子的浮动和定位</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/a_thorough_study_of_css_floating_and_positioning_the_box</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_floating_and_positioning_the_box</link>
+      <pubDate>Fri, 04 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/a_thorough_study_of_css_floating_and_positioning_the_box</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_floating_and_positioning_the_box</guid>
       <description>&lt;p&gt;1、盒子的浮动&lt;/p&gt;
 
 &lt;p&gt; * CSS 中有一个 float 属性，默认为 none，即标准流。通过设置 float
@@ -1047,10 +1089,10 @@ left、right、top 和 bottom 来指定偏移量。这 4
     
     <item>
       <title>彻底研究CSS——盒子的浮动和定位</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/a_thorough_study_of_css_floating_and_positioning_the_box</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_floating_and_positioning_the_box</link>
+      <pubDate>Fri, 04 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/a_thorough_study_of_css_floating_and_positioning_the_box</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_floating_and_positioning_the_box</guid>
       <description>&lt;p&gt;1、盒子的浮动&lt;/p&gt;
 
 &lt;p&gt; * CSS 中有一个 float 属性，默认为 none，即标准流。通过设置 float
@@ -1117,138 +1159,10 @@ left、right、top 和 bottom 来指定偏移量。这 4
     
     <item>
       <title>编写高质量代码——高质量的CSS</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/write_high_quality_code_high_quality_css</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2012/03/17/write_high_quality_code_high_quality_css</link>
+      <pubDate>Sat, 17 Mar 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/write_high_quality_code_high_quality_css</guid>
-      <description>&lt;p&gt;1、解析网页模式和DTD&lt;/p&gt;
-
-&lt;p&gt;（1）解析网页模式主要有标准模式和怪异模式。怪异模式是为了兼容老式浏览器下的代码，应该避免触发怪异模式，选用标准模式。&lt;/p&gt;
-
-&lt;p&gt;（2）DTD（Document Type Definition），即文档类型定义，是一种保证 HTML
-文档格式正确的有效方法，可以通过比较 HTML 文档和 DTD
-文件来看文档是否符合规范，以及元素和标签使用是否正确。&lt;/p&gt;
-
-&lt;p&gt;（3）按照 W3C 的标准，需要在 HTML 的最开始声明文件的 DTD 类型。如果漏写 DTD
-声明，Firefox 会按照标准模式来解析网页，但在 IE 中就会触发怪异模式。&lt;/p&gt;
-
-&lt;p&gt;2、如何组织 CSS&lt;/p&gt;
-
-&lt;p&gt;（1）应用 CSS 的能力分为两部分：一是 CSS 的 API，重点是如何用 CSS
-控制页面内元素的样式；二是 CSS 框架，重点是如何对 CSS
-进行组织。其中，如何更好地组织 CSS 是编写高质量 CSS 的关键。&lt;/p&gt;
-
-&lt;p&gt;（2）推荐的组织 CSS 的方法：base.css + common.css + page.css&lt;/p&gt;
-
-&lt;p&gt;（3）base 层：位于三者的最底层，提供 CSS reset
-功能和力度最小的通用类—原子类。&lt;/p&gt;
-
-&lt;p&gt; • base 层相对稳定，基本上不需要维护。&lt;/p&gt;
-
-&lt;p&gt; • CSS
-reset：一开始就将浏览器的默认样式全部去掉，通过重新定义标签的样式，覆盖浏览器提供的默认样式。&lt;/p&gt;
-
-&lt;p&gt; • 通用原子类是一系列常用的基本类，包括：文字、定位、长度和宽度。&lt;/p&gt;
-
-&lt;p&gt; • “通用性”表现在它们是网站最常用的类，任何页面都可以随意使用。&lt;/p&gt;
-
-&lt;p&gt; • “原子性”表现在它们是最基础的样式，一个类只设置一个样式，不可再分。&lt;/p&gt;
-
-&lt;p&gt;（4）common 层：位于中间层，提供组件级的 CSS 类。&lt;/p&gt;
-
-&lt;p&gt; • common 层是网站级的，不同的网站有不同的 common 层，同一个网站只有一个
-common 层。&lt;/p&gt;
-
-&lt;p&gt; •  在团队合作中，common 层最好由一个人负责，统一管理。&lt;/p&gt;
-
-&lt;p&gt;（5）page 层：位于最高层，提供页面级的样式。&lt;/p&gt;
-
-&lt;p&gt; • page 层是页面级的，每个页面都有自己的 CSS&lt;/p&gt;
-
-&lt;p&gt;3、模块化 CSS——在 CSS 中引入面向对象编程思想&lt;/p&gt;
-
-&lt;p&gt;（1）如何划分模块——单一职责&lt;/p&gt;
-
-&lt;p&gt; •
-模块与模块之间尽量不要包含相同的部分，如果有相同部分，应将它们提取出来，拆分成一个独立的模块。&lt;/p&gt;
-
-&lt;p&gt; • 模块应在保证数量尽可能少的原则下，坐到尽可能简单，以提高重用性。&lt;/p&gt;
-
-&lt;p&gt;（2）CSS 的命名——使用命名空间&lt;/p&gt;
-
-&lt;p&gt; •
-命名结合骆驼命名法和划线命名法来进行命名，其中骆驼命名法用于区别不用单词，划线用于表明从属关系。&lt;/p&gt;
-
-&lt;p&gt;（3）挂多个 class 还是新建 class——多用组合，少用继承&lt;/p&gt;
-
-&lt;p&gt;4、低权重原则——避免滥用子选择器&lt;/p&gt;
-
-&lt;p&gt;（1）CSS
-的选择符都是有权重的，当不同的选择符的样式设置有冲突时，会采用权重高的选择符作为设置的样式。权重的规则：HTML
-标签的权重为 1，class 的权重为 10，id 的权重为 100。&lt;/p&gt;
-
-&lt;p&gt;（2）如果 CSS
-的选择符权重相同，那么样式会遵循就近原则，那个选择符最后定义，就采用哪个选择符的样式。&lt;/p&gt;
-
-&lt;p&gt;（3）使用子选择器，会增加 CSS
-选择符的权重，从而对其他选择符产生影响，所以应该尽量使用子选择器。为了保证样式容易被覆盖，提高可维护性，CSS
-选择符需要保证权重尽可能低。&lt;/p&gt;
-
-&lt;p&gt;5、CSS sprite&lt;/p&gt;
-
-&lt;p&gt;（1）CSS sprite 技术是将网站的多张背景图片合并为一张，然后利用
-background-position 属性来展示所需要的部分。&lt;/p&gt;
-
-&lt;p&gt;（2）CSS sprite 主要能解决试用多张图片加载时出现空白的问题，以及减少 HTTP
-请求次数，从而降低服务器的压力。&lt;/p&gt;
-
-&lt;p&gt;（3）CSS sprite 技术的使用范围：&lt;/p&gt;
-
-&lt;p&gt; • 只能合并用于背景的图片，对于&amp;lt;img src=&amp;ldquo;&amp;rdquo; /&amp;gt;设置的图片，不能合并到 CSS
-sprite 中。&lt;/p&gt;
-
-&lt;p&gt; • 对于横向和纵向都平铺的图片，也不能使用 CSS
-sprite。对于需要横向平铺的图片，合并的图片只能垂直排列；对于需要纵向平铺的图片，合并的图片只能水平排列。&lt;/p&gt;
-
-&lt;p&gt;6、CSS 常见问题&lt;/p&gt;
-
-&lt;p&gt;（1）id 和 class：同一个网页中，相同的 id 只能出现一次，不可重复，而 class
-可以任意出现多次，因此，应尽量使用 class，少用 id。&lt;/p&gt;
-
-&lt;p&gt;（2）超链接标签样式问题：a 标签的四种状态需要排序才能发挥作用，顺序是 link
--&amp;gt; visited -&amp;gt; hover -&amp;gt; active，也叫做 love hate 原则，即
-l(link)ov(visited)e h(hover)a(active)te。&lt;/p&gt;
-
-&lt;p&gt;（3）块级元素和行内元素的区别：&lt;/p&gt;
-
-&lt;p&gt; • 块级元素会独占一行；行内元素不会独占一行&lt;/p&gt;
-
-&lt;p&gt; • 块级元素可以设置 width、height 属性；行内元素设置 width、height
-属性无效&lt;/p&gt;
-
-&lt;p&gt; • 块级元素可以设置 margin 和 padding 属性；行内元素设置 margin 和
-padding
-属性，水平方向（margin-left、margin-right、padding-left、padding-right）有效，垂直方向（margin-top、margin-bottom、padding-top、padiding-bottom）无效&lt;/p&gt;
-
-&lt;p&gt; • 块级元素的 display 属性对应 display: block；行内元素的 display
-属性对应 display: inline。可以通过修改 display
-属性来切换块级元素和行内元素&lt;/p&gt;
-
-&lt;p&gt;（4）png图片：IE 6 下对 png
-的透明支持不好，可以利用滤镜功能来解决问题，格式：progid:
-DXImageTransform.Microsoft.AlphaImageLoader(src=&amp;lsquo;png图片路径&amp;rsquo;,
-sizingMethod=&amp;lsquo;crop&amp;rsquo;)&lt;/p&gt;
-
-&lt;p&gt;（5）多版本 IE 并存方案：CSS 的调试利器 IETester&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>编写高质量代码——高质量的CSS</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/write_high_quality_code_high_quality_css</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/write_high_quality_code_high_quality_css</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/03/17/write_high_quality_code_high_quality_css</guid>
       <description>&lt;p&gt;1、解析网页模式和DTD&lt;/p&gt;
 
 &lt;p&gt;（1）解析网页模式主要有标准模式和怪异模式。怪异模式是为了兼容老式浏览器下的代码，应该避免触发怪异模式，选用标准模式。&lt;/p&gt;

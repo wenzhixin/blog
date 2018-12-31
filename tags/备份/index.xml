@@ -7,14 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Thu, 14 Nov 2013 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/%E5%A4%87%E4%BB%BD/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>导出或者备份新浪轻博客</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/sina_qing_export_or_backup</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2013/11/14/sina_qing_export_or_backup</link>
+      <pubDate>Thu, 14 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/sina_qing_export_or_backup</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/14/sina_qing_export_or_backup</guid>
       <description>&lt;p&gt;新浪轻博客没有提供 RSS 或者导出等功能，很不方便对博客进行备份或者迁移。
 不过我们可以换种思路，那就是对博客网页进行解析从而得到我们想要的内容，包括：
 标题、标签、日期、内容、评论等。&lt;/p&gt;
@@ -67,15 +68,15 @@ scraper(&#39;http://qing.blog.sina.com.cn/2292826740/profile&#39;, function(err,
     
     <item>
       <title>移动硬盘安全吗？备份数据真的很重要！</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/hdd_is_not_safe</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2013/10/23/hdd_is_not_safe</link>
+      <pubDate>Wed, 23 Oct 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/hdd_is_not_safe</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/10/23/hdd_is_not_safe</guid>
       <description>&lt;p&gt;我的移动硬盘居然挂掉了，简直不敢相信！才买了不到一年的时间，平时也很少用到。&lt;/p&gt;
 
 &lt;p&gt;因为之前笔记本硬盘坏了，所以买了移动硬盘（还是有牌子的），买它就是为了保存我的重要的数据文件的，为什么突然就坏了呢。。。&lt;/p&gt;
 
-&lt;p&gt;接上电脑，无法识别该移动硬盘，显示需要格式化才能继续使用。&lt;br /&gt;
+&lt;p&gt;接上电脑，无法识别该移动硬盘，显示需要格式化才能继续使用。
 错误的信息为：&lt;/p&gt;
 MFT is corrupt, cannot read its unmapped extent record 415777
 Note : chkdsk cannot fix this, try ntfsfix

@@ -7,14 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Tue, 10 Nov 2015 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/slurpd/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>ldap 管理指南</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/slapd_slurpd</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2015/11/10/slapd_slurpd</link>
+      <pubDate>Tue, 10 Nov 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/slapd_slurpd</guid>
+      <guid>http://blog.wenzhixin.net.cn/2015/11/10/slapd_slurpd</guid>
       <description>
 
 &lt;h3 id=&#34;1-slapd-和-slurpd-介绍:df3185ccd2379abba6a913eb10dd16c0&#34;&gt;1. slapd 和 slurpd 介绍&lt;/h3&gt;
@@ -37,7 +38,7 @@
 
 &lt;p&gt;LDAP目录的条目（entry）由属性（attribute）的一个聚集组成，并由一个唯一性的名字引用，即专有名称（distinguished name，DN）。例如，DN能取这样的值：“ou=groups,ou=people,dc=scutech,dc=com”。&lt;/p&gt;
          dc=com
- 
+
       |dc=scutech
        /          \
  ou=people     ou=groups

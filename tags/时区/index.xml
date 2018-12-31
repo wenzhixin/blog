@@ -7,14 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Tue, 05 Nov 2013 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/%E6%97%B6%E5%8C%BA/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>将本地时间转换为 GMT 时间</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/local_time_to_timezone</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2013/11/05/local_time_to_timezone</link>
+      <pubDate>Tue, 05 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/local_time_to_timezone</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/05/local_time_to_timezone</guid>
       <description>
 
 &lt;p&gt;在写 RSS 订阅接口的时候，发现最终输出文章的 RSS 时间（GMT时间），在本地上显示的时间和在服务器上显示的时间不一致。
@@ -51,7 +52,7 @@ date.toGMTString(); // Mon, 04 Nov 2013 20:00:00 GMT
 &lt;p&gt;Date 对象中有 getTimezoneOffset() 方法，返回的是本地时间与 GMT 时间或 UTC 时间之间相差的分钟数。&lt;/p&gt;
 var date = new Date(&#39;2013-11-05 00:00:00&#39;); // Tue Nov 05 2013 00:00:00 GMT+0400 (MSK)
 
-var localTime = date.getTime() - 8 * 3600000 - date.getTimezoneOffset() * 60000; // 先将文章的时间转换为服务器的本地时间 
+var localTime = date.getTime() - 8 * 3600000 - date.getTimezoneOffset() * 60000; // 先将文章的时间转换为服务器的本地时间
 
 var newDate = new Date(localTime); // Mon Nov 04 2013 20:00:00 GMT+0400 (MSK)
 
@@ -62,8 +63,8 @@ newDate.toGMTString(); // Mon, 04 Nov 2013 16:00:00 GMT
 &lt;h4 id=&#34;4-最终成果:ce6487b43f796a5886a1d742dcbe5740&#34;&gt;4. 最终成果&lt;/h4&gt;
 function getGMTString(time, localTimezone) {
     var date = new Date(time);
-    return new Date(date.getTime() - localTime * 3600000 - 
-        date.getTimezoneOffset() * 60000).toGMTString(); 
+    return new Date(date.getTime() - localTime * 3600000 -
+        date.getTimezoneOffset() * 60000).toGMTString();
 }
 </description>
     </item>

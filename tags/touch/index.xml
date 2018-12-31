@@ -7,14 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Mon, 18 Nov 2013 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/touch/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>手机 web 开发之 Touch 入门</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/hello_touch_event</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2013/11/18/hello_touch_event</link>
+      <pubDate>Mon, 18 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/hello_touch_event</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/18/hello_touch_event</guid>
       <description>
 
 &lt;p&gt;微博应用上用手向左滑动，便可以触发返回事件，这一小小的功能虽说很简单，
@@ -86,8 +87,8 @@
 
 })();
 
-&lt;p&gt;在 touchstart 事件中，我们将位置保存到 startPos&lt;br /&gt;
-在 touchmove 事件中，我们将位置保存到 endPos&lt;br /&gt;
+&lt;p&gt;在 touchstart 事件中，我们将位置保存到 startPos
+在 touchmove 事件中，我们将位置保存到 endPos
 在 touchend 事件中，我们通过比较 startPos 和 endPos 的关系得到用户是向左滑动还是向右滑动。&lt;/p&gt;
 
 &lt;p&gt;更多相关知识，请见&lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Events/Touch_events&#34;&gt;Touch_events&lt;/a&gt;&lt;/p&gt;

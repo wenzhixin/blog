@@ -7,14 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Tue, 03 Apr 2012 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>JavaScript 高级程序设计——面向对象</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/javascript_advanced_programming_object_oriented</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2012/04/03/javascript_advanced_programming_object_oriented</link>
+      <pubDate>Tue, 03 Apr 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/javascript_advanced_programming_object_oriented</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/04/03/javascript_advanced_programming_object_oriented</guid>
       <description>&lt;p&gt;1、JavaScript
 把的对象定义成散列表：无序属性的集合，其属性可以包含基本值、对象或者函数。&lt;/p&gt;
 
@@ -116,11 +117,11 @@ delete 操作符可以删除实例属性，从而重新访问原型属性。&lt;
 constructor 的指向。如：&lt;/p&gt;
 Person.prototype = {
 	constructor: Person,
-	
+
 	name: &#34;wenyi&#34;,
-	
+
 	age: 25,
-	
+
 	sayName: function() {
 		alert(this.name);
 	}
@@ -169,13 +170,13 @@ alert(colors.toPipedString());//&#34;red|blue|green&#34;
 
 &lt;p&gt; * 例子：&lt;/p&gt;
 function Person(name, age) {
-    var o = new Object();
-    
-    o.sayName = function() {
-        alert(name);
-    };
+	var o = new Object();
 
-    return o;
+	o.sayName = function() {
+		alert(name);
+	};
+
+	return o;
 }
 
 var person = new Person(&#34;wenyi&#34;, 25);
@@ -185,10 +186,10 @@ person.sayName();//&#34;wenyi&#34;
     
     <item>
       <title>JavaScript 高级程序设计——面向对象</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/javascript_advanced_programming_object_oriented</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2012/04/03/javascript_advanced_programming_object_oriented</link>
+      <pubDate>Tue, 03 Apr 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/javascript_advanced_programming_object_oriented</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/04/03/javascript_advanced_programming_object_oriented</guid>
       <description>&lt;p&gt;1、JavaScript
 把的对象定义成散列表：无序属性的集合，其属性可以包含基本值、对象或者函数。&lt;/p&gt;
 
@@ -290,11 +291,11 @@ delete 操作符可以删除实例属性，从而重新访问原型属性。&lt;
 constructor 的指向。如：&lt;/p&gt;
 Person.prototype = {
 	constructor: Person,
-	
+
 	name: &#34;wenyi&#34;,
-	
+
 	age: 25,
-	
+
 	sayName: function() {
 		alert(this.name);
 	}
@@ -343,13 +344,13 @@ alert(colors.toPipedString());//&#34;red|blue|green&#34;
 
 &lt;p&gt; * 例子：&lt;/p&gt;
 function Person(name, age) {
-    var o = new Object();
-    
-    o.sayName = function() {
-        alert(name);
-    };
+	var o = new Object();
 
-    return o;
+	o.sayName = function() {
+		alert(name);
+	};
+
+	return o;
 }
 
 var person = new Person(&#34;wenyi&#34;, 25);

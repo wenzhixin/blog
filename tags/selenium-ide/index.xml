@@ -7,14 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Tue, 30 Jul 2013 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/selenium-ide/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>firefox 利用 Selenium IDE 对 DBackup 进行自动化测试</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/firefox_selenium_ide</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2013/07/30/firefox_selenium_ide</link>
+      <pubDate>Tue, 30 Jul 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/firefox_selenium_ide</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/07/30/firefox_selenium_ide</guid>
       <description>
 
 &lt;p&gt;今天看《编写可维护的JavaScript》的时候有一章是专门讲 Selenium 对 JavaScript 进行自动化测试的。

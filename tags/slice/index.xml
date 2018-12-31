@@ -7,14 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Sun, 03 Aug 2014 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/slice/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>理解 JavaScript 中的 Array.prototype.slice.apply(arguments)</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/slice_arguments</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2014/08/03/slice_arguments</link>
+      <pubDate>Sun, 03 Aug 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/slice_arguments</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/08/03/slice_arguments</guid>
       <description>&lt;p&gt;假如你是一个 JavaScript 开发者，你可能见到过 Array.prototype.slice.apply(arguments) 这样的用法，然后你会问，这么写是什么意思呢？&lt;/p&gt;
 
 &lt;p&gt;这个语法其实不难理解，只是它有些不好看。Array 是 JavaScript 的基本类型，你可以使用 Array.prototype 获取它的属性值，在这里我假设你已经了解了 prototype 的概念。&lt;/p&gt;

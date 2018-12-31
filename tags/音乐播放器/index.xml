@@ -7,14 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Sat, 25 Jan 2014 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Ubuntu 下安装音乐播放器</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_music_player</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2014/01/25/ubuntu_music_player</link>
+      <pubDate>Sat, 25 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_music_player</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/01/25/ubuntu_music_player</guid>
       <description>&lt;p&gt;对于喜欢听歌的人来说，音乐播放器还是挺重要的，
 但是不像 windows 一样，很多流行的播放器都没有 ubuntu 版。&lt;/p&gt;
 

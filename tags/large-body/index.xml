@@ -7,14 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Sat, 18 Jan 2014 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/large-body/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>nodeJS 和 Nginx 解决客户端发送大数据的问题</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/large_body_error</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2014/01/18/large_body_error</link>
+      <pubDate>Sat, 18 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/large_body_error</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/01/18/large_body_error</guid>
       <description>&lt;p&gt;nodeJS 和 Nginx 默认情况下都只支持 1MB 的 body 数据，当客户端发送大数据的时候，分别会出现以下错误：&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;nodeJS：&lt;/strong&gt;&lt;/p&gt;

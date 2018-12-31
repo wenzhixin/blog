@@ -7,14 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Wed, 01 Aug 2012 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/phonegap/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>PhoneGap Plugin 之 Hello World</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/phonegap_plugin_hello_world</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2012/08/01/phonegap_plugin_hello_world</link>
+      <pubDate>Wed, 01 Aug 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/phonegap_plugin_hello_world</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/08/01/phonegap_plugin_hello_world</guid>
       <description>
 
 &lt;h4 id=&#34;1-编写java类并继承plugin:9fe4c1aee8271355213f01b6ed26f588&#34;&gt;1、编写Java类并继承Plugin：&lt;/h4&gt;
@@ -64,10 +65,10 @@ myplugin.hello(function(data) {
     
     <item>
       <title>PhoneGap Plugin 之 Hello World</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/phonegap_plugin_hello_world</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2012/08/01/phonegap_plugin_hello_world</link>
+      <pubDate>Wed, 01 Aug 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/phonegap_plugin_hello_world</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/08/01/phonegap_plugin_hello_world</guid>
       <description>
 
 &lt;h4 id=&#34;1-编写java类并继承plugin:9fe4c1aee8271355213f01b6ed26f588&#34;&gt;1、编写Java类并继承Plugin：&lt;/h4&gt;

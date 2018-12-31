@@ -7,14 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Fri, 22 Nov 2013 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/deferred/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>jQuery 判断所有图片加载完成</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/all_images_is_loaded</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2013/11/22/all_images_is_loaded</link>
+      <pubDate>Fri, 22 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/all_images_is_loaded</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/22/all_images_is_loaded</guid>
       <description>
 
 &lt;p&gt;对于图片的处理，例如幻灯片播放、缩放等，都是依赖于在所有图片完成之后再进行操作。&lt;/p&gt;
@@ -59,7 +60,7 @@ var defereds = [];
 
 $imgs.each(function() {
 	var dfd = $.Deferred();
-	
+
 	$(this).load(dfd.resolve);
 	defereds.push(dfd);
 });
@@ -67,7 +68,7 @@ $.when.apply(null, defereds).done(function() {
 	console.log(&#39;load compeleted&#39;);
 });
 
-&lt;p&gt;&lt;strong&gt;基本思路：&lt;/strong&gt;&lt;br /&gt;
+&lt;p&gt;&lt;strong&gt;基本思路：&lt;/strong&gt;
 每加载完一张图片 resolve()，when() 当所有的 Deferred 完成便执行 done()。&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;注：&lt;/strong&gt;

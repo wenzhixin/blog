@@ -7,14 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Sun, 16 Feb 2014 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/background/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>canvas 如何在保留 background 的情况下重置画布</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/canvas_background</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2014/02/16/canvas_background</link>
+      <pubDate>Sun, 16 Feb 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/canvas_background</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/02/16/canvas_background</guid>
       <description>&lt;p&gt;前几天在用 canvas 实现动画的时候，因为是需要设置画图的背景，
 所以一开始想到的就是使用 canvas 的 drawImage() 方法：&lt;/p&gt;
 context.drawImage(img, x, y, width, height);

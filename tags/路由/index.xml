@@ -7,14 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Mon, 28 Oct 2013 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/%E8%B7%AF%E7%94%B1/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>nodejs 获取路由的主机列表</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/node_agents</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2013/10/28/node_agents</link>
+      <pubDate>Mon, 28 Oct 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/node_agents</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/10/28/node_agents</guid>
       <description>
 
 &lt;h4 id=&#34;1-介绍:dbdc81fab56afdacc26151018bc2c346&#34;&gt;1. 介绍&lt;/h4&gt;

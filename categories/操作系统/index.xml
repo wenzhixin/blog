@@ -7,163 +7,129 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Tue, 10 Nov 2015 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Debian 安装 nodejs 环境</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/debian_node_install</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>ldap 管理指南</title>
+      <link>http://blog.wenzhixin.net.cn/2015/11/10/slapd_slurpd</link>
+      <pubDate>Tue, 10 Nov 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/debian_node_install</guid>
-      <description>&lt;p&gt;&lt;strong&gt;1. 安装编译包&lt;/strong&gt;&lt;/p&gt;
-sudo apt-get install python g++ make checkinstall
-
-&lt;p&gt;&lt;strong&gt;2. 获取最新的 node 源码&lt;/strong&gt;&lt;/p&gt;
-mkdir ~/src &amp;&amp; cd ~/src
-wget -N http://nodejs.org/dist/node-latest.tar.gz
-tar xzvf node-latest.tar.gz &amp;&amp; cd node-v*
-
-&lt;p&gt;&lt;strong&gt;3. 配置编译源码&lt;/strong&gt;&lt;/p&gt;
-./configure
-sudo checkinstall
-
-&lt;p&gt;注意，运行 checkinstall 需要 sudo，之后选择 3，将 node 的版本号前的 v 去掉，
-例如，这里安装的版本为 v0.10.21，改为 0.10.21 即可。&lt;br /&gt;
-这里编译会比较久，需要耐心等待，特别是在 pi 下。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;4. 安装（-i）和卸载（-r）&lt;/strong&gt;&lt;/p&gt;
-sudo dpkg -i node_*
-sudo dpkg -r node
-
-&lt;p&gt;&lt;strong&gt;5. 查看 nodejs 和 npm 的版本&lt;/strong&gt;&lt;/p&gt;
-node -v
-npm -v
-</description>
-    </item>
-    
-    <item>
-      <title>Debian 添加自启动服务</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/debian_script_init</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/debian_script_init</guid>
+      <guid>http://blog.wenzhixin.net.cn/2015/11/10/slapd_slurpd</guid>
       <description>
 
-&lt;h4 id=&#34;1-新建脚本文件:5a63f747350973a6bdfac6af85b4c2a9&#34;&gt;1. 新建脚本文件&lt;/h4&gt;
+&lt;h3 id=&#34;1-slapd-和-slurpd-介绍:df3185ccd2379abba6a913eb10dd16c0&#34;&gt;1. slapd 和 slurpd 介绍&lt;/h3&gt;
+
+&lt;p&gt;本章介绍如何编译、配置和运行独立的 LDAP 守护进程（slapd）和独立的更新复制守护进程（slurpd），该内容主要是针对系统管理员。&lt;/p&gt;
+
+&lt;h4 id=&#34;1-1-什么是目录服务:df3185ccd2379abba6a913eb10dd16c0&#34;&gt;1.1 什么是目录服务&lt;/h4&gt;
+
+&lt;p&gt;目录服务（英语：Directory service）是一个储存、组织和提供信息访问服务的软件系统，在软件工程中，一个目录是指一组名字和值的映射。它允许根据一个给出的名字来查找对应的值，与词典相似。像词典中每一个词也许会有多个词义，在一个目录中，一个名字也许会与多个不同的信息相关联。类似地，就像一个词会有多个不同的发音和多个不同的词义，目录中的一个名字可能会有多个不同类型的值。&lt;/p&gt;
+
+&lt;p&gt;目录也许只提供范围非常小的节点类型和数值类型，也可能对任意的或可扩展的一组类型提供支持。在一个电话目录中，节点就是姓名而数值项就是电话号码。在DNS中，节点是域名而数值项是IP地址（还有别名，邮件服务器名等等）。在一个网络操作系统的目录中，节点是那些由操作系统所管理的资源，包括用户、计算机、打印机和其它共享资源。互联网问世以来，有许多目录服务得到应用，但是本文主要关注那些源自X.500的目录服务。&lt;/p&gt;
+
+&lt;p&gt;目录服务遵循LDAP和X.500协议。目录服务的一个最常用例子是DNS服务。微软的Active Directory是目录服务的一个著名实现。&lt;/p&gt;
+
+&lt;h4 id=&#34;1-2-什么是-ldap:df3185ccd2379abba6a913eb10dd16c0&#34;&gt;1.2 什么是 LDAP&lt;/h4&gt;
+
+&lt;p&gt;轻型目录访问协议（英文：Lightweight Directory Access Protocol，缩写：LDAP）是一个开放的，中立的，工业标准的应用协议，通过IP协议提供访问控制和维护分布式信息的目录信息。 目录服务在开发内部网和与互联网程序共享用户、系统、网络、服务和应用的过程中占据了重要地位。例如，目录服务可能提供了组织有序的记录集合，通常有层级结构，例如公司电子邮件目录。同理，也可以提供包含了地址和电话号码的电话簿。&lt;/p&gt;
+
+&lt;h4 id=&#34;1-3-ldap-是如何工作的:df3185ccd2379abba6a913eb10dd16c0&#34;&gt;1.3 LDAP 是如何工作的&lt;/h4&gt;
+
+&lt;p&gt;LDAP目录的条目（entry）由属性（attribute）的一个聚集组成，并由一个唯一性的名字引用，即专有名称（distinguished name，DN）。例如，DN能取这样的值：“ou=groups,ou=people,dc=scutech,dc=com”。&lt;/p&gt;
+         dc=com
+
+      |dc=scutech
+       /          \
+ ou=people     ou=groups
+
+&lt;p&gt;LDAP目录与普通数据库的主要不同之处在于数据的组织方式，它是一种有层次的、树形结构。所有条目的属性的定义是对象类object class的组成部分，并组成在一起构成schema；那些在组织内代表个人的schema被命名为white pages schema。数据库内的每个条目都与若干对象类联系，而这些对象类决定了一个属性是否为可选和它保存哪些类型的信息。属性的名字一般是一个易于记忆的字符串，例如用cn为通用名（common name）命名，而&amp;rdquo;mail&amp;rdquo;代表e-mail地址。属性取值依赖于其类型，并且LDAPv3中一般非二进制值都遵从UTF-8字符串语法。例如，mail属性包含值 &lt;code&gt;user@example.com&lt;/code&gt;；jpegPhotos属性一般包含JPEG/JFIF格式的图片。&lt;/p&gt;
+
+&lt;h4 id=&#34;1-4-什么是-slapd:df3185ccd2379abba6a913eb10dd16c0&#34;&gt;1.4 什么是 slapd&lt;/h4&gt;
+
+&lt;p&gt;Slapd 是 LDAP 的独立服务，可以在不同的 UNIX 系统下运行，你可以将其作为自己的目录服务器。Slapd 包含很多特性和功能：
+* 可选数据库：LDBM，基于磁盘的高性能数据库；SHELL，一个可以任意操作 UNIX 命令和 shell 脚本的数据库；PASSWD，简单的密码文件数据库。
+* 支持多个数据库实例
+* 通用的数据库接口
+* 权限访问控制
+* 多线程
+* 可复制&lt;/p&gt;
+
+&lt;h4 id=&#34;1-5-什么是-x-500-协议:df3185ccd2379abba6a913eb10dd16c0&#34;&gt;1.5 什么是 X.500 协议&lt;/h4&gt;
+
+&lt;p&gt;X.500是计算机目录服务的标准系列。最早是ITU-T X.500开发，前身为CCITT的，并于1988年首次批准，此一目录可以成为全球目录的一部分。&lt;/p&gt;
+
+&lt;p&gt;X.500协议包括：&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;在 /etc/init.d 下加入脚本文件&lt;/li&gt;
-&lt;/ul&gt;
-sudo vi /etc/init.d/aria2c
-
-&lt;ul&gt;
-&lt;li&gt;输入内容：&lt;/li&gt;
-&lt;/ul&gt;
-#!/bin/sh
-### BEGIN INIT INFO
-# Provides:          Aria2
-# Required-Start:    $network $local_fs $remote_fs
-# Required-Stop::    $network $local_fs $remote_fs
-# Should-Start:      $all
-# Should-Stop:       $all
-# Default-Start:     2 3 4 5
-# Default-Stop:      0 1 6
-# Short-Description: Aria2 - Download Manager
-# Description:       Aria2 - Download Manager
-### END INIT INFO
-
-NAME=aria2c
-USER=pi
-ARIA2C=/usr/bin/$NAME
-PIDFILE=/var/run/$NAME.pid
-CONF=/home/$USER/.aria2/aria2.conf
-ARGS=&#34;--conf-path=${CONF}&#34;
-
-test -f $ARIA2C || exit 0
-
-. /lib/lsb/init-functions
-
-case &#34;$1&#34; in
-start)  log_daemon_msg &#34;Starting aria2c&#34; &#34;aria2c&#34;
-        start-stop-daemon -S -q -b -m -p $PIDFILE -c $USER -a $ARIA2C -- $ARGS
-        log_end_msg $?
-        ;;
-stop)   log_daemon_msg &#34;Stopping aria2c&#34; &#34;aria2c&#34;
-        start-stop-daemon -K -q -p $PIDFILE
-        log_end_msg $?
-        ;;
-restart|reload|force-reload)
-        log_daemon_msg &#34;Restarting aria2c&#34; &#34;aria2c&#34;
-        start-stop-daemon -K -R 5 -q -p $PIDFILE
-        start-stop-daemon -S -q -b -m -p $PIDFILE -c $USER -a $ARIA2C -- $ARGS
-        log_end_msg $?
-        ;;
-status)
-        status_of_proc -p $PIDFILE $ARIA2C aria2c &amp;&amp; exit 0 || exit $?
-        ;;
-*)      log_action_msg &#34;Usage: /etc/init.d/aria2c {start|stop|restart|reload|force-reload|status}&#34;
-        exit 2
-        ;;
-esac
-exit 0
-
-&lt;p&gt;以上脚本 &lt;code&gt;### BEGIN INIT INFO - ### END INIT INFO&lt;/code&gt; 为启动脚本需要定义的 metadata 信息，不定义会报错&lt;/p&gt;
-
-&lt;p&gt;启用脚本使用 start-stop-daemon 命令，参数为：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;-S, &amp;ndash;start  启动服务&lt;/li&gt;
-&lt;li&gt;-K, &amp;ndash;stop  停止服务&lt;/li&gt;
-&lt;li&gt;-q, &amp;ndash;quiet  静默启动，不输出日志&lt;/li&gt;
-&lt;li&gt;-b, &amp;ndash;background  后台启动&lt;/li&gt;
-&lt;li&gt;-m, &amp;ndash;make-pidfile  创建 pid 文件&lt;/li&gt;
-&lt;li&gt;-p, &amp;ndash;pidfile  指定 pid 文件&lt;/li&gt;
-&lt;li&gt;-c, &amp;ndash;chuid  指定启动用户&lt;/li&gt;
-&lt;li&gt;-a, &amp;ndash;startas pathname  进程路径&lt;/li&gt;
-&lt;li&gt;-R, &amp;ndash;retry timeout|schedule  重试次数&lt;/li&gt;
+&lt;li&gt;DAP (Directory Access Protocol)&lt;/li&gt;
+&lt;li&gt;DSP (Directory System Protocol)&lt;/li&gt;
+&lt;li&gt;DISP (Directory Information Shadowing Protocol)&lt;/li&gt;
+&lt;li&gt;DOP (Directory Operational Bindings Management Protocol)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;需要将 USER 修改为自己的用户名称&lt;br /&gt;
-配置文件位于 /home/$USER/.aria2/aria2.conf&lt;/p&gt;
+&lt;h4 id=&#34;1-6-什么是-slurpd:df3185ccd2379abba6a913eb10dd16c0&#34;&gt;1.6 什么是 slurpd&lt;/h4&gt;
 
-&lt;p&gt;更多参数含义可以通过 &lt;code&gt;man start-stop-daemon&lt;/code&gt; 进行查看&lt;/p&gt;
+&lt;p&gt;Slurpd 是一个提供复制服务的 UNIX 进程，它负责分发到主 slapd 更改数据库的各种 slapd 的副本。&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;修改脚本权限&lt;/li&gt;
-&lt;/ul&gt;
-sudo chmod +x /etc/init.d/aria2c
+&lt;h3 id=&#34;2-安装配置-slapd:df3185ccd2379abba6a913eb10dd16c0&#34;&gt;2. 安装配置 slapd&lt;/h3&gt;
 
-&lt;ul&gt;
-&lt;li&gt;测试脚本&lt;/li&gt;
-&lt;/ul&gt;
-sudo /etc/init.d/aria2c start
-sudo /etc/init.d/aria2c status
-sudo /etc/init.d/aria2c stop
-sudo /etc/init.d/aria2c status
-sudo /etc/init.d/aria2c restart
+&lt;h4 id=&#34;2-1-安装-slapd-和-ldap-utils:df3185ccd2379abba6a913eb10dd16c0&#34;&gt;2.1 安装 slapd 和 ldap-utils&lt;/h4&gt;
 
-&lt;h4 id=&#34;2-使用-insserv-设置自动启动:5a63f747350973a6bdfac6af85b4c2a9&#34;&gt;2. 使用 insserv 设置自动启动&lt;/h4&gt;
+&lt;p&gt;这里以 ubuntu 为例，说明如何安装和配置 slapd，通过 apt-get 来进行安装&lt;/p&gt;
+sudo apt-get install slapd ldap-utils
 
-&lt;ul&gt;
-&lt;li&gt;添加服务&lt;/li&gt;
-&lt;/ul&gt;
-sudo insserv /etc/init.d/aria2c #添加服务
-sudo insserv -r /etc/init.d/aria2c #删除服务
+&lt;h4 id=&#34;2-2-新增配置文件:df3185ccd2379abba6a913eb10dd16c0&#34;&gt;2.2 新增配置文件&lt;/h4&gt;
+sudo vi /etc/ldap/slapd.conf
+database ldbm
+suffix  &#34;dc=scutech,dc=com&#34;
+rootdn &#34;cn=admin, dc=scutech,dc=com&#34;
+rootpw secret
+directory &#34;/var/lib/ldap&#34;
 
-&lt;ul&gt;
-&lt;li&gt;重启测试&lt;/li&gt;
-&lt;/ul&gt;
-sudo reboot
-sudo /etc/init.d/aria2c status
+&lt;p&gt;重启 slapd&lt;/p&gt;
+sudo service slapd restart
+
+&lt;p&gt;查询数据&lt;/p&gt;
+ldapsearch -x -LLL -b dc=scutech,dc=com
+
+&lt;p&gt;可以看到我们添加的 admin 的数据&lt;/p&gt;
+dn: dc=scutech,dc=com
+objectClass: top
+objectClass: dcObject
+objectClass: organization
+o: scutech.com
+dc: scutech
+
+dn: cn=admin,dc=scutech,dc=com
+objectClass: simpleSecurityObject
+objectClass: organizationalRole
+cn: admin
+description: LDAP administrator
+
+&lt;h4 id=&#34;2-3-新增用户:df3185ccd2379abba6a913eb10dd16c0&#34;&gt;2.3 新增用户&lt;/h4&gt;
+vi my.ldif
+dn: dc=scutech,dc=com
+o: scutech.com
+objectclass: organization
+
+dn: cn=admin, dc=scutech,dc=com
+cn: zhixin
+sn: wen
+mail: wenzhixin2010@gmail.com
+objectclass: person
+
+&lt;p&gt;这里可以包含任何想要的属性值&lt;/p&gt;
+ldapadd -cx -D cn=admin,dc=scutech,dc=com -w password -f my.ldif
 </description>
     </item>
     
     <item>
       <title>Installing Virtualbox On Ubuntu Server 14.04</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/installing_vbox_on_ubuntu_server</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2015/09/07/installing_vbox_on_ubuntu_server</link>
+      <pubDate>Mon, 07 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/installing_vbox_on_ubuntu_server</guid>
+      <guid>http://blog.wenzhixin.net.cn/2015/09/07/installing_vbox_on_ubuntu_server</guid>
       <description>
 
 &lt;p&gt;For some reasons, my computer just only installed Ubuntu Server 14.04 system.
@@ -228,11 +194,142 @@ sudo /etc/init.d/vboxweb-service start
     </item>
     
     <item>
-      <title>KVM 虚拟机的学习和使用</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/kvm_study</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>在 Ubuntu 14.04 server 上部署 meteor 应用</title>
+      <link>http://blog.wenzhixin.net.cn/2015/07/06/meteor_deploy</link>
+      <pubDate>Mon, 06 Jul 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/kvm_study</guid>
+      <guid>http://blog.wenzhixin.net.cn/2015/07/06/meteor_deploy</guid>
+      <description>
+
+&lt;h3 id=&#34;关于-meteor-js:a7799df58081dcf48248d422bcf9047b&#34;&gt;关于 Meteor.js&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://meteor.com/&#34;&gt;Meteor.js&lt;/a&gt; Meteor 是一个构建在 Node.js 之上的平台，用来开发实时网页程序。Meteor 位于程序数据库和用户界面之间，保持二者之间的数据同步更新。使用 Meteor，几小时之内就能开发出一个正常运行的实时网页程序。&lt;/p&gt;
+
+&lt;h3 id=&#34;编译部署-meteor-应用到服务器:a7799df58081dcf48248d422bcf9047b&#34;&gt;编译部署 meteor 应用到服务器&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;将我们的应用编译到 build 中&lt;/p&gt;
+cd myapp
+meteor build --directory ../build&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;使用 rsync 同步到服务器上&lt;/p&gt;
+cd ../
+rsync -avz build/bundle hostname:/home/myapp&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;安装-mongodb:a7799df58081dcf48248d422bcf9047b&#34;&gt;安装 mongodb&lt;/h3&gt;
+sudo apt-get install mongodb-server
+
+&lt;h3 id=&#34;编写-upstart-脚本:a7799df58081dcf48248d422bcf9047b&#34;&gt;编写 upstart 脚本&lt;/h3&gt;
+sudo vi /etc/init/myapp.conf
+#!upstart
+description &#34;Meteor Up - myapp&#34;
+author      &#34;Arunoda Susiripala, &lt;arunoda.susiripala@gmail.com&gt;&#34;
+
+start on runlevel [2345]
+stop on runlevel [06]
+
+respawn
+
+limit nofile 65536 65536
+
+script
+
+    # leave as 127.0.0.1 for security
+    export BIND_IP=127.0.0.1
+
+    # the port nginx is proxying requests to
+    export PORT=3000
+
+    # this allows Meteor to figure out correct IP address of visitors
+    export HTTP_FORWARDED_COUNT=1
+
+    # MongoDB connection string using myapp as database name
+    export MONGO_URL=mongodb://localhost:27017/myapp
+
+    # The domain name as configured previously as server_name in nginx
+    export ROOT_URL=https://myapp.wenzhixin.net.cn
+
+    exec node /home/myapp/bundle/main.js
+
+end script
+
+&lt;p&gt;启动：&lt;/p&gt;
+sudo start myapp
+
+&lt;h3 id=&#34;配置-nginx:a7799df58081dcf48248d422bcf9047b&#34;&gt;配置 nginx&lt;/h3&gt;
+server {
+    listen 80;
+    server_name myapp.wenzhixin.net.cn;
+
+    location / {
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $http_host;
+        proxy_set_header X-NginX-Proxy true;
+
+        proxy_pass http://127.0.0.1:3000;
+        proxy_redirect off;
+    }
+}
+
+&lt;p&gt;访问 myapp.wenzhixin.net.cn&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>lxc 小贴士：创建、自动启动、设置存放目录</title>
+      <link>http://blog.wenzhixin.net.cn/2015/03/04/lxc_tips</link>
+      <pubDate>Wed, 04 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2015/03/04/lxc_tips</guid>
+      <description>
+
+&lt;p&gt;平时使用 lxc 比较多，在这里记录下容易忘记的点。&lt;/p&gt;
+
+&lt;h3 id=&#34;创建:b90732aadcfdaa809d1b030b65523295&#34;&gt;创建&lt;/h3&gt;
+
+&lt;p&gt;很简单，创建一个 ubuntu 系统（trusty），详细见&lt;a href=&#34;http://www.malike.net.cn/blog/2013/11/10/lxc-tutorial/&#34;&gt;LXC简介&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;创建文件：&lt;code&gt;vi trusty.conf&lt;/code&gt;：&lt;/p&gt;
+lxc.network.type = veth
+lxc.network.flags = up
+lxc.network.name = eth0
+lxc.network.link = lxcbr0
+sudo MIRROR=&#34;http://ftp.cuhk.edu.hk/pub/Linux/ubuntu&#34; \
+     SECURITY_MIRROR=&#34;http://ftp.cuhk.edu.hk/pub/Linux/ubuntu&#34; \
+     lxc-create -n trusty -f trusty.conf -t ubuntu -- -r trusty
+
+&lt;p&gt;接着，启动 lxc：&lt;/p&gt;
+lxc-start -d -n trusty
+
+&lt;p&gt;这里的参数 &lt;code&gt;-d&lt;/code&gt; 是必要的，表示以 daemon 的方式运行。&lt;/p&gt;
+
+&lt;p&gt;所有的 lxc 容器创建后的默认用户名密码为：ubuntu。&lt;/p&gt;
+
+&lt;h3 id=&#34;自动启动:b90732aadcfdaa809d1b030b65523295&#34;&gt;自动启动&lt;/h3&gt;
+
+&lt;p&gt;我想让我的 lxc 容器自动启动，可以通过编辑 &lt;code&gt;/var/lib/lxc/[container_name]/config&lt;/code&gt; 文件：&lt;/p&gt;
+# Autostart
+lxc.start.auto = 1
+lxc.start.delay = 5
+
+&lt;p&gt;这里假如有多个容器的话会等待 5 秒。&lt;/p&gt;
+
+&lt;h3 id=&#34;设置存放目录:b90732aadcfdaa809d1b030b65523295&#34;&gt;设置存放目录&lt;/h3&gt;
+
+&lt;p&gt;由于 lxc 默认的存放目录为 &lt;code&gt;/var/lib/lxc&lt;/code&gt;，很容易导致 &lt;code&gt;/&lt;/code&gt; 容量不足，这里可以通过软链接的方式进行设置：&lt;/p&gt;
+sudo mv /var/lib/lxc ~/lxc
+ln -s ~/lxc /var/lib/lxc
+</description>
+    </item>
+    
+    <item>
+      <title>KVM 虚拟机的学习和使用</title>
+      <link>http://blog.wenzhixin.net.cn/2014/11/21/kvm_study</link>
+      <pubDate>Fri, 21 Nov 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2014/11/21/kvm_study</guid>
       <description>
 
 &lt;p&gt;KVM 是 Kernel-based Virtual Machine的简称，是一个开源的系统虚拟化模块，是基于硬件的完全虚拟化。&lt;/p&gt;
@@ -269,243 +366,11 @@ sudo virt-manager
     </item>
     
     <item>
-      <title>Ubuntu 11.10 将 OpenJDK 换成 Sun JDK 的步骤</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_11.10_will_be_openjdk_into_sun_jdk_steps</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_11.10_will_be_openjdk_into_sun_jdk_steps</guid>
-      <description>&lt;p&gt;1、加入repository： &lt;/p&gt;
-
-&lt;p&gt;sudo add-apt-repository &amp;ldquo;deb &lt;a href=&#34;http://cz.archive.Ubuntu.com/ubuntu&#34;&gt;http://cz.archive.Ubuntu.com/ubuntu&lt;/a&gt;
-hardy-updates main multiverse&amp;rdquo;&lt;/p&gt;
-
-&lt;p&gt;(vi /etc/apt/sources.list)&lt;/p&gt;
-
-&lt;p&gt;2、更新源：&lt;/p&gt;
-
-&lt;p&gt;sudo apt-get update&lt;/p&gt;
-
-&lt;p&gt;3、安装 jdk 和 jre：&lt;/p&gt;
-
-&lt;p&gt;sudo apt-get install sun-java6-jdk sun-java6-jre&lt;/p&gt;
-
-&lt;p&gt;4、切换为 Sun JDK：&lt;/p&gt;
-
-&lt;p&gt;sudo update-java-alternatives -s java-6-sun&lt;/p&gt;
-
-&lt;p&gt;(ls /usr/lib/jvm)&lt;/p&gt;
-
-&lt;p&gt;5、查看是否切换成功：&lt;/p&gt;
-
-&lt;p&gt;java -version&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Ubuntu 11.10 将 OpenJDK 换成 Sun JDK 的步骤</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_11.10_will_be_openjdk_into_sun_jdk_steps</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_11.10_will_be_openjdk_into_sun_jdk_steps</guid>
-      <description>&lt;p&gt;1、加入repository： &lt;/p&gt;
-
-&lt;p&gt;sudo add-apt-repository &amp;ldquo;deb &lt;a href=&#34;http://cz.archive.Ubuntu.com/ubuntu&#34;&gt;http://cz.archive.Ubuntu.com/ubuntu&lt;/a&gt;
-hardy-updates main multiverse&amp;rdquo;&lt;/p&gt;
-
-&lt;p&gt;(vi /etc/apt/sources.list)&lt;/p&gt;
-
-&lt;p&gt;2、更新源：&lt;/p&gt;
-
-&lt;p&gt;sudo apt-get update&lt;/p&gt;
-
-&lt;p&gt;3、安装 jdk 和 jre：&lt;/p&gt;
-
-&lt;p&gt;sudo apt-get install sun-java6-jdk sun-java6-jre&lt;/p&gt;
-
-&lt;p&gt;4、切换为 Sun JDK：&lt;/p&gt;
-
-&lt;p&gt;sudo update-java-alternatives -s java-6-sun&lt;/p&gt;
-
-&lt;p&gt;(ls /usr/lib/jvm)&lt;/p&gt;
-
-&lt;p&gt;5、查看是否切换成功：&lt;/p&gt;
-
-&lt;p&gt;java -version&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Ubuntu 12.04 安装 Nodejs</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/installing_node_on_ubuntu</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/installing_node_on_ubuntu</guid>
-      <description>&lt;p&gt;命令行：&lt;/p&gt;
-sudo apt-get install python-software-properties
-sudo add-apt-repository ppa:chris-lea/node.js
-sudo apt-get update
-sudo apt-get install nodejs npm
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager&#34;&gt;Installing Node.js via package manager&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Ubuntu 12.04 安装 Subversion 1.7</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/installing_subversion_on_ubuntu</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/installing_subversion_on_ubuntu</guid>
-      <description>&lt;p&gt;命令行：&lt;/p&gt;
-sudo apt-get install python-software-properties
-sudo apt-add-repository ppa:dominik-stadler/subversion-1.7
-sudo apt-get update
-sudo apt-get install subversion
-</description>
-    </item>
-    
-    <item>
-      <title>Ubuntu 12.04 设置 VPN</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_set_vpn</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_set_vpn</guid>
-      <description>&lt;p&gt;&lt;strong&gt;1. 设置 - 网络 - VPN 连接 - 配置 VPN&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;2. 添加 VPN - 新建 PPTP&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;3. 输入正确的网关、用户名、密码&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;4. 选择高级 - 勾选使用点到点加密(MPPE)(P)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;5. 设置 IPv4 路由，添加路由并勾选仅将此连接用于相对应的网络上的资源：&lt;/strong&gt;&lt;/p&gt;
-地址：192.168.1.0 // 网关相对应的地址  
-子网掩码：255.255.255.0  
-网关：192.168.1.1  
-
-&lt;p&gt;&lt;strong&gt;6. 连接 VPN (搞定！)&lt;/strong&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Ubuntu 12.10 VirtualBox 问题</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_vbox_install</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_vbox_install</guid>
-      <description>
-
-&lt;h4 id=&#34;问题:50a56da5bddf04658d0f2c6daef91b49&#34;&gt;问题：&lt;/h4&gt;
-
-&lt;p&gt;Ubuntu 12.10 unable to find sources of your current kernel&lt;/p&gt;
-
-&lt;h4 id=&#34;错误信息:50a56da5bddf04658d0f2c6daef91b49&#34;&gt;错误信息：&lt;/h4&gt;
-Kernel driver not installed (rc=-1908)
-
-The VirtualBox Linux kernel driver (vboxdrv) is either not loaded or there is a permission problem with /dev/vboxdrv. Please reinstall the kernel module by executing
-
-&#39;/etc/init.d/vboxdrv setup&#39;
-
-as root. If it is available in your distribution, you should install the DKMS package first. This package keeps track of Linux kernel changes and recompiles the vboxdrv kernel module if necessary.
-
-&lt;h4 id=&#34;解决:50a56da5bddf04658d0f2c6daef91b49&#34;&gt;解决：&lt;/h4&gt;
-sudo apt-get install dkms build-essential linux-headers-generic
-
-sudo /etc/init.d/vboxdrv setup
-</description>
-    </item>
-    
-    <item>
-      <title>Ubuntu 12.10 桌面美化及软件安装</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_desktop</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_desktop</guid>
-      <description>
-
-&lt;h3 id=&#34;1-安装-qq-聊天工具:2bfcfcf41f077d2ac569743285325f74&#34;&gt;1. 安装 QQ 聊天工具&lt;/h3&gt;
-
-&lt;p&gt;下载安装包 deb&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.longene.org/forum/viewtopic.php?f=6&amp;amp;t=4700&#34;&gt;wine qq 2012 for linux Ubuntu&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;安装：&lt;/p&gt;
-sudo dpkg -i WineQQ2012-20121221-Longene.deb
-
-&lt;p&gt;效果图：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2013/03/29/1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;2-安装-cairo-dock-工具栏:2bfcfcf41f077d2ac569743285325f74&#34;&gt;2. 安装 cairo dock 工具栏&lt;/h3&gt;
-sudo add-apt-repository ppa:cairo-dock-team/ppa
-sudo apt-get update
-sudo apt-get install cairo-dock cairo-dock-plug-ins
-
-&lt;p&gt;效果图：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2013/03/29/2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;3-隐藏-unity-工具栏:2bfcfcf41f077d2ac569743285325f74&#34;&gt;3. 隐藏 unity 工具栏&lt;/h3&gt;
-
-&lt;p&gt;安装 CompizConfig Settings Manager：&lt;/p&gt;
-sudo apt-get install compizconfig-settings-manager
-
-&lt;p&gt;打开 CompizConfig设置管理器 -&amp;gt; 桌面 -&amp;gt; Ubuntu Unity Plugin&lt;/p&gt;
-
-&lt;p&gt;将 Hide Luancher 选项修改为 Autohide&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Ubuntu 12.10 添加 node 应用为自启动服务</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_node_app_service</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_node_app_service</guid>
-      <description>&lt;p&gt;开发 node 应用之后，启动的方式一般是通过 &lt;code&gt;node app&lt;/code&gt; 或者 &lt;code&gt;node app &amp;amp;&lt;/code&gt; 来运行，
-十分不方便，这里将以本 blog 应用为例介绍如何添加为自启动的服务。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;环境&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;用户名：username&lt;/li&gt;
-&lt;li&gt;blog 位置：/home/username/blog&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;首先服务名取为 blog：&lt;/p&gt;
-sudo vi /etc/init/blog.conf
-
-&lt;p&gt;输入以下内容：&lt;/p&gt;
-# blog
-
-description &#34;blog&#34;
-
-start on filesystem or runlevel [2345]
-stop on runlevel [!2345]
-
-setuid useranme
-chdir /home/username/blog
-
-respawn
-
-exec /usr/bin/nodejs /home/useranme/blog/app.js
-
-&lt;p&gt;保存，便可以使用以下命令了：&lt;/p&gt;
-sudo service blog start
-sudo service blog restart
-sudo service blog stop
-sudo service blog status
-</description>
-    </item>
-    
-    <item>
       <title>Ubuntu 下不能访问 Windows 文件系统</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_unable_to_access_windows</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2014/11/20/ubuntu_unable_to_access_windows</link>
+      <pubDate>Thu, 20 Nov 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_unable_to_access_windows</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/11/20/ubuntu_unable_to_access_windows</guid>
       <description>
 
 &lt;p&gt;Ubuntu 和 Windows 双系统下，Ubuntu 不能访问 Windows 下的分区，例如：&lt;code&gt;/dev/sdb1&lt;/code&gt;，显示如下错误：&lt;/p&gt;
@@ -523,7 +388,7 @@ $ sudo ntfsfix /dev/sdb1
 Mounting volume... The disk contains an unclean file system (0, 0).
 Metadata kept in Windows cache, refused to mount.
 FAILED
-Attempting to correct errors... 
+Attempting to correct errors...
 Processing $MFT and $MFTMirr...
 Reading $MFT... OK
 Reading $MFTMirr... OK
@@ -538,11 +403,496 @@ NTFS partition /dev/sdb1 was processed successfully.
     </item>
     
     <item>
-      <title>Ubuntu 下安装音乐播放器</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_music_player</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>crontab 学习笔记</title>
+      <link>http://blog.wenzhixin.net.cn/2014/11/07/crontab_study</link>
+      <pubDate>Fri, 07 Nov 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_music_player</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/11/07/crontab_study</guid>
+      <description>
+
+&lt;p&gt;crontab 常见于 Unix 和类 Unix 的操作系统之中，用于设置周期性被执行的指令。该命令从标准输入设备读取指令，并将其存放于&lt;code&gt;crontab&lt;/code&gt;文件中，以供之后读取和执行。&lt;/p&gt;
+
+&lt;h3 id=&#34;crontab-命令格式和参数:48b38d7290c8c7d5754d0161bc80acb2&#34;&gt;crontab 命令格式和参数&lt;/h3&gt;
+crontab [ -u user ] [ -i ] { -e | -l | -r }
+
+&lt;ul&gt;
+&lt;li&gt;-u：设置指定用户，默认为当前用户&lt;/li&gt;
+&lt;li&gt;-i：删除用户 crontab 的确认提示&lt;/li&gt;
+&lt;li&gt;-e：编辑用户的 crontab&lt;/li&gt;
+&lt;li&gt;-l：列表用户的 crontab&lt;/li&gt;
+&lt;li&gt;-r：删除用户的 crontab&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;crontab-e-配置文件格式:48b38d7290c8c7d5754d0161bc80acb2&#34;&gt;crontab -e 配置文件格式&lt;/h3&gt;
+* * * * * COMMAND
+
+&lt;p&gt;&lt;strong&gt;分钟0~59&lt;/strong&gt; &lt;strong&gt;小时0~23&lt;/strong&gt; &lt;strong&gt;日期1~31&lt;/strong&gt; &lt;strong&gt;月份1~12&lt;/strong&gt; &lt;strong&gt;星期0~7&lt;/strong&gt; COMMAND&lt;/p&gt;
+
+&lt;p&gt;例子：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;每晚的21:30重启 nginx&lt;/p&gt;
+30 21 * * * service nginx restart&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;每月1、10、22日的4:45重启 nginx&lt;/p&gt;
+45 4 1,10,22 * * service nginx restart&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;每月1到10日的4:45重启 nginx&lt;/p&gt;
+45 4 1-10 * * service nginx restart&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;每隔两分钟重启 nginx 服务器&lt;/p&gt;
+*/2 * * * * service nginx restart
+1-59/2 * * * * service nginx restart&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;晚上11点到早上7点之间，每隔一小时重启 nginx&lt;/p&gt;
+0 23-7/1 * * * service nginx restart&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;每天18:00到23:00之间每隔30分钟重启 nginx&lt;/p&gt;
+0,30 18-23 * * * service nginx restart
+0-59/30 18-23 * * * service nginx restart
+*/30 18-23 * * * service nginx restart&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;小结：&lt;/strong&gt;
+* *表示任何时候都匹配
+* 可以用 “A,B,C” 表示A或者B或者C时执行命令
+* 可以用 “A-B” 表示A到B之间时执行命令
+* 可以用 “/A” 表示每隔A分钟（小时等）执行命令&lt;/p&gt;
+
+&lt;h3 id=&#34;使用系统-crontab-配置文件:48b38d7290c8c7d5754d0161bc80acb2&#34;&gt;使用系统 crontab 配置文件&lt;/h3&gt;
+
+&lt;p&gt;文件位置：&lt;code&gt;/etc/crontab&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;命令格式（指定用户）：&lt;/p&gt;
+* * * * * USER COMMAND
+
+&lt;p&gt;例子：&lt;/p&gt;
+*\30 * * * * root service nginx restart
+
+&lt;h3 id=&#34;crontab-使用注意:48b38d7290c8c7d5754d0161bc80acb2&#34;&gt;crontab 使用注意&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;无法在 crontab 的命令中使用环境变量&lt;/li&gt;
+&lt;/ul&gt;
+*/1 * * * * echo $APP_HOME # 为空
+
+&lt;ul&gt;
+&lt;li&gt;第三个域和第五个域是 “或” 操作系统&lt;/li&gt;
+&lt;/ul&gt;
+# 四月的第一个星期日早晨1时59分运行 a.sh
+59 1 1-7 4 0 a.sh # 错误
+59 1 1-7 4 * test `date +\%w` -eq 0 &amp;&amp; a.sh # 正确
+
+&lt;ul&gt;
+&lt;li&gt;分钟误用&lt;/li&gt;
+&lt;/ul&gt;
+# 每两个小时执行一次
+* /2 * * * command # 错误
+0 /2 * * * command # 正确
+</description>
+    </item>
+    
+    <item>
+      <title>VirtualBox 设置 Host-Only 上网</title>
+      <link>http://blog.wenzhixin.net.cn/2014/07/31/virtual_box_host_only_settings</link>
+      <pubDate>Thu, 31 Jul 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2014/07/31/virtual_box_host_only_settings</guid>
+      <description>
+
+&lt;p&gt;我们平时在使用 VirtualBox 虚拟机的时候，工作场所内部网和家里内部网的网段不相同，使用 DHCP 获取 IP 地址的方式导致虚拟机的地址会经常改变，从而不方便使用，特别是使用 ssh 配置 key 连接到虚拟机的方式。&lt;/p&gt;
+
+&lt;p&gt;参考文章&lt;a href=&#34;http://www.malike.net.cn/blog/2011/12/20/vbox-hostonly-dhcp/&#34;&gt;Ubuntu 11.10 VirtualBox 的 Host-only 网卡上外网和 DHCP 永久地址&lt;/a&gt;，我们可以设置固定的 IP 地址，例如：&lt;code&gt;192.168.56.101&lt;/code&gt;，但是却不能解决上外网的问题。&lt;/p&gt;
+
+&lt;p&gt;于是，想实现虚拟机上网，可以为虚拟机再添加一块网卡，通过 NAT 方式，轻松达到连接外网的效果，具体步骤如下：&lt;/p&gt;
+
+&lt;h4 id=&#34;1-为-virtualbox-添加虚拟网卡-连接方式为-nat:c673a42ed2240232037c76e56966f2b3&#34;&gt;1. 为 VirtualBox 添加虚拟网卡，连接方式为 NAT：&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/07/31/1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;2-启动添加的网卡:c673a42ed2240232037c76e56966f2b3&#34;&gt;2. 启动添加的网卡：&lt;/h4&gt;
+sudo ifconfig eth1 up
+sudo dhclient eth1
+
+&lt;h4 id=&#34;3-修改配置信息并重启:c673a42ed2240232037c76e56966f2b3&#34;&gt;3. 修改配置信息并重启：&lt;/h4&gt;
+sudo vim /etc/network/interfaces
+# This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+# The primary network interface (Host-only)
+auto eth0
+iface eth0 inet dhcp
+
+# The second network interface (NAT)
+auto eth1
+iface eth1 inet dhcp
+sudo /etc/init.d/networking restart
+</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 无法找到更新源的问题</title>
+      <link>http://blog.wenzhixin.net.cn/2014/07/21/ubuntu_source_list_not_found</link>
+      <pubDate>Mon, 21 Jul 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2014/07/21/ubuntu_source_list_not_found</guid>
+      <description>
+
+&lt;h3 id=&#34;问题:f73ae7c8e69112b208895feeeb127e47&#34;&gt;问题：&lt;/h3&gt;
+
+&lt;p&gt;前段时间，Ubuntu 官方源已经停止了对非长期维护版（如 11.10，12.04，12.10 和 13.04）的支持，并且从归档服务器上移除了这些版本信息，导致无法更新软件和安装不了新软件。例如使用 apt-get update, apt-get upgrade, apt-get install 都无法正常工作。&lt;/p&gt;
+
+&lt;h3 id=&#34;解决方法:f73ae7c8e69112b208895feeeb127e47&#34;&gt;解决方法&lt;/h3&gt;
+
+&lt;p&gt;最好的办法是，升级系统到最新的版本（或者重装），例如升级到 14.04。但是有时候会觉得升级或者重装会很麻烦（说到底是懒），那么可以使用旧源 &lt;a href=&#34;http://old-releases.ubuntu.com&#34;&gt;http://old-releases.ubuntu.com&lt;/a&gt; 进行更新。&lt;/p&gt;
+
+&lt;p&gt;方法如下：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;使用&lt;code&gt;sed&lt;/code&gt;命令：&lt;/p&gt;
+sudo sed -i -e &#39;s/archive.ubuntu.com\|security.ubuntu.com/old-releases.ubuntu.com/g&#39; /etc/apt/sources.list&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;或者使用&lt;code&gt;vim&lt;/code&gt;编辑替换：&lt;/p&gt;
+sudo vi /etc/apt/sources.list
+:%s/archive.ubuntu.com\|security.ubuntu.com/old-releases.ubuntu.com/g&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;更新：&lt;/p&gt;
+sudo apt-get update
+sudo apt-get upgrade
+</description>
+    </item>
+    
+    <item>
+      <title>ubuntu 下使用 FreeRDP 连接 Windows 远程桌面</title>
+      <link>http://blog.wenzhixin.net.cn/2014/03/16/ubuntu_xfreerdp</link>
+      <pubDate>Sun, 16 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2014/03/16/ubuntu_xfreerdp</guid>
+      <description>
+
+&lt;h4 id=&#34;简介:35719c5fd0b3ab2ac34b47cf0a797513&#34;&gt;简介&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/FreeRDP/FreeRDP&#34;&gt;FreeRDP&lt;/a&gt; 是一款开源的远程桌面系统，支持多种平台，
+在 ubuntu 中使用 FreeRDP 可以很方便的登录到 windwos 远程桌面中。&lt;/p&gt;
+
+&lt;h4 id=&#34;安装:35719c5fd0b3ab2ac34b47cf0a797513&#34;&gt;安装&lt;/h4&gt;
+sudo apt-get install freerdp
+
+&lt;h4 id=&#34;使用:35719c5fd0b3ab2ac34b47cf0a797513&#34;&gt;使用&lt;/h4&gt;
+xfreerdp -f host:port -u username -p password
+
+&lt;p&gt;&lt;strong&gt;参数：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;-f：表示全屏（切换全屏的快捷键为：Ctrl + Alt + Enter）&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;host：远程服务器地址&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;port：端口，默认为 3389&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;-u username：用户名&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;-p password：密码&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;例如：&lt;/p&gt;
+xfreerdp -f 192.168.1.10 -u administrator -p 123456
+
+&lt;p&gt;表示远程桌面到 192.168.1.10&lt;/p&gt;
+
+&lt;h4 id=&#34;常用插件:35719c5fd0b3ab2ac34b47cf0a797513&#34;&gt;常用插件&lt;/h4&gt;
+
+&lt;p&gt;FreeRDP 提供了很多&lt;a href=&#34;https://github.com/FreeRDP/FreeRDP/wiki/Plugins&#34;&gt;插件&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;这里记录我比较常用到的插件：&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;cliprdr（开启粘贴功能）&lt;/strong&gt;&lt;/p&gt;
+--plugin cliprdr
+
+&lt;p&gt;例如：&lt;/p&gt;
+xfreerdp -f --plugin cliprdr 192.168.1.10 -u administrator -p 123456
+
+&lt;p&gt;&lt;strong&gt;rdpdr（开启本地文件夹映射为远程服务器磁盘功能）&lt;/strong&gt;&lt;/p&gt;
+--plugin rdpdr --data disk:&lt;Name&gt;:&lt;Path&gt; --
+
+&lt;p&gt;例如将本地 /home/username/share 作为共享文件夹：&lt;/p&gt;
+xfreerdp -f --plugin rdpdr --data disk:username:~/share -- 192.168.1.10 -u administrator -p 123456
+</description>
+    </item>
+    
+    <item>
+      <title>ssh tunnel（隧道）</title>
+      <link>http://blog.wenzhixin.net.cn/2014/03/15/ssh_tunnel</link>
+      <pubDate>Sat, 15 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2014/03/15/ssh_tunnel</guid>
+      <description>
+
+&lt;h3 id=&#34;问题描述:409e60413bfcfe8bece1a1e1741b8511&#34;&gt;问题描述：&lt;/h3&gt;
+
+&lt;p&gt;公司内部机器限制了登录，只能通过某台指定的机器才能上网，我们这里叫做中转服务器。
+例如邮件服务器，而一般中转服务器是 linux 系统。
+你想要登录到内部的机器，只能通过 ssh 登录到邮件服务器，然后在 ssh 登录到内部的机器。
+如果内部的机器是 windows 系统，或者还需要传输文件，会变的相当的麻烦：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;两次登录&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;不能开图形界面&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;需要在中转服务器中安装额外的软件&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;文件传输受限于中转服务器的存储空间&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;问题解决:409e60413bfcfe8bece1a1e1741b8511&#34;&gt;问题解决：&lt;/h3&gt;
+
+&lt;p&gt;使用强大的 ssh tunnel（隧道），就可以通过一次 ssh 进行远程端口的映射，从而完成以上麻烦的步骤。&lt;/p&gt;
+ssh -fN -L local_port:remote_host:remote_port bridge_user@bridge_host
+
+&lt;p&gt;&lt;strong&gt;参数：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;-fN：表示在后台运行 ssh 并不执行远程命令&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;-L：表示使用 ssh tunnel 将远程端口映射到本地&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;local_port：本地的端口&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;remote_host：远程服务器的地址&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;remote_port：远程服务器的端口&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;bridge_user：中转服务器的用户名&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;bridge_host：中转服务器的地址&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;例如，我们需要访问的内部机器的IP为：192.168.1.10，为windows，开启了远程桌面（端口为3389），
+中转服务器的地址为：zhixin@mail.wenzhixin.net.cn，那么我们使用以下命令：&lt;/p&gt;
+ssh -fN -L 3389:192.168.1.10:3389 zhixin@mail.wenzhixin.net.cn
+
+&lt;p&gt;即可将远程服务器的 3389 映射到本地中，现在要登录远程服务器，只需要使用登录到 127.0.0.1:3389 即可。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>vim 添加批量注释</title>
+      <link>http://blog.wenzhixin.net.cn/2014/03/14/vim_batch_notes</link>
+      <pubDate>Fri, 14 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2014/03/14/vim_batch_notes</guid>
+      <description>&lt;p&gt;在配置服务器的过程中，经常会用到 vim 作为我们的编辑器，批量注释这一功能很常用到。&lt;/p&gt;
+
+&lt;p&gt;这里记录 vim 如何添加批量注释的方法。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Ctrl + v 使用方向键上下选择范围&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Shift + i 进入编辑模式，输入&lt;code&gt;#&lt;/code&gt;或者&lt;code&gt;//&lt;/code&gt;，按 esc 退出，搞定。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;批量删除注释：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Ctrl + v 使用方向键上下选择范围，按&lt;code&gt;d&lt;/code&gt;即可（删除选择内容）。&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>ubuntu 设置环境变量问题</title>
+      <link>http://blog.wenzhixin.net.cn/2014/02/17/ubuntu_path</link>
+      <pubDate>Mon, 17 Feb 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2014/02/17/ubuntu_path</guid>
+      <description>&lt;p&gt;开发的时候需要设置环境变量，但是发现设置了之后，每次重启却没有起作用。&lt;/p&gt;
+
+&lt;p&gt;首先，将环境加入&lt;/p&gt;
+export PATH=${PATH}:$HOME/bin
+
+&lt;p&gt;到 ~/.bash_profile 文件中，运行&lt;/p&gt;
+source ~/.bash_profile
+
+&lt;p&gt;即可让设置的环境变量生效。&lt;/p&gt;
+
+&lt;p&gt;但是为什么我每次重启就不起作用了呢，花了好些时间去找原因，
+老大的一句话提醒了我，因为你是用 oh-my-zsh，怎么会一样呢？&lt;/p&gt;
+
+&lt;p&gt;是啊，恍然大悟，答案就是这么简单。。。&lt;/p&gt;
+
+&lt;p&gt;借此机会了解了这几个重要的文件：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;.bash_profile 是最重要的一个配置文件，它在用户每次登录系统时被读取，
+里面的所有命令都会被 bash 执行。（在 Debian 中使用 .profile 文件代替 .bash_profile 文件。）&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;.bashrc 文件在 bash shell 调用另一个 bash shell 时读取，
+也就是在 shell 中再键入 bash 命令启动一个新 shell 时就会去读该文件。
+这样可有效分离登录和子 shell 所需的环境。但一般来说都会在 .bash_profile 里调用
+.bashrc 脚本以便统一配置用户环境。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;.bash_logout 是在退出shell时被读取。我们可把一些清理工作的命令放到这文件中。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;而使用了 oh-my-zsh 之后，有相对应的文件：.zprofile、.zshrc 和 .zlogout&lt;/p&gt;
+
+&lt;p&gt;所以，只要在 .zprofile 中加入环境变量即可。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>VirtualBox 安装 Mac OS X 10.9 Mavericks 小记</title>
+      <link>http://blog.wenzhixin.net.cn/2014/02/10/vbox_mac_install</link>
+      <pubDate>Mon, 10 Feb 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2014/02/10/vbox_mac_install</guid>
+      <description>
+
+&lt;h3 id=&#34;1-准备工作:28ef1238a24229312bbe9f6fa6b31cf3&#34;&gt;1. 准备工作&lt;/h3&gt;
+
+&lt;p&gt;安装虚拟机和下载需要的 &lt;a href=&#34;http://pan.baidu.com/s/1hqebqYw&#34;&gt;iso&lt;/a&gt;：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;联想 Y470 I5、8G内存&lt;/li&gt;
+&lt;li&gt;Ubuntu 12.10&lt;/li&gt;
+&lt;li&gt;VirtualBox 虚拟机（4.3.6）&lt;/li&gt;
+&lt;li&gt;HackBoot_Mav.iso&lt;/li&gt;
+&lt;li&gt;OSXMavericks2.iso&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;2-新建-mac-虚拟机:28ef1238a24229312bbe9f6fa6b31cf3&#34;&gt;2. 新建 Mac 虚拟机&lt;/h3&gt;
+
+&lt;p&gt;跟着新向导一步一步即可&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/02/10/images/1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/02/10/images/2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/02/10/images/3.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/02/10/images/4.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/02/10/images/5.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/02/10/images/6.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;3-设置虚拟机:28ef1238a24229312bbe9f6fa6b31cf3&#34;&gt;3. 设置虚拟机&lt;/h3&gt;
+
+&lt;p&gt;去掉 启用 EFI 选项&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/02/10/images/7.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;处理器选择 2 核&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/02/10/images/8.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;启用 3D 加速&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/02/10/images/9.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;设置存储，加入 HackBoot_Mav.iso&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/02/10/images/10.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;4-安装-mac-系统:28ef1238a24229312bbe9f6fa6b31cf3&#34;&gt;4. 安装 Mac 系统&lt;/h3&gt;
+
+&lt;p&gt;启动界面&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/02/10/images/11.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;选择菜单中的设备——分配光驱——OSXMavericks2.iso，按 F5 界面会变成&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/02/10/images/12.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;按 Enter 开始安装&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/02/10/images/13.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;选择语言，继续&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/02/10/images/14.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/02/10/images/15.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;选择实用工具——磁盘工具&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/02/10/images/16.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;名称处输入——Mavericks——选择抹掉&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/02/10/images/17.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;开始安装&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/02/10/images/18.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/02/10/images/19.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;安装完成，强制退出&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/02/10/images/20.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;5-安装内核扩展:28ef1238a24229312bbe9f6fa6b31cf3&#34;&gt;5. 安装内核扩展&lt;/h3&gt;
+
+&lt;p&gt;选择 HackBoot_Mav.iso 重新启动&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/02/10/images/21.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;选择菜单中的设备——分配光驱——OSXMavericks2.iso，按 F5 界面会变成&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/02/10/images/22.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;再次进入安装系统，这次选实用工具——终端&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/02/10/images/23.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;依次输入命令：&lt;/p&gt;
+umount /Volumes/Mavericks
+hdiutil attach /dev/disk0s2 -mountpoint /Volumes/mnt
+cp -rp /Backup/Kexts/ElliottForceLegacyRTC.kext /Volumes/mnt/System/Library/Extensions
+cp -rp /Backup/Kexts/FakeSMC.kext /Volumes/mnt/System/Library/Extensions
+cp -rp /Backup/Kexts/NullCPUPowerManagement.kext /Volumes/mnt/System/Library/Extensions
+chmod -R 0755 /Volumes/mnt/System/Library/Extensions/ElliottForceLegacyRTC.kext
+chmod -R 0755 /Volumes/mnt/System/Library/Extensions/FakeSMC.kext
+chmod -R 0755 /Volumes/mnt/System/Library/Extensions/NullCPUPowerManagement.kext
+hdiutil detach /Volumes/mnt
+
+&lt;p&gt;安装内核扩展，退出终端后, 等待虚拟机的硬盘指示灯熄灭，强制退出&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/02/10/images/24.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;6-完成安装:28ef1238a24229312bbe9f6fa6b31cf3&#34;&gt;6. 完成安装&lt;/h3&gt;
+
+&lt;p&gt;选择 HackBoot_Mav.iso 重新启动，选择 Mavericks，Enter&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/02/10/images/25.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/02/10/images/26.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;设置登录帐号，其他的不注册，不发送&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/02/10/images/27.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;大功告成&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/02/10/images/28.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/02/10/images/29.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 下安装音乐播放器</title>
+      <link>http://blog.wenzhixin.net.cn/2014/01/25/ubuntu_music_player</link>
+      <pubDate>Sat, 25 Jan 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2014/01/25/ubuntu_music_player</guid>
       <description>&lt;p&gt;对于喜欢听歌的人来说，音乐播放器还是挺重要的，
 但是不像 windows 一样，很多流行的播放器都没有 ubuntu 版。&lt;/p&gt;
 
@@ -561,67 +911,6 @@ sudo apt-get install audacious audacious-plugins
 sudo add-apt-repository ppa:osd-lyrics/ppa
 sudo apt-get update
 sudo apt-get install osdlyrics
-</description>
-    </item>
-    
-    <item>
-      <title>Ubuntu 下无密码访问及文件同步</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/ssh_rsync</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/ssh_rsync</guid>
-      <description>
-
-&lt;h4 id=&#34;服务器端配置-ssh:c438dcfbdb89c88db42e10ae91da1f05&#34;&gt;服务器端配置 ssh&lt;/h4&gt;
-
-&lt;p&gt;修改客户端sshd配置文件&lt;/p&gt;
-sudo vi /etc/ssh/sshd_config
-
-&lt;p&gt;修改为&lt;/p&gt;
-RSAAuthentication yes
-PubkeyAuthentication yes
-AuthorizedKeysFile     %h/.ssh/authorized_keys
-
-&lt;p&gt;重启ssh服务&lt;/p&gt;
-sudo /etc/init.d/sshd restart
-
-&lt;hr /&gt;
-
-&lt;h4 id=&#34;配置密钥:c438dcfbdb89c88db42e10ae91da1f05&#34;&gt;配置密钥&lt;/h4&gt;
-
-&lt;p&gt;在客户端生成公钥和私钥文件&lt;/p&gt;
-ssh-keygen
-cat ~/.ssh/id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys
-
-&lt;p&gt;scp 到服务器端&lt;/p&gt;
-scp ~/.ssh/authorized_keys username@hostname:~/.ssh/authorized_keys
-
-&lt;p&gt;修改 config 文件&lt;/p&gt;
-vi ~/.ssh/config
-
-&lt;p&gt;添加&lt;/p&gt;
-host sshname
-    HostName hostname(ip address)
-    user username
-    IdentityFile ~/.ssh/id_rsa
-
-&lt;p&gt;测试&lt;/p&gt;
-ssh sshname (-p port)
-
-&lt;hr /&gt;
-
-&lt;h4 id=&#34;rsync-同步:c438dcfbdb89c88db42e10ae91da1f05&#34;&gt;rsync 同步&lt;/h4&gt;
-rsync (--exclude=exclude) -avz (-e &#34;ssh -p 22&#34;) ./ sshname:~/path
-
-&lt;hr /&gt;
-
-&lt;p&gt;注：&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;括号为可选&lt;/li&gt;
-&lt;li&gt;hostname 指域名或者 IP 地址&lt;/li&gt;
-&lt;li&gt;username 对应服务器的用户名&lt;/li&gt;
-&lt;/ol&gt;
 </description>
     </item>
     

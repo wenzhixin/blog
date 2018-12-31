@@ -7,14 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Mon, 01 Jul 2013 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/raspberry-pi/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>搭建小型下载服务器(raspberry pi)</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/raspberry_server</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2013/07/01/raspberry_server</link>
+      <pubDate>Mon, 01 Jul 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/raspberry_server</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/07/01/raspberry_server</guid>
       <description>
 
 &lt;h4 id=&#34;1-购买设备:d7b97b5b98955b531ff7810f423befd2&#34;&gt;1. 购买设备&lt;/h4&gt;

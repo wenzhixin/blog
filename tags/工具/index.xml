@@ -7,14 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Tue, 04 Nov 2014 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>编写 WebStorm 实用工具</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/webstorm_tools</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2014/11/04/webstorm_tools</link>
+      <pubDate>Tue, 04 Nov 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/webstorm_tools</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/11/04/webstorm_tools</guid>
       <description>&lt;p&gt;在写代码的时候，很多时候（例如写 jQuery 插件）需要将 html 代码转换为 js 模板。例如将下面的 html 代码：&lt;/p&gt;
 &lt;ul&gt;
     &lt;li class=&#34;item&#34;&gt;

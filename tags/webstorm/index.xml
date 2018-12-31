@@ -7,56 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Tue, 04 Nov 2014 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/webstorm/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Ubuntu 使用 WebStorm IDE 小记</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/use_webstorm</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/use_webstorm</guid>
-      <description>
-
-&lt;p&gt;WebStorm 是 jetbrains 公司旗下一款 JavaScript 开发工具，被广大 JS 开发者誉为“Web前端开发神器”。&lt;/p&gt;
-
-&lt;h3 id=&#34;安装:ffc98bececb28a62bbb7fb6775038273&#34;&gt;安装&lt;/h3&gt;
-
-&lt;p&gt;下载：&lt;a href=&#34;http://www.jetbrains.com/webstorm/index.html&#34;&gt;http://www.jetbrains.com/webstorm/index.html&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;解压下载的 gz 包，命令行下运行：&lt;/p&gt;
-cd bin
-./webstorm.sh
-
-&lt;p&gt;不过 WebStorm 默认情况下是需要收费的，可以申请为开源项目的贡献者来获得 licenses。&lt;/p&gt;
-
-&lt;h3 id=&#34;安装插件:ffc98bececb28a62bbb7fb6775038273&#34;&gt;安装插件&lt;/h3&gt;
-
-&lt;p&gt;安装完成后，在 File - Settings - Plugins，选择需要安装的插件，例如 AngularJS、Markdown 等。&lt;/p&gt;
-
-&lt;h3 id=&#34;设置项目:ffc98bececb28a62bbb7fb6775038273&#34;&gt;设置项目&lt;/h3&gt;
-
-&lt;p&gt;在 File - Settings - Directories 下，通过 Add content Root 来设置我们的项目路径&lt;/p&gt;
-
-&lt;p&gt;在 File - Settings - JavaScript - Libraries 下，勾选想要支持的库，建议全部勾上（如 NodeJS）。&lt;/p&gt;
-
-&lt;h3 id=&#34;设置外观-字体:ffc98bececb28a62bbb7fb6775038273&#34;&gt;设置外观、字体&lt;/h3&gt;
-
-&lt;p&gt;在 File - Settings - Editor - Colors &amp;amp; Fonts - Font 下，选择自己想要的主题，
-然后 Save as&amp;hellip; 保存自己想要的主题名称，设置字体为&lt;code&gt;Ubuntu Mono&lt;/code&gt;，
-字体设置为 16（貌似有点小，相当于 Eclipse 下的 12）&lt;/p&gt;
-
-&lt;h3 id=&#34;显示行数:ffc98bececb28a62bbb7fb6775038273&#34;&gt;显示行数&lt;/h3&gt;
-
-&lt;p&gt;在 File - Settings - Appearance 下，勾选 Show line numbers 选项。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>编写 WebStorm 实用工具</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/webstorm_tools</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2014/11/04/webstorm_tools</link>
+      <pubDate>Tue, 04 Nov 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/webstorm_tools</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/11/04/webstorm_tools</guid>
       <description>&lt;p&gt;在写代码的时候，很多时候（例如写 jQuery 插件）需要将 html 代码转换为 js 模板。例如将下面的 html 代码：&lt;/p&gt;
 &lt;ul&gt;
     &lt;li class=&#34;item&#34;&gt;
@@ -151,6 +110,48 @@ function js2html(str, lastLine) {
 &lt;hr /&gt;
 
 &lt;p&gt;PS：上面的代码已经实现了自己想要的功能，但可能还需要进行完善优化，本文只是对自己想法进行了尝试并实现，或许可以用插件的方式来实现。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 使用 WebStorm IDE 小记</title>
+      <link>http://blog.wenzhixin.net.cn/2014/01/16/use_webstorm</link>
+      <pubDate>Thu, 16 Jan 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2014/01/16/use_webstorm</guid>
+      <description>
+
+&lt;p&gt;WebStorm 是 jetbrains 公司旗下一款 JavaScript 开发工具，被广大 JS 开发者誉为“Web前端开发神器”。&lt;/p&gt;
+
+&lt;h3 id=&#34;安装:ffc98bececb28a62bbb7fb6775038273&#34;&gt;安装&lt;/h3&gt;
+
+&lt;p&gt;下载：&lt;a href=&#34;http://www.jetbrains.com/webstorm/index.html&#34;&gt;http://www.jetbrains.com/webstorm/index.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;解压下载的 gz 包，命令行下运行：&lt;/p&gt;
+cd bin
+./webstorm.sh
+
+&lt;p&gt;不过 WebStorm 默认情况下是需要收费的，可以申请为开源项目的贡献者来获得 licenses。&lt;/p&gt;
+
+&lt;h3 id=&#34;安装插件:ffc98bececb28a62bbb7fb6775038273&#34;&gt;安装插件&lt;/h3&gt;
+
+&lt;p&gt;安装完成后，在 File - Settings - Plugins，选择需要安装的插件，例如 AngularJS、Markdown 等。&lt;/p&gt;
+
+&lt;h3 id=&#34;设置项目:ffc98bececb28a62bbb7fb6775038273&#34;&gt;设置项目&lt;/h3&gt;
+
+&lt;p&gt;在 File - Settings - Directories 下，通过 Add content Root 来设置我们的项目路径&lt;/p&gt;
+
+&lt;p&gt;在 File - Settings - JavaScript - Libraries 下，勾选想要支持的库，建议全部勾上（如 NodeJS）。&lt;/p&gt;
+
+&lt;h3 id=&#34;设置外观-字体:ffc98bececb28a62bbb7fb6775038273&#34;&gt;设置外观、字体&lt;/h3&gt;
+
+&lt;p&gt;在 File - Settings - Editor - Colors &amp;amp; Fonts - Font 下，选择自己想要的主题，
+然后 Save as&amp;hellip; 保存自己想要的主题名称，设置字体为&lt;code&gt;Ubuntu Mono&lt;/code&gt;，
+字体设置为 16（貌似有点小，相当于 Eclipse 下的 12）&lt;/p&gt;
+
+&lt;h3 id=&#34;显示行数:ffc98bececb28a62bbb7fb6775038273&#34;&gt;显示行数&lt;/h3&gt;
+
+&lt;p&gt;在 File - Settings - Appearance 下，勾选 Show line numbers 选项。&lt;/p&gt;
 </description>
     </item>
     

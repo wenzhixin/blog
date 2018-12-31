@@ -7,14 +7,38 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Thu, 07 Jan 2016 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/meteor/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>在 Ubuntu 14.04 server 上部署 meteor 应用</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/meteor_deploy</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>备份恢复 Meteor Mongo 数据库</title>
+      <link>http://blog.wenzhixin.net.cn/2016/01/07/meteor_mongo_dump</link>
+      <pubDate>Thu, 07 Jan 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/meteor_deploy</guid>
+      <guid>http://blog.wenzhixin.net.cn/2016/01/07/meteor_mongo_dump</guid>
+      <description>&lt;p&gt;运行 &lt;code&gt;meteor&lt;/code&gt; 后使用新的窗口运行&lt;/p&gt;
+meteor mongo
+
+&lt;p&gt;可以看到类似下面的信息：&lt;/p&gt;
+MongoDB shell version: 2.6.7
+connecting to: 127.0.0.1:4001/meteor
+
+&lt;p&gt;Meteor 数据库运行于 127.0.0.1 3001 端口，Ctrl + D 退出即可。&lt;/p&gt;
+
+&lt;p&gt;导出：&lt;/p&gt;
+mongodump -h 127.0.0.1 --port 4001 -d meteor
+
+&lt;p&gt;导入：&lt;/p&gt;
+mongorestore -h 127.0.0.1 --port 4001 -d meteor dump/meteor
+</description>
+    </item>
+    
+    <item>
+      <title>在 Ubuntu 14.04 server 上部署 meteor 应用</title>
+      <link>http://blog.wenzhixin.net.cn/2015/07/06/meteor_deploy</link>
+      <pubDate>Mon, 06 Jul 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2015/07/06/meteor_deploy</guid>
       <description>
 
 &lt;h3 id=&#34;关于-meteor-js:a7799df58081dcf48248d422bcf9047b&#34;&gt;关于 Meteor.js&lt;/h3&gt;
@@ -75,10 +99,10 @@ sudo start myapp
 
 &lt;h3 id=&#34;配置-nginx:a7799df58081dcf48248d422bcf9047b&#34;&gt;配置 nginx&lt;/h3&gt;
 server {
-    listen 80; 
+    listen 80;
     server_name myapp.wenzhixin.net.cn;
 
-    location / { 
+    location / {
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header Host $http_host;
@@ -90,29 +114,6 @@ server {
 }
 
 &lt;p&gt;访问 myapp.wenzhixin.net.cn&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>备份恢复 Meteor Mongo 数据库</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/meteor_mongo_dump</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/meteor_mongo_dump</guid>
-      <description>&lt;p&gt;运行 &lt;code&gt;meteor&lt;/code&gt; 后使用新的窗口运行&lt;/p&gt;
-meteor mongo
-
-&lt;p&gt;可以看到类似下面的信息：&lt;/p&gt;
-MongoDB shell version: 2.6.7                  
-connecting to: 127.0.0.1:4001/meteor
-
-&lt;p&gt;Meteor 数据库运行于 127.0.0.1 3001 端口，Ctrl + D 退出即可。&lt;/p&gt;
-
-&lt;p&gt;导出：&lt;/p&gt;
-mongodump -h 127.0.0.1 --port 4001 -d meteor
-
-&lt;p&gt;导入：&lt;/p&gt;
-mongorestore -h 127.0.0.1 --port 4001 -d meteor dump/meteor
 </description>
     </item>
     

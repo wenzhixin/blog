@@ -7,14 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Wed, 27 Mar 2013 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>改善 JavaScript 的建议——语言基础</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/javascript_base_advice</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2013/03/27/javascript_base_advice</link>
+      <pubDate>Wed, 27 Mar 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/javascript_base_advice</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/03/27/javascript_base_advice</guid>
       <description>
 
 &lt;h3 id=&#34;1-减少全局变量污染:6e30c1a8fa84aefe9200651849fae33e&#34;&gt;1. 减少全局变量污染&lt;/h3&gt;
@@ -75,7 +76,7 @@ parseInt(&#39;09&#39;, 10); //9
 &lt;p&gt;建议：完整的语句都增加分号以表示句子结束，将 { 放于语句尾部&lt;/p&gt;
 // 相当于 return;
 function test() {
-    return 
+    return
     {
         status: true
     };
@@ -151,17 +152,17 @@ value = obj[key]; //对的写法
 &lt;h3 id=&#34;11-块标志并非多余:6e30c1a8fa84aefe9200651849fae33e&#34;&gt;11. 块标志并非多余&lt;/h3&gt;
 
 &lt;p&gt;建议：单行语句也加上大括号&lt;/p&gt;
-if (0) 
+if (0)
     if (1)
         alert(1);
 else
     alert(0);
 
 //实际上使用最近原则解析
-if (0) 
+if (0)
     if (1)
         alert(1);
-    else 
+    else
         alert(0);
 
 //应该加上大括号

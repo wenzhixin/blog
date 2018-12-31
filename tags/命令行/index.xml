@@ -7,14 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Tue, 11 Feb 2014 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>cordova 初识之命令行工具</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/cordova_command_line</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2014/02/11/cordova_command_line</link>
+      <pubDate>Tue, 11 Feb 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/cordova_command_line</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/02/11/cordova_command_line</guid>
       <description>
 
 &lt;h3 id=&#34;1-准备工作:3e3ff89256ad4638db10fc2d7fbcb164&#34;&gt;1. 准备工作&lt;/h3&gt;

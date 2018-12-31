@@ -7,14 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Wed, 30 Jul 2014 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/file/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>IE8 文件上传问题分析小记</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/ie8_file_problem</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2014/07/30/ie8_file_problem</link>
+      <pubDate>Wed, 30 Jul 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/ie8_file_problem</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/07/30/ie8_file_problem</guid>
       <description>&lt;p&gt;先吐槽一番，IE 浏览器让前端开发人员又恨又郁闷，但是没有办法，谁让中国如此多的用户呢。很多时候，一个简单的问题，可能需要花上大半天的时间才能解决，足够浪费时间的了，故在此记录下。&lt;/p&gt;
 
 &lt;p&gt;首先，问题是这样的：&lt;strong&gt;在 IE8 下选择上传文件无任何反应，其他浏览器使用正常。&lt;/strong&gt;&lt;/p&gt;
@@ -114,10 +115,10 @@ upload_max_file_size = 8M; change this higher if needed
     
     <item>
       <title>jQuery file upload 插件 change 只生效一次</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/jquery_file_upload_change_once</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2013/11/26/jquery_file_upload_change_once</link>
+      <pubDate>Tue, 26 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/jquery_file_upload_change_once</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/26/jquery_file_upload_change_once</guid>
       <description>
 
 &lt;h4 id=&#34;1-前言:0a4244611fc4da1ce3230d8125714dd2&#34;&gt;1. 前言&lt;/h4&gt;
@@ -139,7 +140,7 @@ jQuery(io).unbind()
 
 &lt;p&gt;1) 使用 on() 方法（推荐）：&lt;/p&gt;
 $(document).on(&#39;change&#39;, &#39;#upload&#39;, function() {
-	
+
 });
 
 &lt;p&gt;2) 在 change 起作用之后继续绑定 change 事件&lt;/p&gt;

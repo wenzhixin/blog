@@ -7,428 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Wed, 05 Dec 2012 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/ucd/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>《UCD 火花集》读书笔记（一）</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/ucd_book1</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/ucd_book1</guid>
-      <description>
-
-&lt;h4 id=&#34;一-用户体验设计在团队中:2a5edc5321624472294289915e7ae1d8&#34;&gt;一、用户体验设计在团队中&lt;/h4&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;用户体验的特性：&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;对于用户——帮助分析和挖掘用户潜意识的需要和习性，力求产品设计给用户带来本质上的满足，以及顺畅自然的使用体验。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;对于团队——是整个团队的理念共识，是产品设计的基本需求，协助团队完成整个开发过程。&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;用户体验担任的角色：&lt;/li&gt;
-&lt;/ol&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;公司品牌的捍卫者-情感化设计和质量监控&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;用户的捍卫者-站在用户的角度把握设计的目标和方向&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;用户体验的工作：&lt;/li&gt;
-&lt;/ol&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;可用性分析 - 数据信息分析 - 交互界面设计 - 视觉设计 - 内容优化&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;hr /&gt;
-
-&lt;h4 id=&#34;二-用户调查和研究:2a5edc5321624472294289915e7ae1d8&#34;&gt;二、用户调查和研究&lt;/h4&gt;
-
-&lt;ol&gt;
-&lt;li&gt;用户需要传达方式：目标(占25%)、行为(占50%)和说法(占25%)。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;ps: 用户所说的不一定是他们真正的需求，行为才是最重要的。&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;收集用户需求&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;目标：1) 情景调查; 2) 可用性测试; 3) CRM 测试&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;行为：1) 网站流量统计; 2) 日志文件; 3) 眼动实验&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;说法：1) 用户访谈; 2) 调查问卷; 3) 反馈及建议&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;隐形挖掘用户行为&lt;/li&gt;
-&lt;/ol&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;收集数据 - 过滤数据 - 习惯分析&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;hr /&gt;
-
-&lt;h4 id=&#34;三-期望值:2a5edc5321624472294289915e7ae1d8&#34;&gt;三、期望值&lt;/h4&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;满足用户期望的解决方案：&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;用户遇到了问题（如：用户想下载某首歌曲）&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;用户要解决这个问题&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;用户根据自身经验想到了某个解决方法（如：通过搜索引擎来查找）&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;网站或产品提供了该解决方法（如：提供下载功能）或更好的解决方法（如：可以在线试用、流行歌曲推荐）&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;用户使用该网站或产品（如：试用或者下载其他想听的歌曲）&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;要合理的处理好三品质模型间的关系：&lt;/li&gt;
-&lt;/ol&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;期望性（设计）&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;可行性（商业）&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;可能性（技术）&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;期望的产生：&lt;/li&gt;
-&lt;/ol&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;品牌信誉：产品本身的质量、口碑、公关和宣传&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;先前的体验：老用户对已有产品的体验、竞争对手和类似产品的体验&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;hr /&gt;
-
-&lt;h4 id=&#34;四-产品概念设计和传达:2a5edc5321624472294289915e7ae1d8&#34;&gt;四、产品概念设计和传达&lt;/h4&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;产品概念设计应该具备：&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;理解用户和需求&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;具有缜密的逻辑思维能力&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;能结合多方面因素综合思考&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;具有良好的沟通能力&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;概念设计的目的：&lt;/li&gt;
-&lt;/ol&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;面向用户：模拟（而非实现）最终产品，解决焦点问题（定位和需求）&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;面向团队：预先演示，尽量达成共识，避免产品设计和开发的矛盾&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;概念设计的交付物：&lt;/li&gt;
-&lt;/ol&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;概念模型 （Concept Model）：概念图和流程图&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;原型（Prototype）&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;内容清单（Content Inventory）：功能列表清单&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;评估和测试：&lt;/li&gt;
-&lt;/ol&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;确认概念模型是否准确&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;确认该原型是否能完成功能&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;评估该原型技术和市场的可行性&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;hr /&gt;
-
-&lt;h4 id=&#34;五-任务分解和情景设计:2a5edc5321624472294289915e7ae1d8&#34;&gt;五、任务分解和情景设计&lt;/h4&gt;
-
-&lt;ol&gt;
-&lt;li&gt;任务分解：基于用户使用流程的任务分解，从整体到细节的过程。
-将大任务分成小任务，小任务分解为页面的每个元素以及每个过程可能出现的每个小提示等。（所谓的先主线任务，再支线任务）&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;如：“注册” 任务，先设计主线任务：填写信息 -&amp;gt; 发送验证 -&amp;gt; 验证注册 -&amp;gt; 注册成功；
- 再设计支线任务：错误处理，提示信息等；最后到具体的按钮、文字设计&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;需要分解的任务：&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;功能的信息架构&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;具体分析每个角色在使用产品过程中最常用的功能需求&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;商业需要给流程提出来的额外任务&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;情景设计：运用故事和用户之间互动、激发想象、情感，并模拟问题出现和解决问题的方法。
-应以目标为向导，并以真实为基础。&lt;/li&gt;
-&lt;/ol&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;hr /&gt;
-
-&lt;h4 id=&#34;六-架构更好的信息结构:2a5edc5321624472294289915e7ae1d8&#34;&gt;六、架构更好的信息结构&lt;/h4&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;内容的价值产生于 “合”：&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;有选择性的组织内容或者转载内容&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;引导用户组织内容，形成大量的原创内容和资讯&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;形成特色内容，将相关内容合并为专题或者专辑&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;成为信息源，提供 RSS 聚合端口&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;内容的能量释放于 “分”：&lt;/li&gt;
-&lt;/ol&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;给内容分类，归属于哪个频道或者哪个类别&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;添加社会化标签（tag），把网站的内容连接起来&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;添加关键字，用于查找或形成相关内容&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;具体设计：&lt;/li&gt;
-&lt;/ol&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;功能与功能的关系是什么&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;每个功能点应该具象化到也个页面&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;这个页面应该有有什么内容&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;这个页面的内容应该如何摆放&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;将不常用或者不经常改变的内容隐藏起来&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>《UCD 火花集》读书笔记（一）</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/ucd_book1</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/ucd_book1</guid>
-      <description>
-
-&lt;h4 id=&#34;一-用户体验设计在团队中:2a5edc5321624472294289915e7ae1d8&#34;&gt;一、用户体验设计在团队中&lt;/h4&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;用户体验的特性：&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;对于用户——帮助分析和挖掘用户潜意识的需要和习性，力求产品设计给用户带来本质上的满足，以及顺畅自然的使用体验。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;对于团队——是整个团队的理念共识，是产品设计的基本需求，协助团队完成整个开发过程。&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;用户体验担任的角色：&lt;/li&gt;
-&lt;/ol&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;公司品牌的捍卫者-情感化设计和质量监控&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;用户的捍卫者-站在用户的角度把握设计的目标和方向&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;用户体验的工作：&lt;/li&gt;
-&lt;/ol&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;可用性分析 - 数据信息分析 - 交互界面设计 - 视觉设计 - 内容优化&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;hr /&gt;
-
-&lt;h4 id=&#34;二-用户调查和研究:2a5edc5321624472294289915e7ae1d8&#34;&gt;二、用户调查和研究&lt;/h4&gt;
-
-&lt;ol&gt;
-&lt;li&gt;用户需要传达方式：目标(占25%)、行为(占50%)和说法(占25%)。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;ps: 用户所说的不一定是他们真正的需求，行为才是最重要的。&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;收集用户需求&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;目标：1) 情景调查; 2) 可用性测试; 3) CRM 测试&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;行为：1) 网站流量统计; 2) 日志文件; 3) 眼动实验&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;说法：1) 用户访谈; 2) 调查问卷; 3) 反馈及建议&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;隐形挖掘用户行为&lt;/li&gt;
-&lt;/ol&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;收集数据 - 过滤数据 - 习惯分析&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;hr /&gt;
-
-&lt;h4 id=&#34;三-期望值:2a5edc5321624472294289915e7ae1d8&#34;&gt;三、期望值&lt;/h4&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;满足用户期望的解决方案：&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;用户遇到了问题（如：用户想下载某首歌曲）&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;用户要解决这个问题&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;用户根据自身经验想到了某个解决方法（如：通过搜索引擎来查找）&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;网站或产品提供了该解决方法（如：提供下载功能）或更好的解决方法（如：可以在线试用、流行歌曲推荐）&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;用户使用该网站或产品（如：试用或者下载其他想听的歌曲）&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;要合理的处理好三品质模型间的关系：&lt;/li&gt;
-&lt;/ol&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;期望性（设计）&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;可行性（商业）&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;可能性（技术）&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;期望的产生：&lt;/li&gt;
-&lt;/ol&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;品牌信誉：产品本身的质量、口碑、公关和宣传&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;先前的体验：老用户对已有产品的体验、竞争对手和类似产品的体验&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;hr /&gt;
-
-&lt;h4 id=&#34;四-产品概念设计和传达:2a5edc5321624472294289915e7ae1d8&#34;&gt;四、产品概念设计和传达&lt;/h4&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;产品概念设计应该具备：&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;理解用户和需求&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;具有缜密的逻辑思维能力&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;能结合多方面因素综合思考&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;具有良好的沟通能力&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;概念设计的目的：&lt;/li&gt;
-&lt;/ol&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;面向用户：模拟（而非实现）最终产品，解决焦点问题（定位和需求）&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;面向团队：预先演示，尽量达成共识，避免产品设计和开发的矛盾&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;概念设计的交付物：&lt;/li&gt;
-&lt;/ol&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;概念模型 （Concept Model）：概念图和流程图&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;原型（Prototype）&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;内容清单（Content Inventory）：功能列表清单&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;评估和测试：&lt;/li&gt;
-&lt;/ol&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;确认概念模型是否准确&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;确认该原型是否能完成功能&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;评估该原型技术和市场的可行性&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;hr /&gt;
-
-&lt;h4 id=&#34;五-任务分解和情景设计:2a5edc5321624472294289915e7ae1d8&#34;&gt;五、任务分解和情景设计&lt;/h4&gt;
-
-&lt;ol&gt;
-&lt;li&gt;任务分解：基于用户使用流程的任务分解，从整体到细节的过程。
-将大任务分成小任务，小任务分解为页面的每个元素以及每个过程可能出现的每个小提示等。（所谓的先主线任务，再支线任务）&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;如：“注册” 任务，先设计主线任务：填写信息 -&amp;gt; 发送验证 -&amp;gt; 验证注册 -&amp;gt; 注册成功；
- 再设计支线任务：错误处理，提示信息等；最后到具体的按钮、文字设计&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;需要分解的任务：&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;功能的信息架构&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;具体分析每个角色在使用产品过程中最常用的功能需求&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;商业需要给流程提出来的额外任务&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;情景设计：运用故事和用户之间互动、激发想象、情感，并模拟问题出现和解决问题的方法。
-应以目标为向导，并以真实为基础。&lt;/li&gt;
-&lt;/ol&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;hr /&gt;
-
-&lt;h4 id=&#34;六-架构更好的信息结构:2a5edc5321624472294289915e7ae1d8&#34;&gt;六、架构更好的信息结构&lt;/h4&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;内容的价值产生于 “合”：&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;有选择性的组织内容或者转载内容&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;引导用户组织内容，形成大量的原创内容和资讯&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;形成特色内容，将相关内容合并为专题或者专辑&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;成为信息源，提供 RSS 聚合端口&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;内容的能量释放于 “分”：&lt;/li&gt;
-&lt;/ol&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;给内容分类，归属于哪个频道或者哪个类别&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;添加社会化标签（tag），把网站的内容连接起来&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;添加关键字，用于查找或形成相关内容&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;具体设计：&lt;/li&gt;
-&lt;/ol&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;功能与功能的关系是什么&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;每个功能点应该具象化到也个页面&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;这个页面应该有有什么内容&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;这个页面的内容应该如何摆放&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;将不常用或者不经常改变的内容隐藏起来&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-</description>
-    </item>
-    
-    <item>
       <title>《UCD 火花集》读书笔记（二）</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/ucd_book2</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2012/12/05/ucd_book2</link>
+      <pubDate>Wed, 05 Dec 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/ucd_book2</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/12/05/ucd_book2</guid>
       <description>
 
 &lt;h4 id=&#34;七-注意界面上的文字:d6fa563d001eeb929fb0ed2970c0b899&#34;&gt;七、注意界面上的文字&lt;/h4&gt;
@@ -633,10 +220,10 @@
     
     <item>
       <title>《UCD 火花集》读书笔记（二）</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/ucd_book2</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2012/12/05/ucd_book2</link>
+      <pubDate>Wed, 05 Dec 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/ucd_book2</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/12/05/ucd_book2</guid>
       <description>
 
 &lt;h4 id=&#34;七-注意界面上的文字:d6fa563d001eeb929fb0ed2970c0b899&#34;&gt;七、注意界面上的文字&lt;/h4&gt;
@@ -835,6 +422,420 @@
 &lt;li&gt;&lt;p&gt;以用户为中心(让自己成为用户，自己满意才能让用户满意)，注重交互设计(请求 + 应答)&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;打破用户习惯，新版改进，需要考虑易用性(与旧版进行对比)和加入新功能(辅助功能)&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>《UCD 火花集》读书笔记（一）</title>
+      <link>http://blog.wenzhixin.net.cn/2012/12/04/ucd_book1</link>
+      <pubDate>Tue, 04 Dec 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2012/12/04/ucd_book1</guid>
+      <description>
+
+&lt;h4 id=&#34;一-用户体验设计在团队中:2a5edc5321624472294289915e7ae1d8&#34;&gt;一、用户体验设计在团队中&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;用户体验的特性：&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;对于用户——帮助分析和挖掘用户潜意识的需要和习性，力求产品设计给用户带来本质上的满足，以及顺畅自然的使用体验。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;对于团队——是整个团队的理念共识，是产品设计的基本需求，协助团队完成整个开发过程。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;用户体验担任的角色：&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;公司品牌的捍卫者-情感化设计和质量监控&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;用户的捍卫者-站在用户的角度把握设计的目标和方向&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;用户体验的工作：&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;可用性分析 - 数据信息分析 - 交互界面设计 - 视觉设计 - 内容优化&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&#34;二-用户调查和研究:2a5edc5321624472294289915e7ae1d8&#34;&gt;二、用户调查和研究&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;用户需要传达方式：目标(占25%)、行为(占50%)和说法(占25%)。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;ps: 用户所说的不一定是他们真正的需求，行为才是最重要的。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;收集用户需求&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;目标：1) 情景调查; 2) 可用性测试; 3) CRM 测试&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;行为：1) 网站流量统计; 2) 日志文件; 3) 眼动实验&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;说法：1) 用户访谈; 2) 调查问卷; 3) 反馈及建议&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;隐形挖掘用户行为&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;收集数据 - 过滤数据 - 习惯分析&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&#34;三-期望值:2a5edc5321624472294289915e7ae1d8&#34;&gt;三、期望值&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;满足用户期望的解决方案：&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;用户遇到了问题（如：用户想下载某首歌曲）&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;用户要解决这个问题&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;用户根据自身经验想到了某个解决方法（如：通过搜索引擎来查找）&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;网站或产品提供了该解决方法（如：提供下载功能）或更好的解决方法（如：可以在线试用、流行歌曲推荐）&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;用户使用该网站或产品（如：试用或者下载其他想听的歌曲）&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;要合理的处理好三品质模型间的关系：&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;期望性（设计）&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;可行性（商业）&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;可能性（技术）&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;期望的产生：&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;品牌信誉：产品本身的质量、口碑、公关和宣传&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;先前的体验：老用户对已有产品的体验、竞争对手和类似产品的体验&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&#34;四-产品概念设计和传达:2a5edc5321624472294289915e7ae1d8&#34;&gt;四、产品概念设计和传达&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;产品概念设计应该具备：&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;理解用户和需求&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;具有缜密的逻辑思维能力&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;能结合多方面因素综合思考&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;具有良好的沟通能力&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;概念设计的目的：&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;面向用户：模拟（而非实现）最终产品，解决焦点问题（定位和需求）&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;面向团队：预先演示，尽量达成共识，避免产品设计和开发的矛盾&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;概念设计的交付物：&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;概念模型 （Concept Model）：概念图和流程图&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;原型（Prototype）&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;内容清单（Content Inventory）：功能列表清单&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;评估和测试：&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;确认概念模型是否准确&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;确认该原型是否能完成功能&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;评估该原型技术和市场的可行性&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&#34;五-任务分解和情景设计:2a5edc5321624472294289915e7ae1d8&#34;&gt;五、任务分解和情景设计&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;任务分解：基于用户使用流程的任务分解，从整体到细节的过程。
+将大任务分成小任务，小任务分解为页面的每个元素以及每个过程可能出现的每个小提示等。（所谓的先主线任务，再支线任务）&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;如：“注册” 任务，先设计主线任务：填写信息 -&amp;gt; 发送验证 -&amp;gt; 验证注册 -&amp;gt; 注册成功；
+ 再设计支线任务：错误处理，提示信息等；最后到具体的按钮、文字设计&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;需要分解的任务：&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;功能的信息架构&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;具体分析每个角色在使用产品过程中最常用的功能需求&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;商业需要给流程提出来的额外任务&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;情景设计：运用故事和用户之间互动、激发想象、情感，并模拟问题出现和解决问题的方法。
+应以目标为向导，并以真实为基础。&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&#34;六-架构更好的信息结构:2a5edc5321624472294289915e7ae1d8&#34;&gt;六、架构更好的信息结构&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;内容的价值产生于 “合”：&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;有选择性的组织内容或者转载内容&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;引导用户组织内容，形成大量的原创内容和资讯&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;形成特色内容，将相关内容合并为专题或者专辑&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;成为信息源，提供 RSS 聚合端口&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;内容的能量释放于 “分”：&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;给内容分类，归属于哪个频道或者哪个类别&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;添加社会化标签（tag），把网站的内容连接起来&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;添加关键字，用于查找或形成相关内容&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;具体设计：&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;功能与功能的关系是什么&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;每个功能点应该具象化到也个页面&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;这个页面应该有有什么内容&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;这个页面的内容应该如何摆放&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;将不常用或者不经常改变的内容隐藏起来&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>《UCD 火花集》读书笔记（一）</title>
+      <link>http://blog.wenzhixin.net.cn/2012/12/04/ucd_book1</link>
+      <pubDate>Tue, 04 Dec 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2012/12/04/ucd_book1</guid>
+      <description>
+
+&lt;h4 id=&#34;一-用户体验设计在团队中:2a5edc5321624472294289915e7ae1d8&#34;&gt;一、用户体验设计在团队中&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;用户体验的特性：&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;对于用户——帮助分析和挖掘用户潜意识的需要和习性，力求产品设计给用户带来本质上的满足，以及顺畅自然的使用体验。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;对于团队——是整个团队的理念共识，是产品设计的基本需求，协助团队完成整个开发过程。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;用户体验担任的角色：&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;公司品牌的捍卫者-情感化设计和质量监控&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;用户的捍卫者-站在用户的角度把握设计的目标和方向&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;用户体验的工作：&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;可用性分析 - 数据信息分析 - 交互界面设计 - 视觉设计 - 内容优化&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&#34;二-用户调查和研究:2a5edc5321624472294289915e7ae1d8&#34;&gt;二、用户调查和研究&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;用户需要传达方式：目标(占25%)、行为(占50%)和说法(占25%)。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;ps: 用户所说的不一定是他们真正的需求，行为才是最重要的。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;收集用户需求&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;目标：1) 情景调查; 2) 可用性测试; 3) CRM 测试&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;行为：1) 网站流量统计; 2) 日志文件; 3) 眼动实验&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;说法：1) 用户访谈; 2) 调查问卷; 3) 反馈及建议&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;隐形挖掘用户行为&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;收集数据 - 过滤数据 - 习惯分析&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&#34;三-期望值:2a5edc5321624472294289915e7ae1d8&#34;&gt;三、期望值&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;满足用户期望的解决方案：&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;用户遇到了问题（如：用户想下载某首歌曲）&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;用户要解决这个问题&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;用户根据自身经验想到了某个解决方法（如：通过搜索引擎来查找）&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;网站或产品提供了该解决方法（如：提供下载功能）或更好的解决方法（如：可以在线试用、流行歌曲推荐）&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;用户使用该网站或产品（如：试用或者下载其他想听的歌曲）&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;要合理的处理好三品质模型间的关系：&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;期望性（设计）&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;可行性（商业）&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;可能性（技术）&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;期望的产生：&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;品牌信誉：产品本身的质量、口碑、公关和宣传&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;先前的体验：老用户对已有产品的体验、竞争对手和类似产品的体验&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&#34;四-产品概念设计和传达:2a5edc5321624472294289915e7ae1d8&#34;&gt;四、产品概念设计和传达&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;产品概念设计应该具备：&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;理解用户和需求&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;具有缜密的逻辑思维能力&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;能结合多方面因素综合思考&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;具有良好的沟通能力&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;概念设计的目的：&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;面向用户：模拟（而非实现）最终产品，解决焦点问题（定位和需求）&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;面向团队：预先演示，尽量达成共识，避免产品设计和开发的矛盾&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;概念设计的交付物：&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;概念模型 （Concept Model）：概念图和流程图&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;原型（Prototype）&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;内容清单（Content Inventory）：功能列表清单&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;评估和测试：&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;确认概念模型是否准确&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;确认该原型是否能完成功能&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;评估该原型技术和市场的可行性&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&#34;五-任务分解和情景设计:2a5edc5321624472294289915e7ae1d8&#34;&gt;五、任务分解和情景设计&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;任务分解：基于用户使用流程的任务分解，从整体到细节的过程。
+将大任务分成小任务，小任务分解为页面的每个元素以及每个过程可能出现的每个小提示等。（所谓的先主线任务，再支线任务）&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;如：“注册” 任务，先设计主线任务：填写信息 -&amp;gt; 发送验证 -&amp;gt; 验证注册 -&amp;gt; 注册成功；
+ 再设计支线任务：错误处理，提示信息等；最后到具体的按钮、文字设计&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;需要分解的任务：&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;功能的信息架构&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;具体分析每个角色在使用产品过程中最常用的功能需求&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;商业需要给流程提出来的额外任务&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;情景设计：运用故事和用户之间互动、激发想象、情感，并模拟问题出现和解决问题的方法。
+应以目标为向导，并以真实为基础。&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&#34;六-架构更好的信息结构:2a5edc5321624472294289915e7ae1d8&#34;&gt;六、架构更好的信息结构&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;内容的价值产生于 “合”：&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;有选择性的组织内容或者转载内容&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;引导用户组织内容，形成大量的原创内容和资讯&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;形成特色内容，将相关内容合并为专题或者专辑&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;成为信息源，提供 RSS 聚合端口&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;内容的能量释放于 “分”：&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;给内容分类，归属于哪个频道或者哪个类别&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;添加社会化标签（tag），把网站的内容连接起来&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;添加关键字，用于查找或形成相关内容&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;具体设计：&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;功能与功能的关系是什么&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;每个功能点应该具象化到也个页面&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;这个页面应该有有什么内容&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;这个页面的内容应该如何摆放&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;将不常用或者不经常改变的内容隐藏起来&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 </description>
     </item>

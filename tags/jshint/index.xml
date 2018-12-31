@@ -7,14 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Fri, 29 Nov 2013 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/jshint/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>解决 jshint 的语法警告</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/jshint_warnings_resolve</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2013/11/29/jshint_warnings_resolve</link>
+      <pubDate>Fri, 29 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/jshint_warnings_resolve</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/29/jshint_warnings_resolve</guid>
       <description>
 
 &lt;h4 id=&#34;问题-wrap-the-regexp-literal-in-parens-to-disambiguate-the-slash-operator:b87619fd7d1d731fba536f19526929ee&#34;&gt;问题： Wrap the regexp literal in parens to disambiguate the slash operator&lt;/h4&gt;
@@ -24,12 +25,12 @@ function isMe(name) {
 	return /^wenzhixin$/.test(name);
 }
 
-&lt;p&gt;&lt;strong&gt;警告原因：&lt;/strong&gt;&lt;br /&gt;
+&lt;p&gt;&lt;strong&gt;警告原因：&lt;/strong&gt;
 虽然 JavaScript 解析器可以正常工作，但是对于解析器来说，解析 “/” 的完整含义是比较困难的。&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;建议写法：&lt;/strong&gt;&lt;/p&gt;
 function isMe(name) {
-    return (/^wenzhixin$/).test(name);
+	return (/^wenzhixin$/).test(name);
 }
 </description>
     </item>

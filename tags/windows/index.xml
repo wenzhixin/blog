@@ -7,42 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Mon, 06 Jan 2014 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/windows/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>git for windows 安装和配置</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/git_for_windows</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/git_for_windows</guid>
-      <description>
-
-&lt;h4 id=&#34;1-安装-msysgit:aad2ae081170cdae557e72e4094a2f11&#34;&gt;1. 安装 msysgit:&lt;/h4&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://msysgit.github.com/&#34;&gt;msysgit&lt;/a&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;2-配置用户信息和-alias:aad2ae081170cdae557e72e4094a2f11&#34;&gt;2. 配置用户信息和 alias&lt;/h4&gt;
-
-&lt;p&gt;gitconfig&lt;/p&gt;
-[user]
-    name = zhixin
-    email = wenzhixin2010@gmail.com
-[alias]
-    co = checkout
-    ci = commit -a
-    st = status
-    br = branch
-    oneline = log --pretty=oneline --since=&#39;2 days ago&#39;
-    onelog = log -p -1
-</description>
-    </item>
-    
-    <item>
       <title>windows 下同步文件到远程服务器中</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/windows_rsync_file</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2014/01/06/windows_rsync_file</link>
+      <pubDate>Mon, 06 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/windows_rsync_file</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/01/06/windows_rsync_file</guid>
       <description>
 
 &lt;h4 id=&#34;安装-cwrsync:291a7aad37e5ccc2dd943e82e05c00e8&#34;&gt;安装 cwRsync&lt;/h4&gt;
@@ -83,10 +56,10 @@ rsync -vzr /cygdrive/c/blog/ server:~/blog
     
     <item>
       <title>从 ubuntu 同步文件到 windows</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_rsync_to_windows</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2013/12/01/ubuntu_rsync_to_windows</link>
+      <pubDate>Sun, 01 Dec 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_rsync_to_windows</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/12/01/ubuntu_rsync_to_windows</guid>
       <description>
 
 &lt;p&gt;windows 下使用 cwRsync，ubuntu 使用默认的 rsync。&lt;/p&gt;
@@ -142,6 +115,34 @@ rsync -av file username@ip::moduleName
 &lt;li&gt;默认端口为 873（netstat -nao 查看是否已在监听）&lt;/li&gt;
 &lt;li&gt;查看服务 RsyncServer 是否启动&lt;/li&gt;
 &lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>git for windows 安装和配置</title>
+      <link>http://blog.wenzhixin.net.cn/2013/01/04/git_for_windows</link>
+      <pubDate>Fri, 04 Jan 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2013/01/04/git_for_windows</guid>
+      <description>
+
+&lt;h4 id=&#34;1-安装-msysgit:aad2ae081170cdae557e72e4094a2f11&#34;&gt;1. 安装 msysgit:&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://msysgit.github.com/&#34;&gt;msysgit&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;2-配置用户信息和-alias:aad2ae081170cdae557e72e4094a2f11&#34;&gt;2. 配置用户信息和 alias&lt;/h4&gt;
+
+&lt;p&gt;gitconfig&lt;/p&gt;
+[user]
+    name = zhixin
+    email = wenzhixin2010@gmail.com
+[alias]
+    co = checkout
+    ci = commit -a
+    st = status
+    br = branch
+    oneline = log --pretty=oneline --since=&#39;2 days ago&#39;
+    onelog = log -p -1
 </description>
     </item>
     

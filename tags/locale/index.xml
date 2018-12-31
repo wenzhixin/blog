@@ -7,14 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Sat, 11 Jan 2014 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/locale/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>ubuntu 解决语言设置错误的问题</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_setting_locale_failed</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2014/01/11/ubuntu_setting_locale_failed</link>
+      <pubDate>Sat, 11 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_setting_locale_failed</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/01/11/ubuntu_setting_locale_failed</guid>
       <description>&lt;p&gt;在使用 ubuntu 命令行登录的时候，出现：&lt;/p&gt;
 perl: warning: Setting locale failed.
 perl: warning: Please check that your locale settings:

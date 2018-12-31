@@ -7,14 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Sat, 19 Oct 2013 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/%E8%AE%A4%E8%AF%81/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>nginx 开启 http 下载服务器认证</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/nginx_http_auth</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2013/10/19/nginx_http_auth</link>
+      <pubDate>Sat, 19 Oct 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/nginx_http_auth</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/10/19/nginx_http_auth</guid>
       <description>
 
 &lt;h4 id=&#34;1-介绍:5697f69a7ab129c553754cdfa6ec4167&#34;&gt;1. 介绍&lt;/h4&gt;
@@ -30,14 +31,14 @@ location /download/ {
     root /home/myname;
 
     # 设置目录浏览
-    autoindex on; 
+    autoindex on;
 
-    # 默认为on，显示出文件的确切大小，单位是bytes。 
-    # 改为off后，显示出文件的大概大小，单位是kB或者MB或者GB 
+    # 默认为on，显示出文件的确切大小，单位是bytes。
+    # 改为off后，显示出文件的大概大小，单位是kB或者MB或者GB
     autoindex_exact_size off;
 
     # 默认为off，显示的文件时间为GMT时间
-    # 注意:改为on后，显示的文件时间为文件的服务器时间 
+    # 注意:改为on后，显示的文件时间为文件的服务器时间
     autoindex_localtime on;
 
     # 在第一次访问目录时，会弹出输入验证框

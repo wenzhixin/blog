@@ -7,17 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Mon, 25 Nov 2013 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/%E6%A0%85%E6%A0%BC%E5%8C%96/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>栅格化布局和常用框架比较</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/grid_system</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2013/11/25/grid_system</link>
+      <pubDate>Mon, 25 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/grid_system</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/25/grid_system</guid>
       <description>
 
-&lt;p&gt;在使用了Bootstrap、Foundation 之后，其实已经接触到栅格化布局这一概念。&lt;br /&gt;
+&lt;p&gt;在使用了Bootstrap、Foundation 之后，其实已经接触到栅格化布局这一概念。
 今天接触了 skeleton 后，特别强调了栅格化布局，那么何为栅格化布局？&lt;/p&gt;
 
 &lt;h4 id=&#34;1-栅格化布局:988ccd388d71202d7b55f559ce918a2a&#34;&gt;1. 栅格化布局&lt;/h4&gt;

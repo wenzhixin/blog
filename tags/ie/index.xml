@@ -7,14 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Wed, 16 Jan 2013 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/ie/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>IE 下 splice 的 bug</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/splice_in_ie</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2013/01/16/splice_in_ie</link>
+      <pubDate>Wed, 16 Jan 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/splice_in_ie</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/01/16/splice_in_ie</guid>
       <description>
 
 &lt;p&gt;引用：&lt;/p&gt;
@@ -53,16 +54,16 @@ code.push.apply( code, jsonml.splice( i, jsonml.length - 1) );
     
     <item>
       <title>IE 下使用 button 时 Enter 的问题</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/ie_enter_button_bug</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2012/12/03/ie_enter_button_bug</link>
+      <pubDate>Mon, 03 Dec 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/ie_enter_button_bug</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/12/03/ie_enter_button_bug</guid>
       <description>
 
 &lt;h4 id=&#34;问题:b5cd3a6e8e8182cad0d2dff4a7361175&#34;&gt;问题：&lt;/h4&gt;
 
 &lt;p&gt;当页面中有&lt;/p&gt;
-&lt;button&gt;&lt;/button&gt; 
+&lt;button&gt;&lt;/button&gt;
 
 &lt;p&gt;的时候，IE 浏览器按 Enter 便会触发 button 按钮的点击事件，导致不必要的麻烦出现（例如对 input 的检查）。&lt;/p&gt;
 
@@ -86,16 +87,16 @@ code.push.apply( code, jsonml.splice( i, jsonml.length - 1) );
     
     <item>
       <title>IE 下使用 button 时 Enter 的问题</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/ie_enter_button_bug</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2012/12/03/ie_enter_button_bug</link>
+      <pubDate>Mon, 03 Dec 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/ie_enter_button_bug</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/12/03/ie_enter_button_bug</guid>
       <description>
 
 &lt;h4 id=&#34;问题:b5cd3a6e8e8182cad0d2dff4a7361175&#34;&gt;问题：&lt;/h4&gt;
 
 &lt;p&gt;当页面中有&lt;/p&gt;
-&lt;button&gt;&lt;/button&gt; 
+&lt;button&gt;&lt;/button&gt;
 
 &lt;p&gt;的时候，IE 浏览器按 Enter 便会触发 button 按钮的点击事件，导致不必要的麻烦出现（例如对 input 的检查）。&lt;/p&gt;
 

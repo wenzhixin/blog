@@ -7,14 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Tue, 14 Jan 2014 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/requestanimationframe/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>使用 requestAnimationFrame 实现动画</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/canvas_fps_frame</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2014/01/14/canvas_fps_frame</link>
+      <pubDate>Tue, 14 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/canvas_fps_frame</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/01/14/canvas_fps_frame</guid>
       <description>&lt;p&gt;requestAnimationFrame 函数是主流浏览器推出来的用来代替旧的&lt;code&gt;setTimeout&lt;/code&gt;和&lt;code&gt;setInterval&lt;/code&gt;方法，
 从而提高动作的性能。&lt;/p&gt;
 
@@ -28,10 +29,10 @@
 
 &lt;p&gt;在使用的时候，需要考虑多浏览器之间的兼容问题：&lt;/p&gt;
 window.requestAnimFrame = (function() {
-	return window.requestAnimationFrame || 
-		window.webkitRequestAnimationFrame || 
-		window.mozRequestAnimationFrame || 
-		window.oRequestAnimationFrame || 
+	return window.requestAnimationFrame ||
+		window.webkitRequestAnimationFrame ||
+		window.mozRequestAnimationFrame ||
+		window.oRequestAnimationFrame ||
 		window.msRequestAnimationFrame ||
 		function(/* function */callback, /* DOMElement */element) {
 			return window.setTimeout(callback, 1000 / 60);
@@ -39,11 +40,11 @@ window.requestAnimFrame = (function() {
 })();
 
 window.cancelAnimFrame = (function() {
-	return window.cancelAnimationFrame || 
-		window.webkitCancelRequestAnimationFrame || 
-		window.mozCancelRequestAnimationFrame || 
-		window.oCancelRequestAnimationFrame || 
-		window.msCancelRequestAnimationFrame || 
+	return window.cancelAnimationFrame ||
+		window.webkitCancelRequestAnimationFrame ||
+		window.mozCancelRequestAnimationFrame ||
+		window.oCancelRequestAnimationFrame ||
+		window.msCancelRequestAnimationFrame ||
 		clearTimeout;
 })();
 
@@ -52,9 +53,9 @@ window.cancelAnimFrame = (function() {
 &lt;p&gt;&lt;strong&gt;问题：如何模拟 fps 数？&lt;/strong&gt;&lt;/p&gt;
 var fps = 30;
 function draw() {
-    setTimeout(function() {
+	setTimeout(function() {
         requestAnimFrame(draw);
-        
+
         // do something
     }, 1000 / fps);
 }

@@ -7,14 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Mon, 04 Aug 2014 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>如何使用 python 连接 Oracle（网站）</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/python_oracle</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2014/08/04/python_oracle</link>
+      <pubDate>Mon, 04 Aug 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/python_oracle</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/08/04/python_oracle</guid>
       <description>
 
 &lt;p&gt;首先，由于网站部署在远程服务器的局域网上面，所以需要通过 &lt;a href=&#34;http://wenzhixin.net.cn/2014/03/15/ssh_tunnel&#34;&gt;ssh tunnel（隧道）&lt;/a&gt; 的方式进行本地的映射，主要映射两个端口：&lt;/p&gt;

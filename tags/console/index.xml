@@ -7,14 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Sun, 02 Nov 2014 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/console/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>chrome 浏览器 console 面板直接使用 JSON 数据进行调试错误问题</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/chrome_console_error</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2014/11/02/chrome_console_error</link>
+      <pubDate>Sun, 02 Nov 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/chrome_console_error</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/11/02/chrome_console_error</guid>
       <description>&lt;p&gt;今天在微博上看到小鱼在问：&lt;a href=&#34;https://gist.github.com/sofish/c250881989aaa10c029d&#34;&gt;https://gist.github.com/sofish/c250881989aaa10c029d&lt;/a&gt; 为什么会出错，看了下之前就有遇到过这个问题，特意整理记录下。&lt;/p&gt;
 
 &lt;p&gt;是想直接 copy json 数据到 console 面板进行调试，但是竟然报错了。然后特意对比了下，奇怪的是为什么 &lt;code&gt;{a: &amp;quot;b&amp;quot;}&lt;/code&gt; 是输出 &lt;code&gt;&amp;quot;b&amp;quot;&lt;/code&gt;，而 &lt;code&gt;{&amp;quot;a&amp;quot;: &amp;quot;b&amp;quot;}&lt;/code&gt; 输出却是 &lt;code&gt;Uncaught SyntaxError: Unexpected token :&lt;/code&gt;，why?&lt;/p&gt;

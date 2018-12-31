@@ -7,14 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Wed, 30 Oct 2013 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/aria2c/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Debian 添加自启动服务</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/debian_script_init</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2013/10/30/debian_script_init</link>
+      <pubDate>Wed, 30 Oct 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/debian_script_init</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/10/30/debian_script_init</guid>
       <description>
 
 &lt;h4 id=&#34;1-新建脚本文件:5a63f747350973a6bdfac6af85b4c2a9&#34;&gt;1. 新建脚本文件&lt;/h4&gt;
@@ -91,7 +92,7 @@ exit 0
 &lt;li&gt;-R, &amp;ndash;retry timeout|schedule  重试次数&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;需要将 USER 修改为自己的用户名称&lt;br /&gt;
+&lt;p&gt;需要将 USER 修改为自己的用户名称
 配置文件位于 /home/$USER/.aria2/aria2.conf&lt;/p&gt;
 
 &lt;p&gt;更多参数含义可以通过 &lt;code&gt;man start-stop-daemon&lt;/code&gt; 进行查看&lt;/p&gt;

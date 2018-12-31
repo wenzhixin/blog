@@ -7,14 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Thu, 20 Jun 2013 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Web 前端开发有用的代码片段</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/web_code_gist</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2013/06/20/web_code_gist</link>
+      <pubDate>Thu, 20 Jun 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/web_code_gist</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/06/20/web_code_gist</guid>
       <description>
 
 &lt;h3 id=&#34;1-定时器:517902b7277b9dd563d99f8ec5586bdc&#34;&gt;1. 定时器&lt;/h3&gt;
@@ -98,7 +99,7 @@ console.log(u.hash); // #about
 
 &lt;p&gt;解析 location.search，转换为对象：&lt;/p&gt;
 function parse(search) {
-    var query = {}, 
+    var query = {},
         params = search.substring(1).split(&#39;&amp;&#39;);
     for (var i = 0, l = params.length; i &lt; l; i++) {
         var p = params[i].split(&#39;=&#39;);

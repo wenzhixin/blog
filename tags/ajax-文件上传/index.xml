@@ -7,14 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Thu, 28 Nov 2013 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/ajax-%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Ajax 文件上传——通过 html5 的方法</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/ajax_file_upload_html5</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2013/11/28/ajax_file_upload_html5</link>
+      <pubDate>Thu, 28 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/ajax_file_upload_html5</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/28/ajax_file_upload_html5</guid>
       <description>
 
 &lt;h4 id=&#34;html5-方法:f5a698885091fe9812ae461e6526e53b&#34;&gt;html5 方法&lt;/h4&gt;
@@ -47,7 +48,7 @@ var files = document.getElementById(&#39;filename&#39;).files;
 &lt;p&gt;接下来，要介绍的是另一个 html5 推出的新对象：FormData。&lt;/p&gt;
 
 &lt;p&gt;FormData 对象是用户的表单数据的集合，
-它以键值对的形式存储了表单数据，其值能够包括数字、字符串以及文件。&lt;br /&gt;
+它以键值对的形式存储了表单数据，其值能够包括数字、字符串以及文件。
 我们通过这个对象，来向服务器提交我们的文件数据。&lt;/p&gt;
 var formData = new FormData();
 formData.append(&#39;filename&#39;, files[index]); // index 为第 n 个文件的索引
@@ -81,10 +82,10 @@ xhr.addEventListener(&#34;abort&#34;, uploadCanceled, false); // 处理取消上
     
     <item>
       <title>Ajax 文件上传——通过 iframe 的方法</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/ajax_file_upload_iframe</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2013/11/27/ajax_file_upload_iframe</link>
+      <pubDate>Wed, 27 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/ajax_file_upload_iframe</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/27/ajax_file_upload_iframe</guid>
       <description>
 
 &lt;h4 id=&#34;前言:9d2eee6ba8fab7c3c4918c26a26acf7a&#34;&gt;前言&lt;/h4&gt;

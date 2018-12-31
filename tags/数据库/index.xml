@@ -7,14 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Mon, 04 Nov 2013 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>简单的博客 RSS 聚合</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/simple_rss_together</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2013/11/04/simple_rss_together</link>
+      <pubDate>Mon, 04 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/simple_rss_together</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/04/simple_rss_together</guid>
       <description>
 
 &lt;h4 id=&#34;1-前言:620c4514ef1d6b73485351aca4a1e232&#34;&gt;1. 前言&lt;/h4&gt;
@@ -22,8 +23,8 @@
 &lt;p&gt;将博客的 RSS 内容聚合起来，这样方便查看，今天就来研究如何简单的将 RSS 的内容存到数据库（MySQL）中。&lt;/p&gt;
 
 &lt;h4 id=&#34;2-创建数据库表:620c4514ef1d6b73485351aca4a1e232&#34;&gt;2. 创建数据库表&lt;/h4&gt;
-CREATE TABLE links (  
-    id int NOT NULL AUTO_INCREMENT,  
+CREATE TABLE links (
+    id int NOT NULL AUTO_INCREMENT,
     name varchar(250) NOT NULL,
     url varchar(250) NOT NULL,
     time timestamp NOT NULL DEFAULT current_timestamp,

@@ -7,14 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Wed, 24 Oct 2012 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/sshproxy.-%E4%BB%A3%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Ubuntu 设置 sshproxy 代理</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_sshproxy</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2012/10/24/ubuntu_sshproxy</link>
+      <pubDate>Wed, 24 Oct 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_sshproxy</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/10/24/ubuntu_sshproxy</guid>
       <description>
 
 &lt;h3 id=&#34;服务器端:4c8e1b9a7a8395b91ca5c59d6255e92c&#34;&gt;服务器端&lt;/h3&gt;
@@ -44,8 +45,8 @@ chmod 600 sshproxy/id_rsa
 
 &lt;h4 id=&#34;2-配置-sshproxy-在-ssh-config-中加入:4c8e1b9a7a8395b91ca5c59d6255e92c&#34;&gt;2. 配置 sshproxy，在 .ssh/config 中加入：&lt;/h4&gt;
 host sshproxy
-        HostName &lt;your hostname&gt; 
-        user sshproxy 
+        HostName &lt;your hostname&gt;
+        user sshproxy
         IdentityFile ~/.ssh/sshproxy/id_rsa
 
 &lt;h4 id=&#34;3-安装-autossh:4c8e1b9a7a8395b91ca5c59d6255e92c&#34;&gt;3. 安装 autossh&lt;/h4&gt;
@@ -53,16 +54,16 @@ wget https://launchpad.net/~likemartinma/+archive/net/+files/autossh_1.4c-1_amd6
 sudo dpkg -i autossh_1.4c-1_amd64.deb
 
 &lt;h4 id=&#34;4-创建-etc-init-myhost-conf:4c8e1b9a7a8395b91ca5c59d6255e92c&#34;&gt;4. 创建 /etc/init/myhost.conf&lt;/h4&gt;
-# autossh 
+# autossh
 
-description  &#34;myhost autossh daemon&#34; 
+description  &#34;myhost autossh daemon&#34;
 
-start on (net-device-up IFACE!=lo) 
-stop on (net-device-down IFACE!=lo) 
+start on (net-device-up IFACE!=lo)
+stop on (net-device-down IFACE!=lo)
 
-respawn 
+respawn
 
-script 
+script
         exec /usr/bin/autossh -U &lt;your username&gt; -M40000 -q -N -D localhost:12345 sshproxy
 end script
 
@@ -80,10 +81,10 @@ SOCKS 代理：127.0.0.1
     
     <item>
       <title>Ubuntu 设置 sshproxy 代理</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_sshproxy</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2012/10/24/ubuntu_sshproxy</link>
+      <pubDate>Wed, 24 Oct 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_sshproxy</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/10/24/ubuntu_sshproxy</guid>
       <description>
 
 &lt;h3 id=&#34;服务器端:4c8e1b9a7a8395b91ca5c59d6255e92c&#34;&gt;服务器端&lt;/h3&gt;
@@ -113,8 +114,8 @@ chmod 600 sshproxy/id_rsa
 
 &lt;h4 id=&#34;2-配置-sshproxy-在-ssh-config-中加入:4c8e1b9a7a8395b91ca5c59d6255e92c&#34;&gt;2. 配置 sshproxy，在 .ssh/config 中加入：&lt;/h4&gt;
 host sshproxy
-        HostName &lt;your hostname&gt; 
-        user sshproxy 
+        HostName &lt;your hostname&gt;
+        user sshproxy
         IdentityFile ~/.ssh/sshproxy/id_rsa
 
 &lt;h4 id=&#34;3-安装-autossh:4c8e1b9a7a8395b91ca5c59d6255e92c&#34;&gt;3. 安装 autossh&lt;/h4&gt;
@@ -122,16 +123,16 @@ wget https://launchpad.net/~likemartinma/+archive/net/+files/autossh_1.4c-1_amd6
 sudo dpkg -i autossh_1.4c-1_amd64.deb
 
 &lt;h4 id=&#34;4-创建-etc-init-myhost-conf:4c8e1b9a7a8395b91ca5c59d6255e92c&#34;&gt;4. 创建 /etc/init/myhost.conf&lt;/h4&gt;
-# autossh 
+# autossh
 
-description  &#34;myhost autossh daemon&#34; 
+description  &#34;myhost autossh daemon&#34;
 
-start on (net-device-up IFACE!=lo) 
-stop on (net-device-down IFACE!=lo) 
+start on (net-device-up IFACE!=lo)
+stop on (net-device-down IFACE!=lo)
 
-respawn 
+respawn
 
-script 
+script
         exec /usr/bin/autossh -U &lt;your username&gt; -M40000 -q -N -D localhost:12345 sshproxy
 end script
 

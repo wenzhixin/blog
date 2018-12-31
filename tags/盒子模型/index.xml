@@ -7,14 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Fri, 04 May 2012 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>彻底研究CSS——深入理解盒子模型</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/a_thorough_study_of_css_understanding_the_box_model</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_understanding_the_box_model</link>
+      <pubDate>Fri, 04 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/a_thorough_study_of_css_understanding_the_box_model</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_understanding_the_box_model</guid>
       <description>&lt;p&gt;1、盒子模型的内部结构&lt;/p&gt;
 
 &lt;p&gt; * 在 CSS 中，一个独立的盒子模型由
@@ -113,10 +114,10 @@ margin：会使被设为附属的快像相反的方向移动，甚至覆盖在�
     
     <item>
       <title>彻底研究CSS——深入理解盒子模型</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/a_thorough_study_of_css_understanding_the_box_model</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_understanding_the_box_model</link>
+      <pubDate>Fri, 04 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/a_thorough_study_of_css_understanding_the_box_model</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_understanding_the_box_model</guid>
       <description>&lt;p&gt;1、盒子模型的内部结构&lt;/p&gt;
 
 &lt;p&gt; * 在 CSS 中，一个独立的盒子模型由

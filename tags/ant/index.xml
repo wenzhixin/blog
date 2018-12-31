@@ -7,14 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Tue, 26 Feb 2013 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/ant/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Android ant 编译问题收集</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/android_ant_problem</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2013/02/26/android_ant_problem</link>
+      <pubDate>Tue, 26 Feb 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/android_ant_problem</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/02/26/android_ant_problem</guid>
       <description>
 
 &lt;h4 id=&#34;问题:6edc530cf689cf0a05aea6add3f6e7b3&#34;&gt;问题：&lt;/h4&gt;
@@ -36,10 +37,10 @@ sudo apt-get install openjdk-7-jdk
     
     <item>
       <title>Ant 关键元素和常用命令</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/ant_key_elements_and_common_commands</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2012/06/07/ant_key_elements_and_common_commands</link>
+      <pubDate>Thu, 07 Jun 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/ant_key_elements_and_common_commands</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/06/07/ant_key_elements_and_common_commands</guid>
       <description>
 
 &lt;h3 id=&#34;一-ant-关键元素:f780f29a8db5f7945ac4d44588e8e9f7&#34;&gt;一、Ant 关键元素&lt;/h3&gt;
@@ -157,16 +158,16 @@ sudo apt-get install openjdk-7-jdk
 &lt;p&gt;该任务的作用是根据日志或监控器的级别输出信息。它包括 message 、 file 、 append 和 level 四个属性&lt;/p&gt;
 
 &lt;p&gt;例子：&lt;/p&gt;
-&lt;echo message=&#34;Hello,ANT&#34; file=&#34;/home/wenyi/logs/ant.log&#34; append=&#34;true&#34;&gt; 
+&lt;echo message=&#34;Hello,ANT&#34; file=&#34;/home/wenyi/logs/ant.log&#34; append=&#34;true&#34;&gt;
 </description>
     </item>
     
     <item>
       <title>Ant 关键元素和常用命令</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/ant_key_elements_and_common_commands</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2012/06/07/ant_key_elements_and_common_commands</link>
+      <pubDate>Thu, 07 Jun 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/ant_key_elements_and_common_commands</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/06/07/ant_key_elements_and_common_commands</guid>
       <description>
 
 &lt;h3 id=&#34;一-ant-关键元素:f780f29a8db5f7945ac4d44588e8e9f7&#34;&gt;一、Ant 关键元素&lt;/h3&gt;
@@ -284,7 +285,7 @@ sudo apt-get install openjdk-7-jdk
 &lt;p&gt;该任务的作用是根据日志或监控器的级别输出信息。它包括 message 、 file 、 append 和 level 四个属性&lt;/p&gt;
 
 &lt;p&gt;例子：&lt;/p&gt;
-&lt;echo message=&#34;Hello,ANT&#34; file=&#34;/home/wenyi/logs/ant.log&#34; append=&#34;true&#34;&gt; 
+&lt;echo message=&#34;Hello,ANT&#34; file=&#34;/home/wenyi/logs/ant.log&#34; append=&#34;true&#34;&gt;
 </description>
     </item>
     

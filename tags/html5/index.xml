@@ -7,14 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Thu, 28 Nov 2013 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/html5/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Ajax 文件上传——通过 html5 的方法</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/ajax_file_upload_html5</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2013/11/28/ajax_file_upload_html5</link>
+      <pubDate>Thu, 28 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/ajax_file_upload_html5</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/28/ajax_file_upload_html5</guid>
       <description>
 
 &lt;h4 id=&#34;html5-方法:f5a698885091fe9812ae461e6526e53b&#34;&gt;html5 方法&lt;/h4&gt;
@@ -47,7 +48,7 @@ var files = document.getElementById(&#39;filename&#39;).files;
 &lt;p&gt;接下来，要介绍的是另一个 html5 推出的新对象：FormData。&lt;/p&gt;
 
 &lt;p&gt;FormData 对象是用户的表单数据的集合，
-它以键值对的形式存储了表单数据，其值能够包括数字、字符串以及文件。&lt;br /&gt;
+它以键值对的形式存储了表单数据，其值能够包括数字、字符串以及文件。
 我们通过这个对象，来向服务器提交我们的文件数据。&lt;/p&gt;
 var formData = new FormData();
 formData.append(&#39;filename&#39;, files[index]); // index 为第 n 个文件的索引
@@ -80,113 +81,11 @@ xhr.addEventListener(&#34;abort&#34;, uploadCanceled, false); // 处理取消上
     </item>
     
     <item>
-      <title>html5 canvas 画图实例——rotate</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/html5_canvas_drawing_examples_rotate</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/html5_canvas_drawing_examples_rotate</guid>
-      <description>&lt;p&gt;接口：context.rotate(angle) &lt;/p&gt;
-
-&lt;p&gt;功能：按给定的弧度旋转,按顺时针旋转。&lt;/p&gt;
-
-&lt;p&gt;说明：rotate 方法旋转的中心始终是canvas 的原点，使&lt;/p&gt;
-
-&lt;p&gt;用translate 方法可以改变它。&lt;/p&gt;
-
-&lt;p&gt;例子：&lt;/p&gt;
-
-&lt;p&gt;效果：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://ww2.sinaimg.cn/mw600/88a9c274jw1dt4ons6vzyg.gif&#34; alt=&#34;html5 canvas
-画图实例——rotate&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://ww1.sinaimg.cn/mw600/88a9c274jw1dt4onxroqvg.gif&#34; alt=&#34;html5 canvas
-画图实例——rotate&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://ww4.sinaimg.cn/mw600/88a9c274jw1dt4oo3hq50g.gif&#34; alt=&#34;html5 canvas
-画图实例——rotate&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;代码：&lt;/p&gt;
-&lt;canvas id=&#34;canvas&#34; height=&#34;400&#34;&gt;&lt;/canvas&gt;
-&lt;script type=&#34;text/javascript&#34;&gt;
-
-var canvas = document.getElementById(&#34;canvas&#34;);
-var context = canvas.getContext(&#34;2d&#34;);
-context.fillStyle = &#34;#000&#34;;
-context.fillRect(0, 0, 400, 400);
-context.translate(200, 200);
-
-for (var i = 1; i &lt; 6; i++) {
-    context.fillStyle = &#34;rgb(255, &#34; + (255 - 51 * i) + &#34;, &#34; + (51 * i)+ &#34;)&#34;;
-    for (var j = 0; j &lt; i * 6; j++) {
-        context.rotate(Math.PI * 2 / (6 * i));
-        context.fillRect(0, 30 * i, 10, 10);
-        context.beginPath();
-        context.arc(0, 30 * i, 10, 0, Math.PI * 2, true);
-        context.fill();
-    }
-}
-&lt;/script&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>html5 canvas 画图实例——rotate</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/html5_canvas_drawing_examples_rotate</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/html5_canvas_drawing_examples_rotate</guid>
-      <description>&lt;p&gt;接口：context.rotate(angle) &lt;/p&gt;
-
-&lt;p&gt;功能：按给定的弧度旋转,按顺时针旋转。&lt;/p&gt;
-
-&lt;p&gt;说明：rotate 方法旋转的中心始终是canvas 的原点，使&lt;/p&gt;
-
-&lt;p&gt;用translate 方法可以改变它。&lt;/p&gt;
-
-&lt;p&gt;例子：&lt;/p&gt;
-
-&lt;p&gt;效果：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://ww2.sinaimg.cn/mw600/88a9c274jw1dt4ons6vzyg.gif&#34; alt=&#34;html5 canvas
-画图实例——rotate&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://ww1.sinaimg.cn/mw600/88a9c274jw1dt4onxroqvg.gif&#34; alt=&#34;html5 canvas
-画图实例——rotate&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://ww4.sinaimg.cn/mw600/88a9c274jw1dt4oo3hq50g.gif&#34; alt=&#34;html5 canvas
-画图实例——rotate&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;代码：&lt;/p&gt;
-&lt;canvas id=&#34;canvas&#34; height=&#34;400&#34;&gt;&lt;/canvas&gt;
-&lt;script type=&#34;text/javascript&#34;&gt;
-
-var canvas = document.getElementById(&#34;canvas&#34;);
-var context = canvas.getContext(&#34;2d&#34;);
-context.fillStyle = &#34;#000&#34;;
-context.fillRect(0, 0, 400, 400);
-context.translate(200, 200);
-
-for (var i = 1; i &lt; 6; i++) {
-    context.fillStyle = &#34;rgb(255, &#34; + (255 - 51 * i) + &#34;, &#34; + (51 * i)+ &#34;)&#34;;
-    for (var j = 0; j &lt; i * 6; j++) {
-        context.rotate(Math.PI * 2 / (6 * i));
-        context.fillRect(0, 30 * i, 10, 10);
-        context.beginPath();
-        context.arc(0, 30 * i, 10, 0, Math.PI * 2, true);
-        context.fill();
-    }
-}
-&lt;/script&gt;
-</description>
-    </item>
-    
-    <item>
       <title>泰囧台词生成器（html5 版）</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/fill_text</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2013/01/10/fill_text</link>
+      <pubDate>Thu, 10 Jan 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/fill_text</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/01/10/fill_text</guid>
       <description>&lt;p&gt;最近经常看到别人 PS 来恶搞&amp;rdquo;泰囧&amp;rdquo;电影中的台词，觉得挺好玩的&lt;/p&gt;
 
 &lt;p&gt;先上效果图：&lt;/p&gt;
@@ -228,6 +127,108 @@ $inputs.each(function(i) {
 &lt;hr /&gt;
 
 &lt;p&gt;源代码(当然，请用支持 html5 的浏览器)：&lt;a href=&#34;http://blog.wenzhixin.net.cn/demos/filltext/&#34;&gt;demo&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>html5 canvas 画图实例——rotate</title>
+      <link>http://blog.wenzhixin.net.cn/2012/05/20/html5_canvas_drawing_examples_rotate</link>
+      <pubDate>Sun, 20 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2012/05/20/html5_canvas_drawing_examples_rotate</guid>
+      <description>&lt;p&gt;接口：context.rotate(angle) &lt;/p&gt;
+
+&lt;p&gt;功能：按给定的弧度旋转,按顺时针旋转。&lt;/p&gt;
+
+&lt;p&gt;说明：rotate 方法旋转的中心始终是canvas 的原点，使&lt;/p&gt;
+
+&lt;p&gt;用translate 方法可以改变它。&lt;/p&gt;
+
+&lt;p&gt;例子：&lt;/p&gt;
+
+&lt;p&gt;效果：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://ww2.sinaimg.cn/mw600/88a9c274jw1dt4ons6vzyg.gif&#34; alt=&#34;html5 canvas
+画图实例——rotate&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://ww1.sinaimg.cn/mw600/88a9c274jw1dt4onxroqvg.gif&#34; alt=&#34;html5 canvas
+画图实例——rotate&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://ww4.sinaimg.cn/mw600/88a9c274jw1dt4oo3hq50g.gif&#34; alt=&#34;html5 canvas
+画图实例——rotate&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;代码：&lt;/p&gt;
+&lt;canvas id=&#34;canvas&#34; height=&#34;400&#34;&gt;&lt;/canvas&gt;
+&lt;script type=&#34;text/javascript&#34;&gt;
+
+var canvas = document.getElementById(&#34;canvas&#34;);
+var context = canvas.getContext(&#34;2d&#34;);
+context.fillStyle = &#34;#000&#34;;
+context.fillRect(0, 0, 400, 400);
+context.translate(200, 200);
+
+for (var i = 1; i &lt; 6; i++) {
+    context.fillStyle = &#34;rgb(255, &#34; + (255 - 51 * i) + &#34;, &#34; + (51 * i)+ &#34;)&#34;;
+    for (var j = 0; j &lt; i * 6; j++) {
+        context.rotate(Math.PI * 2 / (6 * i));
+        context.fillRect(0, 30 * i, 10, 10);
+        context.beginPath();
+        context.arc(0, 30 * i, 10, 0, Math.PI * 2, true);
+        context.fill();
+    }
+}
+&lt;/script&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>html5 canvas 画图实例——rotate</title>
+      <link>http://blog.wenzhixin.net.cn/2012/05/20/html5_canvas_drawing_examples_rotate</link>
+      <pubDate>Sun, 20 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2012/05/20/html5_canvas_drawing_examples_rotate</guid>
+      <description>&lt;p&gt;接口：context.rotate(angle) &lt;/p&gt;
+
+&lt;p&gt;功能：按给定的弧度旋转,按顺时针旋转。&lt;/p&gt;
+
+&lt;p&gt;说明：rotate 方法旋转的中心始终是canvas 的原点，使&lt;/p&gt;
+
+&lt;p&gt;用translate 方法可以改变它。&lt;/p&gt;
+
+&lt;p&gt;例子：&lt;/p&gt;
+
+&lt;p&gt;效果：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://ww2.sinaimg.cn/mw600/88a9c274jw1dt4ons6vzyg.gif&#34; alt=&#34;html5 canvas
+画图实例——rotate&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://ww1.sinaimg.cn/mw600/88a9c274jw1dt4onxroqvg.gif&#34; alt=&#34;html5 canvas
+画图实例——rotate&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://ww4.sinaimg.cn/mw600/88a9c274jw1dt4oo3hq50g.gif&#34; alt=&#34;html5 canvas
+画图实例——rotate&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;代码：&lt;/p&gt;
+&lt;canvas id=&#34;canvas&#34; height=&#34;400&#34;&gt;&lt;/canvas&gt;
+&lt;script type=&#34;text/javascript&#34;&gt;
+
+var canvas = document.getElementById(&#34;canvas&#34;);
+var context = canvas.getContext(&#34;2d&#34;);
+context.fillStyle = &#34;#000&#34;;
+context.fillRect(0, 0, 400, 400);
+context.translate(200, 200);
+
+for (var i = 1; i &lt; 6; i++) {
+    context.fillStyle = &#34;rgb(255, &#34; + (255 - 51 * i) + &#34;, &#34; + (51 * i)+ &#34;)&#34;;
+    for (var j = 0; j &lt; i * 6; j++) {
+        context.rotate(Math.PI * 2 / (6 * i));
+        context.fillRect(0, 30 * i, 10, 10);
+        context.beginPath();
+        context.arc(0, 30 * i, 10, 0, Math.PI * 2, true);
+        context.fill();
+    }
+}
+&lt;/script&gt;
 </description>
     </item>
     

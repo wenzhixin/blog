@@ -7,14 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Sun, 06 May 2012 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/%E5%9E%82%E7%9B%B4%E5%AF%B9%E9%BD%90/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>彻底研究 CSS ——段落的垂直对齐</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/the_vertical_alignment_of_css_complete_paragraph</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2012/05/06/the_vertical_alignment_of_css_complete_paragraph</link>
+      <pubDate>Sun, 06 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/the_vertical_alignment_of_css_complete_paragraph</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/05/06/the_vertical_alignment_of_css_complete_paragraph</guid>
       <description>&lt;p&gt;如果文字内容只有一行，可以设置 line-height 与height
 相同来使文字垂直居中。&lt;/p&gt;
 
@@ -149,10 +150,10 @@ src=&#34;js/jquery.verticalCenter.js&#34;&gt;&lt;/script&gt;
     
     <item>
       <title>彻底研究 CSS ——段落的垂直对齐</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/the_vertical_alignment_of_css_complete_paragraph</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2012/05/06/the_vertical_alignment_of_css_complete_paragraph</link>
+      <pubDate>Sun, 06 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/the_vertical_alignment_of_css_complete_paragraph</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/05/06/the_vertical_alignment_of_css_complete_paragraph</guid>
       <description>&lt;p&gt;如果文字内容只有一行，可以设置 line-height 与height
 相同来使文字垂直居中。&lt;/p&gt;
 

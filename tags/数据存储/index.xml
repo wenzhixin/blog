@@ -7,14 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Tue, 09 Apr 2013 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>客户端数据存储之 Web Storage</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/data_storage</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2013/04/09/data_storage</link>
+      <pubDate>Tue, 09 Apr 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/data_storage</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/04/09/data_storage</guid>
       <description>
 
 &lt;h3 id=&#34;web-storage:27a02d2bc801c512b59853689c2f5851&#34;&gt;Web Storage&lt;/h3&gt;
@@ -34,8 +35,8 @@
 &lt;li&gt;Web Storage:&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;1) 存储空间更大&lt;br /&gt;
-2) 数据则仅仅是存在本地，不与服务器发生任何交互&lt;br /&gt;
+&lt;p&gt;1) 存储空间更大
+2) 数据则仅仅是存在本地，不与服务器发生任何交互
 3) 独立的存储空间&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;而 localStorage 与 sessionStorage 的区别：&lt;/strong&gt;&lt;/p&gt;
@@ -223,9 +224,9 @@ $(function() {
 
     function getItem(key, value) {
         return [
-            &#39;&lt;tr data-key=&#34;&#39; + key + &#39;&#34;&gt;&#39;, 
-                &#39;&lt;td&gt;&#39; + key + &#39;&lt;/td&gt;&#39;, 
-                &#39;&lt;td&gt;&#39; + value + &#39;&lt;/td&gt;&#39;, 
+            &#39;&lt;tr data-key=&#34;&#39; + key + &#39;&#34;&gt;&#39;,
+                &#39;&lt;td&gt;&#39; + key + &#39;&lt;/td&gt;&#39;,
+                &#39;&lt;td&gt;&#39; + value + &#39;&lt;/td&gt;&#39;,
                 &#39;&lt;td&gt;&#39;,
                     &#39;&lt;button class=&#34;btn edit&#34;&gt;编辑&lt;/button&gt;&#39;,
                     &#39;&lt;button class=&#34;btn remove&#34;&gt;删除&lt;/button&gt;&#39;,
@@ -235,7 +236,7 @@ $(function() {
     }
 
     main();
-}); 
+});
 
 &lt;hr /&gt;
 

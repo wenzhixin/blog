@@ -7,14 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Sat, 14 Jun 2014 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/backbone/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>在 Backbone.js 中自定义 fetch 错误处理</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/backbone_custom_fetch_errors</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2014/06/14/backbone_custom_fetch_errors</link>
+      <pubDate>Sat, 14 Jun 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/backbone_custom_fetch_errors</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/06/14/backbone_custom_fetch_errors</guid>
       <description>&lt;p&gt;Backbone 作为 JavaScript MVC 框架的一个优势是它可以通过监听事件来处理事情。但是根据 Collection 的相关&lt;a href=&#34;http://backbonejs.org/#Collection&#34;&gt;文档&lt;/a&gt;，可以看到：当你使用&lt;code&gt;fetch&lt;/code&gt;方法来进行 Ajax 请求的时候，假如发生了错误，并没有触发任何事件。虽然，可以通过&lt;code&gt;collection.fetch({error: handleError});&lt;/code&gt;的方法来处理错误，但是假如我们的 Collection 一多，那就不太好办了，很难做到统一处理错误，并且每个地方都要加上对错误的处理。&lt;/p&gt;
 
 &lt;p&gt;查看 fetch 的源码：&lt;/p&gt;

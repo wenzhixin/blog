@@ -7,14 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Mon, 21 Jul 2014 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/%E6%9B%B4%E6%96%B0%E6%BA%90/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Ubuntu 无法找到更新源的问题</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_source_list_not_found</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2014/07/21/ubuntu_source_list_not_found</link>
+      <pubDate>Mon, 21 Jul 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_source_list_not_found</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/07/21/ubuntu_source_list_not_found</guid>
       <description>
 
 &lt;h3 id=&#34;问题:f73ae7c8e69112b208895feeeb127e47&#34;&gt;问题：&lt;/h3&gt;

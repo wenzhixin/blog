@@ -7,14 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Mon, 22 Oct 2012 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/ror/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Ubuntu 搭建 Ruby on Rails 开发环境</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_ruby_on_rails_development_environment_set_up</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2012/10/22/ubuntu_ruby_on_rails_development_environment_set_up</link>
+      <pubDate>Mon, 22 Oct 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_ruby_on_rails_development_environment_set_up</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/10/22/ubuntu_ruby_on_rails_development_environment_set_up</guid>
       <description>
 
 &lt;h4 id=&#34;安装-ruby:035bb69e15437290d6db321e2bbb2769&#34;&gt;安装 ruby：&lt;/h4&gt;
@@ -63,16 +64,16 @@ undefinedmethod `more_results&#39; for #&lt;Mysql&gt;
 &lt;p&gt;解决：&lt;/p&gt;
 
 &lt;p&gt;注释 mysql_adapter.rb 中的 318 行和 642 行&lt;/p&gt;
-/usr/lib/ruby/vendor_ruby/active_record/connection_adapters/mysql_adapter.rb 
+/usr/lib/ruby/vendor_ruby/active_record/connection_adapters/mysql_adapter.rb
 </description>
     </item>
     
     <item>
       <title>Ubuntu 搭建 Ruby on Rails 开发环境</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_ruby_on_rails_development_environment_set_up</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2012/10/22/ubuntu_ruby_on_rails_development_environment_set_up</link>
+      <pubDate>Mon, 22 Oct 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_ruby_on_rails_development_environment_set_up</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/10/22/ubuntu_ruby_on_rails_development_environment_set_up</guid>
       <description>
 
 &lt;h4 id=&#34;安装-ruby:035bb69e15437290d6db321e2bbb2769&#34;&gt;安装 ruby：&lt;/h4&gt;
@@ -121,7 +122,7 @@ undefinedmethod `more_results&#39; for #&lt;Mysql&gt;
 &lt;p&gt;解决：&lt;/p&gt;
 
 &lt;p&gt;注释 mysql_adapter.rb 中的 318 行和 642 行&lt;/p&gt;
-/usr/lib/ruby/vendor_ruby/active_record/connection_adapters/mysql_adapter.rb 
+/usr/lib/ruby/vendor_ruby/active_record/connection_adapters/mysql_adapter.rb
 </description>
     </item>
     

@@ -7,14 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Tue, 03 Dec 2013 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/mousewheel/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>鼠标滚轮事件 MouseWheel</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/mousewheel_event</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2013/12/03/mousewheel_event</link>
+      <pubDate>Tue, 03 Dec 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/mousewheel_event</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/12/03/mousewheel_event</guid>
       <description>
 
 &lt;h3 id=&#34;前言:609e26f4b3393b1a3dbe48608d92ca93&#34;&gt;前言&lt;/h3&gt;
@@ -59,11 +60,11 @@
 &lt;p&gt;接下来需要对滚轮事件进行监听：&lt;/p&gt;
 var iScroll = 0,
     maxHeight = $(&#39;.child&#39;).outerHeight(true) - $(&#39;.parent&#39;).outerHeight(true);
-    
+
 $(&#39;.parent&#39;).on(&#39;mousewheel&#39;, function(e) {
 	var oEvent = event.originalEvent,
         iDelta = oEvent.wheelDelta ? -oEvent.wheelDelta / 120 : oEvent.detail / 3;
-        
+
     iScroll += iDelta * 40;
     iScroll = Math.min(maxHeight, Math.max(0, iScroll));
     $(&#39;.child&#39;).css(&#39;top&#39;, -iScroll);
@@ -71,7 +72,7 @@ $(&#39;.parent&#39;).on(&#39;mousewheel&#39;, function(e) {
 
 &lt;p&gt;这里只用到了滚轮事件重要的两个属性：wheelDelta 和 detail&lt;/p&gt;
 
-&lt;p&gt;除了 FireFox 之外的浏览器，每次往下滚动，wheelDelta 值都是 -120；&lt;br /&gt;
+&lt;p&gt;除了 FireFox 之外的浏览器，每次往下滚动，wheelDelta 值都是 -120；
 对于 FireFox 浏览器，每次往下滚动，detail 值都是 3，所以我们通过：&lt;/p&gt;
 oEvent.wheelDelta ? -oEvent.wheelDelta / 120 : oEvent.detail / 3
 

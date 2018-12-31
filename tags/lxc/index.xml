@@ -7,14 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Wed, 04 Mar 2015 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/lxc/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>lxc 小贴士：创建、自动启动、设置存放目录</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/lxc_tips</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2015/03/04/lxc_tips</link>
+      <pubDate>Wed, 04 Mar 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/lxc_tips</guid>
+      <guid>http://blog.wenzhixin.net.cn/2015/03/04/lxc_tips</guid>
       <description>
 
 &lt;p&gt;平时使用 lxc 比较多，在这里记录下容易忘记的点。&lt;/p&gt;

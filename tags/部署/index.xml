@@ -7,222 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Mon, 06 Jul 2015 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/%E9%83%A8%E7%BD%B2/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Nodejs 应用部署小记</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/nodejs_deploy</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/nodejs_deploy</guid>
-      <description>
-
-&lt;h3 id=&#34;1-日志功能:81f1797f1abfbfd2290e7727689d7acd&#34;&gt;1、日志功能&lt;/h3&gt;
-
-&lt;h4 id=&#34;1-加入-access-log:81f1797f1abfbfd2290e7727689d7acd&#34;&gt;1) 加入 access.log&lt;/h4&gt;
-var accessLogfile = fs.createWriteStream(&#39;access.log&#39;, {flags: &#39;a&#39;});
-
-app.configure(function() {
-    app.use(express.logger({stream: accessLogfile}));
-}
-
-&lt;h4 id=&#34;2-加入-error-log:81f1797f1abfbfd2290e7727689d7acd&#34;&gt;2) 加入 error.log&lt;/h4&gt;
-
-&lt;p&gt;首先，添加 helpers/error.js 文件：&lt;/p&gt;
-var fs = require(&#39;fs&#39;);
-var errorLogfile = fs.createWriteStream(&#39;logs/error.log&#39;, {flags: &#39;a&#39;});
-
-exports.handler = function(err, req, res, status) {
-      console.log(err);
-
-      var meta = &#39;[&#39; + new Date() + &#39;] &#39; + req.url + &#39; &#39; + status + &#39;\n&#39;;
-      errorLogfile.write(meta + err.stack + &#39;\n&#39;);
-
-      res.status(status);
-      res.end(&#39;&#39;);
-}
-
-&lt;p&gt;在 routes 中使用：&lt;/p&gt;
-function(req, res) {
-      error.handler(err, req, res, 500);
-}
-
-&lt;h3 id=&#34;2-多进程启动服务器-使用-cluster-模块:81f1797f1abfbfd2290e7727689d7acd&#34;&gt;2、多进程启动服务器，使用 cluster 模块&lt;/h3&gt;
-var cluster = require(&#39;cluster&#39;);
-var os = require(&#39;os&#39;);
-
-// 获取 CPU 的数量
-var numCPUs = os.cpus().length;
-
-var workers = {};
-if (cluster.isMaster) {
-      // 主进程分支
-      cluster.on(&#39;death&#39;, function(worker) {
-        // 当一个工作进程结束时，重启工作进程
-        delete workers[worker.pid];
-        worker = cluster.fork();
-        workers[worker.pid] = worker;
-      });
-      // 初始开启与 CPU 数量相同的工作进程
-      for ( var i = 0; i &lt; numCPUs; i++) {
-        var worker = cluster.fork();
-        workers[worker.pid] = worker;
-      }
-} else {
-      // 工作进程分支，启动服务器
-      var app = require(&#39;./app&#39;);
-      app.listen(app.get(&#39;port&#39;), function() {
-        console.log(&#39;Server listening on port %d in %s mode&#39;, app.get(&#39;port&#39;), app.get(&#39;env&#39;));
-      });
-}
-
-// 当进程被终止时，关闭所有工作进程
-process.on(&#39;SIGTERM&#39;, function() {
-      for ( var pid in workers) {
-        process.kill(pid);
-      }
-      process.exit(0);
-});
-
-&lt;h3 id=&#34;3-启动脚本-可用于开机启动服务:81f1797f1abfbfd2290e7727689d7acd&#34;&gt;3、启动脚本，可用于开机启动服务&lt;/h3&gt;
-#! /bin/bash
-
-NODE_ENV=production
-DAEMON=&#34;node cluster.js&#34;
-NAME=name
-PIDFILE=&#34;name.pid&#34;
-
-case &#34;$1&#34; in
-  start)
-        echo &#34;Starting $NAME.&#34;
-        nohup $DAEMON &gt;/dev/null 2&gt;/dev/null &amp;
-        echo $! &gt; $PIDFILE
-        ;;
-  stop)
-        echo &#34;Stopping $NAME.&#34;
-        pid=`cat $PIDFILE`
-        kill $pid
-        rm $PIDFILE
-        ;;
-  status)
-      ps -ef | grep nodejs
-      ;;
-    esac
-
-    exit 0
-</description>
-    </item>
-    
-    <item>
-      <title>Nodejs 应用部署小记</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/nodejs_deploy</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/nodejs_deploy</guid>
-      <description>
-
-&lt;h3 id=&#34;1-日志功能:81f1797f1abfbfd2290e7727689d7acd&#34;&gt;1、日志功能&lt;/h3&gt;
-
-&lt;h4 id=&#34;1-加入-access-log:81f1797f1abfbfd2290e7727689d7acd&#34;&gt;1) 加入 access.log&lt;/h4&gt;
-var accessLogfile = fs.createWriteStream(&#39;access.log&#39;, {flags: &#39;a&#39;});
-
-app.configure(function() {
-    app.use(express.logger({stream: accessLogfile}));
-}
-
-&lt;h4 id=&#34;2-加入-error-log:81f1797f1abfbfd2290e7727689d7acd&#34;&gt;2) 加入 error.log&lt;/h4&gt;
-
-&lt;p&gt;首先，添加 helpers/error.js 文件：&lt;/p&gt;
-var fs = require(&#39;fs&#39;);
-var errorLogfile = fs.createWriteStream(&#39;logs/error.log&#39;, {flags: &#39;a&#39;});
-
-exports.handler = function(err, req, res, status) {
-      console.log(err);
-
-      var meta = &#39;[&#39; + new Date() + &#39;] &#39; + req.url + &#39; &#39; + status + &#39;\n&#39;;
-      errorLogfile.write(meta + err.stack + &#39;\n&#39;);
-
-      res.status(status);
-      res.end(&#39;&#39;);
-}
-
-&lt;p&gt;在 routes 中使用：&lt;/p&gt;
-function(req, res) {
-      error.handler(err, req, res, 500);
-}
-
-&lt;h3 id=&#34;2-多进程启动服务器-使用-cluster-模块:81f1797f1abfbfd2290e7727689d7acd&#34;&gt;2、多进程启动服务器，使用 cluster 模块&lt;/h3&gt;
-var cluster = require(&#39;cluster&#39;);
-var os = require(&#39;os&#39;);
-
-// 获取 CPU 的数量
-var numCPUs = os.cpus().length;
-
-var workers = {};
-if (cluster.isMaster) {
-      // 主进程分支
-      cluster.on(&#39;death&#39;, function(worker) {
-        // 当一个工作进程结束时，重启工作进程
-        delete workers[worker.pid];
-        worker = cluster.fork();
-        workers[worker.pid] = worker;
-      });
-      // 初始开启与 CPU 数量相同的工作进程
-      for ( var i = 0; i &lt; numCPUs; i++) {
-        var worker = cluster.fork();
-        workers[worker.pid] = worker;
-      }
-} else {
-      // 工作进程分支，启动服务器
-      var app = require(&#39;./app&#39;);
-      app.listen(app.get(&#39;port&#39;), function() {
-        console.log(&#39;Server listening on port %d in %s mode&#39;, app.get(&#39;port&#39;), app.get(&#39;env&#39;));
-      });
-}
-
-// 当进程被终止时，关闭所有工作进程
-process.on(&#39;SIGTERM&#39;, function() {
-      for ( var pid in workers) {
-        process.kill(pid);
-      }
-      process.exit(0);
-});
-
-&lt;h3 id=&#34;3-启动脚本-可用于开机启动服务:81f1797f1abfbfd2290e7727689d7acd&#34;&gt;3、启动脚本，可用于开机启动服务&lt;/h3&gt;
-#! /bin/bash
-
-NODE_ENV=production
-DAEMON=&#34;node cluster.js&#34;
-NAME=name
-PIDFILE=&#34;name.pid&#34;
-
-case &#34;$1&#34; in
-  start)
-        echo &#34;Starting $NAME.&#34;
-        nohup $DAEMON &gt;/dev/null 2&gt;/dev/null &amp;
-        echo $! &gt; $PIDFILE
-        ;;
-  stop)
-        echo &#34;Stopping $NAME.&#34;
-        pid=`cat $PIDFILE`
-        kill $pid
-        rm $PIDFILE
-        ;;
-  status)
-      ps -ef | grep nodejs
-      ;;
-    esac
-
-    exit 0
-</description>
-    </item>
-    
-    <item>
       <title>在 Ubuntu 14.04 server 上部署 meteor 应用</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/meteor_deploy</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2015/07/06/meteor_deploy</link>
+      <pubDate>Mon, 06 Jul 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/meteor_deploy</guid>
+      <guid>http://blog.wenzhixin.net.cn/2015/07/06/meteor_deploy</guid>
       <description>
 
 &lt;h3 id=&#34;关于-meteor-js:a7799df58081dcf48248d422bcf9047b&#34;&gt;关于 Meteor.js&lt;/h3&gt;
@@ -283,10 +76,10 @@ sudo start myapp
 
 &lt;h3 id=&#34;配置-nginx:a7799df58081dcf48248d422bcf9047b&#34;&gt;配置 nginx&lt;/h3&gt;
 server {
-    listen 80; 
+    listen 80;
     server_name myapp.wenzhixin.net.cn;
 
-    location / { 
+    location / {
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header Host $http_host;
@@ -298,6 +91,214 @@ server {
 }
 
 &lt;p&gt;访问 myapp.wenzhixin.net.cn&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Nodejs 应用部署小记</title>
+      <link>http://blog.wenzhixin.net.cn/2012/11/09/nodejs_deploy</link>
+      <pubDate>Fri, 09 Nov 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2012/11/09/nodejs_deploy</guid>
+      <description>
+
+&lt;h3 id=&#34;1-日志功能:81f1797f1abfbfd2290e7727689d7acd&#34;&gt;1、日志功能&lt;/h3&gt;
+
+&lt;h4 id=&#34;1-加入-access-log:81f1797f1abfbfd2290e7727689d7acd&#34;&gt;1) 加入 access.log&lt;/h4&gt;
+var accessLogfile = fs.createWriteStream(&#39;access.log&#39;, {flags: &#39;a&#39;});
+
+app.configure(function() {
+    app.use(express.logger({stream: accessLogfile}));
+}
+
+&lt;h4 id=&#34;2-加入-error-log:81f1797f1abfbfd2290e7727689d7acd&#34;&gt;2) 加入 error.log&lt;/h4&gt;
+
+&lt;p&gt;首先，添加 helpers/error.js 文件：&lt;/p&gt;
+var fs = require(&#39;fs&#39;);
+var errorLogfile = fs.createWriteStream(&#39;logs/error.log&#39;, {flags: &#39;a&#39;});
+
+exports.handler = function(err, req, res, status) {
+      console.log(err);
+
+      var meta = &#39;[&#39; + new Date() + &#39;] &#39; + req.url + &#39; &#39; + status + &#39;\n&#39;;
+      errorLogfile.write(meta + err.stack + &#39;\n&#39;);
+
+      res.status(status);
+      res.end(&#39;&#39;);
+}
+
+&lt;p&gt;在 routes 中使用：&lt;/p&gt;
+function(req, res) {
+      error.handler(err, req, res, 500);
+}
+
+&lt;h3 id=&#34;2-多进程启动服务器-使用-cluster-模块:81f1797f1abfbfd2290e7727689d7acd&#34;&gt;2、多进程启动服务器，使用 cluster 模块&lt;/h3&gt;
+var cluster = require(&#39;cluster&#39;);
+var os = require(&#39;os&#39;);
+
+// 获取 CPU 的数量
+var numCPUs = os.cpus().length;
+
+var workers = {};
+if (cluster.isMaster) {
+      // 主进程分支
+      cluster.on(&#39;death&#39;, function(worker) {
+        // 当一个工作进程结束时，重启工作进程
+        delete workers[worker.pid];
+        worker = cluster.fork();
+        workers[worker.pid] = worker;
+      });
+      // 初始开启与 CPU 数量相同的工作进程
+      for ( var i = 0; i &lt; numCPUs; i++) {
+        var worker = cluster.fork();
+        workers[worker.pid] = worker;
+      }
+} else {
+      // 工作进程分支，启动服务器
+      var app = require(&#39;./app&#39;);
+      app.listen(app.get(&#39;port&#39;), function() {
+        console.log(&#39;Server listening on port %d in %s mode&#39;, app.get(&#39;port&#39;), app.get(&#39;env&#39;));
+      });
+}
+
+// 当进程被终止时，关闭所有工作进程
+process.on(&#39;SIGTERM&#39;, function() {
+      for ( var pid in workers) {
+        process.kill(pid);
+      }
+      process.exit(0);
+});
+
+&lt;h3 id=&#34;3-启动脚本-可用于开机启动服务:81f1797f1abfbfd2290e7727689d7acd&#34;&gt;3、启动脚本，可用于开机启动服务&lt;/h3&gt;
+#! /bin/bash
+
+NODE_ENV=production
+DAEMON=&#34;node cluster.js&#34;
+NAME=name
+PIDFILE=&#34;name.pid&#34;
+
+case &#34;$1&#34; in
+  start)
+        echo &#34;Starting $NAME.&#34;
+        nohup $DAEMON &gt;/dev/null 2&gt;/dev/null &amp;
+        echo $! &gt; $PIDFILE
+        ;;
+  stop)
+        echo &#34;Stopping $NAME.&#34;
+        pid=`cat $PIDFILE`
+        kill $pid
+        rm $PIDFILE
+        ;;
+  status)
+      ps -ef | grep nodejs
+      ;;
+    esac
+
+    exit 0
+</description>
+    </item>
+    
+    <item>
+      <title>Nodejs 应用部署小记</title>
+      <link>http://blog.wenzhixin.net.cn/2012/11/09/nodejs_deploy</link>
+      <pubDate>Fri, 09 Nov 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2012/11/09/nodejs_deploy</guid>
+      <description>
+
+&lt;h3 id=&#34;1-日志功能:81f1797f1abfbfd2290e7727689d7acd&#34;&gt;1、日志功能&lt;/h3&gt;
+
+&lt;h4 id=&#34;1-加入-access-log:81f1797f1abfbfd2290e7727689d7acd&#34;&gt;1) 加入 access.log&lt;/h4&gt;
+var accessLogfile = fs.createWriteStream(&#39;access.log&#39;, {flags: &#39;a&#39;});
+
+app.configure(function() {
+    app.use(express.logger({stream: accessLogfile}));
+}
+
+&lt;h4 id=&#34;2-加入-error-log:81f1797f1abfbfd2290e7727689d7acd&#34;&gt;2) 加入 error.log&lt;/h4&gt;
+
+&lt;p&gt;首先，添加 helpers/error.js 文件：&lt;/p&gt;
+var fs = require(&#39;fs&#39;);
+var errorLogfile = fs.createWriteStream(&#39;logs/error.log&#39;, {flags: &#39;a&#39;});
+
+exports.handler = function(err, req, res, status) {
+      console.log(err);
+
+      var meta = &#39;[&#39; + new Date() + &#39;] &#39; + req.url + &#39; &#39; + status + &#39;\n&#39;;
+      errorLogfile.write(meta + err.stack + &#39;\n&#39;);
+
+      res.status(status);
+      res.end(&#39;&#39;);
+}
+
+&lt;p&gt;在 routes 中使用：&lt;/p&gt;
+function(req, res) {
+      error.handler(err, req, res, 500);
+}
+
+&lt;h3 id=&#34;2-多进程启动服务器-使用-cluster-模块:81f1797f1abfbfd2290e7727689d7acd&#34;&gt;2、多进程启动服务器，使用 cluster 模块&lt;/h3&gt;
+var cluster = require(&#39;cluster&#39;);
+var os = require(&#39;os&#39;);
+
+// 获取 CPU 的数量
+var numCPUs = os.cpus().length;
+
+var workers = {};
+if (cluster.isMaster) {
+      // 主进程分支
+      cluster.on(&#39;death&#39;, function(worker) {
+        // 当一个工作进程结束时，重启工作进程
+        delete workers[worker.pid];
+        worker = cluster.fork();
+        workers[worker.pid] = worker;
+      });
+      // 初始开启与 CPU 数量相同的工作进程
+      for ( var i = 0; i &lt; numCPUs; i++) {
+        var worker = cluster.fork();
+        workers[worker.pid] = worker;
+      }
+} else {
+      // 工作进程分支，启动服务器
+      var app = require(&#39;./app&#39;);
+      app.listen(app.get(&#39;port&#39;), function() {
+        console.log(&#39;Server listening on port %d in %s mode&#39;, app.get(&#39;port&#39;), app.get(&#39;env&#39;));
+      });
+}
+
+// 当进程被终止时，关闭所有工作进程
+process.on(&#39;SIGTERM&#39;, function() {
+      for ( var pid in workers) {
+        process.kill(pid);
+      }
+      process.exit(0);
+});
+
+&lt;h3 id=&#34;3-启动脚本-可用于开机启动服务:81f1797f1abfbfd2290e7727689d7acd&#34;&gt;3、启动脚本，可用于开机启动服务&lt;/h3&gt;
+#! /bin/bash
+
+NODE_ENV=production
+DAEMON=&#34;node cluster.js&#34;
+NAME=name
+PIDFILE=&#34;name.pid&#34;
+
+case &#34;$1&#34; in
+  start)
+        echo &#34;Starting $NAME.&#34;
+        nohup $DAEMON &gt;/dev/null 2&gt;/dev/null &amp;
+        echo $! &gt; $PIDFILE
+        ;;
+  stop)
+        echo &#34;Stopping $NAME.&#34;
+        pid=`cat $PIDFILE`
+        kill $pid
+        rm $PIDFILE
+        ;;
+  status)
+      ps -ef | grep nodejs
+      ;;
+    esac
+
+    exit 0
 </description>
     </item>
     

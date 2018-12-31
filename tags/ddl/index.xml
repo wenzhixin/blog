@@ -7,14 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Thu, 13 Feb 2014 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/ddl/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Oracle 获取DDL语句入门小记</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/oracle_ddl</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2014/02/13/oracle_ddl</link>
+      <pubDate>Thu, 13 Feb 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/oracle_ddl</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/02/13/oracle_ddl</guid>
       <description>
 
 &lt;h3 id=&#34;sqlplus-登录:e3b1259d48a958535969632ae5dfca28&#34;&gt;sqlplus 登录&lt;/h3&gt;
@@ -88,10 +89,10 @@ spool off;
     
     <item>
       <title>SQL学习笔记——DDL</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/sql_study_notes_ddl</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2012/03/09/sql_study_notes_ddl</link>
+      <pubDate>Fri, 09 Mar 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/sql_study_notes_ddl</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/03/09/sql_study_notes_ddl</guid>
       <description>&lt;p&gt;​1. CREATE DATABASE Syntax&lt;/p&gt;
 
 &lt;p&gt;  • CREATE DATABASE database_name&lt;/p&gt;
@@ -184,10 +185,10 @@ table_name WHERE condition&lt;/p&gt;
     
     <item>
       <title>SQL学习笔记——DDL</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/sql_study_notes_ddl</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2012/03/09/sql_study_notes_ddl</link>
+      <pubDate>Fri, 09 Mar 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/sql_study_notes_ddl</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/03/09/sql_study_notes_ddl</guid>
       <description>&lt;p&gt;​1. CREATE DATABASE Syntax&lt;/p&gt;
 
 &lt;p&gt;  • CREATE DATABASE database_name&lt;/p&gt;

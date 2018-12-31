@@ -7,14 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Sun, 21 Sep 2014 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/word/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>如何批量读取 word 的内容和图片</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/node_docx</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2014/09/21/node_docx</link>
+      <pubDate>Sun, 21 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/node_docx</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/09/21/node_docx</guid>
       <description>
 
 &lt;p&gt;今天朋友说需要对100份 word 文件的内容进行录入工作，问我是否有什么方便的方法。假如最少1份按2分钟的速度算，也需要200分钟才可以录入完成。我一直都不喜欢做重复又无意义的工作，就想着能否用程序来对其进行处理，后面虽然也花了快一个钟的时间来编写代码和测试，但是当程序用了几分钟的时间就将需要的内容全部录入完成时，觉得还是挺开心的，而自己也学到了许多的东西，在这里记录下，我想以后应该也会用到。&lt;/p&gt;

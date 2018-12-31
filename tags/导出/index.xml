@@ -7,19 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Thu, 07 Jan 2016 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/%E5%AF%BC%E5%87%BA/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>备份恢复 Meteor Mongo 数据库</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/meteor_mongo_dump</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2016/01/07/meteor_mongo_dump</link>
+      <pubDate>Thu, 07 Jan 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/meteor_mongo_dump</guid>
+      <guid>http://blog.wenzhixin.net.cn/2016/01/07/meteor_mongo_dump</guid>
       <description>&lt;p&gt;运行 &lt;code&gt;meteor&lt;/code&gt; 后使用新的窗口运行&lt;/p&gt;
 meteor mongo
 
 &lt;p&gt;可以看到类似下面的信息：&lt;/p&gt;
-MongoDB shell version: 2.6.7                  
+MongoDB shell version: 2.6.7
 connecting to: 127.0.0.1:4001/meteor
 
 &lt;p&gt;Meteor 数据库运行于 127.0.0.1 3001 端口，Ctrl + D 退出即可。&lt;/p&gt;
@@ -34,10 +35,10 @@ mongorestore -h 127.0.0.1 --port 4001 -d meteor dump/meteor
     
     <item>
       <title>导出或者备份新浪轻博客</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/sina_qing_export_or_backup</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2013/11/14/sina_qing_export_or_backup</link>
+      <pubDate>Thu, 14 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/sina_qing_export_or_backup</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/14/sina_qing_export_or_backup</guid>
       <description>&lt;p&gt;新浪轻博客没有提供 RSS 或者导出等功能，很不方便对博客进行备份或者迁移。
 不过我们可以换种思路，那就是对博客网页进行解析从而得到我们想要的内容，包括：
 标题、标签、日期、内容、评论等。&lt;/p&gt;

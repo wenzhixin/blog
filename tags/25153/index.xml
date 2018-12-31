@@ -7,14 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Mon, 28 Apr 2014 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/25153/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Temporary Tablespace is Empty 解决方法（ORA-25153）</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/temporary_tablespace_is_empty</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2014/04/28/temporary_tablespace_is_empty</link>
+      <pubDate>Mon, 28 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/temporary_tablespace_is_empty</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/04/28/temporary_tablespace_is_empty</guid>
       <description>
 
 &lt;h3 id=&#34;问题:80823c84cfc39e1c08535d0f0ce2d355&#34;&gt;问题：&lt;/h3&gt;

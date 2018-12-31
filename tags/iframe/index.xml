@@ -7,14 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Wed, 27 Nov 2013 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/iframe/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Ajax 文件上传——通过 iframe 的方法</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/ajax_file_upload_iframe</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2013/11/27/ajax_file_upload_iframe</link>
+      <pubDate>Wed, 27 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/ajax_file_upload_iframe</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/27/ajax_file_upload_iframe</guid>
       <description>
 
 &lt;h4 id=&#34;前言:9d2eee6ba8fab7c3c4918c26a26acf7a&#34;&gt;前言&lt;/h4&gt;
@@ -89,10 +90,10 @@
     
     <item>
       <title>jQuery 如何获取 iframe 的内容</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/access_iframe</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2013/03/01/access_iframe</link>
+      <pubDate>Fri, 01 Mar 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/access_iframe</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/03/01/access_iframe</guid>
       <description>&lt;p&gt;现有 iframe，内容如下：&lt;/p&gt;
 &lt;iframe id=&#34;iframeID&#34; ...&gt;
     &lt;div id=&#34;someID&#34;&gt;Hello world!&lt;/div&gt;

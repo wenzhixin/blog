@@ -7,63 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Sat, 30 Aug 2014 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/vim/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Ubuntu 安装配置 vim</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_vim</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/ubuntu_vim</guid>
-      <description>
-
-&lt;h4 id=&#34;安装:48edcd4f9af91db52571973375d085e1&#34;&gt;安装&lt;/h4&gt;
-sudo apt-get install vim
-
-&lt;h4 id=&#34;配置:48edcd4f9af91db52571973375d085e1&#34;&gt;配置&lt;/h4&gt;
-sudo vi ～/.vimrc
-
-&lt;p&gt;内容（显示行数、不备份）：&lt;/p&gt;
-source $VIMRUNTIME/vimrc_example.vim
-set nu
-set nobackup
-
-&lt;hr /&gt;
-
-&lt;p&gt;资料：&lt;a href=&#34;http://coolshell.cn/articles/5426.html&#34;&gt;简明 Vim 练级攻略&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>vim 添加批量注释</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/vim_batch_notes</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/vim_batch_notes</guid>
-      <description>&lt;p&gt;在配置服务器的过程中，经常会用到 vim 作为我们的编辑器，批量注释这一功能很常用到。&lt;/p&gt;
-
-&lt;p&gt;这里记录 vim 如何添加批量注释的方法。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Ctrl + v 使用方向键上下选择范围&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Shift + i 进入编辑模式，输入&lt;code&gt;#&lt;/code&gt;或者&lt;code&gt;//&lt;/code&gt;，按 esc 退出，搞定。&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;批量删除注释：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Ctrl + v 使用方向键上下选择范围，按&lt;code&gt;d&lt;/code&gt;即可（删除选择内容）。&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
       <title>通过 vim 编辑网页文本输入框</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/edit_text_gvim</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2014/08/30/edit_text_gvim</link>
+      <pubDate>Sat, 30 Aug 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/edit_text_gvim</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/08/30/edit_text_gvim</guid>
       <description>
 
 &lt;p&gt;对于文本编辑和编写代码，我们常常会用到 vim，使用 vim 的好处在这里就不多说了。那么能不能在浏览器中的文本输入框中也使用 vim 来编辑呢，编辑完之后再自动保存回去？答案当然可以！&lt;/p&gt;
@@ -118,6 +70,55 @@ vi ~/.gvimrc
 colorscheme slate
 set guifont=Ubuntu\ Mono\ 12
 &lt;/blockquote&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>vim 添加批量注释</title>
+      <link>http://blog.wenzhixin.net.cn/2014/03/14/vim_batch_notes</link>
+      <pubDate>Fri, 14 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2014/03/14/vim_batch_notes</guid>
+      <description>&lt;p&gt;在配置服务器的过程中，经常会用到 vim 作为我们的编辑器，批量注释这一功能很常用到。&lt;/p&gt;
+
+&lt;p&gt;这里记录 vim 如何添加批量注释的方法。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Ctrl + v 使用方向键上下选择范围&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Shift + i 进入编辑模式，输入&lt;code&gt;#&lt;/code&gt;或者&lt;code&gt;//&lt;/code&gt;，按 esc 退出，搞定。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;批量删除注释：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Ctrl + v 使用方向键上下选择范围，按&lt;code&gt;d&lt;/code&gt;即可（删除选择内容）。&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 安装配置 vim</title>
+      <link>http://blog.wenzhixin.net.cn/2013/03/26/ubuntu_vim</link>
+      <pubDate>Tue, 26 Mar 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2013/03/26/ubuntu_vim</guid>
+      <description>
+
+&lt;h4 id=&#34;安装:48edcd4f9af91db52571973375d085e1&#34;&gt;安装&lt;/h4&gt;
+sudo apt-get install vim
+
+&lt;h4 id=&#34;配置:48edcd4f9af91db52571973375d085e1&#34;&gt;配置&lt;/h4&gt;
+sudo vi ～/.vimrc
+
+&lt;p&gt;内容（显示行数、不备份）：&lt;/p&gt;
+source $VIMRUNTIME/vimrc_example.vim
+set nu
+set nobackup
+
+&lt;hr /&gt;
+
+&lt;p&gt;资料：&lt;a href=&#34;http://coolshell.cn/articles/5426.html&#34;&gt;简明 Vim 练级攻略&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     

@@ -7,14 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Tue, 12 Nov 2013 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/%E5%85%A5%E9%97%A8/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>html5 canvas 画布入门</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/hello_canvas</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2013/11/12/hello_canvas</link>
+      <pubDate>Tue, 12 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/hello_canvas</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/12/hello_canvas</guid>
       <description>&lt;p&gt;今天开始学点新东西，canvas 画布，它是一个 HTML5 的一个新元素，
 它没有自己的行为，但是定义了一个 API 支持脚本化客户端绘图操作。&lt;/p&gt;
 

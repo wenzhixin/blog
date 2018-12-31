@@ -7,14 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Thu, 21 Nov 2013 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/fixed/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Android 界面不支持 position fixed 问题</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/android_position_fixed</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2013/11/21/android_position_fixed</link>
+      <pubDate>Thu, 21 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/android_position_fixed</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/21/android_position_fixed</guid>
       <description>&lt;p&gt;在 Android 中，部分浏览器不支持 css 的 position: fixed 属性。&lt;/p&gt;
 
 &lt;p&gt;详细的支持情况见：&lt;a href=&#34;http://caniuse.com/css-fixed&#34;&gt;http://caniuse.com/css-fixed&lt;/a&gt;&lt;/p&gt;
@@ -37,8 +38,8 @@
 
 &lt;li&gt;&lt;p&gt;maximum-scale：最大比例值。范围从0至10.0&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;user-scalable：用户是否可以缩放视口。值可以是：&lt;br /&gt;
-1, yes, or true: 允许用户缩放&lt;br /&gt;
+&lt;li&gt;&lt;p&gt;user-scalable：用户是否可以缩放视口。值可以是：
+1, yes, or true: 允许用户缩放
 0, no, or false: 不许用户缩放&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -57,7 +58,7 @@ if (navigator.userAgent.match(/Android|iPhone|iPad|iPod/i)) {
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/cubiq/iscroll&#34;&gt;iScroll&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;注：&lt;br /&gt;
+&lt;p&gt;注：
 该库也没有使用过，有待研究&amp;hellip;&lt;/p&gt;
 </description>
     </item>

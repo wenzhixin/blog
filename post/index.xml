@@ -7,231 +7,1479 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Mon, 11 Jan 2016 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/post/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>2013-01-25</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/2013-01-25</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>通过 css 设置图片的高度与宽度相等</title>
+      <link>http://blog.wenzhixin.net.cn/2016/01/11/css_height_equals_width_with_css</link>
+      <pubDate>Mon, 11 Jan 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/2013-01-25</guid>
-      <description>&lt;p&gt;貌似好久没有上火喉咙痛了，因为聚餐吃了超辣的菜，喝了快半包凉茶了，却没有效果，真怀疑是不是乌糖水呢，还真怕又咳嗽了。对于咳嗽，还是有一定阴影的。记得高二的时候，整个月都在咳嗽，快咳死了那种，自己又懒得买药看医生那种。当时有人给我买冲剂，有人给我买药，还有人一定要我去看医生，让我感动了好一阵。呵呵，现在想想，会不会是因为影响了她们学习的原因呀？还有大三的时候也是，喝了很多咳嗽的药就是不好。现在想想，出门在外，又是一个人，还是要好好照顾自己，多加注意身体才行。&lt;/p&gt;
+      <guid>http://blog.wenzhixin.net.cn/2016/01/11/css_height_equals_width_with_css</guid>
+      <description>&lt;p&gt;在图片长宽不相等的情况下，想将长宽设置为相等并且自适应屏幕，可以通过 js 的方式进行设置并通过监听 resize 来实时更新，但是这种方式很麻烦。&lt;/p&gt;
 
-&lt;p&gt;其实每天过的忙而充实的，有好多事要做，可能自己比较笨，做好一件事对于我来说要花更多更多的时间，以至于老是觉得时间不够用。对于自己，要求也不多，只要每天都进步一点点就可以了。走上了 IT 男、前端攻城狮这条路就意味着要不断学习，才能跟的上技术的脚步。&lt;/p&gt;
+&lt;p&gt;这里通过 css 来达到我们想要的效果：&lt;/p&gt;
 
-&lt;p&gt;一下子自己已经毕业了两年半了，岁月无情，时间飞逝，青春已经离我越来越远了，而自己离所谓的奔三又近了一些。有时候想想，要是不长大，可以不用考虑太多，保持着一颗童心，快乐无忧地过着简单的生活，该多好。而以前比较要好的那么一群人，也比较少联系了，大家都有自己的生活，由于种种原因吧，大家还有我自己，都把我遗忘在角落里了。&lt;/p&gt;
+&lt;p&gt;HTML:&lt;/p&gt;
+&lt;div class=&#39;box&#39;&gt;
+	&lt;img src=&#34;...&#34;&gt;
+&lt;/div&gt;
 
-&lt;p&gt;在跟鑫聊到回家的，问他有没有带女的回家，他说基友就好几个，好吧，我连一起回家的基友都没有，哈哈。大三开始，基本上回家都是一个人的夜车，习惯了，虽说有那么一点孤零零的感觉，不过也没办法，亲人们基本上都在潮汕地区。&lt;/p&gt;
+&lt;p&gt;需要添加一个父元素来达到我们的目的。&lt;/p&gt;
 
-&lt;p&gt;越来越喜欢看书了，大学三年的图书馆生活，便与书结下了不解之缘。虽然比较多的是技术方面的书，不过对于散文、文学类的也挺感兴趣的。算算，自己都快有四、五十本书了吧。很喜欢三毛说的“读书多了，容颜自然改变，许多时候，自己可能以为许多看过的书籍都成过眼烟云，不复记忆，其实它们仍是潜在的，在气质里、在谈吐上、在胸襟的无涯，当然也可能显露在生活和文字中。”虽然有那么一点自我安慰的感觉，不过怎么说多看些书其实也不坏。至少在别人去约会的时候，我可以跟我的书约约会。&lt;/p&gt;
+&lt;p&gt;CSS:&lt;/p&gt;
+.box {
+	position: relative;
+	width: 50%;		/* desired width */
+}
+.box:before {
+	content: &#34;&#34;;
+	display: block;
+	padding-top: 100%; 	/* initial ratio of 1:1*/
+}
 
-&lt;p&gt;而对于写东西，文笔烂的很，有时候组织一句话都要想好久，反正对于语言，头脑里面就好像少了那么一小块，普通话不标准、粤语没学会、英语学不好等等。不过有时候想想，其实记录点东西也是不错的，一年后，或者十年后，再回头看看自己写过的东西，应该也是挺有趣的。&lt;/p&gt;
+&lt;p&gt;我们在这里定义了一个伪元素并且将其 &lt;code&gt;padding-top&lt;/code&gt; 设置为 100%，因为这里的 padding-top 是相对于元素的 width 的。&lt;/p&gt;
 
-&lt;p&gt;对于大学，有许多许多的遗憾，错过好多事情，有些事情错过了就没办法有再一次的机会了，而有些事情，现在补上也许还来得急，例如旅游。就像有些人一样，错过了可能就是错过了，而现在，珍惜眼前才是最重要的吧。假如什么事情都想做好，结果就是什么都做不好。所以现在最主要的还是要把握好自己的心态，该放的就放，该把握的就要把握，争取努力做好，至少不让自己后悔。&lt;/p&gt;
+&lt;p&gt;现在我们定义了一个 &lt;code&gt;.box&lt;/code&gt; 元素，它的长和宽是相等的，现在我们只需要设置 img 的 CSS 即可:&lt;/p&gt;
+.box img {
+	position:  absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
 </description>
     </item>
     
     <item>
-      <title>2013-01-30</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/2013-01-30</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>备份恢复 Meteor Mongo 数据库</title>
+      <link>http://blog.wenzhixin.net.cn/2016/01/07/meteor_mongo_dump</link>
+      <pubDate>Thu, 07 Jan 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/2013-01-30</guid>
-      <description>&lt;p&gt;这两天回宿舍都不太想动，过两天就要回家了，发现还有好多事情还没做完。花了几分钟时间将这两天必须完成的包括生活、工作、以及未看完的书等事情，一件一件列在纸上，写完才发现竟然快要接近20件事了。每做完一件，划掉，顿时心里轻松了许多，争取能全部做完吧。&lt;/p&gt;
+      <guid>http://blog.wenzhixin.net.cn/2016/01/07/meteor_mongo_dump</guid>
+      <description>&lt;p&gt;运行 &lt;code&gt;meteor&lt;/code&gt; 后使用新的窗口运行&lt;/p&gt;
+meteor mongo
 
-&lt;p&gt;当然，还有好多没能完成的。之前一直想自己 DIY 一个写着新年祝福语的显示屏的，放在家门口，有人经过就送上过年的祝福语，只是一直没有时间去弄，到现在做过的跟所谓的作品挂那么一点点钩应该就是温度计加时钟了吧。还有就是学了快两个月的吉他吧，结果只学会了几首简单的歌曲的弹唱，便没有太大的毅力去学了，在音乐这方面，发现自己没有那份自学的能力可以去学好。&lt;/p&gt;
+&lt;p&gt;可以看到类似下面的信息：&lt;/p&gt;
+MongoDB shell version: 2.6.7
+connecting to: 127.0.0.1:4001/meteor
 
-&lt;p&gt;今天跟好朋友在聊到工作的事情，很庆幸，自己能做着自己喜欢的工作。这两年，学到挺多的，在如何做人、如何做事，自己还有好多不足的地方，慢慢去提高吧。很多事情，经历过了，像找工作，碰过多少次壁，失败了多少次，只有自己才会知道，自己努力过，争取过，就可以了。而感情，应该也是这样的吧。在这里，也祝愿那些还再奋斗的朋友们能找到适合自己的工作。&lt;/p&gt;
+&lt;p&gt;Meteor 数据库运行于 127.0.0.1 3001 端口，Ctrl + D 退出即可。&lt;/p&gt;
 
-&lt;p&gt;又到了回家的时候呢，这次请了假，多少有些兴奋，因为前段时间一直很想家、很想回家。上次还跟朋友在讨论这样一年一年过，出门在外，一年才回家那么几天，能陪家人的时间少之又少，而自己又能改变多少呢。当然，回家也意味着一年又结束了，而自己又老了一岁了。&lt;/p&gt;
+&lt;p&gt;导出：&lt;/p&gt;
+mongodump -h 127.0.0.1 --port 4001 -d meteor
 
-&lt;p&gt;整理了房间，顺便也整理了一下自己的心情。发了好一会呆，貌似自己顿时看透了很多事情似的，这一年，遇见过的人，看过的书，经过的地方，那一年，错过的缘分，想念的人，有过的遗憾。一切的一切，当时不懂的，现在慢慢也懂了，而很多事情，如今也能笑着说出口。&lt;/p&gt;
-
-&lt;p&gt;新的一年，其实没有太大的愿望，希望家人身体健康，自己技术能更进一步，当然，也期盼着有那么一个人能走进自己的世界里。&lt;/p&gt;
-
-&lt;p&gt;这一座孤独的城市，&lt;/p&gt;
-
-&lt;p&gt;这一刻宁静的我，&lt;/p&gt;
-
-&lt;p&gt;隔绝了喧嚣和冷漠。&lt;/p&gt;
-
-&lt;p&gt;街头上川流不息的人，&lt;/p&gt;
-
-&lt;p&gt;谁又能听见谁的寂寞。&lt;/p&gt;
-
-&lt;p&gt;夜幕笼罩的一片灯海，&lt;/p&gt;
-
-&lt;p&gt;多少人有多少种无奈。&lt;/p&gt;
-
-&lt;p&gt;给自己多些期待，&lt;/p&gt;
-
-&lt;p&gt;不放弃爱的勇气，&lt;/p&gt;
-
-&lt;p&gt;不怀疑会有真心，&lt;/p&gt;
-
-&lt;p&gt;握住一个美梦，&lt;/p&gt;
-
-&lt;p&gt;给未来的自己。&lt;/p&gt;
+&lt;p&gt;导入：&lt;/p&gt;
+mongorestore -h 127.0.0.1 --port 4001 -d meteor dump/meteor
 </description>
     </item>
     
     <item>
-      <title>2013-02-16</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/2013-02-16</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>ldap 管理指南</title>
+      <link>http://blog.wenzhixin.net.cn/2015/11/10/slapd_slurpd</link>
+      <pubDate>Tue, 10 Nov 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/2013-02-16</guid>
-      <description>&lt;p&gt;时间过得真快，假期就这样结束了，明天早上就要启程去广州了，好久没坐过白天的车了，怕塞车，不过可以多陪陪父母，也是值得的。&lt;/p&gt;
+      <guid>http://blog.wenzhixin.net.cn/2015/11/10/slapd_slurpd</guid>
+      <description>
 
-&lt;p&gt;细数这16天的假期点滴，人太笨头脑不好使，记录一下下。&lt;/p&gt;
+&lt;h3 id=&#34;1-slapd-和-slurpd-介绍:df3185ccd2379abba6a913eb10dd16c0&#34;&gt;1. slapd 和 slurpd 介绍&lt;/h3&gt;
 
-&lt;p&gt;开心的事：可以陪老爸老妈看电视聊聊天；煮好午餐晚餐（应该很难吃），喊他们来吃饭了。&lt;/p&gt;
+&lt;p&gt;本章介绍如何编译、配置和运行独立的 LDAP 守护进程（slapd）和独立的更新复制守护进程（slurpd），该内容主要是针对系统管理员。&lt;/p&gt;
 
-&lt;p&gt;未完成的事：带了三本书回来，结果只看了一本半；电脑上的项目，基本上没怎么动过。&lt;/p&gt;
+&lt;h4 id=&#34;1-1-什么是目录服务:df3185ccd2379abba6a913eb10dd16c0&#34;&gt;1.1 什么是目录服务&lt;/h4&gt;
 
-&lt;p&gt;无奈的事：回来后一直停不下嘴，一个劲的吃吃吃，结果是上火和体重的增加。&lt;/p&gt;
+&lt;p&gt;目录服务（英语：Directory service）是一个储存、组织和提供信息访问服务的软件系统，在软件工程中，一个目录是指一组名字和值的映射。它允许根据一个给出的名字来查找对应的值，与词典相似。像词典中每一个词也许会有多个词义，在一个目录中，一个名字也许会与多个不同的信息相关联。类似地，就像一个词会有多个不同的发音和多个不同的词义，目录中的一个名字可能会有多个不同类型的值。&lt;/p&gt;
 
-&lt;p&gt;浪漫的事：情人节那天陪老爸逛墟市买东西。&lt;/p&gt;
+&lt;p&gt;目录也许只提供范围非常小的节点类型和数值类型，也可能对任意的或可扩展的一组类型提供支持。在一个电话目录中，节点就是姓名而数值项就是电话号码。在DNS中，节点是域名而数值项是IP地址（还有别名，邮件服务器名等等）。在一个网络操作系统的目录中，节点是那些由操作系统所管理的资源，包括用户、计算机、打印机和其它共享资源。互联网问世以来，有许多目录服务得到应用，但是本文主要关注那些源自X.500的目录服务。&lt;/p&gt;
 
-&lt;p&gt;好玩的事：改装了好久没用的音响的电路，自制接口接电脑，加上话筒，变身为KTV，K歌效果还不错。&lt;/p&gt;
+&lt;p&gt;目录服务遵循LDAP和X.500协议。目录服务的一个最常用例子是DNS服务。微软的Active Directory是目录服务的一个著名实现。&lt;/p&gt;
 
-&lt;p&gt;意外的事：第一次游潮州八景（几景忘了），是跟刚认识的两个女生一起的；带了游戏机回来，结果连碰都没碰过。&lt;/p&gt;
+&lt;h4 id=&#34;1-2-什么是-ldap:df3185ccd2379abba6a913eb10dd16c0&#34;&gt;1.2 什么是 LDAP&lt;/h4&gt;
 
-&lt;p&gt;鸭梨很大的事：亲戚中年龄最大还没对象的应该就是我了，一大群亲戚下命令让我明年要带一个回来。&lt;/p&gt;
+&lt;p&gt;轻型目录访问协议（英文：Lightweight Directory Access Protocol，缩写：LDAP）是一个开放的，中立的，工业标准的应用协议，通过IP协议提供访问控制和维护分布式信息的目录信息。 目录服务在开发内部网和与互联网程序共享用户、系统、网络、服务和应用的过程中占据了重要地位。例如，目录服务可能提供了组织有序的记录集合，通常有层级结构，例如公司电子邮件目录。同理，也可以提供包含了地址和电话号码的电话簿。&lt;/p&gt;
 
-&lt;p&gt;惭愧的事：农忙不能在家帮忙。&lt;/p&gt;
+&lt;h4 id=&#34;1-3-ldap-是如何工作的:df3185ccd2379abba6a913eb10dd16c0&#34;&gt;1.3 LDAP 是如何工作的&lt;/h4&gt;
 
-&lt;p&gt;感悟：&lt;/p&gt;
+&lt;p&gt;LDAP目录的条目（entry）由属性（attribute）的一个聚集组成，并由一个唯一性的名字引用，即专有名称（distinguished name，DN）。例如，DN能取这样的值：“ou=groups,ou=people,dc=scutech,dc=com”。&lt;/p&gt;
+         dc=com
 
-&lt;p&gt;1）工欲善其事，必先利其器。在煮菜的过程中，相比家里的厨具，宿舍的刀是钝的连肉都很难切，宿舍的电磁炉是火力不足，少了电压力锅，少了炖锅等等。只能慢慢改善。做技术其实也是一样，一个好的开发设备，会大大提升工作的效率，少了很多令人烦躁的等待。以后无论是生活还是工作，需要的工具该买好的就不应该为了省钱而买质量差的。
-2）相信爱情，相信缘分。回来参加朋友的婚礼，听完他们怎么认识以及恋爱的介绍，感觉真的很神奇，让我更加相信缘分。&lt;/p&gt;
+      |dc=scutech
+       /          \
+ ou=people     ou=groups
 
-&lt;p&gt;感动：&lt;/p&gt;
+&lt;p&gt;LDAP目录与普通数据库的主要不同之处在于数据的组织方式，它是一种有层次的、树形结构。所有条目的属性的定义是对象类object class的组成部分，并组成在一起构成schema；那些在组织内代表个人的schema被命名为white pages schema。数据库内的每个条目都与若干对象类联系，而这些对象类决定了一个属性是否为可选和它保存哪些类型的信息。属性的名字一般是一个易于记忆的字符串，例如用cn为通用名（common name）命名，而&amp;rdquo;mail&amp;rdquo;代表e-mail地址。属性取值依赖于其类型，并且LDAPv3中一般非二进制值都遵从UTF-8字符串语法。例如，mail属性包含值 &lt;code&gt;user@example.com&lt;/code&gt;；jpegPhotos属性一般包含JPEG/JFIF格式的图片。&lt;/p&gt;
 
-&lt;p&gt;有一天，天使守护的孩子长大了，孩子对天使说要走了。天使们彼此对望了一眼，什么都没说，把身边最好最珍贵的东西给了孩子。孩子把包袱一背，头也不回的走了。天使们连忙飞到高一点的地方去看孩子，孩子越走越快，越走越远，天使们都老了，还是挣扎着拼命向上飞，想再看孩子一眼。孩子变成了一个小黑点，渐渐地，小黑点也看不到了，这时候，两个天使才慢慢地飞回家去，关上门，熄了灯，在黑暗中静静地留下泪来。——守望的天使&lt;/p&gt;
+&lt;h4 id=&#34;1-4-什么是-slapd:df3185ccd2379abba6a913eb10dd16c0&#34;&gt;1.4 什么是 slapd&lt;/h4&gt;
 
-&lt;p&gt;写给自己的话：&lt;/p&gt;
+&lt;p&gt;Slapd 是 LDAP 的独立服务，可以在不同的 UNIX 系统下运行，你可以将其作为自己的目录服务器。Slapd 包含很多特性和功能：
+* 可选数据库：LDBM，基于磁盘的高性能数据库；SHELL，一个可以任意操作 UNIX 命令和 shell 脚本的数据库；PASSWD，简单的密码文件数据库。
+* 支持多个数据库实例
+* 通用的数据库接口
+* 权限访问控制
+* 多线程
+* 可复制&lt;/p&gt;
 
-&lt;p&gt;改变不了环境，可以改变自己；改变不了事实，可以改变态度；改变不了过去，可以改变现在；不能预知明天，可以把握今天；不能样样顺利，可以事事尽心；不能左右天气，可以改变心情。快乐的意义不是自己能得到多少快乐，而是自己能给身边的人带来多少快乐。&lt;/p&gt;
+&lt;h4 id=&#34;1-5-什么是-x-500-协议:df3185ccd2379abba6a913eb10dd16c0&#34;&gt;1.5 什么是 X.500 协议&lt;/h4&gt;
 
-&lt;p&gt;对于家，很迫切想改变些什么，却多少有些力不从心。新的一年，再出发，努力工作，努力赚钱。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>2014-01-01</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/summary</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/summary</guid>
-      <description>&lt;p&gt;送走了 2013 年，迎来了新的一年，今天 2014 的第一天，主题是“宅”和“睡”。&lt;br /&gt;
-想写点总结的，不过也不知道该写什么好，工作的总结要做成 PPT 上去讲。&lt;/p&gt;
+&lt;p&gt;X.500是计算机目录服务的标准系列。最早是ITU-T X.500开发，前身为CCITT的，并于1988年首次批准，此一目录可以成为全球目录的一部分。&lt;/p&gt;
 
-&lt;p&gt;只稍微总结下吧：&lt;/p&gt;
+&lt;p&gt;X.500协议包括：&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://wenzhixin.net.cn/&#34;&gt;博客&lt;/a&gt;文章篇数：103 篇&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/wenzhixin&#34;&gt;github&lt;/a&gt; Contributions 数：390 Total&lt;/li&gt;
-&lt;li&gt;旅游景点：40个&lt;/li&gt;
+&lt;li&gt;DAP (Directory Access Protocol)&lt;/li&gt;
+&lt;li&gt;DSP (Directory System Protocol)&lt;/li&gt;
+&lt;li&gt;DISP (Directory Information Shadowing Protocol)&lt;/li&gt;
+&lt;li&gt;DOP (Directory Operational Bindings Management Protocol)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;其实，元旦没有什么乐不乐的，只是代表着送走了旧的一年，同时也老了一岁。&lt;br /&gt;
-13年很多没有实现的，14年继续努力，做更好更努力的自己！&lt;/p&gt;
+&lt;h4 id=&#34;1-6-什么是-slurpd:df3185ccd2379abba6a913eb10dd16c0&#34;&gt;1.6 什么是 slurpd&lt;/h4&gt;
+
+&lt;p&gt;Slurpd 是一个提供复制服务的 UNIX 进程，它负责分发到主 slapd 更改数据库的各种 slapd 的副本。&lt;/p&gt;
+
+&lt;h3 id=&#34;2-安装配置-slapd:df3185ccd2379abba6a913eb10dd16c0&#34;&gt;2. 安装配置 slapd&lt;/h3&gt;
+
+&lt;h4 id=&#34;2-1-安装-slapd-和-ldap-utils:df3185ccd2379abba6a913eb10dd16c0&#34;&gt;2.1 安装 slapd 和 ldap-utils&lt;/h4&gt;
+
+&lt;p&gt;这里以 ubuntu 为例，说明如何安装和配置 slapd，通过 apt-get 来进行安装&lt;/p&gt;
+sudo apt-get install slapd ldap-utils
+
+&lt;h4 id=&#34;2-2-新增配置文件:df3185ccd2379abba6a913eb10dd16c0&#34;&gt;2.2 新增配置文件&lt;/h4&gt;
+sudo vi /etc/ldap/slapd.conf
+database ldbm
+suffix  &#34;dc=scutech,dc=com&#34;
+rootdn &#34;cn=admin, dc=scutech,dc=com&#34;
+rootpw secret
+directory &#34;/var/lib/ldap&#34;
+
+&lt;p&gt;重启 slapd&lt;/p&gt;
+sudo service slapd restart
+
+&lt;p&gt;查询数据&lt;/p&gt;
+ldapsearch -x -LLL -b dc=scutech,dc=com
+
+&lt;p&gt;可以看到我们添加的 admin 的数据&lt;/p&gt;
+dn: dc=scutech,dc=com
+objectClass: top
+objectClass: dcObject
+objectClass: organization
+o: scutech.com
+dc: scutech
+
+dn: cn=admin,dc=scutech,dc=com
+objectClass: simpleSecurityObject
+objectClass: organizationalRole
+cn: admin
+description: LDAP administrator
+
+&lt;h4 id=&#34;2-3-新增用户:df3185ccd2379abba6a913eb10dd16c0&#34;&gt;2.3 新增用户&lt;/h4&gt;
+vi my.ldif
+dn: dc=scutech,dc=com
+o: scutech.com
+objectclass: organization
+
+dn: cn=admin, dc=scutech,dc=com
+cn: zhixin
+sn: wen
+mail: wenzhixin2010@gmail.com
+objectclass: person
+
+&lt;p&gt;这里可以包含任何想要的属性值&lt;/p&gt;
+ldapadd -cx -D cn=admin,dc=scutech,dc=com -w password -f my.ldif
 </description>
     </item>
     
     <item>
-      <title>2014-03-01</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/2014-03-01</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>Installing Virtualbox On Ubuntu Server 14.04</title>
+      <link>http://blog.wenzhixin.net.cn/2015/09/07/installing_vbox_on_ubuntu_server</link>
+      <pubDate>Mon, 07 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/2014-03-01</guid>
-      <description>&lt;p&gt;好多年没回家过大劳热：“二月戏”了，想想，高中到现在了吧。第一次坐高铁，还是挺方便的，有公车直接到市区，半个钟。&lt;/p&gt;
+      <guid>http://blog.wenzhixin.net.cn/2015/09/07/installing_vbox_on_ubuntu_server</guid>
+      <description>
 
-&lt;p&gt;谢谢好哥们带我逛了那么多景点，同时也祝好哥们生日快乐，天天开心。&lt;/p&gt;
+&lt;p&gt;For some reasons, my computer just only installed Ubuntu Server 14.04 system.
+But sometimes I need to use Windows system to test our project, so I think if I can install virtualbox on the Ubuntu Server,
+and then manage the virtualbox by website.&lt;/p&gt;
 
-&lt;p&gt;一个人逛了一大圈侨中，发现变化不是很大，学校的教室楼现在新了许多，虽然进不去，不过，那熟悉的发达路，熟悉的侨中桥，熟悉的小黑河，熟悉的新安街和“大包”（大仓超市）还是一样，就是当时经常去买书的书店不见了。&lt;/p&gt;
+&lt;p&gt;How to do that?&lt;/p&gt;
 
-&lt;p&gt;好怀念那些年与老表在外租房的日子，好怀念那些年为了高考而奋斗的艰辛，好怀念那些年饿了就跑“大包”买泡面的生活。&lt;/p&gt;
+&lt;h3 id=&#34;install-virtualbox:f2d7fafa77e4f10c223d7eeab65bce2b&#34;&gt;Install Virtualbox&lt;/h3&gt;
 
-&lt;p&gt;没有想到的是，那家”凤凰炒饭“还在，五块钱的牛肉芥兰炒粿条加+免费的凤凰茶，味道还是那样的给力。跟老板聊天没想到还记得我，问我是不是还在读大学。哈哈，时光飞逝啊，一下子，那奋斗的日子已经过去8年了。&lt;/p&gt;
+&lt;p&gt;First we go to the &lt;a href=&#34;http://www.oracle.com/technetwork/server-storage/virtualbox/downloads/index.html&#34;&gt;website&lt;/a&gt;,
+and download the latest verion(5.0.2) of Virtualbox:&lt;/p&gt;
+wget http://download.virtualbox.org/virtualbox/5.0.2/virtualbox-5.0_5.0.2-102096~Ubuntu~trusty_amd64.deb
+wget http://download.virtualbox.org/virtualbox/5.0.2/Oracle_VM_VirtualBox_Extension_Pack-5.0.2-102096.vbox-extpack
 
-&lt;p&gt;离高考还不到100天了，祝愿那些正在努力奋斗的学弟学妹们取得满意的成绩，考上理想的学校。&lt;/p&gt;
+&lt;p&gt;Install:&lt;/p&gt;
+sudo dpkg -i virtualbox-5.0_5.0.2-102096\~Ubuntu\~trusty_amd64.deb
+sudo apt-get install -f # install dependency
+sudo VBoxManage extpack install Oracle_VM_VirtualBox_Extension_Pack-5.0.2-102096.vbox-extpack
+
+&lt;h3 id=&#34;add-vbox-user:f2d7fafa77e4f10c223d7eeab65bce2b&#34;&gt;Add vbox user&lt;/h3&gt;
+
+&lt;p&gt;Because we want to use the web service that Virtualbox provide, we need to create a new user and set the password of the user:&lt;/p&gt;
+sudo useradd -m -G vboxusers vbox
+sudo passwd vbox
+
+&lt;h3 id=&#34;install-web-server:f2d7fafa77e4f10c223d7eeab65bce2b&#34;&gt;Install web server&lt;/h3&gt;
+
+&lt;p&gt;Install apache, PHP and Other components:&lt;/p&gt;
+sudo apt-get install apache2 php5 libapache2-mod-php5 php-soap
+
+&lt;h3 id=&#34;install-phpvirtualbox:f2d7fafa77e4f10c223d7eeab65bce2b&#34;&gt;Install phpvirtualbox&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://sourceforge.net/projects/phpvirtualbox/&#34;&gt;Phpvirtualbox&lt;/a&gt; is an open source project that is a web-based front-end to VirtualBox written in PHP.
+We use it to manage our Virtualbox, download the latest verion(5.0.2):&lt;/p&gt;
+wget http://downloads.sourceforge.net/project/phpvirtualbox/phpvirtualbox-5.0-2.zip -O phpvirtualbox.zip
+
+&lt;p&gt;Unzip the package and move to the root dir:&lt;/p&gt;
+unzip phpvirtualbox.zip
+sudo mv phpvirtualbox-5.0-2 /var/www/html/vbox
+
+&lt;p&gt;Setup the config file, make &lt;code&gt;$username&lt;/code&gt; and &lt;code&gt;$password&lt;/code&gt; match the user we created earlier:&lt;/p&gt;
+sudo mv /var/www/html/vbox/config.php-example /var/www/html/vbox/config.php
+sudo vi /var/www/html/vbox/config.php
+
+&lt;h3 id=&#34;config-virtualbox-webservice:f2d7fafa77e4f10c223d7eeab65bce2b&#34;&gt;Config Virtualbox webservice&lt;/h3&gt;
+
+&lt;p&gt;Add &lt;code&gt;VBOXWEB_USER=vbox&lt;/code&gt; to file:&lt;/p&gt;
+sudo vi /etc/default/virtualbox
+
+&lt;p&gt;Start the service:&lt;/p&gt;
+sudo /etc/init.d/vboxweb-service start
+
+&lt;h3 id=&#34;done:f2d7fafa77e4f10c223d7eeab65bce2b&#34;&gt;Done&lt;/h3&gt;
+
+&lt;p&gt;Now we can open bowser and go to &lt;code&gt;http://server/vbox&lt;/code&gt; and login with username &lt;code&gt;admin&lt;/code&gt; and password &lt;code&gt;admin&lt;/code&gt; (you can change it when login into phpvirtualbox).&lt;/p&gt;
+
+&lt;p&gt;We can see the view is so familiar, that&amp;rsquo;s it.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2015/09/07/finish.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
-      <title>2014-03-03</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/2014-03-03</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>在 Ubuntu 14.04 server 上部署 meteor 应用</title>
+      <link>http://blog.wenzhixin.net.cn/2015/07/06/meteor_deploy</link>
+      <pubDate>Mon, 06 Jul 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/2014-03-03</guid>
-      <description>&lt;p&gt;好久没坐从家里直接到广州的车了，可能这么多年也就坐过一两次吧。想着一个人又要去市区等几个钟的车，怪可怜的，在老表的提议下决定重新体验下。&lt;/p&gt;
+      <guid>http://blog.wenzhixin.net.cn/2015/07/06/meteor_deploy</guid>
+      <description>
 
-&lt;p&gt;发现现在换成了金顺快车，貌似还不错，车上也算是比较舒服的，座位比较少，加上今晚人很少，一个人可以坐一大排的座位了，刚好可以睡个好觉。&lt;/p&gt;
+&lt;h3 id=&#34;关于-meteor-js:a7799df58081dcf48248d422bcf9047b&#34;&gt;关于 Meteor.js&lt;/h3&gt;
 
-&lt;p&gt;想着刚刚还跟家人聊天一起看电视的，明早就在办公室工作了，多多少少有些小感触。每次出发都有些不舍，不过男儿志在四方，有些路必须得去走，有些事还等着去完成。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://meteor.com/&#34;&gt;Meteor.js&lt;/a&gt; Meteor 是一个构建在 Node.js 之上的平台，用来开发实时网页程序。Meteor 位于程序数据库和用户界面之间，保持二者之间的数据同步更新。使用 Meteor，几小时之内就能开发出一个正常运行的实时网页程序。&lt;/p&gt;
 
-&lt;p&gt;这两天大部分时间都在陪两个小朋友，一起看动画片、一起玩游戏、一起玩纸牌、一起吹泡泡等等。其实很喜欢小朋友的，喜欢他们的天真无邪，喜欢他们的乖巧懂事，还有喜欢他们的一颦一笑。可能童心未泯吧，他们从小也挺喜欢找我一起玩耍。每次回来还没到家，就打好几个电话问到了没，到哪里了，而基本上每次一回到家，见到侄子或者侄女，也特别的开心。&lt;/p&gt;
+&lt;h3 id=&#34;编译部署-meteor-应用到服务器:a7799df58081dcf48248d422bcf9047b&#34;&gt;编译部署 meteor 应用到服务器&lt;/h3&gt;
 
-&lt;p&gt;昨晚看出彩中国人，是一个给有梦想的人提供舞台展现自己梦想的节目。他们的表演很精彩，他们的故事也很感人。挺佩服那些为了实现自己的梦想，坚持了好多年的人，特别是那些拥有同样的梦想，然后走到一起，一起努力了好多年甚至好几十年的夫妻。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;将我们的应用编译到 build 中&lt;/p&gt;
+cd myapp
+meteor build --directory ../build&lt;/li&gt;
 
-&lt;p&gt;下午同老表走走逛逛，聊了许多，人生这条路吧，怎么选择，要怎么走，貌似也没能聊出个什么结果。不过多少还是有些收获的，就像上面所提到的，对于工作，做自己喜欢的还是很重要的，可以去坚持；而对于感情的，毕竟是相互的，要两个人朝着相同的目标，所以顺其自然就好，等着那个人的出现。&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;使用 rsync 同步到服务器上&lt;/p&gt;
+cd ../
+rsync -avz build/bundle hostname:/home/myapp&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;回来还带了一本厚厚的书的，不过也只看了几十页，下次估计就不带了。而每次出发，老妈总是给我准备了满满一大袋吃的东西，知道她们舍不得吃，特意留给我的，又拗不过，所以每次都只能以重为由，不带或者只带一部分。说到书的，突然想起朋友让我带那本看见的，好像忘记带了～&lt;/p&gt;
+&lt;h3 id=&#34;安装-mongodb:a7799df58081dcf48248d422bcf9047b&#34;&gt;安装 mongodb&lt;/h3&gt;
+sudo apt-get install mongodb-server
 
-&lt;p&gt;最后，好好睡一觉好了，天一亮就到目的地了，say good night to myself～&lt;/p&gt;
+&lt;h3 id=&#34;编写-upstart-脚本:a7799df58081dcf48248d422bcf9047b&#34;&gt;编写 upstart 脚本&lt;/h3&gt;
+sudo vi /etc/init/myapp.conf
+#!upstart
+description &#34;Meteor Up - myapp&#34;
+author      &#34;Arunoda Susiripala, &lt;arunoda.susiripala@gmail.com&gt;&#34;
+
+start on runlevel [2345]
+stop on runlevel [06]
+
+respawn
+
+limit nofile 65536 65536
+
+script
+
+    # leave as 127.0.0.1 for security
+    export BIND_IP=127.0.0.1
+
+    # the port nginx is proxying requests to
+    export PORT=3000
+
+    # this allows Meteor to figure out correct IP address of visitors
+    export HTTP_FORWARDED_COUNT=1
+
+    # MongoDB connection string using myapp as database name
+    export MONGO_URL=mongodb://localhost:27017/myapp
+
+    # The domain name as configured previously as server_name in nginx
+    export ROOT_URL=https://myapp.wenzhixin.net.cn
+
+    exec node /home/myapp/bundle/main.js
+
+end script
+
+&lt;p&gt;启动：&lt;/p&gt;
+sudo start myapp
+
+&lt;h3 id=&#34;配置-nginx:a7799df58081dcf48248d422bcf9047b&#34;&gt;配置 nginx&lt;/h3&gt;
+server {
+    listen 80;
+    server_name myapp.wenzhixin.net.cn;
+
+    location / {
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $http_host;
+        proxy_set_header X-NginX-Proxy true;
+
+        proxy_pass http://127.0.0.1:3000;
+        proxy_redirect off;
+    }
+}
+
+&lt;p&gt;访问 myapp.wenzhixin.net.cn&lt;/p&gt;
 </description>
     </item>
     
     <item>
-      <title>2014-10-19</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/2014-10-19</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>react-memory：基于 nodejs &#43; bower &#43; react 的文字记忆游戏</title>
+      <link>http://blog.wenzhixin.net.cn/2015/06/07/react_memory</link>
+      <pubDate>Sun, 07 Jun 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/2014-10-19</guid>
-      <description>&lt;p&gt;人生一世，不过是一个又一个二十四小时的叠积，在这样宝贵的光阴里，我们必须明白自己所做的选择，是读一本好书、记两三感慨、听几曲好歌、还是做感兴趣之事？&lt;/p&gt;
+      <guid>http://blog.wenzhixin.net.cn/2015/06/07/react_memory</guid>
+      <description>
 
-&lt;p&gt;今天读三毛的《送你一匹马》，又一本好书，明白了：读书多了，容颜自然改变。许多时候，自己可能以为许多看过的书都成过眼烟云，不复记忆，其实它们仍在潜在的。在气质里，在谈吐上，在胸襟的无涯。当然，也能显露在生活和文字中。&lt;/p&gt;
+&lt;h3 id=&#34;前言:126e5f0c3267828479b5a765d781e066&#34;&gt;前言&lt;/h3&gt;
 
-&lt;p&gt;读书，不为任何人，只为自己高兴。当然很多时候并不会说刻意去读书，毕竟太过刻意的东西，就连风景都得寻寻觅觅，寻找的东西，往往找不到，还很累人。&lt;/p&gt;
+&lt;p&gt;现在最热门的前端框架，毫无疑问是 &lt;a href=&#34;https://facebook.github.io/react/&#34;&gt;React&lt;/a&gt;，React 是由 Facebook 出品的 JavaScript 框架，由于该框架比较新，比较少中文的资料。这几天看了很多篇关于 react 的英文文章，不得不说 React 是创建大型、快速的 Web 应用的最好方式。在本文中，我们将通过一步一步的创建一个简单的文字记忆游戏，来体验 React 的思想和强大之处。&lt;/p&gt;
 
-&lt;p&gt;看到好的文字或者有些新的想法，都会记录起来，以不时的提醒自己、激励自己。正所谓好记性不如烂笔头，毕业以来，断断续续记录了一些文章，平均算下来，虽然写一篇博客花了不少时间，但遇到相同问题时也能节省不少时间。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;PS：&lt;/strong&gt; 由于对 React 的学习也是皮毛，但是在这里，我希望这个小游戏能够成为学习 React 的最佳开发结构，并且随着自己的不断学习，将会继续改进和完善这里的代码。假如您有任何的建议和反馈，请给我留言，谢谢！&lt;/p&gt;
 
-&lt;p&gt;身边有朋友很爱音乐，我也爱，但是不痴迷，偶得好歌两三曲，便也足以让我好好品味一番了。&lt;/p&gt;
+&lt;p&gt;在开始之前我们先来看看我们的 &lt;a href=&#34;http://demos.wenzhixin.net.cn/react-memory&#34;&gt;demo&lt;/a&gt;，游戏非常简单，输入想要记忆的文字，然后点击开始记忆即可。试玩了我们的游戏之后，那么现在就开始吧。&lt;/p&gt;
 
-&lt;p&gt;说到感兴趣的事，这段时间每天都会花好些时间于学习英语上。都说兴趣是最好的老师，自己也渐渐地对学好英语感兴趣起来。任何的知识，都总到用时方恨少。&lt;/p&gt;
+&lt;p&gt;先来看看我们的目录结构，你可以在 GitHub 上找到相对应的&lt;a href=&#34;https://github.com/wenzhixin/react-memory&#34;&gt;源码&lt;/a&gt;：&lt;/p&gt;
+├── bower_components
+│   ├── bootstrap
+│   └── jquery
+├── node_modules
+│   ├── browserify
+│   ├── lodash
+│   ├── react
+│   ├── reactify
+│   └── watchify
+├── docs
+│   ├── component.dot
+│   └── component.png
+├── build
+│   └── app.js
+├── css
+│   └── style.css
+├── index.html
+├── js
+│   ├── app.js
+│   ├── board.js
+│   ├── game.js
+│   ├── status.js
+│   ├── tile.js
+│   └── word-form.js
+├── bower.json
+├── package.json
+└── README.md
 
-&lt;p&gt;对于码字，还是那样的义无反顾，真是码到无穷处，坐看云起时，前途现光明，彼岸便此身。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;bower_components 和 bower.json 是安装 bower 组件的目录和配置信息。&lt;/li&gt;
+&lt;li&gt;node_modules 和 package.json 是安装 npm 模块的目录和配置信息。&lt;/li&gt;
+&lt;li&gt;docs 用于存放我们的文档信息。&lt;/li&gt;
+&lt;li&gt;css 和 js 用于存放样式和 JavaScript 源码。&lt;/li&gt;
+&lt;li&gt;build 用于存放最后编译的 css 和 js 文件。&lt;/li&gt;
+&lt;li&gt;index.html 是我们游戏的主页面，也就是 React 的入口。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;初始化:126e5f0c3267828479b5a765d781e066&#34;&gt;初始化&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;首先，创建 npm 模块的配置文件 package.json&lt;/li&gt;
+&lt;/ul&gt;
+{
+    &#34;name&#34;: &#34;react-memory&#34;,
+    &#34;version&#34;: &#34;1.0.0&#34;,
+    &#34;description&#34;: &#34;基于 nodejs + bower + react 的文字记忆游戏。&#34;,
+    &#34;browserify&#34;: {
+        &#34;transform&#34;: [
+            [&#34;reactify&#34;]
+        ]
+    },
+    &#34;author&#34;: &#34;wenzhixin &lt;wenzhixin2010@gmail.com&gt; (http://wenzhixin.net.cn/)&#34;,
+    &#34;license&#34;: &#34;MIT&#34;
+}
+
+&lt;ul&gt;
+&lt;li&gt;接着，创建 bower 组件的配置文件 bower.json&lt;/li&gt;
+&lt;/ul&gt;
+{
+    &#34;name&#34;: &#34;react-memory&#34;,
+    &#34;version&#34;: &#34;1.0.0&#34;,
+    &#34;authors&#34;: [
+        &#34;zhixin &lt;wenzhixin2010@gmail.com&gt;&#34;
+    ],
+    &#34;license&#34;: &#34;MIT&#34;,
+    &#34;ignore&#34;: [
+        &#34;**/.*&#34;,
+        &#34;node_modules&#34;,
+        &#34;bower_components&#34;,
+        &#34;test&#34;,
+        &#34;tests&#34;
+    ]
+}
+
+&lt;ul&gt;
+&lt;li&gt;安装所需要的依赖包&lt;/li&gt;
+&lt;/ul&gt;
+# 运行游戏时需要的依赖包
+npm install --save react lodash
+bower install --save bootstrap
+
+# 编译游戏时需要的依赖包
+npm install --save-dev browserify watchify reactify
+
+# 全局命令行工具
+npm install -g browserify watchify http-server
+
+&lt;p&gt;可以看到，我们安装了运行游戏时所需要的依赖包：react，&lt;a href=&#34;https://github.com/lodash/lodash/&#34;&gt;lodash&lt;/a&gt; 模块，以及 &lt;a href=&#34;https://github.com/twbs/bootstrap&#34;&gt;bootstrap&lt;/a&gt; 组件，lodash 是一个非常实用的工具库，游戏中我们使用到了好多它所提供的操作 array 的简单方法，react 和 bootstrap 的话就不用说了。&lt;/p&gt;
+
+&lt;h3 id=&#34;react-组件依赖层次:126e5f0c3267828479b5a765d781e066&#34;&gt;React 组件依赖层次&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/wenzhixin/react-memory/raw/master/docs/component.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;React 中都是以组件的方式来体现的，从上往下，我们切割成非常小、功能单一的组件，分别是：
+* Game：游戏组件
+* WordForm：文字输入组价
+* Board：游戏面板组件
+* Status：游戏状态组价
+* Tile：单个卡片组件&lt;/p&gt;
+
+&lt;h3 id=&#34;组件模板:126e5f0c3267828479b5a765d781e066&#34;&gt;组件模板&lt;/h3&gt;
+
+&lt;p&gt;由于我们使用了 nodejs 的开发方式以及 React 独有的 JSX 语法，我们组件的模板为：&lt;/p&gt;
+var React = require(&#39;react&#39;), // 加载 react 模块
+    _ = require(&#39;lodash&#39;), // 加载 lodash 模块
+    OtherComponent = require(&#39;./other-component&#39;); // 加载其他自定义 React 模块
+
+var Component = React.createClass({
+    // 定义组件所需要的 properties 属性
+    propTypes: {
+        prop1: React.PropTypes.string.isRequired,
+        func1: React.PropTypes.func.isRequired
+    },
+    // 初始化组件的状态，并非所有组件都需要 state
+    getInitialState: function () {
+        return {};
+    },
+    // 渲染我们的界面
+    render: function () {
+        return (
+            &lt;OtherComponent prop1={this.props.prop1} func1={{this.props.func1}} /&gt;
+        );
+    }
+});
+
+module.exports = Component;
+
+&lt;p&gt;对于各行代码的意思，已加了详细的注释说明，在下面的 js 代码中，也是一样在代码中做了详细注释，由于我们只关注组件的核心部分，与模板相同的地方，我们就不做解释了。&lt;/p&gt;
+
+&lt;h3 id=&#34;game:126e5f0c3267828479b5a765d781e066&#34;&gt;Game&lt;/h3&gt;
+
+&lt;p&gt;创建文件：&lt;code&gt;js/game.js&lt;/code&gt;&lt;/p&gt;
+var React = require(&#39;react&#39;),
+    _ = require(&#39;lodash&#39;),
+    Board = require(&#39;./board&#39;),
+    WordForm = require(&#39;./word-form&#39;);
+
+var Game = React.createClass({
+    // 初始化 state，这里我们使用了 words 数组，用于保存输入的文字
+    getInitialState: function () {
+        return {words: undefined};
+    },
+    // 开始游戏
+    startGame: function (words) {
+        this.setState({
+            // 组合并打乱输入的文字
+            words: _.shuffle(words.concat(words))
+        });
+    },
+    // 结束游戏，设置 words 为 undefined
+    endGame: function () {
+        this.setState({words: undefined});
+    },
+    // 根据 words 来显示我们自定义的组件
+    render: function () {
+        return (
+            this.state.words ?
+                &lt;Board onEndGame={this.endGame} words={this.state.words}/&gt; :
+                &lt;WordForm onWordsEntered={this.startGame} /&gt;
+        );
+    }
+});
+
+module.exports = Game;
+
+&lt;h3 id=&#34;wordform:126e5f0c3267828479b5a765d781e066&#34;&gt;WordForm&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;新建文件：&lt;code&gt;js/word-form.js&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+var React = require(&#39;react&#39;),
+    _ = require(&#39;lodash&#39;);
+
+var WordForm = React.createClass({
+    // 需要提供 onWordsEntered 方法，用于触发提交方法，在 Game 中我们使用了 startGame
+    propTypes: {
+        onWordsEntered: React.PropTypes.func.isRequired
+    },
+    // 初始化 error 状态
+    getInitialState: function () {
+        return {error: undefined};
+    },
+    // 显示错误信息，2s 后自动消失
+    setError: function (msg) {
+        this.setState({error: msg});
+        setTimeout(function () {
+            this.setState({error: &#39;&#39;});
+        }.bind(this), 2000);
+    },
+    // 提交文字信息，判断是否符合条件
+    submitWords: function (e) {
+        e.preventDefault();
+
+        var node = this.refs.words.getDOMNode(),
+            // unique 用于生成唯一的字符
+            words = _.unique((node.value || &#39;&#39;).trim().split(&#39;&#39;));
+
+        if (words.length &lt; 3) {
+            this.setError(&#39;请至少输入三个不同的字符！&#39;);
+        } else {
+            this.props.onWordsEntered(words);
+            node.value = &#39;&#39;;
+        }
+    },
+    render: function () {
+        return (
+            &lt;form className=&#39;form-inline&#39; onSubmit={this.submitWords}&gt;
+                &lt;span&gt;请输入你想记忆的字符：&lt;/span&gt;
+                &lt;input className=&#39;form-control&#39; type=&#39;text&#39; ref=&#39;words&#39; maxLength=&#39;10&#39;
+                    defaultValue=&#39;文字记忆游戏&#39; /&gt;
+                &lt;button className=&#39;btn btn-default&#39; type=&#39;submit&#39;&gt;开始记忆&lt;/button&gt;
+                &lt;p className=&#39;error&#39;&gt;{this.state.error}&lt;/p&gt;
+            &lt;/form&gt;
+        );
+    }
+});
+
+module.exports = WordForm;
+
+&lt;ul&gt;
+&lt;li&gt;由于用用到了 bootstrap 的样式和自定义了 error 样式，需要创建 &lt;code&gt;css/style.css&lt;/code&gt; 文件&lt;/li&gt;
+&lt;/ul&gt;
+@import &#34;../bower_components/bootstrap/dist/css/bootstrap.min.css&#34;;
+
+.error {
+    color: red;
+}
+
+&lt;h3 id=&#34;boar:126e5f0c3267828479b5a765d781e066&#34;&gt;Boar&lt;/h3&gt;
+
+&lt;p&gt;新建文件：&lt;code&gt;js/board.js&lt;/code&gt;&lt;/p&gt;
+var React = require(&#39;react&#39;),
+    _ = require(&#39;lodash&#39;),
+    Tile = require(&#39;./tile&#39;),
+    Status = require(&#39;./status&#39;);
+
+var Board = React.createClass({
+    // 需要提供 words 属性，以及 onEndGame 方法，分别对应 Game 的属性和方法
+    propTypes: {
+        words: React.PropTypes.arrayOf(React.PropTypes.string).isRequired,
+        onEndGame: React.PropTypes.func.isRequired
+    },
+    // 在组件还未 mount 之前用于计算总共有多少对文字卡片
+    componentWillMount: function () {
+        this.max = this.props.words.length / 2;
+    },
+    // State 状态
+    // found：表示找到了多少对文字卡片
+    // message：显示当前的状态
+    // tileStates
+    getInitialState: function () {
+        return {
+            found: 0,
+            message: &#39;chooseTile&#39;,
+            tileStates: new Array(this.props.words.length + 1).join(&#39;unturned &#39;).trim().split(&#39; &#39;)
+        };
+    },
+    // 游戏逻辑的处理方法
+    clickedTile: function (index) {
+        // 当卡片的状态为 unturned（未翻转）时，才进行处理
+        if (this.state.tileStates[index] === &#39;unturned&#39;) {
+            // flippedTile 用于保存上个点击的卡片的 index
+            if (this.flippedTile === undefined) {
+                this.flippedTile = index;
+                // 设置状态为 findMate
+                this.setState({
+                    message: &#39;findMate&#39;,
+                    // 使用 lodash 方法，将对应的下标置为 revealed（翻转）状态
+                    tileStates: _.extend(this.state.tileStates, _.object([index], [&#39;revealed&#39;]))
+                });
+            } else {
+                var otherIndex = this.flippedTile,
+                    matched = this.props.words[index] === this.props.words[this.flippedTile];
+
+                if (matched) {
+                    // 找到相对应的卡片，found + 1，并将状态置为 foundMate
+                    this.setState({
+                        found: this.state.found + 1,
+                        message: &#39;foundMate&#39;,
+                        // 使用 lodash 方法，将对应的下标置为 correct（正确）状态
+                        tileStates: _.extend(this.state.tileStates,
+                            _.object([index, otherIndex], [&#39;correct&#39;, &#39;correct&#39;]))
+                    });
+                } else {
+                    // 没有找到相对应的卡片，将状态置为 wrong
+                    this.setState({
+                        message: &#39;wrong&#39;,
+                        // 使用 lodash 方法，将对应的下标置为 wrong（错误）状态
+                        tileStates: _.extend(this.state.tileStates,
+                            _.object([index, otherIndex], [&#39;wrong&#39;, &#39;wrong&#39;]))
+                    });
+                }
+                // 删除保存的信息
+                delete this.flippedTile;
+
+                // 1.5s 后我们将卡片翻转回来
+                setTimeout(function () {
+                    // 需要判断组件是否 mounted
+                    if (this.isMounted()) {
+                        // 假如所有都选中了，将状态置为 foundAll
+                        this.setState({
+                            message: this.state.message === &#39;findMate&#39; ? &#39;findMate&#39; :
+                                this.max === this.state.found ? &#39;foundAll&#39; : &#39;chooseTile&#39;,
+                            tileStates: matched ? this.state.tileStates : _.extend(this.state.tileStates,
+                                _.object([index, otherIndex], [&#39;unturned&#39;, &#39;unturned&#39;]))
+                        });
+                    }
+                }.bind(this), 1500);
+            }
+        }
+    },
+    render: function () {
+        // 使用 map 方式，将所有的卡片显示出来
+        var tiles = this.props.words.map(function (word, i) {
+            return (
+                &lt;div key={i} onClick={_.partial(this.clickedTile, i)}&gt;
+                    &lt;Tile word={word} status={this.state.tileStates[i]} /&gt;
+                &lt;/div&gt;
+            );
+        }.bind(this));
+        return (
+            &lt;div&gt;
+                &lt;button className=&#39;btn btn-default&#39; onClick={this.props.onEndGame}&gt;结束记忆&lt;/button&gt;
+                &lt;Status found={this.state.found} max={this.max} message={this.state.message} /&gt;
+                {tiles}
+            &lt;/div&gt;
+        );
+    }
+});
+
+module.exports = Board;
+
+&lt;h3 id=&#34;status:126e5f0c3267828479b5a765d781e066&#34;&gt;Status&lt;/h3&gt;
+
+&lt;p&gt;新建文件&lt;code&gt;status.js&lt;/code&gt;&lt;/p&gt;
+var React = require(&#39;react&#39;);
+
+var Status = React.createClass({
+    propTypes: {
+        found: React.PropTypes.number.isRequired,
+        max: React.PropTypes.number.isRequired,
+        message: React.PropTypes.oneOf([
+            &#39;chooseTile&#39;, &#39;findMate&#39;, &#39;wrong&#39;, &#39;foundMate&#39;, &#39;foundAll&#39;
+        ]).isRequired
+    },
+    render: function () {
+        var found = this.props.found,
+            max = this.props.max,
+            texts = {
+                chooseTile: &#39;选择一张卡片！&#39;,
+                findMate: &#39;现在我们来查找相对应的卡片！&#39;,
+                wrong: &#39;很遗憾，这两张卡片不匹配！&#39;,
+                foundMate: &#39;不错，他们是一对的！&#39;,
+                foundAll: &#39;恭喜过关，你已经找到所有&#39; + max + &#39;对卡片了！&#39;
+            };
+        return (
+            &lt;p&gt;({found}/{max})  {texts[this.props.message]}&lt;/p&gt;
+        );
+    }
+});
+
+module.exports = Status;
+
+&lt;h3 id=&#34;tile:126e5f0c3267828479b5a765d781e066&#34;&gt;Tile&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;新建文件&lt;code&gt;tile.js&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+var React = require(&#39;react&#39;);
+
+var Tile = React.createClass({
+    propTypes: {
+        status: React.PropTypes.string.isRequired,
+        word: React.PropTypes.string.isRequired
+    },
+    render: function () {
+        return (
+            &lt;div className={&#39;brick &#39; + this.props.status}&gt;
+                &lt;div className=&#39;front&#39;&gt;&lt;i className=&#39;glyphicon glyphicon-question-sign&#39;&gt;&lt;/i&gt;&lt;/div&gt;
+                &lt;div className=&#39;back&#39;&gt;{this.props.word}&lt;/div&gt;
+            &lt;/div&gt;
+        );
+    }
+});
+
+module.exports = Tile;
+
+&lt;ul&gt;
+&lt;li&gt;修改文件&lt;code&gt;css/style.css&lt;/code&gt;，增加卡片需要的样式&lt;/li&gt;
+&lt;/ul&gt;
+@-webkit-keyframes wronganim {
+    to {
+        background-color: red;
+    }
+}
+
+@-moz-keyframes wronganim {
+    to {
+        background-color: red;
+    }
+}
+
+@keyframes wronganim {
+    to {
+        background-color: red;
+    }
+}
+
+@-webkit-keyframes correctanim {
+    to {
+        background-color: green;
+        color: white;
+    }
+}
+
+@-moz-keyframes correctanim {
+    to {
+        background-color: green;
+        color: white;
+    }
+}
+
+@keyframes correctanim {
+    to {
+        background-color: green;
+        color: white;
+    }
+}
+
+.brick &gt; div {
+    width: 80px;
+    height: 80px;
+    border: 1px solid black;
+    text-align: center;
+    line-height: 80px;
+    font-size: 24px;
+    -webkit-backface-visibility: hidden;
+    -webkit-transition: -webkit-transform 0.3s linear;
+    -moz-transition: -moz-transform 0.3s linear;
+    transition: transform 0.3s linear;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    position: absolute;
+    overflow: hidden;
+    border-radius: 5px;
+    backface-visibility: hidden;
+}
+
+.brick &gt; .front {
+    background-color: #AAA;
+}
+
+.brick, .brick div {
+    user-select: none;
+    cursor: pointer;
+}
+
+.brick {
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    width: 80px;
+    height: 80px;
+}
+
+.brick &gt; .back {
+    -webkit-animation-duration: 0.5s;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-delay: 0.3s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-duration: 0.5s;
+    -moz-animation-timing-function: ease;
+    -moz-animation-delay: 0.3s;
+    -moz-animation-iteration-count: 1;
+    -moz-animation-fill-mode: forwards;
+    animation-duration: 0.5s;
+    animation-timing-function: ease;
+    animation-delay: 0.3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.brick.wrong &gt; .back {
+    -webkit-animation-name: wronganim;
+    -moz-animation-name: wronganim;
+    animation-name: wronganim;
+}
+
+.brick.correct &gt; .back {
+    -webkit-animation-name: correctanim;
+    -moz-animation-name: correctanim;
+    animation-name: correctanim;
+}
+
+.brick &gt; .back {
+    -webkit-transform: perspective(80px) rotateY(180deg) translate3d(0px, 0px, 2px);
+    -moz-transform: perspective(80px) rotateY(180deg) translate3d(0px, 0px, 2px);
+    transform: perspective(80px) rotateY(180deg) translate3d(0px, 0px, 2px);
+}
+
+.brick.correct &gt; .front, .brick.wrong &gt; .front, .brick.revealed &gt; .front {
+    -webkit-transform: perspective(80px) rotateY(-180deg) translate3d(0px, 0px, 2px);
+    -moz-transform: perspective(80px) rotateY(-180deg) translate3d(0px, 0px, 2px);
+    transform: perspective(80px) rotateY(-180deg) translate3d(0px, 0px, 2px);
+}
+
+.brick.correct &gt; .back, .brick.wrong &gt; .back, .brick.revealed &gt; .back {
+    -webkit-transform: perspective(80px) rotateY(0deg) translate3d(0px, 0px, 1px);
+    -moz-transform: perspective(80px) rotateY(0deg) translate3d(0px, 0px, 1px);
+    transform: perspective(80px) rotateY(0deg) translate3d(0px, 0px, 1px);
+}
+
+.front {
+    font-size: 2em;
+}
+
+&lt;h3 id=&#34;app-js:126e5f0c3267828479b5a765d781e066&#34;&gt;app.js&lt;/h3&gt;
+
+&lt;p&gt;创建好了我们所有的组件之后，我们需要将组件组合起来，创建文件&lt;code&gt;app.js&lt;/code&gt;&lt;/p&gt;
+var React = require(&#39;react&#39;),
+    Game = require(&#39;./game&#39;);
+
+React.render(
+    &lt;Game /&gt;,
+    document.getElementById(&#39;app&#39;)
+);
+
+&lt;h3 id=&#34;index-html:126e5f0c3267828479b5a765d781e066&#34;&gt;index.html&lt;/h3&gt;
+
+&lt;p&gt;新建文件：&lt;code&gt;index.html&lt;/code&gt;&lt;/p&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset=&#34;utf-8&#34;&gt;
+    &lt;title&gt;记忆游戏&lt;/title&gt;
+    &lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1&#34;&gt;
+    &lt;link rel=&#34;stylesheet&#34; href=&#34;css/style.css&#34;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;nav class=&#34;navbar navbar-inverse navbar-fixed-top&#34;&gt;
+    &lt;div class=&#34;container&#34;&gt;
+        &lt;div class=&#34;navbar-header&#34;&gt;
+            &lt;span class=&#34;navbar-brand&#34;&gt;记忆游戏&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/nav&gt;
+&lt;div id=&#34;app&#34; class=&#34;container&#34;&gt;正在努力加载中……&lt;/div&gt;
+&lt;script src=&#34;build/app.js&#34;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+&lt;h3 id=&#34;查看结果:126e5f0c3267828479b5a765d781e066&#34;&gt;查看结果&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;开始编译监听 jsx 文件为 js&lt;/li&gt;
+&lt;/ul&gt;
+watchify -v -o build/app.js js/app.js
+
+&lt;ul&gt;
+&lt;li&gt;启用 http server&lt;/li&gt;
+&lt;/ul&gt;
+http-server -p 8888
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;查看界面 &lt;a href=&#34;http://localhost:8888/&#34;&gt;http://localhost:8888/&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;大功告成，开始开心的游戏吧！&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     
     <item>
-      <title>2014-10-20</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/2014-10-20</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>lxc 小贴士：创建、自动启动、设置存放目录</title>
+      <link>http://blog.wenzhixin.net.cn/2015/03/04/lxc_tips</link>
+      <pubDate>Wed, 04 Mar 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/2014-10-20</guid>
-      <description>&lt;p&gt;前两天试了下使用 kinddle 来阅读电子书，下载了第一本书《读书这件小事》，里面讲了很多关于如何寻找好书以及如何更好的读书的方法，例如顺藤摸瓜、多看名人推荐书单、对比相关书籍的评价等等。&lt;/p&gt;
+      <guid>http://blog.wenzhixin.net.cn/2015/03/04/lxc_tips</guid>
+      <description>
 
-&lt;p&gt;对于这里提到的一些方法，我是比较赞同的，例如看李欣频的《十四堂人生创意课》的时候，这是一本关于人生、创意的一本书，书中作者提到了很多相关的书籍和电影；而看张徳芬的《遇见未知的自己》，里面也是提到很多关于心理修身物理学相关的书籍及影片。假如自己感兴趣的话，会顺着作者提到的相关书单，去读那些作者也读的书。&lt;/p&gt;
+&lt;p&gt;平时使用 lxc 比较多，在这里记录下容易忘记的点。&lt;/p&gt;
 
-&lt;p&gt;而书单的，在看完刘末鹏的《暗时间》之后，发现作者在豆瓣读书上创建了推荐的书单，虽说其中关于心理学的居多，但是很多都是比较值得一看的好书。&lt;/p&gt;
+&lt;h3 id=&#34;创建:b90732aadcfdaa809d1b030b65523295&#34;&gt;创建&lt;/h3&gt;
 
-&lt;p&gt;只是，在信息如此泛滥，书籍多到数不胜数的情况下，应该如何更好的读一本书呢？想出了一个简单的办法，首先要先辨别一本书是否适合自己，我的标准有两个，一是自己是否感兴趣，二是对自己是否有意义，能学到东西。&lt;/p&gt;
+&lt;p&gt;很简单，创建一个 ubuntu 系统（trusty），详细见&lt;a href=&#34;http://www.malike.net.cn/blog/2013/11/10/lxc-tutorial/&#34;&gt;LXC简介&lt;/a&gt;。&lt;/p&gt;
 
-&lt;p&gt;当然，要求也并非很高，有时候为了增长自己的知识面，会看一些没有接触过的书籍，但是太过枯燥无味的确实看不下。大部分看书籍都是有意义的，不过每天呢，要学会多加思考，在睡觉前随便记录点文字，无需太长，相信同看的书籍一样，哪天能量变引起质变。&lt;/p&gt;
+&lt;p&gt;创建文件：&lt;code&gt;vi trusty.conf&lt;/code&gt;：&lt;/p&gt;
+lxc.network.type = veth
+lxc.network.flags = up
+lxc.network.name = eth0
+lxc.network.link = lxcbr0
+sudo MIRROR=&#34;http://ftp.cuhk.edu.hk/pub/Linux/ubuntu&#34; \
+     SECURITY_MIRROR=&#34;http://ftp.cuhk.edu.hk/pub/Linux/ubuntu&#34; \
+     lxc-create -n trusty -f trusty.conf -t ubuntu -- -r trusty
 
-&lt;p&gt;鉴于此，现在我只带一本书到公司，这样我就会老老实实的把书看完，再回来换下一本，因为选择少，目的性强，比较适合我自己。&lt;/p&gt;
+&lt;p&gt;接着，启动 lxc：&lt;/p&gt;
+lxc-start -d -n trusty
+
+&lt;p&gt;这里的参数 &lt;code&gt;-d&lt;/code&gt; 是必要的，表示以 daemon 的方式运行。&lt;/p&gt;
+
+&lt;p&gt;所有的 lxc 容器创建后的默认用户名密码为：ubuntu。&lt;/p&gt;
+
+&lt;h3 id=&#34;自动启动:b90732aadcfdaa809d1b030b65523295&#34;&gt;自动启动&lt;/h3&gt;
+
+&lt;p&gt;我想让我的 lxc 容器自动启动，可以通过编辑 &lt;code&gt;/var/lib/lxc/[container_name]/config&lt;/code&gt; 文件：&lt;/p&gt;
+# Autostart
+lxc.start.auto = 1
+lxc.start.delay = 5
+
+&lt;p&gt;这里假如有多个容器的话会等待 5 秒。&lt;/p&gt;
+
+&lt;h3 id=&#34;设置存放目录:b90732aadcfdaa809d1b030b65523295&#34;&gt;设置存放目录&lt;/h3&gt;
+
+&lt;p&gt;由于 lxc 默认的存放目录为 &lt;code&gt;/var/lib/lxc&lt;/code&gt;，很容易导致 &lt;code&gt;/&lt;/code&gt; 容量不足，这里可以通过软链接的方式进行设置：&lt;/p&gt;
+sudo mv /var/lib/lxc ~/lxc
+ln -s ~/lxc /var/lib/lxc
+</description>
+    </item>
+    
+    <item>
+      <title>论“偷懒”的重要性</title>
+      <link>http://blog.wenzhixin.net.cn/2014/11/23/lazy_is_important</link>
+      <pubDate>Sun, 23 Nov 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2014/11/23/lazy_is_important</guid>
+      <description>&lt;p&gt;早上使用了 gulp 工具来自动完成开发后，强烈的意识到作为程序猿“偷懒”的重要性！偷懒是一个贬义词，平时说到偷懒这个词总是和懒惰、不思进取、缺乏主动性联系在一起。但是这里提到的偷懒，不是传统意义上的偷懒，而是另一种角度的偷懒，这种偷懒是和创造联系在一起。&lt;/p&gt;
+
+&lt;p&gt;其实日常生活中很多东西的出现，都是和偷懒有关。例如人们懒得走路，所以一些懒惰又聪明的人就发明了汽车；人们不想爬楼梯，所以那些懒惰又聪明就发明了电梯；抢不到 12306 上的票，所以那些懒惰又聪明的人就开发了自动抢票插件等等。由于本人非常讨厌做无用功和重复的工作，对于那些觉得没有意义的工作，总想着能否用程序来对其进行处理，解我们的双手，让计算机替我们出色地完成工作，从而可以做更多有意义的事情。&lt;/p&gt;
+
+&lt;p&gt;从&lt;strong&gt;软件开发行业&lt;/strong&gt;上，无论是&lt;strong&gt;开发&lt;/strong&gt;、&lt;strong&gt;测试&lt;/strong&gt;、还是&lt;strong&gt;部署&lt;/strong&gt;等工作，更是如此！&lt;/p&gt;
+
+&lt;p&gt;例如，编写后台或者页面，要编写大量的代码，通过思考发现，其实里面很多代码都是类似的，重复的工作做了很多，不想写这么多代码，就把这些类似的代码抽象出来，包装成函数或类，或者封装成 jQuery 插件，然后使用几行简单的代码或者 API 便可以实现复杂强大的功能。&lt;a href=&#34;https://github.com/wenzhixin/bootstrap-table&#34;&gt;Bootstrap Table&lt;/a&gt;，&lt;a href=&#34;https://github.com/wenzhixin/multiple-select&#34;&gt;Multiple Select&lt;/a&gt; 和 &lt;a href=&#34;https://github.com/wenzhixin/bootstrap-show-password&#34;&gt;Bootstrap Show Password&lt;/a&gt; 等 jQuery 插件正是这样诞生的。&lt;/p&gt;
+
+&lt;p&gt;例如，在开发的过程中需要对程序进行测试，步骤是这样的：卸载安装包 -&amp;gt; 进入代码所在目录 -&amp;gt; 更新代码 -&amp;gt; 编译打包 -&amp;gt; 安装新程序 -&amp;gt; 打开新页面。假如每次都做这样毫无意义的重复工作，那很可能会疯掉，于是乎，就有了一行命令便完成一系列工作的 shell 脚本。当然，假如你的项目需要注册用户登录，这些工作也是可以交给程序去做的。&lt;a href=&#34;https://github.com/wenzhixin/scutech-redmine&#34;&gt;Redmine Notification&lt;/a&gt; 和 &lt;a href=&#34;https://github.com/wenzhixin/scutech-dbackup-login&#34;&gt;DBackup Login&lt;/a&gt; 等 Chrome 浏览器正是这样诞生的。&lt;/p&gt;
+
+&lt;p&gt;例如，平时开发完网站或者项目后需要将其部署到远程服务器上，典型的做法是在服务器开 FTP 服务，然后每次部署的步骤都是：将程序压缩打包 -&amp;gt; 上传到相应的服务器上 -&amp;gt; 登录服务器 -&amp;gt; 解压替换原来的程序。这些工作看似简单，但是在网络及其龟速的情况也能使我疯掉，那么是否也有“偷懒”的办法呢，答案当然是肯定的。这里我们使用著名的好莱坞原则：不要给我们打电话，我们会给你打电话（Don&amp;rsquo;t call us, we&amp;rsquo;ll call you!）。在服务器端编写一程序，监听需要部署的程序，假如更新了，那就自动从代码库中（使用钩子的方式）获取最新的代码。这样一来，我们无需做任何工作，便可完成自动部署的工作。&lt;/p&gt;
+
+&lt;p&gt;当然，&lt;strong&gt;非软件行业&lt;/strong&gt;同样需要“偷懒”。&lt;/p&gt;
+
+&lt;p&gt;例如，公司的资产信息（超级多的 excel 文件）以及考勤信息（考勤系统只能生成 excel 文件）都是记录在 excel 中的，非常不便与统计和管理，试想下有一大堆 excel 文档的情况下，boss 让你统计出公司的全部资产信息或者今年每个人的考勤信息，你会不会坐不住了呢。而资产管理系统和考勤系统就是在这样的需求下诞生了，自动处理 excel，并录入到数据库中，完全 web 管理，还能生成统计信息。&lt;/p&gt;
+
+&lt;p&gt;例如，之前写过的一篇文章&lt;a href=&#34;http://wenzhixin.net.cn/2014/09/21/node_docx&#34;&gt;《如何批量读取 word 的内容和图片》&lt;/a&gt;就提到，朋友让我帮忙想想办法批量处理 100 份 word 文档的录入工作，而最后当程序用了几分钟的时间就将需要的内容全部录入完成时，你就可以体会到“偷懒”的意义所在了，假如手动录入还很有可能出现不必要的错误。这样的例子其实很多，有朋友需要选课，于是帮他做了个自动选课插件；有朋友需要获取网页上的一系列数据，生成 excel 报表，于是写了简单的小程序自动生成；有朋友需要投票，几行代码便可以让浏览器自动投票；有朋友需要对 pdf 进行处理，使用几条命令行轻松搞定等等。&lt;/p&gt;
+
+&lt;p&gt;我们是这样的一类懒人，我们使用技术改变生活！我们要做聪明又“懒惰”的人，用创造和分享来“偷懒”，从而提高工作的效率和工作的质量！&lt;/p&gt;
+
+&lt;p&gt;最后，当你平时在做重复而且觉得无意义的工作的时候，是否也会试着“偷懒”，是否也会想想利用工具或者让计算机来帮我们完成工作呢？假如有，分享下你的“偷懒”方法吧。当然，假如需要我来帮你“偷懒”，Just do it, I will try my best!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>KVM 虚拟机的学习和使用</title>
+      <link>http://blog.wenzhixin.net.cn/2014/11/21/kvm_study</link>
+      <pubDate>Fri, 21 Nov 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2014/11/21/kvm_study</guid>
+      <description>
+
+&lt;p&gt;KVM 是 Kernel-based Virtual Machine的简称，是一个开源的系统虚拟化模块，是基于硬件的完全虚拟化。&lt;/p&gt;
+
+&lt;h3 id=&#34;查看硬件是否支持:0fe43c51449a66e046d87a7538942507&#34;&gt;查看硬件是否支持&lt;/h3&gt;
+
+&lt;p&gt;通过命令行可以查看硬件是否支持：&lt;/p&gt;
+# INTEL芯片
+grep vmx /proc/cpuinfo
+
+# AMD芯片
+grep svm /proc/cpuinfo
+
+# 不知道芯片的
+egrep &#39;(vmx|svm)&#39; /proc/cpuinfo
+
+&lt;p&gt;假如有输出，表示 cpu 是支持 KVM 虚拟机的。&lt;/p&gt;
+
+&lt;h3 id=&#34;ubuntu-下安装-kvm:0fe43c51449a66e046d87a7538942507&#34;&gt;Ubuntu 下安装 KVM&lt;/h3&gt;
+
+&lt;p&gt;基本安装包：&lt;/p&gt;
+sudo apt-get install kvm libvirt-bin ubuntu-vm-builder bridge-utils
+
+&lt;p&gt;界面管理：&lt;/p&gt;
+sudo apt-get install virt-manager virt-viewer
+
+&lt;h3 id=&#34;使用:0fe43c51449a66e046d87a7538942507&#34;&gt;使用&lt;/h3&gt;
+
+&lt;p&gt;直接打开虚拟机管理器会报错，我们需要用命令行通过 root 方式运行：&lt;/p&gt;
+sudo virt-manager
+
+&lt;p&gt;继续学习&amp;hellip;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 下不能访问 Windows 文件系统</title>
+      <link>http://blog.wenzhixin.net.cn/2014/11/20/ubuntu_unable_to_access_windows</link>
+      <pubDate>Thu, 20 Nov 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2014/11/20/ubuntu_unable_to_access_windows</guid>
+      <description>
+
+&lt;p&gt;Ubuntu 和 Windows 双系统下，Ubuntu 不能访问 Windows 下的分区，例如：&lt;code&gt;/dev/sdb1&lt;/code&gt;，显示如下错误：&lt;/p&gt;
+Error mounting /dev/sdb1 exited with non-zero exit status 14: The disk contains an unclean file system (0, 0).
+Metadata kept in Windows cache, refused to mount.
+Failed to mount &#39;/dev/sdb1&#39;: Operation not permitted
+The NTFS partition is in an unsafe state. Please resume and shutdown
+Windows fully (no hibernation or fast restarting), or mount the volume
+read-only with the &#39;ro&#39; mount option.
+
+&lt;h3 id=&#34;解决:5af504e3a6dfa89ab0895ec157811330&#34;&gt;解决&lt;/h3&gt;
+
+&lt;p&gt;不确定具体是什么原因引起这个错误，应该是 Windows 没有正确关闭所引起。可以通过 &lt;code&gt;ntfsfix&lt;/code&gt; 命令，来对 NTFS 磁盘进行检查和修复。&lt;/p&gt;
+$ sudo ntfsfix /dev/sdb1
+Mounting volume... The disk contains an unclean file system (0, 0).
+Metadata kept in Windows cache, refused to mount.
+FAILED
+Attempting to correct errors...
+Processing $MFT and $MFTMirr...
+Reading $MFT... OK
+Reading $MFTMirr... OK
+Comparing $MFTMirr to $MFT... OK
+Processing of $MFT and $MFTMirr completed successfully.
+Setting required flags on partition... OK
+Going to empty the journal ($LogFile)... OK
+Checking the alternate boot sector... OK
+NTFS volume version is 3.1.
+NTFS partition /dev/sdb1 was processed successfully.
+</description>
+    </item>
+    
+    <item>
+      <title>开源所带来的——记 DBackup 4.0 发布和 Bootstrap Table 插件的开发</title>
+      <link>http://blog.wenzhixin.net.cn/2014/11/08/bootstrap-table</link>
+      <pubDate>Sat, 08 Nov 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2014/11/08/bootstrap-table</guid>
+      <description>
+
+&lt;h3 id=&#34;源起:e5cac10725cb8ad4ca8dff8f0c5d6867&#34;&gt;源起&lt;/h3&gt;
+
+&lt;p&gt;最最开始的时候，在写公司的考勤系统，系统的功能十分简单，只需要简单地查询数据和展示数据（无需增加、修改和删除），后台接口使用的是标准的 Restful API，例如接口&lt;code&gt;/api/url1&lt;/code&gt;返回这样的数组：&lt;/p&gt;
+[
+    {
+        &#34;name&#34;: &#34;文翼&#34;,
+        &#34;startTime&#34;: &#34;09:00&#34;,
+        &#34;endTime&#34;: &#34;18:00&#34;
+    }
+]
+
+&lt;p&gt;接口&lt;code&gt;/api/url2&lt;/code&gt;返回这样的数组：&lt;/p&gt;
+[
+    {
+        &#34;name&#34;: &#34;文翼&#34;,
+        &#34;job&#34;: &#34;Web开发工程师&#34;
+    }
+]
+
+&lt;p&gt;一般的做法是遍历返回来的数据并对每一行的数据进行渲染为&lt;code&gt;tr&lt;/code&gt;，然后再&lt;code&gt;append&lt;/code&gt;到表格中。由于自己十分的“懒”，很多时候宁愿写出个工具（当然有时候可能花的时候会更多），也不想写重复的代码，做重复、无用的工作。现在系统有 5 个不同的接口，需要显示为 5 个不同的表格。要是能使用这样的代码，而无需使用 JavaScript 去对不同的 API 接口进行渲染组装，那该多省心省事：&lt;/p&gt;
+&lt;table data-url=&#34;/api/url1&#34;&gt;
+    &lt;thead&gt;
+    &lt;tr&gt;
+        &lt;td data-field=&#34;name&#34;&gt;姓名&lt;/td&gt;
+        &lt;td data-field=&#34;startTime&#34;&gt;上班时间&lt;/td&gt;
+        &lt;td data-field=&#34;endTime&#34;&gt;下班时间&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;/thead&gt;
+&lt;/table&gt;
+
+&lt;table data-url=&#34;/api/url2&#34;&gt;
+    &lt;thead&gt;
+    &lt;tr&gt;
+        &lt;td data-field=&#34;name&#34;&gt;姓名&lt;/td&gt;
+        &lt;td data-field=&#34;job&#34;&gt;工作&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;/thead&gt;
+&lt;/table&gt;
+
+&lt;p&gt;可以看到，这样的话我们无需写一行 JavaScript 的代码就能实现我们想要的功能了。于是乎，Bootstrap Table 的 1.0.0 版本就这样面世了，只有最最简单的显示的功能，没有单选、多选、排序和分页等复杂的功能。&lt;/p&gt;
+
+&lt;h3 id=&#34;开源和改善:e5cac10725cb8ad4ca8dff8f0c5d6867&#34;&gt;开源和改善&lt;/h3&gt;
+
+&lt;p&gt;因为 Bootstrap Table 支持标准的 Restful API 接口，我便将其开源到 GitHub 上（6月份），并尝试着模仿 Bootstrap JavaScript Plugin 的文档说明，编写了全英文的文档（其实也没几个属性、方法和事件）。而在当时，由于公司最主要的产品 DBackup，并没有使用 Restful 接口 API，所以无法将其应用到自己的产品开发中。&lt;/p&gt;
+
+&lt;p&gt;随着其他的产品也应用到 Bootstrap Table，我便加入了单选、多选、排序等功能。而在 GitHub 上，关注 Bootstrap Table 的人也多了起来，时不时有人给我提建议和一些新的功能，而大部分是很好的建议。并认真地考虑，加上了大部分觉得合理的功能。&lt;/p&gt;
+
+&lt;p&gt;到发布 1.2.0 的时候（8月），我在想是不是应该应用到主要产品DBackup呢，只是要使用的话就得重构后台接口。不能浪费了，重构就重构，于是便开始为 DBackup 编写标准的 Restful API 文档，我们在开发的过程中往往习惯了根据后台接口，然后选择前端的实现。而 Bootstrap Table 是根据标准的 Restful API 来实现的，这反而能更好地使产品的接口更加规范化、文档化。&lt;/p&gt;
+
+&lt;p&gt;那么，或许你会问，开源又带来了什么？&lt;/p&gt;
+
+&lt;p&gt;在 GitHub 上，我们可以看到很多 Web 开源项目，而这些开源项目的工程师也乐于维护和改善这些开源项目，例如：Twitter 的 &lt;a href=&#34;https://github.com/twbs/bootstrap&#34;&gt;bootstrap&lt;/a&gt;，Facebook 的 &lt;a href=&#34;https://github.com/facebook/react&#34;&gt;react&lt;/a&gt;，阿里的 &lt;a href=&#34;https://github.com/seajs/seajs&#34;&gt;seajs&lt;/a&gt;，还有 &lt;a href=&#34;https://github.com/joyent/node&#34;&gt;node&lt;/a&gt;，&lt;a href=&#34;https://github.com/jashkenas/backbone&#34;&gt;backbone&lt;/a&gt;，&lt;a href=&#34;https://github.com/angular/angular.js&#34;&gt;angular.js&lt;/a&gt; 等等。&lt;/p&gt;
+
+&lt;p&gt;我在签名档上写道：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;I am making the world better by developing open-source JavaScript libraries.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;开源，就是为了使世界更加美好！哈哈，难道不是吗！&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/11/08/1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/11/08/2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;时至今日，Bootstrap Table 项目已有 488 个 Star 和 109 个 Fork（分支），47 个 Pull Requests，支持 20 种语言（翻译），以及 4 个插件扩展。除了我自己，有很多热心开发者为其提交了很多有用的代码，插件扩展和建议。&lt;/p&gt;
+
+&lt;p&gt;对于插件来说，因为开源，使其不断的完善和改进！&lt;/p&gt;
+
+&lt;p&gt;对于公司产品来说，因为开源，越来越规范化和模块化！&lt;/p&gt;
+
+&lt;p&gt;对于我来说，因为开源，自己的英文水平、代码规范化以及项目管理相关的方面也在不断提高！&lt;/p&gt;
+
+&lt;h3 id=&#34;bootstrap-table-的强大之处:e5cac10725cb8ad4ca8dff8f0c5d6867&#34;&gt;Bootstrap Table 的强大之处&lt;/h3&gt;
+
+&lt;p&gt;说了这么多，Bootstrap Table 的强大之处还是需要用个简单的例子来说明，除了上面用 html 的方式外，这里使用 JavaScript 的方式：&lt;/p&gt;
+
+&lt;p&gt;定义 html（只需要一句话）：&lt;/p&gt;
+&lt;table id=&#34;table&#34;&gt;&lt;/table&gt;
+
+&lt;p&gt;使用：&lt;/p&gt;
+$(&#39;#table&#39;).bootstrapTable({
+    url: &#39;/api/url&#39;, // 接口 URL 地址
+    cache: false, // 不缓存
+    height: 400, // 设置高度，会启用固定表头的特性
+    striped: true, // 隔行加亮
+    pagination: true, // 开启分页功能
+    pageSize: 50, // 设置默认分页为 50
+    pageList: [10, 25, 50, 100, 200], // 自定义分页列表
+    search: true, // 开启搜索功能
+    showColumns: true, // 开启自定义列显示功能
+    showRefresh: true, // 开启刷新功能
+    minimumCountColumns: 2, // 设置最少显示列个数
+    clickToSelect: true, // 单击行即可以选中
+    sortName: &#39;name&#39;, // 设置默认排序为 name
+    sortOrder: &#39;desc&#39;, // 设置排序为反序 desc
+    smartDisplay: true, // 智能显示 pagination 和 cardview 等
+    columns: [{ // 列设置
+        field: &#39;state&#39;,
+        checkbox: true // 使用复选框
+    }, {
+        field: &#39;id&#39;,
+        title: &#39;Item ID&#39;,
+        align: &#39;right&#39;,
+        valign: &#39;bottom&#39;,
+        sortable: true // 开启排序功能
+    }, {
+        field: &#39;name&#39;,
+        title: &#39;Item Name&#39;,
+        align: &#39;center&#39;,
+        valign: &#39;middle&#39;,
+        sortable: true,
+        formatter: nameFormatter
+    }, {
+        field: &#39;price&#39;,
+        title: &#39;Item Price&#39;,
+        align: &#39;left&#39;,
+        valign: &#39;top&#39;,
+        sortable: true,
+        formatter: priceFormatter,
+        sorter: priceSorter
+    }, {
+        field: &#39;operate&#39;,
+        title: &#39;Item Operate&#39;,
+        align: &#39;center&#39;,
+        valign: &#39;middle&#39;,
+        clickToSelect: false,
+        formatter: operateFormatter,
+        events: operateEvents
+    }]
+});
+
+&lt;p&gt;我们可以看到，通过简单的设置，就可以拥有强大的单选、多选、排序、分页，以及编辑、导出、过滤（扩展）等等的功能了：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/11/08/3.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;最后，今天，我们的产品 DBackup 发布了 4.0 版本，其中一整个大模块已经全部重构为使用 Bootstrap Table 和标准的 Restful 接口。虽说距离全部还有一段时间和距离，但我坚信，Bootstrap Table 会越做越强大，产品也会越来越规范，越做越好用！&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>crontab 学习笔记</title>
+      <link>http://blog.wenzhixin.net.cn/2014/11/07/crontab_study</link>
+      <pubDate>Fri, 07 Nov 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2014/11/07/crontab_study</guid>
+      <description>
+
+&lt;p&gt;crontab 常见于 Unix 和类 Unix 的操作系统之中，用于设置周期性被执行的指令。该命令从标准输入设备读取指令，并将其存放于&lt;code&gt;crontab&lt;/code&gt;文件中，以供之后读取和执行。&lt;/p&gt;
+
+&lt;h3 id=&#34;crontab-命令格式和参数:48b38d7290c8c7d5754d0161bc80acb2&#34;&gt;crontab 命令格式和参数&lt;/h3&gt;
+crontab [ -u user ] [ -i ] { -e | -l | -r }
+
+&lt;ul&gt;
+&lt;li&gt;-u：设置指定用户，默认为当前用户&lt;/li&gt;
+&lt;li&gt;-i：删除用户 crontab 的确认提示&lt;/li&gt;
+&lt;li&gt;-e：编辑用户的 crontab&lt;/li&gt;
+&lt;li&gt;-l：列表用户的 crontab&lt;/li&gt;
+&lt;li&gt;-r：删除用户的 crontab&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;crontab-e-配置文件格式:48b38d7290c8c7d5754d0161bc80acb2&#34;&gt;crontab -e 配置文件格式&lt;/h3&gt;
+* * * * * COMMAND
+
+&lt;p&gt;&lt;strong&gt;分钟0~59&lt;/strong&gt; &lt;strong&gt;小时0~23&lt;/strong&gt; &lt;strong&gt;日期1~31&lt;/strong&gt; &lt;strong&gt;月份1~12&lt;/strong&gt; &lt;strong&gt;星期0~7&lt;/strong&gt; COMMAND&lt;/p&gt;
+
+&lt;p&gt;例子：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;每晚的21:30重启 nginx&lt;/p&gt;
+30 21 * * * service nginx restart&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;每月1、10、22日的4:45重启 nginx&lt;/p&gt;
+45 4 1,10,22 * * service nginx restart&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;每月1到10日的4:45重启 nginx&lt;/p&gt;
+45 4 1-10 * * service nginx restart&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;每隔两分钟重启 nginx 服务器&lt;/p&gt;
+*/2 * * * * service nginx restart
+1-59/2 * * * * service nginx restart&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;晚上11点到早上7点之间，每隔一小时重启 nginx&lt;/p&gt;
+0 23-7/1 * * * service nginx restart&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;每天18:00到23:00之间每隔30分钟重启 nginx&lt;/p&gt;
+0,30 18-23 * * * service nginx restart
+0-59/30 18-23 * * * service nginx restart
+*/30 18-23 * * * service nginx restart&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;小结：&lt;/strong&gt;
+* *表示任何时候都匹配
+* 可以用 “A,B,C” 表示A或者B或者C时执行命令
+* 可以用 “A-B” 表示A到B之间时执行命令
+* 可以用 “/A” 表示每隔A分钟（小时等）执行命令&lt;/p&gt;
+
+&lt;h3 id=&#34;使用系统-crontab-配置文件:48b38d7290c8c7d5754d0161bc80acb2&#34;&gt;使用系统 crontab 配置文件&lt;/h3&gt;
+
+&lt;p&gt;文件位置：&lt;code&gt;/etc/crontab&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;命令格式（指定用户）：&lt;/p&gt;
+* * * * * USER COMMAND
+
+&lt;p&gt;例子：&lt;/p&gt;
+*\30 * * * * root service nginx restart
+
+&lt;h3 id=&#34;crontab-使用注意:48b38d7290c8c7d5754d0161bc80acb2&#34;&gt;crontab 使用注意&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;无法在 crontab 的命令中使用环境变量&lt;/li&gt;
+&lt;/ul&gt;
+*/1 * * * * echo $APP_HOME # 为空
+
+&lt;ul&gt;
+&lt;li&gt;第三个域和第五个域是 “或” 操作系统&lt;/li&gt;
+&lt;/ul&gt;
+# 四月的第一个星期日早晨1时59分运行 a.sh
+59 1 1-7 4 0 a.sh # 错误
+59 1 1-7 4 * test `date +\%w` -eq 0 &amp;&amp; a.sh # 正确
+
+&lt;ul&gt;
+&lt;li&gt;分钟误用&lt;/li&gt;
+&lt;/ul&gt;
+# 每两个小时执行一次
+* /2 * * * command # 错误
+0 /2 * * * command # 正确
+</description>
+    </item>
+    
+    <item>
+      <title>编写 WebStorm 实用工具</title>
+      <link>http://blog.wenzhixin.net.cn/2014/11/04/webstorm_tools</link>
+      <pubDate>Tue, 04 Nov 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2014/11/04/webstorm_tools</guid>
+      <description>&lt;p&gt;在写代码的时候，很多时候（例如写 jQuery 插件）需要将 html 代码转换为 js 模板。例如将下面的 html 代码：&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li class=&#34;item&#34;&gt;
+        &lt;a href=&#34;#&#34;&gt;Item 1&lt;/a&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;放到 js 中：&lt;/p&gt;
+var html = [
+    &#39;&lt;ul&gt;&#39;,
+        &#39;&lt;li class=&#34;item&#34;&gt;&#39;,
+            &#39;&lt;a href=&#34;#&#34;&gt;Item 1&lt;/a&gt;&#39;,
+        &#39;&lt;/li&gt;&#39;,
+    &#39;&lt;/ul&gt;&#39;
+];
+
+&lt;p&gt;因为平时都是用 WebStorm 进行开发，就在想是否能够自定义快捷键实现这样的功能呢？
+如按一下 &lt;code&gt;Ctrl + &#39;&lt;/code&gt; 切换为 js 代码，再按一次切换原来 html 的代码。先上想要的效果图：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/11/04/gif.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;有了这样的想法，于是就开始尝试。&lt;/p&gt;
+
+&lt;p&gt;首先尝试了自定义 Keymap （快捷键）的方式，发现行不通，因为只能自定义 WebStorm 本身已经定义好的 Action。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/11/04/1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;接着看到 External Tools 可以定义外部的程序，Good，这样就可以使用外部的脚本语言来实现我想要的功能。
+一开始是想使用 shell 来编写的，但是发现编写起来有些吃力，何不用自己熟悉的 nodejs 来写呢。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/11/04/2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;于是，便有了 &lt;code&gt;toggle-html-js-code&lt;/code&gt; 的雏形：&lt;/p&gt;
+#! /usr/bin/node
+
+var fs = require(&#39;fs&#39;);
+
+// toggle-html-js-code $FilePath$ $SelectionStartLine$ $SelectionEndLine$
+
+var filePath = process.argv[2],
+    startLine = +process.argv[3],
+    endLine = +process.argv[4],
+    type = &#39;html&#39;,
+    content,
+    lines,
+    i;
+
+content = fs.readFileSync(filePath).toString();
+lines = content.split(&#39;\n&#39;);
+
+if (/&#39;.*&#39;,?/.test(lines[startLine - 1])) {
+    type = &#39;js&#39;;
+}
+
+for (i = startLine - 1; i &lt; endLine; i++) {
+    lines[i] = type === &#39;html&#39; ?
+        html2js(lines[i], i !== startLine - 1 &amp;&amp; i === endLine - 1) :
+        js2html(lines[i], i !== startLine - 1 &amp;&amp; i === endLine - 1);
+}
+fs.writeFileSync(filePath, lines.join(&#39;\n&#39;));
+
+
+// tools
+
+function html2js(str, lastLine) {
+    if (!/([\S^&#39;].*[\S^&#39;])/.test(str)) {
+        return str;
+    }
+    return str.replace(/([\S^&#39;].*[\S^&#39;])/, &#39;\&#39;\$1\&#39;&#39; + (lastLine ? &#39;&#39; : &#39;,&#39;));
+}
+
+function js2html(str, lastLine) {
+    if (lastLine) {
+        if (!/&#39;(.*)&#39;/.test(str)) {
+            return str;
+        }
+        return str.replace(/&#39;(.*)&#39;/, &#39;\$1&#39;);
+    } else {
+        if (!/&#39;(.*)&#39;,/.test(str)) {
+            return str;
+        }
+        return str.replace(/&#39;(.*)&#39;,/, &#39;\$1&#39;);
+    }
+}
+
+&lt;p&gt;最后，再到 Keymap 中设置快捷键为 &lt;code&gt;Ctrl + &#39;&lt;/code&gt; 就大功告成了！&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/11/04/4.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/11/04/3.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;PS：上面的代码已经实现了自己想要的功能，但可能还需要进行完善优化，本文只是对自己想法进行了尝试并实现，或许可以用插件的方式来实现。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>chrome 浏览器 console 面板直接使用 JSON 数据进行调试错误问题</title>
+      <link>http://blog.wenzhixin.net.cn/2014/11/02/chrome_console_error</link>
+      <pubDate>Sun, 02 Nov 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2014/11/02/chrome_console_error</guid>
+      <description>&lt;p&gt;今天在微博上看到小鱼在问：&lt;a href=&#34;https://gist.github.com/sofish/c250881989aaa10c029d&#34;&gt;https://gist.github.com/sofish/c250881989aaa10c029d&lt;/a&gt; 为什么会出错，看了下之前就有遇到过这个问题，特意整理记录下。&lt;/p&gt;
+
+&lt;p&gt;是想直接 copy json 数据到 console 面板进行调试，但是竟然报错了。然后特意对比了下，奇怪的是为什么 &lt;code&gt;{a: &amp;quot;b&amp;quot;}&lt;/code&gt; 是输出 &lt;code&gt;&amp;quot;b&amp;quot;&lt;/code&gt;，而 &lt;code&gt;{&amp;quot;a&amp;quot;: &amp;quot;b&amp;quot;}&lt;/code&gt; 输出却是 &lt;code&gt;Uncaught SyntaxError: Unexpected token :&lt;/code&gt;，why?&lt;/p&gt;
+
+&lt;p&gt;后面就研究了下，可以看到源码 &lt;a href=&#34;https://code.google.com/p/webkit-mirror/source/browse/Source/WebCore/inspector/InjectedScriptSource.js?r=ed19c0a99ddb564e317bb7363d481c2693ffb5fd#333&#34;&gt;InjectedScriptSource.js&lt;/a&gt; 中实现 console 是通过下面的方式：&lt;/p&gt;
+expression = &#34;with ((window &amp;&amp; window.console &amp;&amp; window.console._commandLineAPI) || {}) {\n&#34; + expression + &#34;\n}&#34;;
+eval(expression);
+
+&lt;p&gt;当我们在 &lt;code&gt;console&lt;/code&gt; 面板下直接输入 &lt;code&gt;{a: &amp;quot;b&amp;quot;}&lt;/code&gt; 时，相当于执行：&lt;/p&gt;
+eval(&#34;with ((window &amp;&amp; window.console &amp;&amp; window.console._commandLineAPI) || {}) {\n{a: \&#34;b\&#34;}\n}&#34;); // &#34;b&#34;
+
+&lt;p&gt;而 &lt;code&gt;{&amp;quot;a&amp;quot;: &amp;quot;b&amp;quot;}&lt;/code&gt; 相当于执行：&lt;/p&gt;
+eval(&#34;with ((window &amp;&amp; window.console &amp;&amp; window.console._commandLineAPI) || {}) {\n{\&#34;a\&#34;: \&#34;b\&#34;}\n}&#34;); // Uncaught SyntaxError: Unexpected token :
+
+&lt;p&gt;因为 &lt;code&gt;with&lt;/code&gt; 这里的 &lt;code&gt;{{ ... }}&lt;/code&gt; 被忽略成了 &lt;code&gt;{}&lt;/code&gt;，例如：&lt;/p&gt;
+with (window) {{{{a:&#34;b&#34;}}}}; // window.a = &#34;b&#34;;
+
+with (window) {&#34;a&#34;:&#34;b&#34;}; // error!!!
+
+&lt;p&gt;后面想直接 copy json 到 console 中进行调试的时候，加上：&lt;/p&gt;
+var obj = {&#34;status&#34;:&#34;error&#34;,&#34;error&#34;:{&#34;msg&#34;:&#34;\u6b64\u997f\u5355\u5df2\u6295\u8bc9&#34;,&#34;code&#34;:23}}; // undefined
+
+&lt;p&gt;就OK了，但是这样还得输入多一次 obj，干脆酱紫：&lt;/p&gt;
+}0,{&#34;status&#34;:&#34;error&#34;,&#34;error&#34;:{&#34;msg&#34;:&#34;\u6b64\u997f\u5355\u5df2\u6295\u8bc9&#34;,&#34;code&#34;:23} // Object {status: &#34;error&#34;, error: Object}
+
+&lt;p&gt;还有其他的一些比较有趣的，例如输入：&lt;/p&gt;
+{} // undefined
+
+( // Uncaught SyntaxError: Unexpected token }
+
+}{ // undefined
+
+}!{ // false
+
+}!!{ // true
+
+}+{ // NaN
 </description>
     </item>
     
     <item>
       <title>2014-10-21</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/2014-10-21</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2014/10/21/2014-10-21</link>
+      <pubDate>Tue, 21 Oct 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/2014-10-21</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/10/21/2014-10-21</guid>
       <description>&lt;p&gt;时常会听到身边的朋友对还单身的人说，找不到女朋友（或男朋友）的原因就是你的要求太高了。外貌、学历、年龄、身高、体重等外在条件，加上人品、性格、脾气、学识、人生观、价值观等内在条件，简直是多不胜数。&lt;/p&gt;
 
 &lt;p&gt;是的，每个人都希望另一半都符合自己的条件那是该多好。可以，反过来想，你想找个女神（男神），那你自己呢？&lt;/p&gt;
@@ -247,348 +1495,6 @@
 &lt;p&gt;例如，以考试为例，当所有科目都及格才能拿到奖，对于偏科严重的人来说，将弱项拉到平均水平，作用就是防止你在这方面被淘汰，然后在这基础上，全力发扬你自己的闪光点，形成你自己的风格。&lt;/p&gt;
 
 &lt;p&gt;总而言之，看看手中的底牌，衡量下需要付出的代价，计算出必须付诸的努力，然后，设置一个可以达到的目标。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>2014.08.02</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/qixi</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/qixi</guid>
-      <description>&lt;p&gt;今天是七夕，一个特殊的日子。貌似还是比较多想法的，稍微记录下好了。&lt;/p&gt;
-
-&lt;p&gt;可能单身久了，对于感情，有些畏手畏脚，也变现实了，朋友们说我的要求太高了。&lt;/p&gt;
-
-&lt;p&gt;有时候会看一些别人的故事，觉得对女孩子，不该唯命是从，百依百顺，而应该是相互理解、相互支持。&lt;/p&gt;
-
-&lt;p&gt;对于感情，没有太大的奢望，不做作、不纠缠，觉得还是顺其自然、水到渠成吧。&lt;/p&gt;
-
-&lt;p&gt;相识是个互动的过程，了解对方，也了解自己，通过试错去了解什么样的人才适合自己。&lt;/p&gt;
-
-&lt;p&gt;每个人都有自己选择的权利，需要反思自己的各种欲望、想法和情绪，听从内心的想法。&lt;/p&gt;
-
-&lt;p&gt;有时候感情到了，但是心里总觉得有个点没着落，那就缓一缓，直到你找到自己最确定的感觉：就这个人了，一定就是这个人了！&lt;/p&gt;
-
-&lt;p&gt;总之，每天都是新的开始，处处面临着选择，有时候会不小心错过很多，不去后悔什么。&lt;/p&gt;
-
-&lt;p&gt;对于生命中遇到的某些人，可能不会陪着你一直往前走，但是至少会给你带来欢笑、成长和进步，所以要学会抱着感恩的心，然后继续属于自己的生活。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Ajax 文件上传——通过 html5 的方法</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/ajax_file_upload_html5</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/ajax_file_upload_html5</guid>
-      <description>
-
-&lt;h4 id=&#34;html5-方法:f5a698885091fe9812ae461e6526e53b&#34;&gt;html5 方法&lt;/h4&gt;
-
-&lt;p&gt;上篇文章讲到 Ajax 文件上传是如何通过 iframe 的方法，这里我们通过 html5 的方法来进行文件的上传。&lt;/p&gt;
-
-&lt;p&gt;在 html5 标准中，XMLHttpRequest 对象被重新定义，称为“XMLHttpRequest Level 2”，其中包含了文件相关的新特性：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;支持上传、下载字节流，比如文件、blob以及表单数据&lt;/li&gt;
-&lt;li&gt;增加了上传、下载中的进度事件&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;关于 XMLHttpRequest Level 2，阮一峰有一篇文章介绍的很详细，就不多做解释了，详细见：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.w3.org/TR/XMLHttpRequest2/&#34;&gt;官网 XMLHttpRequest2&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.ruanyifeng.com/blog/2012/09/xmlhttprequest_level_2.html&#34;&gt;XMLHttpRequest Level 2 使用指南&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;首先，创建一个 XMLHttpRequest2 的实例：&lt;/p&gt;
-var xhr = new XMLHttpRequest();
-
-&lt;p&gt;添加 file 控件，这里我们使用 multiple 属性来支持多文件的选择。&lt;/p&gt;
-&lt;input id=&#34;filename&#34; type=&#34;file&#34; multiple=&#34;multiple&#34; /&gt;
-
-&lt;p&gt;获取并保存选择的多个文件。&lt;/p&gt;
-var files = document.getElementById(&#39;filename&#39;).files;
-
-&lt;p&gt;接下来，要介绍的是另一个 html5 推出的新对象：FormData。&lt;/p&gt;
-
-&lt;p&gt;FormData 对象是用户的表单数据的集合，
-它以键值对的形式存储了表单数据，其值能够包括数字、字符串以及文件。&lt;br /&gt;
-我们通过这个对象，来向服务器提交我们的文件数据。&lt;/p&gt;
-var formData = new FormData();
-formData.append(&#39;filename&#39;, files[index]); // index 为第 n 个文件的索引
-xhr.open(&#39;post&#39;, url); // url 为提交的后台地址
-xhr.send(formData);
-
-&lt;p&gt;这样就完成了一次文件的上传，多个文件我们遍历多个文件重复这个步骤即可。&lt;/p&gt;
-
-&lt;p&gt;接下来是对上传事件的监听：&lt;/p&gt;
-xhr.upload.addEventListener(&#34;progress&#34;, uploadProgress, false); // 处理上传进度
-xhr.addEventListener(&#34;load&#34;, uploadComplete, false); // 处理上传完成
-xhr.addEventListener(&#34;error&#34;, uploadFailed, false); // 处理上传失败
-xhr.addEventListener(&#34;abort&#34;, uploadCanceled, false); // 处理取消上传
-
-&lt;p&gt;在不同的事件中做不同的处理在完成所有的文件上传后再显示结果，使用 html5 的方法是不是很简单呢。&lt;/p&gt;
-
-&lt;h4 id=&#34;使用-html5-的-jquery-插件:f5a698885091fe9812ae461e6526e53b&#34;&gt;使用 html5 的 jQuery 插件&lt;/h4&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/mihaild/jquery-html5-upload&#34;&gt;jquery-html5-upload&lt;/a&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;浏览器支持情况:f5a698885091fe9812ae461e6526e53b&#34;&gt;浏览器支持情况&lt;/h4&gt;
-
-&lt;p&gt;因为用到了新的特性，所以只有在支持这些新对象的浏览器下才可以支持我们的代码，
-可以通过&lt;a href=&#34;http://caniuse.com/&#34;&gt;这里&lt;/a&gt;查看浏览器的支持情况。&lt;/p&gt;
-
-&lt;p&gt;最后，对于不支持的浏览器，我们做了降级处理，优先使用 html5 方法，
-在浏览器不支持的情况下，使用上一篇提到的 iframe 的方法，
-当然也可以考虑将介绍到的两个 jQuery 插件合并起来。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Ajax 文件上传——通过 iframe 的方法</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/ajax_file_upload_iframe</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/ajax_file_upload_iframe</guid>
-      <description>
-
-&lt;h4 id=&#34;前言:9d2eee6ba8fab7c3c4918c26a26acf7a&#34;&gt;前言&lt;/h4&gt;
-
-&lt;p&gt;由于安全问题，浏览器不允许通过 XMLHttpRequest（又名XHR）的方式上传文件。&lt;/p&gt;
-
-&lt;p&gt;那么如何在不刷新界面的情况下实现文件的上传呢？&lt;/p&gt;
-
-&lt;h4 id=&#34;解决方法:9d2eee6ba8fab7c3c4918c26a26acf7a&#34;&gt;解决方法&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;一种方法是使用 Flash，但是需要安装 Flash 插件。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;使用 iframe 的方法，这里来介绍它是如何工作的。&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;iframe-的方法:9d2eee6ba8fab7c3c4918c26a26acf7a&#34;&gt;iframe 的方法&lt;/h4&gt;
-
-&lt;p&gt;假设我们有一个文件类型的输入字段的表单&lt;/p&gt;
-&lt;input name=&#34;filename&#34; type=&#34;file&#34; /&gt;
-
-&lt;p&gt;使用 iframe 的方法可以概括为如下步骤：&lt;/p&gt;
-
-&lt;p&gt;1) 禁用原表单的 submit 事件，以方便我们使用自定义 iframe 的 submit 事件。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2013/11/27/iframe-method-step-0.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;2) 使用 JavaScript 创建一个 iframe 元素并将其插入到当前页面（对用户不可见）。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2013/11/27/iframe-method-step-1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;3) 修改 iframe 的 target 属性，使得表单提交的结果显示在新的 iframe 中，而不是当前窗口。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2013/11/27/iframe-method-step-2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;4) 提交 iframe 中的表单，例如用 jQuery 的 $(&amp;lsquo;form&amp;rsquo;).submit()。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2013/11/27/iframe-method-step-3.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;5) 让隐藏的 iframe 导航到新的响应界面，在这里，父窗口并没有打开新的页面或者进行重定向。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2013/11/27/iframe-method-step-4.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;6) 获取 iframe 的响应内容到父窗口中。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2013/11/27/iframe-method-step-5.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;7) 删除 iframe，重置原来的表单，提交完成。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2013/11/27/iframe-method-step-6.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;需要注意的问题:9d2eee6ba8fab7c3c4918c26a26acf7a&#34;&gt;需要注意的问题&lt;/h4&gt;
-
-&lt;p&gt;由于使用了 iframe，所以我们无法获得响应接口的响应头和状态码。&lt;/p&gt;
-
-&lt;p&gt;为了判断是否已经提交成功，我们需要在返回接口中定义我们需要的响应信息。&lt;/p&gt;
-
-&lt;p&gt;例如，在 body 中返回 status：&lt;/p&gt;
-{
-	&#34;status&#34;: 200
-}
-
-&lt;h4 id=&#34;使用-iframe-的-jquery-插件:9d2eee6ba8fab7c3c4918c26a26acf7a&#34;&gt;使用 iframe 的 jQuery 插件&lt;/h4&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.phpletter.com/Demo/AjaxFileUpload-Demo/&#34;&gt;AjaxFileUpload 插件&lt;/a&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;参考：&lt;a href=&#34;http://www.alfajango.com/blog/ajax-file-uploads-with-the-iframe-method/&#34;&gt;AJAX File Uploads with the iFrame Method&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Android ant 编译问题收集</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/android_ant_problem</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/android_ant_problem</guid>
-      <description>
-
-&lt;h4 id=&#34;问题:6edc530cf689cf0a05aea6add3f6e7b3&#34;&gt;问题：&lt;/h4&gt;
-aapt not found under the right path
-
-&lt;h4 id=&#34;解决:6edc530cf689cf0a05aea6add3f6e7b3&#34;&gt;解决：&lt;/h4&gt;
-sudo apt-get install ia32-libs # 12.04
-sudo apt-get install lib32z1 # 14.04
-
-&lt;h4 id=&#34;问题-1:6edc530cf689cf0a05aea6add3f6e7b3&#34;&gt;问题：&lt;/h4&gt;
- Perhaps JAVA_HOME does not point to the JDK. It is currently set to &#34;/usr/lib/jvm/java-6-openjdk/jre&#34;
-
-&lt;h4 id=&#34;解决-1:6edc530cf689cf0a05aea6add3f6e7b3&#34;&gt;解决：&lt;/h4&gt;
-
-&lt;p&gt;Fixed it by installing the open jdk:&lt;/p&gt;
-sudo apt-get install openjdk-7-jdk
-</description>
-    </item>
-    
-    <item>
-      <title>Android 界面不支持 position fixed 问题</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/android_position_fixed</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/android_position_fixed</guid>
-      <description>&lt;p&gt;在 Android 中，部分浏览器不支持 css 的 position: fixed 属性。&lt;/p&gt;
-
-&lt;p&gt;详细的支持情况见：&lt;a href=&#34;http://caniuse.com/css-fixed&#34;&gt;http://caniuse.com/css-fixed&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;对于不支持的情况，我们可以通过以下的解决方法来解决该问题，记录下。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;使用 viewport 标记&lt;/strong&gt;&lt;/p&gt;
-&lt;meta name=&#34;viewport&#34; content=&#34;width=100%; initial-scale=1; maximum-scale=1; minimum-scale=1; user-scalable=no;&#34; /&gt;
-
-&lt;p&gt;详细参数解释：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;width：视口的宽度。可以使用像素值，但推荐使用device-width关键字。表示依照设备屏幕的宽度。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;height：视口的高度。不用指定。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;initial-scale：初始缩放值。比如1.0表示一个视口像素等于一个屏幕像素。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;minimum-scale：最小比例值。范围从0至10.0&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;maximum-scale：最大比例值。范围从0至10.0&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;user-scalable：用户是否可以缩放视口。值可以是：&lt;br /&gt;
-1, yes, or true: 允许用户缩放&lt;br /&gt;
-0, no, or false: 不许用户缩放&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;使用 position: absolute 代替&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;可以简单的使用 position: absolute 代替，但是在桌面端会显示不正常，我们可以通过判断 userAgent 来指定 position 的值。&lt;/p&gt;
-
-&lt;p&gt;代码如下：&lt;/p&gt;
-if (navigator.userAgent.match(/Android|iPhone|iPad|iPod/i)) {
-	$div.css(&#39;position&#39;, &#39;absolute&#39;);
-} else {
-	$div.css(&#39;position&#39;, &#39;fixed&#39;);
-}
-
-&lt;p&gt;&lt;strong&gt;使用 js 库&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/cubiq/iscroll&#34;&gt;iScroll&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;注：&lt;br /&gt;
-该库也没有使用过，有待研究&amp;hellip;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Android 静默安装 apk</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/android_install</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/android_install</guid>
-      <description>
-
-&lt;h4 id=&#34;获取-root-权限:321d7f7ef4719249a2a410a8ff80d313&#34;&gt;获取 root 权限&lt;/h4&gt;
-su
-
-&lt;h4 id=&#34;安装-apk:321d7f7ef4719249a2a410a8ff80d313&#34;&gt;安装 apk&lt;/h4&gt;
-pm install -r package
-
-&lt;h4 id=&#34;具体代码:321d7f7ef4719249a2a410a8ff80d313&#34;&gt;具体代码&lt;/h4&gt;
-private void downloadApk(final String fileUrl) {
-    new Thread() {
-        public void run() {
-            String filePath = Environment.getExternalStorageDirectory().getPath() + &#34;/&#34; + APK_NAME;
-            InputStream is = null;
-            FileOutputStream fos = null;
-            try {
-                URL url = new URL(fileUrl);
-                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-
-                File file = new File(filePath);
-                file.createNewFile();// 新建文件
-
-                is = conn.getInputStream();
-                fos = new FileOutputStream(file);
-                byte[] buffer = new byte[1024];
-                while (true) {
-                    int numread = is.read(buffer);
-                    if (numread &lt;= 0) {
-                        break;
-                    }
-                    fos.write(buffer, 0, numread);
-                }
-                fos.flush();
-            } catch (MalformedURLException e) {
-                System.out.println(e.getMessage());
-            } catch (IOException e) {
-                System.out.println(e.getMessage());
-            } finally {
-                try {
-                    is.close();
-                    fos.close();
-                    System.out.println(&#34;下载成功！&#34;);
-                    installApk(filePath);
-                } catch (IOException e) {
-                    System.out.println(&#34;下载失败！&#34;);
-                    System.out.println(e.getMessage());
-                }
-            }
-        }
-    }.start();
-}
-
-private void installApk(final String filePath) {
-    new Thread() {
-        public void run() {
-            Process process = null;
-            OutputStream out = null;
-            try {
-                // 请求root
-                process = Runtime.getRuntime().exec(&#34;su&#34;);
-                out = process.getOutputStream();
-                // 调用安装
-                out.write((&#34;pm install -r &#34; + filePath + &#34;\n&#34;).getBytes());
-            } catch (IOException e) {
-                System.out.println(e.getMessage());
-            } catch (Exception e) {
-                System.out.println(e.getMessage());
-            } finally {
-                try {
-                    out.flush();
-                    out.close();
-                    System.out.println(&#34;安装成功！&#34;);
-                    startApk();
-                } catch (IOException e) {
-                    System.out.println(&#34;安装失败！&#34;);
-                    System.out.println(e.getMessage());
-                }
-            }
-        }
-    }.start();
-}
 </description>
     </item>
     

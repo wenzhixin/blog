@@ -7,14 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Fri, 08 Nov 2013 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/rss/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>RSS、Atom、Feed 介绍与简单实现</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/rss_atom_feed_php</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2013/11/08/rss_atom_feed_php</link>
+      <pubDate>Fri, 08 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/rss_atom_feed_php</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/08/rss_atom_feed_php</guid>
       <description>
 
 &lt;p&gt;最近接触了 RSS 订阅相关的，做了一些了解与开发，记录下。&lt;/p&gt;
@@ -85,7 +86,7 @@ class Feed {
     public function addEntry($entry) {
         $this-&gt;entries[] = $entry;
         return $this;
-    }   
+    }
 
     public function __toString() {
         $result = &#39;&lt;?xml version=&#34;1.0&#34;&gt;&#39;;
@@ -182,10 +183,10 @@ echo $feed;
     
     <item>
       <title>简单的博客 RSS 聚合</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/simple_rss_together</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2013/11/04/simple_rss_together</link>
+      <pubDate>Mon, 04 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/simple_rss_together</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/04/simple_rss_together</guid>
       <description>
 
 &lt;h4 id=&#34;1-前言:620c4514ef1d6b73485351aca4a1e232&#34;&gt;1. 前言&lt;/h4&gt;
@@ -193,8 +194,8 @@ echo $feed;
 &lt;p&gt;将博客的 RSS 内容聚合起来，这样方便查看，今天就来研究如何简单的将 RSS 的内容存到数据库（MySQL）中。&lt;/p&gt;
 
 &lt;h4 id=&#34;2-创建数据库表:620c4514ef1d6b73485351aca4a1e232&#34;&gt;2. 创建数据库表&lt;/h4&gt;
-CREATE TABLE links (  
-    id int NOT NULL AUTO_INCREMENT,  
+CREATE TABLE links (
+    id int NOT NULL AUTO_INCREMENT,
     name varchar(250) NOT NULL,
     url varchar(250) NOT NULL,
     time timestamp NOT NULL DEFAULT current_timestamp,

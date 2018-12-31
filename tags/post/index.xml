@@ -7,14 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Tue, 19 Nov 2013 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/post/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>post 提交数据到新窗口中</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/post_blank_window</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2013/11/19/post_blank_window</link>
+      <pubDate>Tue, 19 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/post_blank_window</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/19/post_blank_window</guid>
       <description>
 
 &lt;p&gt;在很多时候，我们需要 post 数据到新的窗口中，例如在需要提交大数据到后台中但是无法通过 url 的时候，或者打印报表等等。&lt;/p&gt;
@@ -24,7 +25,7 @@
 &lt;h4 id=&#34;1-flex:f307b6e1addce35fbffa098bfd9c1751&#34;&gt;1. flex&lt;/h4&gt;
 
 &lt;p&gt;flex 中使用 navigateToURL() 方法，可以指定 target 为 blank，
-而URLRequest 可以指定 method 方法，并且将数据保存到 data 中。&lt;br /&gt;
+而URLRequest 可以指定 method 方法，并且将数据保存到 data 中。
 关键代码如下：&lt;/p&gt;
 var request:URLRequest = new URLRequest(url); // 后台 url
 request.method = URLRequestMethod.POST;
@@ -38,7 +39,7 @@ navigateToURL(request, &#39;_blank&#39;);
 
 &lt;p&gt;js 中使用 form 表单来 submit 数据到指定的 url 中，
 这里设置 method 为 post，并且指定 target 为 blank，
-需要将 form 元素通过 display:none 隐藏起来。&lt;br /&gt;
+需要将 form 元素通过 display:none 隐藏起来。
 关键代码如下：&lt;/p&gt;
 &lt;form action=&#34;url&#34; method=&#34;post&#34; target=&#34;_blank&#34; style=&#34;display: none;&#34;&gt;
     &lt;input type=&#34;hidden&#34; name=&#34;username&#34; /&gt;
@@ -51,7 +52,7 @@ navigateToURL(request, &#39;_blank&#39;);
     $form.submit();
 &lt;/script&gt;
 
-&lt;p&gt;&lt;strong&gt;注：&lt;/strong&gt;&lt;br /&gt;
+&lt;p&gt;&lt;strong&gt;注：&lt;/strong&gt;
 使用动态生成 form 的情况在 firefox 下不起作用，
 原因是 firefox 需要 form 在 DOM 中进行初始化才起作用。&lt;/p&gt;
 </description>

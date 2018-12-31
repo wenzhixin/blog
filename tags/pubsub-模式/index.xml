@@ -7,14 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Wed, 06 Nov 2013 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/pubsub-%E6%A8%A1%E5%BC%8F/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>理解并实现 PubSub 模式</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/understand_pubsub</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2013/11/06/understand_pubsub</link>
+      <pubDate>Wed, 06 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/understand_pubsub</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/06/understand_pubsub</guid>
       <description>&lt;p&gt;假如我们正在构建一个类似于 Google Docs 的应用程序，当用户按下一个按键时，需要做的事情有很多：
 新字符显示到屏幕上；插入点向后移动；将本次动作加入到撤销的历史记录中；
 保持与服务器同步；拼写错误检查；统计字数和页数等等。&lt;/p&gt;

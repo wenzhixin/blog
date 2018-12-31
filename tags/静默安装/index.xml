@@ -7,14 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Mon, 18 Mar 2013 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/%E9%9D%99%E9%BB%98%E5%AE%89%E8%A3%85/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Android 静默安装 apk</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/android_install</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2013/03/18/android_install</link>
+      <pubDate>Mon, 18 Mar 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/android_install</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/03/18/android_install</guid>
       <description>
 
 &lt;h4 id=&#34;获取-root-权限:321d7f7ef4719249a2a410a8ff80d313&#34;&gt;获取 root 权限&lt;/h4&gt;

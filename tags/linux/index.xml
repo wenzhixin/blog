@@ -7,14 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Fri, 07 Nov 2014 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://blog.wenzhixin.net.cn/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>crontab 学习笔记</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/crontab_study</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2014/11/07/crontab_study</link>
+      <pubDate>Fri, 07 Nov 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/crontab_study</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/11/07/crontab_study</guid>
       <description>
 
 &lt;p&gt;crontab 常见于 Unix 和类 Unix 的操作系统之中，用于设置周期性被执行的指令。该命令从标准输入设备读取指令，并将其存放于&lt;code&gt;crontab&lt;/code&gt;文件中，以供之后读取和执行。&lt;/p&gt;
@@ -101,10 +102,10 @@ crontab [ -u user ] [ -i ] { -e | -l | -r }
     
     <item>
       <title>linux shell编程</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/linux_shell_programming</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2012/05/29/linux_shell_programming</link>
+      <pubDate>Tue, 29 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/linux_shell_programming</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/05/29/linux_shell_programming</guid>
       <description>&lt;p&gt;1、shell结构&lt;/p&gt;
 
 &lt;p&gt; * #!指定执行脚本的shell&lt;/p&gt;
@@ -273,10 +274,10 @@ shell编程&#34; /&gt;&lt;/p&gt;
     
     <item>
       <title>linux shell编程</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/linux_shell_programming</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2012/05/29/linux_shell_programming</link>
+      <pubDate>Tue, 29 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/linux_shell_programming</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/05/29/linux_shell_programming</guid>
       <description>&lt;p&gt;1、shell结构&lt;/p&gt;
 
 &lt;p&gt; * #!指定执行脚本的shell&lt;/p&gt;
@@ -444,11 +445,677 @@ shell编程&#34; /&gt;&lt;/p&gt;
     </item>
     
     <item>
-      <title>linux 常用命令——文件处理命令</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/commonly_used_linux_commands_file_command</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>linux常用命令——压缩解压命令</title>
+      <link>http://blog.wenzhixin.net.cn/2012/05/23/commonly_used_linux_commands_compression_decompression_command</link>
+      <pubDate>Wed, 23 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/commonly_used_linux_commands_file_command</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/05/23/commonly_used_linux_commands_compression_decompression_command</guid>
+      <description>&lt;p&gt;命令：gzip (GNU zip)&lt;/p&gt;
+
+&lt;p&gt;功能：压缩文件&lt;/p&gt;
+
+&lt;p&gt;权限：所有用户&lt;/p&gt;
+
+&lt;p&gt;语法：gzip 选项[文件]&lt;/p&gt;
+
+&lt;p&gt;压缩后格式：.gz&lt;/p&gt;
+
+&lt;p&gt;说明：只能压缩文件，不保存源文件&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;命令：gunzip (GNU unzip)&lt;/p&gt;
+
+&lt;p&gt;功能：解压缩 .gz 的压缩文件&lt;/p&gt;
+
+&lt;p&gt;权限：所有用户&lt;/p&gt;
+
+&lt;p&gt;语法：gunzip 选项[压缩文件]&lt;/p&gt;
+
+&lt;p&gt;说明：只能解压文件&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;命令：tar&lt;/p&gt;
+
+&lt;p&gt;功能：压缩打包目录&lt;/p&gt;
+
+&lt;p&gt;权限：所有用户&lt;/p&gt;
+
+&lt;p&gt;语法：tar 选项[cvf][目录]&lt;/p&gt;
+
+&lt;p&gt;-c 产生 .tar 打包文件&lt;/p&gt;
+
+&lt;p&gt;-x 解包 .tar 文件&lt;/p&gt;
+
+&lt;p&gt;-v 显示详细信息&lt;/p&gt;
+
+&lt;p&gt;-f 指定压缩后/解压的文件名&lt;/p&gt;
+
+&lt;p&gt;-z 打包同时压缩/解压缩&lt;/p&gt;
+
+&lt;p&gt;压缩后格式：.tar.gz&lt;/p&gt;
+
+&lt;p&gt;例子：tar -cvfz file.tar.gz dir&lt;/p&gt;
+
+&lt;p&gt;tar -xvfz file.tar.gz&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;命令：zip&lt;/p&gt;
+
+&lt;p&gt;功能：压缩文件或目录&lt;/p&gt;
+
+&lt;p&gt;权限：所有用户&lt;/p&gt;
+
+&lt;p&gt;语法：zip 选项[-r][压缩后文件名称][文件或目录]&lt;/p&gt;
+
+&lt;p&gt;-r 压缩目录&lt;/p&gt;
+
+&lt;p&gt;压缩后格式：.zip&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;命令：unzip&lt;/p&gt;
+
+&lt;p&gt;功能：解压 .zip 的压缩文件&lt;/p&gt;
+
+&lt;p&gt;权限：所有用户&lt;/p&gt;
+
+&lt;p&gt;语法：unzip [压缩文件]&lt;/p&gt;
+
+&lt;p&gt;说明：.zip 文件能与 windows 想兼容&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;命令：bzip2&lt;/p&gt;
+
+&lt;p&gt;功能：压缩文件&lt;/p&gt;
+
+&lt;p&gt;权限：所有用户&lt;/p&gt;
+
+&lt;p&gt;语法：bzip 选项[-k][文件]&lt;/p&gt;
+
+&lt;p&gt;-k 产生压缩文件后保留源文件&lt;/p&gt;
+
+&lt;p&gt;压缩后格式：.bz2&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;命令：bunzip2&lt;/p&gt;
+
+&lt;p&gt;功能：解压缩 .bz2 的文件&lt;/p&gt;
+
+&lt;p&gt;权限：所有用户&lt;/p&gt;
+
+&lt;p&gt;语法：bunzip2 选项[-k][压缩文件]&lt;/p&gt;
+
+&lt;p&gt;-k 解压缩后保留源文件&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>linux常用命令——压缩解压命令</title>
+      <link>http://blog.wenzhixin.net.cn/2012/05/23/commonly_used_linux_commands_compression_decompression_command</link>
+      <pubDate>Wed, 23 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2012/05/23/commonly_used_linux_commands_compression_decompression_command</guid>
+      <description>&lt;p&gt;命令：gzip (GNU zip)&lt;/p&gt;
+
+&lt;p&gt;功能：压缩文件&lt;/p&gt;
+
+&lt;p&gt;权限：所有用户&lt;/p&gt;
+
+&lt;p&gt;语法：gzip 选项[文件]&lt;/p&gt;
+
+&lt;p&gt;压缩后格式：.gz&lt;/p&gt;
+
+&lt;p&gt;说明：只能压缩文件，不保存源文件&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;命令：gunzip (GNU unzip)&lt;/p&gt;
+
+&lt;p&gt;功能：解压缩 .gz 的压缩文件&lt;/p&gt;
+
+&lt;p&gt;权限：所有用户&lt;/p&gt;
+
+&lt;p&gt;语法：gunzip 选项[压缩文件]&lt;/p&gt;
+
+&lt;p&gt;说明：只能解压文件&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;命令：tar&lt;/p&gt;
+
+&lt;p&gt;功能：压缩打包目录&lt;/p&gt;
+
+&lt;p&gt;权限：所有用户&lt;/p&gt;
+
+&lt;p&gt;语法：tar 选项[cvf][目录]&lt;/p&gt;
+
+&lt;p&gt;-c 产生 .tar 打包文件&lt;/p&gt;
+
+&lt;p&gt;-x 解包 .tar 文件&lt;/p&gt;
+
+&lt;p&gt;-v 显示详细信息&lt;/p&gt;
+
+&lt;p&gt;-f 指定压缩后/解压的文件名&lt;/p&gt;
+
+&lt;p&gt;-z 打包同时压缩/解压缩&lt;/p&gt;
+
+&lt;p&gt;压缩后格式：.tar.gz&lt;/p&gt;
+
+&lt;p&gt;例子：tar -cvfz file.tar.gz dir&lt;/p&gt;
+
+&lt;p&gt;tar -xvfz file.tar.gz&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;命令：zip&lt;/p&gt;
+
+&lt;p&gt;功能：压缩文件或目录&lt;/p&gt;
+
+&lt;p&gt;权限：所有用户&lt;/p&gt;
+
+&lt;p&gt;语法：zip 选项[-r][压缩后文件名称][文件或目录]&lt;/p&gt;
+
+&lt;p&gt;-r 压缩目录&lt;/p&gt;
+
+&lt;p&gt;压缩后格式：.zip&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;命令：unzip&lt;/p&gt;
+
+&lt;p&gt;功能：解压 .zip 的压缩文件&lt;/p&gt;
+
+&lt;p&gt;权限：所有用户&lt;/p&gt;
+
+&lt;p&gt;语法：unzip [压缩文件]&lt;/p&gt;
+
+&lt;p&gt;说明：.zip 文件能与 windows 想兼容&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;命令：bzip2&lt;/p&gt;
+
+&lt;p&gt;功能：压缩文件&lt;/p&gt;
+
+&lt;p&gt;权限：所有用户&lt;/p&gt;
+
+&lt;p&gt;语法：bzip 选项[-k][文件]&lt;/p&gt;
+
+&lt;p&gt;-k 产生压缩文件后保留源文件&lt;/p&gt;
+
+&lt;p&gt;压缩后格式：.bz2&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;命令：bunzip2&lt;/p&gt;
+
+&lt;p&gt;功能：解压缩 .bz2 的文件&lt;/p&gt;
+
+&lt;p&gt;权限：所有用户&lt;/p&gt;
+
+&lt;p&gt;语法：bunzip2 选项[-k][压缩文件]&lt;/p&gt;
+
+&lt;p&gt;-k 解压缩后保留源文件&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>linux常用命令——帮助命令</title>
+      <link>http://blog.wenzhixin.net.cn/2012/05/22/commonly_used_linux_commands_help_command</link>
+      <pubDate>Tue, 22 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2012/05/22/commonly_used_linux_commands_help_command</guid>
+      <description>&lt;p&gt;命令：man (manual)&lt;/p&gt;
+
+&lt;p&gt;功能：获得帮助信息&lt;/p&gt;
+
+&lt;p&gt;权限：所有用户&lt;/p&gt;
+
+&lt;p&gt;语法：man [命令或配置文件]&lt;/p&gt;
+
+&lt;p&gt;例子：man ls 查看 ls 命令的帮助信息&lt;/p&gt;
+
+&lt;p&gt;man services 查看配置文件 services 的帮助信息&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;命令：info (infomation)&lt;/p&gt;
+
+&lt;p&gt;功能：获得帮助信息&lt;/p&gt;
+
+&lt;p&gt;权限：所有用户&lt;/p&gt;
+
+&lt;p&gt;语法：info [任何关键字]&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;命令：whatis / apropos&lt;/p&gt;
+
+&lt;p&gt;功能：获得索引的简短说明信息&lt;/p&gt;
+
+&lt;p&gt;权限：所有用户&lt;/p&gt;
+
+&lt;p&gt;语法：whatis / apropos [任何关键字]&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;命令：&amp;ndash;help&lt;/p&gt;
+
+&lt;p&gt;功能：获得命令的帮助信息&lt;/p&gt;
+
+&lt;p&gt;权限：所有用户&lt;/p&gt;
+
+&lt;p&gt;语法：[命令] &amp;ndash;help&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>linux常用命令——帮助命令</title>
+      <link>http://blog.wenzhixin.net.cn/2012/05/22/commonly_used_linux_commands_help_command</link>
+      <pubDate>Tue, 22 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2012/05/22/commonly_used_linux_commands_help_command</guid>
+      <description>&lt;p&gt;命令：man (manual)&lt;/p&gt;
+
+&lt;p&gt;功能：获得帮助信息&lt;/p&gt;
+
+&lt;p&gt;权限：所有用户&lt;/p&gt;
+
+&lt;p&gt;语法：man [命令或配置文件]&lt;/p&gt;
+
+&lt;p&gt;例子：man ls 查看 ls 命令的帮助信息&lt;/p&gt;
+
+&lt;p&gt;man services 查看配置文件 services 的帮助信息&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;命令：info (infomation)&lt;/p&gt;
+
+&lt;p&gt;功能：获得帮助信息&lt;/p&gt;
+
+&lt;p&gt;权限：所有用户&lt;/p&gt;
+
+&lt;p&gt;语法：info [任何关键字]&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;命令：whatis / apropos&lt;/p&gt;
+
+&lt;p&gt;功能：获得索引的简短说明信息&lt;/p&gt;
+
+&lt;p&gt;权限：所有用户&lt;/p&gt;
+
+&lt;p&gt;语法：whatis / apropos [任何关键字]&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;命令：&amp;ndash;help&lt;/p&gt;
+
+&lt;p&gt;功能：获得命令的帮助信息&lt;/p&gt;
+
+&lt;p&gt;权限：所有用户&lt;/p&gt;
+
+&lt;p&gt;语法：[命令] &amp;ndash;help&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>linux常用命令——文件搜索命令</title>
+      <link>http://blog.wenzhixin.net.cn/2012/05/22/commonly_used_linux_commands_file_search_command</link>
+      <pubDate>Tue, 22 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2012/05/22/commonly_used_linux_commands_file_search_command</guid>
+      <description>&lt;p&gt;命令：which / whereis&lt;/p&gt;
+
+&lt;p&gt;功能：显示系统命令所在目录&lt;/p&gt;
+
+&lt;p&gt;权限：所有用户&lt;/p&gt;
+
+&lt;p&gt;语法：which / whereis [命令名称]&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;命令：find&lt;/p&gt;
+
+&lt;p&gt;功能：查找文件或目录&lt;/p&gt;
+
+&lt;p&gt;权限：所有用户&lt;/p&gt;
+
+&lt;p&gt;语法：find [搜索路径][搜索关键字]&lt;/p&gt;
+
+&lt;p&gt;选项：-name [*?] 根据文件名称来查找&lt;/p&gt;
+
+&lt;p&gt;-type [fd] 根据类型来查找&lt;/p&gt;
+
+&lt;p&gt;-size [+-] 根据文件大小来查找&lt;/p&gt;
+
+&lt;p&gt;-user username 查找所有者为 username 的文件&lt;/p&gt;
+
+&lt;p&gt;-ctime/-atime/-mtime [+-]
+根据修改属性时间/访问时间/修改内容时间来查找&lt;/p&gt;
+
+&lt;p&gt;连接符：-a and 逻辑与&lt;/p&gt;
+
+&lt;p&gt;  -o or 逻辑或&lt;/p&gt;
+
+&lt;p&gt;  -exec 命令 {} \; 将查找结果作为命令的参数，不做确认&lt;/p&gt;
+
+&lt;p&gt;  -ok 命令 {} \; 将查找结果作为命令的参数，需要确认&lt;/p&gt;
+
+&lt;p&gt;例子：find /home/wenyi/ -name test* -a -type d chmod 775 {} \;&lt;/p&gt;
+
+&lt;p&gt;find /home/wenyi/ -name test* -a -type f chmod 664 {} \;&lt;/p&gt;
+
+&lt;p&gt;说明：* 匹配 0 个或多个字符，? 匹配一个字符。&lt;/p&gt;
+
+&lt;p&gt;f 表示文件，d 表示文件夹&lt;/p&gt;
+
+&lt;p&gt;+ 表示大于，- 表示小于。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;命令：locate (list files in database)&lt;/p&gt;
+
+&lt;p&gt;功能：根据文件数据库信息查找文件或目录&lt;/p&gt;
+
+&lt;p&gt;权限：所有用户&lt;/p&gt;
+
+&lt;p&gt;语法：locate [文件名]&lt;/p&gt;
+
+&lt;p&gt;说明：因为是根据文件数据库来查找，速度快，但是数据有时不够准确&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;命令：updatedb (update the slocate datenbase)&lt;/p&gt;
+
+&lt;p&gt;功能：建立整个系统目录文件数据库&lt;/p&gt;
+
+&lt;p&gt;权限：所有用户&lt;/p&gt;
+
+&lt;p&gt;语法：updatedb&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;命令：grep&lt;/p&gt;
+
+&lt;p&gt;功能：在文件中搜寻字符串匹配的行并输出&lt;/p&gt;
+
+&lt;p&gt;权限：所有用户&lt;/p&gt;
+
+&lt;p&gt;语法：grep [指定字符串][目标目录]&lt;/p&gt;
+
+&lt;p&gt;说明：grep 使用很广，常常作为管道连接符使用&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>linux常用命令——文件搜索命令</title>
+      <link>http://blog.wenzhixin.net.cn/2012/05/22/commonly_used_linux_commands_file_search_command</link>
+      <pubDate>Tue, 22 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2012/05/22/commonly_used_linux_commands_file_search_command</guid>
+      <description>&lt;p&gt;命令：which / whereis&lt;/p&gt;
+
+&lt;p&gt;功能：显示系统命令所在目录&lt;/p&gt;
+
+&lt;p&gt;权限：所有用户&lt;/p&gt;
+
+&lt;p&gt;语法：which / whereis [命令名称]&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;命令：find&lt;/p&gt;
+
+&lt;p&gt;功能：查找文件或目录&lt;/p&gt;
+
+&lt;p&gt;权限：所有用户&lt;/p&gt;
+
+&lt;p&gt;语法：find [搜索路径][搜索关键字]&lt;/p&gt;
+
+&lt;p&gt;选项：-name [*?] 根据文件名称来查找&lt;/p&gt;
+
+&lt;p&gt;-type [fd] 根据类型来查找&lt;/p&gt;
+
+&lt;p&gt;-size [+-] 根据文件大小来查找&lt;/p&gt;
+
+&lt;p&gt;-user username 查找所有者为 username 的文件&lt;/p&gt;
+
+&lt;p&gt;-ctime/-atime/-mtime [+-]
+根据修改属性时间/访问时间/修改内容时间来查找&lt;/p&gt;
+
+&lt;p&gt;连接符：-a and 逻辑与&lt;/p&gt;
+
+&lt;p&gt;  -o or 逻辑或&lt;/p&gt;
+
+&lt;p&gt;  -exec 命令 {} \; 将查找结果作为命令的参数，不做确认&lt;/p&gt;
+
+&lt;p&gt;  -ok 命令 {} \; 将查找结果作为命令的参数，需要确认&lt;/p&gt;
+
+&lt;p&gt;例子：find /home/wenyi/ -name test* -a -type d chmod 775 {} \;&lt;/p&gt;
+
+&lt;p&gt;find /home/wenyi/ -name test* -a -type f chmod 664 {} \;&lt;/p&gt;
+
+&lt;p&gt;说明：* 匹配 0 个或多个字符，? 匹配一个字符。&lt;/p&gt;
+
+&lt;p&gt;f 表示文件，d 表示文件夹&lt;/p&gt;
+
+&lt;p&gt;+ 表示大于，- 表示小于。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;命令：locate (list files in database)&lt;/p&gt;
+
+&lt;p&gt;功能：根据文件数据库信息查找文件或目录&lt;/p&gt;
+
+&lt;p&gt;权限：所有用户&lt;/p&gt;
+
+&lt;p&gt;语法：locate [文件名]&lt;/p&gt;
+
+&lt;p&gt;说明：因为是根据文件数据库来查找，速度快，但是数据有时不够准确&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;命令：updatedb (update the slocate datenbase)&lt;/p&gt;
+
+&lt;p&gt;功能：建立整个系统目录文件数据库&lt;/p&gt;
+
+&lt;p&gt;权限：所有用户&lt;/p&gt;
+
+&lt;p&gt;语法：updatedb&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;命令：grep&lt;/p&gt;
+
+&lt;p&gt;功能：在文件中搜寻字符串匹配的行并输出&lt;/p&gt;
+
+&lt;p&gt;权限：所有用户&lt;/p&gt;
+
+&lt;p&gt;语法：grep [指定字符串][目标目录]&lt;/p&gt;
+
+&lt;p&gt;说明：grep 使用很广，常常作为管道连接符使用&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>linux常用命令——权限管理命令</title>
+      <link>http://blog.wenzhixin.net.cn/2012/05/20/commonly_used_linux_commands_permission_management_command</link>
+      <pubDate>Sun, 20 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2012/05/20/commonly_used_linux_commands_permission_management_command</guid>
+      <description>&lt;p&gt;命令：chmod (change the permissions mode of a file)&lt;/p&gt;
+
+&lt;p&gt;功能：改变文件或目录权限&lt;/p&gt;
+
+&lt;p&gt;权限：所有用户&lt;/p&gt;
+
+&lt;p&gt;语法：chmod [{ugo}{+-=}{rwx}][文件或目录]&lt;/p&gt;
+
+&lt;p&gt;chmod [mode=421][文件或目录]&lt;/p&gt;
+
+&lt;p&gt;例子：chmod u+x test&lt;/p&gt;
+
+&lt;p&gt;chmod 755 wenyi&lt;/p&gt;
+
+&lt;p&gt;chmod 644 wenyi.txt&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;命令：chown (change file ownership)&lt;/p&gt;
+
+&lt;p&gt;功能：改变文件或目录的所有者&lt;/p&gt;
+
+&lt;p&gt;权限：所有用户&lt;/p&gt;
+
+&lt;p&gt;语法：chown [用户][文件或目录]&lt;/p&gt;
+
+&lt;p&gt;例子：chown wenyi test&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;命令：chgrp (change file group ownership)&lt;/p&gt;
+
+&lt;p&gt;功能：改变文件或目录的所属组&lt;/p&gt;
+
+&lt;p&gt;权限：所有用户&lt;/p&gt;
+
+&lt;p&gt;语法：chgrp [用户组][文件或目录]&lt;/p&gt;
+
+&lt;p&gt;例子：chgrp wenyi test&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;命令：umask&lt;/p&gt;
+
+&lt;p&gt;功能：显示、设置文件的缺省权限&lt;/p&gt;
+
+&lt;p&gt;权限：所有用户&lt;/p&gt;
+
+&lt;p&gt;语法：umask [-S]&lt;/p&gt;
+
+&lt;p&gt;-S 以 rwx 形式显示新建文件或者目录缺省权限&lt;/p&gt;
+
+&lt;p&gt;说明：不加参数或者设置缺省权限需要使用掩码值来设置&lt;/p&gt;
+
+&lt;p&gt;例子：umask 0022&lt;/p&gt;
+
+&lt;p&gt;umask -S u=rwx,g=rx,o=rx&lt;/p&gt;
+
+&lt;p&gt;umask 027 u=rwx,g=rx&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt; * 文件目录权限：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://ww4.sinaimg.cn/mw600/88a9c274jw1dt434km8lfg.gif&#34; alt=&#34;linux常用命令——权限管理命令&#34; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt; * 文件目录 u/g/o 含义&lt;/p&gt;
+
+&lt;p&gt;u：所有者&lt;/p&gt;
+
+&lt;p&gt;g：所属者&lt;/p&gt;
+
+&lt;p&gt;o：其他人&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>linux常用命令——权限管理命令</title>
+      <link>http://blog.wenzhixin.net.cn/2012/05/20/commonly_used_linux_commands_permission_management_command</link>
+      <pubDate>Sun, 20 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2012/05/20/commonly_used_linux_commands_permission_management_command</guid>
+      <description>&lt;p&gt;命令：chmod (change the permissions mode of a file)&lt;/p&gt;
+
+&lt;p&gt;功能：改变文件或目录权限&lt;/p&gt;
+
+&lt;p&gt;权限：所有用户&lt;/p&gt;
+
+&lt;p&gt;语法：chmod [{ugo}{+-=}{rwx}][文件或目录]&lt;/p&gt;
+
+&lt;p&gt;chmod [mode=421][文件或目录]&lt;/p&gt;
+
+&lt;p&gt;例子：chmod u+x test&lt;/p&gt;
+
+&lt;p&gt;chmod 755 wenyi&lt;/p&gt;
+
+&lt;p&gt;chmod 644 wenyi.txt&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;命令：chown (change file ownership)&lt;/p&gt;
+
+&lt;p&gt;功能：改变文件或目录的所有者&lt;/p&gt;
+
+&lt;p&gt;权限：所有用户&lt;/p&gt;
+
+&lt;p&gt;语法：chown [用户][文件或目录]&lt;/p&gt;
+
+&lt;p&gt;例子：chown wenyi test&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;命令：chgrp (change file group ownership)&lt;/p&gt;
+
+&lt;p&gt;功能：改变文件或目录的所属组&lt;/p&gt;
+
+&lt;p&gt;权限：所有用户&lt;/p&gt;
+
+&lt;p&gt;语法：chgrp [用户组][文件或目录]&lt;/p&gt;
+
+&lt;p&gt;例子：chgrp wenyi test&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;命令：umask&lt;/p&gt;
+
+&lt;p&gt;功能：显示、设置文件的缺省权限&lt;/p&gt;
+
+&lt;p&gt;权限：所有用户&lt;/p&gt;
+
+&lt;p&gt;语法：umask [-S]&lt;/p&gt;
+
+&lt;p&gt;-S 以 rwx 形式显示新建文件或者目录缺省权限&lt;/p&gt;
+
+&lt;p&gt;说明：不加参数或者设置缺省权限需要使用掩码值来设置&lt;/p&gt;
+
+&lt;p&gt;例子：umask 0022&lt;/p&gt;
+
+&lt;p&gt;umask -S u=rwx,g=rx,o=rx&lt;/p&gt;
+
+&lt;p&gt;umask 027 u=rwx,g=rx&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt; * 文件目录权限：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://ww4.sinaimg.cn/mw600/88a9c274jw1dt434km8lfg.gif&#34; alt=&#34;linux常用命令——权限管理命令&#34; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt; * 文件目录 u/g/o 含义&lt;/p&gt;
+
+&lt;p&gt;u：所有者&lt;/p&gt;
+
+&lt;p&gt;g：所属者&lt;/p&gt;
+
+&lt;p&gt;o：其他人&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>linux 常用命令——文件处理命令</title>
+      <link>http://blog.wenzhixin.net.cn/2012/05/19/commonly_used_linux_commands_file_command</link>
+      <pubDate>Sat, 19 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2012/05/19/commonly_used_linux_commands_file_command</guid>
       <description>&lt;p&gt;命令：ls (list)&lt;/p&gt;
 
 &lt;p&gt;功能：显示目录文件&lt;/p&gt;
@@ -613,10 +1280,10 @@ shell编程&#34; /&gt;&lt;/p&gt;
     
     <item>
       <title>linux 常用命令——文件处理命令</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/commonly_used_linux_commands_file_command</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>http://blog.wenzhixin.net.cn/2012/05/19/commonly_used_linux_commands_file_command</link>
+      <pubDate>Sat, 19 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/commonly_used_linux_commands_file_command</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/05/19/commonly_used_linux_commands_file_command</guid>
       <description>&lt;p&gt;命令：ls (list)&lt;/p&gt;
 
 &lt;p&gt;功能：显示目录文件&lt;/p&gt;
@@ -776,672 +1443,6 @@ shell编程&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;-s 创建软链接&lt;/p&gt;
 
 &lt;p&gt;说明：软链接相当于快捷方式，硬链接相当于拷贝+同步&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>linux常用命令——压缩解压命令</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/commonly_used_linux_commands_compression_decompression_command</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/commonly_used_linux_commands_compression_decompression_command</guid>
-      <description>&lt;p&gt;命令：gzip (GNU zip)&lt;/p&gt;
-
-&lt;p&gt;功能：压缩文件&lt;/p&gt;
-
-&lt;p&gt;权限：所有用户&lt;/p&gt;
-
-&lt;p&gt;语法：gzip 选项[文件]&lt;/p&gt;
-
-&lt;p&gt;压缩后格式：.gz&lt;/p&gt;
-
-&lt;p&gt;说明：只能压缩文件，不保存源文件&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;命令：gunzip (GNU unzip)&lt;/p&gt;
-
-&lt;p&gt;功能：解压缩 .gz 的压缩文件&lt;/p&gt;
-
-&lt;p&gt;权限：所有用户&lt;/p&gt;
-
-&lt;p&gt;语法：gunzip 选项[压缩文件]&lt;/p&gt;
-
-&lt;p&gt;说明：只能解压文件&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;命令：tar&lt;/p&gt;
-
-&lt;p&gt;功能：压缩打包目录&lt;/p&gt;
-
-&lt;p&gt;权限：所有用户&lt;/p&gt;
-
-&lt;p&gt;语法：tar 选项[cvf][目录]&lt;/p&gt;
-
-&lt;p&gt;-c 产生 .tar 打包文件&lt;/p&gt;
-
-&lt;p&gt;-x 解包 .tar 文件&lt;/p&gt;
-
-&lt;p&gt;-v 显示详细信息&lt;/p&gt;
-
-&lt;p&gt;-f 指定压缩后/解压的文件名&lt;/p&gt;
-
-&lt;p&gt;-z 打包同时压缩/解压缩&lt;/p&gt;
-
-&lt;p&gt;压缩后格式：.tar.gz&lt;/p&gt;
-
-&lt;p&gt;例子：tar -cvfz file.tar.gz dir&lt;/p&gt;
-
-&lt;p&gt;tar -xvfz file.tar.gz&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;命令：zip&lt;/p&gt;
-
-&lt;p&gt;功能：压缩文件或目录&lt;/p&gt;
-
-&lt;p&gt;权限：所有用户&lt;/p&gt;
-
-&lt;p&gt;语法：zip 选项[-r][压缩后文件名称][文件或目录]&lt;/p&gt;
-
-&lt;p&gt;-r 压缩目录&lt;/p&gt;
-
-&lt;p&gt;压缩后格式：.zip&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;命令：unzip&lt;/p&gt;
-
-&lt;p&gt;功能：解压 .zip 的压缩文件&lt;/p&gt;
-
-&lt;p&gt;权限：所有用户&lt;/p&gt;
-
-&lt;p&gt;语法：unzip [压缩文件]&lt;/p&gt;
-
-&lt;p&gt;说明：.zip 文件能与 windows 想兼容&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;命令：bzip2&lt;/p&gt;
-
-&lt;p&gt;功能：压缩文件&lt;/p&gt;
-
-&lt;p&gt;权限：所有用户&lt;/p&gt;
-
-&lt;p&gt;语法：bzip 选项[-k][文件]&lt;/p&gt;
-
-&lt;p&gt;-k 产生压缩文件后保留源文件&lt;/p&gt;
-
-&lt;p&gt;压缩后格式：.bz2&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;命令：bunzip2&lt;/p&gt;
-
-&lt;p&gt;功能：解压缩 .bz2 的文件&lt;/p&gt;
-
-&lt;p&gt;权限：所有用户&lt;/p&gt;
-
-&lt;p&gt;语法：bunzip2 选项[-k][压缩文件]&lt;/p&gt;
-
-&lt;p&gt;-k 解压缩后保留源文件&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>linux常用命令——压缩解压命令</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/commonly_used_linux_commands_compression_decompression_command</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/commonly_used_linux_commands_compression_decompression_command</guid>
-      <description>&lt;p&gt;命令：gzip (GNU zip)&lt;/p&gt;
-
-&lt;p&gt;功能：压缩文件&lt;/p&gt;
-
-&lt;p&gt;权限：所有用户&lt;/p&gt;
-
-&lt;p&gt;语法：gzip 选项[文件]&lt;/p&gt;
-
-&lt;p&gt;压缩后格式：.gz&lt;/p&gt;
-
-&lt;p&gt;说明：只能压缩文件，不保存源文件&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;命令：gunzip (GNU unzip)&lt;/p&gt;
-
-&lt;p&gt;功能：解压缩 .gz 的压缩文件&lt;/p&gt;
-
-&lt;p&gt;权限：所有用户&lt;/p&gt;
-
-&lt;p&gt;语法：gunzip 选项[压缩文件]&lt;/p&gt;
-
-&lt;p&gt;说明：只能解压文件&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;命令：tar&lt;/p&gt;
-
-&lt;p&gt;功能：压缩打包目录&lt;/p&gt;
-
-&lt;p&gt;权限：所有用户&lt;/p&gt;
-
-&lt;p&gt;语法：tar 选项[cvf][目录]&lt;/p&gt;
-
-&lt;p&gt;-c 产生 .tar 打包文件&lt;/p&gt;
-
-&lt;p&gt;-x 解包 .tar 文件&lt;/p&gt;
-
-&lt;p&gt;-v 显示详细信息&lt;/p&gt;
-
-&lt;p&gt;-f 指定压缩后/解压的文件名&lt;/p&gt;
-
-&lt;p&gt;-z 打包同时压缩/解压缩&lt;/p&gt;
-
-&lt;p&gt;压缩后格式：.tar.gz&lt;/p&gt;
-
-&lt;p&gt;例子：tar -cvfz file.tar.gz dir&lt;/p&gt;
-
-&lt;p&gt;tar -xvfz file.tar.gz&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;命令：zip&lt;/p&gt;
-
-&lt;p&gt;功能：压缩文件或目录&lt;/p&gt;
-
-&lt;p&gt;权限：所有用户&lt;/p&gt;
-
-&lt;p&gt;语法：zip 选项[-r][压缩后文件名称][文件或目录]&lt;/p&gt;
-
-&lt;p&gt;-r 压缩目录&lt;/p&gt;
-
-&lt;p&gt;压缩后格式：.zip&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;命令：unzip&lt;/p&gt;
-
-&lt;p&gt;功能：解压 .zip 的压缩文件&lt;/p&gt;
-
-&lt;p&gt;权限：所有用户&lt;/p&gt;
-
-&lt;p&gt;语法：unzip [压缩文件]&lt;/p&gt;
-
-&lt;p&gt;说明：.zip 文件能与 windows 想兼容&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;命令：bzip2&lt;/p&gt;
-
-&lt;p&gt;功能：压缩文件&lt;/p&gt;
-
-&lt;p&gt;权限：所有用户&lt;/p&gt;
-
-&lt;p&gt;语法：bzip 选项[-k][文件]&lt;/p&gt;
-
-&lt;p&gt;-k 产生压缩文件后保留源文件&lt;/p&gt;
-
-&lt;p&gt;压缩后格式：.bz2&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;命令：bunzip2&lt;/p&gt;
-
-&lt;p&gt;功能：解压缩 .bz2 的文件&lt;/p&gt;
-
-&lt;p&gt;权限：所有用户&lt;/p&gt;
-
-&lt;p&gt;语法：bunzip2 选项[-k][压缩文件]&lt;/p&gt;
-
-&lt;p&gt;-k 解压缩后保留源文件&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>linux常用命令——帮助命令</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/commonly_used_linux_commands_help_command</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/commonly_used_linux_commands_help_command</guid>
-      <description>&lt;p&gt;命令：man (manual)&lt;/p&gt;
-
-&lt;p&gt;功能：获得帮助信息&lt;/p&gt;
-
-&lt;p&gt;权限：所有用户&lt;/p&gt;
-
-&lt;p&gt;语法：man [命令或配置文件]&lt;/p&gt;
-
-&lt;p&gt;例子：man ls 查看 ls 命令的帮助信息&lt;/p&gt;
-
-&lt;p&gt;man services 查看配置文件 services 的帮助信息&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;命令：info (infomation)&lt;/p&gt;
-
-&lt;p&gt;功能：获得帮助信息&lt;/p&gt;
-
-&lt;p&gt;权限：所有用户&lt;/p&gt;
-
-&lt;p&gt;语法：info [任何关键字]&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;命令：whatis / apropos&lt;/p&gt;
-
-&lt;p&gt;功能：获得索引的简短说明信息&lt;/p&gt;
-
-&lt;p&gt;权限：所有用户&lt;/p&gt;
-
-&lt;p&gt;语法：whatis / apropos [任何关键字]&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;命令：&amp;ndash;help&lt;/p&gt;
-
-&lt;p&gt;功能：获得命令的帮助信息&lt;/p&gt;
-
-&lt;p&gt;权限：所有用户&lt;/p&gt;
-
-&lt;p&gt;语法：[命令] &amp;ndash;help&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>linux常用命令——帮助命令</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/commonly_used_linux_commands_help_command</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/commonly_used_linux_commands_help_command</guid>
-      <description>&lt;p&gt;命令：man (manual)&lt;/p&gt;
-
-&lt;p&gt;功能：获得帮助信息&lt;/p&gt;
-
-&lt;p&gt;权限：所有用户&lt;/p&gt;
-
-&lt;p&gt;语法：man [命令或配置文件]&lt;/p&gt;
-
-&lt;p&gt;例子：man ls 查看 ls 命令的帮助信息&lt;/p&gt;
-
-&lt;p&gt;man services 查看配置文件 services 的帮助信息&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;命令：info (infomation)&lt;/p&gt;
-
-&lt;p&gt;功能：获得帮助信息&lt;/p&gt;
-
-&lt;p&gt;权限：所有用户&lt;/p&gt;
-
-&lt;p&gt;语法：info [任何关键字]&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;命令：whatis / apropos&lt;/p&gt;
-
-&lt;p&gt;功能：获得索引的简短说明信息&lt;/p&gt;
-
-&lt;p&gt;权限：所有用户&lt;/p&gt;
-
-&lt;p&gt;语法：whatis / apropos [任何关键字]&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;命令：&amp;ndash;help&lt;/p&gt;
-
-&lt;p&gt;功能：获得命令的帮助信息&lt;/p&gt;
-
-&lt;p&gt;权限：所有用户&lt;/p&gt;
-
-&lt;p&gt;语法：[命令] &amp;ndash;help&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>linux常用命令——文件搜索命令</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/commonly_used_linux_commands_file_search_command</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/commonly_used_linux_commands_file_search_command</guid>
-      <description>&lt;p&gt;命令：which / whereis&lt;/p&gt;
-
-&lt;p&gt;功能：显示系统命令所在目录&lt;/p&gt;
-
-&lt;p&gt;权限：所有用户&lt;/p&gt;
-
-&lt;p&gt;语法：which / whereis [命令名称]&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;命令：find&lt;/p&gt;
-
-&lt;p&gt;功能：查找文件或目录&lt;/p&gt;
-
-&lt;p&gt;权限：所有用户&lt;/p&gt;
-
-&lt;p&gt;语法：find [搜索路径][搜索关键字]&lt;/p&gt;
-
-&lt;p&gt;选项：-name [*?] 根据文件名称来查找&lt;/p&gt;
-
-&lt;p&gt;-type [fd] 根据类型来查找&lt;/p&gt;
-
-&lt;p&gt;-size [+-] 根据文件大小来查找&lt;/p&gt;
-
-&lt;p&gt;-user username 查找所有者为 username 的文件&lt;/p&gt;
-
-&lt;p&gt;-ctime/-atime/-mtime [+-]
-根据修改属性时间/访问时间/修改内容时间来查找&lt;/p&gt;
-
-&lt;p&gt;连接符：-a and 逻辑与&lt;/p&gt;
-
-&lt;p&gt;  -o or 逻辑或&lt;/p&gt;
-
-&lt;p&gt;  -exec 命令 {} \; 将查找结果作为命令的参数，不做确认&lt;/p&gt;
-
-&lt;p&gt;  -ok 命令 {} \; 将查找结果作为命令的参数，需要确认&lt;/p&gt;
-
-&lt;p&gt;例子：find /home/wenyi/ -name test* -a -type d chmod 775 {} \;&lt;/p&gt;
-
-&lt;p&gt;find /home/wenyi/ -name test* -a -type f chmod 664 {} \;&lt;/p&gt;
-
-&lt;p&gt;说明：* 匹配 0 个或多个字符，? 匹配一个字符。&lt;/p&gt;
-
-&lt;p&gt;f 表示文件，d 表示文件夹&lt;/p&gt;
-
-&lt;p&gt;+ 表示大于，- 表示小于。&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;命令：locate (list files in database)&lt;/p&gt;
-
-&lt;p&gt;功能：根据文件数据库信息查找文件或目录&lt;/p&gt;
-
-&lt;p&gt;权限：所有用户&lt;/p&gt;
-
-&lt;p&gt;语法：locate [文件名]&lt;/p&gt;
-
-&lt;p&gt;说明：因为是根据文件数据库来查找，速度快，但是数据有时不够准确&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;命令：updatedb (update the slocate datenbase)&lt;/p&gt;
-
-&lt;p&gt;功能：建立整个系统目录文件数据库&lt;/p&gt;
-
-&lt;p&gt;权限：所有用户&lt;/p&gt;
-
-&lt;p&gt;语法：updatedb&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;命令：grep&lt;/p&gt;
-
-&lt;p&gt;功能：在文件中搜寻字符串匹配的行并输出&lt;/p&gt;
-
-&lt;p&gt;权限：所有用户&lt;/p&gt;
-
-&lt;p&gt;语法：grep [指定字符串][目标目录]&lt;/p&gt;
-
-&lt;p&gt;说明：grep 使用很广，常常作为管道连接符使用&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>linux常用命令——文件搜索命令</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/commonly_used_linux_commands_file_search_command</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/commonly_used_linux_commands_file_search_command</guid>
-      <description>&lt;p&gt;命令：which / whereis&lt;/p&gt;
-
-&lt;p&gt;功能：显示系统命令所在目录&lt;/p&gt;
-
-&lt;p&gt;权限：所有用户&lt;/p&gt;
-
-&lt;p&gt;语法：which / whereis [命令名称]&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;命令：find&lt;/p&gt;
-
-&lt;p&gt;功能：查找文件或目录&lt;/p&gt;
-
-&lt;p&gt;权限：所有用户&lt;/p&gt;
-
-&lt;p&gt;语法：find [搜索路径][搜索关键字]&lt;/p&gt;
-
-&lt;p&gt;选项：-name [*?] 根据文件名称来查找&lt;/p&gt;
-
-&lt;p&gt;-type [fd] 根据类型来查找&lt;/p&gt;
-
-&lt;p&gt;-size [+-] 根据文件大小来查找&lt;/p&gt;
-
-&lt;p&gt;-user username 查找所有者为 username 的文件&lt;/p&gt;
-
-&lt;p&gt;-ctime/-atime/-mtime [+-]
-根据修改属性时间/访问时间/修改内容时间来查找&lt;/p&gt;
-
-&lt;p&gt;连接符：-a and 逻辑与&lt;/p&gt;
-
-&lt;p&gt;  -o or 逻辑或&lt;/p&gt;
-
-&lt;p&gt;  -exec 命令 {} \; 将查找结果作为命令的参数，不做确认&lt;/p&gt;
-
-&lt;p&gt;  -ok 命令 {} \; 将查找结果作为命令的参数，需要确认&lt;/p&gt;
-
-&lt;p&gt;例子：find /home/wenyi/ -name test* -a -type d chmod 775 {} \;&lt;/p&gt;
-
-&lt;p&gt;find /home/wenyi/ -name test* -a -type f chmod 664 {} \;&lt;/p&gt;
-
-&lt;p&gt;说明：* 匹配 0 个或多个字符，? 匹配一个字符。&lt;/p&gt;
-
-&lt;p&gt;f 表示文件，d 表示文件夹&lt;/p&gt;
-
-&lt;p&gt;+ 表示大于，- 表示小于。&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;命令：locate (list files in database)&lt;/p&gt;
-
-&lt;p&gt;功能：根据文件数据库信息查找文件或目录&lt;/p&gt;
-
-&lt;p&gt;权限：所有用户&lt;/p&gt;
-
-&lt;p&gt;语法：locate [文件名]&lt;/p&gt;
-
-&lt;p&gt;说明：因为是根据文件数据库来查找，速度快，但是数据有时不够准确&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;命令：updatedb (update the slocate datenbase)&lt;/p&gt;
-
-&lt;p&gt;功能：建立整个系统目录文件数据库&lt;/p&gt;
-
-&lt;p&gt;权限：所有用户&lt;/p&gt;
-
-&lt;p&gt;语法：updatedb&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;命令：grep&lt;/p&gt;
-
-&lt;p&gt;功能：在文件中搜寻字符串匹配的行并输出&lt;/p&gt;
-
-&lt;p&gt;权限：所有用户&lt;/p&gt;
-
-&lt;p&gt;语法：grep [指定字符串][目标目录]&lt;/p&gt;
-
-&lt;p&gt;说明：grep 使用很广，常常作为管道连接符使用&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>linux常用命令——权限管理命令</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/commonly_used_linux_commands_permission_management_command</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/commonly_used_linux_commands_permission_management_command</guid>
-      <description>&lt;p&gt;命令：chmod (change the permissions mode of a file)&lt;/p&gt;
-
-&lt;p&gt;功能：改变文件或目录权限&lt;/p&gt;
-
-&lt;p&gt;权限：所有用户&lt;/p&gt;
-
-&lt;p&gt;语法：chmod [{ugo}{+-=}{rwx}][文件或目录]&lt;/p&gt;
-
-&lt;p&gt;chmod [mode=421][文件或目录]&lt;/p&gt;
-
-&lt;p&gt;例子：chmod u+x test&lt;/p&gt;
-
-&lt;p&gt;chmod 755 wenyi&lt;/p&gt;
-
-&lt;p&gt;chmod 644 wenyi.txt&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;命令：chown (change file ownership)&lt;/p&gt;
-
-&lt;p&gt;功能：改变文件或目录的所有者&lt;/p&gt;
-
-&lt;p&gt;权限：所有用户&lt;/p&gt;
-
-&lt;p&gt;语法：chown [用户][文件或目录]&lt;/p&gt;
-
-&lt;p&gt;例子：chown wenyi test&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;命令：chgrp (change file group ownership)&lt;/p&gt;
-
-&lt;p&gt;功能：改变文件或目录的所属组&lt;/p&gt;
-
-&lt;p&gt;权限：所有用户&lt;/p&gt;
-
-&lt;p&gt;语法：chgrp [用户组][文件或目录]&lt;/p&gt;
-
-&lt;p&gt;例子：chgrp wenyi test&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;命令：umask&lt;/p&gt;
-
-&lt;p&gt;功能：显示、设置文件的缺省权限&lt;/p&gt;
-
-&lt;p&gt;权限：所有用户&lt;/p&gt;
-
-&lt;p&gt;语法：umask [-S]&lt;/p&gt;
-
-&lt;p&gt;-S 以 rwx 形式显示新建文件或者目录缺省权限&lt;/p&gt;
-
-&lt;p&gt;说明：不加参数或者设置缺省权限需要使用掩码值来设置&lt;/p&gt;
-
-&lt;p&gt;例子：umask 0022&lt;/p&gt;
-
-&lt;p&gt;umask -S u=rwx,g=rx,o=rx&lt;/p&gt;
-
-&lt;p&gt;umask 027 u=rwx,g=rx&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt; * 文件目录权限：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://ww4.sinaimg.cn/mw600/88a9c274jw1dt434km8lfg.gif&#34; alt=&#34;linux常用命令——权限管理命令&#34; /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt; * 文件目录 u/g/o 含义&lt;/p&gt;
-
-&lt;p&gt;u：所有者&lt;/p&gt;
-
-&lt;p&gt;g：所属者&lt;/p&gt;
-
-&lt;p&gt;o：其他人&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>linux常用命令——权限管理命令</title>
-      <link>http://blog.wenzhixin.net.cn/1/01/01/commonly_used_linux_commands_permission_management_command</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/1/01/01/commonly_used_linux_commands_permission_management_command</guid>
-      <description>&lt;p&gt;命令：chmod (change the permissions mode of a file)&lt;/p&gt;
-
-&lt;p&gt;功能：改变文件或目录权限&lt;/p&gt;
-
-&lt;p&gt;权限：所有用户&lt;/p&gt;
-
-&lt;p&gt;语法：chmod [{ugo}{+-=}{rwx}][文件或目录]&lt;/p&gt;
-
-&lt;p&gt;chmod [mode=421][文件或目录]&lt;/p&gt;
-
-&lt;p&gt;例子：chmod u+x test&lt;/p&gt;
-
-&lt;p&gt;chmod 755 wenyi&lt;/p&gt;
-
-&lt;p&gt;chmod 644 wenyi.txt&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;命令：chown (change file ownership)&lt;/p&gt;
-
-&lt;p&gt;功能：改变文件或目录的所有者&lt;/p&gt;
-
-&lt;p&gt;权限：所有用户&lt;/p&gt;
-
-&lt;p&gt;语法：chown [用户][文件或目录]&lt;/p&gt;
-
-&lt;p&gt;例子：chown wenyi test&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;命令：chgrp (change file group ownership)&lt;/p&gt;
-
-&lt;p&gt;功能：改变文件或目录的所属组&lt;/p&gt;
-
-&lt;p&gt;权限：所有用户&lt;/p&gt;
-
-&lt;p&gt;语法：chgrp [用户组][文件或目录]&lt;/p&gt;
-
-&lt;p&gt;例子：chgrp wenyi test&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;命令：umask&lt;/p&gt;
-
-&lt;p&gt;功能：显示、设置文件的缺省权限&lt;/p&gt;
-
-&lt;p&gt;权限：所有用户&lt;/p&gt;
-
-&lt;p&gt;语法：umask [-S]&lt;/p&gt;
-
-&lt;p&gt;-S 以 rwx 形式显示新建文件或者目录缺省权限&lt;/p&gt;
-
-&lt;p&gt;说明：不加参数或者设置缺省权限需要使用掩码值来设置&lt;/p&gt;
-
-&lt;p&gt;例子：umask 0022&lt;/p&gt;
-
-&lt;p&gt;umask -S u=rwx,g=rx,o=rx&lt;/p&gt;
-
-&lt;p&gt;umask 027 u=rwx,g=rx&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt; * 文件目录权限：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://ww4.sinaimg.cn/mw600/88a9c274jw1dt434km8lfg.gif&#34; alt=&#34;linux常用命令——权限管理命令&#34; /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt; * 文件目录 u/g/o 含义&lt;/p&gt;
-
-&lt;p&gt;u：所有者&lt;/p&gt;
-
-&lt;p&gt;g：所属者&lt;/p&gt;
-
-&lt;p&gt;o：其他人&lt;/p&gt;
 </description>
     </item>
     
