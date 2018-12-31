@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>制作漂亮的邮件模板 - 文翼的博客</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="wenzhixin" /><meta name="description" content="上一篇中讲到如何通过 nodejs 发送通知邮件，在发送通知邮件的时候， 假如可以有漂亮的邮件模板就更好了，但是出于安全的原因， 邮件一般不支持 link 或者 style 样式，" /><meta name="keywords" content="文翼的博客, web前端博客" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.53 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://blog.wenzhixin.net.cn/2014/01/24/send_email_template/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.93844dae.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="制作漂亮的邮件模板" />
+<meta property="og:description" content="上一篇中讲到如何通过 nodejs 发送通知邮件，在发送通知邮件的时候， 假如可以有漂亮的邮件模板就更好了，但是出于安全的原因， 邮件一般不支持 link 或者 style 样式，" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.wenzhixin.net.cn/2014/01/24/send_email_template/" /><meta property="article:published_time" content="2014-01-24T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2014-01-24T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="制作漂亮的邮件模板">
+<meta itemprop="description" content="上一篇中讲到如何通过 nodejs 发送通知邮件，在发送通知邮件的时候， 假如可以有漂亮的邮件模板就更好了，但是出于安全的原因， 邮件一般不支持 link 或者 style 样式，">
+
+
+<meta itemprop="datePublished" content="2014-01-24T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2014-01-24T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="737">
+
+
+
+<meta itemprop="keywords" content="邮件模板," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="制作漂亮的邮件模板"/>
+<meta name="twitter:description" content="上一篇中讲到如何通过 nodejs 发送通知邮件，在发送通知邮件的时候， 假如可以有漂亮的邮件模板就更好了，但是出于安全的原因， 邮件一般不支持 link 或者 style 样式，"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">文翼的博客</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">文翼的博客</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">制作漂亮的邮件模板</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2014-01-24 </span>
+        <div class="post-category">
+            <a href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/"> 前端技术 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    
+  </div>
+</div>
+    <div class="post-content">
+      <p>上一篇中讲到如何通过 <a href="/2014/01/23/node_send_email">nodejs 发送通知邮件</a>，在发送通知邮件的时候，
+假如可以有漂亮的邮件模板就更好了，但是出于安全的原因，
+邮件一般不支持 link 或者 style 样式，只能通过内联的方式。</p>
+
+<p>想着内联就内联，先写个 <a href="/demos/mail_template.html">demo</a> 看看呗，于是有了下面的代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset=&#34;UTF-8&#34;&gt;
+    &lt;title&gt;邮件模板&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class=&#34;panel&#34; style=&#34;width: 300px;margin: 20px;border-radius: 4px;border: 1px solid #bce8f1;&#34;&gt;
+    &lt;div class=&#34;panel-title&#34; style=&#34;padding: 10px 15px;color: #31708f;background-color: #d9edf7;border-color: #bce8f1;border-radius: 4px 4px 0 0;&#34;&gt;
+        测试标题
+    &lt;/div&gt;
+    &lt;div class=&#34;panel-body&#34; style=&#34;padding: 15px;color: #3a87ad;font-size: 30px;text-align: center;&#34;&gt;
+        测试内容
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;panel panel-success&#34; style=&#34;width: 300px;margin: 20px;border-radius: 4px;border: 1px solid #d6e9c6;&#34;&gt;
+    &lt;div class=&#34;panel-title&#34; style=&#34;padding: 10px 15px;color: #3c763d;background-color: #dff0d8;border-color: #d6e9c6;border-radius: 4px 4px 0 0;&#34;&gt;
+        测试标题
+    &lt;/div&gt;
+    &lt;div class=&#34;panel-body&#34; style=&#34;padding: 15px;color: #468847;font-size: 30px;text-align: center;&#34;&gt;
+        测试内容
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;panel panel-danger&#34; style=&#34;width: 300px;margin: 20px;border-radius: 4px;border: 1px solid #ebccd1;&#34;&gt;
+    &lt;div class=&#34;panel-title&#34; style=&#34;padding: 10px 15px;color: #a94442;background-color: #f2dede;border-color: #ebccd1;border-radius: 4px 4px 0 0;&#34;&gt;
+        测试标题
+    &lt;/div&gt;
+    &lt;div class=&#34;panel-body&#34; style=&#34;padding: 15px;color: #b94a48;font-size: 30px;text-align: center;&#34;&gt;
+        测试内容
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre></td></tr></table>
+</div>
+</div>
+<p>可以看到使用内联样式开发会比较耗时，会写重复的样式，而且维护起来也十分费时。</p>
+
+<p>那么有没有什么办法可以不用这么麻烦呢，要是可以将普通的 css 样式自动变为内联样式就好了。</p>
+
+<p>想着如何实现的时候（有空自己实现个）找到了 <a href="http://beaker.mailchimp.com/inline-css">The Automatic CSS Inliner Tool</a>。</p>
+
+<p>有了自动转换工具，那就简单了。首先，编写普通的 html 代码，把 css 样式放到 style 标签中：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset=&#34;UTF-8&#34; /&gt;
+    &lt;title&gt;邮件模板&lt;/title&gt;
+    &lt;style&gt;
+        .panel {
+            width: 300px;
+            margin: 20px;
+            border-radius: 4px;
+            border: 1px solid #bce8f1;
+        }
+        .panel-title {
+            padding: 10px 15px;
+            color: #31708f;
+            background-color: #d9edf7;
+            border-color: #bce8f1;
+            border-radius: 4px 4px 0 0;
+        }
+        .panel-body {
+            padding: 15px;
+            color: #3a87ad;
+            font-size: 30px;
+            text-align: center;
+        }
+        .panel-success {
+            border: 1px solid #d6e9c6;
+        }
+        .panel-success .panel-title {
+            color: #3c763d;
+            background-color: #dff0d8;
+            border-color: #d6e9c6;
+        }
+        .panel-success .panel-body {
+            color: #468847;
+        }
+        .panel-danger {
+            border: 1px solid #ebccd1;
+        }
+        .panel-danger .panel-title {
+            color: #a94442;
+            background-color: #f2dede;
+            border-color: #ebccd1;
+        }
+        .panel-danger .panel-body {
+            color: #b94a48;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class=&#34;panel&#34;&gt;
+    &lt;div class=&#34;panel-title&#34;&gt;
+        测试标题
+    &lt;/div&gt;
+    &lt;div class=&#34;panel-body&#34;&gt;
+        测试内容
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;panel panel-success&#34;&gt;
+    &lt;div class=&#34;panel-title&#34;&gt;
+        测试标题
+    &lt;/div&gt;
+    &lt;div class=&#34;panel-body&#34;&gt;
+        测试内容
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;panel panel-danger&#34;&gt;
+    &lt;div class=&#34;panel-title&#34;&gt;
+        测试标题
+    &lt;/div&gt;
+    &lt;div class=&#34;panel-body&#34;&gt;
+        测试内容
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre></td></tr></table>
+</div>
+</div>
+<p>然后使用上面说的工具，点击 <code>Convert It!</code> 转换即可生成我们想要的模板了。</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">wenzhixin</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2014-01-24</span>
+  </p>
+  
+  
+</div><div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/weixin.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/alipay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/%E9%82%AE%E4%BB%B6%E6%A8%A1%E6%9D%BF/">邮件模板</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/2014/01/25/ubuntu_music_player/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Ubuntu 下安装音乐播放器</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/2014/01/23/node_send_email/">
+            <span class="next-text nav-default">使用 nodejs 发送邮件</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'wenzhixin';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:wenzhixin2010@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/1531096/wenyi" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/wenzhixin2010" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.facebook.com/wenzhixin2010" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://github.com/wenzhixin" class="iconfont icon-github" title="github"></a>
+      <a href="https://weibo.com/2292826740" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://www.zhihu.com/people/zhixin-wen" class="iconfont icon-zhihu" title="zhihu"></a>
+  <a href="http://blog.wenzhixin.net.cn/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2012 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">wenzhixin.net.cn 粤ICP备15117953号</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.ece58db6.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-36708951-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

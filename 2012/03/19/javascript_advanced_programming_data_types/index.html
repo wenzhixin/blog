@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>JavaScript 高级程序设计——数据类型 - 文翼的博客</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="wenzhixin" /><meta name="description" content="1、JavaScript 中有 5 种简单数据类型（基本数据类型）：Undefined、Null、Boolean、Number 和 String；1 种" /><meta name="keywords" content="文翼的博客, web前端博客" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.53 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://blog.wenzhixin.net.cn/2012/03/19/javascript_advanced_programming_data_types/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.93844dae.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="JavaScript 高级程序设计——数据类型" />
+<meta property="og:description" content="1、JavaScript 中有 5 种简单数据类型（基本数据类型）：Undefined、Null、Boolean、Number 和 String；1 种" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.wenzhixin.net.cn/2012/03/19/javascript_advanced_programming_data_types/" /><meta property="article:published_time" content="2012-03-19T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2012-03-19T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="JavaScript 高级程序设计——数据类型">
+<meta itemprop="description" content="1、JavaScript 中有 5 种简单数据类型（基本数据类型）：Undefined、Null、Boolean、Number 和 String；1 种">
+
+
+<meta itemprop="datePublished" content="2012-03-19T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2012-03-19T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1676">
+
+
+
+<meta itemprop="keywords" content="JavaScript,数据类型," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="JavaScript 高级程序设计——数据类型"/>
+<meta name="twitter:description" content="1、JavaScript 中有 5 种简单数据类型（基本数据类型）：Undefined、Null、Boolean、Number 和 String；1 种"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">文翼的博客</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">文翼的博客</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">JavaScript 高级程序设计——数据类型</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2012-03-19 </span>
+        <div class="post-category">
+            <a href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/"> 前端技术 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    
+  </div>
+</div>
+    <div class="post-content">
+      <p>1、JavaScript 中有 5
+种简单数据类型（基本数据类型）：Undefined、Null、Boolean、Number 和
+String；1 种复杂数据类型：Object，Object 本质上由一组无序的名值对组成。</p>
+
+<p>2、typeof 操作符：用于检测给定变量的数据类型。使用 typeof
+操作符可能返回的字符串：</p>
+
+<p>（1）undefined——该值为未定义（Undefined）或者未声明的变量</p>
+
+<p>（2）boolean——该值为布尔值（Boolean）</p>
+
+<p>（3）number——该值为数值（Number）</p>
+
+<p>（4）string——该值为字符串（String）</p>
+
+<p>（5）object——该值为对象（Object）或者 Null</p>
+
+<p>（6）function——该值为函数（Function）</p>
+
+<p>3、Undefined 类型：只有一个值，即特殊的 undefined。在使用 var
+声明变量但未对其加以初始化时，这个变量的值就是
+undefined。由于对未初始化和未声明的变量使用 typeof 操作符都返回
+undefined，建议养成显式初始化变量（在声明变量的同事给变量赋值）的习惯。</p>
+
+<p>4、Null 类型：只有一个值，即特殊的 null，表示一个空对象指针。null 和
+undefined 有特殊的关系：null == undefined
+//true，但它们的用途完全不同，对于
+undefined，无论在什么情况下都没必要声明一个变量的值为
+undefined，而可以声明一个变量为 null 来表示空指针对象。</p>
+
+<p>5、Boolean 类型：只有两个值 true 和 false</p>
+
+<p>6、Number
+类型：表示整数和浮点数值。整数主要包括十进制整数、八进制整数和十六进制整数。其中，八进制整数第一位必须是
+0，然后为八进制数字序列（0~7）。十六进制前两位必须为
+0x，然后为十六进制数字（0~9 及 A~F）。</p>
+
+<p>（1）e 表示法：等于 e 前面的数值乘以 10 的指数次幂</p>
+
+<p>（2）Number 的最大值为 Number.MAX_VALUE，最小值为
+Number.MIN_VALUE，超过最大值或者最小值会被自动转换为 Infinity 或者
+-Infinity，可以使用 isFinite() 函数来判断。</p>
+
+<p>（3）NaN（非数值 Not a
+number）：是一个特殊的数字表示一个错误值，如任何数值除以 0 都会返回
+NaN，可以使用 isNaN() 函数判断是否为 NaN。</p>
+
+<p>（4）NaN的两个非同寻常的特点：任何涉及 NaN 的操作都会返回 NaN；NaN
+与任何值都不相等，包括 NaN 本身。</p>
+
+<p>（5）Number 类型用到的转换函数：parseInt() 和
+parseFloat()，用于将字符串转换为整数和浮点数。</p>
+
+<p>7、String 类型：表示由零或者多个 Unicode 字符组成的字符序列，即字符串。</p>
+
+<p>（1）字符串的特点：JavaScript
+中的字符串是不可变的，即字符串一旦创建，值便不能改变。当改变某个字符串变量的时候，首先先销毁原来的字符串，在用一个包含新值的字符串填充该变量。</p>
+
+<p>（2）数值、布尔值、对象和字符串都有 toString() 方法，转换为字符串类型。</p>
+
+<p>8、Object 类型：表示一组数据和功能的集合。可以通过 new
+操作符来创建对象：var o = new Object()。而创建 Object
+类型的实力并为其添加属性和方法，就可以创建自定义对象。Object
+的每个实例都具有的属性和方法：</p>
+
+<p>（1）constructor——保存着用于创建当前对象的函数，即构造函数。</p>
+
+<p>（2）hasOwnProperty(propertyName)——用于检查指定的属性在当前对象实例中是否存在。</p>
+
+<p>（3）isPrototypeof(object)——用于检查传入的对象是否是另一个对象的原型。</p>
+
+<p>（4）propertyIsEnumerabled(propertyName)——用于检查给定的属性是否能够使用
+for-in 语句来枚举。</p>
+
+<p>（5）toString()——返回对象的字符串表示。</p>
+
+<p>（6）valueOf()——返回对象的字符串、数值或布尔值表示。</p>
+
+<p>9、其他应该注意的问题：</p>
+
+<p>（1）switch
+语句在比较值时使用的是全等操作符，因此不会发生类型转换，如字符串不会自动转换为整数。</p>
+
+<p>（2）function 函数的参数可以用 argument
+对象来获取，而函数命名的参数只是提供便利，而不是必须的。JavaScript
+中的所有参数传递的都是值，不可能通过引用传递参数。</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">wenzhixin</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2012-03-19</span>
+  </p>
+  
+  
+</div><div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/weixin.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/alipay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/javascript/">JavaScript</a>
+          <a href="/tags/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">数据类型</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/2012/03/19/javascript_advanced_programming_data_types/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">JavaScript 高级程序设计——数据类型</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/2012/03/18/write_high_quality_code_high_quality_javascript/">
+            <span class="next-text nav-default">编写高质量代码——高质量JavaScript</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'wenzhixin';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:wenzhixin2010@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/1531096/wenyi" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/wenzhixin2010" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.facebook.com/wenzhixin2010" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://github.com/wenzhixin" class="iconfont icon-github" title="github"></a>
+      <a href="https://weibo.com/2292826740" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://www.zhihu.com/people/zhixin-wen" class="iconfont icon-zhihu" title="zhihu"></a>
+  <a href="http://blog.wenzhixin.net.cn/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2012 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">wenzhixin.net.cn 粤ICP备15117953号</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.ece58db6.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-36708951-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

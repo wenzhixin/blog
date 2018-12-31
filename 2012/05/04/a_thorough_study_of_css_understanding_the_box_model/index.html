@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>彻底研究CSS——深入理解盒子模型 - 文翼的博客</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="wenzhixin" /><meta name="description" content="1、盒子模型的内部结构 * 在 CSS 中，一个独立的盒子模型由 content（内容）、border（边框）、padding（内边距）和 margin（外" /><meta name="keywords" content="文翼的博客, web前端博客" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.53 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_understanding_the_box_model/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.93844dae.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="彻底研究CSS——深入理解盒子模型" />
+<meta property="og:description" content="1、盒子模型的内部结构 * 在 CSS 中，一个独立的盒子模型由 content（内容）、border（边框）、padding（内边距）和 margin（外" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_understanding_the_box_model/" /><meta property="article:published_time" content="2012-05-04T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2012-05-04T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="彻底研究CSS——深入理解盒子模型">
+<meta itemprop="description" content="1、盒子模型的内部结构 * 在 CSS 中，一个独立的盒子模型由 content（内容）、border（边框）、padding（内边距）和 margin（外">
+
+
+<meta itemprop="datePublished" content="2012-05-04T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2012-05-04T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1548">
+
+
+
+<meta itemprop="keywords" content="CSS,盒子模型," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="彻底研究CSS——深入理解盒子模型"/>
+<meta name="twitter:description" content="1、盒子模型的内部结构 * 在 CSS 中，一个独立的盒子模型由 content（内容）、border（边框）、padding（内边距）和 margin（外"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">文翼的博客</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">文翼的博客</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">彻底研究CSS——深入理解盒子模型</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2012-05-04 </span>
+        <div class="post-category">
+            <a href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/"> 前端技术 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    
+  </div>
+</div>
+    <div class="post-content">
+      <p>1、盒子模型的内部结构</p>
+
+<p> * 在 CSS 中，一个独立的盒子模型由
+content（内容）、border（边框）、padding（内边距）和 margin（外边距）4
+个部分组成。</p>
+
+<p> *
+一个盒子实际所战的宽度（或高度）是由“内容+内边距+边框+外边距”组成的。通过设定
+width 和 height 来控制内容所占的矩形大小，内边距、边框和外边距分别用
+padding、border 和 margin 来表示。</p>
+
+<p><img src="http://ww3.sinaimg.cn/mw600/88a9c274jw1dsm7ooransj.jpg" alt="彻底研究CSS——深入理解盒子模型" /></p>
+
+<p>2、边框（border）</p>
+
+<p> * 主要包括三个属性，分别是 color（颜色）、width（粗细）和 style（样式）。</p>
+
+<p>（1）border-color：边框颜色，通常设置为十六进制的值</p>
+
+<p>（2）border-width：边框粗细程度，可设为thin、medium、thick 和<length\>（具体的数值）。默认值为“medium”，浏览器解析为 2px 宽。</p>
+
+<p>（3）border-style：可设为none、hidden、dotted、dashed、solid、double、groove、ridge、inset
+和
+outset。由于浏览器支持问题，一般使用none、hidden、dotted、dashed、solid、double。hidden
+可用来解决边框冲突问题。</p>
+
+<p> * 边框的缩写形式：对于不同的边框设置不同的属性值。</p>
+
+<p>（1）指定 2 个属性值，第一个表示上下边框的属性，第二个表示左右边框的属性。</p>
+
+<p>（2）指定 3
+个属性值，第一个表示上边框的属性，第二个表示左右边框的属性，第三个表示下边框的属性。</p>
+
+<p>（3）指定 4 个属性值，一次表示上、右、下、左边框的属性，即顺时针排序。</p>
+
+<p>（4）单独指定边框的属性，用border-top、border-right、border-bottom 和
+border-left 表示。</p>
+
+<p>ps：当有多条规则作用于同个边框时，后面的设置会覆盖前面的设置。</p>
+
+<p>3、内边距（padding）</p>
+
+<p> * padding 用于控制内容与边框之间的距离。padding 属性可以设置 1-4
+个属性值。</p>
+
+<p>（1）设置 1 个属性值，表示上下左右 4 个内边距都为该值。</p>
+
+<p>（2）设置 2 个属性值，第一个表示上下内边距的值，第二个表示左右内边距的值。</p>
+
+<p>（3）设置 3
+个属性值，第一个表示上内边距的值，第二个表示左右内边距的值，第三个表示下内边距的值。</p>
+
+<p>（4）设置 4 个属性值，一次表示上、右、下、左内边距的值，即顺时针排序。</p>
+
+<p>（5）单独设置边框的属性，用padding-top、padding-right、padding-bottom 和
+padding-left 表示。</p>
+
+<p>4、外边距（margin）</p>
+
+<p> * margin 指的是元素与元素之间的距离。margin 属性值的设置方法与 padding
+一样，可以设置不同的数值代表相应的含义。</p>
+
+<p>5、盒子之间的关系</p>
+
+<p> * 一个 HTML
+文档并不是一个简单的文本文件，而是一个具有层次结构的逻辑文档，每一个 HTML
+元素都左右这个层次结构中的一个节点存在。CSS
+的目的是使网页的表现形式和内容结构分离，CSS 控制网页的表现形式，HTML
+控制网页的内容结构。</p>
+
+<p> * 标准文档流：简称“标准流”，指在不使用其他的与排列和定位相关的特殊 CSS
+规则时，各种元素的排列规则。</p>
+
+<p>（1）块级元素（block
+level）：以一个块的形式表现出来，并且跟同级的兄弟块一次垂直排列，左右撑满。代表标记为<div\>。</p>
+
+<p>（2）行内元素（inline）：元素横向排列，到最右端自动换行。代表标记为 &lt;span&gt;。</p>
+
+<p>6、盒子在标准流中的定位原则</p>
+
+<p> * 行内元素之间的水平
+margin：当两个行内元素紧邻时，它们的距离为第一个元素的 margin-right
+加上第二个元素的 margin-left。</p>
+
+<p> * 块级元素之间的垂直 margin：两个块级元素之间的距离不是第一个元素
+margin-bottom 和第二个元素 margin-top
+的总和，而是两者的最大值。这个现象称为 margin 的“塌陷”现象，即较小的
+margin 塌陷到较大的 margin 中。</p>
+
+<p> * 嵌套盒子之间的 margin：子块的 margin 以父块的 content 为参考。</p>
+
+<p> * 设置为负值的
+margin：会使被设为附属的快像相反的方向移动，甚至覆盖在另外的块上。</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">wenzhixin</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2012-05-04</span>
+  </p>
+  
+  
+</div><div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/weixin.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/alipay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/css/">CSS</a>
+          <a href="/tags/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/">盒子模型</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/2012/05/04/a_thorough_study_of_css_understanding_the_box_model/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">彻底研究CSS——深入理解盒子模型</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/2012/05/04/a_thorough_study_of_css_floating_and_positioning_the_box/">
+            <span class="next-text nav-default">彻底研究CSS——盒子的浮动和定位</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'wenzhixin';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:wenzhixin2010@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/1531096/wenyi" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/wenzhixin2010" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.facebook.com/wenzhixin2010" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://github.com/wenzhixin" class="iconfont icon-github" title="github"></a>
+      <a href="https://weibo.com/2292826740" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://www.zhihu.com/people/zhixin-wen" class="iconfont icon-zhihu" title="zhihu"></a>
+  <a href="http://blog.wenzhixin.net.cn/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2012 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">wenzhixin.net.cn 粤ICP备15117953号</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.ece58db6.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-36708951-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>firefox 利用 Selenium IDE 对 DBackup 进行自动化测试 - 文翼的博客</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="wenzhixin" /><meta name="description" content="今天看《编写可维护的JavaScript》的时候有一章是专门讲 Selenium 对 JavaScript 进行自动化测试的。 在了解了 Selenium 的强大之后，动手试验了一下 firefox 中的 Selenium IDE，还" /><meta name="keywords" content="文翼的博客, web前端博客" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.53 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://blog.wenzhixin.net.cn/2013/07/30/firefox_selenium_ide/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.93844dae.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="firefox 利用 Selenium IDE 对 DBackup 进行自动化测试" />
+<meta property="og:description" content="今天看《编写可维护的JavaScript》的时候有一章是专门讲 Selenium 对 JavaScript 进行自动化测试的。 在了解了 Selenium 的强大之后，动手试验了一下 firefox 中的 Selenium IDE，还" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.wenzhixin.net.cn/2013/07/30/firefox_selenium_ide/" /><meta property="article:published_time" content="2013-07-30T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2013-07-30T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="firefox 利用 Selenium IDE 对 DBackup 进行自动化测试">
+<meta itemprop="description" content="今天看《编写可维护的JavaScript》的时候有一章是专门讲 Selenium 对 JavaScript 进行自动化测试的。 在了解了 Selenium 的强大之后，动手试验了一下 firefox 中的 Selenium IDE，还">
+
+
+<meta itemprop="datePublished" content="2013-07-30T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2013-07-30T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="999">
+
+
+
+<meta itemprop="keywords" content="Selenium IDE," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="firefox 利用 Selenium IDE 对 DBackup 进行自动化测试"/>
+<meta name="twitter:description" content="今天看《编写可维护的JavaScript》的时候有一章是专门讲 Selenium 对 JavaScript 进行自动化测试的。 在了解了 Selenium 的强大之后，动手试验了一下 firefox 中的 Selenium IDE，还"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">文翼的博客</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">文翼的博客</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">firefox 利用 Selenium IDE 对 DBackup 进行自动化测试</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2013-07-30 </span>
+        <div class="post-category">
+            <a href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/"> 前端技术 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#什么是-selenium-ide">什么是 Selenium IDE？</a></li>
+<li><a href="#安装-selenium-ide">安装 Selenium IDE</a>
+<ul>
+<li><a href="#1-下载-http-docs-seleniumhq-org-download-http-docs-seleniumhq-org-download-额-貌似被墙了-从-这里-2013-07-30-selenium-ide-2-2-0-xpi-下吧">1. 下载：<a href="http://docs.seleniumhq.org/download/">http://docs.seleniumhq.org/download/</a> (额，貌似被墙了，从<a href="/2013/07/30/selenium-ide-2.2.0.xpi">这里</a>下吧)</a></li>
+<li><a href="#2-直接安装-或者拖动-xpi-文件到-firefox-完成安装">2. 直接安装，或者拖动 xpi 文件到 firefox 完成安装～</a></li>
+<li><a href="#3-重启-firefox-查看工具发现已经多了-selenium-ide-菜单-证明我们已经安装成功了">3. 重启 firefox，查看工具发现已经多了 Selenium IDE 菜单，证明我们已经安装成功了～</a></li>
+</ul></li>
+<li><a href="#怎么使用">怎么使用？</a>
+<ul>
+<li><a href="#1-打开迪备服务器界面-点击菜单中的-selenium-ide">1. 打开迪备服务器界面，点击菜单中的 Selenium IDE</a></li>
+<li><a href="#2-点击-recording-开始录制事件-假如状态已经开始录制了-不用再点开始">2. 点击 Recording 开始录制事件（假如状态已经开始录制了，不用再点开始）</a></li>
+<li><a href="#3-在界面中依次输入用户名-密码-点击登录按钮-登录成功后-再次点击录制按钮关闭录制">3. 在界面中依次输入用户名、密码，点击登录按钮，登录成功后，再次点击录制按钮关闭录制</a></li>
+<li><a href="#4-可以看到已经自动生成了事件了">4. 可以看到已经自动生成了事件了</a></li>
+<li><a href="#5-我们发现最后一项-assertalert-是指对-alert-的处理-在这里我们并不需要-删除-并将该测试用例保存为-login">5. 我们发现最后一项 assertAlert 是指对 alert 的处理，在这里我们并不需要，删除。并将该测试用例保存为 login。</a></li>
+<li><a href="#6-退出登录-并将速度调整为-normal-点击-play-current-test-case-可以发现已经登录成功了">6. 退出登录，并将速度调整为 normal，点击 play current test case，可以发现已经登录成功了！</a></li>
+<li><a href="#7-最后-按照同样的方法-试试看-很简单的-对注册用户也进行了自动化注册-并保存为-register-那么就可以快速的根据-test-case-的名称进行自动化测试了">7. 最后，按照同样的方法（试试看，很简单的）对注册用户也进行了自动化注册，并保存为 register，那么就可以快速的根据 test case 的名称进行自动化测试了。</a></li>
+<li><a href="#一点想法">一点想法：</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<p>今天看《编写可维护的JavaScript》的时候有一章是专门讲 Selenium 对 JavaScript 进行自动化测试的。
+在了解了 Selenium 的强大之后，动手试验了一下 firefox 中的 Selenium IDE，还是挺给力的说，在此记录下。</p>
+
+<h4 id="什么是-selenium-ide">什么是 Selenium IDE？</h4>
+
+<blockquote>
+<p>Selenium IDE：一个Firefox插件，可以录制用户的基本操作，生成测试用例。
+可以运行这些测试用例在浏览器里回放，可将测试用例转换为其他语言的自动化脚本。</p>
+</blockquote>
+
+<p>了解了概念之后，我们来开始神奇的 Selenium IDE 之旅吧。</p>
+
+<h4 id="安装-selenium-ide">安装 Selenium IDE</h4>
+
+<h5 id="1-下载-http-docs-seleniumhq-org-download-http-docs-seleniumhq-org-download-额-貌似被墙了-从-这里-2013-07-30-selenium-ide-2-2-0-xpi-下吧">1. 下载：<a href="http://docs.seleniumhq.org/download/">http://docs.seleniumhq.org/download/</a> (额，貌似被墙了，从<a href="/2013/07/30/selenium-ide-2.2.0.xpi">这里</a>下吧)</h5>
+
+<h5 id="2-直接安装-或者拖动-xpi-文件到-firefox-完成安装">2. 直接安装，或者拖动 xpi 文件到 firefox 完成安装～</h5>
+
+<h5 id="3-重启-firefox-查看工具发现已经多了-selenium-ide-菜单-证明我们已经安装成功了">3. 重启 firefox，查看工具发现已经多了 Selenium IDE 菜单，证明我们已经安装成功了～</h5>
+
+<p><img src="/2013/07/30/1.png" alt="" /></p>
+
+<h4 id="怎么使用">怎么使用？</h4>
+
+<h5 id="1-打开迪备服务器界面-点击菜单中的-selenium-ide">1. 打开迪备服务器界面，点击菜单中的 Selenium IDE</h5>
+
+<p><img src="/2013/07/30/2.png" alt="" /></p>
+
+<h5 id="2-点击-recording-开始录制事件-假如状态已经开始录制了-不用再点开始">2. 点击 Recording 开始录制事件（假如状态已经开始录制了，不用再点开始）</h5>
+
+<p><img src="/2013/07/30/3.png" alt="" /></p>
+
+<h5 id="3-在界面中依次输入用户名-密码-点击登录按钮-登录成功后-再次点击录制按钮关闭录制">3. 在界面中依次输入用户名、密码，点击登录按钮，登录成功后，再次点击录制按钮关闭录制</h5>
+
+<h5 id="4-可以看到已经自动生成了事件了">4. 可以看到已经自动生成了事件了</h5>
+
+<p><img src="/2013/07/30/4.png" alt="" /></p>
+
+<p>我们先看看这里命令的含义（大概了解下就OK了，不用记），很容易理解的：</p>
+
+<p>1) open(url)
+- 在浏览器中打开URL，可以接受相对和绝对路径两种形式
+- 注意：该URL必须在与浏览器相同的安全限定范围之内</p>
+
+<p>2) type(inputLocator, value)
+- 模拟人手的输入过程，往指定的input中输入值
+- 也适合给复选和单选框赋值</p>
+
+<p>3) click(elementLocator)
+- 点击连接、按钮、复选和单选框
+- 如果点击后需要等待响应，则用 &ldquo;clickAndWait&rdquo;
+- 如果是需要经过 JavaScript 的 alert 或 confirm 对话框后才能继续操作，则需要调用 verify 或 assert 来告诉 Selenium 你期望对对话框进行什么操作。</p>
+
+<h5 id="5-我们发现最后一项-assertalert-是指对-alert-的处理-在这里我们并不需要-删除-并将该测试用例保存为-login">5. 我们发现最后一项 assertAlert 是指对 alert 的处理，在这里我们并不需要，删除。并将该测试用例保存为 login。</h5>
+
+<h5 id="6-退出登录-并将速度调整为-normal-点击-play-current-test-case-可以发现已经登录成功了">6. 退出登录，并将速度调整为 normal，点击 play current test case，可以发现已经登录成功了！</h5>
+
+<p><img src="/2013/07/30/5.png" alt="" /></p>
+
+<h5 id="7-最后-按照同样的方法-试试看-很简单的-对注册用户也进行了自动化注册-并保存为-register-那么就可以快速的根据-test-case-的名称进行自动化测试了">7. 最后，按照同样的方法（试试看，很简单的）对注册用户也进行了自动化注册，并保存为 register，那么就可以快速的根据 test case 的名称进行自动化测试了。</h5>
+
+<p><img src="/2013/07/30/6.png" alt="" /></p>
+
+<hr />
+
+<h5 id="一点想法">一点想法：</h5>
+
+<p>Selenium IDE 只能在 firefox 中使用，那么其他浏览器就无法使用了。
+查看生成的文件发现格式是 html 代码，那么是否可以对录制的事件进行转为为其他语言（如 nodejs、python），
+然后通过 web 后台服务器进行处理，生成相对应的界面管理，从而就可以指定某个测试用例（汇集起来）在某个浏览器（IE、chrome）启动，并
+进行自动化测试呢？未完待续吧&hellip;</p>
+
+<hr />
+
+<p>PS：</p>
+
+<ul>
+<li><p>DBackup 是一款很牛逼的数据库备份软件，详细介绍和试用可以猛击<a href="http://www.scutech.com/#!c/41">这里</a>。</p></li>
+
+<li><p>更多信息见 <a href="http://docs.seleniumhq.org/">http://docs.seleniumhq.org/</a></p></li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">wenzhixin</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2013-07-30</span>
+  </p>
+  
+  
+</div><div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/weixin.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/alipay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/selenium-ide/">Selenium IDE</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/2013/08/12/disable_link/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Bootstrap 禁用 a 按钮</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/2013/07/17/nginx_proxy/">
+            <span class="next-text nav-default">使用 nginx 作为代理服务器的路径问题</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'wenzhixin';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:wenzhixin2010@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/1531096/wenyi" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/wenzhixin2010" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.facebook.com/wenzhixin2010" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://github.com/wenzhixin" class="iconfont icon-github" title="github"></a>
+      <a href="https://weibo.com/2292826740" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://www.zhihu.com/people/zhixin-wen" class="iconfont icon-zhihu" title="zhihu"></a>
+  <a href="http://blog.wenzhixin.net.cn/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2012 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">wenzhixin.net.cn 粤ICP备15117953号</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.ece58db6.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-36708951-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

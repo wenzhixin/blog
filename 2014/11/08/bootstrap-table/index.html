@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>开源所带来的——记 DBackup 4.0 发布和 Bootstrap Table 插件的开发 - 文翼的博客</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="wenzhixin" /><meta name="description" content="源起 最最开始的时候，在写公司的考勤系统，系统的功能十分简单，只需要简单地查询数据和展示数据（无需增加、修改和删除），后台接口使用的是标准的 Restful" /><meta name="keywords" content="文翼的博客, web前端博客" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.53 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://blog.wenzhixin.net.cn/2014/11/08/bootstrap-table/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.93844dae.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="开源所带来的——记 DBackup 4.0 发布和 Bootstrap Table 插件的开发" />
+<meta property="og:description" content="源起 最最开始的时候，在写公司的考勤系统，系统的功能十分简单，只需要简单地查询数据和展示数据（无需增加、修改和删除），后台接口使用的是标准的 Restful" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.wenzhixin.net.cn/2014/11/08/bootstrap-table/" /><meta property="article:published_time" content="2014-11-08T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2014-11-08T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="开源所带来的——记 DBackup 4.0 发布和 Bootstrap Table 插件的开发">
+<meta itemprop="description" content="源起 最最开始的时候，在写公司的考勤系统，系统的功能十分简单，只需要简单地查询数据和展示数据（无需增加、修改和删除），后台接口使用的是标准的 Restful">
+
+
+<meta itemprop="datePublished" content="2014-11-08T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2014-11-08T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1996">
+
+
+
+<meta itemprop="keywords" content="DBackup,Bootstrap Table," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="开源所带来的——记 DBackup 4.0 发布和 Bootstrap Table 插件的开发"/>
+<meta name="twitter:description" content="源起 最最开始的时候，在写公司的考勤系统，系统的功能十分简单，只需要简单地查询数据和展示数据（无需增加、修改和删除），后台接口使用的是标准的 Restful"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">文翼的博客</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">文翼的博客</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">开源所带来的——记 DBackup 4.0 发布和 Bootstrap Table 插件的开发</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2014-11-08 </span>
+        <div class="post-category">
+            <a href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/"> 前端技术 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#源起">源起</a></li>
+<li><a href="#开源和改善">开源和改善</a></li>
+<li><a href="#bootstrap-table-的强大之处">Bootstrap Table 的强大之处</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<h3 id="源起">源起</h3>
+
+<p>最最开始的时候，在写公司的考勤系统，系统的功能十分简单，只需要简单地查询数据和展示数据（无需增加、修改和删除），后台接口使用的是标准的 Restful API，例如接口<code>/api/url1</code>返回这样的数组：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json"><span class="p">[</span>
+    <span class="p">{</span>
+        <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;文翼&#34;</span><span class="p">,</span>
+        <span class="nt">&#34;startTime&#34;</span><span class="p">:</span> <span class="s2">&#34;09:00&#34;</span><span class="p">,</span>
+        <span class="nt">&#34;endTime&#34;</span><span class="p">:</span> <span class="s2">&#34;18:00&#34;</span>
+    <span class="p">}</span>
+<span class="p">]</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>接口<code>/api/url2</code>返回这样的数组：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json"><span class="p">[</span>
+    <span class="p">{</span>
+        <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;文翼&#34;</span><span class="p">,</span>
+        <span class="nt">&#34;job&#34;</span><span class="p">:</span> <span class="s2">&#34;Web开发工程师&#34;</span>
+    <span class="p">}</span>
+<span class="p">]</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>一般的做法是遍历返回来的数据并对每一行的数据进行渲染为<code>tr</code>，然后再<code>append</code>到表格中。由于自己十分的“懒”，很多时候宁愿写出个工具（当然有时候可能花的时候会更多），也不想写重复的代码，做重复、无用的工作。现在系统有 5 个不同的接口，需要显示为 5 个不同的表格。要是能使用这样的代码，而无需使用 JavaScript 去对不同的 API 接口进行渲染组装，那该多省心省事：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">table</span> <span class="na">data-url</span><span class="o">=</span><span class="s">&#34;/api/url1&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">thead</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span> <span class="na">data-field</span><span class="o">=</span><span class="s">&#34;name&#34;</span><span class="p">&gt;</span>姓名<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span> <span class="na">data-field</span><span class="o">=</span><span class="s">&#34;startTime&#34;</span><span class="p">&gt;</span>上班时间<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span> <span class="na">data-field</span><span class="o">=</span><span class="s">&#34;endTime&#34;</span><span class="p">&gt;</span>下班时间<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">thead</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">table</span> <span class="na">data-url</span><span class="o">=</span><span class="s">&#34;/api/url2&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">thead</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span> <span class="na">data-field</span><span class="o">=</span><span class="s">&#34;name&#34;</span><span class="p">&gt;</span>姓名<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">td</span> <span class="na">data-field</span><span class="o">=</span><span class="s">&#34;job&#34;</span><span class="p">&gt;</span>工作<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">thead</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>可以看到，这样的话我们无需写一行 JavaScript 的代码就能实现我们想要的功能了。于是乎，Bootstrap Table 的 1.0.0 版本就这样面世了，只有最最简单的显示的功能，没有单选、多选、排序和分页等复杂的功能。</p>
+
+<h3 id="开源和改善">开源和改善</h3>
+
+<p>因为 Bootstrap Table 支持标准的 Restful API 接口，我便将其开源到 GitHub 上（6月份），并尝试着模仿 Bootstrap JavaScript Plugin 的文档说明，编写了全英文的文档（其实也没几个属性、方法和事件）。而在当时，由于公司最主要的产品 DBackup，并没有使用 Restful 接口 API，所以无法将其应用到自己的产品开发中。</p>
+
+<p>随着其他的产品也应用到 Bootstrap Table，我便加入了单选、多选、排序等功能。而在 GitHub 上，关注 Bootstrap Table 的人也多了起来，时不时有人给我提建议和一些新的功能，而大部分是很好的建议。并认真地考虑，加上了大部分觉得合理的功能。</p>
+
+<p>到发布 1.2.0 的时候（8月），我在想是不是应该应用到主要产品DBackup呢，只是要使用的话就得重构后台接口。不能浪费了，重构就重构，于是便开始为 DBackup 编写标准的 Restful API 文档，我们在开发的过程中往往习惯了根据后台接口，然后选择前端的实现。而 Bootstrap Table 是根据标准的 Restful API 来实现的，这反而能更好地使产品的接口更加规范化、文档化。</p>
+
+<p>那么，或许你会问，开源又带来了什么？</p>
+
+<p>在 GitHub 上，我们可以看到很多 Web 开源项目，而这些开源项目的工程师也乐于维护和改善这些开源项目，例如：Twitter 的 <a href="https://github.com/twbs/bootstrap">bootstrap</a>，Facebook 的 <a href="https://github.com/facebook/react">react</a>，阿里的 <a href="https://github.com/seajs/seajs">seajs</a>，还有 <a href="https://github.com/joyent/node">node</a>，<a href="https://github.com/jashkenas/backbone">backbone</a>，<a href="https://github.com/angular/angular.js">angular.js</a> 等等。</p>
+
+<p>我在签名档上写道：</p>
+
+<blockquote>
+<p>I am making the world better by developing open-source JavaScript libraries.</p>
+</blockquote>
+
+<p>开源，就是为了使世界更加美好！哈哈，难道不是吗！</p>
+
+<p><img src="/2014/11/08/1.png" alt="" /></p>
+
+<p><img src="/2014/11/08/2.png" alt="" /></p>
+
+<p>时至今日，Bootstrap Table 项目已有 488 个 Star 和 109 个 Fork（分支），47 个 Pull Requests，支持 20 种语言（翻译），以及 4 个插件扩展。除了我自己，有很多热心开发者为其提交了很多有用的代码，插件扩展和建议。</p>
+
+<p>对于插件来说，因为开源，使其不断的完善和改进！</p>
+
+<p>对于公司产品来说，因为开源，越来越规范化和模块化！</p>
+
+<p>对于我来说，因为开源，自己的英文水平、代码规范化以及项目管理相关的方面也在不断提高！</p>
+
+<h3 id="bootstrap-table-的强大之处">Bootstrap Table 的强大之处</h3>
+
+<p>说了这么多，Bootstrap Table 的强大之处还是需要用个简单的例子来说明，除了上面用 html 的方式外，这里使用 JavaScript 的方式：</p>
+
+<p>定义 html（只需要一句话）：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">table</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;table&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">table</span><span class="p">&gt;</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>使用：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#table&#39;</span><span class="p">).</span><span class="nx">bootstrapTable</span><span class="p">({</span>
+    <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;/api/url&#39;</span><span class="p">,</span> <span class="c1">// 接口 URL 地址
+</span><span class="c1"></span>    <span class="nx">cache</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="c1">// 不缓存
+</span><span class="c1"></span>    <span class="nx">height</span><span class="o">:</span> <span class="mi">400</span><span class="p">,</span> <span class="c1">// 设置高度，会启用固定表头的特性
+</span><span class="c1"></span>    <span class="nx">striped</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">// 隔行加亮
+</span><span class="c1"></span>    <span class="nx">pagination</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">// 开启分页功能
+</span><span class="c1"></span>    <span class="nx">pageSize</span><span class="o">:</span> <span class="mi">50</span><span class="p">,</span> <span class="c1">// 设置默认分页为 50
+</span><span class="c1"></span>    <span class="nx">pageList</span><span class="o">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">],</span> <span class="c1">// 自定义分页列表
+</span><span class="c1"></span>    <span class="nx">search</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">// 开启搜索功能
+</span><span class="c1"></span>    <span class="nx">showColumns</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">// 开启自定义列显示功能
+</span><span class="c1"></span>    <span class="nx">showRefresh</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">// 开启刷新功能
+</span><span class="c1"></span>    <span class="nx">minimumCountColumns</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span> <span class="c1">// 设置最少显示列个数
+</span><span class="c1"></span>    <span class="nx">clickToSelect</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">// 单击行即可以选中
+</span><span class="c1"></span>    <span class="nx">sortName</span><span class="o">:</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="c1">// 设置默认排序为 name
+</span><span class="c1"></span>    <span class="nx">sortOrder</span><span class="o">:</span> <span class="s1">&#39;desc&#39;</span><span class="p">,</span> <span class="c1">// 设置排序为反序 desc
+</span><span class="c1"></span>    <span class="nx">smartDisplay</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">// 智能显示 pagination 和 cardview 等
+</span><span class="c1"></span>    <span class="nx">columns</span><span class="o">:</span> <span class="p">[{</span> <span class="c1">// 列设置
+</span><span class="c1"></span>        <span class="nx">field</span><span class="o">:</span> <span class="s1">&#39;state&#39;</span><span class="p">,</span>
+        <span class="nx">checkbox</span><span class="o">:</span> <span class="kc">true</span> <span class="c1">// 使用复选框
+</span><span class="c1"></span>    <span class="p">},</span> <span class="p">{</span>
+        <span class="nx">field</span><span class="o">:</span> <span class="s1">&#39;id&#39;</span><span class="p">,</span>
+        <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Item ID&#39;</span><span class="p">,</span>
+        <span class="nx">align</span><span class="o">:</span> <span class="s1">&#39;right&#39;</span><span class="p">,</span>
+        <span class="nx">valign</span><span class="o">:</span> <span class="s1">&#39;bottom&#39;</span><span class="p">,</span>
+        <span class="nx">sortable</span><span class="o">:</span> <span class="kc">true</span> <span class="c1">// 开启排序功能
+</span><span class="c1"></span>    <span class="p">},</span> <span class="p">{</span>
+        <span class="nx">field</span><span class="o">:</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span>
+        <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Item Name&#39;</span><span class="p">,</span>
+        <span class="nx">align</span><span class="o">:</span> <span class="s1">&#39;center&#39;</span><span class="p">,</span>
+        <span class="nx">valign</span><span class="o">:</span> <span class="s1">&#39;middle&#39;</span><span class="p">,</span>
+        <span class="nx">sortable</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nx">formatter</span><span class="o">:</span> <span class="nx">nameFormatter</span>
+    <span class="p">},</span> <span class="p">{</span>
+        <span class="nx">field</span><span class="o">:</span> <span class="s1">&#39;price&#39;</span><span class="p">,</span>
+        <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Item Price&#39;</span><span class="p">,</span>
+        <span class="nx">align</span><span class="o">:</span> <span class="s1">&#39;left&#39;</span><span class="p">,</span>
+        <span class="nx">valign</span><span class="o">:</span> <span class="s1">&#39;top&#39;</span><span class="p">,</span>
+        <span class="nx">sortable</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nx">formatter</span><span class="o">:</span> <span class="nx">priceFormatter</span><span class="p">,</span>
+        <span class="nx">sorter</span><span class="o">:</span> <span class="nx">priceSorter</span>
+    <span class="p">},</span> <span class="p">{</span>
+        <span class="nx">field</span><span class="o">:</span> <span class="s1">&#39;operate&#39;</span><span class="p">,</span>
+        <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Item Operate&#39;</span><span class="p">,</span>
+        <span class="nx">align</span><span class="o">:</span> <span class="s1">&#39;center&#39;</span><span class="p">,</span>
+        <span class="nx">valign</span><span class="o">:</span> <span class="s1">&#39;middle&#39;</span><span class="p">,</span>
+        <span class="nx">clickToSelect</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="nx">formatter</span><span class="o">:</span> <span class="nx">operateFormatter</span><span class="p">,</span>
+        <span class="nx">events</span><span class="o">:</span> <span class="nx">operateEvents</span>
+    <span class="p">}]</span>
+<span class="p">});</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>我们可以看到，通过简单的设置，就可以拥有强大的单选、多选、排序、分页，以及编辑、导出、过滤（扩展）等等的功能了：</p>
+
+<p><img src="/2014/11/08/3.png" alt="" /></p>
+
+<hr />
+
+<p>最后，今天，我们的产品 DBackup 发布了 4.0 版本，其中一整个大模块已经全部重构为使用 Bootstrap Table 和标准的 Restful 接口。虽说距离全部还有一段时间和距离，但我坚信，Bootstrap Table 会越做越强大，产品也会越来越规范，越做越好用！</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">wenzhixin</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2014-11-08</span>
+  </p>
+  
+  
+</div><div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/weixin.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/alipay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/dbackup/">DBackup</a>
+          <a href="/tags/bootstrap-table/">Bootstrap Table</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/2014/11/20/ubuntu_unable_to_access_windows/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Ubuntu 下不能访问 Windows 文件系统</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/2014/11/07/crontab_study/">
+            <span class="next-text nav-default">crontab 学习笔记</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'wenzhixin';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:wenzhixin2010@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/1531096/wenyi" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/wenzhixin2010" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.facebook.com/wenzhixin2010" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://github.com/wenzhixin" class="iconfont icon-github" title="github"></a>
+      <a href="https://weibo.com/2292826740" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://www.zhihu.com/people/zhixin-wen" class="iconfont icon-zhihu" title="zhihu"></a>
+  <a href="http://blog.wenzhixin.net.cn/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2012 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">wenzhixin.net.cn 粤ICP备15117953号</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.ece58db6.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-36708951-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

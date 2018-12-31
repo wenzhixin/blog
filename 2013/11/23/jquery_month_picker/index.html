@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>jQuery 打造月份选择器插件 - 文翼的博客</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="wenzhixin" /><meta name="description" content="项目中需要用到月份选择器，找到了几款日期选择器 datepicker， 但是我不需要选择具体的日期，虽然有个可以支持只显示月份的，但是显得比较臃" /><meta name="keywords" content="文翼的博客, web前端博客" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.53 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://blog.wenzhixin.net.cn/2013/11/23/jquery_month_picker/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.93844dae.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="jQuery 打造月份选择器插件" />
+<meta property="og:description" content="项目中需要用到月份选择器，找到了几款日期选择器 datepicker， 但是我不需要选择具体的日期，虽然有个可以支持只显示月份的，但是显得比较臃" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.wenzhixin.net.cn/2013/11/23/jquery_month_picker/" /><meta property="article:published_time" content="2013-11-23T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2013-11-23T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="jQuery 打造月份选择器插件">
+<meta itemprop="description" content="项目中需要用到月份选择器，找到了几款日期选择器 datepicker， 但是我不需要选择具体的日期，虽然有个可以支持只显示月份的，但是显得比较臃">
+
+
+<meta itemprop="datePublished" content="2013-11-23T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2013-11-23T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="884">
+
+
+
+<meta itemprop="keywords" content="月份,选择器,jQuery," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="jQuery 打造月份选择器插件"/>
+<meta name="twitter:description" content="项目中需要用到月份选择器，找到了几款日期选择器 datepicker， 但是我不需要选择具体的日期，虽然有个可以支持只显示月份的，但是显得比较臃"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">文翼的博客</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">文翼的博客</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">jQuery 打造月份选择器插件</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2013-11-23 </span>
+        <div class="post-category">
+            <a href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/"> 前端技术 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#1-编写基本的-html-代码">1. 编写基本的 html 代码</a></li>
+<li><a href="#2-编写基本的-css-代码">2. 编写基本的 css 代码</a></li>
+<li><a href="#3-编写基本的-js-事件监听">3. 编写基本的 js 事件监听</a></li>
+<li><a href="#4-封装成-jquery-插件">4. 封装成 jQuery 插件</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<p>项目中需要用到月份选择器，找到了几款日期选择器 datepicker，
+但是我不需要选择具体的日期，虽然有个可以支持只显示月份的，但是显得比较臃肿。</p>
+
+<p>所以，还是决定自己实现一个吧。最后封装成了 jQuery 的插件，插件地址为：</p>
+
+<p><a href="http://wenzhixin.net.cn/p/bootstrap-monthpicker/">bootstrap-monthpicker</a></p>
+
+<p>其实编写 jQuery 插件很简单，使用起来也简单，把相同的代码提取出来写成 jQuery 的插件，
+这样不仅仅可以省很多代码量，还可以很好的提高开发速度。</p>
+
+<p>这里，把自己编写插件的步骤记录下来，希望有需要的人可以参考下。</p>
+
+<h4 id="1-编写基本的-html-代码">1. 编写基本的 html 代码</h4>
+
+<p>日期选择器需要年份选择，以及12个月的月份选择。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;mp-dialog&#34;</span><span class="p">&gt;</span>
+	<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;mp-title&#34;</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;glyphicon glyphicon-circle-arrow-left&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>2013<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;glyphicon glyphicon-circle-arrow-right&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
+	<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+	<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;mp-content&#34;</span><span class="p">&gt;</span>
+		<span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>一<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>二<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+			...
+			<span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>十二<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+	<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></code></pre></td></tr></table>
+</div>
+</div>
+<h4 id="2-编写基本的-css-代码">2. 编写基本的 css 代码</h4>
+
+<p>根据 html 代码，编写我们所需要的 css 样式。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-css" data-lang="css"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">mp-dialog</span> <span class="p">{</span>
+	<span class="k">position</span><span class="p">:</span> <span class="kc">absolute</span><span class="p">;</span>
+	<span class="k">z-index</span><span class="p">:</span> <span class="mi">1000</span><span class="p">;</span>
+	<span class="k">width</span><span class="p">:</span> <span class="mi">282</span><span class="kt">px</span><span class="p">;</span>
+	<span class="k">height</span><span class="p">:</span> <span class="mi">260</span><span class="kt">px</span><span class="p">;</span>
+	<span class="k">background</span><span class="p">:</span> <span class="mh">#fff</span><span class="p">;</span>
+	<span class="k">border-radius</span><span class="p">:</span> <span class="mi">5</span><span class="kt">px</span><span class="p">;</span>
+	<span class="k">border</span><span class="p">:</span> <span class="mi">1</span><span class="kt">px</span> <span class="kc">solid</span> <span class="mh">#ccc</span><span class="p">;</span>
+	<span class="k">display</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">.</span><span class="nc">mp-title</span> <span class="p">{</span>
+	<span class="k">text-align</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span>
+	<span class="k">line-height</span><span class="p">:</span> <span class="mi">40</span><span class="kt">px</span><span class="p">;</span>
+	<span class="k">background</span><span class="p">:</span> <span class="mh">#92cade</span><span class="p">;</span>
+	<span class="k">color</span><span class="p">:</span> <span class="mh">#fff</span><span class="p">;</span>
+	<span class="k">border-radius</span><span class="p">:</span> <span class="mi">5</span><span class="kt">px</span> <span class="mi">5</span><span class="kt">px</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">.</span><span class="nc">mp-title</span> <span class="nt">i</span> <span class="p">{</span>
+	<span class="k">cursor</span><span class="p">:</span> <span class="kc">pointer</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">.</span><span class="nc">mp-content</span> <span class="nt">ul</span> <span class="p">{</span>
+	<span class="k">list-style</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+	<span class="k">margin</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="k">padding</span><span class="p">:</span> <span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">.</span><span class="nc">mp-content</span> <span class="nt">li</span> <span class="p">{</span>
+	<span class="k">text-align</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span>
+	<span class="k">line-height</span><span class="p">:</span> <span class="mi">48</span><span class="kt">px</span><span class="p">;</span>
+	<span class="k">float</span><span class="p">:</span> <span class="kc">left</span><span class="p">;</span>
+	<span class="k">margin</span><span class="p">:</span> <span class="mi">6</span><span class="kt">px</span><span class="p">;</span>
+	<span class="k">padding</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="k">width</span><span class="p">:</span> <span class="mi">48</span><span class="kt">px</span><span class="p">;</span>
+	<span class="k">height</span><span class="p">:</span> <span class="mi">48</span><span class="kt">px</span><span class="p">;</span>
+	<span class="k">border</span><span class="p">:</span> <span class="mi">2</span><span class="kt">px</span> <span class="kc">dotted</span> <span class="mh">#ccc</span><span class="p">;</span>
+	<span class="k">cursor</span><span class="p">:</span> <span class="kc">pointer</span><span class="p">;</span>
+	<span class="k">border-radius</span><span class="p">:</span> <span class="mi">5</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">.</span><span class="nc">mp-content</span> <span class="nt">li</span><span class="p">:</span><span class="nd">hover</span><span class="o">,</span> <span class="p">.</span><span class="nc">mp-content</span> <span class="nt">li</span><span class="p">.</span><span class="nc">active</span> <span class="p">{</span>
+	<span class="k">background</span><span class="p">:</span> <span class="mh">#f5f9fc</span><span class="p">;</span>
+	<span class="k">border</span><span class="p">:</span> <span class="mi">2</span><span class="kt">px</span> <span class="kc">dotted</span> <span class="mh">#ffaaaa</span><span class="p">;</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<h4 id="3-编写基本的-js-事件监听">3. 编写基本的 js 事件监听</h4>
+
+<p>我们需要对上一年和下一年进行事件监听，并显示我们想要的年份。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;mp-title&#34;</span><span class="p">&gt;</span>
+	<span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;mp-year-prev glyphicon glyphicon-circle-arrow-left&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
+	<span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>2013<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+	<span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;mp-year-next glyphicon glyphicon-circle-arrow-right&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>这里添加了 mp-year-prev 和 mp-year-next 两个类。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">year</span> <span class="o">=</span> <span class="mi">2013</span><span class="p">;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.mp-year-prev&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+	<span class="nx">year</span><span class="o">--</span><span class="p">;</span>
+	<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.mp-title span&#39;</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="nx">year</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.mp-year-next&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+	<span class="nx">year</span><span class="o">++</span><span class="p">;</span>
+	<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.mp-title span&#39;</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="nx">year</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>我们在月份中加上了 data-month 属性，方便知道是选择哪个月份。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">li</span> <span class="na">data-month</span><span class="o">=</span><span class="s">&#34;0&#34;</span><span class="p">&gt;</span>一<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">li</span> <span class="na">data-month</span><span class="o">=</span><span class="s">&#34;1&#34;</span><span class="p">&gt;</span>二<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+...
+<span class="p">&lt;</span><span class="nt">li</span> <span class="na">data-month</span><span class="o">=</span><span class="s">&#34;11&#34;</span><span class="p">&gt;</span>十二<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>并添加对月份选择的监听。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.mp-content li&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<h4 id="4-封装成-jquery-插件">4. 封装成 jQuery 插件</h4>
+
+<p>自己写 jQuery 插件的时候有个基本的模块，详细见
+<a href="https://gist.github.com/wenzhixin/7634953">源码</a></p>
+
+<p>需要做的事情：</p>
+
+<ul>
+<li>将基本的 html 让 js 来自动生成</li>
+<li>监听事件使用 $el.off(&lsquo;click&rsquo;).on(&lsquo;click&rsquo;) 或者绑定监听</li>
+<li>将月份选择器加在 input 或者 div、span 选择器中</li>
+<li>对于 input 使用 val()，对于 div、span 使用 text()</li>
+</ul>
+
+<p>至此，我们的<a href="https://github.com/wenzhixin/bootstrap-monthpicker">月份选择器插件</a>就完成了。</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">wenzhixin</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2013-11-23</span>
+  </p>
+  
+  
+</div><div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/weixin.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/alipay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/%E6%9C%88%E4%BB%BD/">月份</a>
+          <a href="/tags/%E9%80%89%E6%8B%A9%E5%99%A8/">选择器</a>
+          <a href="/tags/jquery/">jQuery</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/2013/11/24/bai_wan_kui_yuan/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">百万葵园游</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/2013/11/22/all_images_is_loaded/">
+            <span class="next-text nav-default">jQuery 判断所有图片加载完成</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'wenzhixin';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:wenzhixin2010@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/1531096/wenyi" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/wenzhixin2010" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.facebook.com/wenzhixin2010" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://github.com/wenzhixin" class="iconfont icon-github" title="github"></a>
+      <a href="https://weibo.com/2292826740" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://www.zhihu.com/people/zhixin-wen" class="iconfont icon-zhihu" title="zhihu"></a>
+  <a href="http://blog.wenzhixin.net.cn/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2012 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">wenzhixin.net.cn 粤ICP备15117953号</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.ece58db6.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-36708951-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

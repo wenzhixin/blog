@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>《UCD 火花集》读书笔记（一） - 文翼的博客</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="wenzhixin" /><meta name="description" content="一、用户体验设计在团队中 用户体验的特性： 对于用户——帮助分析和挖掘用户潜意识的需要和习性，力求产品设计给用户带来本质上的满足，以及顺畅自然的" /><meta name="keywords" content="文翼的博客, web前端博客" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.53 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://blog.wenzhixin.net.cn/2012/12/04/ucd_book1/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.93844dae.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="《UCD 火花集》读书笔记（一）" />
+<meta property="og:description" content="一、用户体验设计在团队中 用户体验的特性： 对于用户——帮助分析和挖掘用户潜意识的需要和习性，力求产品设计给用户带来本质上的满足，以及顺畅自然的" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.wenzhixin.net.cn/2012/12/04/ucd_book1/" /><meta property="article:published_time" content="2012-12-04T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2012-12-04T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="《UCD 火花集》读书笔记（一）">
+<meta itemprop="description" content="一、用户体验设计在团队中 用户体验的特性： 对于用户——帮助分析和挖掘用户潜意识的需要和习性，力求产品设计给用户带来本质上的满足，以及顺畅自然的">
+
+
+<meta itemprop="datePublished" content="2012-12-04T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2012-12-04T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1381">
+
+
+
+<meta itemprop="keywords" content="UCD," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="《UCD 火花集》读书笔记（一）"/>
+<meta name="twitter:description" content="一、用户体验设计在团队中 用户体验的特性： 对于用户——帮助分析和挖掘用户潜意识的需要和习性，力求产品设计给用户带来本质上的满足，以及顺畅自然的"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">文翼的博客</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">文翼的博客</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">《UCD 火花集》读书笔记（一）</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2012-12-04 </span>
+        <div class="post-category">
+            <a href="/categories/%E4%BA%A4%E4%BA%92%E8%AE%BE%E8%AE%A1/"> 交互设计 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#一-用户体验设计在团队中">一、用户体验设计在团队中</a></li>
+<li><a href="#二-用户调查和研究">二、用户调查和研究</a></li>
+<li><a href="#三-期望值">三、期望值</a></li>
+<li><a href="#四-产品概念设计和传达">四、产品概念设计和传达</a></li>
+<li><a href="#五-任务分解和情景设计">五、任务分解和情景设计</a></li>
+<li><a href="#六-架构更好的信息结构">六、架构更好的信息结构</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<h4 id="一-用户体验设计在团队中">一、用户体验设计在团队中</h4>
+
+<ol>
+<li>用户体验的特性：</li>
+</ol>
+
+<ul>
+<li><p>对于用户——帮助分析和挖掘用户潜意识的需要和习性，力求产品设计给用户带来本质上的满足，以及顺畅自然的使用体验。</p></li>
+
+<li><p>对于团队——是整个团队的理念共识，是产品设计的基本需求，协助团队完成整个开发过程。</p>
+
+<ol>
+<li>用户体验担任的角色：</li>
+</ol></li>
+
+<li><p>公司品牌的捍卫者-情感化设计和质量监控</p></li>
+
+<li><p>用户的捍卫者-站在用户的角度把握设计的目标和方向</p>
+
+<ol>
+<li>用户体验的工作：</li>
+</ol></li>
+
+<li><p>可用性分析 - 数据信息分析 - 交互界面设计 - 视觉设计 - 内容优化</p></li>
+</ul>
+
+<hr />
+
+<h4 id="二-用户调查和研究">二、用户调查和研究</h4>
+
+<ol>
+<li>用户需要传达方式：目标(占25%)、行为(占50%)和说法(占25%)。</li>
+</ol>
+
+<p>ps: 用户所说的不一定是他们真正的需求，行为才是最重要的。</p>
+
+<ol>
+<li>收集用户需求</li>
+</ol>
+
+<ul>
+<li><p>目标：1) 情景调查; 2) 可用性测试; 3) CRM 测试</p></li>
+
+<li><p>行为：1) 网站流量统计; 2) 日志文件; 3) 眼动实验</p></li>
+
+<li><p>说法：1) 用户访谈; 2) 调查问卷; 3) 反馈及建议</p>
+
+<ol>
+<li>隐形挖掘用户行为</li>
+</ol></li>
+
+<li><p>收集数据 - 过滤数据 - 习惯分析</p></li>
+</ul>
+
+<hr />
+
+<h4 id="三-期望值">三、期望值</h4>
+
+<ol>
+<li>满足用户期望的解决方案：</li>
+</ol>
+
+<ul>
+<li><p>用户遇到了问题（如：用户想下载某首歌曲）</p></li>
+
+<li><p>用户要解决这个问题</p></li>
+
+<li><p>用户根据自身经验想到了某个解决方法（如：通过搜索引擎来查找）</p></li>
+
+<li><p>网站或产品提供了该解决方法（如：提供下载功能）或更好的解决方法（如：可以在线试用、流行歌曲推荐）</p></li>
+
+<li><p>用户使用该网站或产品（如：试用或者下载其他想听的歌曲）</p>
+
+<ol>
+<li>要合理的处理好三品质模型间的关系：</li>
+</ol></li>
+
+<li><p>期望性（设计）</p></li>
+
+<li><p>可行性（商业）</p></li>
+
+<li><p>可能性（技术）</p>
+
+<ol>
+<li>期望的产生：</li>
+</ol></li>
+
+<li><p>品牌信誉：产品本身的质量、口碑、公关和宣传</p></li>
+
+<li><p>先前的体验：老用户对已有产品的体验、竞争对手和类似产品的体验</p></li>
+</ul>
+
+<hr />
+
+<h4 id="四-产品概念设计和传达">四、产品概念设计和传达</h4>
+
+<ol>
+<li>产品概念设计应该具备：</li>
+</ol>
+
+<ul>
+<li><p>理解用户和需求</p></li>
+
+<li><p>具有缜密的逻辑思维能力</p></li>
+
+<li><p>能结合多方面因素综合思考</p></li>
+
+<li><p>具有良好的沟通能力</p>
+
+<ol>
+<li>概念设计的目的：</li>
+</ol></li>
+
+<li><p>面向用户：模拟（而非实现）最终产品，解决焦点问题（定位和需求）</p></li>
+
+<li><p>面向团队：预先演示，尽量达成共识，避免产品设计和开发的矛盾</p>
+
+<ol>
+<li>概念设计的交付物：</li>
+</ol></li>
+
+<li><p>概念模型 （Concept Model）：概念图和流程图</p></li>
+
+<li><p>原型（Prototype）</p></li>
+
+<li><p>内容清单（Content Inventory）：功能列表清单</p>
+
+<ol>
+<li>评估和测试：</li>
+</ol></li>
+
+<li><p>确认概念模型是否准确</p></li>
+
+<li><p>确认该原型是否能完成功能</p></li>
+
+<li><p>评估该原型技术和市场的可行性</p></li>
+</ul>
+
+<hr />
+
+<h4 id="五-任务分解和情景设计">五、任务分解和情景设计</h4>
+
+<ol>
+<li>任务分解：基于用户使用流程的任务分解，从整体到细节的过程。
+将大任务分成小任务，小任务分解为页面的每个元素以及每个过程可能出现的每个小提示等。（所谓的先主线任务，再支线任务）</li>
+</ol>
+
+<p>如：“注册” 任务，先设计主线任务：填写信息 -&gt; 发送验证 -&gt; 验证注册 -&gt; 注册成功；
+ 再设计支线任务：错误处理，提示信息等；最后到具体的按钮、文字设计</p>
+
+<ol>
+<li>需要分解的任务：</li>
+</ol>
+
+<ul>
+<li><p>功能的信息架构</p></li>
+
+<li><p>具体分析每个角色在使用产品过程中最常用的功能需求</p></li>
+
+<li><p>商业需要给流程提出来的额外任务</p>
+
+<ol>
+<li>情景设计：运用故事和用户之间互动、激发想象、情感，并模拟问题出现和解决问题的方法。
+应以目标为向导，并以真实为基础。</li>
+</ol></li>
+</ul>
+
+<hr />
+
+<h4 id="六-架构更好的信息结构">六、架构更好的信息结构</h4>
+
+<ol>
+<li>内容的价值产生于 “合”：</li>
+</ol>
+
+<ul>
+<li><p>有选择性的组织内容或者转载内容</p></li>
+
+<li><p>引导用户组织内容，形成大量的原创内容和资讯</p></li>
+
+<li><p>形成特色内容，将相关内容合并为专题或者专辑</p></li>
+
+<li><p>成为信息源，提供 RSS 聚合端口</p>
+
+<ol>
+<li>内容的能量释放于 “分”：</li>
+</ol></li>
+
+<li><p>给内容分类，归属于哪个频道或者哪个类别</p></li>
+
+<li><p>添加社会化标签（tag），把网站的内容连接起来</p></li>
+
+<li><p>添加关键字，用于查找或形成相关内容</p>
+
+<ol>
+<li>具体设计：</li>
+</ol></li>
+
+<li><p>功能与功能的关系是什么</p></li>
+
+<li><p>每个功能点应该具象化到也个页面</p></li>
+
+<li><p>这个页面应该有有什么内容</p></li>
+
+<li><p>这个页面的内容应该如何摆放</p></li>
+
+<li><p>将不常用或者不经常改变的内容隐藏起来</p></li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">wenzhixin</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2012-12-04</span>
+  </p>
+  
+  
+</div><div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/weixin.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/alipay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/ucd/">UCD</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/2012/12/04/ucd_book1/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">《UCD 火花集》读书笔记（一）</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/2012/12/03/ie_enter_button_bug/">
+            <span class="next-text nav-default">IE 下使用 button 时 Enter 的问题</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'wenzhixin';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:wenzhixin2010@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/1531096/wenyi" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/wenzhixin2010" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.facebook.com/wenzhixin2010" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://github.com/wenzhixin" class="iconfont icon-github" title="github"></a>
+      <a href="https://weibo.com/2292826740" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://www.zhihu.com/people/zhixin-wen" class="iconfont icon-zhihu" title="zhihu"></a>
+  <a href="http://blog.wenzhixin.net.cn/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2012 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">wenzhixin.net.cn 粤ICP备15117953号</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.ece58db6.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-36708951-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

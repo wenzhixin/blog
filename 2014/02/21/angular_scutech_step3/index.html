@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>一步一步学习 AngularJS（四） - 文翼的博客</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="wenzhixin" /><meta name="description" content="上一节 下一节 在这一小节，我们增加一个简单的input输入框，用于搜索。 在开始之前，我们先来看看 演示， 也可以通过链接下载 zip 包。 控制器 我们没有改" /><meta name="keywords" content="文翼的博客, web前端博客" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.53 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://blog.wenzhixin.net.cn/2014/02/21/angular_scutech_step3/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.93844dae.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="一步一步学习 AngularJS（四）" />
+<meta property="og:description" content="上一节 下一节 在这一小节，我们增加一个简单的input输入框，用于搜索。 在开始之前，我们先来看看 演示， 也可以通过链接下载 zip 包。 控制器 我们没有改" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.wenzhixin.net.cn/2014/02/21/angular_scutech_step3/" /><meta property="article:published_time" content="2014-02-21T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2014-02-21T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="一步一步学习 AngularJS（四）">
+<meta itemprop="description" content="上一节 下一节 在这一小节，我们增加一个简单的input输入框，用于搜索。 在开始之前，我们先来看看 演示， 也可以通过链接下载 zip 包。 控制器 我们没有改">
+
+
+<meta itemprop="datePublished" content="2014-02-21T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2014-02-21T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1116">
+
+
+
+<meta itemprop="keywords" content="AngularJS," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="一步一步学习 AngularJS（四）"/>
+<meta name="twitter:description" content="上一节 下一节 在这一小节，我们增加一个简单的input输入框，用于搜索。 在开始之前，我们先来看看 演示， 也可以通过链接下载 zip 包。 控制器 我们没有改"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">文翼的博客</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">文翼的博客</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">一步一步学习 AngularJS（四）</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2014-02-21 </span>
+        <div class="post-category">
+            <a href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/"> 前端技术 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    
+  </div>
+</div>
+    <div class="post-content">
+      <p><a href="/2014/02/20/angular_scutech_step2">上一节</a>
+<a href="/2014/02/22/angular_scutech_step4">下一节</a></p>
+
+<p>在这一小节，我们增加一个简单的<code>input</code>输入框，用于搜索。</p>
+
+<p>在开始之前，我们先来看看 <a href="/demos/angular-scutech/step3">演示</a>，
+也可以通过链接下载 <a href="/demos/angular-scutech/step3.zip">zip</a> 包。</p>
+
+<p><strong>控制器</strong></p>
+
+<p>我们没有改变控制器的任何代码。</p>
+
+<p><strong>模板</strong></p>
+
+<p>文件：<code>index.html</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">&lt;div class=&#34;container&#34;&gt;
+    &lt;div class=&#34;col-md-3&#34;&gt;
+        &lt;input type=&#34;text&#34; class=&#34;form-control&#34; placeholder=&#34;搜索&#34; ng-model=&#34;query&#34; /&gt;
+    &lt;/div&gt;
+    &lt;ul class=&#34;col-md-9 list-group&#34;&gt;
+        &lt;li class=&#34;list-group-item&#34; ng-repeat=&#34;product in products | filter:query&#34;&gt;
+            &lt;h4 class=&#34;list-group-item-heading&#34;&gt;{{product.name}}&lt;/h4&gt;
+            &lt;p class=&#34;list-group-item-text&#34;&gt;{{product.info}}&lt;/p&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</pre></td></tr></table>
+</div>
+</div>
+<p>我们修改我们的模板代码，<code>col-md-3</code>、<code>col-md-9</code>
+都是 bootstrap 提供的类，表示将搜索栏和列表分别放在左右两边，<code>form-control</code>
+将 input 设置为 bootstrap 的风格。</p>
+
+<p>看到为 input 输入框增加了<code>ng-model</code>指令，表示我们的模型是<code>query</code>，
+而在<code>ng-repeat</code>中加入了 filter 函数用于处理输入框的模型。</p>
+
+<p>当你在输入框中输入内容的时候会立即看到列表的变化。</p>
+
+<p>这些新代码表明了：</p>
+
+<ul>
+<li><p>数据绑定：这是 AngularJS 的一个核心功能，当页面加载后，AngularJS 在模型中绑定了相同的名字的变量，
+从而保证视图和模型之间的同步。</p></li>
+
+<li><p>使用<code>filter</code>函数过滤内容：<code>filter</code>函数使用<code>query</code>参数去创建新的只包含输入框内容的列表。
+从而自动更新列表的内容，达到搜索的功能。</p></li>
+</ul>
+
+<p><strong>扩展练习</strong></p>
+
+<p>增加一个绑定显示当前的搜索内容：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">&lt;p&gt;输入的内容：{{query}}&lt;/p&gt;</pre></td></tr></table>
+</div>
+</div>
+<p>假如我想把搜索内容显示在页面的标题上呢？</p>
+
+<p>是不是通过设置：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">&lt;title&gt;Angular Scutech：{{query}}&lt;/title&gt;</pre></td></tr></table>
+</div>
+</div>
+<p>就可以了呢？通过实践我们可以知道，并不能达到我们想要的结果，这是为什么呢？</p>
+
+<p>因为我们的控制器是放在 body 标签上的，这样使用 query 变量的话就超出我们的作用域了：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">&lt;body ng-controller=&#34;ListCtrl&#34;&gt;</pre></td></tr></table>
+</div>
+</div>
+<p>我们可以把控制移动到 html 标签上，就可以了：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">&lt;html lang=&#34;en&#34; ng-app=&#34;scutechApp&#34; ng-controller=&#34;ListCtrl&#34;&gt;</pre></td></tr></table>
+</div>
+</div>
+<p>但是这里有个小问题，就是使用<code>{{}}</code>的时候在最初加载的时候，显示为<code>Angular Scutech：{{query}}</code>，很不美观。</p>
+
+<p>在 AngularJS 中，我们可以使用<code>ngBind</code>（用于绑定变量，例如<code>ng-bind=&quot;query&quot;</code>）
+或者<code>ngBindTemplate</code>（用于绑定模块，例如<code>ng-bind-template=&quot;Angular Scutech：{{query}}&quot;</code>）
+来代替双括号进行数据绑定，例如我们用下面的代码就可以了：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">&lt;title ng-bind=&#34;Angular Scutech：{{query}}&#34;&gt;Angular Scutech&lt;/title&gt;</pre></td></tr></table>
+</div>
+</div>
+<p>到这里，你是不是对 AngularJS 的数据绑定有所理解了呢:-)</p>
+
+<p><a href="/2014/02/20/angular_scutech_step2">上一节</a>
+<a href="/2014/02/22/angular_scutech_step4">下一节</a></p>
+
+<hr />
+
+<ul>
+<li><a href="/2014/02/18/angular_scutech_step0">一步一步学习 AngularJS（一）</a></li>
+<li><a href="/2014/02/19/angular_scutech_step1">一步一步学习 AngularJS（二）</a></li>
+<li><a href="/2014/02/20/angular_scutech_step2">一步一步学习 AngularJS（三）</a></li>
+<li><a href="/2014/02/21/angular_scutech_step3">一步一步学习 AngularJS（四）</a></li>
+<li><a href="/2014/02/22/angular_scutech_step4">一步一步学习 AngularJS（五）</a></li>
+<li><a href="/2014/02/23/angular_scutech_step5">一步一步学习 AngularJS（六）</a></li>
+<li><a href="/2014/03/10/angular_scutech_step6">一步一步学习 AngularJS（七）</a></li>
+<li><a href="/2014/04/22/angular_scutech_step7">一步一步学习 AngularJS（八）</a></li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">wenzhixin</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2014-02-21</span>
+  </p>
+  
+  
+</div><div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/weixin.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/alipay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/angularjs/">AngularJS</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/2014/02/22/angular_scutech_step4/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">一步一步学习 AngularJS（五）</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/2014/02/20/angular_scutech_step2/">
+            <span class="next-text nav-default">一步一步学习 AngularJS（三）</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'wenzhixin';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:wenzhixin2010@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/1531096/wenyi" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/wenzhixin2010" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.facebook.com/wenzhixin2010" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://github.com/wenzhixin" class="iconfont icon-github" title="github"></a>
+      <a href="https://weibo.com/2292826740" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://www.zhihu.com/people/zhixin-wen" class="iconfont icon-zhihu" title="zhihu"></a>
+  <a href="http://blog.wenzhixin.net.cn/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2012 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">wenzhixin.net.cn 粤ICP备15117953号</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.ece58db6.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-36708951-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

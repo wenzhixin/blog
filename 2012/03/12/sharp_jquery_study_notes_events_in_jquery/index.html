@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>《锋利的jQuery》学习笔记——jQuery中的事件 - 文翼的博客</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="wenzhixin" /><meta name="description" content="​1. 加载 DOM 1 2 3 $(document).ready(function() { //代码 }); (1)执行时机：window.onload 方法在网页中所有的元素（包括愿你苏的所有关联文件）完全加载后才执行" /><meta name="keywords" content="文翼的博客, web前端博客" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.53 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://blog.wenzhixin.net.cn/2012/03/12/sharp_jquery_study_notes_events_in_jquery/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.93844dae.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="《锋利的jQuery》学习笔记——jQuery中的事件" />
+<meta property="og:description" content="​1. 加载 DOM 1 2 3 $(document).ready(function() { //代码 }); (1)执行时机：window.onload 方法在网页中所有的元素（包括愿你苏的所有关联文件）完全加载后才执行" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.wenzhixin.net.cn/2012/03/12/sharp_jquery_study_notes_events_in_jquery/" /><meta property="article:published_time" content="2012-03-12T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2012-03-12T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="《锋利的jQuery》学习笔记——jQuery中的事件">
+<meta itemprop="description" content="​1. 加载 DOM 1 2 3 $(document).ready(function() { //代码 }); (1)执行时机：window.onload 方法在网页中所有的元素（包括愿你苏的所有关联文件）完全加载后才执行">
+
+
+<meta itemprop="datePublished" content="2012-03-12T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2012-03-12T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1112">
+
+
+
+<meta itemprop="keywords" content="jQuery,事件," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="《锋利的jQuery》学习笔记——jQuery中的事件"/>
+<meta name="twitter:description" content="​1. 加载 DOM 1 2 3 $(document).ready(function() { //代码 }); (1)执行时机：window.onload 方法在网页中所有的元素（包括愿你苏的所有关联文件）完全加载后才执行"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">文翼的博客</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">文翼的博客</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">《锋利的jQuery》学习笔记——jQuery中的事件</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2012-03-12 </span>
+        <div class="post-category">
+            <a href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/"> 前端技术 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    
+  </div>
+</div>
+    <div class="post-content">
+      <p>​<strong>1. 加载 DOM</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$(document).ready(function() {
+	//代码
+});</pre></td></tr></table>
+</div>
+</div>
+<p>(1)执行时机：window.onload
+方法在网页中所有的元素（包括愿你苏的所有关联文件）完全加载后才执行，而
+$(document).ready() 在 DOM 完全就绪时就可以被调用</p>
+
+<p> • $(window).load()与 window.onload 等价</p>
+
+<p>(2)可多次使用：window.onload 方法只能执行一次，而$(document).ready()
+多次使用，根据注册的顺序依次执行</p>
+
+<p>(3)简写方式</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$().ready(function() {
+	//代码
+});</pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$(function() {
+	//代码
+});</pre></td></tr></table>
+</div>
+</div>
+<p>​<strong>2. 事件绑定</strong></p>
+
+<p> • bind(type[ , data], fn)</p>
+
+<p> • one(type[ ,data], fn)-只执行一次</p>
+
+<p>(1)第一个参数type表示事件类型：blur、focus、load、resize、scroll、unload、click、dblclick、mousedown、mouseup、mousemove、mouseover、mouseout、mouseenter、mouseleave、change、select、submit、keydown、keypress、keyup和error等</p>
+
+<p>(2)第二个为可选参数，为做 event.data 属性传递给事件对象的额外数据</p>
+
+<p>(3)第三个参数是用来绑定的处理函数</p>
+
+<p> • 事件简写：$(variable).bind(type [, data], fn) 简写为
+$(variable).type(fn)</p>
+
+<p>​<strong>3. 合成事件</strong></p>
+
+<p>(1)hover(fn, fn)方法-是 mouseover(fn) 和 mouseout(fn) 的合成</p>
+
+<p>(2)toggle(fn1, fn2, &hellip;)</p>
+
+<p> • 用于模拟鼠标连续单击事件，当点击事件时重复对设置的函数进行调用</p>
+
+<p> • 用于切换元素的可见状态</p>
+
+<p>​<strong>4. 事件冒泡</strong></p>
+
+<p>(1)事件冒泡是指事件会按照 DOM 的层次结构像水泡一样不断向上直至顶端</p>
+
+<p>(2)事件冒泡可能会引起预料之外的效果，可以使用</p>
+
+<p> • event.stopPropagation()-停止事件冒泡</p>
+
+<p> • event.preventDefault()-阻止默认行为</p>
+
+<p> • return false-停止事件冒泡或者阻止默认行为</p>
+
+<p>​<strong>5. 事件对象的属性</strong></p>
+
+<p> • event.type()-获取事件的类型</p>
+
+<p> • event.target()-获取到触发事件的元素</p>
+
+<p> • event.relatedTarget()-获取触发事件的相关元素</p>
+
+<p> • event.pageX()-获取鼠标相对于页面的 x 坐标</p>
+
+<p> • event.pageY()-获取鼠标相对于页面的 y 坐标</p>
+
+<p> •
+event.which()-在鼠标单击事件中获取鼠标的左(1)、中(2)、右健(3)；在键盘事件中获取键盘的按键</p>
+
+<p> • event.metaKey()-键盘事件中获取 ctrl 按键</p>
+
+<p> • event.originalEvent()-指向原始的事件对象</p>
+
+<p>​<strong>6. 移除事件</strong></p>
+
+<p> • unbind([type][ ,data])</p>
+
+<p>(1)第一个参数为事件类型，第二个参数为要移除的函数</p>
+
+<p>(2)没有参数，删除所有绑定的事件</p>
+
+<p>(3)提供事件类型为参数，只删除该类型的绑定事件</p>
+
+<p>(4)提供处理函数作为第二个函数，只删除提供的特定事件</p>
+
+<p><strong>7. 模拟事件操作</strong></p>
+
+<p>(1)模拟点击事件</p>
+
+<p> • $(variable).trigger(&ldquo;click&rdquo;)</p>
+
+<p> • $(variable).click()</p>
+
+<p>(2)触发自定义事件</p>
+
+<p> • $(variable).bind(&ldquo;customEvent&rdquo;, fn);</p>
+
+<p>   $(variable).trigger(&ldquo;customEvent&rdquo;);</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">wenzhixin</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2012-03-12</span>
+  </p>
+  
+  
+</div><div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/weixin.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/alipay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/jquery/">jQuery</a>
+          <a href="/tags/%E4%BA%8B%E4%BB%B6/">事件</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/2012/03/12/sharp_jquery_study_notes_events_in_jquery/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">《锋利的jQuery》学习笔记——jQuery中的事件</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/2012/03/11/sharp_jquery_study_notes_jquery_selector/">
+            <span class="next-text nav-default">《锋利的jQuery》学习笔记——jQuery选择器</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'wenzhixin';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:wenzhixin2010@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/1531096/wenyi" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/wenzhixin2010" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.facebook.com/wenzhixin2010" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://github.com/wenzhixin" class="iconfont icon-github" title="github"></a>
+      <a href="https://weibo.com/2292826740" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://www.zhihu.com/people/zhixin-wen" class="iconfont icon-zhihu" title="zhihu"></a>
+  <a href="http://blog.wenzhixin.net.cn/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2012 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">wenzhixin.net.cn 粤ICP备15117953号</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.ece58db6.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-36708951-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

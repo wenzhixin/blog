@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>虚拟机安装 Android_x86 系统，用于开发、测试 Android 程序 - 文翼的博客</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="wenzhixin" /><meta name="description" content="1、下载镜像： 从 http://www.android-x86.org/download 下载 android_x86 iso 镜像（例如 android-x86-2.3-RC1-eeepc.iso） 2、安装系统： 使用虚拟机 VirtualBox 来安装系统，步骤如" /><meta name="keywords" content="文翼的博客, web前端博客" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.53 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://blog.wenzhixin.net.cn/2012/06/02/install_android_x86_virtual_machine_for_the_development_testing_android_applications/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.93844dae.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="虚拟机安装 Android_x86 系统，用于开发、测试 Android 程序" />
+<meta property="og:description" content="1、下载镜像： 从 http://www.android-x86.org/download 下载 android_x86 iso 镜像（例如 android-x86-2.3-RC1-eeepc.iso） 2、安装系统： 使用虚拟机 VirtualBox 来安装系统，步骤如" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.wenzhixin.net.cn/2012/06/02/install_android_x86_virtual_machine_for_the_development_testing_android_applications/" /><meta property="article:published_time" content="2012-06-02T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2012-06-02T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="虚拟机安装 Android_x86 系统，用于开发、测试 Android 程序">
+<meta itemprop="description" content="1、下载镜像： 从 http://www.android-x86.org/download 下载 android_x86 iso 镜像（例如 android-x86-2.3-RC1-eeepc.iso） 2、安装系统： 使用虚拟机 VirtualBox 来安装系统，步骤如">
+
+
+<meta itemprop="datePublished" content="2012-06-02T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2012-06-02T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="619">
+
+
+
+<meta itemprop="keywords" content="android,android_x86," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="虚拟机安装 Android_x86 系统，用于开发、测试 Android 程序"/>
+<meta name="twitter:description" content="1、下载镜像： 从 http://www.android-x86.org/download 下载 android_x86 iso 镜像（例如 android-x86-2.3-RC1-eeepc.iso） 2、安装系统： 使用虚拟机 VirtualBox 来安装系统，步骤如"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">文翼的博客</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">文翼的博客</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">虚拟机安装 Android_x86 系统，用于开发、测试 Android 程序</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2012-06-02 </span>
+        <div class="post-category">
+            <a href="/categories/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/"> 移动开发 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#1-下载镜像">1、下载镜像：</a></li>
+<li><a href="#2-安装系统">2、安装系统：</a></li>
+<li><a href="#3-添加手机分辨率模式">3、添加手机分辨率模式：</a></li>
+<li><a href="#4-修改-android-系统的-grub-配置">4、修改 Android 系统的 Grub 配置：</a></li>
+<li><a href="#5-avd-和-eclipse-连接到-android-系统">5、AVD 和 Eclipse 连接到 Android 系统：</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<h4 id="1-下载镜像">1、下载镜像：</h4>
+
+<p>从 <a href="http://www.android-x86.org/download 下载">http://www.android-x86.org/download 下载</a> android_x86 iso 镜像（例如 android-x86-2.3-RC1-eeepc.iso）</p>
+
+<h4 id="2-安装系统">2、安装系统：</h4>
+
+<p>使用虚拟机 VirtualBox 来安装系统，步骤如下：</p>
+
+<p>（1）选择目标 OS：Linux</p>
+
+<p>（2）目标 OS 版本：others</p>
+
+<p>（3）内存：512MB</p>
+
+<p>（4）硬盘：VDI drive，动态大小，1GB</p>
+
+<p>（5）启动并选择下载的 iso 镜像文件</p>
+
+<p>（6）从 boot 菜单中选择 install to hard disk（安装到硬盘）。</p>
+
+<p>（7）创建一个新的分区，格式化为 ext3 格式，并选择该分区进行系统安装</p>
+
+<h4 id="3-添加手机分辨率模式">3、添加手机分辨率模式：</h4>
+
+<p>在终端下输入：</p>
+
+<p>（1）VBoxManage setextradata &ldquo;android2.3&rdquo; &ldquo;CustomVideoMode1&rdquo; &ldquo;320x480x16&rdquo;</p>
+
+<p>（2）VBoxManage setextradata &ldquo;android2.3&rdquo; &ldquo;CustomVideoMode2&rdquo; &ldquo;480x800x16&rdquo;</p>
+
+<h4 id="4-修改-android-系统的-grub-配置">4、修改 Android 系统的 Grub 配置：</h4>
+
+<p>（1）启动 Android 系统并选择 Debug mode（调试模式）</p>
+
+<p>（2）修改 menu.lst 文件：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">mount -o remount,rw /mnt
+
+vi /mnt/grub/menu.lst</pre></td></tr></table>
+</div>
+</div>
+<p>修改启动参数：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">androidboot_hardware=eeepc
+androidboot_hardware=generic_x86 </pre></td></tr></table>
+</div>
+</div>
+<p>在 DPI=240 / DPI=160 后添加</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">UVESA_MODE=480x800/UVESA_MODE=320x480</pre></td></tr></table>
+</div>
+</div>
+<p>（3）保存并重启系统</p>
+
+<h4 id="5-avd-和-eclipse-连接到-android-系统">5、AVD 和 Eclipse 连接到 Android 系统：</h4>
+
+<p>（1）进入命令行模式（Alt+F1），输入：netcfg 查看当前 IP 地址</p>
+
+<p>（2）进入 android 的 platform-tools 目录，输入：./adb connect IP地址</p>
+
+<p>（3）Eclipse 下，run 并选择该 Android 系统便可</p>
+
+<hr />
+
+<p>ps：</p>
+
+<p>（1）在 Android 系统屏幕上没有看到鼠标指针，可通过 VirualBox 菜单禁止 mouse integration（鼠标整合）( Host Key + I）</p>
+
+<p>（2）&rdquo;Windows 键&rdquo;相当于 Android 的 Home 按钮</p>
+
+<p>（3）&rdquo;Esc&rdquo; 相当于 Android 的 Back </p>
+
+<p>（4）按钮F2 相当于 Android 的 Menu 按钮</p>
+
+<p>（5）F3 相当于 Android 的 Search 按钮</p>
+
+<p>（6）Alt+F1 =&gt; 切换到控制台模式</p>
+
+<p>（7）Alt+F7 =&gt; 切换到图形界面模式</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">wenzhixin</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2012-06-02</span>
+  </p>
+  
+  
+</div><div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/weixin.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/alipay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/android/">android</a>
+          <a href="/tags/android_x86/">android_x86</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/2012/06/04/the_ubuntu_connection_c8650_android_development_of_huawei/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">ubuntu 连接华为 C8650 进行 Android 开发的问题</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/2012/06/02/install_android_x86_virtual_machine_for_the_development_testing_android_applications/">
+            <span class="next-text nav-default">虚拟机安装 Android_x86 系统，用于开发、测试 Android 程序</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'wenzhixin';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:wenzhixin2010@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/1531096/wenyi" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/wenzhixin2010" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.facebook.com/wenzhixin2010" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://github.com/wenzhixin" class="iconfont icon-github" title="github"></a>
+      <a href="https://weibo.com/2292826740" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://www.zhihu.com/people/zhixin-wen" class="iconfont icon-zhihu" title="zhihu"></a>
+  <a href="http://blog.wenzhixin.net.cn/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2012 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">wenzhixin.net.cn 粤ICP备15117953号</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.ece58db6.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-36708951-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

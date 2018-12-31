@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>使用 CSS3 制作自己的博客 Logo - 文翼的博客</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="wenzhixin" /><meta name="description" content="1、html 代码 1 2 3 4 5 6 7 8 9 10 11 12 &amp;lt;div class=&amp;#34;wenyi-logo&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;border&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;circle&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;wy&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;wen&amp;#34;&amp;gt;文&amp;lt;/div&amp;gt; &amp;lt;div clas" /><meta name="keywords" content="文翼的博客, web前端博客" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.53 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://blog.wenzhixin.net.cn/2012/12/07/css3_blog_logo/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.93844dae.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="使用 CSS3 制作自己的博客 Logo" />
+<meta property="og:description" content="1、html 代码 1 2 3 4 5 6 7 8 9 10 11 12 &lt;div class=&#34;wenyi-logo&#34;&gt; &lt;div class=&#34;border&#34;&gt; &lt;div class=&#34;circle&#34;&gt; &lt;div class=&#34;wy&#34;&gt; &lt;div class=&#34;wen&#34;&gt;文&lt;/div&gt; &lt;div clas" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.wenzhixin.net.cn/2012/12/07/css3_blog_logo/" /><meta property="article:published_time" content="2012-12-07T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2012-12-07T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="使用 CSS3 制作自己的博客 Logo">
+<meta itemprop="description" content="1、html 代码 1 2 3 4 5 6 7 8 9 10 11 12 &lt;div class=&#34;wenyi-logo&#34;&gt; &lt;div class=&#34;border&#34;&gt; &lt;div class=&#34;circle&#34;&gt; &lt;div class=&#34;wy&#34;&gt; &lt;div class=&#34;wen&#34;&gt;文&lt;/div&gt; &lt;div clas">
+
+
+<meta itemprop="datePublished" content="2012-12-07T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2012-12-07T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="552">
+
+
+
+<meta itemprop="keywords" content="CSS3," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="使用 CSS3 制作自己的博客 Logo"/>
+<meta name="twitter:description" content="1、html 代码 1 2 3 4 5 6 7 8 9 10 11 12 &lt;div class=&#34;wenyi-logo&#34;&gt; &lt;div class=&#34;border&#34;&gt; &lt;div class=&#34;circle&#34;&gt; &lt;div class=&#34;wy&#34;&gt; &lt;div class=&#34;wen&#34;&gt;文&lt;/div&gt; &lt;div clas"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">文翼的博客</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">文翼的博客</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">使用 CSS3 制作自己的博客 Logo</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2012-12-07 </span>
+        <div class="post-category">
+            <a href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/"> 前端技术 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#1-html-代码">1、html 代码</a></li>
+<li><a href="#2-设置-logo-大小为-180px-设置所有的-div-为绝对定位">2、设置 logo 大小为 180px，设置所有的 div 为绝对定位</a></li>
+<li><a href="#3-设置-border-样式">3、设置 border 样式</a></li>
+<li><a href="#4-设置-circle-样式">4、设置 circle 样式</a></li>
+<li><a href="#5-设置字体的大小以及定位">5、设置字体的大小以及定位</a></li>
+<li><a href="#6-最后加上鼠标经过的样式">6、最后加上鼠标经过的样式</a></li>
+<li><a href="#7-最后的最后">7、最后的最后&gt;&gt;&gt;</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<h4 id="1-html-代码">1、html 代码</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">&lt;div class=&#34;wenyi-logo&#34;&gt;
+    &lt;div class=&#34;border&#34;&gt;
+        &lt;div class=&#34;circle&#34;&gt;
+            &lt;div class=&#34;wy&#34;&gt;
+                &lt;div class=&#34;wen&#34;&gt;文&lt;/div&gt;
+                &lt;div class=&#34;yi&#34;&gt;翼&lt;/div&gt;
+                &lt;div class=&#34;bo&#34;&gt;博&lt;/div&gt;
+                &lt;div class=&#34;ke&#34;&gt;客&lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre></td></tr></table>
+</div>
+</div>
+<h4 id="2-设置-logo-大小为-180px-设置所有的-div-为绝对定位">2、设置 logo 大小为 180px，设置所有的 div 为绝对定位</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">.wenyi-logo {
+    width: 180px;
+    position: relative;
+}
+.wenyi-logo div {
+    position: absolute;
+}</pre></td></tr></table>
+</div>
+</div>
+<h4 id="3-设置-border-样式">3、设置 border 样式</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">.wenyi-logo .border {
+    width: 180px;
+    height: 180px;
+    background: #b1e4ff;
+    border: 2px solid #789cb6;
+    border-radius: 90px;
+    box-shadow: 0 0 15px #fff;
+}</pre></td></tr></table>
+</div>
+</div>
+<p>可以看到，现在的效果：
+<img src="/2012/12/07/images/1.jpeg" alt="" /></p>
+
+<h4 id="4-设置-circle-样式">4、设置 circle 样式</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">.wenyi-logo .circle {
+    width: 170px;
+    height: 170px;
+    top: 5px;
+    left: 5px;
+    background: #3b99e3;
+    border-radius: 85px;
+}</pre></td></tr></table>
+</div>
+</div>
+<p>可以看到，现在的效果：
+<img src="/2012/12/07/images/2.jpeg" alt="" /></p>
+
+<h4 id="5-设置字体的大小以及定位">5、设置字体的大小以及定位</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">.wenyi-logo .wy {
+    font-weight: bold;
+    font-size: 70px;
+    color: white;
+}
+.wenyi-logo .wy div {
+    width: 96px;
+    line-height: 96px;
+    text-align: center;
+}
+.wenyi-logo .wen {
+    font-size: 32px;
+    top: 37px;
+    right: -85px;
+}
+.wenyi-logo .yi {
+    font-size: 32px;
+    top: 37px;
+    left: 88px;
+}
+.wenyi-logo .bo {
+    left: 37px;
+    top: 9px;
+}
+.wenyi-logo .ke {
+    left: 37px;
+    top: 69px;
+}</pre></td></tr></table>
+</div>
+</div>
+<p>可以看到，现在的效果：
+<img src="/2012/12/07/images/3.jpeg" alt="" /></p>
+
+<h4 id="6-最后加上鼠标经过的样式">6、最后加上鼠标经过的样式</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">.wenyi-logo .border {
+    transition: all .8s ease-in-out;
+}
+
+.wenyi-logo .border:hover {
+    transform: rotate(360deg) scale(1.1);
+}</pre></td></tr></table>
+</div>
+</div>
+<h4 id="7-最后的最后">7、最后的最后&gt;&gt;&gt;</h4>
+
+<p>加上对多浏览器的支持，列出了用到的 css3 属性：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">-moz-border-radius
+-webkit-border-radius
+-o-border-radius
+border-radius
+
+-moz-box-shadow
+-webkit-box-shadow
+-o-box-shadow
+box-shadow
+
+-webkit-transition
+-moz-transition
+-o-transition
+transition
+
+-webkit-transform
+-moz-transform
+-o-transform
+transform</pre></td></tr></table>
+</div>
+</div>
+<p>注：想支持 IE 的话可以考虑 <a href="http://fetchak.com/ie-css3/">ie-css3.htc</a></p>
+
+<hr />
+
+<p>源码：<a href="/2012/12/07/demo.html">查看demo</a></p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">wenzhixin</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2012-12-07</span>
+  </p>
+  
+  
+</div><div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/weixin.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/alipay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/css3/">CSS3</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/2012/12/07/css3_blog_logo/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">使用 CSS3 制作自己的博客 Logo</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/2012/12/06/mongodb_started/">
+            <span class="next-text nav-default">MongoDB 入门</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'wenzhixin';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:wenzhixin2010@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/1531096/wenyi" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/wenzhixin2010" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.facebook.com/wenzhixin2010" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://github.com/wenzhixin" class="iconfont icon-github" title="github"></a>
+      <a href="https://weibo.com/2292826740" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://www.zhihu.com/people/zhixin-wen" class="iconfont icon-zhihu" title="zhihu"></a>
+  <a href="http://blog.wenzhixin.net.cn/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2012 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">wenzhixin.net.cn 粤ICP备15117953号</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.ece58db6.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-36708951-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

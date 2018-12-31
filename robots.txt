@@ -1,1 +1,2 @@
 User-agent: *
+Sitemap: http://blog.wenzhixin.net.cn/sitemap.xml

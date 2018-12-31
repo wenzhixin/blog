@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>AngularJS学习笔记——AngularJS简介 - 文翼的博客</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="wenzhixin" /><meta name="description" content="自己在前端开发中还有很多新知识要学习，今天开始进入《用 AngularJS 开发下一代 Web 应用》一书的学习之旅。 AngularJS是一款开源 JavaScript函" /><meta name="keywords" content="文翼的博客, web前端博客" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.53 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://blog.wenzhixin.net.cn/2014/01/07/angularjs_study_note_introduction/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.93844dae.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="AngularJS学习笔记——AngularJS简介" />
+<meta property="og:description" content="自己在前端开发中还有很多新知识要学习，今天开始进入《用 AngularJS 开发下一代 Web 应用》一书的学习之旅。 AngularJS是一款开源 JavaScript函" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.wenzhixin.net.cn/2014/01/07/angularjs_study_note_introduction/" /><meta property="article:published_time" content="2014-01-07T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2014-01-07T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="AngularJS学习笔记——AngularJS简介">
+<meta itemprop="description" content="自己在前端开发中还有很多新知识要学习，今天开始进入《用 AngularJS 开发下一代 Web 应用》一书的学习之旅。 AngularJS是一款开源 JavaScript函">
+
+
+<meta itemprop="datePublished" content="2014-01-07T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2014-01-07T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="688">
+
+
+
+<meta itemprop="keywords" content="AngularJS," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="AngularJS学习笔记——AngularJS简介"/>
+<meta name="twitter:description" content="自己在前端开发中还有很多新知识要学习，今天开始进入《用 AngularJS 开发下一代 Web 应用》一书的学习之旅。 AngularJS是一款开源 JavaScript函"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">文翼的博客</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">文翼的博客</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">AngularJS学习笔记——AngularJS简介</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2014-01-07 </span>
+        <div class="post-category">
+            <a href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/"> 前端技术 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#一些概念">一些概念</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<p>自己在前端开发中还有很多新知识要学习，今天开始进入《用 AngularJS 开发下一代 Web 应用》一书的学习之旅。</p>
+
+<p>AngularJS是一款开源 JavaScript函式库，由Google维护, 主要用于单页面应用开发。
+目标是增强基于浏览器的应用，并带有MVC模式功能，这为了使得开发和测试变得更加容易。</p>
+
+<h3 id="一些概念">一些概念</h3>
+
+<p><strong>客户端模板</strong></p>
+
+<p>传统的 web 应用会在服务器中创建 HTML，然后和数据生成页面一起发送到浏览器中。
+而现在单页面应用则会把模板存放在客户端中，而服务器则是仅仅为这些模板提供静态资源和数据。</p>
+
+<p>hello world：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">&lt;!doctype html&gt;
+&lt;html lang=&#34;en&#34; ng-app&gt;
+&lt;head&gt;
+	&lt;meta charset=&#34;UTF-8&#34; /&gt;
+	&lt;title&gt;hello&lt;/title&gt;
+	&lt;script src=&#34;assets/angular.min.js&#34;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;input type=&#34;text&#34; ng-model=&#34;name&#34; /&gt;
+  &lt;h2&gt;Hello {{name}}!&lt;/h2&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre></td></tr></table>
+</div>
+</div>
+<p>从 hello world 中可以看到：</p>
+
+<ul>
+<li>html 里没有 class 或者 ID 来标记哪里添加事件。</li>
+<li>数据绑定，改变数据页面也会随之改变。</li>
+</ul>
+
+<p><strong>Model View Controller (MVC)</strong></p>
+
+<p>MVC 的核心理念：把管理数据的代码（model）、应用逻辑代码（controller）和展示数据的代码（view）清晰的分离开。</p>
+
+<p>AngularJS 中，视图是 Document Object Model（DOM，文档对象模型），控制器为 JavaScript 类，模型数据被存储在对象的属性中。</p>
+
+<p><strong>数据绑定</strong></p>
+
+<p>使用 jQuery 开发，我们会把获取的数据插入到 DOM 中，或者直接操作 DOM 的内容。</p>
+
+<p>而在 AngularJS 中，仅仅声明 UI 中的 DOM 映射到某个 JavaScript 属性，然后修改 JavaScript 属性，就可以自动更新 DOM 中的值。</p>
+
+<p><strong>依赖注入</strong></p>
+
+<p>开发风格：类只是简单的获取所需要的东西，并不需要创建所需要的东西。这种风格叫迪米特法则，也叫最小知识原则。</p>
+
+<p>例如：$scope 对象表示 Controller 模型中的内部状态；$location 对象表示浏览器 URL 地址状态。</p>
+
+<p><strong>指令</strong></p>
+
+<p>AngularJS 引入了强大的 DOM 转换引擎，用来扩展 HTML 语法。</p>
+
+<p>如：</p>
+
+<ul>
+<li>{{}}：表示数据绑定</li>
+<li>ng-controller：指定控制器范围</li>
+<li>ng-model：把输入数据绑定到模型的属性上</li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">wenzhixin</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2014-01-07</span>
+  </p>
+  
+  
+</div><div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/weixin.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/alipay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/angularjs/">AngularJS</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/2014/01/08/web_study/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">web 前端开发学习资料</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/2014/01/06/windows_rsync_file/">
+            <span class="next-text nav-default">windows 下同步文件到远程服务器中</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'wenzhixin';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:wenzhixin2010@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/1531096/wenyi" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/wenzhixin2010" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.facebook.com/wenzhixin2010" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://github.com/wenzhixin" class="iconfont icon-github" title="github"></a>
+      <a href="https://weibo.com/2292826740" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://www.zhihu.com/people/zhixin-wen" class="iconfont icon-zhihu" title="zhihu"></a>
+  <a href="http://blog.wenzhixin.net.cn/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2012 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">wenzhixin.net.cn 粤ICP备15117953号</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.ece58db6.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-36708951-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>
