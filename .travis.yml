@@ -1,8 +1,11 @@
 dist: xenial
 
+before_install:
+  - sudo apt-get install -y hugo
+  - hugo version
 addons:
-  snaps:
-  - hugo
+  apt:
+    update: true
 
 script: bash ./deploy.sh
 
