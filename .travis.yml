@@ -1,6 +1,9 @@
-language: minimal
+dist: xenial
 
-before_script: apt-get install hugo -y
+addons:
+  snaps:
+  - hugo
+
 script: bash ./deploy.sh
 
 branches:
