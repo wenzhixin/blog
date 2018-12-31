@@ -8,442 +8,305 @@
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Sun, 23 Nov 2014 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.wenzhixin.net.cn/tags/%E9%9A%8F%E7%AC%94/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/%E9%9A%8F%E7%AC%94/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>论“偷懒”的重要性</title>
-      <link>http://blog.wenzhixin.net.cn/2014/11/23/lazy_is_important</link>
+      <link>http://blog.wenzhixin.net.cn/2014/11/23/lazy_is_important/</link>
       <pubDate>Sun, 23 Nov 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/11/23/lazy_is_important</guid>
-      <description>&lt;p&gt;早上使用了 gulp 工具来自动完成开发后，强烈的意识到作为程序猿“偷懒”的重要性！偷懒是一个贬义词，平时说到偷懒这个词总是和懒惰、不思进取、缺乏主动性联系在一起。但是这里提到的偷懒，不是传统意义上的偷懒，而是另一种角度的偷懒，这种偷懒是和创造联系在一起。&lt;/p&gt;
-
-&lt;p&gt;其实日常生活中很多东西的出现，都是和偷懒有关。例如人们懒得走路，所以一些懒惰又聪明的人就发明了汽车；人们不想爬楼梯，所以那些懒惰又聪明就发明了电梯；抢不到 12306 上的票，所以那些懒惰又聪明的人就开发了自动抢票插件等等。由于本人非常讨厌做无用功和重复的工作，对于那些觉得没有意义的工作，总想着能否用程序来对其进行处理，解我们的双手，让计算机替我们出色地完成工作，从而可以做更多有意义的事情。&lt;/p&gt;
-
-&lt;p&gt;从&lt;strong&gt;软件开发行业&lt;/strong&gt;上，无论是&lt;strong&gt;开发&lt;/strong&gt;、&lt;strong&gt;测试&lt;/strong&gt;、还是&lt;strong&gt;部署&lt;/strong&gt;等工作，更是如此！&lt;/p&gt;
-
-&lt;p&gt;例如，编写后台或者页面，要编写大量的代码，通过思考发现，其实里面很多代码都是类似的，重复的工作做了很多，不想写这么多代码，就把这些类似的代码抽象出来，包装成函数或类，或者封装成 jQuery 插件，然后使用几行简单的代码或者 API 便可以实现复杂强大的功能。&lt;a href=&#34;https://github.com/wenzhixin/bootstrap-table&#34;&gt;Bootstrap Table&lt;/a&gt;，&lt;a href=&#34;https://github.com/wenzhixin/multiple-select&#34;&gt;Multiple Select&lt;/a&gt; 和 &lt;a href=&#34;https://github.com/wenzhixin/bootstrap-show-password&#34;&gt;Bootstrap Show Password&lt;/a&gt; 等 jQuery 插件正是这样诞生的。&lt;/p&gt;
-
-&lt;p&gt;例如，在开发的过程中需要对程序进行测试，步骤是这样的：卸载安装包 -&amp;gt; 进入代码所在目录 -&amp;gt; 更新代码 -&amp;gt; 编译打包 -&amp;gt; 安装新程序 -&amp;gt; 打开新页面。假如每次都做这样毫无意义的重复工作，那很可能会疯掉，于是乎，就有了一行命令便完成一系列工作的 shell 脚本。当然，假如你的项目需要注册用户登录，这些工作也是可以交给程序去做的。&lt;a href=&#34;https://github.com/wenzhixin/scutech-redmine&#34;&gt;Redmine Notification&lt;/a&gt; 和 &lt;a href=&#34;https://github.com/wenzhixin/scutech-dbackup-login&#34;&gt;DBackup Login&lt;/a&gt; 等 Chrome 浏览器正是这样诞生的。&lt;/p&gt;
-
-&lt;p&gt;例如，平时开发完网站或者项目后需要将其部署到远程服务器上，典型的做法是在服务器开 FTP 服务，然后每次部署的步骤都是：将程序压缩打包 -&amp;gt; 上传到相应的服务器上 -&amp;gt; 登录服务器 -&amp;gt; 解压替换原来的程序。这些工作看似简单，但是在网络及其龟速的情况也能使我疯掉，那么是否也有“偷懒”的办法呢，答案当然是肯定的。这里我们使用著名的好莱坞原则：不要给我们打电话，我们会给你打电话（Don&amp;rsquo;t call us, we&amp;rsquo;ll call you!）。在服务器端编写一程序，监听需要部署的程序，假如更新了，那就自动从代码库中（使用钩子的方式）获取最新的代码。这样一来，我们无需做任何工作，便可完成自动部署的工作。&lt;/p&gt;
-
-&lt;p&gt;当然，&lt;strong&gt;非软件行业&lt;/strong&gt;同样需要“偷懒”。&lt;/p&gt;
-
-&lt;p&gt;例如，公司的资产信息（超级多的 excel 文件）以及考勤信息（考勤系统只能生成 excel 文件）都是记录在 excel 中的，非常不便与统计和管理，试想下有一大堆 excel 文档的情况下，boss 让你统计出公司的全部资产信息或者今年每个人的考勤信息，你会不会坐不住了呢。而资产管理系统和考勤系统就是在这样的需求下诞生了，自动处理 excel，并录入到数据库中，完全 web 管理，还能生成统计信息。&lt;/p&gt;
-
-&lt;p&gt;例如，之前写过的一篇文章&lt;a href=&#34;http://wenzhixin.net.cn/2014/09/21/node_docx&#34;&gt;《如何批量读取 word 的内容和图片》&lt;/a&gt;就提到，朋友让我帮忙想想办法批量处理 100 份 word 文档的录入工作，而最后当程序用了几分钟的时间就将需要的内容全部录入完成时，你就可以体会到“偷懒”的意义所在了，假如手动录入还很有可能出现不必要的错误。这样的例子其实很多，有朋友需要选课，于是帮他做了个自动选课插件；有朋友需要获取网页上的一系列数据，生成 excel 报表，于是写了简单的小程序自动生成；有朋友需要投票，几行代码便可以让浏览器自动投票；有朋友需要对 pdf 进行处理，使用几条命令行轻松搞定等等。&lt;/p&gt;
-
-&lt;p&gt;我们是这样的一类懒人，我们使用技术改变生活！我们要做聪明又“懒惰”的人，用创造和分享来“偷懒”，从而提高工作的效率和工作的质量！&lt;/p&gt;
-
-&lt;p&gt;最后，当你平时在做重复而且觉得无意义的工作的时候，是否也会试着“偷懒”，是否也会想想利用工具或者让计算机来帮我们完成工作呢？假如有，分享下你的“偷懒”方法吧。当然，假如需要我来帮你“偷懒”，Just do it, I will try my best!&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2014/11/23/lazy_is_important/</guid>
+      <description>早上使用了 gulp 工具来自动完成开发后，强烈的意识到作为程序猿“偷懒”的重要性！偷懒是一个贬义词，平时说到偷懒这个词总是和懒惰、不思进取、缺乏主动</description>
     </item>
     
     <item>
       <title>2014-10-21</title>
-      <link>http://blog.wenzhixin.net.cn/2014/10/21/2014-10-21</link>
+      <link>http://blog.wenzhixin.net.cn/2014/10/21/2014-10-21/</link>
       <pubDate>Tue, 21 Oct 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/10/21/2014-10-21</guid>
-      <description>&lt;p&gt;时常会听到身边的朋友对还单身的人说，找不到女朋友（或男朋友）的原因就是你的要求太高了。外貌、学历、年龄、身高、体重等外在条件，加上人品、性格、脾气、学识、人生观、价值观等内在条件，简直是多不胜数。&lt;/p&gt;
-
-&lt;p&gt;是的，每个人都希望另一半都符合自己的条件那是该多好。可以，反过来想，你想找个女神（男神），那你自己呢？&lt;/p&gt;
-
-&lt;p&gt;对于生活，亦是如此。&lt;/p&gt;
-
-&lt;p&gt;我们知道，很多事情都是相互的。一个人，当你对爱情或者生活提出要求的时候，爱情或者生活也会对你提出反向要求。所以，比较现实的做法是，便是要反复掂量自己有多大本领去满足要求，考察自己的能力与愿望是否匹配，然后再给出问题的答案。&lt;/p&gt;
-
-&lt;p&gt;然而，往往要清醒、客观地认识自我，是个异常艰难和痛苦的过程。能够坦然面对自我的渺小，承认自己的能力够不上愿望，愿意把目标降低到一个可行的水准，是勇气，也是智慧。&lt;/p&gt;
-
-&lt;p&gt;每个人都有优缺点，要学会扬长避短。而核心思想就是认清自己后，将自己不如别人且难以改变的一面拉到正常水平，然后在其的基础上全方位大幅度地提升自己的优势方面。&lt;/p&gt;
-
-&lt;p&gt;例如，以考试为例，当所有科目都及格才能拿到奖，对于偏科严重的人来说，将弱项拉到平均水平，作用就是防止你在这方面被淘汰，然后在这基础上，全力发扬你自己的闪光点，形成你自己的风格。&lt;/p&gt;
-
-&lt;p&gt;总而言之，看看手中的底牌，衡量下需要付出的代价，计算出必须付诸的努力，然后，设置一个可以达到的目标。&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2014/10/21/2014-10-21/</guid>
+      <description>时常会听到身边的朋友对还单身的人说，找不到女朋友（或男朋友）的原因就是你的要求太高了。外貌、学历、年龄、身高、体重等外在条件，加上人品、性格</description>
     </item>
     
     <item>
       <title>2014-10-20</title>
-      <link>http://blog.wenzhixin.net.cn/2014/10/20/2014-10-20</link>
+      <link>http://blog.wenzhixin.net.cn/2014/10/20/2014-10-20/</link>
       <pubDate>Mon, 20 Oct 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/10/20/2014-10-20</guid>
-      <description>&lt;p&gt;前两天试了下使用 kinddle 来阅读电子书，下载了第一本书《读书这件小事》，里面讲了很多关于如何寻找好书以及如何更好的读书的方法，例如顺藤摸瓜、多看名人推荐书单、对比相关书籍的评价等等。&lt;/p&gt;
-
-&lt;p&gt;对于这里提到的一些方法，我是比较赞同的，例如看李欣频的《十四堂人生创意课》的时候，这是一本关于人生、创意的一本书，书中作者提到了很多相关的书籍和电影；而看张徳芬的《遇见未知的自己》，里面也是提到很多关于心理修身物理学相关的书籍及影片。假如自己感兴趣的话，会顺着作者提到的相关书单，去读那些作者也读的书。&lt;/p&gt;
-
-&lt;p&gt;而书单的，在看完刘末鹏的《暗时间》之后，发现作者在豆瓣读书上创建了推荐的书单，虽说其中关于心理学的居多，但是很多都是比较值得一看的好书。&lt;/p&gt;
-
-&lt;p&gt;只是，在信息如此泛滥，书籍多到数不胜数的情况下，应该如何更好的读一本书呢？想出了一个简单的办法，首先要先辨别一本书是否适合自己，我的标准有两个，一是自己是否感兴趣，二是对自己是否有意义，能学到东西。&lt;/p&gt;
-
-&lt;p&gt;当然，要求也并非很高，有时候为了增长自己的知识面，会看一些没有接触过的书籍，但是太过枯燥无味的确实看不下。大部分看书籍都是有意义的，不过每天呢，要学会多加思考，在睡觉前随便记录点文字，无需太长，相信同看的书籍一样，哪天能量变引起质变。&lt;/p&gt;
-
-&lt;p&gt;鉴于此，现在我只带一本书到公司，这样我就会老老实实的把书看完，再回来换下一本，因为选择少，目的性强，比较适合我自己。&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2014/10/20/2014-10-20/</guid>
+      <description>前两天试了下使用 kinddle 来阅读电子书，下载了第一本书《读书这件小事》，里面讲了很多关于如何寻找好书以及如何更好的读书的方法，例如顺藤摸瓜、多看名人</description>
     </item>
     
     <item>
       <title>2014-10-19</title>
-      <link>http://blog.wenzhixin.net.cn/2014/10/19/2014-10-19</link>
+      <link>http://blog.wenzhixin.net.cn/2014/10/19/2014-10-19/</link>
       <pubDate>Sun, 19 Oct 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/10/19/2014-10-19</guid>
-      <description>&lt;p&gt;人生一世，不过是一个又一个二十四小时的叠积，在这样宝贵的光阴里，我们必须明白自己所做的选择，是读一本好书、记两三感慨、听几曲好歌、还是做感兴趣之事？&lt;/p&gt;
-
-&lt;p&gt;今天读三毛的《送你一匹马》，又一本好书，明白了：读书多了，容颜自然改变。许多时候，自己可能以为许多看过的书都成过眼烟云，不复记忆，其实它们仍在潜在的。在气质里，在谈吐上，在胸襟的无涯。当然，也能显露在生活和文字中。&lt;/p&gt;
-
-&lt;p&gt;读书，不为任何人，只为自己高兴。当然很多时候并不会说刻意去读书，毕竟太过刻意的东西，就连风景都得寻寻觅觅，寻找的东西，往往找不到，还很累人。&lt;/p&gt;
-
-&lt;p&gt;看到好的文字或者有些新的想法，都会记录起来，以不时的提醒自己、激励自己。正所谓好记性不如烂笔头，毕业以来，断断续续记录了一些文章，平均算下来，虽然写一篇博客花了不少时间，但遇到相同问题时也能节省不少时间。&lt;/p&gt;
-
-&lt;p&gt;身边有朋友很爱音乐，我也爱，但是不痴迷，偶得好歌两三曲，便也足以让我好好品味一番了。&lt;/p&gt;
-
-&lt;p&gt;说到感兴趣的事，这段时间每天都会花好些时间于学习英语上。都说兴趣是最好的老师，自己也渐渐地对学好英语感兴趣起来。任何的知识，都总到用时方恨少。&lt;/p&gt;
-
-&lt;p&gt;对于码字，还是那样的义无反顾，真是码到无穷处，坐看云起时，前途现光明，彼岸便此身。&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2014/10/19/2014-10-19/</guid>
+      <description>人生一世，不过是一个又一个二十四小时的叠积，在这样宝贵的光阴里，我们必须明白自己所做的选择，是读一本好书、记两三感慨、听几曲好歌、还是做感兴</description>
     </item>
     
     <item>
       <title>2014.08.02</title>
-      <link>http://blog.wenzhixin.net.cn/2014/08/02/qixi</link>
+      <link>http://blog.wenzhixin.net.cn/2014/08/02/qixi/</link>
       <pubDate>Sat, 02 Aug 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/08/02/qixi</guid>
-      <description>&lt;p&gt;今天是七夕，一个特殊的日子。貌似还是比较多想法的，稍微记录下好了。&lt;/p&gt;
-
-&lt;p&gt;可能单身久了，对于感情，有些畏手畏脚，也变现实了，朋友们说我的要求太高了。&lt;/p&gt;
-
-&lt;p&gt;有时候会看一些别人的故事，觉得对女孩子，不该唯命是从，百依百顺，而应该是相互理解、相互支持。&lt;/p&gt;
-
-&lt;p&gt;对于感情，没有太大的奢望，不做作、不纠缠，觉得还是顺其自然、水到渠成吧。&lt;/p&gt;
-
-&lt;p&gt;相识是个互动的过程，了解对方，也了解自己，通过试错去了解什么样的人才适合自己。&lt;/p&gt;
-
-&lt;p&gt;每个人都有自己选择的权利，需要反思自己的各种欲望、想法和情绪，听从内心的想法。&lt;/p&gt;
-
-&lt;p&gt;有时候感情到了，但是心里总觉得有个点没着落，那就缓一缓，直到你找到自己最确定的感觉：就这个人了，一定就是这个人了！&lt;/p&gt;
-
-&lt;p&gt;总之，每天都是新的开始，处处面临着选择，有时候会不小心错过很多，不去后悔什么。&lt;/p&gt;
-
-&lt;p&gt;对于生命中遇到的某些人，可能不会陪着你一直往前走，但是至少会给你带来欢笑、成长和进步，所以要学会抱着感恩的心，然后继续属于自己的生活。&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2014/08/02/qixi/</guid>
+      <description>今天是七夕，一个特殊的日子。貌似还是比较多想法的，稍微记录下好了。 可能单身久了，对于感情，有些畏手畏脚，也变现实了，朋友们说我的要求太高了。</description>
     </item>
     
     <item>
       <title>为什么写博客？</title>
-      <link>http://blog.wenzhixin.net.cn/2014/06/11/why_blog</link>
+      <link>http://blog.wenzhixin.net.cn/2014/06/11/why_blog/</link>
       <pubDate>Wed, 11 Jun 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/06/11/why_blog</guid>
-      <description>
-
-&lt;p&gt;一直以来，阮一峰的个人博客是比较关注的博客之一，读他的博客源于IT技术，博主从2003年开始在网络上写日志，文章包含的内容非常广博，涉及读书、版权制度、经济学、英语、历史、IT技术、医学、电影、音乐和美术、政治学、科学、创业、互联网等23个大的分类，其中有的分类还包括一些更细的子条目。至2013年9月15日，他写了十年的博客，他一共写了1508篇文章。&lt;/p&gt;
-
-&lt;p&gt;在想，是什么力量能让一个人坚持了这么多年一直在写博客，而且涉及的知识范围还如此的广。最近，他出了一本名为《如何变得有思想？》的书，书中主要的内容是以人文和思想的文章为主，读了一部分，发现挺有感触的。&lt;/p&gt;
-
-&lt;h3 id=&#34;为什么写博客:b12972f994891bfd6eb196a550df5846&#34;&gt;为什么写博客？&lt;/h3&gt;
-
-&lt;p&gt;关于这个问题，作者觉得，最主要的就是为读者创造价值。你的文章对他人有价值，你才会有读者，有了读者，你的博客才能成为一个受欢迎的、有影响力的博客。但是在信息如此泛滥的时代，想要创造出有价值的文章，谈何容易？&lt;/p&gt;
-
-&lt;p&gt;首先，你的文章要有独特性。就拿技术类的文章讲，你学习了一项新的技术，而介绍这个技术的文章在国内还基本上为零，那么你的文章假如写的特别的好，那肯定可以吸引诸多读者。但是，实际情况是，你接触的技术，往往有很多介绍的文章，或者教程等等。&lt;/p&gt;
-
-&lt;p&gt;其次，你的文章要有可以解决实际问题的作用。我们在遇到问题的时候，一般会通过百度或者谷歌搜索相关的解决方法，这个时候，你的文章刚好被搜索到了，并且能很好的解决读者所遇到的问题，那么你文章的价值就体现出来。&lt;/p&gt;
-
-&lt;p&gt;记得第一篇文章是当时学习了新的知识，为了更好的记住所学的内容，将里面的要点总结出来写到文章中，方便以后查阅。读书笔记呢，除了方便查阅外，还有一个就是可以巩固所学的知识。教程类文章呢，一般有助于全面的了解一个知识架构。而对于上面提到的独特性，对于刚刚入门或者写作能力没有那么好的人来说，还是比较有难度的，所以我基本上比较少写这一类的文章。&lt;/p&gt;
-
-&lt;h3 id=&#34;写博客的收获:b12972f994891bfd6eb196a550df5846&#34;&gt;写博客的收获&lt;/h3&gt;
-
-&lt;p&gt;根据网站的统计信息，从第一篇博客开始，坚持了两年多，总共有234篇，其中技术文章187篇，生活随笔47篇。&lt;/p&gt;
-
-&lt;p&gt;有些人很不理解，认为花了很多时间写作博客，无偿给他人阅读，是一种很傻的行为，既赚不到钱，又浪费时间，就像开源项目一样。我是不同意这种看法的，像上面提到的，我自己写技术类的文章，对于我自己来说，收获还是蛮多的。&lt;/p&gt;
-
-&lt;p&gt;一个是技术的积累和对遇到问题的记忆。如在写一篇读书笔记的时候，会把那章的内容反复翻阅，总结出重点知识，从而加深理解和记忆。&lt;/p&gt;
-
-&lt;p&gt;一个是促进思考。坚持写文章，可以很好的帮助自己养成更多观察、更多探究的习惯。例如有什么有趣的事情，我总是习惯性地去关心。每天晚上，都要问自己：今天有什么特别的？是不是应该写点什么？其实你知道一件事情，和你要表达一件事情，这是完全不同的。通过写作，可以帮助自己更清楚地理解问题。&lt;/p&gt;
-
-&lt;p&gt;写作帮助我们整理自己的思想。博客其实是一种理性思维和表达能力的训练，怎么写才能容易看的懂、才能让他人接受、才能与他人更好的沟通等等？对于我来说，有时候更喜欢通过文字的形式表达出来，而这种训练，更是我所需要的。&lt;/p&gt;
-
-&lt;p&gt;最后一个是可以记录一点点回忆。之前挺喜欢这么一句话：人生岁月尔尔，在平淡中能寻得几丝快乐、半段回忆，也可调遣你半生的了。是呢，当十年后，二十年后，我们回头去看看自己写过的东西，会是怎样的心情呢？而这里，我的最重要的读者，便是我自己！&lt;/p&gt;
-
-&lt;h3 id=&#34;花多少时间写博客:b12972f994891bfd6eb196a550df5846&#34;&gt;花多少时间写博客？&lt;/h3&gt;
-
-&lt;p&gt;每写一篇文章，通常需要1小时以上的写作时间，而技术的则更长。可能是基础不扎实、文笔不够好，经常会忘词或者说思维不够谨慎吧。不过，我还是觉得这是值得的。回过头看，我幸亏把时间花在写作博客上面，否则那些时间就白白过去了，没有留下任何印记，而写作能力的，相信也会随着时间的积累慢慢的进步。&lt;/p&gt;
-
-&lt;p&gt;最后，最近有好段时间没写东西了，都有些生疏了。其实，也不用像作者所说，写文章，就要给他人带来价值，因为更多的时候，我们最重要的读者正是我们自己！虽然不知道这份热情能保持多久，但是思考+记录的方式对于我来说还是比较重要的。&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2014/06/11/why_blog/</guid>
+      <description>一直以来，阮一峰的个人博客是比较关注的博客之一，读他的博客源于IT技术，博主从2003年开始在网络上写日志，文章包含的内容非常广博，涉及读书</description>
     </item>
     
     <item>
       <title>何为努力？怎样算进步？</title>
-      <link>http://blog.wenzhixin.net.cn/2014/04/23/strive_and_foreward</link>
+      <link>http://blog.wenzhixin.net.cn/2014/04/23/strive_and_foreward/</link>
       <pubDate>Wed, 23 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/04/23/strive_and_foreward</guid>
-      <description>&lt;p&gt;一直以来，很喜欢这样的一句话：每天努力一点点，进步一点点！&lt;/p&gt;
-
-&lt;p&gt;那么努力了就能进步了吗？什么是努力，而怎样才算有进步呢？你是不是有时候也会喊着我要更加更加地努力？然后还是该怎么样就怎么样。或许，在别人看来，是爱说空话说大话的表现，当然你会说，你是想传递一种正能量（好了，我经常就是这么想的，无可否认是自我安慰，哈哈，别喷）。&lt;/p&gt;
-
-&lt;p&gt;百度了一下，努力的含义是：尽量的使出自己的力气来做事，指用尽力气去做事情。但是努力本身，并非是一种简单而客观的对一个人的行为的定义。例如，你每天写文章写到凌晨1、2点，写了100篇，这算努力吗？例如，你迷上了吉他，每天都弹到很晚才肯罢休，这算努力吗？例如，你最近刚学了一个游戏，每天玩到2、3点，目标就是升级到多少级，这算努力吗？又例如，你喜欢煲剧，每天熬夜煲到3、4点，煲了100部韩剧，这是不是更加的努力呢？答案当然是不一定。&lt;/p&gt;
-
-&lt;p&gt;所以你不能简单的通过一个人的行为来判断一个人努力与否。一方面，要看做事情的状态，因为努力往往是指你克服了困难，或者说克服原本可以享受的事情，然后去做一件事情；另一方面，要看做的事情是不是“正事”，这里的正事是指有意义或者对你有所帮助的事情，当然每个人对正事的定义也不一样。&lt;/p&gt;
-
-&lt;p&gt;综上，努力就是你尽全力克服困难，去做一件你觉得有意义的正事。&lt;/p&gt;
-
-&lt;p&gt;而进步呢，其实也是相对与你自己而言的。那件你在做的，觉得有意义的正事，你是否觉得不满意？是否不想就现在这样一直下去？是啊，当时就是这样呢。然后，针对你不满意的地方，选择持续做一些需要克服困难的事情，一点点做的更好，那么恭喜，这个应该就可以算是进步了。&lt;/p&gt;
-
-&lt;p&gt;我觉得吧，每天克服“诱惑”（例如享乐、现成的外卖、微博、游戏、电视节目等等），用心去做困难繁琐的工作、用心去煮不满意的饭菜、用心去写不擅长的文章等等等等等，这就是努力。然后每天坚持把工作做好、把饭菜煮好、把文章写完等等等等等，并且多做一些觉得有意义的正事，这就是进步。&lt;/p&gt;
-
-&lt;p&gt;所以，那句话的解读应该是：每天坚持不懈，尽全力克服困难，去做一件你觉得有意义的正事，并一点点做的更好！&lt;/p&gt;
-
-&lt;p&gt;元芳，你怎么看呢？&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2014/04/23/strive_and_foreward/</guid>
+      <description>一直以来，很喜欢这样的一句话：每天努力一点点，进步一点点！ 那么努力了就能进步了吗？什么是努力，而怎样才算有进步呢？你是不是有时候也会喊着我要</description>
     </item>
     
     <item>
       <title>人生至简，知足常乐</title>
-      <link>http://blog.wenzhixin.net.cn/2014/03/19/life_is_simple</link>
+      <link>http://blog.wenzhixin.net.cn/2014/03/19/life_is_simple/</link>
       <pubDate>Wed, 19 Mar 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/03/19/life_is_simple</guid>
-      <description>&lt;p&gt;许多人，爱上了这么一句话：“繁华近处，寻一无人山谷，建一木质小屋，铺一青石小路，晨钟暮鼓，安之若素。”多少人，向往着这样的一种宁静如水的生活，寻找着心灵的净土。那么，为什么还有那么多人逃离那种有山有水的生活，漂在“北上广深”呢？我，就是这其中一员。&lt;/p&gt;
-
-&lt;p&gt;不解。在那车水马龙，华灯璀璨的大城市，大多数人过着快节奏的生活，生活成本高、工作压力大。千篇一律的日子，没有太多变化的生活，就像织布机把一匹一匹的岁月都织出来了，但是花色却十分的单调。&lt;/p&gt;
-
-&lt;p&gt;或者，是为了追求所谓的梦想，或者，是为了体验不一样的生活，又或者，是为了看更多的风景。然后待到某一天，你实现了自己的梦想，过着你想要的生活，并将风景看透，便又会想着回归那细水长流的日子了。那么，我，又是为了什么在坚持呢？&lt;/p&gt;
-
-&lt;p&gt;不过，人生至简，无需把问题想得太复杂，也无需把日子过得太过惊心，更无需把岁月看得那般无常。过什么样的生活，由你自己说了算，过得简单点，最主要的是，多点知足，多点常乐。每天有运动、有音乐、有书有码、有欢笑、有自己喜欢的事情，虽说没有太过分的快乐，但也谈不上忧愁，这样的生活，简单却很充实。&lt;/p&gt;
-
-&lt;p&gt;有好些同事离职了，有些较好的朋友也慢慢疏远了。划着缘分的小船，让那些原本来自五湖四海、隔着千山万水的人儿，相聚到了一块。但是小船并不会停歇，倘若方向不同，便会越划越远。只是，任何的珍惜，并不是为了天长地久，而是希望离别那一刻，可以心安理得的挥手道别，说声珍重和再见。然后，心里默默的感谢和祝福。&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;（看了一些关于生活和选择的文章，例如《小明和小强的故事》、《北上广打拼的游子，为何远离亲人，仍义无反顾？》，发发牢骚～其实有些问题也不知道答案，不过对于生活和选择，不怨、也不悔。）&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2014/03/19/life_is_simple/</guid>
+      <description>许多人，爱上了这么一句话：“繁华近处，寻一无人山谷，建一木质小屋，铺一青石小路，晨钟暮鼓，安之若素。”多少人，向往着这样的一种宁静如水的生活</description>
     </item>
     
     <item>
       <title>没那么简单</title>
-      <link>http://blog.wenzhixin.net.cn/2014/03/13/not_simple</link>
+      <link>http://blog.wenzhixin.net.cn/2014/03/13/not_simple/</link>
       <pubDate>Thu, 13 Mar 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/03/13/not_simple</guid>
-      <description>&lt;p&gt;还是挺喜欢黄小琥的《没那么简单》这首歌的，之前舍友看相亲节目的时候，男嘉宾没有牵手成功，总会响起这首歌。&lt;/p&gt;
-
-&lt;p&gt;是的，就像歌词所说，相爱没有那么容易，幸福也没有那么容易，所以最开心的，也只能是曾经的记忆。&lt;/p&gt;
-
-&lt;p&gt;她感叹爱情《没那么简单》，经过多年的磨砺和岁月的积淀，换来了一份笃定的坦然。&lt;/p&gt;
-
-&lt;p&gt;对于爱情，确实没那么简单，即使是找到聊得来的伴这个简单的条件也是很难的。
-我不喜欢独处，更不爱孤单，但是一久，也渐渐的习惯了，一个人也挺好的，不用担心谁，也不用被谁管。
-有时候，假如找到了聊得来的伴，拥有真心往往也是不够的，毕竟感情是需要两个人去一起努力才能得到幸福。&lt;/p&gt;
-
-&lt;p&gt;除了爱情没那么简单，生活与工作往往也是。就拿今天的产品来说吧，其实，事情可能是我自己想简单了吧。&lt;/p&gt;
-
-&lt;p&gt;首先，产品不同于互联网产品，它需要很多的发布环节和工作。
-从开发到测试、bug 修复、产品手册的撰写、产品演示录制等等。
-可能一旦进行产品版本（界面）的更新，那么就会有很多相对应的工作需要进行。&lt;/p&gt;
-
-&lt;p&gt;当你满心欢喜想着把产品做好、做完善（更加美观）的时候，你可能会信心满满，
-但是提交代码等等一系列的工作之后。假如得到的反馈是：“好好的干嘛去改呢？”、
-“这样会加大测试的工作量的”、“又要重新录制演示”、“又要重新截图做文档和用户手册了”
-等等的时候，你可能会恍然大悟，原来一切，没有想象中那么简单。&lt;/p&gt;
-
-&lt;p&gt;这个时候，站在他们的角度上看问题，为什么无缘无故要改呢？加大别人的工作量也不好啊。
-会感叹，人是一种习惯性的动物，习惯了现有的东西，会觉得任何无理由的改变都是可怕的。
-因为一旦改变，就意味着可能会有不可预知的麻烦的出现，是啊，一成不变多轻松、多好啊。&lt;/p&gt;
-
-&lt;p&gt;所以，你心中的第一个念头可能也会想着要不要打退堂鼓。
-但是，这貌似也不能解决问题，毕竟花了那么多的时间和精力。
-想起了之前那句座右铭：做一件事情，要么不做，要么做好。
-是啊，既然做了，就把它做好。&lt;/p&gt;
-
-&lt;p&gt;之后还会很多事要做，但是有一份信心去做好，去完善，去一起努力，然后做到更好。
-也希望别人也可以理解下我，我并不是没事找事做。&lt;/p&gt;
-
-&lt;p&gt;至于前面提到的爱情的，也慢慢的学会了坦然。&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2014/03/13/not_simple/</guid>
+      <description>还是挺喜欢黄小琥的《没那么简单》这首歌的，之前舍友看相亲节目的时候，男嘉宾没有牵手成功，总会响起这首歌。 是的，就像歌词所说，相爱没有那么容易</description>
     </item>
     
     <item>
       <title>好好珍惜现在</title>
-      <link>http://blog.wenzhixin.net.cn/2014/03/08/cherish_the_present</link>
+      <link>http://blog.wenzhixin.net.cn/2014/03/08/cherish_the_present/</link>
       <pubDate>Sat, 08 Mar 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/03/08/cherish_the_present</guid>
-      <description>&lt;p&gt;每一个现在，都会是我们以后的记忆。例如我们说过的话，做过的事，走过的路，遇过的人，都是我们以后的回忆。&lt;/p&gt;
-
-&lt;p&gt;很喜欢一句话：人生岁月尔尔，我们的生活或许很平淡，但是在平淡中能寻得几丝快乐或者半段回忆，也可调遣你半生了。&lt;/p&gt;
-
-&lt;p&gt;只是，很多时候，人嘛，多多少少会有些许烦恼，或许，人生来就有烦恼，也或许，人生来就是要处理烦恼。不过，烦恼也没有用，与其烦恼，不如学会如何自我解脱。&lt;/p&gt;
-
-&lt;p&gt;时常感慨时光飞逝，因为我们无法阻止岁月的脚步。很多人，会逐渐淡出了我们的视线，慢慢的，你可能会懂得了什么叫过客；很多事，已经不再属于我们的精彩，你也知道了这就叫过往。&lt;/p&gt;
-
-&lt;p&gt;重温了下《千与千寻》，其实人生就像一趟开往墓地的火车，车上会遇到很多人。有些人，你看不清楚他们的脸，就像一个影子，一个过客。有些人，注定了要下车，例如无面人。有些人，就那么遇见了，忘了自己的名字，只记得你的名字，例如白。可是，我们常常会不知所措的爱上别人，一心一意地对那个人好，不论有没有结局。&lt;/p&gt;
-
-&lt;p&gt;旅途匆匆，我们会怀念风雨历程的艰辛，怀念一路同行的感动，但那终究只是我们停留的一个驿站，只能感激，而不能驻留，只可剪影，而不能苛求。&lt;/p&gt;
-
-&lt;p&gt;保持一个孩子的心，去爱，也要勇敢面对自己的失去，因为我们愿意相信，孩子会有糖吃。&lt;/p&gt;
-
-&lt;p&gt;做一个简单的人，不贪心，拥有属于自己的，学会珍惜那些对自己好的朋友和亲人，因为你永远不知道明天和意外哪个会先来。&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2014/03/08/cherish_the_present/</guid>
+      <description>每一个现在，都会是我们以后的记忆。例如我们说过的话，做过的事，走过的路，遇过的人，都是我们以后的回忆。 很喜欢一句话：人生岁月尔尔，我们的生活</description>
     </item>
     
     <item>
       <title>2014-03-03</title>
-      <link>http://blog.wenzhixin.net.cn/2014/03/03/2014-03-03</link>
+      <link>http://blog.wenzhixin.net.cn/2014/03/03/2014-03-03/</link>
       <pubDate>Mon, 03 Mar 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/03/03/2014-03-03</guid>
-      <description>&lt;p&gt;好久没坐从家里直接到广州的车了，可能这么多年也就坐过一两次吧。想着一个人又要去市区等几个钟的车，怪可怜的，在老表的提议下决定重新体验下。&lt;/p&gt;
-
-&lt;p&gt;发现现在换成了金顺快车，貌似还不错，车上也算是比较舒服的，座位比较少，加上今晚人很少，一个人可以坐一大排的座位了，刚好可以睡个好觉。&lt;/p&gt;
-
-&lt;p&gt;想着刚刚还跟家人聊天一起看电视的，明早就在办公室工作了，多多少少有些小感触。每次出发都有些不舍，不过男儿志在四方，有些路必须得去走，有些事还等着去完成。&lt;/p&gt;
-
-&lt;p&gt;这两天大部分时间都在陪两个小朋友，一起看动画片、一起玩游戏、一起玩纸牌、一起吹泡泡等等。其实很喜欢小朋友的，喜欢他们的天真无邪，喜欢他们的乖巧懂事，还有喜欢他们的一颦一笑。可能童心未泯吧，他们从小也挺喜欢找我一起玩耍。每次回来还没到家，就打好几个电话问到了没，到哪里了，而基本上每次一回到家，见到侄子或者侄女，也特别的开心。&lt;/p&gt;
-
-&lt;p&gt;昨晚看出彩中国人，是一个给有梦想的人提供舞台展现自己梦想的节目。他们的表演很精彩，他们的故事也很感人。挺佩服那些为了实现自己的梦想，坚持了好多年的人，特别是那些拥有同样的梦想，然后走到一起，一起努力了好多年甚至好几十年的夫妻。&lt;/p&gt;
-
-&lt;p&gt;下午同老表走走逛逛，聊了许多，人生这条路吧，怎么选择，要怎么走，貌似也没能聊出个什么结果。不过多少还是有些收获的，就像上面所提到的，对于工作，做自己喜欢的还是很重要的，可以去坚持；而对于感情的，毕竟是相互的，要两个人朝着相同的目标，所以顺其自然就好，等着那个人的出现。&lt;/p&gt;
-
-&lt;p&gt;回来还带了一本厚厚的书的，不过也只看了几十页，下次估计就不带了。而每次出发，老妈总是给我准备了满满一大袋吃的东西，知道她们舍不得吃，特意留给我的，又拗不过，所以每次都只能以重为由，不带或者只带一部分。说到书的，突然想起朋友让我带那本看见的，好像忘记带了～&lt;/p&gt;
-
-&lt;p&gt;最后，好好睡一觉好了，天一亮就到目的地了，say good night to myself～&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2014/03/03/2014-03-03/</guid>
+      <description>好久没坐从家里直接到广州的车了，可能这么多年也就坐过一两次吧。想着一个人又要去市区等几个钟的车，怪可怜的，在老表的提议下决定重新体验下。 发现</description>
     </item>
     
     <item>
       <title>2014-03-01</title>
-      <link>http://blog.wenzhixin.net.cn/2014/03/01/2014-03-01</link>
+      <link>http://blog.wenzhixin.net.cn/2014/03/01/2014-03-01/</link>
       <pubDate>Sat, 01 Mar 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/03/01/2014-03-01</guid>
-      <description>&lt;p&gt;好多年没回家过大劳热：“二月戏”了，想想，高中到现在了吧。第一次坐高铁，还是挺方便的，有公车直接到市区，半个钟。&lt;/p&gt;
-
-&lt;p&gt;谢谢好哥们带我逛了那么多景点，同时也祝好哥们生日快乐，天天开心。&lt;/p&gt;
-
-&lt;p&gt;一个人逛了一大圈侨中，发现变化不是很大，学校的教室楼现在新了许多，虽然进不去，不过，那熟悉的发达路，熟悉的侨中桥，熟悉的小黑河，熟悉的新安街和“大包”（大仓超市）还是一样，就是当时经常去买书的书店不见了。&lt;/p&gt;
-
-&lt;p&gt;好怀念那些年与老表在外租房的日子，好怀念那些年为了高考而奋斗的艰辛，好怀念那些年饿了就跑“大包”买泡面的生活。&lt;/p&gt;
-
-&lt;p&gt;没有想到的是，那家”凤凰炒饭“还在，五块钱的牛肉芥兰炒粿条加+免费的凤凰茶，味道还是那样的给力。跟老板聊天没想到还记得我，问我是不是还在读大学。哈哈，时光飞逝啊，一下子，那奋斗的日子已经过去8年了。&lt;/p&gt;
-
-&lt;p&gt;离高考还不到100天了，祝愿那些正在努力奋斗的学弟学妹们取得满意的成绩，考上理想的学校。&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2014/03/01/2014-03-01/</guid>
+      <description>好多年没回家过大劳热：“二月戏”了，想想，高中到现在了吧。第一次坐高铁，还是挺方便的，有公车直接到市区，半个钟。 谢谢好哥们带我逛了那么多景点</description>
     </item>
     
     <item>
       <title>多培养一些好习惯</title>
-      <link>http://blog.wenzhixin.net.cn/2014/02/15/habit</link>
+      <link>http://blog.wenzhixin.net.cn/2014/02/15/habit/</link>
       <pubDate>Sat, 15 Feb 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/02/15/habit</guid>
-      <description>&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;每天起床，默念自己最大的梦想三遍。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;不赖床，然后起来喝一杯温开水。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;一日之计在于晨，在便携笔记本上记录今天要做的重要的事情的列表，
-然后做完一个划掉一个。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;每天用左手刷牙，练习右脑。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;出门，默念“伸手要钱”，伸：身份证，手：手机，要：钥匙，钱：钱包。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;5楼以下，坚持走楼梯，当作运动小锻炼。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;中午休息时间看看书，或者学习下新的东西。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;每天练半个钟吉他。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;每天记录一篇文章。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;睡前读半个钟的书，多总结今天得失。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;假如有另一半，跟她说一声：晚安。&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2014/02/15/habit/</guid>
+      <description>每天起床，默念自己最大的梦想三遍。 不赖床，然后起来喝一杯温开水。 一日之计在于晨，在便携笔记本上记录今天要做的重要的事情的列表， 然后做完一个划</description>
     </item>
     
     <item>
       <title>邂逅</title>
-      <link>http://blog.wenzhixin.net.cn/2014/02/14/encounter</link>
+      <link>http://blog.wenzhixin.net.cn/2014/02/14/encounter/</link>
       <pubDate>Fri, 14 Feb 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/02/14/encounter</guid>
-      <description>&lt;p&gt;今天看到这么一句话挺有感触的，关于相遇的，关于你的。
-假如人生不曾相遇，我还是那个我，没事写写代码，看看书，
-偶尔练练吉他，做做梦。然后，开始了日复一日的生活，
-在这个喧嚣的城市里，我不会了解，这个世界上还有这样的一个你，
-让人回味，令人心醉。假如人生没有相遇，我不会相信，有一些人，
-一认识就觉得想见恨晚，让人觉得很温馨。&lt;/p&gt;
-
-&lt;p&gt;很多时候，缘分真的是一件很奇妙的东西。骑车回来的路上，
-寒风凌厉的路边，一朵不知名的小花，独自开放，
-也许，这个季节并不属于它。但是，我觉得，
-它也许只是为了期待和守候一场无期的相遇。
-我与那朵不知名的花朵的缘分，也就这短暂的相望而已。&lt;/p&gt;
-
-&lt;p&gt;倘若没有经过那条路，没有这次的注目，那么我与那朵不知名的小花就不曾有交集，
-也不会让我挂念到现在，亦不会出现在现在这篇文章中。
-今天是所谓的情人节，能与那朵不知名的小花有那么一段短暂的约会，
-也是一种缘分吧。&lt;/p&gt;
-
-&lt;p&gt;一直很喜欢三毛与荷西的故事，在遇到荷西之前，她是一个青涩的少女，
-她自闭、不喜欢和别人说话。她喜欢流浪，但是在踏上遥远的异国之前，
-她喜欢校园才子舒凡，并且疯狂追求舒凡，想成为他的妻子。
-但是，舒凡一直没有给她一个明确的答复，在坚持了两年后，
-心碎了，觉得再没有任何留下来的理由，于是，她踏上了流浪之路。&lt;/p&gt;
-
-&lt;p&gt;在异国的他乡，渐渐地，她中断了和舒凡原本就不多的联系。她知道，
-隔山隔水，隔着心，那段还没有开始的感情，已经是回不去的梦乡了。&lt;/p&gt;
-
-&lt;p&gt;忘记一个人，也许，需要一辈子。但是，与一个人邂逅，也许，
-就只需要一瞬间。因为，在年华老去之前，会有一个人，为之等候，
-会有许多事情，为之停留，等着，和你一起去完成。&lt;/p&gt;
-
-&lt;p&gt;在荷西年少的时候，就梦想着有一段美丽的爱情。在他遇见三毛之后，
-就对这个黑头发、黑眼睛的东方女子，一见钟情。他发誓，一定要娶她为妻，
-无论付出多少代价，痴等多少年。不曾想，这位传奇的女子，在遇见荷西的时候，
-也有一种刹那的心动，觉得荷西就是那个对的人。“第一次看见荷西的时候，
-触电了一般，心想，如果有一天，可以成为他的妻子，该是多么美好的一件事情啊。”&lt;/p&gt;
-
-&lt;p&gt;有些爱，淡而有味。有些爱，刻骨铭心，誓死相随。三毛和荷西成了一对很快乐的
-朋友，他们从学习聊到生活。三毛喜欢这个西班牙男孩，觉得他纯真而朴实。&lt;/p&gt;
-
-&lt;p&gt;很喜欢他们的故事，很真实，很美好。有时候在想，要是我也可以遇见这么一个你，
-该有多好。&lt;/p&gt;
-
-&lt;p&gt;其实，一直坚信会有这么一个人，一个我喜欢你，你也喜欢我的人，
-期待着那一天，能与你有一场让人觉得温馨的相遇的那天的到来。&lt;/p&gt;
-
-&lt;p&gt;最后，虽说今天是情人节，并且，我们也还未曾相遇，一个人，
-也照样可以过情人节。不过，很喜欢梁静茹的一句歌词：
-其实爱对了人，情人节每天都过。&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2014/02/14/encounter/</guid>
+      <description>今天看到这么一句话挺有感触的，关于相遇的，关于你的。 假如人生不曾相遇，我还是那个我，没事写写代码，看看书， 偶尔练练吉他，做做梦。然后，开始了</description>
     </item>
     
     <item>
       <title>早春</title>
-      <link>http://blog.wenzhixin.net.cn/2014/02/12/zaochun</link>
+      <link>http://blog.wenzhixin.net.cn/2014/02/12/zaochun/</link>
       <pubDate>Wed, 12 Feb 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/02/12/zaochun</guid>
-      <description>
-
-&lt;h3 id=&#34;早春:b91c7f522a5246a327f9227ca8433449&#34;&gt;早春&lt;/h3&gt;
-
-&lt;p&gt;二月羊城天气冷，可怜春景似冬华。&lt;/p&gt;
-
-&lt;p&gt;霜轻雨淡草萋萋，天低云重风潇潇。&lt;/p&gt;
-
-&lt;p&gt;春露寒水忽袭来，晓起桃花恣意笑。&lt;/p&gt;
-
-&lt;p&gt;莫怨天公无情冷，君尚嫣红又一朝。&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2014/02/12/zaochun/</guid>
+      <description>早春 二月羊城天气冷，可怜春景似冬华。 霜轻雨淡草萋萋，天低云重风潇潇。 春露寒水忽袭来，晓起桃花恣意笑。 莫怨天公无情冷，君尚嫣红又一朝。</description>
+    </item>
+    
+    <item>
+      <title>梦里梦外的我</title>
+      <link>http://blog.wenzhixin.net.cn/2014/01/26/dreams_and_reality/</link>
+      <pubDate>Sun, 26 Jan 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2014/01/26/dreams_and_reality/</guid>
+      <description>做了个奇怪的梦，睡梦中我是个能言善道的人，从分析别人的心理，到说服别人，再到给别人建议，都说的头头是道， 别人也纷纷点头称是。依稀记得，讲到了</description>
+    </item>
+    
+    <item>
+      <title>随笔</title>
+      <link>http://blog.wenzhixin.net.cn/2014/01/22/2014-01-22/</link>
+      <pubDate>Wed, 22 Jan 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2014/01/22/2014-01-22/</guid>
+      <description>临近过年了，想买点礼物给爸妈，但是挑了好一会不知道要买什么好， 每次打电话回去他们都说什么都不需要，回来的时候空手就行了， 什么都不用买。其实我</description>
+    </item>
+    
+    <item>
+      <title>随便写写</title>
+      <link>http://blog.wenzhixin.net.cn/2014/01/13/write_something/</link>
+      <pubDate>Mon, 13 Jan 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2014/01/13/write_something/</guid>
+      <description>昨天大学同学聚会，很多同学都是毕业之后就没见过了，一晃就毕业3年半了， 感慨时间走的太快，不过大家似乎都没什么变化，风趣的一样很风趣，幽默的一</description>
+    </item>
+    
+    <item>
+      <title>想法与行动</title>
+      <link>http://blog.wenzhixin.net.cn/2014/01/04/thoughts_and_actions/</link>
+      <pubDate>Sat, 04 Jan 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2014/01/04/thoughts_and_actions/</guid>
+      <description>经常脑袋中会蹦出一些想法， 例如今天在用手机看word格式的书的时候就想要是可以做成网页的那该多好， 随时随地看，分目录并自动保存进度。 假如去付</description>
+    </item>
+    
+    <item>
+      <title>2014-01-01</title>
+      <link>http://blog.wenzhixin.net.cn/2014/01/01/summary/</link>
+      <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2014/01/01/summary/</guid>
+      <description>送走了 2013 年，迎来了新的一年，今天 2014 的第一天，主题是“宅”和“睡”。 想写点总结的，不过也不知道该写什么好，工作的总结要做成 PPT 上去讲。 只稍微总结</description>
+    </item>
+    
+    <item>
+      <title>也谈动漫与梦想</title>
+      <link>http://blog.wenzhixin.net.cn/2013/12/27/anime_and_dreams/</link>
+      <pubDate>Fri, 27 Dec 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2013/12/27/anime_and_dreams/</guid>
+      <description>《火影忍者》，从高中开始追了好多年了，后面又开始追《海贼王》，每周一集， 有时候会觉得，还是挺不错的，至少每周还有点小期待。 说到动漫，小时候开</description>
+    </item>
+    
+    <item>
+      <title>周末小记</title>
+      <link>http://blog.wenzhixin.net.cn/2013/11/30/note/</link>
+      <pubDate>Sat, 30 Nov 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2013/11/30/note/</guid>
+      <description>每周五都会去打一两个钟的乒乓球，其实乒乓球还是挺考验一个人的耐心和细心的，觉得不过瘾，就去了东圃小区继续开战，两个人足足打了两个钟，还是挺爽</description>
+    </item>
+    
+    <item>
+      <title>也谈缘分</title>
+      <link>http://blog.wenzhixin.net.cn/2013/11/17/fate_and_future/</link>
+      <pubDate>Sun, 17 Nov 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2013/11/17/fate_and_future/</guid>
+      <description>今天在车上遇见一女孩，就坐在隔壁座的后面，但是却始终没敢说上一句话。 半途休息的时候，我靠在窗边等车，没想到她还走到我的旁边，可惜最后也没聊上</description>
+    </item>
+    
+    <item>
+      <title>承诺与坚持</title>
+      <link>http://blog.wenzhixin.net.cn/2013/11/09/commitment_and_persistence/</link>
+      <pubDate>Sat, 09 Nov 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2013/11/09/commitment_and_persistence/</guid>
+      <description>今天考了一天的试，其实挺累的，没有想写东西的心情。 今天的论文写了不到1/3就交卷了，三门考试放弃了其中一门就等于整个都 say good bye 了。 一直以来都很</description>
+    </item>
+    
+    <item>
+      <title>耕耘与收获</title>
+      <link>http://blog.wenzhixin.net.cn/2013/11/03/ploughing_and_harvesting/</link>
+      <pubDate>Sun, 03 Nov 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2013/11/03/ploughing_and_harvesting/</guid>
+      <description>自接触 github 平台以来，收获良多。 别人把自己辛辛苦苦写出来的代码开源给其他人用，并且不断地维护和完善自己的代码。 这种无私的贡献精神是很值得学习的。</description>
+    </item>
+    
+    <item>
+      <title>梦与乡愁</title>
+      <link>http://blog.wenzhixin.net.cn/2013/10/26/dream_and_homesickness/</link>
+      <pubDate>Sat, 26 Oct 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2013/10/26/dream_and_homesickness/</guid>
+      <description>回到家，老妈已经准备了我最爱吃的东西，就等着我开饭了。 记得小的时候，很喜欢吃四季豆、玉米、芋头、土豆等等，家里自己种菜，老妈都会种我喜欢吃的</description>
+    </item>
+    
+    <item>
+      <title>关于选择与幸福</title>
+      <link>http://blog.wenzhixin.net.cn/2013/10/25/about_choice_and_happiness/</link>
+      <pubDate>Fri, 25 Oct 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2013/10/25/about_choice_and_happiness/</guid>
+      <description>看了《林清玄》的飞蛾与蝙蝠， 飞舞于林间的蝙蝠，时时刻刻都在避免撞到树，却偶尔会不小心撞树。 在林间飞舞的彩蛾，却一再去扑火，直到丧命为止。 眼盲</description>
+    </item>
+    
+    <item>
+      <title>程序猿也有梦</title>
+      <link>http://blog.wenzhixin.net.cn/2013/10/21/have_dream/</link>
+      <pubDate>Mon, 21 Oct 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2013/10/21/have_dream/</guid>
+      <description>一座城，灯火流作河，心绪谱成歌。 提笔斟酌字句，我知道我是在整理心中的情愫，或者是在寻找那份不可预知的爱情。 秋，转凉了，他们说，夜里会很冷。 但</description>
+    </item>
+    
+    <item>
+      <title>我的一天</title>
+      <link>http://blog.wenzhixin.net.cn/2013/03/12/my_daily/</link>
+      <pubDate>Tue, 12 Mar 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2013/03/12/my_daily/</guid>
+      <description>早晨，是一日的开始，由于睡在窗边，习惯性地在阳光洒进房间时醒来，常常是定了闹钟却还来不及响。因为怕吵到舍友，醒来的第一件事不是洗涮，而是坐在</description>
+    </item>
+    
+    <item>
+      <title>青春已逝，迷茫依旧…</title>
+      <link>http://blog.wenzhixin.net.cn/2013/03/05/youth_is_gone/</link>
+      <pubDate>Tue, 05 Mar 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2013/03/05/youth_is_gone/</guid>
+      <description>用心说出来的话，或许只有有心的人才听得懂吧。 有两种不联系，一种是忘记了，一种是放在回忆里。 每一个玩笑的背后，都带着认真的意味。 因为年轻，所以</description>
+    </item>
+    
+    <item>
+      <title>2013-02-16</title>
+      <link>http://blog.wenzhixin.net.cn/2013/02/16/2013-02-16/</link>
+      <pubDate>Sat, 16 Feb 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2013/02/16/2013-02-16/</guid>
+      <description>时间过得真快，假期就这样结束了，明天早上就要启程去广州了，好久没坐过白天的车了，怕塞车，不过可以多陪陪父母，也是值得的。 细数这16天的假期点</description>
+    </item>
+    
+    <item>
+      <title>2013-01-30</title>
+      <link>http://blog.wenzhixin.net.cn/2013/01/30/2013-01-30/</link>
+      <pubDate>Wed, 30 Jan 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2013/01/30/2013-01-30/</guid>
+      <description>这两天回宿舍都不太想动，过两天就要回家了，发现还有好多事情还没做完。花了几分钟时间将这两天必须完成的包括生活、工作、以及未看完的书等事情，一</description>
+    </item>
+    
+    <item>
+      <title>2013-01-25</title>
+      <link>http://blog.wenzhixin.net.cn/2013/01/25/2013-01-25/</link>
+      <pubDate>Fri, 25 Jan 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2013/01/25/2013-01-25/</guid>
+      <description>貌似好久没有上火喉咙痛了，因为聚餐吃了超辣的菜，喝了快半包凉茶了，却没有效果，真怀疑是不是乌糖水呢，还真怕又咳嗽了。对于咳嗽，还是有一定阴影</description>
     </item>
     
   </channel>

@@ -1,69 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tunnel on 文翼的博客</title>
+    <title>tunnel on 文翼的博客</title>
     <link>http://blog.wenzhixin.net.cn/tags/tunnel/</link>
-    <description>Recent content in Tunnel on 文翼的博客</description>
+    <description>Recent content in tunnel on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Sat, 15 Mar 2014 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.wenzhixin.net.cn/tags/tunnel/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/tunnel/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>ssh tunnel（隧道）</title>
-      <link>http://blog.wenzhixin.net.cn/2014/03/15/ssh_tunnel</link>
+      <link>http://blog.wenzhixin.net.cn/2014/03/15/ssh_tunnel/</link>
       <pubDate>Sat, 15 Mar 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/03/15/ssh_tunnel</guid>
-      <description>
-
-&lt;h3 id=&#34;问题描述:409e60413bfcfe8bece1a1e1741b8511&#34;&gt;问题描述：&lt;/h3&gt;
-
-&lt;p&gt;公司内部机器限制了登录，只能通过某台指定的机器才能上网，我们这里叫做中转服务器。
-例如邮件服务器，而一般中转服务器是 linux 系统。
-你想要登录到内部的机器，只能通过 ssh 登录到邮件服务器，然后在 ssh 登录到内部的机器。
-如果内部的机器是 windows 系统，或者还需要传输文件，会变的相当的麻烦：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;两次登录&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;不能开图形界面&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;需要在中转服务器中安装额外的软件&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;文件传输受限于中转服务器的存储空间&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;问题解决:409e60413bfcfe8bece1a1e1741b8511&#34;&gt;问题解决：&lt;/h3&gt;
-
-&lt;p&gt;使用强大的 ssh tunnel（隧道），就可以通过一次 ssh 进行远程端口的映射，从而完成以上麻烦的步骤。&lt;/p&gt;
-ssh -fN -L local_port:remote_host:remote_port bridge_user@bridge_host
-
-&lt;p&gt;&lt;strong&gt;参数：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;-fN：表示在后台运行 ssh 并不执行远程命令&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;-L：表示使用 ssh tunnel 将远程端口映射到本地&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;local_port：本地的端口&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;remote_host：远程服务器的地址&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;remote_port：远程服务器的端口&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;bridge_user：中转服务器的用户名&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;bridge_host：中转服务器的地址&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;例如，我们需要访问的内部机器的IP为：192.168.1.10，为windows，开启了远程桌面（端口为3389），
-中转服务器的地址为：zhixin@mail.wenzhixin.net.cn，那么我们使用以下命令：&lt;/p&gt;
-ssh -fN -L 3389:192.168.1.10:3389 zhixin@mail.wenzhixin.net.cn
-
-&lt;p&gt;即可将远程服务器的 3389 映射到本地中，现在要登录远程服务器，只需要使用登录到 127.0.0.1:3389 即可。&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2014/03/15/ssh_tunnel/</guid>
+      <description>问题描述： 公司内部机器限制了登录，只能通过某台指定的机器才能上网，我们这里叫做中转服务器。 例如邮件服务器，而一般中转服务器是 linux 系统。 你想要登</description>
     </item>
     
   </channel>

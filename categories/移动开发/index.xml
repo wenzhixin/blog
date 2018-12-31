@@ -8,924 +8,170 @@
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Thu, 20 Mar 2014 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.wenzhixin.net.cn/categories/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://blog.wenzhixin.net.cn/categories/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Cordova 开发属于自己的插件（plugin）</title>
-      <link>http://blog.wenzhixin.net.cn/2014/03/20/cordova_my_plugin</link>
+      <link>http://blog.wenzhixin.net.cn/2014/03/20/cordova_my_plugin/</link>
       <pubDate>Thu, 20 Mar 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/03/20/cordova_my_plugin</guid>
-      <description>&lt;p&gt;在上一篇文章 &lt;a href=&#34;http://wenzhixin.net.cn/2014/02/11/cordova_command_line&#34;&gt;cordova 初识之命令行工具&lt;/a&gt; 中，我们讲到了如何使用命令行快速地创建我们的 app 应用，并添加和运行各种平台。&lt;/p&gt;
-
-&lt;p&gt;在实际的项目开发中，需要用到 cordova 的插件，进行各个不同平台的辅助开发，我们可以通过 &lt;a href=&#34;http://plugins.cordova.io/&#34;&gt;plugins.cordova.io&lt;/a&gt; 对现有插件的搜索，以及安装。&lt;/p&gt;
-
-&lt;p&gt;插件的安装和使用，详细可以通过查阅 Cordova 的官网文档 &lt;a href=&#34;http://cordova.apache.org/docs/en/3.4.0/guide_cli_index.md.html#The%20Command-Line%20Interface&#34;&gt;The Command-Line Interface&lt;/a&gt; 以及某前端大大张鑫旭的文章：&lt;a href=&#34;http://www.zhangxinxu.com/wordpress/2014/03/phonegap-cordova-ios-statusbar-style/&#34;&gt;PhoneGap/Cordova控制iOS7状态栏的显隐/颜色&lt;/a&gt;。&lt;/p&gt;
-
-&lt;p&gt;但是更多的时候，我们需要开发属于我们自己的插件。通过查看官方文档 &lt;a href=&#34;http://cordova.apache.org/docs/en/3.4.0/guide_hybrid_plugins_index.md.html#Plugin%20Development%20Guide&#34;&gt;Plugin Development Guide&lt;/a&gt;，你会发现，&lt;strong&gt;坑爹&lt;/strong&gt;啊，这文档怎么还是以前 2.x 的开发文档？？自己在编写插件的过程中，花了不少时间，在这里讲一下如何开发属于自己的插件。&lt;/p&gt;
-
-&lt;p&gt;通过命令行创建 app 应用之后，你会发现目录结构是这样子的：&lt;/p&gt;
-├── platforms
-|    ├── android
-|    ├── ios
-|    ├── wp7
-|    └── ...
-├── plugins
-|    ├── org.apache.cordova.device
-|    └── ...
-├── config.xml
-└── www
-
-&lt;p&gt;这里的 &lt;code&gt;platforms&lt;/code&gt; 是我们应用支持的平台目录，&lt;code&gt;plugins&lt;/code&gt; 是我们安装的插件目录，&lt;code&gt;config.xml&lt;/code&gt; 是应用的配置信息（应用名称、描述等），&lt;code&gt;www&lt;/code&gt; 是我们的 web 工程目录。&lt;/p&gt;
-
-&lt;p&gt;我们知道，Cordova 3.x 的插件机制改变了，只需要通过简单的命令行即可安装和删除所需要的插件，而我们自己开发的插件，最终是要添加到 &lt;code&gt;plugins&lt;/code&gt; 目录中的。&lt;/p&gt;
-
-&lt;p&gt;那么，就让一起开始，&lt;strong&gt;制作属于我们自己的插件&lt;/strong&gt; 吧，这里以 ExtraInfo（获取 app 额外信息） 为例子，我们在当前目录下（当然可以放在别的目录下）创建 ExtraInfo 文件夹，先看下具体的目录结构：&lt;/p&gt;
-ExtraInfo
-├── src
-|    ├── android
-|    |    └── ExtraInfo.java
-|    ├── ios
-|    └── ...
-├── www
-|    └── ExtraInfo.js
-└── plugin.xml
-
-&lt;p&gt;这里的 &lt;code&gt;src&lt;/code&gt; 对应不同的平台，&lt;code&gt;www&lt;/code&gt; 放我们的 javascript 文件，&lt;code&gt;plugin.xml&lt;/code&gt; 是插件的配置文件。&lt;/p&gt;
-
-&lt;p&gt;先来看看 &lt;code&gt;plugin.xml&lt;/code&gt; 的内容：&lt;/p&gt;
-&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;
-&lt;plugin id=&#34;cn.net.wenzhixin.cordova&#34; version=&#34;0.0.1&#34;
-        xmlns=&#34;http://apache.org/cordova/ns/plugins/1.0&#34;
-        xmlns:android=&#34;http://schemas.android.com/apk/res/android&#34;&gt;
-    &lt;name&gt;ExtraInfo&lt;/name&gt;
-    &lt;description&gt;Description&lt;/description&gt;
-    &lt;js-module name=&#34;ExtraInfo&#34; src=&#34;www/ExtraInfo.js&#34;&gt;
-        &lt;clobbers target=&#34;cordova.plugins.ExtraInfo&#34;/&gt;
-    &lt;/js-module&gt;
-    &lt;platform name=&#34;android&#34;&gt;
-        &lt;config-file parent=&#34;/*&#34; target=&#34;res/xml/config.xml&#34;&gt;
-            &lt;feature name=&#34;ExtraInfo&#34;&gt;
-                &lt;param name=&#34;android-package&#34; value=&#34;cn.net.wenzhixin.cordova.ExtraInfo&#34;/&gt;
-            &lt;/feature&gt;
-        &lt;/config-file&gt;
-        &lt;source-file src=&#34;src/android/ExtraInfo.java&#34; target-dir=&#34;src/cn/net/wenzhixin/cordova&#34;/&gt;
-    &lt;/platform&gt;
-&lt;/plugin&gt;
-
-&lt;p&gt;有几个关键的字段需要解释下：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;id: 插件的标识，即发布到 &lt;a href=&#34;http://plugins.cordova.io/&#34;&gt;plugins.cordova.io&lt;/a&gt; 的 ID&lt;/li&gt;
-&lt;li&gt;name：插件的名称&lt;/li&gt;
-&lt;li&gt;description：描述信息&lt;/li&gt;
-&lt;li&gt;js-module：对应我们的 javascript 文件，&lt;code&gt;src&lt;/code&gt; 属性指向 &lt;code&gt;www/ExtraInfo.js&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;platform：支持的平台，这里仅仅用到了 android&lt;/li&gt;
-&lt;/ul&gt;
-&lt;config-file parent=&#34;/*&#34; target=&#34;res/xml/config.xml&#34;&gt;
-    &lt;feature name=&#34;ExtraInfo&#34;&gt;
-        &lt;param name=&#34;android-package&#34; value=&#34;cn.net.wenzhixin.cordova.ExtraInfo&#34;/&gt;
-    &lt;/feature&gt;
-&lt;/config-file&gt;
-&lt;source-file src=&#34;src/android/ExtraInfo.java&#34; target-dir=&#34;src/cn/net/wenzhixin/cordova&#34;/&gt;
-
-&lt;p&gt;这里是插件的配置信息，最后会添加到 &lt;code&gt;res/xml/config.xml&lt;/code&gt; 文件中，并且将我们的 &lt;code&gt;src/android/ExtraInfo.java&lt;/code&gt;，复制到 android 的 package 包中。&lt;/p&gt;
-
-&lt;p&gt;接下来，&lt;code&gt;ExtraInfo.js&lt;/code&gt; 的内容很简单：&lt;/p&gt;
-var exec = require(&#39;cordova/exec&#39;);
-
-exports.getExtra = function(success, error) {
-    exec(success, error, &#34;ExtraInfo&#34;, &#34;getExtra&#34;, []);
-};
-
-&lt;p&gt;用过 Nodejs 或者了解过 AMD、CMD 的话（当然，没了解过也没关系），一定会觉得很熟悉。简单的说，&lt;code&gt;require&lt;/code&gt; 用于引入我们的类，&lt;code&gt;exports&lt;/code&gt; 用于导出我们的方法。这里对外公开了 &lt;code&gt;getExtra&lt;/code&gt; 方法，以便我们在 app 中可以用到。&lt;/p&gt;
-
-&lt;p&gt;最后看 &lt;code&gt;ExtraInfo.java&lt;/code&gt; 的内容：&lt;/p&gt;
-public class ExtraInfo extends CordovaPlugin {
-
-    public boolean execute(String action, JSONArray args, CallbackContext callbackContext)
-            throws JSONException {
-        Activity activity = this.cordova.getActivity();
-        if (action.equals(&#34;getExtra&#34;)) {
-            Intent i = activity.getIntent();
-            if (i.hasExtra(Intent.EXTRA_TEXT)) {
-                callbackContext.success(i.getStringExtra(Intent.EXTRA_TEXT));
-            } else {
-                callbackContext.error(&#34;&#34;);
-            }
-            return true;
-        }
-        return false;
-    }
-}
-
-&lt;p&gt;继承了 CordovaPlugin 类，并重写 &lt;code&gt;execute&lt;/code&gt; 方法，使用 action 来判断我们在 javascript 中调用的方法名，成功的话调用 &lt;code&gt;callbackContext.success(message)&lt;/code&gt;，失败调用 &lt;code&gt;callbackContext.error(message)&lt;/code&gt; 方法，分别对应 javascript 文件中的 &lt;code&gt;success&lt;/code&gt; 和 &lt;code&gt;error&lt;/code&gt; 回调函数。&lt;/p&gt;
-
-&lt;p&gt;当然，这里只用到 android 平台，其他的平台也是一样的，ios 使用 object-c、wp7 使用 c# 语言，例子见&lt;a href=&#34;http://cordova.apache.org/docs/en/3.4.0/guide_hybrid_plugins_index.md.html#Plugin%20Development%20Guide&#34;&gt;Plugin Development Guide&lt;/a&gt;。&lt;/p&gt;
-
-&lt;p&gt;到了这里，我们的插件就编写完成了。可以通过下面的命令添加插件：&lt;/p&gt;
-cordova plugin add ExtraInfo #目录名称，也可以是 git 的地址
-
-&lt;p&gt;查看我们的 &lt;code&gt;plugins&lt;/code&gt; 目录，会发现在该目录下已经华丽丽地生成我们自己的插件 &lt;code&gt;cn.net.wenzhixin.cordova&lt;/code&gt; 了。&lt;/p&gt;
-
-&lt;p&gt;对了，好像把最关键的事情给忘记了，这里貌似还没提到我们应该如何在 app 中使用自己的插件呢。前面提到说按照文档来坑爹了，是因为使用 &lt;code&gt;window.getExtra&lt;/code&gt;，会报 &lt;code&gt;getExtra is not defined&lt;/code&gt; 的错误。&lt;/p&gt;
-
-&lt;p&gt;通过查看生成的文件信息，可以知道，应该这样使用我们的插件：&lt;/p&gt;
-document.addEventListener(&#39;deviceready&#39;, function() {
-    var extraInfo = cordova.require(&#39;cn.net.wenzhixin.cordova.ExtraInfo&#39;);
-
-    extraInfo.getExtra(function(message) {
-        // alert(message);
-    }, function(message) {
-        // alert(message);
-    });
-});
-
-&lt;p&gt;最后，像平时的开发，觉得及时更新文档还是比较重要的，虽然自己花了不少时间，不过至少更加明白了 Cordova 插件的原理，同时也希望本文可以帮到你。&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2014/03/20/cordova_my_plugin/</guid>
+      <description>在上一篇文章 cordova 初识之命令行工具 中，我们讲到了如何使用命令行快速地创建我们的 app 应用，并添加和运行各种平台。 在实际的项目开发中，需要用到 cordova 的插件</description>
     </item>
     
     <item>
       <title>cordova 初识之命令行工具</title>
-      <link>http://blog.wenzhixin.net.cn/2014/02/11/cordova_command_line</link>
+      <link>http://blog.wenzhixin.net.cn/2014/02/11/cordova_command_line/</link>
       <pubDate>Tue, 11 Feb 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/02/11/cordova_command_line</guid>
-      <description>
-
-&lt;h3 id=&#34;1-准备工作:3e3ff89256ad4638db10fc2d7fbcb164&#34;&gt;1. 准备工作&lt;/h3&gt;
-
-&lt;p&gt;在使用 cordova 的命令行之前，需要安装各平台对应的 SDK，各个平台对应的操作系统如下：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;iOS (Mac)&lt;/li&gt;
-&lt;li&gt;Amazon Fire OS (Mac, Linux, Windows)&lt;/li&gt;
-&lt;li&gt;Android (Mac, Linux)&lt;/li&gt;
-&lt;li&gt;BlackBerry 10 (Mac, Linux, Windows)&lt;/li&gt;
-&lt;li&gt;Windows Phone 7 (Windows)&lt;/li&gt;
-&lt;li&gt;Windows Phone 8 (Windows)&lt;/li&gt;
-&lt;li&gt;Windows 8 (Windows)&lt;/li&gt;
-&lt;li&gt;Firefox OS (Mac, Linux, Windows)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;2-安装命令行工具:3e3ff89256ad4638db10fc2d7fbcb164&#34;&gt;2. 安装命令行工具&lt;/h3&gt;
-
-&lt;p&gt;首先下载安装 &lt;a href=&#34;http://nodejs.org/&#34;&gt;node.js&lt;/a&gt; （像我安装过的就不用啦）&lt;/p&gt;
-
-&lt;p&gt;全局安装 cordova：&lt;/p&gt;
-npm install -g cordova
-
-&lt;p&gt;注：&lt;/p&gt;
-
-&lt;p&gt;-g 表示安装为全局，有些系统需要 sudo 权限（像 ubuntu）&lt;/p&gt;
-
-&lt;p&gt;cordova 的基本命令格式为：&lt;/p&gt;
-cordova command [options]
-
-&lt;h3 id=&#34;3-创建-app:3e3ff89256ad4638db10fc2d7fbcb164&#34;&gt;3. 创建 app&lt;/h3&gt;
-
-&lt;p&gt;创建使用&lt;code&gt;cordova create&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;例如，进入工程目录：&lt;/p&gt;
-cordova create hello com.example.hello HelloWorld
-
-&lt;ul&gt;
-&lt;li&gt;第一个参数&lt;code&gt;hello&lt;/code&gt;表示在工程目录中创建一个 hello 的文件夹&lt;/li&gt;
-&lt;li&gt;第二个参数&lt;code&gt;com.example.hello&lt;/code&gt;表示包名（反向域名），用于标志不同的 app&lt;/li&gt;
-&lt;li&gt;第三个参数&lt;code&gt;HelloWorld&lt;/code&gt;表示项目的名称，可以在 config.xml 文件中修改&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;4-添加平台:3e3ff89256ad4638db10fc2d7fbcb164&#34;&gt;4. 添加平台&lt;/h3&gt;
-
-&lt;p&gt;进入创建的项目中：&lt;/p&gt;
-cd hello
-
-&lt;p&gt;查看已经安装的平台和支持的平台：&lt;/p&gt;
-cordova platforms list
-
-&lt;p&gt;例如，在 ubuntu 下的结果是：&lt;/p&gt;
-Installed platforms:
-Available platforms: android, blackberry10, firefoxos, ubuntu
-
-&lt;p&gt;在 ubuntu 下，可以通过以下命令添加支持的平台：&lt;/p&gt;
-cordova platform add android
-cordova platform add blackberry10
-cordova platform add firefoxos
-cordova platform add ubuntu
-
-&lt;p&gt;在 mac 下，可以通过以下命令添加支持的平台：&lt;/p&gt;
-cordova platform add ios
-cordova platform add amazon-fireos
-cordova platform add android
-cordova platform add blackberry10
-cordova platform add firefoxos
-
-&lt;p&gt;在 windows 下，可以通过以下命令添加支持的平台：&lt;/p&gt;
-cordova platform add wp7
-cordova platform add wp8
-cordova platform add windows8
-cordova platform add amazon-fireos
-cordova platform add android
-cordova platform add blackberry10
-cordova platform add firefoxos
-
-&lt;p&gt;当然，也可以删除不想要的平台：&lt;/p&gt;
-cordova platform remove android
-cordova platform rm android
-
-&lt;h3 id=&#34;5-编译项目:3e3ff89256ad4638db10fc2d7fbcb164&#34;&gt;5. 编译项目&lt;/h3&gt;
-
-&lt;p&gt;通过下面命令，即可编译项目：&lt;/p&gt;
-cordova build android
-
-&lt;p&gt;或者是使用（build 为简写）：&lt;/p&gt;
-cordova prepare android
-cordova compile android
-
-&lt;p&gt;编译完成后可以看到 platforms/android/bin/ 下已经生成了 apk 文件&lt;/p&gt;
-
-&lt;h3 id=&#34;6-测试-运行项目:3e3ff89256ad4638db10fc2d7fbcb164&#34;&gt;6. 测试、运行项目&lt;/h3&gt;
-
-&lt;p&gt;启动 android 虚拟机：&lt;/p&gt;
-cordova emulate android
-
-&lt;p&gt;运行 app 项目（在虚拟机或者在真机）：&lt;/p&gt;
-cordova run android
-
-&lt;p&gt;运行结果：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/02/11/1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2014/02/11/cordova_command_line/</guid>
+      <description>1. 准备工作 在使用 cordova 的命令行之前，需要安装各平台对应的 SDK，各个平台对应的操作系统如下： iOS (Mac) Amazon Fire OS (Mac, Linux, Windows) Android (Mac, Linux) BlackBerry 10 (Mac, Linux, Windows) Windows Phone 7 (Windows) Windows Phone 8 (Windows) Windows 8</description>
     </item>
     
     <item>
       <title>Android 界面不支持 position fixed 问题</title>
-      <link>http://blog.wenzhixin.net.cn/2013/11/21/android_position_fixed</link>
+      <link>http://blog.wenzhixin.net.cn/2013/11/21/android_position_fixed/</link>
       <pubDate>Thu, 21 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/11/21/android_position_fixed</guid>
-      <description>&lt;p&gt;在 Android 中，部分浏览器不支持 css 的 position: fixed 属性。&lt;/p&gt;
-
-&lt;p&gt;详细的支持情况见：&lt;a href=&#34;http://caniuse.com/css-fixed&#34;&gt;http://caniuse.com/css-fixed&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;对于不支持的情况，我们可以通过以下的解决方法来解决该问题，记录下。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;使用 viewport 标记&lt;/strong&gt;&lt;/p&gt;
-&lt;meta name=&#34;viewport&#34; content=&#34;width=100%; initial-scale=1; maximum-scale=1; minimum-scale=1; user-scalable=no;&#34; /&gt;
-
-&lt;p&gt;详细参数解释：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;width：视口的宽度。可以使用像素值，但推荐使用device-width关键字。表示依照设备屏幕的宽度。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;height：视口的高度。不用指定。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;initial-scale：初始缩放值。比如1.0表示一个视口像素等于一个屏幕像素。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;minimum-scale：最小比例值。范围从0至10.0&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;maximum-scale：最大比例值。范围从0至10.0&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;user-scalable：用户是否可以缩放视口。值可以是：
-1, yes, or true: 允许用户缩放
-0, no, or false: 不许用户缩放&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;使用 position: absolute 代替&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;可以简单的使用 position: absolute 代替，但是在桌面端会显示不正常，我们可以通过判断 userAgent 来指定 position 的值。&lt;/p&gt;
-
-&lt;p&gt;代码如下：&lt;/p&gt;
-if (navigator.userAgent.match(/Android|iPhone|iPad|iPod/i)) {
-	$div.css(&#39;position&#39;, &#39;absolute&#39;);
-} else {
-	$div.css(&#39;position&#39;, &#39;fixed&#39;);
-}
-
-&lt;p&gt;&lt;strong&gt;使用 js 库&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/cubiq/iscroll&#34;&gt;iScroll&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;注：
-该库也没有使用过，有待研究&amp;hellip;&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/21/android_position_fixed/</guid>
+      <description>在 Android 中，部分浏览器不支持 css 的 position: fixed 属性。 详细的支持情况见：http://caniuse.com/css-fixed 对于不支持的情况，我们可以通</description>
     </item>
     
     <item>
       <title>手机 web 开发之 Touch 入门</title>
-      <link>http://blog.wenzhixin.net.cn/2013/11/18/hello_touch_event</link>
+      <link>http://blog.wenzhixin.net.cn/2013/11/18/hello_touch_event/</link>
       <pubDate>Mon, 18 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/11/18/hello_touch_event</guid>
-      <description>
-
-&lt;p&gt;微博应用上用手向左滑动，便可以触发返回事件，这一小小的功能虽说很简单，
-但是却大大提高了用户体验（特别是用左手拿手机的人）。&lt;/p&gt;
-
-&lt;p&gt;今天来研究在 web 上模拟这一简单的功能。&lt;/p&gt;
-
-&lt;h4 id=&#34;1-touchevent:1e7125bb97247d5b94df90f5f4a67b3f&#34;&gt;1. TouchEvent&lt;/h4&gt;
-
-&lt;p&gt;TouchEvent 是一类描述手指在触摸平面（触摸屏、触摸板等）的状态变化的事件。
-这类事件用于描述一个或多个触点，使开发者可以检测触点的移动，触点的增加和减少，等等。&lt;/p&gt;
-
-&lt;h4 id=&#34;2-触摸事件的属性与类型:1e7125bb97247d5b94df90f5f4a67b3f&#34;&gt;2. 触摸事件的属性与类型&lt;/h4&gt;
-
-&lt;p&gt;&lt;strong&gt;TouchEvent.touches&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;一 个 TouchList 对象，包含了所有当前接触触摸平面的触点的 Touch 对象，
-无论它们的起始于哪个 element 上，也无论它们状态是否发生了变化。&lt;/p&gt;
-
-&lt;p&gt;touches 有两个重要的属性分别是 pageX 和 pageY，表示触摸点相对于页面的位置。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;touchstart&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;当用户在触摸平面上放置了一个触点时触发。事件的目标 element 将是触点位置上的那个目标 element&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;touchend&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;当一个触点被用户从触摸平面上移除（当用户将一个手指离开触摸平面）时触发。
-当触点移出触摸平面的边界时也将触发。例如用户将手指划出屏幕边缘。
-事件的目标 element 和这个 touchend 事件对应的 touchstart 事件的目标 element 相同，
-哪怕 touchend 事件触发时，触点已经移出了该 element 。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;touchmove&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;当用户在触摸平面上移动触点时触发。
-事件的目标 element 和这个 touchend 事件对应的 touchstart 事件的目标 element 相同，
-哪怕当 touchend 事件触发时，触点已经移出了该 element 。&lt;/p&gt;
-
-&lt;h4 id=&#34;3-简单模拟功能:1e7125bb97247d5b94df90f5f4a67b3f&#34;&gt;3. 简单模拟功能&lt;/h4&gt;
-(function() {
-    &#39;use strict&#39;;
-
-    var startPos = {},
-        endPos = {};
-
-    window.addEventListener(&#39;touchstart&#39;, function(event) {
-        event.preventDefault();
-
-        var touch = event.touches[0];
-        startPos.x = touch.pageX;
-        startPos.y = touch.pageY;
-    }, false);
-
-    window.addEventListener(&#39;touchmove&#39;, function(event) {
-        event.preventDefault();
-
-        var touch = event.touches[0];
-        endPos.x = touch.pageX;
-        endPos.y = touch.pageY;
-    }, false);
-
-    window.addEventListener(&#39;touchend&#39;, function(event) {
-        if (startPos.x &lt; endPos.x) {
-            location.href = &#39;index.html&#39;;
-        } else if (startPos.x &gt; endPos.x) {
-            location.href = &#39;page.html&#39;;
-        }
-    }, false);
-
-})();
-
-&lt;p&gt;在 touchstart 事件中，我们将位置保存到 startPos
-在 touchmove 事件中，我们将位置保存到 endPos
-在 touchend 事件中，我们通过比较 startPos 和 endPos 的关系得到用户是向左滑动还是向右滑动。&lt;/p&gt;
-
-&lt;p&gt;更多相关知识，请见&lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Events/Touch_events&#34;&gt;Touch_events&lt;/a&gt;&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/18/hello_touch_event/</guid>
+      <description>微博应用上用手向左滑动，便可以触发返回事件，这一小小的功能虽说很简单， 但是却大大提高了用户体验（特别是用左手拿手机的人）。 今天来研究在 web 上模</description>
     </item>
     
     <item>
       <title>安卓 ssh 和 rsync 同步客户端的实现</title>
-      <link>http://blog.wenzhixin.net.cn/2013/10/18/android_ssh_rsync_client</link>
+      <link>http://blog.wenzhixin.net.cn/2013/10/18/android_ssh_rsync_client/</link>
       <pubDate>Fri, 18 Oct 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/10/18/android_ssh_rsync_client</guid>
-      <description>
-
-&lt;h4 id=&#34;1-介绍:15c86d4aa49fdfafae7a5d6f144fe403&#34;&gt;1. 介绍&lt;/h4&gt;
-
-&lt;p&gt;基于安卓的 ssh 和 rsync 客户端，可用于对服务器指定的目录进行同步到手机。
-在这里我们使用 Dropbear 的 dbclient 作为 ssh 的客户端。&lt;/p&gt;
-
-&lt;p&gt;Dropbear是一个相对较小的SSH服务器和客户端。
-它运行在一个基于POSIX的各种平台。
-Dropbear是开源软件，在麻省理工学院式的许可证。
-Dropbear是特别有用的“嵌入”式的Linux（或其他Unix）系统，如无线路由器。&lt;/p&gt;
-
-&lt;h4 id=&#34;2-准备工作:15c86d4aa49fdfafae7a5d6f144fe403&#34;&gt;2. 准备工作&lt;/h4&gt;
-
-&lt;p&gt;在使用之前，需要先编译 dropbear 的可执行文件，详细的编译步骤见：
-&lt;a href=&#34;http://code.google.com/p/droidsshd/wiki/BuildingDropbear&#34;&gt;BuildingDropbear&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;或者直接下载已经帮我们编译好的文件：
-&lt;a href=&#34;http://code.google.com/p/droidsshd/downloads/detail?name=dropbearmulti&amp;amp;can=2&amp;amp;q=&#34;&gt;dropbearmulti&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;rsync 可以到网站上找到相应的文件：
-&lt;a href=&#34;http://www.samba.org/ftp/rsync/&#34;&gt;Rsync&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;或者直接下载已经编译好的文件：
-&lt;a href=&#34;http://blog.wenzhixin.net.cn/2013/10/18/rsync_gz&#34;&gt;rsync&lt;/a&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;3-如何使用:15c86d4aa49fdfafae7a5d6f144fe403&#34;&gt;3. 如何使用&lt;/h4&gt;
-
-&lt;p&gt;关键代码如下：&lt;/p&gt;
-ArrayList&lt;String&gt; list = new ArrayList&lt;String&gt;();
-list.add(binDir + &#34;/rsync&#34;); // rsync 的 bin 目录
-list.add(&#34;-avzO&#34;); // 同步参数
-list.add(&#34;--progress&#34;); // 显示进度
-list.add(&#34;-e&#34;); // 用于指定端口，或者 key
-list.add(binDir + &#34;/ssh -y -i &#34; + homeDir + &#34;/id_rsa&#34;); // id_rsa 的存放目录
-list.add(Config.SERVER); // 同步服务器地址目录，如 admin@wenzhixin.net.cn:~/
-list.add(Config.ROOT); // 需要同步到的目录
-try {
-    ProcessBuilder pb = new ProcessBuilder(list.toArray(new String[] {}));
-    pb.directory(binDir);
-    Map&lt;String, String&gt; env = pb.environment();
-    env.clear();
-    env.putAll(System.getenv());
-    pb.redirectErrorStream(true);
-    Process p = pb.start();
-
-    BufferedReader bis = new BufferedReader(new InputStreamReader(p.getInputStream()));
-    String line;
-    while ((line = bis.readLine()) != null) {
-        log(line); // 显示日志
-    }
-    bis.close();
-    p.waitFor();
-    p.destroy();
-} catch (Exception e) {
-    log(e.getMessage());
-}
-
-&lt;h4 id=&#34;4-需要注意的问题:15c86d4aa49fdfafae7a5d6f144fe403&#34;&gt;4. 需要注意的问题&lt;/h4&gt;
-
-&lt;p&gt;1) 如何生成 id_rsa 和 authorized_keys，从而跳过密码的验证&lt;/p&gt;
-
-&lt;p&gt;生成 id_rsa，拷贝到手机客户端下：&lt;/p&gt;
-dropbearkey -t rsa -f ~/.ssh/id_rsa
-
-&lt;p&gt;生成 authorized_keys，并拷贝到服务器 ~/.ssh/ 下：&lt;/p&gt;
-dropbearkey -y -f ~/.ssh/id_rsa | grep “^ssh-rsa ” &gt;&gt; authorized_keys
-
-&lt;p&gt;2) 跳过 known_hosts 提示和密码验证&lt;/p&gt;
-ssh -y -i id_rsa
-
-&lt;ul&gt;
-&lt;li&gt;-y 表示跳过 known_hosts&lt;/li&gt;
-&lt;li&gt;-i 指定 id_rsa 进行认证&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2013/10/18/android_ssh_rsync_client/</guid>
+      <description>1. 介绍 基于安卓的 ssh 和 rsync 客户端，可用于对服务器指定的目录进行同步到手机。 在这里我们使用 Dropbear 的 dbclient 作为 ssh 的客户端。 Dropbear是一个相对较小的S</description>
     </item>
     
     <item>
       <title>Ubuntu 系统下 android 连接小米2进行开发</title>
-      <link>http://blog.wenzhixin.net.cn/2013/06/14/ubuntu_android_xiaomi2</link>
+      <link>http://blog.wenzhixin.net.cn/2013/06/14/ubuntu_android_xiaomi2/</link>
       <pubDate>Fri, 14 Jun 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/06/14/ubuntu_android_xiaomi2</guid>
-      <description>
-
-&lt;h3 id=&#34;问题:3284b07dbf879be3d511a7e668ba9982&#34;&gt;问题：&lt;/h3&gt;
-
-&lt;p&gt;小米2 通过 USB 连接到 Ubuntu 12.10 系统进行开发，发现 adb devices 不能看到设备。&lt;/p&gt;
-
-&lt;h3 id=&#34;解决:3284b07dbf879be3d511a7e668ba9982&#34;&gt;解决：&lt;/h3&gt;
-
-&lt;h5 id=&#34;1-运行下面的命令:3284b07dbf879be3d511a7e668ba9982&#34;&gt;1. 运行下面的命令：&lt;/h5&gt;
-lsusb
-
-&lt;p&gt;通过对比发现，Bus 002 Device 010: ID 2717:9039 就是小米2的设备号&lt;/p&gt;
-
-&lt;h5 id=&#34;2-增加-udev-rules-文件:3284b07dbf879be3d511a7e668ba9982&#34;&gt;2. 增加 udev rules 文件：&lt;/h5&gt;
-sudo vi  /etc/udev/rules.d/70-android.rules
-
-&lt;p&gt;加入内容（对应设备号）：&lt;/p&gt;
-SUBSYSTEM==&#34;usb&#34;, SYSFS{idVendor}==&#34;2717&#34;, MODE==&#34;0666&#34;
-SUBSYSTEM==&#34;usb_device&#34;, SYSFS{idVendor}==&#34;2717&#34;, MODE==&#34;0666&#34;
-SUBSYSTEM==&#34;usb&#34;, ATTR{idVendor}==&#34;2717&#34;, ATTR{idProduct}==&#34;9039&#34;, SYMLINK+=&#34;android_adb&#34;
-
-&lt;p&gt;修改文件权限：&lt;/p&gt;
-sudo chmod a+rx /etc/udev/rules.d/70-android.rules
-
-&lt;h5 id=&#34;3-重启-udev:3284b07dbf879be3d511a7e668ba9982&#34;&gt;3. 重启 udev&lt;/h5&gt;
-sudo /etc/init.d/udev restart
-
-&lt;h5 id=&#34;4-增加-adb-usb-ini-文件:3284b07dbf879be3d511a7e668ba9982&#34;&gt;4. 增加 adb_usb.ini 文件&lt;/h5&gt;
-vi ~/.android/adb_usb.ini
-
-&lt;p&gt;加入内容（对应设备号）：&lt;/p&gt;
-0x2717
-
-&lt;h5 id=&#34;5-到-sdk-下的-platform-tools-下:3284b07dbf879be3d511a7e668ba9982&#34;&gt;5. 到 SDK 下的 platform-tools 下：&lt;/h5&gt;
-./adb kill-server
-./adb devices
-
-&lt;h5 id=&#34;6-搞定:3284b07dbf879be3d511a7e668ba9982&#34;&gt;6. 搞定！&lt;/h5&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2013/06/14/ubuntu_android_xiaomi2/</guid>
+      <description>问题： 小米2 通过 USB 连接到 Ubuntu 12.10 系统进行开发，发现 adb devices 不能看到设备。 解决： 1. 运行下面的命令： 1 lsusb 通过对比发现，Bus 002 Device 010: ID 2717:9039 就是小米2的设备号</description>
     </item>
     
     <item>
       <title>Android 静默安装 apk</title>
-      <link>http://blog.wenzhixin.net.cn/2013/03/18/android_install</link>
+      <link>http://blog.wenzhixin.net.cn/2013/03/18/android_install/</link>
       <pubDate>Mon, 18 Mar 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/03/18/android_install</guid>
-      <description>
-
-&lt;h4 id=&#34;获取-root-权限:321d7f7ef4719249a2a410a8ff80d313&#34;&gt;获取 root 权限&lt;/h4&gt;
-su
-
-&lt;h4 id=&#34;安装-apk:321d7f7ef4719249a2a410a8ff80d313&#34;&gt;安装 apk&lt;/h4&gt;
-pm install -r package
-
-&lt;h4 id=&#34;具体代码:321d7f7ef4719249a2a410a8ff80d313&#34;&gt;具体代码&lt;/h4&gt;
-private void downloadApk(final String fileUrl) {
-    new Thread() {
-        public void run() {
-            String filePath = Environment.getExternalStorageDirectory().getPath() + &#34;/&#34; + APK_NAME;
-            InputStream is = null;
-            FileOutputStream fos = null;
-            try {
-                URL url = new URL(fileUrl);
-                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-
-                File file = new File(filePath);
-                file.createNewFile();// 新建文件
-
-                is = conn.getInputStream();
-                fos = new FileOutputStream(file);
-                byte[] buffer = new byte[1024];
-                while (true) {
-                    int numread = is.read(buffer);
-                    if (numread &lt;= 0) {
-                        break;
-                    }
-                    fos.write(buffer, 0, numread);
-                }
-                fos.flush();
-            } catch (MalformedURLException e) {
-                System.out.println(e.getMessage());
-            } catch (IOException e) {
-                System.out.println(e.getMessage());
-            } finally {
-                try {
-                    is.close();
-                    fos.close();
-                    System.out.println(&#34;下载成功！&#34;);
-                    installApk(filePath);
-                } catch (IOException e) {
-                    System.out.println(&#34;下载失败！&#34;);
-                    System.out.println(e.getMessage());
-                }
-            }
-        }
-    }.start();
-}
-
-private void installApk(final String filePath) {
-    new Thread() {
-        public void run() {
-            Process process = null;
-            OutputStream out = null;
-            try {
-                // 请求root
-                process = Runtime.getRuntime().exec(&#34;su&#34;);
-                out = process.getOutputStream();
-                // 调用安装
-                out.write((&#34;pm install -r &#34; + filePath + &#34;\n&#34;).getBytes());
-            } catch (IOException e) {
-                System.out.println(e.getMessage());
-            } catch (Exception e) {
-                System.out.println(e.getMessage());
-            } finally {
-                try {
-                    out.flush();
-                    out.close();
-                    System.out.println(&#34;安装成功！&#34;);
-                    startApk();
-                } catch (IOException e) {
-                    System.out.println(&#34;安装失败！&#34;);
-                    System.out.println(e.getMessage());
-                }
-            }
-        }
-    }.start();
-}
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2013/03/18/android_install/</guid>
+      <description>获取 root 权限 1 su 安装 apk 1 pm install -r package 具体代码 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51</description>
     </item>
     
     <item>
       <title>Android ant 编译问题收集</title>
-      <link>http://blog.wenzhixin.net.cn/2013/02/26/android_ant_problem</link>
+      <link>http://blog.wenzhixin.net.cn/2013/02/26/android_ant_problem/</link>
       <pubDate>Tue, 26 Feb 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/02/26/android_ant_problem</guid>
-      <description>
-
-&lt;h4 id=&#34;问题:6edc530cf689cf0a05aea6add3f6e7b3&#34;&gt;问题：&lt;/h4&gt;
-aapt not found under the right path
-
-&lt;h4 id=&#34;解决:6edc530cf689cf0a05aea6add3f6e7b3&#34;&gt;解决：&lt;/h4&gt;
-sudo apt-get install ia32-libs # 12.04
-sudo apt-get install lib32z1 # 14.04
-
-&lt;h4 id=&#34;问题-1:6edc530cf689cf0a05aea6add3f6e7b3&#34;&gt;问题：&lt;/h4&gt;
- Perhaps JAVA_HOME does not point to the JDK. It is currently set to &#34;/usr/lib/jvm/java-6-openjdk/jre&#34;
-
-&lt;h4 id=&#34;解决-1:6edc530cf689cf0a05aea6add3f6e7b3&#34;&gt;解决：&lt;/h4&gt;
-
-&lt;p&gt;Fixed it by installing the open jdk:&lt;/p&gt;
-sudo apt-get install openjdk-7-jdk
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2013/02/26/android_ant_problem/</guid>
+      <description>问题： 1 aapt not found under the right path 解决： 1 2 sudo apt-get install ia32-libs # 12.04 sudo apt-get install lib32z1 # 14.04 问题： 1 Perhaps JAVA_HOME does not point to the JDK. It is currently set to &amp;#34;/usr/lib/jvm/java-6-openjdk/jre&amp;#34; 解决： Fixed it by installing the open jdk: 1 sudo apt-get install openjdk-7-jdk</description>
     </item>
     
     <item>
       <title>PhoneGap Plugin 之 Hello World</title>
-      <link>http://blog.wenzhixin.net.cn/2012/08/01/phonegap_plugin_hello_world</link>
+      <link>http://blog.wenzhixin.net.cn/2012/08/01/phonegap_plugin_hello_world/</link>
       <pubDate>Wed, 01 Aug 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/08/01/phonegap_plugin_hello_world</guid>
-      <description>
-
-&lt;h4 id=&#34;1-编写java类并继承plugin:9fe4c1aee8271355213f01b6ed26f588&#34;&gt;1、编写Java类并继承Plugin：&lt;/h4&gt;
-public class MyPlugin extends Plugin {
-
-    @SuppressWarnings(&#34;deprecation&#34;)
-    @Override
-    public PluginResult execute(String action, JSONArray args, String callbackId) {
-        PluginResult result = new PluginResult(Status.INVALID_ACTION);
-
-        if (action.equals(&#34;hello&#34;)) {
-                try {
-                        Toast.makeText(cordova.getContext(), &#34;Hello World!&#34;, Toast.LENGTH_SHORT).show();
-                        result = new PluginResult(Status.OK, &#34;Hello World!&#34;);
-                }
-                catch (NameNotFoundException nnfe) {
-                        result = new PluginResult(Status.ERROR, nnfe.getMessage());
-                }
-        }
-        return result;
-    }
-
-}
-
-&lt;h4 id=&#34;2-配置-res-xml-config-xml-文件:9fe4c1aee8271355213f01b6ed26f588&#34;&gt;2、配置 res/xml/config.xml 文件：&lt;/h4&gt;
-&lt;plugin name=&#34;MyPlugin&#34; value=&#34;com.wenyi.hello.MyPlugin&#34;/&gt;
-
-&lt;h4 id=&#34;3-新建-plugin-js-文件:9fe4c1aee8271355213f01b6ed26f588&#34;&gt;3、新建 plugin.js 文件：&lt;/h4&gt;
-window.myplugin = {
-
-&lt;p&gt;        hello: function(callback) {        
-                cordova.exec(callback, function(err) {        
-                        callback(err);
-                }, &amp;ldquo;MyPlugin&amp;rdquo;, &amp;ldquo;hello&amp;rdquo;, []);
-        }
-    };&lt;/p&gt;
-
-&lt;p&gt;API: cordova.exec(success, error, service, action, args);&lt;/p&gt;
-
-&lt;h4 id=&#34;4-使用:9fe4c1aee8271355213f01b6ed26f588&#34;&gt;4、使用：&lt;/h4&gt;
-myplugin.hello(function(data) {
-
-&lt;p&gt;        console.log(data); //Hello World!
-    });&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2012/08/01/phonegap_plugin_hello_world/</guid>
+      <description>1、编写Java类并继承Plugin： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 public class MyPlugin extends Plugin { @SuppressWarnings(&amp;#34;deprecation&amp;#34;) @Override public PluginResult execute(String action, JSONArray args, String callbackId) { PluginResult result = new PluginResult(Status.INVALID_ACTION); if (action.equals(&amp;#34;hello&amp;#34;)) { try { Toast.makeText(cordova.getContext(), &amp;#34;Hello World!&amp;#34;, Toast.LENGTH_SHORT).show();</description>
     </item>
     
     <item>
       <title>PhoneGap Plugin 之 Hello World</title>
-      <link>http://blog.wenzhixin.net.cn/2012/08/01/phonegap_plugin_hello_world</link>
+      <link>http://blog.wenzhixin.net.cn/2012/08/01/phonegap_plugin_hello_world/</link>
       <pubDate>Wed, 01 Aug 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/08/01/phonegap_plugin_hello_world</guid>
-      <description>
-
-&lt;h4 id=&#34;1-编写java类并继承plugin:9fe4c1aee8271355213f01b6ed26f588&#34;&gt;1、编写Java类并继承Plugin：&lt;/h4&gt;
-public class MyPlugin extends Plugin {
-
-    @SuppressWarnings(&#34;deprecation&#34;)
-    @Override
-    public PluginResult execute(String action, JSONArray args, String callbackId) {
-        PluginResult result = new PluginResult(Status.INVALID_ACTION);
-
-        if (action.equals(&#34;hello&#34;)) {
-                try {
-                        Toast.makeText(cordova.getContext(), &#34;Hello World!&#34;, Toast.LENGTH_SHORT).show();
-                        result = new PluginResult(Status.OK, &#34;Hello World!&#34;);
-                }
-                catch (NameNotFoundException nnfe) {
-                        result = new PluginResult(Status.ERROR, nnfe.getMessage());
-                }
-        }
-        return result;
-    }
-
-}
-
-&lt;h4 id=&#34;2-配置-res-xml-config-xml-文件:9fe4c1aee8271355213f01b6ed26f588&#34;&gt;2、配置 res/xml/config.xml 文件：&lt;/h4&gt;
-&lt;plugin name=&#34;MyPlugin&#34; value=&#34;com.wenyi.hello.MyPlugin&#34;/&gt;
-
-&lt;h4 id=&#34;3-新建-plugin-js-文件:9fe4c1aee8271355213f01b6ed26f588&#34;&gt;3、新建 plugin.js 文件：&lt;/h4&gt;
-window.myplugin = {
-
-&lt;p&gt;        hello: function(callback) {        
-                cordova.exec(callback, function(err) {        
-                        callback(err);
-                }, &amp;ldquo;MyPlugin&amp;rdquo;, &amp;ldquo;hello&amp;rdquo;, []);
-        }
-    };&lt;/p&gt;
-
-&lt;p&gt;API: cordova.exec(success, error, service, action, args);&lt;/p&gt;
-
-&lt;h4 id=&#34;4-使用:9fe4c1aee8271355213f01b6ed26f588&#34;&gt;4、使用：&lt;/h4&gt;
-myplugin.hello(function(data) {
-
-&lt;p&gt;        console.log(data); //Hello World!
-    });&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2012/08/01/phonegap_plugin_hello_world/</guid>
+      <description>1、编写Java类并继承Plugin： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 public class MyPlugin extends Plugin { @SuppressWarnings(&amp;#34;deprecation&amp;#34;) @Override public PluginResult execute(String action, JSONArray args, String callbackId) { PluginResult result = new PluginResult(Status.INVALID_ACTION); if (action.equals(&amp;#34;hello&amp;#34;)) { try { Toast.makeText(cordova.getContext(), &amp;#34;Hello World!&amp;#34;, Toast.LENGTH_SHORT).show();</description>
     </item>
     
     <item>
       <title>ubuntu 连接平板进行 Android 开发的问题</title>
-      <link>http://blog.wenzhixin.net.cn/2012/06/05/the_ubuntu_connection_plate_for_the_development_of_android_problem</link>
+      <link>http://blog.wenzhixin.net.cn/2012/06/05/the_ubuntu_connection_plate_for_the_development_of_android_problem/</link>
       <pubDate>Tue, 05 Jun 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/06/05/the_ubuntu_connection_plate_for_the_development_of_android_problem</guid>
-      <description>&lt;p&gt;ubuntu 下连接平板进行 Android 开发，在 eclipse 下会显示乱码(???)并无法使用，解决方法如下：&lt;/p&gt;
-
-&lt;p&gt;1、设置平板：&lt;/p&gt;
-
-&lt;p&gt;系统设置-应用程序-开发-USB调试，打勾该选项&lt;/p&gt;
-
-&lt;p&gt;2、在终端下输入：lsusb&lt;/p&gt;
-
-&lt;p&gt;找到平板电脑的相应信息：&lt;/p&gt;
-Bus 002 Device 036: ID 18d1:0002 Google Inc.
-
-&lt;p&gt;3、新建文件，添加以下内容（idVendor 对于相应的 ID 号）：&lt;/p&gt;
-sudo vi /etc/udev/rules.d/70-android.rules
-
-SUBSYSTEM==&#34;usb&#34;, ATTR{idVendor}==&#34;18d1&#34;, MODE=&#34;0666&#34;, GROUP=&#34;plugdev&#34;
-
-&lt;p&gt;4、修改权限并重启udev：&lt;/p&gt;
-sudo chmod +x /etc/udev/rules.d/70-android.rules
-sudo /etc/init.d/udev restart
-
-&lt;p&gt;5、进入 platform-tools 目录，输入：
-    ./adb kill-server
-    ./adb devices&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2012/06/05/the_ubuntu_connection_plate_for_the_development_of_android_problem/</guid>
+      <description>ubuntu 下连接平板进行 Android 开发，在 eclipse 下会显示乱码(???)并无法使用，解决方法如下： 1、设置平板： 系统设置-应用程序-开发-USB调试，打勾该选项 2</description>
     </item>
     
     <item>
       <title>ubuntu 连接平板进行 Android 开发的问题</title>
-      <link>http://blog.wenzhixin.net.cn/2012/06/05/the_ubuntu_connection_plate_for_the_development_of_android_problem</link>
+      <link>http://blog.wenzhixin.net.cn/2012/06/05/the_ubuntu_connection_plate_for_the_development_of_android_problem/</link>
       <pubDate>Tue, 05 Jun 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/06/05/the_ubuntu_connection_plate_for_the_development_of_android_problem</guid>
-      <description>&lt;p&gt;ubuntu 下连接平板进行 Android 开发，在 eclipse 下会显示乱码(???)并无法使用，解决方法如下：&lt;/p&gt;
-
-&lt;p&gt;1、设置平板：&lt;/p&gt;
-
-&lt;p&gt;系统设置-应用程序-开发-USB调试，打勾该选项&lt;/p&gt;
-
-&lt;p&gt;2、在终端下输入：lsusb&lt;/p&gt;
-
-&lt;p&gt;找到平板电脑的相应信息：&lt;/p&gt;
-Bus 002 Device 036: ID 18d1:0002 Google Inc.
-
-&lt;p&gt;3、新建文件，添加以下内容（idVendor 对于相应的 ID 号）：&lt;/p&gt;
-sudo vi /etc/udev/rules.d/70-android.rules
-
-SUBSYSTEM==&#34;usb&#34;, ATTR{idVendor}==&#34;18d1&#34;, MODE=&#34;0666&#34;, GROUP=&#34;plugdev&#34;
-
-&lt;p&gt;4、修改权限并重启udev：&lt;/p&gt;
-sudo chmod +x /etc/udev/rules.d/70-android.rules
-sudo /etc/init.d/udev restart
-
-&lt;p&gt;5、进入 platform-tools 目录，输入：
-    ./adb kill-server
-    ./adb devices&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2012/06/05/the_ubuntu_connection_plate_for_the_development_of_android_problem/</guid>
+      <description>ubuntu 下连接平板进行 Android 开发，在 eclipse 下会显示乱码(???)并无法使用，解决方法如下： 1、设置平板： 系统设置-应用程序-开发-USB调试，打勾该选项 2</description>
     </item>
     
     <item>
       <title>ubuntu 连接华为 C8650 进行 Android 开发的问题</title>
-      <link>http://blog.wenzhixin.net.cn/2012/06/04/the_ubuntu_connection_c8650_android_development_of_huawei</link>
+      <link>http://blog.wenzhixin.net.cn/2012/06/04/the_ubuntu_connection_c8650_android_development_of_huawei/</link>
       <pubDate>Mon, 04 Jun 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/06/04/the_ubuntu_connection_c8650_android_development_of_huawei</guid>
-      <description>&lt;p&gt;ubuntu 下连接华为 C8650 进行 Android 开发，在 eclipse 下会显示乱码(???)并无法使用，解决方法如下：&lt;/p&gt;
-
-&lt;p&gt;1、使用电话拨打&lt;em&gt;#&lt;/em&gt;#2846579#&lt;em&gt;#&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;2、然后选择 projectMenu-后台设置-USB端口设置-Google模式&lt;/p&gt;
-
-&lt;p&gt;3、重启手机&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2012/06/04/the_ubuntu_connection_c8650_android_development_of_huawei/</guid>
+      <description>ubuntu 下连接华为 C8650 进行 Android 开发，在 eclipse 下会显示乱码(???)并无法使用，解决方法如下： 1、使用电话拨打##2846579## 2、然后选择 projec</description>
     </item>
     
     <item>
       <title>ubuntu 连接华为 C8650 进行 Android 开发的问题</title>
-      <link>http://blog.wenzhixin.net.cn/2012/06/04/the_ubuntu_connection_c8650_android_development_of_huawei</link>
+      <link>http://blog.wenzhixin.net.cn/2012/06/04/the_ubuntu_connection_c8650_android_development_of_huawei/</link>
       <pubDate>Mon, 04 Jun 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/06/04/the_ubuntu_connection_c8650_android_development_of_huawei</guid>
-      <description>&lt;p&gt;ubuntu 下连接华为 C8650 进行 Android 开发，在 eclipse 下会显示乱码(???)并无法使用，解决方法如下：&lt;/p&gt;
-
-&lt;p&gt;1、使用电话拨打&lt;em&gt;#&lt;/em&gt;#2846579#&lt;em&gt;#&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;2、然后选择 projectMenu-后台设置-USB端口设置-Google模式&lt;/p&gt;
-
-&lt;p&gt;3、重启手机&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2012/06/04/the_ubuntu_connection_c8650_android_development_of_huawei/</guid>
+      <description>ubuntu 下连接华为 C8650 进行 Android 开发，在 eclipse 下会显示乱码(???)并无法使用，解决方法如下： 1、使用电话拨打##2846579## 2、然后选择 projec</description>
     </item>
     
     <item>
       <title>虚拟机安装 Android_x86 系统，用于开发、测试 Android 程序</title>
-      <link>http://blog.wenzhixin.net.cn/2012/06/02/install_android_x86_virtual_machine_for_the_development_testing_android_applications</link>
+      <link>http://blog.wenzhixin.net.cn/2012/06/02/install_android_x86_virtual_machine_for_the_development_testing_android_applications/</link>
       <pubDate>Sat, 02 Jun 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/06/02/install_android_x86_virtual_machine_for_the_development_testing_android_applications</guid>
-      <description>
-
-&lt;h4 id=&#34;1-下载镜像:a1410ea22f318ffac0983b78a8d3a8f9&#34;&gt;1、下载镜像：&lt;/h4&gt;
-
-&lt;p&gt;从 &lt;a href=&#34;http://www.android-x86.org/download 下载&#34;&gt;http://www.android-x86.org/download 下载&lt;/a&gt; android_x86 iso 镜像（例如 android-x86-2.3-RC1-eeepc.iso）&lt;/p&gt;
-
-&lt;h4 id=&#34;2-安装系统:a1410ea22f318ffac0983b78a8d3a8f9&#34;&gt;2、安装系统：&lt;/h4&gt;
-
-&lt;p&gt;使用虚拟机 VirtualBox 来安装系统，步骤如下：&lt;/p&gt;
-
-&lt;p&gt;（1）选择目标 OS：Linux&lt;/p&gt;
-
-&lt;p&gt;（2）目标 OS 版本：others&lt;/p&gt;
-
-&lt;p&gt;（3）内存：512MB&lt;/p&gt;
-
-&lt;p&gt;（4）硬盘：VDI drive，动态大小，1GB&lt;/p&gt;
-
-&lt;p&gt;（5）启动并选择下载的 iso 镜像文件&lt;/p&gt;
-
-&lt;p&gt;（6）从 boot 菜单中选择 install to hard disk（安装到硬盘）。&lt;/p&gt;
-
-&lt;p&gt;（7）创建一个新的分区，格式化为 ext3 格式，并选择该分区进行系统安装&lt;/p&gt;
-
-&lt;h4 id=&#34;3-添加手机分辨率模式:a1410ea22f318ffac0983b78a8d3a8f9&#34;&gt;3、添加手机分辨率模式：&lt;/h4&gt;
-
-&lt;p&gt;在终端下输入：&lt;/p&gt;
-
-&lt;p&gt;（1）VBoxManage setextradata &amp;ldquo;android2.3&amp;rdquo; &amp;ldquo;CustomVideoMode1&amp;rdquo; &amp;ldquo;320x480x16&amp;rdquo;&lt;/p&gt;
-
-&lt;p&gt;（2）VBoxManage setextradata &amp;ldquo;android2.3&amp;rdquo; &amp;ldquo;CustomVideoMode2&amp;rdquo; &amp;ldquo;480x800x16&amp;rdquo;&lt;/p&gt;
-
-&lt;h4 id=&#34;4-修改-android-系统的-grub-配置:a1410ea22f318ffac0983b78a8d3a8f9&#34;&gt;4、修改 Android 系统的 Grub 配置：&lt;/h4&gt;
-
-&lt;p&gt;（1）启动 Android 系统并选择 Debug mode（调试模式）&lt;/p&gt;
-
-&lt;p&gt;（2）修改 menu.lst 文件：&lt;/p&gt;
-mount -o remount,rw /mnt
-
-vi /mnt/grub/menu.lst
-
-&lt;p&gt;修改启动参数：&lt;/p&gt;
-androidboot_hardware=eeepc
-androidboot_hardware=generic_x86 
-
-&lt;p&gt;在 DPI=240 / DPI=160 后添加&lt;/p&gt;
-UVESA_MODE=480x800/UVESA_MODE=320x480
-
-&lt;p&gt;（3）保存并重启系统&lt;/p&gt;
-
-&lt;h4 id=&#34;5-avd-和-eclipse-连接到-android-系统:a1410ea22f318ffac0983b78a8d3a8f9&#34;&gt;5、AVD 和 Eclipse 连接到 Android 系统：&lt;/h4&gt;
-
-&lt;p&gt;（1）进入命令行模式（Alt+F1），输入：netcfg 查看当前 IP 地址&lt;/p&gt;
-
-&lt;p&gt;（2）进入 android 的 platform-tools 目录，输入：./adb connect IP地址&lt;/p&gt;
-
-&lt;p&gt;（3）Eclipse 下，run 并选择该 Android 系统便可&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;ps：&lt;/p&gt;
-
-&lt;p&gt;（1）在 Android 系统屏幕上没有看到鼠标指针，可通过 VirualBox 菜单禁止 mouse integration（鼠标整合）( Host Key + I）&lt;/p&gt;
-
-&lt;p&gt;（2）&amp;rdquo;Windows 键&amp;rdquo;相当于 Android 的 Home 按钮&lt;/p&gt;
-
-&lt;p&gt;（3）&amp;rdquo;Esc&amp;rdquo; 相当于 Android 的 Back &lt;/p&gt;
-
-&lt;p&gt;（4）按钮F2 相当于 Android 的 Menu 按钮&lt;/p&gt;
-
-&lt;p&gt;（5）F3 相当于 Android 的 Search 按钮&lt;/p&gt;
-
-&lt;p&gt;（6）Alt+F1 =&amp;gt; 切换到控制台模式&lt;/p&gt;
-
-&lt;p&gt;（7）Alt+F7 =&amp;gt; 切换到图形界面模式&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2012/06/02/install_android_x86_virtual_machine_for_the_development_testing_android_applications/</guid>
+      <description>1、下载镜像： 从 http://www.android-x86.org/download 下载 android_x86 iso 镜像（例如 android-x86-2.3-RC1-eeepc.iso） 2、安装系统： 使用虚拟机 VirtualBox 来安装系统，步骤如</description>
+    </item>
+    
+    <item>
+      <title>虚拟机安装 Android_x86 系统，用于开发、测试 Android 程序</title>
+      <link>http://blog.wenzhixin.net.cn/2012/06/02/install_android_x86_virtual_machine_for_the_development_testing_android_applications/</link>
+      <pubDate>Sat, 02 Jun 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2012/06/02/install_android_x86_virtual_machine_for_the_development_testing_android_applications/</guid>
+      <description>1、下载镜像： 从 http://www.android-x86.org/download 下载 android_x86 iso 镜像（例如 android-x86-2.3-RC1-eeepc.iso） 2、安装系统： 使用虚拟机 VirtualBox 来安装系统，步骤如</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 下 eclipse 搭建 Android 开发环境安装 ADT 的问题</title>
+      <link>http://blog.wenzhixin.net.cn/2012/04/10/ubuntu_eclipse_build_android_development_environment_for_the_installation_adt/</link>
+      <pubDate>Tue, 10 Apr 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2012/04/10/ubuntu_eclipse_build_android_development_environment_for_the_installation_adt/</guid>
+      <description>1、无法连接到 Repository： https://dl-ssl.google.com/android/eclipse/ 或者 http://dl-ssl.google.com/android/eclipse/ 解决：下载 zip 包进行本地安装（如：ADT-18.0.0）或者通过翻墙设置代理 2、长时间停留在 calculating requirements and</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 下 eclipse 搭建 Android 开发环境安装 ADT 的问题</title>
+      <link>http://blog.wenzhixin.net.cn/2012/04/10/ubuntu_eclipse_build_android_development_environment_for_the_installation_adt/</link>
+      <pubDate>Tue, 10 Apr 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2012/04/10/ubuntu_eclipse_build_android_development_environment_for_the_installation_adt/</guid>
+      <description>1、无法连接到 Repository： https://dl-ssl.google.com/android/eclipse/ 或者 http://dl-ssl.google.com/android/eclipse/ 解决：下载 zip 包进行本地安装（如：ADT-18.0.0）或者通过翻墙设置代理 2、长时间停留在 calculating requirements and</description>
     </item>
     
   </channel>

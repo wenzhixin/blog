@@ -8,112 +8,26 @@
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Wed, 01 Aug 2012 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.wenzhixin.net.cn/tags/webapp/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/webapp/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>PhoneGap Plugin 之 Hello World</title>
-      <link>http://blog.wenzhixin.net.cn/2012/08/01/phonegap_plugin_hello_world</link>
+      <link>http://blog.wenzhixin.net.cn/2012/08/01/phonegap_plugin_hello_world/</link>
       <pubDate>Wed, 01 Aug 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/08/01/phonegap_plugin_hello_world</guid>
-      <description>
-
-&lt;h4 id=&#34;1-编写java类并继承plugin:9fe4c1aee8271355213f01b6ed26f588&#34;&gt;1、编写Java类并继承Plugin：&lt;/h4&gt;
-public class MyPlugin extends Plugin {
-
-    @SuppressWarnings(&#34;deprecation&#34;)
-    @Override
-    public PluginResult execute(String action, JSONArray args, String callbackId) {
-        PluginResult result = new PluginResult(Status.INVALID_ACTION);
-
-        if (action.equals(&#34;hello&#34;)) {
-                try {
-                        Toast.makeText(cordova.getContext(), &#34;Hello World!&#34;, Toast.LENGTH_SHORT).show();
-                        result = new PluginResult(Status.OK, &#34;Hello World!&#34;);
-                }
-                catch (NameNotFoundException nnfe) {
-                        result = new PluginResult(Status.ERROR, nnfe.getMessage());
-                }
-        }
-        return result;
-    }
-
-}
-
-&lt;h4 id=&#34;2-配置-res-xml-config-xml-文件:9fe4c1aee8271355213f01b6ed26f588&#34;&gt;2、配置 res/xml/config.xml 文件：&lt;/h4&gt;
-&lt;plugin name=&#34;MyPlugin&#34; value=&#34;com.wenyi.hello.MyPlugin&#34;/&gt;
-
-&lt;h4 id=&#34;3-新建-plugin-js-文件:9fe4c1aee8271355213f01b6ed26f588&#34;&gt;3、新建 plugin.js 文件：&lt;/h4&gt;
-window.myplugin = {
-
-&lt;p&gt;        hello: function(callback) {        
-                cordova.exec(callback, function(err) {        
-                        callback(err);
-                }, &amp;ldquo;MyPlugin&amp;rdquo;, &amp;ldquo;hello&amp;rdquo;, []);
-        }
-    };&lt;/p&gt;
-
-&lt;p&gt;API: cordova.exec(success, error, service, action, args);&lt;/p&gt;
-
-&lt;h4 id=&#34;4-使用:9fe4c1aee8271355213f01b6ed26f588&#34;&gt;4、使用：&lt;/h4&gt;
-myplugin.hello(function(data) {
-
-&lt;p&gt;        console.log(data); //Hello World!
-    });&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2012/08/01/phonegap_plugin_hello_world/</guid>
+      <description>1、编写Java类并继承Plugin： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 public class MyPlugin extends Plugin { @SuppressWarnings(&amp;#34;deprecation&amp;#34;) @Override public PluginResult execute(String action, JSONArray args, String callbackId) { PluginResult result = new PluginResult(Status.INVALID_ACTION); if (action.equals(&amp;#34;hello&amp;#34;)) { try { Toast.makeText(cordova.getContext(), &amp;#34;Hello World!&amp;#34;, Toast.LENGTH_SHORT).show();</description>
     </item>
     
     <item>
       <title>PhoneGap Plugin 之 Hello World</title>
-      <link>http://blog.wenzhixin.net.cn/2012/08/01/phonegap_plugin_hello_world</link>
+      <link>http://blog.wenzhixin.net.cn/2012/08/01/phonegap_plugin_hello_world/</link>
       <pubDate>Wed, 01 Aug 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/08/01/phonegap_plugin_hello_world</guid>
-      <description>
-
-&lt;h4 id=&#34;1-编写java类并继承plugin:9fe4c1aee8271355213f01b6ed26f588&#34;&gt;1、编写Java类并继承Plugin：&lt;/h4&gt;
-public class MyPlugin extends Plugin {
-
-    @SuppressWarnings(&#34;deprecation&#34;)
-    @Override
-    public PluginResult execute(String action, JSONArray args, String callbackId) {
-        PluginResult result = new PluginResult(Status.INVALID_ACTION);
-
-        if (action.equals(&#34;hello&#34;)) {
-                try {
-                        Toast.makeText(cordova.getContext(), &#34;Hello World!&#34;, Toast.LENGTH_SHORT).show();
-                        result = new PluginResult(Status.OK, &#34;Hello World!&#34;);
-                }
-                catch (NameNotFoundException nnfe) {
-                        result = new PluginResult(Status.ERROR, nnfe.getMessage());
-                }
-        }
-        return result;
-    }
-
-}
-
-&lt;h4 id=&#34;2-配置-res-xml-config-xml-文件:9fe4c1aee8271355213f01b6ed26f588&#34;&gt;2、配置 res/xml/config.xml 文件：&lt;/h4&gt;
-&lt;plugin name=&#34;MyPlugin&#34; value=&#34;com.wenyi.hello.MyPlugin&#34;/&gt;
-
-&lt;h4 id=&#34;3-新建-plugin-js-文件:9fe4c1aee8271355213f01b6ed26f588&#34;&gt;3、新建 plugin.js 文件：&lt;/h4&gt;
-window.myplugin = {
-
-&lt;p&gt;        hello: function(callback) {        
-                cordova.exec(callback, function(err) {        
-                        callback(err);
-                }, &amp;ldquo;MyPlugin&amp;rdquo;, &amp;ldquo;hello&amp;rdquo;, []);
-        }
-    };&lt;/p&gt;
-
-&lt;p&gt;API: cordova.exec(success, error, service, action, args);&lt;/p&gt;
-
-&lt;h4 id=&#34;4-使用:9fe4c1aee8271355213f01b6ed26f588&#34;&gt;4、使用：&lt;/h4&gt;
-myplugin.hello(function(data) {
-
-&lt;p&gt;        console.log(data); //Hello World!
-    });&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2012/08/01/phonegap_plugin_hello_world/</guid>
+      <description>1、编写Java类并继承Plugin： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 public class MyPlugin extends Plugin { @SuppressWarnings(&amp;#34;deprecation&amp;#34;) @Override public PluginResult execute(String action, JSONArray args, String callbackId) { PluginResult result = new PluginResult(Status.INVALID_ACTION); if (action.equals(&amp;#34;hello&amp;#34;)) { try { Toast.makeText(cordova.getContext(), &amp;#34;Hello World!&amp;#34;, Toast.LENGTH_SHORT).show();</description>
     </item>
     
   </channel>

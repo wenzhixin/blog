@@ -8,128 +8,17 @@
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Thu, 20 Jun 2013 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.wenzhixin.net.cn/tags/%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Web 前端开发有用的代码片段</title>
-      <link>http://blog.wenzhixin.net.cn/2013/06/20/web_code_gist</link>
+      <link>http://blog.wenzhixin.net.cn/2013/06/20/web_code_gist/</link>
       <pubDate>Thu, 20 Jun 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/06/20/web_code_gist</guid>
-      <description>
-
-&lt;h3 id=&#34;1-定时器:517902b7277b9dd563d99f8ec5586bdc&#34;&gt;1. 定时器&lt;/h3&gt;
-
-&lt;p&gt;经常会用到 setTimeout 和 setInterval 函数，假如可以整合起来，会方便很多：&lt;/p&gt;
-function timer(func, start, interval, end) {
-    start = start || 0;
-    if (arguments.length &lt;= 2) {
-        setTimeout(func, start);
-    } else {
-        var repeat = function() {
-            var i = setInterval(func, interval);
-            end &amp;&amp; setTimeout(function() {
-                clearInterval(i);
-            }, end);
-        };
-        setTimeout(repeat, start);
-    }
-}
-
-&lt;p&gt;参数：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;func：需要运行的函数&lt;/li&gt;
-&lt;li&gt;start：开始时间，单位为毫秒，不填表示立即开始&lt;/li&gt;
-&lt;li&gt;interval：运行间隔，单位为毫秒，不填表示运行一次&lt;/li&gt;
-&lt;li&gt;end：结束时间，单位为毫秒&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;例子：&lt;/p&gt;
-// 立即运行
-timer(function() {
-    console.log(&#39;test1&#39;);
-});
-
-// 2秒后开始运行
-timer(function() {
-    console.log(&#39;test2&#39;);
-}, 2000);
-
-// 2秒后开始运行，并隔2秒重复运行1次
-timer(function() {
-    console.log(&#39;test3&#39;);
-}, 2000, 2000);
-
-// 2秒后开始运行，并隔1秒重复运行1次，结束时间为10秒后
-timer(function() {
-    console.log(&#39;test4&#39;);
-}, 2000, 1000, 10000);
-
-&lt;p&gt;源码：&lt;a href=&#34;https://gist.github.com/wenzhixin/5820136&#34;&gt;https://gist.github.com/wenzhixin/5820136&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;2-url-解析:517902b7277b9dd563d99f8ec5586bdc&#34;&gt;2. url 解析&lt;/h3&gt;
-
-&lt;p&gt;在看 location 的时候（详细见《JavaScript权威指南》14.2 浏览器定位和导航），说到 location 同时也适用与 a 和 area 标签，
-于是在想平时不是经常要解析 url 字符串嘛，那利用 a 或者 area 标签岂不是更省事：&lt;/p&gt;
-function url(href) {
-    var a = document.createElement(&#39;a&#39;);//or document.createElement(&#39;area&#39;)
-    a.href = href;
-    return a;
-}
-
-&lt;p&gt;参数：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;href：需要解析的 href 字符串&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;例子：&lt;/p&gt;
-var u = url(&#39;http://wenzhixin.net.cn:12345/test?name=wenzhixin#about&#39;);
-console.log(u.protocol); // http:
-console.log(u.hostname); // wenzhixin.net.cn
-console.log(u.port); // 12345
-console.log(u.pathname); // /test
-console.log(u.search); // ?name=wenzhixin
-console.log(u.hash); // #about
-
-&lt;p&gt;源码：&lt;a href=&#34;https://gist.github.com/wenzhixin/5820633&#34;&gt;https://gist.github.com/wenzhixin/5820633&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;3-search-解析:517902b7277b9dd563d99f8ec5586bdc&#34;&gt;3. search 解析&lt;/h3&gt;
-
-&lt;p&gt;解析 location.search，转换为对象：&lt;/p&gt;
-function parse(search) {
-    var query = {},
-        params = search.substring(1).split(&#39;&amp;&#39;);
-    for (var i = 0, l = params.length; i &lt; l; i++) {
-        var p = params[i].split(&#39;=&#39;);
-        query[p[0]] = p[1] || &#39;&#39;;
-    }
-    return query;
-}
-
-&lt;p&gt;参数：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;search：query 查询字符串&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;例子：&lt;/p&gt;
-var query = parse(&#39;?name=zhixin&amp;age=26&amp;blog=wenzhixin.net.cn&amp;ttt&#39;);
-console.log(query); // Object {name: &#34;zhixin&#34;, age: &#34;26&#34;, blog: &#34;wenzhixin.net.cn&#34;, ttt: &#34;&#34;}
-
-&lt;p&gt;源码：&lt;a href=&#34;https://gist.github.com/wenzhixin/5823839&#34;&gt;https://gist.github.com/wenzhixin/5823839&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;问题：想过用正则&lt;/p&gt;
-.*\?(?:(\w+)=(\w+)&amp;)*(\w+)=(\w+)
-
-&lt;p&gt;来实现的，可是没能匹配出来，结果只能匹配出最后两个，
-才知道是因为 Groups only remember the last value they captured。 或许，有更好的办法？&lt;/p&gt;
-
-&lt;h3 id=&#34;4:517902b7277b9dd563d99f8ec5586bdc&#34;&gt;4. &amp;hellip;&lt;/h3&gt;
-
-&lt;p&gt;(未完待续&amp;hellip;)&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2013/06/20/web_code_gist/</guid>
+      <description>1. 定时器 经常会用到 setTimeout 和 setInterval 函数，假如可以整合起来，会方便很多： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 function timer(func, start, interval, end) { start = start || 0; if (arguments.length &amp;lt;= 2) { setTimeout(func, start); } else { var repeat = function() {</description>
     </item>
     
   </channel>

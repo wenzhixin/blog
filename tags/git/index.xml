@@ -1,41 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Git on 文翼的博客</title>
+    <title>git on 文翼的博客</title>
     <link>http://blog.wenzhixin.net.cn/tags/git/</link>
-    <description>Recent content in Git on 文翼的博客</description>
+    <description>Recent content in git on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Fri, 04 Jan 2013 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.wenzhixin.net.cn/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>git for windows 安装和配置</title>
-      <link>http://blog.wenzhixin.net.cn/2013/01/04/git_for_windows</link>
+      <link>http://blog.wenzhixin.net.cn/2013/01/04/git_for_windows/</link>
       <pubDate>Fri, 04 Jan 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/01/04/git_for_windows</guid>
-      <description>
-
-&lt;h4 id=&#34;1-安装-msysgit:aad2ae081170cdae557e72e4094a2f11&#34;&gt;1. 安装 msysgit:&lt;/h4&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://msysgit.github.com/&#34;&gt;msysgit&lt;/a&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;2-配置用户信息和-alias:aad2ae081170cdae557e72e4094a2f11&#34;&gt;2. 配置用户信息和 alias&lt;/h4&gt;
-
-&lt;p&gt;gitconfig&lt;/p&gt;
-[user]
-    name = zhixin
-    email = wenzhixin2010@gmail.com
-[alias]
-    co = checkout
-    ci = commit -a
-    st = status
-    br = branch
-    oneline = log --pretty=oneline --since=&#39;2 days ago&#39;
-    onelog = log -p -1
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2013/01/04/git_for_windows/</guid>
+      <description>1. 安装 msysgit: msysgit 2. 配置用户信息和 alias gitconfig 1 2 3 4 5 6 7 8 9 10 [user] name = zhixin email = wenzhixin2010@gmail.com [alias] co = checkout ci = commit -a st = status br = branch oneline = log --pretty=oneline --since=&amp;#39;2 days ago&amp;#39; onelog = log -p -1</description>
     </item>
     
   </channel>

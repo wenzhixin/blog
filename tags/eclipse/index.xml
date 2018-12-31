@@ -8,128 +8,26 @@
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Tue, 08 May 2012 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.wenzhixin.net.cn/tags/eclipse/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/eclipse/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Eclipse 安装插件(aptana、svn 、git、Java EE、JSHint)</title>
-      <link>http://blog.wenzhixin.net.cn/2012/05/08/eclipse_install_the_plugin_aptana_svn_git_java_ee_jshint</link>
+      <link>http://blog.wenzhixin.net.cn/2012/05/08/eclipse_install_the_plugin_aptana_svn_git_java_ee_jshint/</link>
       <pubDate>Tue, 08 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/05/08/eclipse_install_the_plugin_aptana_svn_git_java_ee_jshint</guid>
-      <description>&lt;p&gt;1、安装 aptana 插件：&lt;/p&gt;
-
-&lt;p&gt; * 依次点击：Help -&amp;gt; Install New Software&amp;hellip; -&amp;gt; Add&lt;/p&gt;
-
-&lt;p&gt; * 输入：&lt;a href=&#34;http://download.aptana.com/studio3/plugin/install&#34;&gt;http://download.aptana.com/studio3/plugin/install&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt; * 选择：Aptana Studio 3 Plugin，并进行安装&lt;/p&gt;
-
-&lt;p&gt; * 重启 eclipse&lt;/p&gt;
-
-&lt;p&gt;2、安装 svn 插件：&lt;/p&gt;
-
-&lt;p&gt; * 依次点击：Help -&amp;gt; Install New Software&amp;hellip; -&amp;gt; Add&lt;/p&gt;
-
-&lt;p&gt; * 输入：&lt;a href=&#34;http://subclipse.tigris.org/update_1.6.x&#34;&gt;http://subclipse.tigris.org/update_1.6.x&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt; * 选择：Subclipse (Required)、Subversion Client Adapter
-(Required)、Subversion JavaHL Native Library Adapter
-(Required)，并进行安装&lt;/p&gt;
-
-&lt;p&gt; * 安装libsvn-java（Ubuntu 下需要安装）：sudo apt-get install libsvn-java&lt;/p&gt;
-
-&lt;p&gt; * 重启 eclipse&lt;/p&gt;
-
-&lt;p&gt;3、安装 git 插件：&lt;/p&gt;
-
-&lt;p&gt; * 依次点击：Help -&amp;gt; Install New Software&amp;hellip; -&amp;gt; Add&lt;/p&gt;
-
-&lt;p&gt; * 输入：&lt;a href=&#34;http://download.eclipse.org/egit/updates&#34;&gt;http://download.eclipse.org/egit/updates&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt; * 选择：Eclipse EGit，并进行安装&lt;/p&gt;
-
-&lt;p&gt; * 重启 eclipse&lt;/p&gt;
-
-&lt;p&gt;4、安装 Java EE 插件：&lt;/p&gt;
-
-&lt;p&gt; * 依次点击：Help -&amp;gt; Install New Software&amp;hellip; -&amp;gt; Add&lt;/p&gt;
-
-&lt;p&gt; * 输入：&lt;a href=&#34;http://download.eclipse.org/releases/indigo&#34;&gt;http://download.eclipse.org/releases/indigo&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt; * 选择：Eclipse Java EE Developer Tools，并进行安装&lt;/p&gt;
-
-&lt;p&gt; * 重启 eclipse&lt;/p&gt;
-
-&lt;p&gt;5、安装 JSHint 插件：
-* 依次点击：Help -&amp;gt; Install New Software&amp;hellip; -&amp;gt; Add&lt;/p&gt;
-
-&lt;p&gt; * 输入：&lt;a href=&#34;http://github.eclipsesource.com/jshint-eclipse/updates/&#34;&gt;http://github.eclipsesource.com/jshint-eclipse/updates/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt; * 选择：JSHint，并进行安装&lt;/p&gt;
-
-&lt;p&gt; * 重启 eclipse&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2012/05/08/eclipse_install_the_plugin_aptana_svn_git_java_ee_jshint/</guid>
+      <description>1、安装 aptana 插件： * 依次点击：Help -&amp;gt; Install New Software&amp;hellip; -&amp;gt; Add * 输入：http://download.aptana.com/studio3/plugin/</description>
     </item>
     
     <item>
       <title>Eclipse 安装插件(aptana、svn 、git、Java EE、JSHint)</title>
-      <link>http://blog.wenzhixin.net.cn/2012/05/08/eclipse_install_the_plugin_aptana_svn_git_java_ee_jshint</link>
+      <link>http://blog.wenzhixin.net.cn/2012/05/08/eclipse_install_the_plugin_aptana_svn_git_java_ee_jshint/</link>
       <pubDate>Tue, 08 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/05/08/eclipse_install_the_plugin_aptana_svn_git_java_ee_jshint</guid>
-      <description>&lt;p&gt;1、安装 aptana 插件：&lt;/p&gt;
-
-&lt;p&gt; * 依次点击：Help -&amp;gt; Install New Software&amp;hellip; -&amp;gt; Add&lt;/p&gt;
-
-&lt;p&gt; * 输入：&lt;a href=&#34;http://download.aptana.com/studio3/plugin/install&#34;&gt;http://download.aptana.com/studio3/plugin/install&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt; * 选择：Aptana Studio 3 Plugin，并进行安装&lt;/p&gt;
-
-&lt;p&gt; * 重启 eclipse&lt;/p&gt;
-
-&lt;p&gt;2、安装 svn 插件：&lt;/p&gt;
-
-&lt;p&gt; * 依次点击：Help -&amp;gt; Install New Software&amp;hellip; -&amp;gt; Add&lt;/p&gt;
-
-&lt;p&gt; * 输入：&lt;a href=&#34;http://subclipse.tigris.org/update_1.6.x&#34;&gt;http://subclipse.tigris.org/update_1.6.x&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt; * 选择：Subclipse (Required)、Subversion Client Adapter
-(Required)、Subversion JavaHL Native Library Adapter
-(Required)，并进行安装&lt;/p&gt;
-
-&lt;p&gt; * 安装libsvn-java（Ubuntu 下需要安装）：sudo apt-get install libsvn-java&lt;/p&gt;
-
-&lt;p&gt; * 重启 eclipse&lt;/p&gt;
-
-&lt;p&gt;3、安装 git 插件：&lt;/p&gt;
-
-&lt;p&gt; * 依次点击：Help -&amp;gt; Install New Software&amp;hellip; -&amp;gt; Add&lt;/p&gt;
-
-&lt;p&gt; * 输入：&lt;a href=&#34;http://download.eclipse.org/egit/updates&#34;&gt;http://download.eclipse.org/egit/updates&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt; * 选择：Eclipse EGit，并进行安装&lt;/p&gt;
-
-&lt;p&gt; * 重启 eclipse&lt;/p&gt;
-
-&lt;p&gt;4、安装 Java EE 插件：&lt;/p&gt;
-
-&lt;p&gt; * 依次点击：Help -&amp;gt; Install New Software&amp;hellip; -&amp;gt; Add&lt;/p&gt;
-
-&lt;p&gt; * 输入：&lt;a href=&#34;http://download.eclipse.org/releases/indigo&#34;&gt;http://download.eclipse.org/releases/indigo&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt; * 选择：Eclipse Java EE Developer Tools，并进行安装&lt;/p&gt;
-
-&lt;p&gt; * 重启 eclipse&lt;/p&gt;
-
-&lt;p&gt;5、安装 JSHint 插件：
-* 依次点击：Help -&amp;gt; Install New Software&amp;hellip; -&amp;gt; Add&lt;/p&gt;
-
-&lt;p&gt; * 输入：&lt;a href=&#34;http://github.eclipsesource.com/jshint-eclipse/updates/&#34;&gt;http://github.eclipsesource.com/jshint-eclipse/updates/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt; * 选择：JSHint，并进行安装&lt;/p&gt;
-
-&lt;p&gt; * 重启 eclipse&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2012/05/08/eclipse_install_the_plugin_aptana_svn_git_java_ee_jshint/</guid>
+      <description>1、安装 aptana 插件： * 依次点击：Help -&amp;gt; Install New Software&amp;hellip; -&amp;gt; Add * 输入：http://download.aptana.com/studio3/plugin/</description>
     </item>
     
   </channel>

@@ -8,47 +8,17 @@
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Fri, 21 Nov 2014 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.wenzhixin.net.cn/tags/kvm/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/kvm/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>KVM 虚拟机的学习和使用</title>
-      <link>http://blog.wenzhixin.net.cn/2014/11/21/kvm_study</link>
+      <link>http://blog.wenzhixin.net.cn/2014/11/21/kvm_study/</link>
       <pubDate>Fri, 21 Nov 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/11/21/kvm_study</guid>
-      <description>
-
-&lt;p&gt;KVM 是 Kernel-based Virtual Machine的简称，是一个开源的系统虚拟化模块，是基于硬件的完全虚拟化。&lt;/p&gt;
-
-&lt;h3 id=&#34;查看硬件是否支持:0fe43c51449a66e046d87a7538942507&#34;&gt;查看硬件是否支持&lt;/h3&gt;
-
-&lt;p&gt;通过命令行可以查看硬件是否支持：&lt;/p&gt;
-# INTEL芯片
-grep vmx /proc/cpuinfo
-
-# AMD芯片
-grep svm /proc/cpuinfo
-
-# 不知道芯片的
-egrep &#39;(vmx|svm)&#39; /proc/cpuinfo
-
-&lt;p&gt;假如有输出，表示 cpu 是支持 KVM 虚拟机的。&lt;/p&gt;
-
-&lt;h3 id=&#34;ubuntu-下安装-kvm:0fe43c51449a66e046d87a7538942507&#34;&gt;Ubuntu 下安装 KVM&lt;/h3&gt;
-
-&lt;p&gt;基本安装包：&lt;/p&gt;
-sudo apt-get install kvm libvirt-bin ubuntu-vm-builder bridge-utils
-
-&lt;p&gt;界面管理：&lt;/p&gt;
-sudo apt-get install virt-manager virt-viewer
-
-&lt;h3 id=&#34;使用:0fe43c51449a66e046d87a7538942507&#34;&gt;使用&lt;/h3&gt;
-
-&lt;p&gt;直接打开虚拟机管理器会报错，我们需要用命令行通过 root 方式运行：&lt;/p&gt;
-sudo virt-manager
-
-&lt;p&gt;继续学习&amp;hellip;&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2014/11/21/kvm_study/</guid>
+      <description>KVM 是 Kernel-based Virtual Machine的简称，是一个开源的系统虚拟化模块，是基于硬件的完全虚拟化。 查看硬件是否支持 通过命令行可以查看硬件是否支持： 1 2 3 4 5</description>
     </item>
     
   </channel>

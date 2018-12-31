@@ -8,96 +8,17 @@
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Mon, 18 Mar 2013 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.wenzhixin.net.cn/tags/%E9%9D%99%E9%BB%98%E5%AE%89%E8%A3%85/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/%E9%9D%99%E9%BB%98%E5%AE%89%E8%A3%85/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Android 静默安装 apk</title>
-      <link>http://blog.wenzhixin.net.cn/2013/03/18/android_install</link>
+      <link>http://blog.wenzhixin.net.cn/2013/03/18/android_install/</link>
       <pubDate>Mon, 18 Mar 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/03/18/android_install</guid>
-      <description>
-
-&lt;h4 id=&#34;获取-root-权限:321d7f7ef4719249a2a410a8ff80d313&#34;&gt;获取 root 权限&lt;/h4&gt;
-su
-
-&lt;h4 id=&#34;安装-apk:321d7f7ef4719249a2a410a8ff80d313&#34;&gt;安装 apk&lt;/h4&gt;
-pm install -r package
-
-&lt;h4 id=&#34;具体代码:321d7f7ef4719249a2a410a8ff80d313&#34;&gt;具体代码&lt;/h4&gt;
-private void downloadApk(final String fileUrl) {
-    new Thread() {
-        public void run() {
-            String filePath = Environment.getExternalStorageDirectory().getPath() + &#34;/&#34; + APK_NAME;
-            InputStream is = null;
-            FileOutputStream fos = null;
-            try {
-                URL url = new URL(fileUrl);
-                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-
-                File file = new File(filePath);
-                file.createNewFile();// 新建文件
-
-                is = conn.getInputStream();
-                fos = new FileOutputStream(file);
-                byte[] buffer = new byte[1024];
-                while (true) {
-                    int numread = is.read(buffer);
-                    if (numread &lt;= 0) {
-                        break;
-                    }
-                    fos.write(buffer, 0, numread);
-                }
-                fos.flush();
-            } catch (MalformedURLException e) {
-                System.out.println(e.getMessage());
-            } catch (IOException e) {
-                System.out.println(e.getMessage());
-            } finally {
-                try {
-                    is.close();
-                    fos.close();
-                    System.out.println(&#34;下载成功！&#34;);
-                    installApk(filePath);
-                } catch (IOException e) {
-                    System.out.println(&#34;下载失败！&#34;);
-                    System.out.println(e.getMessage());
-                }
-            }
-        }
-    }.start();
-}
-
-private void installApk(final String filePath) {
-    new Thread() {
-        public void run() {
-            Process process = null;
-            OutputStream out = null;
-            try {
-                // 请求root
-                process = Runtime.getRuntime().exec(&#34;su&#34;);
-                out = process.getOutputStream();
-                // 调用安装
-                out.write((&#34;pm install -r &#34; + filePath + &#34;\n&#34;).getBytes());
-            } catch (IOException e) {
-                System.out.println(e.getMessage());
-            } catch (Exception e) {
-                System.out.println(e.getMessage());
-            } finally {
-                try {
-                    out.flush();
-                    out.close();
-                    System.out.println(&#34;安装成功！&#34;);
-                    startApk();
-                } catch (IOException e) {
-                    System.out.println(&#34;安装失败！&#34;);
-                    System.out.println(e.getMessage());
-                }
-            }
-        }
-    }.start();
-}
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2013/03/18/android_install/</guid>
+      <description>获取 root 权限 1 su 安装 apk 1 pm install -r package 具体代码 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51</description>
     </item>
     
   </channel>

@@ -8,52 +8,17 @@
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Mon, 21 Apr 2014 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.wenzhixin.net.cn/tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>CSS 自定义字体</title>
-      <link>http://blog.wenzhixin.net.cn/2014/04/21/css_font_face</link>
+      <link>http://blog.wenzhixin.net.cn/2014/04/21/css_font_face/</link>
       <pubDate>Mon, 21 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/04/21/css_font_face</guid>
-      <description>
-
-&lt;h3 id=&#34;介绍:4084fa00632317148adffee661d6e415&#34;&gt;介绍&lt;/h3&gt;
-
-&lt;p&gt;通过 CSS 的 @font-face 属性可以实现在网页中嵌入任意字体，例如自定字体、或者是自定义图标（bootstrap）。
-为了能在主流浏览器中都能正常显示自定义的字体，我们需要使用字体的三种文件格式：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;.TTF或.OTF，适用于Firefox 3.5、Safari、Opera&lt;/li&gt;
-&lt;li&gt;.EOT，适用于Internet Explorer 4.0+&lt;/li&gt;
-&lt;li&gt;.SVG，适用于Chrome、IPhone&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;一般情况下，最常见的字体是.TTF文件，我们需要通过这种文件格式转换为其余两种文件格式。&lt;/p&gt;
-
-&lt;h3 id=&#34;使用:4084fa00632317148adffee661d6e415&#34;&gt;使用&lt;/h3&gt;
-
-&lt;p&gt;使用前，需要对字体进行声明：&lt;/p&gt;
-@font-face {
-    font-family: &#39;fontName&#39;;
-    src: url(&#39;fontName.eot&#39;);
-    src: url(&#39;fontName.eot&#39;) format(&#39;embedded-opentype&#39;),
-         url(&#39;fontName.woff&#39;) format(&#39;woff&#39;),
-         url(&#39;fontName.ttf&#39;) format(&#39;truetype&#39;),
-         url(&#39;fontName.svg#FontNameRegular&#39;) format(&#39;svg&#39;);
-}
-
-&lt;p&gt;使用：&lt;/p&gt;
-body {
-    font-family: fontName;
-}
-
-&lt;h3 id=&#34;工具:4084fa00632317148adffee661d6e415&#34;&gt;工具&lt;/h3&gt;
-
-&lt;p&gt;上面讲到转换文件格式的，可以通过在线网站
-&lt;a href=&#34;http://everythingfonts.com/font-face&#34;&gt;http://everythingfonts.com/font-face&lt;/a&gt; 进行转换，
-只要上传 ttf 文件即可，然后会自动生成 css 和其他字体。&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2014/04/21/css_font_face/</guid>
+      <description>介绍 通过 CSS 的 @font-face 属性可以实现在网页中嵌入任意字体，例如自定字体、或者是自定义图标（bootstrap）。 为了能在主流浏览器中都能正常显示自定义</description>
     </item>
     
   </channel>

@@ -8,36 +8,17 @@
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Sun, 06 Jan 2013 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.wenzhixin.net.cn/tags/%E7%BF%BB%E5%A2%99/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/%E7%BF%BB%E5%A2%99/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Windows 使用 ssh proxy 翻墙</title>
-      <link>http://blog.wenzhixin.net.cn/2013/01/06/windows_bitvise</link>
+      <link>http://blog.wenzhixin.net.cn/2013/01/06/windows_bitvise/</link>
       <pubDate>Sun, 06 Jan 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/01/06/windows_bitvise</guid>
-      <description>
-
-&lt;h5 id=&#34;1-下载并安装-bitvise:f020858ee2c57d01e58137a560b67378&#34;&gt;1. 下载并安装 bitvise：&lt;/h5&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.bitvise.com/ssh-client-download&#34;&gt;bitvise 链接&lt;/a&gt;&lt;/p&gt;
-
-&lt;h5 id=&#34;2-设置-login-和-socks:f020858ee2c57d01e58137a560b67378&#34;&gt;2. 设置 Login 和 SOCKS&lt;/h5&gt;
-Host: host
-Username: username
-Password: password
-
-Listen Interface: 127.0.0.1
-Listen Port: 12345
-
-&lt;h4 id=&#34;3-使用-chrome-插件-proxy-switchysharp:f020858ee2c57d01e58137a560b67378&#34;&gt;3. 使用 Chrome 插件 proxy-switchysharp&lt;/h4&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://chrome.google.com/webstore/detail/proxy-switchysharp/dpplabbmogkhghncfbfdeeokoefdjegm&#34;&gt;proxy-switchysharp 链接&lt;/a&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;4-导入配置信息:f020858ee2c57d01e58137a560b67378&#34;&gt;4. 导入配置信息&lt;/h4&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://blog.wenzhixin.net.cn/2013/01/06/SwitchyOptions.bak&#34;&gt;SwitchyOptions&lt;/a&gt;&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2013/01/06/windows_bitvise/</guid>
+      <description>1. 下载并安装 bitvise： bitvise 链接 2. 设置 Login 和 SOCKS 1 2 3 4 5 6 Host: host Username: username Password: password Listen Interface: 127.0.0.1 Listen Port: 12345 3. 使用 Chrome 插件 proxy-switchysharp proxy-switchysharp 链接 4. 导入配置信息 SwitchyOptions</description>
     </item>
     
   </channel>

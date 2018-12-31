@@ -1,359 +1,132 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ubuntu on 文翼的博客</title>
+    <title>ubuntu on 文翼的博客</title>
     <link>http://blog.wenzhixin.net.cn/tags/ubuntu/</link>
-    <description>Recent content in Ubuntu on 文翼的博客</description>
+    <description>Recent content in ubuntu on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Mon, 17 Feb 2014 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.wenzhixin.net.cn/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 21 Nov 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
-      <title>ubuntu 设置环境变量问题</title>
-      <link>http://blog.wenzhixin.net.cn/2014/02/17/ubuntu_path</link>
-      <pubDate>Mon, 17 Feb 2014 00:00:00 +0000</pubDate>
+      <title>KVM 虚拟机的学习和使用</title>
+      <link>http://blog.wenzhixin.net.cn/2014/11/21/kvm_study/</link>
+      <pubDate>Fri, 21 Nov 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/02/17/ubuntu_path</guid>
-      <description>&lt;p&gt;开发的时候需要设置环境变量，但是发现设置了之后，每次重启却没有起作用。&lt;/p&gt;
-
-&lt;p&gt;首先，将环境加入&lt;/p&gt;
-export PATH=${PATH}:$HOME/bin
-
-&lt;p&gt;到 ~/.bash_profile 文件中，运行&lt;/p&gt;
-source ~/.bash_profile
-
-&lt;p&gt;即可让设置的环境变量生效。&lt;/p&gt;
-
-&lt;p&gt;但是为什么我每次重启就不起作用了呢，花了好些时间去找原因，
-老大的一句话提醒了我，因为你是用 oh-my-zsh，怎么会一样呢？&lt;/p&gt;
-
-&lt;p&gt;是啊，恍然大悟，答案就是这么简单。。。&lt;/p&gt;
-
-&lt;p&gt;借此机会了解了这几个重要的文件：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;.bash_profile 是最重要的一个配置文件，它在用户每次登录系统时被读取，
-里面的所有命令都会被 bash 执行。（在 Debian 中使用 .profile 文件代替 .bash_profile 文件。）&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;.bashrc 文件在 bash shell 调用另一个 bash shell 时读取，
-也就是在 shell 中再键入 bash 命令启动一个新 shell 时就会去读该文件。
-这样可有效分离登录和子 shell 所需的环境。但一般来说都会在 .bash_profile 里调用
-.bashrc 脚本以便统一配置用户环境。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;.bash_logout 是在退出shell时被读取。我们可把一些清理工作的命令放到这文件中。&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;而使用了 oh-my-zsh 之后，有相对应的文件：.zprofile、.zshrc 和 .zlogout&lt;/p&gt;
-
-&lt;p&gt;所以，只要在 .zprofile 中加入环境变量即可。&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2014/11/21/kvm_study/</guid>
+      <description>KVM 是 Kernel-based Virtual Machine的简称，是一个开源的系统虚拟化模块，是基于硬件的完全虚拟化。 查看硬件是否支持 通过命令行可以查看硬件是否支持： 1 2 3 4 5</description>
     </item>
     
     <item>
-      <title>ubuntu 解决语言设置错误的问题</title>
-      <link>http://blog.wenzhixin.net.cn/2014/01/11/ubuntu_setting_locale_failed</link>
-      <pubDate>Sat, 11 Jan 2014 00:00:00 +0000</pubDate>
+      <title>Ubuntu 下不能访问 Windows 文件系统</title>
+      <link>http://blog.wenzhixin.net.cn/2014/11/20/ubuntu_unable_to_access_windows/</link>
+      <pubDate>Thu, 20 Nov 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/01/11/ubuntu_setting_locale_failed</guid>
-      <description>&lt;p&gt;在使用 ubuntu 命令行登录的时候，出现：&lt;/p&gt;
-perl: warning: Setting locale failed.
-perl: warning: Please check that your locale settings:
-    LANGUAGE = (unset),
-    LC_ALL = (unset),
-    LC_MESSAGES = &#34;zh_CN.UTF-8&#34;,
-    LANG = &#34;zh_CN.UTF-8&#34;
-    are supported and installed on your system.
-perl: warning: Falling back to the standard locale (&#34;C&#34;).
-
-&lt;p&gt;这样的错误，虽说不影响使用，但是感觉挺烦的说。&lt;/p&gt;
-
-&lt;p&gt;那么要如何解决呢，有必要记录下：&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;安装 localepurge 管理语言文件&lt;/strong&gt;&lt;/p&gt;
-sudo apt-get install localepurge
-
-&lt;p&gt;选择我们想要的语言，例如 en_US.UTF-8 和 zh_CN.UTF-8。&lt;/p&gt;
-
-&lt;p&gt;当然也可以使用以下命令再次进行&lt;strong&gt;配置&lt;/strong&gt;：&lt;/p&gt;
-sudo dpkg-reconfigure localepurge
-
-&lt;p&gt;&lt;strong&gt;生成自己想要的语言&lt;/strong&gt;&lt;/p&gt;
-sudo locale-gen zh_CN.UTF-8 en_US.UTF-8
-
-&lt;p&gt;&lt;strong&gt;打印出当前的配置信息&lt;/strong&gt;&lt;/p&gt;
-locale
-
-&lt;p&gt;到此，搞定！！！&lt;/p&gt;
-
-&lt;p&gt;默认情况下终端 ssh 的时候会将本地的 locale 传到服务器中，可以通过命令&lt;strong&gt;指定 ssh 服务器的语言&lt;/strong&gt;：&lt;/p&gt;
-LC_ALL=en_US.UTF-8 ssh &lt;host&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2014/11/20/ubuntu_unable_to_access_windows/</guid>
+      <description>Ubuntu 和 Windows 双系统下，Ubuntu 不能访问 Windows 下的分区，例如：/dev/sdb1，显示如下错误： 1 2 3 4 5 6 Error mounting /dev/sdb1 exited with non-zero exit status 14: The disk contains an unclean file system (0, 0). Metadata kept</description>
     </item>
     
     <item>
-      <title>windows 下同步文件到远程服务器中</title>
-      <link>http://blog.wenzhixin.net.cn/2014/01/06/windows_rsync_file</link>
-      <pubDate>Mon, 06 Jan 2014 00:00:00 +0000</pubDate>
+      <title>Ubuntu 无法找到更新源的问题</title>
+      <link>http://blog.wenzhixin.net.cn/2014/07/21/ubuntu_source_list_not_found/</link>
+      <pubDate>Mon, 21 Jul 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/01/06/windows_rsync_file</guid>
-      <description>
-
-&lt;h4 id=&#34;安装-cwrsync:291a7aad37e5ccc2dd943e82e05c00e8&#34;&gt;安装 cwRsync&lt;/h4&gt;
-
-&lt;p&gt;下载 &lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/01/06/cwRsync_4.0.5_Installer.zip&#34;&gt;cwRsync 客户端&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;解压并安装到指定目录，例如：C:\Program Files\cwRsync&lt;/p&gt;
-
-&lt;h4 id=&#34;配置环境变量:291a7aad37e5ccc2dd943e82e05c00e8&#34;&gt;配置环境变量：&lt;/h4&gt;
-
-&lt;p&gt;系统变量 Path中后面加入 C:\Program Files\cwRsync\bin;&lt;/p&gt;
-
-&lt;p&gt;创建新的系统变量 HOME = C:\Program Files\cwRsync\home  (其实这个路径是告诉cygWin本地的home路径在哪里)&lt;/p&gt;
-
-&lt;p&gt;进入 cmd 中：&lt;/p&gt;
-cd C:\Program Files\cwRsync\
-mkdir home
-cd home
-mkdir .ssh
-
-&lt;p&gt;进入 C:\Program Files\cwRsync\home\.ssh 下新建文件 config，输入以下信息&lt;/p&gt;
-host server
-	HostName ip.address
-	User username
-	IdentityFile ~/.ssh/id_rsa
-
-&lt;h4 id=&#34;使用:291a7aad37e5ccc2dd943e82e05c00e8&#34;&gt;使用&lt;/h4&gt;
-rsync -vzr /cygdrive/c/blog/ server:~/blog
-
-&lt;ul&gt;
-&lt;li&gt;-vzr：表示压缩&lt;/li&gt;
-&lt;li&gt;/cygdrive/c/blog：表示需要同步的文件夹，对应c:\blog&lt;/li&gt;
-&lt;li&gt;server：表示配置的远程服务器&lt;/li&gt;
-&lt;li&gt;~/blog：表示远程服务器的地址&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2014/07/21/ubuntu_source_list_not_found/</guid>
+      <description>问题： 前段时间，Ubuntu 官方源已经停止了对非长期维护版（如 11.10，12.04，12.10 和 13.04）的支持，并且从归档服务器上移除</description>
     </item>
     
     <item>
-      <title>管理 ubuntu 服务器用户</title>
-      <link>http://blog.wenzhixin.net.cn/2013/12/28/ubuntu_new_user</link>
-      <pubDate>Sat, 28 Dec 2013 00:00:00 +0000</pubDate>
+      <title>Ubuntu 下搭建 JavaEE 环境</title>
+      <link>http://blog.wenzhixin.net.cn/2014/04/02/ubuntu_java_ee/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/12/28/ubuntu_new_user</guid>
-      <description>
-
-&lt;h4 id=&#34;前言:d0ece5b5baee835ea1f0703c405d1ffb&#34;&gt;前言&lt;/h4&gt;
-
-&lt;p&gt;对于刚刚安装（或者购买）的服务器，一般只有 root 用户，那我们需要对其进行用户管理设置。&lt;/p&gt;
-
-&lt;h4 id=&#34;创建新的用户:d0ece5b5baee835ea1f0703c405d1ffb&#34;&gt;创建新的用户&lt;/h4&gt;
-
-&lt;p&gt;创建一个名为 username 的新用户（自己替换为想要的名字）&lt;/p&gt;
-useradd -m username
-
-&lt;p&gt;-m, &amp;ndash;create-home：表示创建 home 目录&lt;/p&gt;
-
-&lt;p&gt;为 username 用户设置密码（不在 useradd 中指定 -p 的方式）&lt;/p&gt;
-passwd username
-
-&lt;p&gt;输入两次密码即可&lt;/p&gt;
-
-&lt;p&gt;将 username 用户加入 root 组&lt;/p&gt;
-visudo
-
-&lt;p&gt;在 root 下面加入&lt;/p&gt;
-root    	ALL=(ALL:ALL) ALL
-username	ALL=(ALL) ALL
-
-&lt;p&gt;修改用户 sh 为 bash&lt;/p&gt;
-vi /etc/passwd
-
-&lt;p&gt;将对应用户信息（一般为最后一行）改为&lt;/p&gt;
-/home/username:/bin/bash
-
-&lt;p&gt;接下来退出 root 用户，使用我们新增的用户登录服务器（这一步比较重要，不然设置不对的话，下一步禁用了 root 之后就悲剧了）&lt;/p&gt;
-
-&lt;h4 id=&#34;禁用-root-用户:d0ece5b5baee835ea1f0703c405d1ffb&#34;&gt;禁用 root 用户&lt;/h4&gt;
-
-&lt;p&gt;由于 root 用户的权限比较可怕，为了安全起见，我们需要将 root 禁用&lt;/p&gt;
-sudo vi /etc/passwd
-
-&lt;p&gt;将对应的信息（一般为第一行）改为&lt;/p&gt;
-root:x:0:0:root:/root:/bin/false
-
-&lt;h4 id=&#34;移动原来文件到用户目录下:d0ece5b5baee835ea1f0703c405d1ffb&#34;&gt;移动原来文件到用户目录下&lt;/h4&gt;
-
-&lt;p&gt;查看原来 root 下的目录&lt;/p&gt;
-sudo ls /root
-
-&lt;p&gt;移动到用户 home 目录&lt;/p&gt;
-sudo mv /root/www ~/
-
-&lt;p&gt;修改文件属性&lt;/p&gt;
-sudo chown -R username.username ~/www
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2014/04/02/ubuntu_java_ee/</guid>
+      <description>在 Ubuntu 下搭建 JavaEE 的环境稍微有些麻烦，这里记录下。 1. 安装 eclipse 和 tomcat7 1 2 sudo apt-get install eclipse sudo apt-get install tomcat7 注：安装 eclipse 后会把依赖的 jdk 安装好，使用 apt-get 安装的 eclipse 是最精简的版本。 2.</description>
     </item>
     
     <item>
-      <title>从 ubuntu 同步文件到 windows</title>
-      <link>http://blog.wenzhixin.net.cn/2013/12/01/ubuntu_rsync_to_windows</link>
-      <pubDate>Sun, 01 Dec 2013 00:00:00 +0000</pubDate>
+      <title>Ubuntu 下安装音乐播放器</title>
+      <link>http://blog.wenzhixin.net.cn/2014/01/25/ubuntu_music_player/</link>
+      <pubDate>Sat, 25 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/12/01/ubuntu_rsync_to_windows</guid>
-      <description>
-
-&lt;p&gt;windows 下使用 cwRsync，ubuntu 使用默认的 rsync。&lt;/p&gt;
-
-&lt;h3 id=&#34;安装-cwrsync:3b2d6b317dc7ea2e9bfb9d515fecc8dc&#34;&gt;安装 cwRsync&lt;/h3&gt;
-
-&lt;p&gt;下载 &lt;a href=&#34;https://www.itefix.no/i2/cwrsync&#34;&gt;cwRsync 服务端&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;解压并安装到指定目录，例如：E:\Program Files\ICW&lt;/p&gt;
-
-&lt;h3 id=&#34;配置-cwrsync:3b2d6b317dc7ea2e9bfb9d515fecc8dc&#34;&gt;配置 cwRsync&lt;/h3&gt;
-
-&lt;p&gt;修改 rsyncd.conf&lt;/p&gt;
-use chroot = false
-strict modes = false
-hosts allow = *
-log file = rsyncd.log
-auth users = backup
-secrets file = rsyncd.secrets
-transfer logging = yes
-
-uid = 0
-gid = 0
-charset = UTF-8
-read only = false
-
-# Module definitions
-# Remember cygwin naming conventions : c:\work becomes /cygwin/c/work
-#
-[backup]
-path = /cygdrive/e/rsync
-read only = false
-transfer logging = yes
-
-&lt;p&gt;新建 rsyncd.secrets，指定用户名和密码&lt;/p&gt;
-backup:password
-
-&lt;p&gt;启动 RsyncServer 服务（运行——services.msc）&lt;/p&gt;
-
-&lt;h3 id=&#34;同步文件-ubuntu:3b2d6b317dc7ea2e9bfb9d515fecc8dc&#34;&gt;同步文件(ubuntu)&lt;/h3&gt;
-rsync -av file username@ip::moduleName
-
-&lt;ul&gt;
-&lt;li&gt;file：对应需要同步的文件或者文件夹&lt;/li&gt;
-&lt;li&gt;username：对应配置的用户名（backup）&lt;/li&gt;
-&lt;li&gt;ip：对应 windows 服务器的 IP&lt;/li&gt;
-&lt;li&gt;moduleName：对于配置中 Module 的名字（backup）&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;其他问题:3b2d6b317dc7ea2e9bfb9d515fecc8dc&#34;&gt;其他问题&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;默认端口为 873（netstat -nao 查看是否已在监听）&lt;/li&gt;
-&lt;li&gt;查看服务 RsyncServer 是否启动&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2014/01/25/ubuntu_music_player/</guid>
+      <description>对于喜欢听歌的人来说，音乐播放器还是挺重要的， 但是不像 windows 一样，很多流行的播放器都没有 ubuntu 版。 这里记录下安装 Audacious 播放器，还是比较强大的，可以支持 ape</description>
     </item>
     
     <item>
-      <title>ubuntu vim gedit 乱码解决</title>
-      <link>http://blog.wenzhixin.net.cn/2012/09/24/ubuntu_vim_gedit_garbled_solution</link>
-      <pubDate>Mon, 24 Sep 2012 00:00:00 +0000</pubDate>
+      <title>Ubuntu 12.10 添加 node 应用为自启动服务</title>
+      <link>http://blog.wenzhixin.net.cn/2013/12/30/ubuntu_node_app_service/</link>
+      <pubDate>Mon, 30 Dec 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/09/24/ubuntu_vim_gedit_garbled_solution</guid>
-      <description>
-
-&lt;h4 id=&#34;添加中文字符编码:747f8279f44d26f940d7cc50e1a373b3&#34;&gt;添加中文字符编码：&lt;/h4&gt;
-sudo vi /var/lib/locales/supported.d/local
-
-&lt;h4 id=&#34;添加下面的中文字符集:747f8279f44d26f940d7cc50e1a373b3&#34;&gt;添加下面的中文字符集：&lt;/h4&gt;
-zh_CN.GBK GBK
-zh_CN.GB2312 GB2312
-zh_CN.GB18030 GB18030
-
-&lt;h4 id=&#34;使其生效:747f8279f44d26f940d7cc50e1a373b3&#34;&gt;使其生效：&lt;/h4&gt;
-sudo dpkg-reconfigure locales
-
-&lt;hr /&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;h4 id=&#34;vim:747f8279f44d26f940d7cc50e1a373b3&#34;&gt;vim：&lt;/h4&gt;
-sudo vi /etc/vim/vimrc
-
-&lt;h4 id=&#34;打开vim的配置文件-在其中加入:747f8279f44d26f940d7cc50e1a373b3&#34;&gt;打开vim的配置文件，在其中加入：&lt;/h4&gt;
-set fileencodings=utf-8,gb2312,gbk,gb18030
-set termencoding=utf-8
-set encoding=utf-8
-
-&lt;h4 id=&#34;使其生效-1:747f8279f44d26f940d7cc50e1a373b3&#34;&gt;使其生效：&lt;/h4&gt;
-source /etc/vim/vimrc
-
-&lt;hr /&gt;
-
-&lt;h4 id=&#34;gedit:747f8279f44d26f940d7cc50e1a373b3&#34;&gt;gedit：&lt;/h4&gt;
-
-&lt;p&gt;方法1：&lt;/p&gt;
-gsettings set org.gnome.gedit.preferences.encodings auto-detected &#34;[&#39;UTF-8&#39;,&#39;GB18030&#39;,&#39;GB2312&#39;,&#39;GBK&#39;,&#39;BIG5&#39;,&#39;CURRENT&#39;,&#39;UTF-16&#39;]&#34;
-
-&lt;p&gt;方法2：&lt;/p&gt;
-gconf-editor (sudo apt-get install gconf-editor)
-
-&lt;p&gt;选择 apps-&amp;gt;gedit2-&amp;gt;preferences-&amp;gt;encodings，添加需要的字符集&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2013/12/30/ubuntu_node_app_service/</guid>
+      <description>开发 node 应用之后，启动的方式一般是通过 node app 或者 node app &amp;amp; 来运行， 十分不方便，这里将以本 blog 应用为例介绍如何添加为自启动的服务。 环境 用户名：usern</description>
     </item>
     
     <item>
-      <title>ubuntu vim gedit 乱码解决</title>
-      <link>http://blog.wenzhixin.net.cn/2012/09/24/ubuntu_vim_gedit_garbled_solution</link>
-      <pubDate>Mon, 24 Sep 2012 00:00:00 +0000</pubDate>
+      <title>Ubuntu 系统下 android 连接小米2进行开发</title>
+      <link>http://blog.wenzhixin.net.cn/2013/06/14/ubuntu_android_xiaomi2/</link>
+      <pubDate>Fri, 14 Jun 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/09/24/ubuntu_vim_gedit_garbled_solution</guid>
-      <description>
-
-&lt;h4 id=&#34;添加中文字符编码:747f8279f44d26f940d7cc50e1a373b3&#34;&gt;添加中文字符编码：&lt;/h4&gt;
-sudo vi /var/lib/locales/supported.d/local
-
-&lt;h4 id=&#34;添加下面的中文字符集:747f8279f44d26f940d7cc50e1a373b3&#34;&gt;添加下面的中文字符集：&lt;/h4&gt;
-zh_CN.GBK GBK
-zh_CN.GB2312 GB2312
-zh_CN.GB18030 GB18030
-
-&lt;h4 id=&#34;使其生效:747f8279f44d26f940d7cc50e1a373b3&#34;&gt;使其生效：&lt;/h4&gt;
-sudo dpkg-reconfigure locales
-
-&lt;hr /&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;h4 id=&#34;vim:747f8279f44d26f940d7cc50e1a373b3&#34;&gt;vim：&lt;/h4&gt;
-sudo vi /etc/vim/vimrc
-
-&lt;h4 id=&#34;打开vim的配置文件-在其中加入:747f8279f44d26f940d7cc50e1a373b3&#34;&gt;打开vim的配置文件，在其中加入：&lt;/h4&gt;
-set fileencodings=utf-8,gb2312,gbk,gb18030
-set termencoding=utf-8
-set encoding=utf-8
-
-&lt;h4 id=&#34;使其生效-1:747f8279f44d26f940d7cc50e1a373b3&#34;&gt;使其生效：&lt;/h4&gt;
-source /etc/vim/vimrc
-
-&lt;hr /&gt;
-
-&lt;h4 id=&#34;gedit:747f8279f44d26f940d7cc50e1a373b3&#34;&gt;gedit：&lt;/h4&gt;
-
-&lt;p&gt;方法1：&lt;/p&gt;
-gsettings set org.gnome.gedit.preferences.encodings auto-detected &#34;[&#39;UTF-8&#39;,&#39;GB18030&#39;,&#39;GB2312&#39;,&#39;GBK&#39;,&#39;BIG5&#39;,&#39;CURRENT&#39;,&#39;UTF-16&#39;]&#34;
-
-&lt;p&gt;方法2：&lt;/p&gt;
-gconf-editor (sudo apt-get install gconf-editor)
-
-&lt;p&gt;选择 apps-&amp;gt;gedit2-&amp;gt;preferences-&amp;gt;encodings，添加需要的字符集&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2013/06/14/ubuntu_android_xiaomi2/</guid>
+      <description>问题： 小米2 通过 USB 连接到 Ubuntu 12.10 系统进行开发，发现 adb devices 不能看到设备。 解决： 1. 运行下面的命令： 1 lsusb 通过对比发现，Bus 002 Device 010: ID 2717:9039 就是小米2的设备号</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 11.10 搭建 gitlab 服务器</title>
+      <link>http://blog.wenzhixin.net.cn/2013/01/14/gitlab_installation/</link>
+      <pubDate>Mon, 14 Jan 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2013/01/14/gitlab_installation/</guid>
+      <description>ps: 请按照顺序一步一步来，并注意查看提示，确保成功！ 1. 更新系统 1 2 sudo apt-get update sudo apt-get upgrade 2. 安装必要的包 1 sudo apt-get install -y build-essential zlib1g-dev libyaml-dev libssl-dev libgdbm-dev libreadline-dev libncurses5-dev libffi-dev wget curl git-core openssh-server redis-server postfix checkinstall libxml2-dev libxslt-dev libcurl4-openssl-dev libicu-dev 3.</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 12.04 设置 VPN</title>
+      <link>http://blog.wenzhixin.net.cn/2013/01/12/ubuntu_set_vpn/</link>
+      <pubDate>Sat, 12 Jan 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2013/01/12/ubuntu_set_vpn/</guid>
+      <description>1. 设置 - 网络 - VPN 连接 - 配置 VPN 2. 添加 VPN - 新建 PPTP 3. 输入正确的网关、用户名、密码 4. 选择高级 - 勾选使用点到点加密(MPPE)(P) 5. 设置 IPv4 路由，添加</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 搭建 Ruby on Rails 开发环境</title>
+      <link>http://blog.wenzhixin.net.cn/2012/10/22/ubuntu_ruby_on_rails_development_environment_set_up/</link>
+      <pubDate>Mon, 22 Oct 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2012/10/22/ubuntu_ruby_on_rails_development_environment_set_up/</guid>
+      <description>安装 ruby： 1 sudo apt-get install ruby1.9.1 ruby1.9.1-dev 安装 rubygems： 1 sudo apt-get install rubygems 安装 mysql 1 sudo apt-get install mysql 安装 ruby-mysql 1）下载：http://www.tmtm.org/en/ru</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 搭建 Ruby on Rails 开发环境</title>
+      <link>http://blog.wenzhixin.net.cn/2012/10/22/ubuntu_ruby_on_rails_development_environment_set_up/</link>
+      <pubDate>Mon, 22 Oct 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2012/10/22/ubuntu_ruby_on_rails_development_environment_set_up/</guid>
+      <description>安装 ruby： 1 sudo apt-get install ruby1.9.1 ruby1.9.1-dev 安装 rubygems： 1 sudo apt-get install rubygems 安装 mysql 1 sudo apt-get install mysql 安装 ruby-mysql 1）下载：http://www.tmtm.org/en/ru</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 11.10 将 OpenJDK 换成 Sun JDK 的步骤</title>
+      <link>http://blog.wenzhixin.net.cn/2012/04/26/ubuntu_11.10_will_be_openjdk_into_sun_jdk_steps/</link>
+      <pubDate>Thu, 26 Apr 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2012/04/26/ubuntu_11.10_will_be_openjdk_into_sun_jdk_steps/</guid>
+      <description>1、加入repository： sudo add-apt-repository &amp;ldquo;deb http://cz.archive.Ubuntu.com/ubuntu hardy-updates main multiverse&amp;rdquo; (vi /etc/apt/sources.list) 2、更新源： sudo apt-get update 3、安装 jdk 和 jre： sudo apt-get install sun-java6-jdk sun-java6-jre 4、切换为 Sun JDK： sudo update-java-alternatives -s java-6-sun (ls /usr/lib/jvm) 5、查看是否</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 11.10 将 OpenJDK 换成 Sun JDK 的步骤</title>
+      <link>http://blog.wenzhixin.net.cn/2012/04/26/ubuntu_11.10_will_be_openjdk_into_sun_jdk_steps/</link>
+      <pubDate>Thu, 26 Apr 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2012/04/26/ubuntu_11.10_will_be_openjdk_into_sun_jdk_steps/</guid>
+      <description>1、加入repository： sudo add-apt-repository &amp;ldquo;deb http://cz.archive.Ubuntu.com/ubuntu hardy-updates main multiverse&amp;rdquo; (vi /etc/apt/sources.list) 2、更新源： sudo apt-get update 3、安装 jdk 和 jre： sudo apt-get install sun-java6-jdk sun-java6-jre 4、切换为 Sun JDK： sudo update-java-alternatives -s java-6-sun (ls /usr/lib/jvm) 5、查看是否</description>
     </item>
     
   </channel>

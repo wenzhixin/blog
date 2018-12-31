@@ -8,109 +8,17 @@
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Tue, 04 Nov 2014 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.wenzhixin.net.cn/tags/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>编写 WebStorm 实用工具</title>
-      <link>http://blog.wenzhixin.net.cn/2014/11/04/webstorm_tools</link>
+      <link>http://blog.wenzhixin.net.cn/2014/11/04/webstorm_tools/</link>
       <pubDate>Tue, 04 Nov 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/11/04/webstorm_tools</guid>
-      <description>&lt;p&gt;在写代码的时候，很多时候（例如写 jQuery 插件）需要将 html 代码转换为 js 模板。例如将下面的 html 代码：&lt;/p&gt;
-&lt;ul&gt;
-    &lt;li class=&#34;item&#34;&gt;
-        &lt;a href=&#34;#&#34;&gt;Item 1&lt;/a&gt;
-    &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;放到 js 中：&lt;/p&gt;
-var html = [
-    &#39;&lt;ul&gt;&#39;,
-        &#39;&lt;li class=&#34;item&#34;&gt;&#39;,
-            &#39;&lt;a href=&#34;#&#34;&gt;Item 1&lt;/a&gt;&#39;,
-        &#39;&lt;/li&gt;&#39;,
-    &#39;&lt;/ul&gt;&#39;
-];
-
-&lt;p&gt;因为平时都是用 WebStorm 进行开发，就在想是否能够自定义快捷键实现这样的功能呢？
-如按一下 &lt;code&gt;Ctrl + &#39;&lt;/code&gt; 切换为 js 代码，再按一次切换原来 html 的代码。先上想要的效果图：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/11/04/gif.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;有了这样的想法，于是就开始尝试。&lt;/p&gt;
-
-&lt;p&gt;首先尝试了自定义 Keymap （快捷键）的方式，发现行不通，因为只能自定义 WebStorm 本身已经定义好的 Action。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/11/04/1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;接着看到 External Tools 可以定义外部的程序，Good，这样就可以使用外部的脚本语言来实现我想要的功能。
-一开始是想使用 shell 来编写的，但是发现编写起来有些吃力，何不用自己熟悉的 nodejs 来写呢。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/11/04/2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;于是，便有了 &lt;code&gt;toggle-html-js-code&lt;/code&gt; 的雏形：&lt;/p&gt;
-#! /usr/bin/node
-
-var fs = require(&#39;fs&#39;);
-
-// toggle-html-js-code $FilePath$ $SelectionStartLine$ $SelectionEndLine$
-
-var filePath = process.argv[2],
-    startLine = +process.argv[3],
-    endLine = +process.argv[4],
-    type = &#39;html&#39;,
-    content,
-    lines,
-    i;
-
-content = fs.readFileSync(filePath).toString();
-lines = content.split(&#39;\n&#39;);
-
-if (/&#39;.*&#39;,?/.test(lines[startLine - 1])) {
-    type = &#39;js&#39;;
-}
-
-for (i = startLine - 1; i &lt; endLine; i++) {
-    lines[i] = type === &#39;html&#39; ?
-        html2js(lines[i], i !== startLine - 1 &amp;&amp; i === endLine - 1) :
-        js2html(lines[i], i !== startLine - 1 &amp;&amp; i === endLine - 1);
-}
-fs.writeFileSync(filePath, lines.join(&#39;\n&#39;));
-
-
-// tools
-
-function html2js(str, lastLine) {
-    if (!/([\S^&#39;].*[\S^&#39;])/.test(str)) {
-        return str;
-    }
-    return str.replace(/([\S^&#39;].*[\S^&#39;])/, &#39;\&#39;\$1\&#39;&#39; + (lastLine ? &#39;&#39; : &#39;,&#39;));
-}
-
-function js2html(str, lastLine) {
-    if (lastLine) {
-        if (!/&#39;(.*)&#39;/.test(str)) {
-            return str;
-        }
-        return str.replace(/&#39;(.*)&#39;/, &#39;\$1&#39;);
-    } else {
-        if (!/&#39;(.*)&#39;,/.test(str)) {
-            return str;
-        }
-        return str.replace(/&#39;(.*)&#39;,/, &#39;\$1&#39;);
-    }
-}
-
-&lt;p&gt;最后，再到 Keymap 中设置快捷键为 &lt;code&gt;Ctrl + &#39;&lt;/code&gt; 就大功告成了！&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/11/04/4.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/11/04/3.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;PS：上面的代码已经实现了自己想要的功能，但可能还需要进行完善优化，本文只是对自己想法进行了尝试并实现，或许可以用插件的方式来实现。&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2014/11/04/webstorm_tools/</guid>
+      <description>在写代码的时候，很多时候（例如写 jQuery 插件）需要将 html 代码转换为 js 模板。例如将下面的 html 代码： 1 2 3 4 5 &amp;lt;ul&amp;gt; &amp;lt;li class=&amp;#34;item&amp;#34;&amp;gt; &amp;lt;a href=&amp;#34;#&amp;#34;&amp;gt;Item 1&amp;lt;/a&amp;gt; &amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; 放到 js 中： 1 2 3 4 5 6 7 8 var</description>
     </item>
     
   </channel>

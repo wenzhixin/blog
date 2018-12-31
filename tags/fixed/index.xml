@@ -1,66 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Fixed on 文翼的博客</title>
+    <title>fixed on 文翼的博客</title>
     <link>http://blog.wenzhixin.net.cn/tags/fixed/</link>
-    <description>Recent content in Fixed on 文翼的博客</description>
+    <description>Recent content in fixed on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Thu, 21 Nov 2013 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.wenzhixin.net.cn/tags/fixed/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/fixed/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Android 界面不支持 position fixed 问题</title>
-      <link>http://blog.wenzhixin.net.cn/2013/11/21/android_position_fixed</link>
+      <link>http://blog.wenzhixin.net.cn/2013/11/21/android_position_fixed/</link>
       <pubDate>Thu, 21 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/11/21/android_position_fixed</guid>
-      <description>&lt;p&gt;在 Android 中，部分浏览器不支持 css 的 position: fixed 属性。&lt;/p&gt;
-
-&lt;p&gt;详细的支持情况见：&lt;a href=&#34;http://caniuse.com/css-fixed&#34;&gt;http://caniuse.com/css-fixed&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;对于不支持的情况，我们可以通过以下的解决方法来解决该问题，记录下。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;使用 viewport 标记&lt;/strong&gt;&lt;/p&gt;
-&lt;meta name=&#34;viewport&#34; content=&#34;width=100%; initial-scale=1; maximum-scale=1; minimum-scale=1; user-scalable=no;&#34; /&gt;
-
-&lt;p&gt;详细参数解释：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;width：视口的宽度。可以使用像素值，但推荐使用device-width关键字。表示依照设备屏幕的宽度。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;height：视口的高度。不用指定。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;initial-scale：初始缩放值。比如1.0表示一个视口像素等于一个屏幕像素。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;minimum-scale：最小比例值。范围从0至10.0&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;maximum-scale：最大比例值。范围从0至10.0&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;user-scalable：用户是否可以缩放视口。值可以是：
-1, yes, or true: 允许用户缩放
-0, no, or false: 不许用户缩放&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;使用 position: absolute 代替&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;可以简单的使用 position: absolute 代替，但是在桌面端会显示不正常，我们可以通过判断 userAgent 来指定 position 的值。&lt;/p&gt;
-
-&lt;p&gt;代码如下：&lt;/p&gt;
-if (navigator.userAgent.match(/Android|iPhone|iPad|iPod/i)) {
-	$div.css(&#39;position&#39;, &#39;absolute&#39;);
-} else {
-	$div.css(&#39;position&#39;, &#39;fixed&#39;);
-}
-
-&lt;p&gt;&lt;strong&gt;使用 js 库&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/cubiq/iscroll&#34;&gt;iScroll&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;注：
-该库也没有使用过，有待研究&amp;hellip;&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/21/android_position_fixed/</guid>
+      <description>在 Android 中，部分浏览器不支持 css 的 position: fixed 属性。 详细的支持情况见：http://caniuse.com/css-fixed 对于不支持的情况，我们可以通</description>
     </item>
     
   </channel>

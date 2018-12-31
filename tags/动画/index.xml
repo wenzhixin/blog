@@ -8,210 +8,35 @@
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Tue, 14 Jan 2014 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.wenzhixin.net.cn/tags/%E5%8A%A8%E7%94%BB/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/%E5%8A%A8%E7%94%BB/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>使用 requestAnimationFrame 实现动画</title>
-      <link>http://blog.wenzhixin.net.cn/2014/01/14/canvas_fps_frame</link>
+      <link>http://blog.wenzhixin.net.cn/2014/01/14/canvas_fps_frame/</link>
       <pubDate>Tue, 14 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/01/14/canvas_fps_frame</guid>
-      <description>&lt;p&gt;requestAnimationFrame 函数是主流浏览器推出来的用来代替旧的&lt;code&gt;setTimeout&lt;/code&gt;和&lt;code&gt;setInterval&lt;/code&gt;方法，
-从而提高动作的性能。&lt;/p&gt;
-
-&lt;p&gt;该函数把绘制动画的任务直接交给浏览器，使用它还是有挺多好处：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;首先，它仅仅绘制用户可见的动画。这意味着没把 CPU 或电池寿命浪费在绘制处于背景标签，最小化窗口，或者页面隐藏区域的动画上。&lt;/li&gt;
-&lt;li&gt;第二，当浏览器准备好绘制时（空闲时），才绘制一帧，此时没有等待中的帧。意味着用 requestAnimationFrame 绘制动画不可能出现多个排队的回调函数，或者阻塞浏览器。&lt;/li&gt;
-&lt;li&gt;第三，由于浏览器准备好时（空闲时）才绘制帧，不会有等待绘制的帧，没有多余的帧绘制。因此动画更平滑，CPU 和电池使用被进一步优化。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;在使用的时候，需要考虑多浏览器之间的兼容问题：&lt;/p&gt;
-window.requestAnimFrame = (function() {
-	return window.requestAnimationFrame ||
-		window.webkitRequestAnimationFrame ||
-		window.mozRequestAnimationFrame ||
-		window.oRequestAnimationFrame ||
-		window.msRequestAnimationFrame ||
-		function(/* function */callback, /* DOMElement */element) {
-			return window.setTimeout(callback, 1000 / 60);
-		};
-})();
-
-window.cancelAnimFrame = (function() {
-	return window.cancelAnimationFrame ||
-		window.webkitCancelRequestAnimationFrame ||
-		window.mozCancelRequestAnimationFrame ||
-		window.oCancelRequestAnimationFrame ||
-		window.msCancelRequestAnimationFrame ||
-		clearTimeout;
-})();
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;问题：如何模拟 fps 数？&lt;/strong&gt;&lt;/p&gt;
-var fps = 30;
-function draw() {
-	setTimeout(function() {
-        requestAnimFrame(draw);
-
-        // do something
-    }, 1000 / fps);
-}
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2014/01/14/canvas_fps_frame/</guid>
+      <description>requestAnimationFrame 函数是主流浏览器推出来的用来代替旧的setTimeout和setInterval方法， 从而提高动作的性能。 该函数把绘制动画的任务直接交给浏</description>
     </item>
     
     <item>
       <title>《锋利的jQuery》学习笔记——jQuery中的动画</title>
-      <link>http://blog.wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_in_animation</link>
+      <link>http://blog.wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_in_animation/</link>
       <pubDate>Tue, 13 Mar 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_in_animation</guid>
-      <description>&lt;p&gt;​&lt;strong&gt;1. show和hide方法&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt; • (&amp;ldquo;element&amp;rdquo;).show(speed[, callback])-显示element元素&lt;/p&gt;
-
-&lt;p&gt; • (&amp;ldquo;element&amp;rdquo;).hide(speed[, callback])-隐藏element元素&lt;/p&gt;
-
-&lt;p&gt;(1)show() 和 hide() 方法同时修改多个样式属性即高度、宽度和不透明度&lt;/p&gt;
-
-&lt;p&gt;(2)hide() 方法在将内容的 display 属性值设置为 none 之前，会记住原先的
-display 属性值，当调用 show() 方法时，会根据之前记住的值来显示元素&lt;/p&gt;
-
-&lt;p&gt;​&lt;strong&gt;2. fadeIn方法和fadeOut方法&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt; • (&amp;ldquo;element&amp;rdquo;).fadeIn(speed[,
-callback])-渐入，在指定事件内增加元素的不透明度&lt;/p&gt;
-
-&lt;p&gt; • (&amp;ldquo;element&amp;rdquo;).fadeOut(speed[,
-callback])-渐出，在指定事件内降低元素的不透明度&lt;/p&gt;
-
-&lt;p&gt;(1)fadeIn() 和 fadeOut() 方法只改变元素的不透明度&lt;/p&gt;
-
-&lt;p&gt;​&lt;strong&gt;3. slideUp方法和slideDown方法&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt; • (&amp;ldquo;element&amp;rdquo;).slideUp(speed[, callback])-元素由下到上缩短隐藏&lt;/p&gt;
-
-&lt;p&gt; • (&amp;ldquo;element&amp;rdquo;).slideDown(speed[, callback])-元素由上至下延伸显示&lt;/p&gt;
-
-&lt;p&gt;(1)slideUp() 和 slideDown() 只改变元素的高度&lt;/p&gt;
-
-&lt;p&gt;​&lt;strong&gt;4. 动画参数&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt; • 在 jQuery 中的任何动画效果，都可以指定 3 种速度参数，即
-“slow”、“normal” 和 “fast”（时间长度分别是 0.6 秒、0.4 秒和 0.2
-秒）；也可以使用数组作为时间参数（单位：毫秒）&lt;/p&gt;
-
-&lt;p&gt;​&lt;strong&gt;5. 自定义动画&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt; • animate(params[, speed][, callback]);&lt;/p&gt;
-
-&lt;p&gt;(1)params: 一个包含样式属性及值的映射，如 {property1: &amp;ldquo;value1&amp;rdquo;,
-property2: &amp;ldquo;value2&amp;rdquo;, &amp;hellip;}&lt;/p&gt;
-
-&lt;p&gt;(2)speed: 速度参数，可选&lt;/p&gt;
-
-&lt;p&gt;(3)callback: 在动画完成时执行的回调函数，可选&lt;/p&gt;
-
-&lt;p&gt;​&lt;strong&gt;6. 停止动画和判断是否处于动画状态&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;(1)停止元素的动画&lt;/p&gt;
-
-&lt;p&gt; • stop([clearQueue][, gotoEnd]);&lt;/p&gt;
-
-&lt;p&gt; •
-参数说明：参数都为可选参数，clearQueue表示是否清空未执行完的动画队列，gotoEnd表示是否直接将正在执行的动画跳转到末状态&lt;/p&gt;
-
-&lt;p&gt;(2)判断元素是否处于动画状态&lt;/p&gt;
-
-&lt;p&gt; • (element).is(&amp;rdquo;:animated&amp;rdquo;)&lt;/p&gt;
-
-&lt;p&gt;​&lt;strong&gt;7. 其他动画方法&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt; • toggle(speed[, callback])-切换元素的可见状态&lt;/p&gt;
-
-&lt;p&gt; • slideToggle(speed[, callback])通过高度变化来切换匹配元素的可见性&lt;/p&gt;
-
-&lt;p&gt; • fadeTo(speed, opacity[,
-callback])-把元素的不透明度以渐进方式调整到指定的值&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_in_animation/</guid>
+      <description>​1. show和hide方法 • (&amp;ldquo;element&amp;rdquo;).show(speed[, callback])-显示element元素 • (&amp;ldquo;element&amp;rdquo;).hide(speed[, callback])-隐藏element元素 (1)show() 和 hide() 方法同时修</description>
     </item>
     
     <item>
       <title>《锋利的jQuery》学习笔记——jQuery中的动画</title>
-      <link>http://blog.wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_in_animation</link>
+      <link>http://blog.wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_in_animation/</link>
       <pubDate>Tue, 13 Mar 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_in_animation</guid>
-      <description>&lt;p&gt;​&lt;strong&gt;1. show和hide方法&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt; • (&amp;ldquo;element&amp;rdquo;).show(speed[, callback])-显示element元素&lt;/p&gt;
-
-&lt;p&gt; • (&amp;ldquo;element&amp;rdquo;).hide(speed[, callback])-隐藏element元素&lt;/p&gt;
-
-&lt;p&gt;(1)show() 和 hide() 方法同时修改多个样式属性即高度、宽度和不透明度&lt;/p&gt;
-
-&lt;p&gt;(2)hide() 方法在将内容的 display 属性值设置为 none 之前，会记住原先的
-display 属性值，当调用 show() 方法时，会根据之前记住的值来显示元素&lt;/p&gt;
-
-&lt;p&gt;​&lt;strong&gt;2. fadeIn方法和fadeOut方法&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt; • (&amp;ldquo;element&amp;rdquo;).fadeIn(speed[,
-callback])-渐入，在指定事件内增加元素的不透明度&lt;/p&gt;
-
-&lt;p&gt; • (&amp;ldquo;element&amp;rdquo;).fadeOut(speed[,
-callback])-渐出，在指定事件内降低元素的不透明度&lt;/p&gt;
-
-&lt;p&gt;(1)fadeIn() 和 fadeOut() 方法只改变元素的不透明度&lt;/p&gt;
-
-&lt;p&gt;​&lt;strong&gt;3. slideUp方法和slideDown方法&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt; • (&amp;ldquo;element&amp;rdquo;).slideUp(speed[, callback])-元素由下到上缩短隐藏&lt;/p&gt;
-
-&lt;p&gt; • (&amp;ldquo;element&amp;rdquo;).slideDown(speed[, callback])-元素由上至下延伸显示&lt;/p&gt;
-
-&lt;p&gt;(1)slideUp() 和 slideDown() 只改变元素的高度&lt;/p&gt;
-
-&lt;p&gt;​&lt;strong&gt;4. 动画参数&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt; • 在 jQuery 中的任何动画效果，都可以指定 3 种速度参数，即
-“slow”、“normal” 和 “fast”（时间长度分别是 0.6 秒、0.4 秒和 0.2
-秒）；也可以使用数组作为时间参数（单位：毫秒）&lt;/p&gt;
-
-&lt;p&gt;​&lt;strong&gt;5. 自定义动画&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt; • animate(params[, speed][, callback]);&lt;/p&gt;
-
-&lt;p&gt;(1)params: 一个包含样式属性及值的映射，如 {property1: &amp;ldquo;value1&amp;rdquo;,
-property2: &amp;ldquo;value2&amp;rdquo;, &amp;hellip;}&lt;/p&gt;
-
-&lt;p&gt;(2)speed: 速度参数，可选&lt;/p&gt;
-
-&lt;p&gt;(3)callback: 在动画完成时执行的回调函数，可选&lt;/p&gt;
-
-&lt;p&gt;​&lt;strong&gt;6. 停止动画和判断是否处于动画状态&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;(1)停止元素的动画&lt;/p&gt;
-
-&lt;p&gt; • stop([clearQueue][, gotoEnd]);&lt;/p&gt;
-
-&lt;p&gt; •
-参数说明：参数都为可选参数，clearQueue表示是否清空未执行完的动画队列，gotoEnd表示是否直接将正在执行的动画跳转到末状态&lt;/p&gt;
-
-&lt;p&gt;(2)判断元素是否处于动画状态&lt;/p&gt;
-
-&lt;p&gt; • (element).is(&amp;rdquo;:animated&amp;rdquo;)&lt;/p&gt;
-
-&lt;p&gt;​&lt;strong&gt;7. 其他动画方法&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt; • toggle(speed[, callback])-切换元素的可见状态&lt;/p&gt;
-
-&lt;p&gt; • slideToggle(speed[, callback])通过高度变化来切换匹配元素的可见性&lt;/p&gt;
-
-&lt;p&gt; • fadeTo(speed, opacity[,
-callback])-把元素的不透明度以渐进方式调整到指定的值&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_in_animation/</guid>
+      <description>​1. show和hide方法 • (&amp;ldquo;element&amp;rdquo;).show(speed[, callback])-显示element元素 • (&amp;ldquo;element&amp;rdquo;).hide(speed[, callback])-隐藏element元素 (1)show() 和 hide() 方法同时修</description>
     </item>
     
   </channel>

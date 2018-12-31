@@ -8,98 +8,17 @@
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Fri, 03 Oct 2014 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.wenzhixin.net.cn/tags/%E6%96%B9%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/%E6%96%B9%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>如何不用 eval 的方式通过字符串调用 JavaScript 的方法</title>
-      <link>http://blog.wenzhixin.net.cn/2014/10/03/call_string_function</link>
+      <link>http://blog.wenzhixin.net.cn/2014/10/03/call_string_function/</link>
       <pubDate>Fri, 03 Oct 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/10/03/call_string_function</guid>
-      <description>&lt;p&gt;由于 &lt;a href=&#34;https://github.com/wenzhixin/bootstrap-table&#34;&gt;bootstrap-table&lt;/a&gt; 插件需要支持&lt;code&gt;data-name=&amp;quot;functionName&amp;quot;&lt;/code&gt;的方式，所以在实现的过程中使用了&lt;code&gt;eval&lt;/code&gt;的方法。我们知道，在 JavaScript 中，&lt;code&gt;eval&lt;/code&gt;是丑陋的，在&lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/eval&#34;&gt;MDN&lt;/a&gt;中提到：&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Obsolete&lt;/p&gt;
-
-&lt;p&gt;This feature is obsolete. Although it may still work in some browsers, its use is discouraged since it could be removed at any time. Try to avoid using it.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;我们通过&lt;code&gt;eval&lt;/code&gt;执行字符串代码，例如：&lt;/p&gt;
-eval(&#34;var x = &#39;Hello from eval!&#39;;&#34;);
-console.log(x);
-
-&lt;p&gt;然而，&lt;code&gt;eval&lt;/code&gt;会带来一些意想不到的问题：&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;安全性问题：你的字符串可能会被注入其他的命令或者第三方脚本。&lt;/li&gt;
-&lt;li&gt;可调试问题：很难去调试错误信息。&lt;/li&gt;
-&lt;li&gt;压缩问题：程序不会对字符串进行最小化压缩。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;不幸的是，在实际的开发中，&lt;code&gt;eval&lt;/code&gt;经常会被滥用，例如解析 JSON 字符串，虽然使用&lt;code&gt;eval&lt;/code&gt;可以正常工作，但是我们应该尽量避免使用它，例如使用&lt;code&gt;JSON.parse&lt;/code&gt;方法。&lt;/p&gt;
-
-&lt;p&gt;那么，我们如何才能不用 eval 的方式通过字符串调用 JavaScript 的方法呢？&lt;/p&gt;
-
-&lt;p&gt;首先，假如我们有一个字符串名称的方法：&lt;/p&gt;
-// function we want to run
-var func = &#39;runMe&#39;;
-
-function runMe() {
-    // do something
-}
-
-&lt;p&gt;一个好的解决方法那就是我们可以通过&lt;code&gt;window&lt;/code&gt;对象，在调用方法之前我们对其进行检查：&lt;/p&gt;
-// find function
-var fn = window[func]; // runMe
-
-// is a function?
-if (typeof fn === &#39;function&#39;) {
-    fn();
-}
-
-&lt;p&gt;更多的时候，我们的方法是有一系列的参数的，例如我们存放到数组中，这个我们只需要简单的执行&lt;code&gt;apply&lt;/code&gt;方法即可：&lt;/p&gt;
-// function name and parameters to pass
-var func = &#39;runMe&#39;;
-var args = [1, 2, 3];
-
-// find function
-var fn = window[func]; // runMe
-
-// is a function?
-if (typeof fn === &#39;function&#39;) {
-    fn.apply(null, args);
-}
-
-&lt;p&gt;到此，我们知道了不用 eval 的方式通过字符串调用 JavaScript 的方法，是更安全、容易进行调试、运行更快的方法。&lt;/p&gt;
-
-&lt;p&gt;最后，将其封装成了一个工具函数：&lt;/p&gt;
-var calculateFunctionValue = function (func, args, defaultValue) {
-    if (typeof func === &#39;string&#39;) {
-        // support obj.func1.func2
-        var fs = func.split(&#39;.&#39;);
-
-        if (fs.length &gt; 1) {
-            func = window;
-            $.each(fs, function (i, f) {
-                func = func[f];
-            });
-        } else {
-            func = window[func];
-        }
-    }
-    if (typeof func === &#39;function&#39;) {
-        return func.apply(null, args);
-    }
-    return defaultValue;
-};
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;扩展：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;对字符串对象，也同样的方法处理。而对于字符串数组，则使用类似：&lt;/p&gt;
-&#39;[5, 10, 20, 50, 100, 200]&#39;.replace(/, /g, &#39;,&#39;).slice(1, -1).split(&#39;,&#39;);
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2014/10/03/call_string_function/</guid>
+      <description>由于 bootstrap-table 插件需要支持data-name=&amp;quot;functionName&amp;quot;的方式，所以在实现的过程中使用了eval的方法。我们知</description>
     </item>
     
   </channel>

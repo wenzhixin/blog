@@ -1,426 +1,60 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Canvas on 文翼的博客</title>
+    <title>canvas on 文翼的博客</title>
     <link>http://blog.wenzhixin.net.cn/tags/canvas/</link>
-    <description>Recent content in Canvas on 文翼的博客</description>
+    <description>Recent content in canvas on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Sun, 16 Feb 2014 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.wenzhixin.net.cn/tags/canvas/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/canvas/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>canvas 如何在保留 background 的情况下重置画布</title>
-      <link>http://blog.wenzhixin.net.cn/2014/02/16/canvas_background</link>
+      <link>http://blog.wenzhixin.net.cn/2014/02/16/canvas_background/</link>
       <pubDate>Sun, 16 Feb 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/02/16/canvas_background</guid>
-      <description>&lt;p&gt;前几天在用 canvas 实现动画的时候，因为是需要设置画图的背景，
-所以一开始想到的就是使用 canvas 的 drawImage() 方法：&lt;/p&gt;
-context.drawImage(img, x, y, width, height);
-
-&lt;p&gt;但是后面发现了在此基础上画动画的话，假如通过：&lt;/p&gt;
-context.clearRect(0, 0, width, height);
-
-&lt;p&gt;来重置画布的话，背景也被清除掉了，再次重画背景就先出现一闪一闪的问题，
-并不是自己想要的结果。&lt;/p&gt;
-
-&lt;p&gt;查阅了相关资料：&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;HTML5 Canvas is a Non-Retained Drawing Mode Graphics API.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;意思是说画布是一种类似油彩画的画图模式。就像现实世界中的油彩画一样，
-当你使用 &lt;code&gt;stroke()&lt;/code&gt; 或者 &lt;code&gt;fill()&lt;/code&gt; 或者 &lt;code&gt;drawImage()&lt;/code&gt;
-的时候，其实就像油彩一样变为画布的一部分。例如，一个画家画了一个人，
-你说让那个人移动或者变大，是不可能的，你不能改变它，也不能擦掉它。
-当然你可以重新拿一张白纸重新开始画，就相当于调用&lt;code&gt;clearRect()&lt;/code&gt;。&lt;/p&gt;
-
-&lt;p&gt;那么，应该如何解决这个问题呢？&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;假如背景图片是静态的，那么就使用 css 对 canvas 的样式 &lt;code&gt;background&lt;/code&gt; 属性进行设置。
-例如我上面遇到的问题就是这种情况。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;假如背景是动态的，可以考虑使用 Retained Drawing Mode 的 SVG 或者 HTML。
-使用这些元素，就可以改变背景的位置或者大小。&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2014/02/16/canvas_background/</guid>
+      <description>前几天在用 canvas 实现动画的时候，因为是需要设置画图的背景， 所以一开始想到的就是使用 canvas 的 drawImage() 方法： 1 context.drawImage(img, x, y, width, height); 但是后面发现了在此基础上画动画的话，假</description>
     </item>
     
     <item>
       <title>使用 canvas 绘制时钟</title>
-      <link>http://blog.wenzhixin.net.cn/2013/11/20/canvas_draw_clock</link>
+      <link>http://blog.wenzhixin.net.cn/2013/11/20/canvas_draw_clock/</link>
       <pubDate>Wed, 20 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/11/20/canvas_draw_clock</guid>
-      <description>
-
-&lt;p&gt;今天我们利用 canvas 来画一个基本的时钟程序。通过一边实践一边学习新的知识。&lt;/p&gt;
-
-&lt;p&gt;准备工作，我们先定义需要用到的变量：&lt;/p&gt;
-&lt;canvas id=&#34;canvas&#34; width=&#34;300&#34; height=&#34;300&#34;&gt;&lt;/canvas&gt;
-&lt;script src=&#34;clock.js&#34;&gt;&lt;/script&gt;
-var canvas = document.getElementById(&#39;canvas&#39;),
-	context = canvas.getContext(&#39;2d&#39;),
-
-	WIDTH = canvas.width,
-	HEIGHT = canvas.height,
-	RADIUS = WIDTH / 2 - 30;
-	NUMBER_RADIUS = RADIUS + 10,
-	FONT_HEIGHT = 15;
-
-context.font = FONT_HEIGHT + &#39;px&#39;;
-
-&lt;h4 id=&#34;1-画圆:033e0261394abe076a41319978c9c005&#34;&gt;1. 画圆&lt;/h4&gt;
-
-&lt;p&gt;&lt;strong&gt;API：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;beginPath()：起始一条路径，或重置当前路径&lt;/li&gt;
-&lt;li&gt;arc(): 创建弧/曲线（用于创建圆或部分圆）&lt;/li&gt;
-&lt;li&gt;stroke()：绘制已定义的路径&lt;/li&gt;
-&lt;li&gt;fill()：填充当前绘图（路径）&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;JavaScript 语法：&lt;/strong&gt;&lt;/p&gt;
-context.arc(x, y, r, sAngle, eAngle, counterclockwise);
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;参数&lt;/th&gt;
-&lt;th&gt;描述&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;x&lt;/td&gt;
-&lt;td&gt;圆的中心的 x 坐标。&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;y&lt;/td&gt;
-&lt;td&gt;圆的中心的 y 坐标。&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;r&lt;/td&gt;
-&lt;td&gt;圆的半径。&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;sAngle&lt;/td&gt;
-&lt;td&gt;起始角，以弧度计。（弧的圆形的三点钟位置是 0 度）。&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;eAngle&lt;/td&gt;
-&lt;td&gt;结束角，以弧度计。&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;counterclockwise&lt;/td&gt;
-&lt;td&gt;可选。规定应该逆时针还是顺时针绘图。False = 顺时针，true = 逆时针。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;&lt;strong&gt;关键代码：&lt;/strong&gt;&lt;/p&gt;
-function drawCircle() {
-	context.beginPath();
-	context.arc(canvas.width / 2, canvas.height / 2, RADIUS, 0, Math.PI * 2, true);
-	context.stroke();
-}
-
-function drawCenter() {
-	context.beginPath();
-	context.arc(WIDTH / 2, HEIGHT / 2, 5, 0, Math.PI * 2, true);
-	context.fill();
-}
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2013/11/20/1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;2-画数字:033e0261394abe076a41319978c9c005&#34;&gt;2. 画数字&lt;/h4&gt;
-
-&lt;p&gt;&lt;strong&gt;API：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;measureText()：返回包含指定文本宽度的对象&lt;/li&gt;
-&lt;li&gt;fillText()：在画布上绘制“被填充的”文本&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;JavaScript 语法：&lt;/strong&gt;&lt;/p&gt;
-context.fillText(text,x,y,maxWidth);
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;参数&lt;/th&gt;
-&lt;th&gt;描述&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;text&lt;/td&gt;
-&lt;td&gt;规定在画布上输出的文本。&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;x&lt;/td&gt;
-&lt;td&gt;开始绘制文本的 x 坐标位置（相对于画布）。&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;y&lt;/td&gt;
-&lt;td&gt;开始绘制文本的 y 坐标位置（相对于画布）。&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;maxWidth&lt;/td&gt;
-&lt;td&gt;可选。允许的最大文本宽度，以像素计。&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;&lt;strong&gt;关键代码：&lt;/strong&gt;&lt;/p&gt;
-function drawNumbers() {
-	var i, angle, numWidth;
-
-	for (i = 1; i &lt;= 12; i++) {
-		angle = Math.PI / 6 * (i - 3);
-		numWidth = context.measureText(i).width;
-		context.fillText(i, WIDTH / 2 + Math.cos(angle) * NUMBER_RADIUS - numWidth / 2,
-			HEIGHT / 2 + Math.sin(angle) * NUMBER_RADIUS + FONT_HEIGHT / 3);
-	}
-}
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2013/11/20/2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;3-画指针:033e0261394abe076a41319978c9c005&#34;&gt;3. 画指针&lt;/h4&gt;
-
-&lt;p&gt;&lt;strong&gt;API：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;moveTo()：把路径移动到画布中的指定点，不创建线条&lt;/li&gt;
-&lt;li&gt;lineTo()：添加一个新点，然后在画布中创建从该点到最后指定点的线条&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;关键代码：&lt;/strong&gt;&lt;/p&gt;
-function drawHands() {
-	var date = new Date(),
-		h = date.getHours(),
-		m = date.getMinutes(),
-		s = date.getSeconds();
-
-	drawHand((h % 12) * 5 + (m / 60) * 5, RADIUS - 60);
-	drawHand(m, RADIUS - 40);
-	drawHand(s, RADIUS - 20);
-}
-
-function drawHand(loc, radius) {
-	var angle = Math.PI * 2 * (loc / 60) - Math.PI / 2;
-
-	context.moveTo(WIDTH / 2, HEIGHT / 2);
-	context.lineTo(WIDTH / 2 + Math.cos(angle) * radius,
-		HEIGHT / 2 + Math.sin(angle) * radius);
-	context.stroke();
-}
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2013/11/20/3.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;4-加上计时器:033e0261394abe076a41319978c9c005&#34;&gt;4. 加上计时器&lt;/h4&gt;
-
-&lt;p&gt;&lt;strong&gt;API：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;clearRect()：在给定的矩形内清除指定的像素&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;关键代码：&lt;/strong&gt;&lt;/p&gt;
-function drawClock() {
-	context.clearRect(0, 0, WIDTH, HEIGHT);
-
-	drawCircle();
-	drawCenter();
-	drawNumbers();
-	drawHands();
-	setTimeout(drawClock, 1000);
-}
-
-drawClock();
-
-&lt;p&gt;到此，大功告成！查看 &lt;a href=&#34;http://blog.wenzhixin.net.cn/demos/canvas/clock.html&#34;&gt;demo&lt;/a&gt;&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/20/canvas_draw_clock/</guid>
+      <description>今天我们利用 canvas 来画一个基本的时钟程序。通过一边实践一边学习新的知识。 准备工作，我们先定义需要用到的变量： 1 2 &amp;lt;canvas id=&amp;#34;canvas&amp;#34; width=&amp;#34;300&amp;#34; height=&amp;#34;300&amp;#34;&amp;gt;&amp;lt;/canvas&amp;gt; &amp;lt;script src=&amp;#34;clock.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; 1 2 3 4 5 6 7 8 9 10</description>
     </item>
     
     <item>
       <title>html5 canvas 画布入门</title>
-      <link>http://blog.wenzhixin.net.cn/2013/11/12/hello_canvas</link>
+      <link>http://blog.wenzhixin.net.cn/2013/11/12/hello_canvas/</link>
       <pubDate>Tue, 12 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/11/12/hello_canvas</guid>
-      <description>&lt;p&gt;今天开始学点新东西，canvas 画布，它是一个 HTML5 的一个新元素，
-它没有自己的行为，但是定义了一个 API 支持脚本化客户端绘图操作。&lt;/p&gt;
-
-&lt;p&gt;既然是入门，也来个 hello world 小程序吧。&lt;/p&gt;
-&lt;!doctype html&gt;
-&lt;html lang=&#34;en&#34;&gt;
-&lt;head&gt;
-    &lt;meta charset=&#34;UTF-8&#34; /&gt;
-    &lt;title&gt;hello canvas&lt;/title&gt;
-    &lt;style&gt;
-        body {
-            background: #ddd;
-        }
-        #canvas {
-            background: #fff;
-        }
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;canvas id=&#34;canvas&#34; width=&#34;600&#34; height=&#34;300&#34;&gt;&lt;/canvas&gt;
-    &lt;script&gt;
-        var canvas = document.getElementById(&#39;canvas&#39;),
-            context = canvas.getContext(&#39;2d&#39;);
-
-        context.font = &#39;38pt Arial&#39;;
-        context.fillStyle = &#39;cornflowerblue&#39;;
-        context.strokeStyle = &#39;blue&#39;;
-
-        context.fillText(&#39;Hello Canvas&#39;, canvas.width / 2 - 150, canvas.height / 2 + 15);
-        context.strokeText(&#39;Hello Canvas&#39;, canvas.width / 2 - 150, canvas.height / 2 + 15);
-    &lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-
-&lt;p&gt;效果：
-&lt;img src=&#34;http://blog.wenzhixin.net.cn/2013/11/12/1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;需要注意的是，在这里，我们是通过设置 canvas 元素的 width 与 height，来改变元素大小的。
-假如通过 css 来设置 canvas 元素的大小，两者的效果并不一样。&lt;/p&gt;
-#canvas {
-    width: 600;
-    height: 300;
-}
-
-&lt;canvas id=&#34;canvas&#34;&gt;&lt;/canvas&gt;
-
-&lt;p&gt;效果：
-&lt;img src=&#34;http://blog.wenzhixin.net.cn/2013/11/12/2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;这是因为 canvas 元素有元素本身大小与元素绘图表面大小两套尺寸。
-设置 width 和 height 时，实际上是同时修改了该元素本身大小和元素绘图表面大小；
-而设置 css，只会改变元素本身大小，并不会改变元素绘图表面大小。
-默认情况下元素本身大小与元素绘图表面大小都为 300 x 150。
-当元素本身大小与元素绘图表面大小不一样大小时，浏览器会对绘图表面进行缩放。&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/12/hello_canvas/</guid>
+      <description>今天开始学点新东西，canvas 画布，它是一个 HTML5 的一个新元素， 它没有自己的行为，但是定义了一个 API 支持脚本化客户端绘图操作。 既然是入门，也来个</description>
     </item>
     
     <item>
       <title>html5 canvas 画图实例——rotate</title>
-      <link>http://blog.wenzhixin.net.cn/2012/05/20/html5_canvas_drawing_examples_rotate</link>
+      <link>http://blog.wenzhixin.net.cn/2012/05/20/html5_canvas_drawing_examples_rotate/</link>
       <pubDate>Sun, 20 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/05/20/html5_canvas_drawing_examples_rotate</guid>
-      <description>&lt;p&gt;接口：context.rotate(angle) &lt;/p&gt;
-
-&lt;p&gt;功能：按给定的弧度旋转,按顺时针旋转。&lt;/p&gt;
-
-&lt;p&gt;说明：rotate 方法旋转的中心始终是canvas 的原点，使&lt;/p&gt;
-
-&lt;p&gt;用translate 方法可以改变它。&lt;/p&gt;
-
-&lt;p&gt;例子：&lt;/p&gt;
-
-&lt;p&gt;效果：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://ww2.sinaimg.cn/mw600/88a9c274jw1dt4ons6vzyg.gif&#34; alt=&#34;html5 canvas
-画图实例——rotate&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://ww1.sinaimg.cn/mw600/88a9c274jw1dt4onxroqvg.gif&#34; alt=&#34;html5 canvas
-画图实例——rotate&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://ww4.sinaimg.cn/mw600/88a9c274jw1dt4oo3hq50g.gif&#34; alt=&#34;html5 canvas
-画图实例——rotate&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;代码：&lt;/p&gt;
-&lt;canvas id=&#34;canvas&#34; height=&#34;400&#34;&gt;&lt;/canvas&gt;
-&lt;script type=&#34;text/javascript&#34;&gt;
-
-var canvas = document.getElementById(&#34;canvas&#34;);
-var context = canvas.getContext(&#34;2d&#34;);
-context.fillStyle = &#34;#000&#34;;
-context.fillRect(0, 0, 400, 400);
-context.translate(200, 200);
-
-for (var i = 1; i &lt; 6; i++) {
-    context.fillStyle = &#34;rgb(255, &#34; + (255 - 51 * i) + &#34;, &#34; + (51 * i)+ &#34;)&#34;;
-    for (var j = 0; j &lt; i * 6; j++) {
-        context.rotate(Math.PI * 2 / (6 * i));
-        context.fillRect(0, 30 * i, 10, 10);
-        context.beginPath();
-        context.arc(0, 30 * i, 10, 0, Math.PI * 2, true);
-        context.fill();
-    }
-}
-&lt;/script&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2012/05/20/html5_canvas_drawing_examples_rotate/</guid>
+      <description>接口：context.rotate(angle) 功能：按给定的弧度旋转,按顺时针旋转。 说明：rotate 方法旋转的中心始终是canvas 的原</description>
     </item>
     
     <item>
       <title>html5 canvas 画图实例——rotate</title>
-      <link>http://blog.wenzhixin.net.cn/2012/05/20/html5_canvas_drawing_examples_rotate</link>
+      <link>http://blog.wenzhixin.net.cn/2012/05/20/html5_canvas_drawing_examples_rotate/</link>
       <pubDate>Sun, 20 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/05/20/html5_canvas_drawing_examples_rotate</guid>
-      <description>&lt;p&gt;接口：context.rotate(angle) &lt;/p&gt;
-
-&lt;p&gt;功能：按给定的弧度旋转,按顺时针旋转。&lt;/p&gt;
-
-&lt;p&gt;说明：rotate 方法旋转的中心始终是canvas 的原点，使&lt;/p&gt;
-
-&lt;p&gt;用translate 方法可以改变它。&lt;/p&gt;
-
-&lt;p&gt;例子：&lt;/p&gt;
-
-&lt;p&gt;效果：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://ww2.sinaimg.cn/mw600/88a9c274jw1dt4ons6vzyg.gif&#34; alt=&#34;html5 canvas
-画图实例——rotate&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://ww1.sinaimg.cn/mw600/88a9c274jw1dt4onxroqvg.gif&#34; alt=&#34;html5 canvas
-画图实例——rotate&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://ww4.sinaimg.cn/mw600/88a9c274jw1dt4oo3hq50g.gif&#34; alt=&#34;html5 canvas
-画图实例——rotate&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;代码：&lt;/p&gt;
-&lt;canvas id=&#34;canvas&#34; height=&#34;400&#34;&gt;&lt;/canvas&gt;
-&lt;script type=&#34;text/javascript&#34;&gt;
-
-var canvas = document.getElementById(&#34;canvas&#34;);
-var context = canvas.getContext(&#34;2d&#34;);
-context.fillStyle = &#34;#000&#34;;
-context.fillRect(0, 0, 400, 400);
-context.translate(200, 200);
-
-for (var i = 1; i &lt; 6; i++) {
-    context.fillStyle = &#34;rgb(255, &#34; + (255 - 51 * i) + &#34;, &#34; + (51 * i)+ &#34;)&#34;;
-    for (var j = 0; j &lt; i * 6; j++) {
-        context.rotate(Math.PI * 2 / (6 * i));
-        context.fillRect(0, 30 * i, 10, 10);
-        context.beginPath();
-        context.arc(0, 30 * i, 10, 0, Math.PI * 2, true);
-        context.fill();
-    }
-}
-&lt;/script&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2012/05/20/html5_canvas_drawing_examples_rotate/</guid>
+      <description>接口：context.rotate(angle) 功能：按给定的弧度旋转,按顺时针旋转。 说明：rotate 方法旋转的中心始终是canvas 的原</description>
     </item>
     
   </channel>

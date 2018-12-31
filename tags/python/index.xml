@@ -1,77 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Python on 文翼的博客</title>
+    <title>python on 文翼的博客</title>
     <link>http://blog.wenzhixin.net.cn/tags/python/</link>
-    <description>Recent content in Python on 文翼的博客</description>
+    <description>Recent content in python on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Mon, 04 Aug 2014 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.wenzhixin.net.cn/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>如何使用 python 连接 Oracle（网站）</title>
-      <link>http://blog.wenzhixin.net.cn/2014/08/04/python_oracle</link>
+      <link>http://blog.wenzhixin.net.cn/2014/08/04/python_oracle/</link>
       <pubDate>Mon, 04 Aug 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/08/04/python_oracle</guid>
-      <description>
-
-&lt;p&gt;首先，由于网站部署在远程服务器的局域网上面，所以需要通过 &lt;a href=&#34;http://wenzhixin.net.cn/2014/03/15/ssh_tunnel&#34;&gt;ssh tunnel（隧道）&lt;/a&gt; 的方式进行本地的映射，主要映射两个端口：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Oracle 服务：&lt;code&gt;ssh -fN -L 1521:ip:1521 server&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;远程桌面：&lt;code&gt;ssh -fN -L 3389:ip:3389 server&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;python 连接 Oracle 主要使用 cx_Oracle。&lt;/p&gt;
-
-&lt;h3 id=&#34;步骤:845220f7444ef6bdbea12f87d789131a&#34;&gt;步骤：&lt;/h3&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;下载 Instant Client Package - Basic 和 Instant Client Package - SDK 的 rpm 安装包：&lt;a href=&#34;http://www.oracle.com/technetwork/topics/linuxx86-64soft-092277.html&#34;&gt;http://www.oracle.com/technetwork/topics/linuxx86-64soft-092277.html&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;转换为 deb 包：&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-sudo apt-get install alien
-sudo alien oracle-instantclient12.1-basic-12.1.0.2.0-1.x86_64.rpm
-sudo alien oracle-instantclient12.1-devel-12.1.0.2.0-1.x86_64.rpm
-
-&lt;ol&gt;
-&lt;li&gt;安装 deb 包：&lt;/li&gt;
-&lt;/ol&gt;
-sudo dpkg -i oracle-instantclient12.1-basic_12.1.0.2.0-2_amd64.deb
-sudo dpkg -i oracle-instantclient12.1-devel_12.1.0.2.0-2_amd64.deb
-
-&lt;ol&gt;
-&lt;li&gt;设置环境变量（加到 .bashrc 中）&lt;/li&gt;
-&lt;/ol&gt;
-export ORACLE_HOME=/usr/lib/oracle/12.1/client64/
-export LD_LIBRARY_PATH=$ORACLE_HOME/lib
-export NLS_LANG=AMERICAN_AMERICA.WE8ISO8859P1 # 设置 Oracle 编码，解决乱码问题
-
-&lt;ol&gt;
-&lt;li&gt;安装 cx_Oracle：&lt;/li&gt;
-&lt;/ol&gt;
-sudo apt-get install python-dev python-pip
-sudo env ORACLE_HOME=$ORACLE_HOME pip install cx_Oracle
-
-&lt;ol&gt;
-&lt;li&gt;使用：&lt;/li&gt;
-&lt;/ol&gt;
-import cx_Oracle
-
-conn = cx_Oracle.connect(&#39;user&#39;, &#39;password&#39;, &#39;127.0.0.1/orcl&#39;)
-cursor = conn.cursor()
-cursor.execute(&#39;select * from table&#39;)
-
-&lt;p&gt;可能遇到的问题:&lt;/p&gt;
-ImportError: libaio.so.1: cannot open shared object file: No such file or directory
-
-&lt;p&gt;解决:&lt;/p&gt;
-sudo apt-get install libaio1 libaio-dev
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2014/08/04/python_oracle/</guid>
+      <description>首先，由于网站部署在远程服务器的局域网上面，所以需要通过 ssh tunnel（隧道） 的方式进行本地的映射，主要映射两个端口： Oracle 服务：ssh -fN -L 1521:ip:1521 server</description>
     </item>
     
   </channel>

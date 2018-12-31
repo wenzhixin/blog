@@ -1,181 +1,33 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Android_x86 on 文翼的博客</title>
+    <title>android_x86 on 文翼的博客</title>
     <link>http://blog.wenzhixin.net.cn/tags/android_x86/</link>
-    <description>Recent content in Android_x86 on 文翼的博客</description>
+    <description>Recent content in android_x86 on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Sat, 02 Jun 2012 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.wenzhixin.net.cn/tags/android_x86/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/android_x86/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>虚拟机安装 Android_x86 系统，用于开发、测试 Android 程序</title>
-      <link>http://blog.wenzhixin.net.cn/2012/06/02/install_android_x86_virtual_machine_for_the_development_testing_android_applications</link>
+      <link>http://blog.wenzhixin.net.cn/2012/06/02/install_android_x86_virtual_machine_for_the_development_testing_android_applications/</link>
       <pubDate>Sat, 02 Jun 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/06/02/install_android_x86_virtual_machine_for_the_development_testing_android_applications</guid>
-      <description>
-
-&lt;h4 id=&#34;1-下载镜像:a1410ea22f318ffac0983b78a8d3a8f9&#34;&gt;1、下载镜像：&lt;/h4&gt;
-
-&lt;p&gt;从 &lt;a href=&#34;http://www.android-x86.org/download 下载&#34;&gt;http://www.android-x86.org/download 下载&lt;/a&gt; android_x86 iso 镜像（例如 android-x86-2.3-RC1-eeepc.iso）&lt;/p&gt;
-
-&lt;h4 id=&#34;2-安装系统:a1410ea22f318ffac0983b78a8d3a8f9&#34;&gt;2、安装系统：&lt;/h4&gt;
-
-&lt;p&gt;使用虚拟机 VirtualBox 来安装系统，步骤如下：&lt;/p&gt;
-
-&lt;p&gt;（1）选择目标 OS：Linux&lt;/p&gt;
-
-&lt;p&gt;（2）目标 OS 版本：others&lt;/p&gt;
-
-&lt;p&gt;（3）内存：512MB&lt;/p&gt;
-
-&lt;p&gt;（4）硬盘：VDI drive，动态大小，1GB&lt;/p&gt;
-
-&lt;p&gt;（5）启动并选择下载的 iso 镜像文件&lt;/p&gt;
-
-&lt;p&gt;（6）从 boot 菜单中选择 install to hard disk（安装到硬盘）。&lt;/p&gt;
-
-&lt;p&gt;（7）创建一个新的分区，格式化为 ext3 格式，并选择该分区进行系统安装&lt;/p&gt;
-
-&lt;h4 id=&#34;3-添加手机分辨率模式:a1410ea22f318ffac0983b78a8d3a8f9&#34;&gt;3、添加手机分辨率模式：&lt;/h4&gt;
-
-&lt;p&gt;在终端下输入：&lt;/p&gt;
-
-&lt;p&gt;（1）VBoxManage setextradata &amp;ldquo;android2.3&amp;rdquo; &amp;ldquo;CustomVideoMode1&amp;rdquo; &amp;ldquo;320x480x16&amp;rdquo;&lt;/p&gt;
-
-&lt;p&gt;（2）VBoxManage setextradata &amp;ldquo;android2.3&amp;rdquo; &amp;ldquo;CustomVideoMode2&amp;rdquo; &amp;ldquo;480x800x16&amp;rdquo;&lt;/p&gt;
-
-&lt;h4 id=&#34;4-修改-android-系统的-grub-配置:a1410ea22f318ffac0983b78a8d3a8f9&#34;&gt;4、修改 Android 系统的 Grub 配置：&lt;/h4&gt;
-
-&lt;p&gt;（1）启动 Android 系统并选择 Debug mode（调试模式）&lt;/p&gt;
-
-&lt;p&gt;（2）修改 menu.lst 文件：&lt;/p&gt;
-mount -o remount,rw /mnt
-
-vi /mnt/grub/menu.lst
-
-&lt;p&gt;修改启动参数：&lt;/p&gt;
-androidboot_hardware=eeepc
-androidboot_hardware=generic_x86 
-
-&lt;p&gt;在 DPI=240 / DPI=160 后添加&lt;/p&gt;
-UVESA_MODE=480x800/UVESA_MODE=320x480
-
-&lt;p&gt;（3）保存并重启系统&lt;/p&gt;
-
-&lt;h4 id=&#34;5-avd-和-eclipse-连接到-android-系统:a1410ea22f318ffac0983b78a8d3a8f9&#34;&gt;5、AVD 和 Eclipse 连接到 Android 系统：&lt;/h4&gt;
-
-&lt;p&gt;（1）进入命令行模式（Alt+F1），输入：netcfg 查看当前 IP 地址&lt;/p&gt;
-
-&lt;p&gt;（2）进入 android 的 platform-tools 目录，输入：./adb connect IP地址&lt;/p&gt;
-
-&lt;p&gt;（3）Eclipse 下，run 并选择该 Android 系统便可&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;ps：&lt;/p&gt;
-
-&lt;p&gt;（1）在 Android 系统屏幕上没有看到鼠标指针，可通过 VirualBox 菜单禁止 mouse integration（鼠标整合）( Host Key + I）&lt;/p&gt;
-
-&lt;p&gt;（2）&amp;rdquo;Windows 键&amp;rdquo;相当于 Android 的 Home 按钮&lt;/p&gt;
-
-&lt;p&gt;（3）&amp;rdquo;Esc&amp;rdquo; 相当于 Android 的 Back &lt;/p&gt;
-
-&lt;p&gt;（4）按钮F2 相当于 Android 的 Menu 按钮&lt;/p&gt;
-
-&lt;p&gt;（5）F3 相当于 Android 的 Search 按钮&lt;/p&gt;
-
-&lt;p&gt;（6）Alt+F1 =&amp;gt; 切换到控制台模式&lt;/p&gt;
-
-&lt;p&gt;（7）Alt+F7 =&amp;gt; 切换到图形界面模式&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2012/06/02/install_android_x86_virtual_machine_for_the_development_testing_android_applications/</guid>
+      <description>1、下载镜像： 从 http://www.android-x86.org/download 下载 android_x86 iso 镜像（例如 android-x86-2.3-RC1-eeepc.iso） 2、安装系统： 使用虚拟机 VirtualBox 来安装系统，步骤如</description>
     </item>
     
     <item>
       <title>虚拟机安装 Android_x86 系统，用于开发、测试 Android 程序</title>
-      <link>http://blog.wenzhixin.net.cn/2012/06/02/install_android_x86_virtual_machine_for_the_development_testing_android_applications</link>
+      <link>http://blog.wenzhixin.net.cn/2012/06/02/install_android_x86_virtual_machine_for_the_development_testing_android_applications/</link>
       <pubDate>Sat, 02 Jun 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/06/02/install_android_x86_virtual_machine_for_the_development_testing_android_applications</guid>
-      <description>
-
-&lt;h4 id=&#34;1-下载镜像:a1410ea22f318ffac0983b78a8d3a8f9&#34;&gt;1、下载镜像：&lt;/h4&gt;
-
-&lt;p&gt;从 &lt;a href=&#34;http://www.android-x86.org/download 下载&#34;&gt;http://www.android-x86.org/download 下载&lt;/a&gt; android_x86 iso 镜像（例如 android-x86-2.3-RC1-eeepc.iso）&lt;/p&gt;
-
-&lt;h4 id=&#34;2-安装系统:a1410ea22f318ffac0983b78a8d3a8f9&#34;&gt;2、安装系统：&lt;/h4&gt;
-
-&lt;p&gt;使用虚拟机 VirtualBox 来安装系统，步骤如下：&lt;/p&gt;
-
-&lt;p&gt;（1）选择目标 OS：Linux&lt;/p&gt;
-
-&lt;p&gt;（2）目标 OS 版本：others&lt;/p&gt;
-
-&lt;p&gt;（3）内存：512MB&lt;/p&gt;
-
-&lt;p&gt;（4）硬盘：VDI drive，动态大小，1GB&lt;/p&gt;
-
-&lt;p&gt;（5）启动并选择下载的 iso 镜像文件&lt;/p&gt;
-
-&lt;p&gt;（6）从 boot 菜单中选择 install to hard disk（安装到硬盘）。&lt;/p&gt;
-
-&lt;p&gt;（7）创建一个新的分区，格式化为 ext3 格式，并选择该分区进行系统安装&lt;/p&gt;
-
-&lt;h4 id=&#34;3-添加手机分辨率模式:a1410ea22f318ffac0983b78a8d3a8f9&#34;&gt;3、添加手机分辨率模式：&lt;/h4&gt;
-
-&lt;p&gt;在终端下输入：&lt;/p&gt;
-
-&lt;p&gt;（1）VBoxManage setextradata &amp;ldquo;android2.3&amp;rdquo; &amp;ldquo;CustomVideoMode1&amp;rdquo; &amp;ldquo;320x480x16&amp;rdquo;&lt;/p&gt;
-
-&lt;p&gt;（2）VBoxManage setextradata &amp;ldquo;android2.3&amp;rdquo; &amp;ldquo;CustomVideoMode2&amp;rdquo; &amp;ldquo;480x800x16&amp;rdquo;&lt;/p&gt;
-
-&lt;h4 id=&#34;4-修改-android-系统的-grub-配置:a1410ea22f318ffac0983b78a8d3a8f9&#34;&gt;4、修改 Android 系统的 Grub 配置：&lt;/h4&gt;
-
-&lt;p&gt;（1）启动 Android 系统并选择 Debug mode（调试模式）&lt;/p&gt;
-
-&lt;p&gt;（2）修改 menu.lst 文件：&lt;/p&gt;
-mount -o remount,rw /mnt
-
-vi /mnt/grub/menu.lst
-
-&lt;p&gt;修改启动参数：&lt;/p&gt;
-androidboot_hardware=eeepc
-androidboot_hardware=generic_x86 
-
-&lt;p&gt;在 DPI=240 / DPI=160 后添加&lt;/p&gt;
-UVESA_MODE=480x800/UVESA_MODE=320x480
-
-&lt;p&gt;（3）保存并重启系统&lt;/p&gt;
-
-&lt;h4 id=&#34;5-avd-和-eclipse-连接到-android-系统:a1410ea22f318ffac0983b78a8d3a8f9&#34;&gt;5、AVD 和 Eclipse 连接到 Android 系统：&lt;/h4&gt;
-
-&lt;p&gt;（1）进入命令行模式（Alt+F1），输入：netcfg 查看当前 IP 地址&lt;/p&gt;
-
-&lt;p&gt;（2）进入 android 的 platform-tools 目录，输入：./adb connect IP地址&lt;/p&gt;
-
-&lt;p&gt;（3）Eclipse 下，run 并选择该 Android 系统便可&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;ps：&lt;/p&gt;
-
-&lt;p&gt;（1）在 Android 系统屏幕上没有看到鼠标指针，可通过 VirualBox 菜单禁止 mouse integration（鼠标整合）( Host Key + I）&lt;/p&gt;
-
-&lt;p&gt;（2）&amp;rdquo;Windows 键&amp;rdquo;相当于 Android 的 Home 按钮&lt;/p&gt;
-
-&lt;p&gt;（3）&amp;rdquo;Esc&amp;rdquo; 相当于 Android 的 Back &lt;/p&gt;
-
-&lt;p&gt;（4）按钮F2 相当于 Android 的 Menu 按钮&lt;/p&gt;
-
-&lt;p&gt;（5）F3 相当于 Android 的 Search 按钮&lt;/p&gt;
-
-&lt;p&gt;（6）Alt+F1 =&amp;gt; 切换到控制台模式&lt;/p&gt;
-
-&lt;p&gt;（7）Alt+F7 =&amp;gt; 切换到图形界面模式&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2012/06/02/install_android_x86_virtual_machine_for_the_development_testing_android_applications/</guid>
+      <description>1、下载镜像： 从 http://www.android-x86.org/download 下载 android_x86 iso 镜像（例如 android-x86-2.3-RC1-eeepc.iso） 2、安装系统： 使用虚拟机 VirtualBox 来安装系统，步骤如</description>
     </item>
     
   </channel>

@@ -8,31 +8,17 @@
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Tue, 26 Feb 2013 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.wenzhixin.net.cn/tags/%E7%BC%96%E8%AF%91/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/%E7%BC%96%E8%AF%91/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Android ant 编译问题收集</title>
-      <link>http://blog.wenzhixin.net.cn/2013/02/26/android_ant_problem</link>
+      <link>http://blog.wenzhixin.net.cn/2013/02/26/android_ant_problem/</link>
       <pubDate>Tue, 26 Feb 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/02/26/android_ant_problem</guid>
-      <description>
-
-&lt;h4 id=&#34;问题:6edc530cf689cf0a05aea6add3f6e7b3&#34;&gt;问题：&lt;/h4&gt;
-aapt not found under the right path
-
-&lt;h4 id=&#34;解决:6edc530cf689cf0a05aea6add3f6e7b3&#34;&gt;解决：&lt;/h4&gt;
-sudo apt-get install ia32-libs # 12.04
-sudo apt-get install lib32z1 # 14.04
-
-&lt;h4 id=&#34;问题-1:6edc530cf689cf0a05aea6add3f6e7b3&#34;&gt;问题：&lt;/h4&gt;
- Perhaps JAVA_HOME does not point to the JDK. It is currently set to &#34;/usr/lib/jvm/java-6-openjdk/jre&#34;
-
-&lt;h4 id=&#34;解决-1:6edc530cf689cf0a05aea6add3f6e7b3&#34;&gt;解决：&lt;/h4&gt;
-
-&lt;p&gt;Fixed it by installing the open jdk:&lt;/p&gt;
-sudo apt-get install openjdk-7-jdk
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2013/02/26/android_ant_problem/</guid>
+      <description>问题： 1 aapt not found under the right path 解决： 1 2 sudo apt-get install ia32-libs # 12.04 sudo apt-get install lib32z1 # 14.04 问题： 1 Perhaps JAVA_HOME does not point to the JDK. It is currently set to &amp;#34;/usr/lib/jvm/java-6-openjdk/jre&amp;#34; 解决： Fixed it by installing the open jdk: 1 sudo apt-get install openjdk-7-jdk</description>
     </item>
     
   </channel>

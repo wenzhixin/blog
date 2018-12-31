@@ -8,1281 +8,152 @@
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Mon, 11 Jan 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.wenzhixin.net.cn/tags/css/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/css/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>通过 css 设置图片的高度与宽度相等</title>
-      <link>http://blog.wenzhixin.net.cn/2016/01/11/css_height_equals_width_with_css</link>
+      <link>http://blog.wenzhixin.net.cn/2016/01/11/css_height_equals_width_with_css/</link>
       <pubDate>Mon, 11 Jan 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2016/01/11/css_height_equals_width_with_css</guid>
-      <description>&lt;p&gt;在图片长宽不相等的情况下，想将长宽设置为相等并且自适应屏幕，可以通过 js 的方式进行设置并通过监听 resize 来实时更新，但是这种方式很麻烦。&lt;/p&gt;
-
-&lt;p&gt;这里通过 css 来达到我们想要的效果：&lt;/p&gt;
-
-&lt;p&gt;HTML:&lt;/p&gt;
-&lt;div class=&#39;box&#39;&gt;
-	&lt;img src=&#34;...&#34;&gt;
-&lt;/div&gt;
-
-&lt;p&gt;需要添加一个父元素来达到我们的目的。&lt;/p&gt;
-
-&lt;p&gt;CSS:&lt;/p&gt;
-.box {
-	position: relative;
-	width: 50%;		/* desired width */
-}
-.box:before {
-	content: &#34;&#34;;
-	display: block;
-	padding-top: 100%; 	/* initial ratio of 1:1*/
-}
-
-&lt;p&gt;我们在这里定义了一个伪元素并且将其 &lt;code&gt;padding-top&lt;/code&gt; 设置为 100%，因为这里的 padding-top 是相对于元素的 width 的。&lt;/p&gt;
-
-&lt;p&gt;现在我们定义了一个 &lt;code&gt;.box&lt;/code&gt; 元素，它的长和宽是相等的，现在我们只需要设置 img 的 CSS 即可:&lt;/p&gt;
-.box img {
-	position:  absolute;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-}
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2016/01/11/css_height_equals_width_with_css/</guid>
+      <description>在图片长宽不相等的情况下，想将长宽设置为相等并且自适应屏幕，可以通过 js 的方式进行设置并通过监听 resize 来实时更新，但是这种方式很麻烦。 这里通过 css 来</description>
     </item>
     
     <item>
       <title>CSS 自定义字体</title>
-      <link>http://blog.wenzhixin.net.cn/2014/04/21/css_font_face</link>
+      <link>http://blog.wenzhixin.net.cn/2014/04/21/css_font_face/</link>
       <pubDate>Mon, 21 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/04/21/css_font_face</guid>
-      <description>
-
-&lt;h3 id=&#34;介绍:4084fa00632317148adffee661d6e415&#34;&gt;介绍&lt;/h3&gt;
-
-&lt;p&gt;通过 CSS 的 @font-face 属性可以实现在网页中嵌入任意字体，例如自定字体、或者是自定义图标（bootstrap）。
-为了能在主流浏览器中都能正常显示自定义的字体，我们需要使用字体的三种文件格式：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;.TTF或.OTF，适用于Firefox 3.5、Safari、Opera&lt;/li&gt;
-&lt;li&gt;.EOT，适用于Internet Explorer 4.0+&lt;/li&gt;
-&lt;li&gt;.SVG，适用于Chrome、IPhone&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;一般情况下，最常见的字体是.TTF文件，我们需要通过这种文件格式转换为其余两种文件格式。&lt;/p&gt;
-
-&lt;h3 id=&#34;使用:4084fa00632317148adffee661d6e415&#34;&gt;使用&lt;/h3&gt;
-
-&lt;p&gt;使用前，需要对字体进行声明：&lt;/p&gt;
-@font-face {
-    font-family: &#39;fontName&#39;;
-    src: url(&#39;fontName.eot&#39;);
-    src: url(&#39;fontName.eot&#39;) format(&#39;embedded-opentype&#39;),
-         url(&#39;fontName.woff&#39;) format(&#39;woff&#39;),
-         url(&#39;fontName.ttf&#39;) format(&#39;truetype&#39;),
-         url(&#39;fontName.svg#FontNameRegular&#39;) format(&#39;svg&#39;);
-}
-
-&lt;p&gt;使用：&lt;/p&gt;
-body {
-    font-family: fontName;
-}
-
-&lt;h3 id=&#34;工具:4084fa00632317148adffee661d6e415&#34;&gt;工具&lt;/h3&gt;
-
-&lt;p&gt;上面讲到转换文件格式的，可以通过在线网站
-&lt;a href=&#34;http://everythingfonts.com/font-face&#34;&gt;http://everythingfonts.com/font-face&lt;/a&gt; 进行转换，
-只要上传 ttf 文件即可，然后会自动生成 css 和其他字体。&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2014/04/21/css_font_face/</guid>
+      <description>介绍 通过 CSS 的 @font-face 属性可以实现在网页中嵌入任意字体，例如自定字体、或者是自定义图标（bootstrap）。 为了能在主流浏览器中都能正常显示自定义</description>
     </item>
     
     <item>
       <title>div 中无法自动换行、以及单行显示的问题</title>
-      <link>http://blog.wenzhixin.net.cn/2012/05/08/word_wrap_and_one_cannot_display_the_problems_in_div</link>
+      <link>http://blog.wenzhixin.net.cn/2012/05/08/word_wrap_and_one_cannot_display_the_problems_in_div/</link>
       <pubDate>Tue, 08 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/05/08/word_wrap_and_one_cannot_display_the_problems_in_div</guid>
-      <description>&lt;p&gt;1、无法自动换行&lt;/p&gt;
-
-&lt;p&gt; * 问题：如果 div
-输入的是英文字母且没有空格，会导致英文字母不换行直接在同一行输出，导致 div
-的宽度远远超出设定的大小。&lt;/p&gt;
-
-&lt;p&gt;*  原因：因为在 div
-中，英文字母之间没有空格的话，默认为一个英文单词，所以单词就一次输出不换行。&lt;/p&gt;
-
-&lt;p&gt;*  解决：通过设置 css：&lt;/p&gt;
-word-wrap: break-word; /*自动换行*/
-
-&lt;p&gt;2、单行显示&lt;/p&gt;
-
-&lt;p&gt; * 问题：如果希望 div 输入的字符只在一行中显示，超过设定的大小则显示为
-&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt; * 解决：通过设置 css：&lt;/p&gt;
-white-space: nowrap; /*不换行*/
-overflow: hidden; /*超出的隐藏*/
-text-overflow: ellipsis; /*超出部分自动用...来表示*/
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2012/05/08/word_wrap_and_one_cannot_display_the_problems_in_div/</guid>
+      <description>1、无法自动换行 * 问题：如果 div 输入的是英文字母且没有空格，会导致英文字母不换行直接在同一行输出，导致 div 的宽度远远超出设定的大小。 * 原因：因为</description>
     </item>
     
     <item>
       <title>div 中无法自动换行、以及单行显示的问题</title>
-      <link>http://blog.wenzhixin.net.cn/2012/05/08/word_wrap_and_one_cannot_display_the_problems_in_div</link>
+      <link>http://blog.wenzhixin.net.cn/2012/05/08/word_wrap_and_one_cannot_display_the_problems_in_div/</link>
       <pubDate>Tue, 08 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/05/08/word_wrap_and_one_cannot_display_the_problems_in_div</guid>
-      <description>&lt;p&gt;1、无法自动换行&lt;/p&gt;
-
-&lt;p&gt; * 问题：如果 div
-输入的是英文字母且没有空格，会导致英文字母不换行直接在同一行输出，导致 div
-的宽度远远超出设定的大小。&lt;/p&gt;
-
-&lt;p&gt;*  原因：因为在 div
-中，英文字母之间没有空格的话，默认为一个英文单词，所以单词就一次输出不换行。&lt;/p&gt;
-
-&lt;p&gt;*  解决：通过设置 css：&lt;/p&gt;
-word-wrap: break-word; /*自动换行*/
-
-&lt;p&gt;2、单行显示&lt;/p&gt;
-
-&lt;p&gt; * 问题：如果希望 div 输入的字符只在一行中显示，超过设定的大小则显示为
-&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt; * 解决：通过设置 css：&lt;/p&gt;
-white-space: nowrap; /*不换行*/
-overflow: hidden; /*超出的隐藏*/
-text-overflow: ellipsis; /*超出部分自动用...来表示*/
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2012/05/08/word_wrap_and_one_cannot_display_the_problems_in_div/</guid>
+      <description>1、无法自动换行 * 问题：如果 div 输入的是英文字母且没有空格，会导致英文字母不换行直接在同一行输出，导致 div 的宽度远远超出设定的大小。 * 原因：因为</description>
     </item>
     
     <item>
       <title>彻底研究 CSS ——段落的垂直对齐</title>
-      <link>http://blog.wenzhixin.net.cn/2012/05/06/the_vertical_alignment_of_css_complete_paragraph</link>
+      <link>http://blog.wenzhixin.net.cn/2012/05/06/the_vertical_alignment_of_css_complete_paragraph/</link>
       <pubDate>Sun, 06 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/05/06/the_vertical_alignment_of_css_complete_paragraph</guid>
-      <description>&lt;p&gt;如果文字内容只有一行，可以设置 line-height 与height
-相同来使文字垂直居中。&lt;/p&gt;
-
-&lt;p&gt; * css 代码：&lt;/p&gt;
-.one_line {
-    width: 500px;
-    height: 100px;
-    line-height: 100px;
-    background-color: #9bd;
-    margin: 20px;
-    padding: 20px;
-}
-
-&lt;p&gt; * html 代码：&lt;/p&gt;
-&lt;div class=&#34;one_line&#34;&gt;
-    这是一行文字内容的垂直对齐
-&lt;/div&gt;
-
-&lt;p&gt; * 效果：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://ww4.sinaimg.cn/mw600/88a9c274jw1dsnwuu9youg.gif&#34; alt=&#34;彻底研究 CSS
-——段落的垂直对齐&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;但是对于超过一行的文本，或者浏览器窗口变窄的情况话，设置
-line-height
-的方法就不起作用了。怎么样才能有效解决未知高度的垂直居中问题（在一个DIV标签里有未知高度的文本或图片的情况下）。下面是解决该问题比较完善的一个解决方案。&lt;/p&gt;
-
-&lt;p&gt;在标准浏览器（Mozilla, Opera, Safari
-等）中，可将父级元素显示方式设定为 table(display: table;)，内部子元素定为
-table-cell(display: table-cell;),通过 vertical-align（vertical-align:
-middle;）特性使其垂直居中，但非标准浏览器是不支持的。&lt;/p&gt;
-
-&lt;p&gt;在非标准浏览器（IE）中，只能在子元素里设距顶部
-50%，里面再套个元素距顶部 -50% 来实现垂直居中。&lt;/p&gt;
-
-&lt;p&gt; * css 代码：&lt;/p&gt;
-.more_line {
-    width: 500px;
-    height: 100px;
-    background-color: #9bd;
-    margin: 20px;
-    padding: 20px;
-}
-
-.outer {
-    display: table;
-    overflow: hidden;
-    position: relative;
-}
-
-.middle {
-    display: table-cell;
-    vertical-align: middle;
-    position: absolute; 
-    top: 50%;  
-}
-
-.inner {
-    position: relative; 
-    top: -50%;
-}
-
-&lt;p&gt; * html 代码：&lt;/p&gt;
-&lt;div class=&#34;outer more_line&#34;&gt;
-    &lt;div class=&#34;middle&#34;&gt;
-        &lt;div class=&#34;inner&#34;&gt;
-			这是多行文字内容的垂直对齐。这是多行文字内容的垂直对齐。这是多行文字内容的垂直对齐。
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt; * 效果：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://ww3.sinaimg.cn/mw600/88a9c274jw1dsnwvk6onbg.gif&#34; alt=&#34;彻底研究 CSS
-——段落的垂直对齐&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;由于需要每次都加入三个 div，和 css
-样式，比较复杂也不好记，在这里，可以利用 jquery
-将其自定义为插件的方式以方便调用。&lt;/p&gt;
-
-&lt;p&gt;插件名称为：jquery.verticalCenter.js，使用的时候用$(&amp;ldquo;.vc&amp;rdquo;).verticalCenter();&lt;/p&gt;
-
-&lt;p&gt; * jquery-verticalCenter.js 代码：&lt;/p&gt;
-;(function($) {
-    $.fn.extend({
-        verticalCenter: function() {
-            return this.each(function() {
-                var _html = $(this).html();
-                $(this).attr(&#34;style&#34;, &#34;display:table;\#position:relative;overflow:hidden;&#34;);
-                var html = &#34;&lt;div style=&#39;\#position:absolute;\#top:50%;display:table-cell;vertical-align:middle;&#39;&gt;&#34;;
-                html += &#34;&lt;div style=&#39;\#position:relative;\#top:-50%;&#39;&gt;&#34;;
-                html += _html;
-                html += &#34;&lt;/div&gt;&#34;;
-                html += &#34;&lt;/div&gt;&#34;;
-                $(this).html(html);
-                $(&#34;img&#34;, $(this)).css(&#34;vertical-align&#34;, &#34;middle&#34;);
-                $(&#34;input&#34;, $(this)).css(&#34;vertical-align&#34;, &#34;middle&#34;);
-            });
-        }
-    });
-})(jQuery);
-
-&lt;p&gt;    
-例子：&lt;/p&gt;
-
-&lt;p&gt; * html 代码：&lt;/p&gt;
-&lt;div class=&#34;vc&#34;&gt;
-    这是多行文字内容使用 jquery-plugin 的垂直对齐。这是多行文字内容使用jquery-plugin 的垂直对齐。
-&lt;/div&gt;
-&lt;div class=&#34;vc test_img&#34;&gt;
-    &lt;img src=&#34;test.gif&#34; /&gt;
-    &lt;input type=&#34;text&#34; /&gt;
-    这是混合的使用 jquery-plugin 的垂直对齐。
-&lt;/div&gt;
-
-&lt;p&gt;* javascript 代码：&lt;/p&gt;
-&lt;script type=&#34;text/javascript&#34; src=&#34;js/jquery.min.js&#34;&gt;&lt;/script&gt;
-&lt;script type=&#34;text/javascript&#34;
-src=&#34;js/jquery.verticalCenter.js&#34;&gt;&lt;/script&gt;
-&lt;script type=&#34;text/javascript&#34;&gt;
-    $(function() {
-        $(&#34;.vc&#34;).verticalCenter();       
-    });
-&lt;/script&gt;
-
-&lt;p&gt;* 效果：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://ww1.sinaimg.cn/mw600/88a9c274jw1dsnww350n6g.gif&#34; alt=&#34;彻底研究 CSS
-——段落的垂直对齐&#34; /&gt;&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2012/05/06/the_vertical_alignment_of_css_complete_paragraph/</guid>
+      <description>如果文字内容只有一行，可以设置 line-height 与height 相同来使文字垂直居中。 * css 代码： 1 2 3 4 5 6 7 8 .one_line { width: 500px; height: 100px; line-height: 100px; background-color: #9bd; margin: 20px; padding: 20px; } * html 代码： 1 2 3</description>
     </item>
     
     <item>
       <title>彻底研究 CSS ——段落的垂直对齐</title>
-      <link>http://blog.wenzhixin.net.cn/2012/05/06/the_vertical_alignment_of_css_complete_paragraph</link>
+      <link>http://blog.wenzhixin.net.cn/2012/05/06/the_vertical_alignment_of_css_complete_paragraph/</link>
       <pubDate>Sun, 06 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/05/06/the_vertical_alignment_of_css_complete_paragraph</guid>
-      <description>&lt;p&gt;如果文字内容只有一行，可以设置 line-height 与height
-相同来使文字垂直居中。&lt;/p&gt;
-
-&lt;p&gt; * css 代码：&lt;/p&gt;
-.one_line {
-    width: 500px;
-    height: 100px;
-    line-height: 100px;
-    background-color: #9bd;
-    margin: 20px;
-    padding: 20px;
-}
-
-&lt;p&gt; * html 代码：&lt;/p&gt;
-&lt;div class=&#34;one_line&#34;&gt;
-    这是一行文字内容的垂直对齐
-&lt;/div&gt;
-
-&lt;p&gt; * 效果：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://ww4.sinaimg.cn/mw600/88a9c274jw1dsnwuu9youg.gif&#34; alt=&#34;彻底研究 CSS
-——段落的垂直对齐&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;但是对于超过一行的文本，或者浏览器窗口变窄的情况话，设置
-line-height
-的方法就不起作用了。怎么样才能有效解决未知高度的垂直居中问题（在一个DIV标签里有未知高度的文本或图片的情况下）。下面是解决该问题比较完善的一个解决方案。&lt;/p&gt;
-
-&lt;p&gt;在标准浏览器（Mozilla, Opera, Safari
-等）中，可将父级元素显示方式设定为 table(display: table;)，内部子元素定为
-table-cell(display: table-cell;),通过 vertical-align（vertical-align:
-middle;）特性使其垂直居中，但非标准浏览器是不支持的。&lt;/p&gt;
-
-&lt;p&gt;在非标准浏览器（IE）中，只能在子元素里设距顶部
-50%，里面再套个元素距顶部 -50% 来实现垂直居中。&lt;/p&gt;
-
-&lt;p&gt; * css 代码：&lt;/p&gt;
-.more_line {
-    width: 500px;
-    height: 100px;
-    background-color: #9bd;
-    margin: 20px;
-    padding: 20px;
-}
-
-.outer {
-    display: table;
-    overflow: hidden;
-    position: relative;
-}
-
-.middle {
-    display: table-cell;
-    vertical-align: middle;
-    position: absolute; 
-    top: 50%;  
-}
-
-.inner {
-    position: relative; 
-    top: -50%;
-}
-
-&lt;p&gt; * html 代码：&lt;/p&gt;
-&lt;div class=&#34;outer more_line&#34;&gt;
-    &lt;div class=&#34;middle&#34;&gt;
-        &lt;div class=&#34;inner&#34;&gt;
-			这是多行文字内容的垂直对齐。这是多行文字内容的垂直对齐。这是多行文字内容的垂直对齐。
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt; * 效果：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://ww3.sinaimg.cn/mw600/88a9c274jw1dsnwvk6onbg.gif&#34; alt=&#34;彻底研究 CSS
-——段落的垂直对齐&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;由于需要每次都加入三个 div，和 css
-样式，比较复杂也不好记，在这里，可以利用 jquery
-将其自定义为插件的方式以方便调用。&lt;/p&gt;
-
-&lt;p&gt;插件名称为：jquery.verticalCenter.js，使用的时候用$(&amp;ldquo;.vc&amp;rdquo;).verticalCenter();&lt;/p&gt;
-
-&lt;p&gt; * jquery-verticalCenter.js 代码：&lt;/p&gt;
-;(function($) {
-    $.fn.extend({
-        verticalCenter: function() {
-            return this.each(function() {
-                var _html = $(this).html();
-                $(this).attr(&#34;style&#34;, &#34;display:table;\#position:relative;overflow:hidden;&#34;);
-                var html = &#34;&lt;div style=&#39;\#position:absolute;\#top:50%;display:table-cell;vertical-align:middle;&#39;&gt;&#34;;
-                html += &#34;&lt;div style=&#39;\#position:relative;\#top:-50%;&#39;&gt;&#34;;
-                html += _html;
-                html += &#34;&lt;/div&gt;&#34;;
-                html += &#34;&lt;/div&gt;&#34;;
-                $(this).html(html);
-                $(&#34;img&#34;, $(this)).css(&#34;vertical-align&#34;, &#34;middle&#34;);
-                $(&#34;input&#34;, $(this)).css(&#34;vertical-align&#34;, &#34;middle&#34;);
-            });
-        }
-    });
-})(jQuery);
-
-&lt;p&gt;    
-例子：&lt;/p&gt;
-
-&lt;p&gt; * html 代码：&lt;/p&gt;
-&lt;div class=&#34;vc&#34;&gt;
-    这是多行文字内容使用 jquery-plugin 的垂直对齐。这是多行文字内容使用jquery-plugin 的垂直对齐。
-&lt;/div&gt;
-&lt;div class=&#34;vc test_img&#34;&gt;
-    &lt;img src=&#34;test.gif&#34; /&gt;
-    &lt;input type=&#34;text&#34; /&gt;
-    这是混合的使用 jquery-plugin 的垂直对齐。
-&lt;/div&gt;
-
-&lt;p&gt;* javascript 代码：&lt;/p&gt;
-&lt;script type=&#34;text/javascript&#34; src=&#34;js/jquery.min.js&#34;&gt;&lt;/script&gt;
-&lt;script type=&#34;text/javascript&#34;
-src=&#34;js/jquery.verticalCenter.js&#34;&gt;&lt;/script&gt;
-&lt;script type=&#34;text/javascript&#34;&gt;
-    $(function() {
-        $(&#34;.vc&#34;).verticalCenter();       
-    });
-&lt;/script&gt;
-
-&lt;p&gt;* 效果：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://ww1.sinaimg.cn/mw600/88a9c274jw1dsnww350n6g.gif&#34; alt=&#34;彻底研究 CSS
-——段落的垂直对齐&#34; /&gt;&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2012/05/06/the_vertical_alignment_of_css_complete_paragraph/</guid>
+      <description>如果文字内容只有一行，可以设置 line-height 与height 相同来使文字垂直居中。 * css 代码： 1 2 3 4 5 6 7 8 .one_line { width: 500px; height: 100px; line-height: 100px; background-color: #9bd; margin: 20px; padding: 20px; } * html 代码： 1 2 3</description>
     </item>
     
     <item>
       <title>彻底研究 CSS——文字与图像</title>
-      <link>http://blog.wenzhixin.net.cn/2012/05/05/a_thorough_study_of_css_text_and_image</link>
+      <link>http://blog.wenzhixin.net.cn/2012/05/05/a_thorough_study_of_css_text_and_image/</link>
       <pubDate>Sat, 05 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/05/05/a_thorough_study_of_css_text_and_image</guid>
-      <description>&lt;p&gt;1、CSS 文字样式&lt;/p&gt;
-
-&lt;p&gt; *
-font-family：用于设置字体。同时声明多种字体时，字体之间用逗号分隔开，字体名称有空格需要用双引号引起来。&lt;/p&gt;
-
-&lt;p&gt; * font-size：用于设置文字大小。常见单位：px，表示 1
-个像素的大小；em，表示其父元素中字母 m 的标准宽度；ex，表示字母 x
-的标准高度；%，使用百分比作为单位。&lt;/p&gt;
-
-&lt;p&gt; *
-line-height：用于设置各行文字的高度。不加单位，表示行高与字体大小的比值。&lt;/p&gt;
-
-&lt;p&gt; * color：用于设置文字的颜色。&lt;/p&gt;
-
-&lt;p&gt; * background-color：用于设置背景的颜色。&lt;/p&gt;
-
-&lt;p&gt; * font-weight：用于设置文字是否为粗体。有 normal（正常） 和 bold（粗体）
-两种样式。&lt;/p&gt;
-
-&lt;p&gt; * font-style：用来控制字体倾斜。有 normal（正常）、 oblique（意大利体）和
-italic（倾斜）三种样式。&lt;/p&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;p&gt; * text-transform：用于转换英文字母的大小写。有
-capitalize（首字母大写）、uppercase（全部大写）和
-lowercase（全部小写）三种样式。&lt;/p&gt;
-
-&lt;p&gt; * text-decoration：设置文字装饰效果。有
-underline（下划线）、overline（顶划线）、line-through（删除线） 和
-blink（闪烁）四种样式。可以同时设置多个效果，用空格分开。&lt;/p&gt;
-
-&lt;p&gt; * text-align：控制段落的水平对齐方式。有
-left（局左）、center（居中）、right（局右）和 justify（两端对齐）四种样式。&lt;/p&gt;
-
-&lt;p&gt; * text-indent：设置段首缩进。多用于对中文段落，缩进两个空格：p
-{text-indent: 2em;}。&lt;/p&gt;
-
-&lt;p&gt;ps：&lt;/p&gt;
-
-&lt;p&gt; * 可以将三个字体属性组合到一条 CSS 中，语法为：font:
-font-size/line-height font-family;&lt;/p&gt;
-
-&lt;p&gt; * 颜色用 RGB 格式，包括：英文名称、#rrggbb（#rgb）、rgb(rr, gg, bb) 和
-rgb(rr%, gg%, bb%)&lt;/p&gt;
-
-&lt;p&gt;2、CSS 图像样式&lt;/p&gt;
-
-&lt;p&gt; * background-image：给元素设置背景颜色。语法为：background-image:
-url(image.png);&lt;/p&gt;
-
-&lt;p&gt; * background-repeat：设置背景图片平铺方式。有
-repeat（水平和垂直方向平铺）、no-repeat（不平铺）、repeat-x（水平方向平铺）和
-repeat-y（垂直方向平铺）四种样式，默认为 repeat。&lt;/p&gt;
-
-&lt;p&gt; *
-background-position：设置图片位置，并作为起点。取值包括：left、right、top、bottom
-和 center。该属性多用于 Sprite 技术。&lt;/p&gt;
-
-&lt;p&gt;ps：&lt;/p&gt;
-
-&lt;p&gt; *
-同时设置背景图像和背景颜色时，背景图像覆盖的地方显示图像，没有覆盖的地方显示背景颜色。可以根据这个特点制作出非常自然的渐变色背景：将背景颜色设置为背景图像中最下面一排像素的颜色。&lt;/p&gt;
-
-&lt;p&gt; * 背景样式简写：可以将 background-image、background-repeat 和
-background-color 简写为一行样式，即 background: color image repeat;
-中间用空格分开。&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2012/05/05/a_thorough_study_of_css_text_and_image/</guid>
+      <description>1、CSS 文字样式 * font-family：用于设置字体。同时声明多种字体时，字体之间用逗号分隔开，字体名称有空格需要用双引号引起来。 * fo</description>
     </item>
     
     <item>
       <title>彻底研究 CSS——文字与图像</title>
-      <link>http://blog.wenzhixin.net.cn/2012/05/05/a_thorough_study_of_css_text_and_image</link>
+      <link>http://blog.wenzhixin.net.cn/2012/05/05/a_thorough_study_of_css_text_and_image/</link>
       <pubDate>Sat, 05 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/05/05/a_thorough_study_of_css_text_and_image</guid>
-      <description>&lt;p&gt;1、CSS 文字样式&lt;/p&gt;
-
-&lt;p&gt; *
-font-family：用于设置字体。同时声明多种字体时，字体之间用逗号分隔开，字体名称有空格需要用双引号引起来。&lt;/p&gt;
-
-&lt;p&gt; * font-size：用于设置文字大小。常见单位：px，表示 1
-个像素的大小；em，表示其父元素中字母 m 的标准宽度；ex，表示字母 x
-的标准高度；%，使用百分比作为单位。&lt;/p&gt;
-
-&lt;p&gt; *
-line-height：用于设置各行文字的高度。不加单位，表示行高与字体大小的比值。&lt;/p&gt;
-
-&lt;p&gt; * color：用于设置文字的颜色。&lt;/p&gt;
-
-&lt;p&gt; * background-color：用于设置背景的颜色。&lt;/p&gt;
-
-&lt;p&gt; * font-weight：用于设置文字是否为粗体。有 normal（正常） 和 bold（粗体）
-两种样式。&lt;/p&gt;
-
-&lt;p&gt; * font-style：用来控制字体倾斜。有 normal（正常）、 oblique（意大利体）和
-italic（倾斜）三种样式。&lt;/p&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;p&gt; * text-transform：用于转换英文字母的大小写。有
-capitalize（首字母大写）、uppercase（全部大写）和
-lowercase（全部小写）三种样式。&lt;/p&gt;
-
-&lt;p&gt; * text-decoration：设置文字装饰效果。有
-underline（下划线）、overline（顶划线）、line-through（删除线） 和
-blink（闪烁）四种样式。可以同时设置多个效果，用空格分开。&lt;/p&gt;
-
-&lt;p&gt; * text-align：控制段落的水平对齐方式。有
-left（局左）、center（居中）、right（局右）和 justify（两端对齐）四种样式。&lt;/p&gt;
-
-&lt;p&gt; * text-indent：设置段首缩进。多用于对中文段落，缩进两个空格：p
-{text-indent: 2em;}。&lt;/p&gt;
-
-&lt;p&gt;ps：&lt;/p&gt;
-
-&lt;p&gt; * 可以将三个字体属性组合到一条 CSS 中，语法为：font:
-font-size/line-height font-family;&lt;/p&gt;
-
-&lt;p&gt; * 颜色用 RGB 格式，包括：英文名称、#rrggbb（#rgb）、rgb(rr, gg, bb) 和
-rgb(rr%, gg%, bb%)&lt;/p&gt;
-
-&lt;p&gt;2、CSS 图像样式&lt;/p&gt;
-
-&lt;p&gt; * background-image：给元素设置背景颜色。语法为：background-image:
-url(image.png);&lt;/p&gt;
-
-&lt;p&gt; * background-repeat：设置背景图片平铺方式。有
-repeat（水平和垂直方向平铺）、no-repeat（不平铺）、repeat-x（水平方向平铺）和
-repeat-y（垂直方向平铺）四种样式，默认为 repeat。&lt;/p&gt;
-
-&lt;p&gt; *
-background-position：设置图片位置，并作为起点。取值包括：left、right、top、bottom
-和 center。该属性多用于 Sprite 技术。&lt;/p&gt;
-
-&lt;p&gt;ps：&lt;/p&gt;
-
-&lt;p&gt; *
-同时设置背景图像和背景颜色时，背景图像覆盖的地方显示图像，没有覆盖的地方显示背景颜色。可以根据这个特点制作出非常自然的渐变色背景：将背景颜色设置为背景图像中最下面一排像素的颜色。&lt;/p&gt;
-
-&lt;p&gt; * 背景样式简写：可以将 background-image、background-repeat 和
-background-color 简写为一行样式，即 background: color image repeat;
-中间用空格分开。&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2012/05/05/a_thorough_study_of_css_text_and_image/</guid>
+      <description>1、CSS 文字样式 * font-family：用于设置字体。同时声明多种字体时，字体之间用逗号分隔开，字体名称有空格需要用双引号引起来。 * fo</description>
     </item>
     
     <item>
       <title>彻底研究 CSS—— CSS 核心基础</title>
-      <link>http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_css_core_base</link>
+      <link>http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_css_core_base/</link>
       <pubDate>Fri, 04 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_css_core_base</guid>
-      <description>&lt;p&gt;1、HTML 书写规范&lt;/p&gt;
-
-&lt;p&gt; * 标记名称必须小写&lt;/p&gt;
-
-&lt;p&gt; * 属性名必须小写&lt;/p&gt;
-
-&lt;p&gt; * 标记必须严格嵌套&lt;/p&gt;
-
-&lt;p&gt; * 标记必须封闭，即使是空元素&lt;/p&gt;
-
-&lt;p&gt; * 属性值用双引号括起来，并且使用完整形式&lt;/p&gt;
-
-&lt;p&gt; * 不允许将结构标记包含于内容标记&lt;/p&gt;
-
-&lt;p&gt;2、在 HTML 中引入 CSS 的方法&lt;/p&gt;
-
-&lt;p&gt; * 行内式：在标记的 style 属性中设置 CSS
-样式，适用于对特殊标记使用，不推荐使用&lt;/p&gt;
-
-&lt;p&gt; * 嵌入式：将样式写在页面的 &amp;lt;head&amp;gt; 与 &amp;lt;/head&amp;gt; 中，适用于单一页面&lt;/p&gt;
-
-&lt;p&gt; * 链接式和导入式：将一个独立的 CSS 文件引入到 HTML 文件中。&lt;/p&gt;
-
-&lt;p&gt;ps：链接式和导入式的区别：&lt;/p&gt;
-
-&lt;p&gt;（1）语法不同，分别是：&lt;/p&gt;
-&lt;link href=&#34;style.css&#34; rel=&#34;stylesheet&#34; type=&#34;text/css&#34; /&gt;
-&lt;style type=&#34;text/css&#34;&gt;
-	@import &#34;style.css&#34;;
-&lt;/style&gt;
-
-&lt;p&gt;（2）显示效果不同。使用链接式时，在装载页面主体前装载 CSS
-文件；使用导入式，在整个页面装载完成后再装载 CSS 文件。&lt;/p&gt;
-
-&lt;p&gt;3、基本 CSS 选择器&lt;/p&gt;
-
-&lt;p&gt; * 标记选择器：每个 HTML
-标记都可以作为想要的标记选择器的名称，用于声明页面中所有的标记的样式风格，语法：标记名
-{name: value;}&lt;/p&gt;
-
-&lt;p&gt; * 类别选择器：通过 HTML 标记的属性 class
-来设置，名称可以由用户自定义，语法：.class {name:
-value;}。一个标记可以使用多个 class 类别选择器，一个 class
-类别选择器可以用于多个标记。如：&lt;/p&gt;
-&lt;div class=&#34;class1 class2&#34;&gt;&lt;/div&gt;
-&lt;div class=&#34;class1 class3&#34;&gt;&lt;/div&gt;
-
-&lt;p&gt; * ID 选择器：通过 HTML 标记的属性 id 来设置，名称由用户自定义，语法：#id
-{name: value;}。一个标记只能使用一个 ID 类别选择器，一个 ID
-类别选择器只能用于一个标记。&lt;/p&gt;
-
-&lt;p&gt;ps：三种类型选择器的权重的规则：HTML 标签的权重为 1，class 的权重为 10，id
-的权重为 100。&lt;/p&gt;
-
-&lt;p&gt;4、复合选择器&lt;/p&gt;
-
-&lt;p&gt; *
-“交集”选择器：由两个选择器直接链接构成，结果是选中二者各自元素范围的交集。第一个必须是标记选择器，第二个必须是类别选择器或者
-ID 选择器，选择器之间不能有空格。如：&lt;/p&gt;
-div.class\_name {name: value;} —— &lt;div class=&#34;class_name&#34;&gt;&lt;/div&gt; 
-
-div.idName {name: value;} —— &lt;div id=&#34;idName&#34;&gt;&lt;/div&gt; 
-
-&lt;p&gt; *
-“并集”选择器：由多个选择器通过逗号连接而成，结果是同时选中各个基本选择器所选择的范围。主要用于声明风格相同的
-CSS 选择器。如：&lt;/p&gt;
-p, .class1, .class2, #id1 {name: value;}。
-
-&lt;p&gt;特殊情况，即所有标记都使用同种 CSS&lt;/p&gt;
-
-&lt;p&gt; 样式，可以利用全局选择器 “*”。&lt;/p&gt;
-
-&lt;p&gt; * 后代选择器：通过嵌套的方式，对特殊位置的 HTML
-标记进行声明，就可以使用后代选择器。写法是将外层的标记写在前面，内层的标记写在后面，之间用空格分隔。如：div
-p {name:
-value;}。后代选择器产生的影响不仅限于元素的“直接后代”，而且会影响到它的“各级后代”。&lt;/p&gt;
-
-&lt;p&gt; *
-子选择器：支队直接后代有影响的选择器，写法是将外层的标记写在前面，内层的标记写在后面，之间用大于号连接。如：div&amp;gt;p
-{name: value;}。&lt;/p&gt;
-
-&lt;p&gt;5、CSS 的继承特性&lt;/p&gt;
-
-&lt;p&gt; * CSS
-继承指的是子标记会继承父标记的所有样式风格，并可以在福标记样式风格的基础上再加以修改，产生新的样式，而子标记的样式风格完全不会影响父标记。如：&lt;/p&gt;
-&lt;style&gt;
-    div {
-        color: blue;
-    }
-
-    span {
-        color: red;
-    }
-&lt;/style\&gt;
-
-&lt;p&gt;div 这里显示的是 span CSS的继承 span 特性\div&lt;/p&gt;
-
-&lt;p&gt;6、CSS 的层叠特性&lt;/p&gt;
-
-&lt;p&gt; * CSS
-的全名叫“层叠样式表”，这里的层叠并不是继承，而是指对相同层的选择器的“冲突”的解决方案。&lt;/p&gt;
-
-&lt;p&gt; * 根据权重的规则，可以将基础选择器的优先级表述为：巷内样式 &amp;gt; ID 样式 &amp;gt;
-类别样式 &amp;gt;
-标记样式。而对于复合选择器，可以对基础选择器的权重相加的总和来判断优先级。&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_css_core_base/</guid>
+      <description>1、HTML 书写规范 * 标记名称必须小写 * 属性名必须小写 * 标记必须严格嵌套 * 标记必须封闭，即使是空元素 * 属性值用双引号括起来，并且使用完整形式</description>
     </item>
     
     <item>
       <title>彻底研究 CSS—— CSS 核心基础</title>
-      <link>http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_css_core_base</link>
+      <link>http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_css_core_base/</link>
       <pubDate>Fri, 04 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_css_core_base</guid>
-      <description>&lt;p&gt;1、HTML 书写规范&lt;/p&gt;
-
-&lt;p&gt; * 标记名称必须小写&lt;/p&gt;
-
-&lt;p&gt; * 属性名必须小写&lt;/p&gt;
-
-&lt;p&gt; * 标记必须严格嵌套&lt;/p&gt;
-
-&lt;p&gt; * 标记必须封闭，即使是空元素&lt;/p&gt;
-
-&lt;p&gt; * 属性值用双引号括起来，并且使用完整形式&lt;/p&gt;
-
-&lt;p&gt; * 不允许将结构标记包含于内容标记&lt;/p&gt;
-
-&lt;p&gt;2、在 HTML 中引入 CSS 的方法&lt;/p&gt;
-
-&lt;p&gt; * 行内式：在标记的 style 属性中设置 CSS
-样式，适用于对特殊标记使用，不推荐使用&lt;/p&gt;
-
-&lt;p&gt; * 嵌入式：将样式写在页面的 &amp;lt;head&amp;gt; 与 &amp;lt;/head&amp;gt; 中，适用于单一页面&lt;/p&gt;
-
-&lt;p&gt; * 链接式和导入式：将一个独立的 CSS 文件引入到 HTML 文件中。&lt;/p&gt;
-
-&lt;p&gt;ps：链接式和导入式的区别：&lt;/p&gt;
-
-&lt;p&gt;（1）语法不同，分别是：&lt;/p&gt;
-&lt;link href=&#34;style.css&#34; rel=&#34;stylesheet&#34; type=&#34;text/css&#34; /&gt;
-&lt;style type=&#34;text/css&#34;&gt;
-	@import &#34;style.css&#34;;
-&lt;/style&gt;
-
-&lt;p&gt;（2）显示效果不同。使用链接式时，在装载页面主体前装载 CSS
-文件；使用导入式，在整个页面装载完成后再装载 CSS 文件。&lt;/p&gt;
-
-&lt;p&gt;3、基本 CSS 选择器&lt;/p&gt;
-
-&lt;p&gt; * 标记选择器：每个 HTML
-标记都可以作为想要的标记选择器的名称，用于声明页面中所有的标记的样式风格，语法：标记名
-{name: value;}&lt;/p&gt;
-
-&lt;p&gt; * 类别选择器：通过 HTML 标记的属性 class
-来设置，名称可以由用户自定义，语法：.class {name:
-value;}。一个标记可以使用多个 class 类别选择器，一个 class
-类别选择器可以用于多个标记。如：&lt;/p&gt;
-&lt;div class=&#34;class1 class2&#34;&gt;&lt;/div&gt;
-&lt;div class=&#34;class1 class3&#34;&gt;&lt;/div&gt;
-
-&lt;p&gt; * ID 选择器：通过 HTML 标记的属性 id 来设置，名称由用户自定义，语法：#id
-{name: value;}。一个标记只能使用一个 ID 类别选择器，一个 ID
-类别选择器只能用于一个标记。&lt;/p&gt;
-
-&lt;p&gt;ps：三种类型选择器的权重的规则：HTML 标签的权重为 1，class 的权重为 10，id
-的权重为 100。&lt;/p&gt;
-
-&lt;p&gt;4、复合选择器&lt;/p&gt;
-
-&lt;p&gt; *
-“交集”选择器：由两个选择器直接链接构成，结果是选中二者各自元素范围的交集。第一个必须是标记选择器，第二个必须是类别选择器或者
-ID 选择器，选择器之间不能有空格。如：&lt;/p&gt;
-div.class\_name {name: value;} —— &lt;div class=&#34;class_name&#34;&gt;&lt;/div&gt; 
-
-div.idName {name: value;} —— &lt;div id=&#34;idName&#34;&gt;&lt;/div&gt; 
-
-&lt;p&gt; *
-“并集”选择器：由多个选择器通过逗号连接而成，结果是同时选中各个基本选择器所选择的范围。主要用于声明风格相同的
-CSS 选择器。如：&lt;/p&gt;
-p, .class1, .class2, #id1 {name: value;}。
-
-&lt;p&gt;特殊情况，即所有标记都使用同种 CSS&lt;/p&gt;
-
-&lt;p&gt; 样式，可以利用全局选择器 “*”。&lt;/p&gt;
-
-&lt;p&gt; * 后代选择器：通过嵌套的方式，对特殊位置的 HTML
-标记进行声明，就可以使用后代选择器。写法是将外层的标记写在前面，内层的标记写在后面，之间用空格分隔。如：div
-p {name:
-value;}。后代选择器产生的影响不仅限于元素的“直接后代”，而且会影响到它的“各级后代”。&lt;/p&gt;
-
-&lt;p&gt; *
-子选择器：支队直接后代有影响的选择器，写法是将外层的标记写在前面，内层的标记写在后面，之间用大于号连接。如：div&amp;gt;p
-{name: value;}。&lt;/p&gt;
-
-&lt;p&gt;5、CSS 的继承特性&lt;/p&gt;
-
-&lt;p&gt; * CSS
-继承指的是子标记会继承父标记的所有样式风格，并可以在福标记样式风格的基础上再加以修改，产生新的样式，而子标记的样式风格完全不会影响父标记。如：&lt;/p&gt;
-&lt;style&gt;
-    div {
-        color: blue;
-    }
-
-    span {
-        color: red;
-    }
-&lt;/style\&gt;
-
-&lt;p&gt;div 这里显示的是 span CSS的继承 span 特性\div&lt;/p&gt;
-
-&lt;p&gt;6、CSS 的层叠特性&lt;/p&gt;
-
-&lt;p&gt; * CSS
-的全名叫“层叠样式表”，这里的层叠并不是继承，而是指对相同层的选择器的“冲突”的解决方案。&lt;/p&gt;
-
-&lt;p&gt; * 根据权重的规则，可以将基础选择器的优先级表述为：巷内样式 &amp;gt; ID 样式 &amp;gt;
-类别样式 &amp;gt;
-标记样式。而对于复合选择器，可以对基础选择器的权重相加的总和来判断优先级。&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_css_core_base/</guid>
+      <description>1、HTML 书写规范 * 标记名称必须小写 * 属性名必须小写 * 标记必须严格嵌套 * 标记必须封闭，即使是空元素 * 属性值用双引号括起来，并且使用完整形式</description>
     </item>
     
     <item>
       <title>彻底研究CSS——深入理解盒子模型</title>
-      <link>http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_understanding_the_box_model</link>
+      <link>http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_understanding_the_box_model/</link>
       <pubDate>Fri, 04 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_understanding_the_box_model</guid>
-      <description>&lt;p&gt;1、盒子模型的内部结构&lt;/p&gt;
-
-&lt;p&gt; * 在 CSS 中，一个独立的盒子模型由
-content（内容）、border（边框）、padding（内边距）和 margin（外边距）4
-个部分组成。&lt;/p&gt;
-
-&lt;p&gt; *
-一个盒子实际所战的宽度（或高度）是由“内容+内边距+边框+外边距”组成的。通过设定
-width 和 height 来控制内容所占的矩形大小，内边距、边框和外边距分别用
-padding、border 和 margin 来表示。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://ww3.sinaimg.cn/mw600/88a9c274jw1dsm7ooransj.jpg&#34; alt=&#34;彻底研究CSS——深入理解盒子模型&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;2、边框（border）&lt;/p&gt;
-
-&lt;p&gt; * 主要包括三个属性，分别是 color（颜色）、width（粗细）和 style（样式）。&lt;/p&gt;
-
-&lt;p&gt;（1）border-color：边框颜色，通常设置为十六进制的值&lt;/p&gt;
-
-&lt;p&gt;（2）border-width：边框粗细程度，可设为thin、medium、thick 和&lt;length\&gt;（具体的数值）。默认值为“medium”，浏览器解析为 2px 宽。&lt;/p&gt;
-
-&lt;p&gt;（3）border-style：可设为none、hidden、dotted、dashed、solid、double、groove、ridge、inset
-和
-outset。由于浏览器支持问题，一般使用none、hidden、dotted、dashed、solid、double。hidden
-可用来解决边框冲突问题。&lt;/p&gt;
-
-&lt;p&gt; * 边框的缩写形式：对于不同的边框设置不同的属性值。&lt;/p&gt;
-
-&lt;p&gt;（1）指定 2 个属性值，第一个表示上下边框的属性，第二个表示左右边框的属性。&lt;/p&gt;
-
-&lt;p&gt;（2）指定 3
-个属性值，第一个表示上边框的属性，第二个表示左右边框的属性，第三个表示下边框的属性。&lt;/p&gt;
-
-&lt;p&gt;（3）指定 4 个属性值，一次表示上、右、下、左边框的属性，即顺时针排序。&lt;/p&gt;
-
-&lt;p&gt;（4）单独指定边框的属性，用border-top、border-right、border-bottom 和
-border-left 表示。&lt;/p&gt;
-
-&lt;p&gt;ps：当有多条规则作用于同个边框时，后面的设置会覆盖前面的设置。&lt;/p&gt;
-
-&lt;p&gt;3、内边距（padding）&lt;/p&gt;
-
-&lt;p&gt; * padding 用于控制内容与边框之间的距离。padding 属性可以设置 1-4
-个属性值。&lt;/p&gt;
-
-&lt;p&gt;（1）设置 1 个属性值，表示上下左右 4 个内边距都为该值。&lt;/p&gt;
-
-&lt;p&gt;（2）设置 2 个属性值，第一个表示上下内边距的值，第二个表示左右内边距的值。&lt;/p&gt;
-
-&lt;p&gt;（3）设置 3
-个属性值，第一个表示上内边距的值，第二个表示左右内边距的值，第三个表示下内边距的值。&lt;/p&gt;
-
-&lt;p&gt;（4）设置 4 个属性值，一次表示上、右、下、左内边距的值，即顺时针排序。&lt;/p&gt;
-
-&lt;p&gt;（5）单独设置边框的属性，用padding-top、padding-right、padding-bottom 和
-padding-left 表示。&lt;/p&gt;
-
-&lt;p&gt;4、外边距（margin）&lt;/p&gt;
-
-&lt;p&gt; * margin 指的是元素与元素之间的距离。margin 属性值的设置方法与 padding
-一样，可以设置不同的数值代表相应的含义。&lt;/p&gt;
-
-&lt;p&gt;5、盒子之间的关系&lt;/p&gt;
-
-&lt;p&gt; * 一个 HTML
-文档并不是一个简单的文本文件，而是一个具有层次结构的逻辑文档，每一个 HTML
-元素都左右这个层次结构中的一个节点存在。CSS
-的目的是使网页的表现形式和内容结构分离，CSS 控制网页的表现形式，HTML
-控制网页的内容结构。&lt;/p&gt;
-
-&lt;p&gt; * 标准文档流：简称“标准流”，指在不使用其他的与排列和定位相关的特殊 CSS
-规则时，各种元素的排列规则。&lt;/p&gt;
-
-&lt;p&gt;（1）块级元素（block
-level）：以一个块的形式表现出来，并且跟同级的兄弟块一次垂直排列，左右撑满。代表标记为&lt;div\&gt;。&lt;/p&gt;
-
-&lt;p&gt;（2）行内元素（inline）：元素横向排列，到最右端自动换行。代表标记为 &amp;lt;span&amp;gt;。&lt;/p&gt;
-
-&lt;p&gt;6、盒子在标准流中的定位原则&lt;/p&gt;
-
-&lt;p&gt; * 行内元素之间的水平
-margin：当两个行内元素紧邻时，它们的距离为第一个元素的 margin-right
-加上第二个元素的 margin-left。&lt;/p&gt;
-
-&lt;p&gt; * 块级元素之间的垂直 margin：两个块级元素之间的距离不是第一个元素
-margin-bottom 和第二个元素 margin-top
-的总和，而是两者的最大值。这个现象称为 margin 的“塌陷”现象，即较小的
-margin 塌陷到较大的 margin 中。&lt;/p&gt;
-
-&lt;p&gt; * 嵌套盒子之间的 margin：子块的 margin 以父块的 content 为参考。&lt;/p&gt;
-
-&lt;p&gt; * 设置为负值的
-margin：会使被设为附属的快像相反的方向移动，甚至覆盖在另外的块上。&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_understanding_the_box_model/</guid>
+      <description>1、盒子模型的内部结构 * 在 CSS 中，一个独立的盒子模型由 content（内容）、border（边框）、padding（内边距）和 margin（外</description>
     </item>
     
     <item>
       <title>彻底研究CSS——深入理解盒子模型</title>
-      <link>http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_understanding_the_box_model</link>
+      <link>http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_understanding_the_box_model/</link>
       <pubDate>Fri, 04 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_understanding_the_box_model</guid>
-      <description>&lt;p&gt;1、盒子模型的内部结构&lt;/p&gt;
-
-&lt;p&gt; * 在 CSS 中，一个独立的盒子模型由
-content（内容）、border（边框）、padding（内边距）和 margin（外边距）4
-个部分组成。&lt;/p&gt;
-
-&lt;p&gt; *
-一个盒子实际所战的宽度（或高度）是由“内容+内边距+边框+外边距”组成的。通过设定
-width 和 height 来控制内容所占的矩形大小，内边距、边框和外边距分别用
-padding、border 和 margin 来表示。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://ww3.sinaimg.cn/mw600/88a9c274jw1dsm7ooransj.jpg&#34; alt=&#34;彻底研究CSS——深入理解盒子模型&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;2、边框（border）&lt;/p&gt;
-
-&lt;p&gt; * 主要包括三个属性，分别是 color（颜色）、width（粗细）和 style（样式）。&lt;/p&gt;
-
-&lt;p&gt;（1）border-color：边框颜色，通常设置为十六进制的值&lt;/p&gt;
-
-&lt;p&gt;（2）border-width：边框粗细程度，可设为thin、medium、thick 和&lt;length\&gt;（具体的数值）。默认值为“medium”，浏览器解析为 2px 宽。&lt;/p&gt;
-
-&lt;p&gt;（3）border-style：可设为none、hidden、dotted、dashed、solid、double、groove、ridge、inset
-和
-outset。由于浏览器支持问题，一般使用none、hidden、dotted、dashed、solid、double。hidden
-可用来解决边框冲突问题。&lt;/p&gt;
-
-&lt;p&gt; * 边框的缩写形式：对于不同的边框设置不同的属性值。&lt;/p&gt;
-
-&lt;p&gt;（1）指定 2 个属性值，第一个表示上下边框的属性，第二个表示左右边框的属性。&lt;/p&gt;
-
-&lt;p&gt;（2）指定 3
-个属性值，第一个表示上边框的属性，第二个表示左右边框的属性，第三个表示下边框的属性。&lt;/p&gt;
-
-&lt;p&gt;（3）指定 4 个属性值，一次表示上、右、下、左边框的属性，即顺时针排序。&lt;/p&gt;
-
-&lt;p&gt;（4）单独指定边框的属性，用border-top、border-right、border-bottom 和
-border-left 表示。&lt;/p&gt;
-
-&lt;p&gt;ps：当有多条规则作用于同个边框时，后面的设置会覆盖前面的设置。&lt;/p&gt;
-
-&lt;p&gt;3、内边距（padding）&lt;/p&gt;
-
-&lt;p&gt; * padding 用于控制内容与边框之间的距离。padding 属性可以设置 1-4
-个属性值。&lt;/p&gt;
-
-&lt;p&gt;（1）设置 1 个属性值，表示上下左右 4 个内边距都为该值。&lt;/p&gt;
-
-&lt;p&gt;（2）设置 2 个属性值，第一个表示上下内边距的值，第二个表示左右内边距的值。&lt;/p&gt;
-
-&lt;p&gt;（3）设置 3
-个属性值，第一个表示上内边距的值，第二个表示左右内边距的值，第三个表示下内边距的值。&lt;/p&gt;
-
-&lt;p&gt;（4）设置 4 个属性值，一次表示上、右、下、左内边距的值，即顺时针排序。&lt;/p&gt;
-
-&lt;p&gt;（5）单独设置边框的属性，用padding-top、padding-right、padding-bottom 和
-padding-left 表示。&lt;/p&gt;
-
-&lt;p&gt;4、外边距（margin）&lt;/p&gt;
-
-&lt;p&gt; * margin 指的是元素与元素之间的距离。margin 属性值的设置方法与 padding
-一样，可以设置不同的数值代表相应的含义。&lt;/p&gt;
-
-&lt;p&gt;5、盒子之间的关系&lt;/p&gt;
-
-&lt;p&gt; * 一个 HTML
-文档并不是一个简单的文本文件，而是一个具有层次结构的逻辑文档，每一个 HTML
-元素都左右这个层次结构中的一个节点存在。CSS
-的目的是使网页的表现形式和内容结构分离，CSS 控制网页的表现形式，HTML
-控制网页的内容结构。&lt;/p&gt;
-
-&lt;p&gt; * 标准文档流：简称“标准流”，指在不使用其他的与排列和定位相关的特殊 CSS
-规则时，各种元素的排列规则。&lt;/p&gt;
-
-&lt;p&gt;（1）块级元素（block
-level）：以一个块的形式表现出来，并且跟同级的兄弟块一次垂直排列，左右撑满。代表标记为&lt;div\&gt;。&lt;/p&gt;
-
-&lt;p&gt;（2）行内元素（inline）：元素横向排列，到最右端自动换行。代表标记为 &amp;lt;span&amp;gt;。&lt;/p&gt;
-
-&lt;p&gt;6、盒子在标准流中的定位原则&lt;/p&gt;
-
-&lt;p&gt; * 行内元素之间的水平
-margin：当两个行内元素紧邻时，它们的距离为第一个元素的 margin-right
-加上第二个元素的 margin-left。&lt;/p&gt;
-
-&lt;p&gt; * 块级元素之间的垂直 margin：两个块级元素之间的距离不是第一个元素
-margin-bottom 和第二个元素 margin-top
-的总和，而是两者的最大值。这个现象称为 margin 的“塌陷”现象，即较小的
-margin 塌陷到较大的 margin 中。&lt;/p&gt;
-
-&lt;p&gt; * 嵌套盒子之间的 margin：子块的 margin 以父块的 content 为参考。&lt;/p&gt;
-
-&lt;p&gt; * 设置为负值的
-margin：会使被设为附属的快像相反的方向移动，甚至覆盖在另外的块上。&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_understanding_the_box_model/</guid>
+      <description>1、盒子模型的内部结构 * 在 CSS 中，一个独立的盒子模型由 content（内容）、border（边框）、padding（内边距）和 margin（外</description>
     </item>
     
     <item>
       <title>彻底研究CSS——盒子的浮动和定位</title>
-      <link>http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_floating_and_positioning_the_box</link>
+      <link>http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_floating_and_positioning_the_box/</link>
       <pubDate>Fri, 04 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_floating_and_positioning_the_box</guid>
-      <description>&lt;p&gt;1、盒子的浮动&lt;/p&gt;
-
-&lt;p&gt; * CSS 中有一个 float 属性，默认为 none，即标准流。通过设置 float
-属性的值为 left 或
-right，元素会向其父元素的左侧或右侧靠近，盒子的宽度不再伸展，而是根据盒子里面的内容的宽度来确定。&lt;/p&gt;
-
-&lt;p&gt; * clear 属性：作用是为了消失由于使用 float
-后，浮动的盒子对其他盒子的影响。clear 的值有 left、right 和
-both，分别表示消除左边的影响、消除右边的影响和消除左右两边的影响。&lt;/p&gt;
-
-&lt;p&gt;ps：&lt;/p&gt;
-
-&lt;p&gt; * 通过使用 CSS 布局，可以实现在 HTML
-不做任何改动的情况下，调换盒子的显示位置。实际应用中，确定内容的逻辑位置，可以把内容最重要的放在前面，次要的放在后面，再通过
-CSS 来确定内容的显示位置。&lt;/p&gt;
-
-&lt;p&gt; * 对 clear 属性的设置要放到设置 float 后面的盒子中，才能有效消除影响。&lt;/p&gt;
-
-&lt;p&gt;2、盒子的定位&lt;/p&gt;
-
-&lt;p&gt; * 广义的“定位”：泛指一个网页排版中的定位操作，使用任何 CSS 规则来实现。&lt;/p&gt;
-
-&lt;p&gt; * 狭义的“定位”：通过设置 CSS 中的属性 position 来进行定位。&lt;/p&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;p&gt; * position 的取值包括：&lt;/p&gt;
-
-&lt;p&gt;（1）static：默认的属性值，按照标准流（包括浮动方式）进行布局。&lt;/p&gt;
-
-&lt;p&gt;（2）relative：称为相对定位，使用相对的盒子的位置常以标准量的排版方式为基础，然后使盒子相对于它在原本的标准位置偏移指定的距离。&lt;/p&gt;
-
-&lt;p&gt;相对定位仍在标准流中，它对父块和兄弟块盒子没有任何影响。&lt;/p&gt;
-
-&lt;p&gt;（3）absolute：绝对定位，盒子的位置以它的包含框为基准进行偏移。&lt;/p&gt;
-
-&lt;p&gt;绝对定位从标准流中脱离，并且以它的“最近”的一个“已经定位”的“祖先元素”为基准进行定位。没有已经定位的祖先元素，则以浏览器窗口为基准进行定位。&lt;/p&gt;
-
-&lt;p&gt;（4）fixed：固定定位，与绝对定位类似，以浏览器窗口为基准进行定位，拖动浏览器窗口的滚动条时，位置保持不变。&lt;/p&gt;
-
-&lt;p&gt;ps：&lt;/p&gt;
-
-&lt;p&gt; * 当 position 属性设置为 relative、absolute 和 fixed 时，通过设置
-left、right、top 和 bottom 来指定偏移量。这 4
-个属性除了可以设置绝对的像素数外还可以设置百分数。&lt;/p&gt;
-
-&lt;p&gt; * “已经定位”元素的含义是：position 属性被设置，并且不是 static。&lt;/p&gt;
-
-&lt;p&gt; *
-绝对定位的特殊性质：如何设置了绝对定位，而没有设置偏移属性，那它将保持原来的位置。可用于需要使某个元素脱离标准流，而需要保持在原来位置的情况。&lt;/p&gt;
-
-&lt;p&gt;3、z-index 空间位置&lt;/p&gt;
-
-&lt;p&gt; * z-index 属性用于调整定位时重叠块的上下位置。默认值为
-0，可以设置为正数或负数，当两个块的 z-index
-值相同时，保持原来的高低覆盖关系。&lt;/p&gt;
-
-&lt;p&gt;4、盒子的 display 属性&lt;/p&gt;
-
-&lt;p&gt; * 可以通过设置 display 属性来确定盒子的类型。inline 表示行内元素，block
-表示块级元素，none 表示无用于隐藏元素。&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_floating_and_positioning_the_box/</guid>
+      <description>1、盒子的浮动 * CSS 中有一个 float 属性，默认为 none，即标准流。通过设置 float 属性的值为 left 或 right，元素会向其父元素的左侧或右侧靠近，盒子的宽度</description>
     </item>
     
     <item>
       <title>彻底研究CSS——盒子的浮动和定位</title>
-      <link>http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_floating_and_positioning_the_box</link>
+      <link>http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_floating_and_positioning_the_box/</link>
       <pubDate>Fri, 04 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_floating_and_positioning_the_box</guid>
-      <description>&lt;p&gt;1、盒子的浮动&lt;/p&gt;
-
-&lt;p&gt; * CSS 中有一个 float 属性，默认为 none，即标准流。通过设置 float
-属性的值为 left 或
-right，元素会向其父元素的左侧或右侧靠近，盒子的宽度不再伸展，而是根据盒子里面的内容的宽度来确定。&lt;/p&gt;
-
-&lt;p&gt; * clear 属性：作用是为了消失由于使用 float
-后，浮动的盒子对其他盒子的影响。clear 的值有 left、right 和
-both，分别表示消除左边的影响、消除右边的影响和消除左右两边的影响。&lt;/p&gt;
-
-&lt;p&gt;ps：&lt;/p&gt;
-
-&lt;p&gt; * 通过使用 CSS 布局，可以实现在 HTML
-不做任何改动的情况下，调换盒子的显示位置。实际应用中，确定内容的逻辑位置，可以把内容最重要的放在前面，次要的放在后面，再通过
-CSS 来确定内容的显示位置。&lt;/p&gt;
-
-&lt;p&gt; * 对 clear 属性的设置要放到设置 float 后面的盒子中，才能有效消除影响。&lt;/p&gt;
-
-&lt;p&gt;2、盒子的定位&lt;/p&gt;
-
-&lt;p&gt; * 广义的“定位”：泛指一个网页排版中的定位操作，使用任何 CSS 规则来实现。&lt;/p&gt;
-
-&lt;p&gt; * 狭义的“定位”：通过设置 CSS 中的属性 position 来进行定位。&lt;/p&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;p&gt; * position 的取值包括：&lt;/p&gt;
-
-&lt;p&gt;（1）static：默认的属性值，按照标准流（包括浮动方式）进行布局。&lt;/p&gt;
-
-&lt;p&gt;（2）relative：称为相对定位，使用相对的盒子的位置常以标准量的排版方式为基础，然后使盒子相对于它在原本的标准位置偏移指定的距离。&lt;/p&gt;
-
-&lt;p&gt;相对定位仍在标准流中，它对父块和兄弟块盒子没有任何影响。&lt;/p&gt;
-
-&lt;p&gt;（3）absolute：绝对定位，盒子的位置以它的包含框为基准进行偏移。&lt;/p&gt;
-
-&lt;p&gt;绝对定位从标准流中脱离，并且以它的“最近”的一个“已经定位”的“祖先元素”为基准进行定位。没有已经定位的祖先元素，则以浏览器窗口为基准进行定位。&lt;/p&gt;
-
-&lt;p&gt;（4）fixed：固定定位，与绝对定位类似，以浏览器窗口为基准进行定位，拖动浏览器窗口的滚动条时，位置保持不变。&lt;/p&gt;
-
-&lt;p&gt;ps：&lt;/p&gt;
-
-&lt;p&gt; * 当 position 属性设置为 relative、absolute 和 fixed 时，通过设置
-left、right、top 和 bottom 来指定偏移量。这 4
-个属性除了可以设置绝对的像素数外还可以设置百分数。&lt;/p&gt;
-
-&lt;p&gt; * “已经定位”元素的含义是：position 属性被设置，并且不是 static。&lt;/p&gt;
-
-&lt;p&gt; *
-绝对定位的特殊性质：如何设置了绝对定位，而没有设置偏移属性，那它将保持原来的位置。可用于需要使某个元素脱离标准流，而需要保持在原来位置的情况。&lt;/p&gt;
-
-&lt;p&gt;3、z-index 空间位置&lt;/p&gt;
-
-&lt;p&gt; * z-index 属性用于调整定位时重叠块的上下位置。默认值为
-0，可以设置为正数或负数，当两个块的 z-index
-值相同时，保持原来的高低覆盖关系。&lt;/p&gt;
-
-&lt;p&gt;4、盒子的 display 属性&lt;/p&gt;
-
-&lt;p&gt; * 可以通过设置 display 属性来确定盒子的类型。inline 表示行内元素，block
-表示块级元素，none 表示无用于隐藏元素。&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_floating_and_positioning_the_box/</guid>
+      <description>1、盒子的浮动 * CSS 中有一个 float 属性，默认为 none，即标准流。通过设置 float 属性的值为 left 或 right，元素会向其父元素的左侧或右侧靠近，盒子的宽度</description>
     </item>
     
     <item>
       <title>编写高质量代码——高质量的CSS</title>
-      <link>http://blog.wenzhixin.net.cn/2012/03/17/write_high_quality_code_high_quality_css</link>
+      <link>http://blog.wenzhixin.net.cn/2012/03/17/write_high_quality_code_high_quality_css/</link>
       <pubDate>Sat, 17 Mar 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/03/17/write_high_quality_code_high_quality_css</guid>
-      <description>&lt;p&gt;1、解析网页模式和DTD&lt;/p&gt;
-
-&lt;p&gt;（1）解析网页模式主要有标准模式和怪异模式。怪异模式是为了兼容老式浏览器下的代码，应该避免触发怪异模式，选用标准模式。&lt;/p&gt;
-
-&lt;p&gt;（2）DTD（Document Type Definition），即文档类型定义，是一种保证 HTML
-文档格式正确的有效方法，可以通过比较 HTML 文档和 DTD
-文件来看文档是否符合规范，以及元素和标签使用是否正确。&lt;/p&gt;
-
-&lt;p&gt;（3）按照 W3C 的标准，需要在 HTML 的最开始声明文件的 DTD 类型。如果漏写 DTD
-声明，Firefox 会按照标准模式来解析网页，但在 IE 中就会触发怪异模式。&lt;/p&gt;
-
-&lt;p&gt;2、如何组织 CSS&lt;/p&gt;
-
-&lt;p&gt;（1）应用 CSS 的能力分为两部分：一是 CSS 的 API，重点是如何用 CSS
-控制页面内元素的样式；二是 CSS 框架，重点是如何对 CSS
-进行组织。其中，如何更好地组织 CSS 是编写高质量 CSS 的关键。&lt;/p&gt;
-
-&lt;p&gt;（2）推荐的组织 CSS 的方法：base.css + common.css + page.css&lt;/p&gt;
-
-&lt;p&gt;（3）base 层：位于三者的最底层，提供 CSS reset
-功能和力度最小的通用类—原子类。&lt;/p&gt;
-
-&lt;p&gt; • base 层相对稳定，基本上不需要维护。&lt;/p&gt;
-
-&lt;p&gt; • CSS
-reset：一开始就将浏览器的默认样式全部去掉，通过重新定义标签的样式，覆盖浏览器提供的默认样式。&lt;/p&gt;
-
-&lt;p&gt; • 通用原子类是一系列常用的基本类，包括：文字、定位、长度和宽度。&lt;/p&gt;
-
-&lt;p&gt; • “通用性”表现在它们是网站最常用的类，任何页面都可以随意使用。&lt;/p&gt;
-
-&lt;p&gt; • “原子性”表现在它们是最基础的样式，一个类只设置一个样式，不可再分。&lt;/p&gt;
-
-&lt;p&gt;（4）common 层：位于中间层，提供组件级的 CSS 类。&lt;/p&gt;
-
-&lt;p&gt; • common 层是网站级的，不同的网站有不同的 common 层，同一个网站只有一个
-common 层。&lt;/p&gt;
-
-&lt;p&gt; •  在团队合作中，common 层最好由一个人负责，统一管理。&lt;/p&gt;
-
-&lt;p&gt;（5）page 层：位于最高层，提供页面级的样式。&lt;/p&gt;
-
-&lt;p&gt; • page 层是页面级的，每个页面都有自己的 CSS&lt;/p&gt;
-
-&lt;p&gt;3、模块化 CSS——在 CSS 中引入面向对象编程思想&lt;/p&gt;
-
-&lt;p&gt;（1）如何划分模块——单一职责&lt;/p&gt;
-
-&lt;p&gt; •
-模块与模块之间尽量不要包含相同的部分，如果有相同部分，应将它们提取出来，拆分成一个独立的模块。&lt;/p&gt;
-
-&lt;p&gt; • 模块应在保证数量尽可能少的原则下，坐到尽可能简单，以提高重用性。&lt;/p&gt;
-
-&lt;p&gt;（2）CSS 的命名——使用命名空间&lt;/p&gt;
-
-&lt;p&gt; •
-命名结合骆驼命名法和划线命名法来进行命名，其中骆驼命名法用于区别不用单词，划线用于表明从属关系。&lt;/p&gt;
-
-&lt;p&gt;（3）挂多个 class 还是新建 class——多用组合，少用继承&lt;/p&gt;
-
-&lt;p&gt;4、低权重原则——避免滥用子选择器&lt;/p&gt;
-
-&lt;p&gt;（1）CSS
-的选择符都是有权重的，当不同的选择符的样式设置有冲突时，会采用权重高的选择符作为设置的样式。权重的规则：HTML
-标签的权重为 1，class 的权重为 10，id 的权重为 100。&lt;/p&gt;
-
-&lt;p&gt;（2）如果 CSS
-的选择符权重相同，那么样式会遵循就近原则，那个选择符最后定义，就采用哪个选择符的样式。&lt;/p&gt;
-
-&lt;p&gt;（3）使用子选择器，会增加 CSS
-选择符的权重，从而对其他选择符产生影响，所以应该尽量使用子选择器。为了保证样式容易被覆盖，提高可维护性，CSS
-选择符需要保证权重尽可能低。&lt;/p&gt;
-
-&lt;p&gt;5、CSS sprite&lt;/p&gt;
-
-&lt;p&gt;（1）CSS sprite 技术是将网站的多张背景图片合并为一张，然后利用
-background-position 属性来展示所需要的部分。&lt;/p&gt;
-
-&lt;p&gt;（2）CSS sprite 主要能解决试用多张图片加载时出现空白的问题，以及减少 HTTP
-请求次数，从而降低服务器的压力。&lt;/p&gt;
-
-&lt;p&gt;（3）CSS sprite 技术的使用范围：&lt;/p&gt;
-
-&lt;p&gt; • 只能合并用于背景的图片，对于&amp;lt;img src=&amp;ldquo;&amp;rdquo; /&amp;gt;设置的图片，不能合并到 CSS
-sprite 中。&lt;/p&gt;
-
-&lt;p&gt; • 对于横向和纵向都平铺的图片，也不能使用 CSS
-sprite。对于需要横向平铺的图片，合并的图片只能垂直排列；对于需要纵向平铺的图片，合并的图片只能水平排列。&lt;/p&gt;
-
-&lt;p&gt;6、CSS 常见问题&lt;/p&gt;
-
-&lt;p&gt;（1）id 和 class：同一个网页中，相同的 id 只能出现一次，不可重复，而 class
-可以任意出现多次，因此，应尽量使用 class，少用 id。&lt;/p&gt;
-
-&lt;p&gt;（2）超链接标签样式问题：a 标签的四种状态需要排序才能发挥作用，顺序是 link
--&amp;gt; visited -&amp;gt; hover -&amp;gt; active，也叫做 love hate 原则，即
-l(link)ov(visited)e h(hover)a(active)te。&lt;/p&gt;
-
-&lt;p&gt;（3）块级元素和行内元素的区别：&lt;/p&gt;
-
-&lt;p&gt; • 块级元素会独占一行；行内元素不会独占一行&lt;/p&gt;
-
-&lt;p&gt; • 块级元素可以设置 width、height 属性；行内元素设置 width、height
-属性无效&lt;/p&gt;
-
-&lt;p&gt; • 块级元素可以设置 margin 和 padding 属性；行内元素设置 margin 和
-padding
-属性，水平方向（margin-left、margin-right、padding-left、padding-right）有效，垂直方向（margin-top、margin-bottom、padding-top、padiding-bottom）无效&lt;/p&gt;
-
-&lt;p&gt; • 块级元素的 display 属性对应 display: block；行内元素的 display
-属性对应 display: inline。可以通过修改 display
-属性来切换块级元素和行内元素&lt;/p&gt;
-
-&lt;p&gt;（4）png图片：IE 6 下对 png
-的透明支持不好，可以利用滤镜功能来解决问题，格式：progid:
-DXImageTransform.Microsoft.AlphaImageLoader(src=&amp;lsquo;png图片路径&amp;rsquo;,
-sizingMethod=&amp;lsquo;crop&amp;rsquo;)&lt;/p&gt;
-
-&lt;p&gt;（5）多版本 IE 并存方案：CSS 的调试利器 IETester&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2012/03/17/write_high_quality_code_high_quality_css/</guid>
+      <description>1、解析网页模式和DTD （1）解析网页模式主要有标准模式和怪异模式。怪异模式是为了兼容老式浏览器下的代码，应该避免触发怪异模式，选用标准模式</description>
+    </item>
+    
+    <item>
+      <title>编写高质量代码——高质量的CSS</title>
+      <link>http://blog.wenzhixin.net.cn/2012/03/17/write_high_quality_code_high_quality_css/</link>
+      <pubDate>Sat, 17 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2012/03/17/write_high_quality_code_high_quality_css/</guid>
+      <description>1、解析网页模式和DTD （1）解析网页模式主要有标准模式和怪异模式。怪异模式是为了兼容老式浏览器下的代码，应该避免触发怪异模式，选用标准模式</description>
     </item>
     
   </channel>

@@ -8,275 +8,35 @@
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Thu, 13 Feb 2014 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.wenzhixin.net.cn/tags/ddl/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/ddl/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Oracle 获取DDL语句入门小记</title>
-      <link>http://blog.wenzhixin.net.cn/2014/02/13/oracle_ddl</link>
+      <link>http://blog.wenzhixin.net.cn/2014/02/13/oracle_ddl/</link>
       <pubDate>Thu, 13 Feb 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/02/13/oracle_ddl</guid>
-      <description>
-
-&lt;h3 id=&#34;sqlplus-登录:e3b1259d48a958535969632ae5dfca28&#34;&gt;sqlplus 登录&lt;/h3&gt;
-
-&lt;p&gt;在操作系统命令行下：&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;方法1：&lt;/strong&gt;&lt;/p&gt;
-sqlplus / as sysdba #这是典型的操作系统认证，不需要listener进程
-sqlplus system/password as sysdba #这种连接方式只能连接本机数据库，同样不需要listener进程
-
-&lt;p&gt;&lt;strong&gt;方法2：&lt;/strong&gt;&lt;/p&gt;
-sqlplus /nolog
-CONNECT username/password@host[:port][/service_name]
-
-&lt;h3 id=&#34;查看当前用户:e3b1259d48a958535969632ae5dfca28&#34;&gt;查看当前用户&lt;/h3&gt;
-select user from dual;
-
-&lt;h3 id=&#34;查看-databases:e3b1259d48a958535969632ae5dfca28&#34;&gt;查看 databases&lt;/h3&gt;
-select name from v$database;
-
-&lt;h3 id=&#34;查看-tables:e3b1259d48a958535969632ae5dfca28&#34;&gt;查看 tables&lt;/h3&gt;
-select owner, table_name from dba_tables;
-select owner, table_name from all_tables; # do not have access dba_tables;
-select table_name from user_tables; # you own
-
-&lt;h3 id=&#34;获取一个schema下的所有建表-视图和建索引的语法:e3b1259d48a958535969632ae5dfca28&#34;&gt;获取一个SCHEMA下的所有建表、视图和建索引的语法&lt;/h3&gt;
-set pagesize 0
-set long 90000
-set feedback off
-set echo off
-spool schema.sql
-select dbms_metadata.get_ddl(&#39;TABLE&#39;, u.table_name) from user_tables u;
-select dbms_metadata.get_ddl(&#39;VIEW&#39;, u.VIEW_name) from user_views u;
-select dbms_metadata.get_ddl(&#39;INDEX&#39;, u.index_name) from user_indexes u;
-spool off;
-
-&lt;h3 id=&#34;获取单个的建表-视图和建索引的语法:e3b1259d48a958535969632ae5dfca28&#34;&gt;获取单个的建表、视图和建索引的语法&lt;/h3&gt;
-set pagesize 0
-set long 90000
-set feedback off
-set echo off
-spool &lt;table_name&gt;.sql
-select dbms_metadata.get_ddl(&#39;TABLE&#39;, &#39;&lt;table_name&gt;&#39;, &#39;&lt;SCHEMA&gt;&#39;) from dual;
-select dbms_metadata.get_ddl(&#39;VIEW&#39;, &#39;&lt;view_name&gt;&#39;, &#39;&lt;SCHEMA&gt;&#39;) from dual;
-select dbms_metadata.get_ddl(&#39;INDEX&#39;, &#39;&lt;index_name&gt;&#39;, &#39;&lt;SCHEMA&gt;&#39;) from dual;
-spool off;
-
-&lt;h3 id=&#34;获取某个-schema-的建全部存储过程的语法:e3b1259d48a958535969632ae5dfca28&#34;&gt;获取某个 SCHEMA 的建全部存储过程的语法&lt;/h3&gt;
-set pagesize 0
-set long 90000
-set feedback off
-set echo off
-spool procedures.sql
-select dbms_metadata.get_ddl(&#39;PROCEDURE&#39;, u.object_name)
-from user_objects u
-where object_type = &#39;PROCEDURE&#39;;
-spool off;
-
-&lt;h3 id=&#34;获取指定名称的建存储过程的语法:e3b1259d48a958535969632ae5dfca28&#34;&gt;获取指定名称的建存储过程的语法&lt;/h3&gt;
-set pagesize 0
-set long 90000
-set feedback off
-set echo off
-spool &lt;Procedure_Name&gt;.sql
-select text
-from all_source
-where name= &#39;&lt;procedure_name&gt;&#39;;
-spool off;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2014/02/13/oracle_ddl/</guid>
+      <description>sqlplus 登录 在操作系统命令行下： 方法1： 1 2 sqlplus / as sysdba #这是典型的操作系统认证，不需要listener进程 sqlplus system/password as sysdba #这种连接方式只能连接本机数据库，</description>
     </item>
     
     <item>
       <title>SQL学习笔记——DDL</title>
-      <link>http://blog.wenzhixin.net.cn/2012/03/09/sql_study_notes_ddl</link>
+      <link>http://blog.wenzhixin.net.cn/2012/03/09/sql_study_notes_ddl/</link>
       <pubDate>Fri, 09 Mar 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/03/09/sql_study_notes_ddl</guid>
-      <description>&lt;p&gt;​1. CREATE DATABASE Syntax&lt;/p&gt;
-
-&lt;p&gt;  • CREATE DATABASE database_name&lt;/p&gt;
-
-&lt;p&gt;​2. CREATE TABLE Syntax&lt;/p&gt;
-
-&lt;p&gt;  • CREATE TABLE table_name &lt;/p&gt;
-
-&lt;p&gt;    (&lt;/p&gt;
-
-&lt;p&gt;    column_name1 data_type,&lt;/p&gt;
-
-&lt;p&gt;    column_name2 data_type,&lt;/p&gt;
-
-&lt;p&gt;    column_name3 data_type,&lt;/p&gt;
-
-&lt;p&gt;    )&lt;/p&gt;
-
-&lt;p&gt;​3. SQL Constraints&lt;/p&gt;
-
-&lt;p&gt;  • NOT NULL - cannot insert a new record, or update a record without
-adding a value to this field&lt;/p&gt;
-
-&lt;p&gt;  • UNIQUE - uniquely identifies each record in a table&lt;/p&gt;
-
-&lt;p&gt;  • PRIMARY KEY&lt;/p&gt;
-
-&lt;p&gt;  • FOREIGN KEY (REFERENCES) - points to a PRIMARY KEY in another table&lt;/p&gt;
-
-&lt;p&gt;  • CHECK - is used to limit the value range that can be placed in a
-column&lt;/p&gt;
-
-&lt;p&gt;  • DEFAULT - is used to insert a default value into a column&lt;/p&gt;
-
-&lt;p&gt;​4. SQL Indexs&lt;/p&gt;
-
-&lt;p&gt;  (1) An index can be created in a table to find data more quickly and
-efficiently&lt;/p&gt;
-
-&lt;p&gt;  (2) CREATE INDEX Syntax:&lt;/p&gt;
-
-&lt;p&gt;  • CREATE INDEX index_name ON table_name(column_name)&lt;/p&gt;
-
-&lt;p&gt;  • CREATE UNIQUE INDEX index_name ON table_name(column_name)&lt;/p&gt;
-
-&lt;p&gt;  (3) DROP INDEX Syntax: &lt;/p&gt;
-
-&lt;p&gt;  • DROP INDEX index_name ON table_name&lt;/p&gt;
-
-&lt;p&gt;​5. DROP TABLE Syntax&lt;/p&gt;
-
-&lt;p&gt;  • DROP TABLE table_name&lt;/p&gt;
-
-&lt;p&gt;​6. DROP DATABASE Syntax&lt;/p&gt;
-
-&lt;p&gt;  • DROP DATABASE database_name&lt;/p&gt;
-
-&lt;p&gt;​7. TRUNCATE TABLE Syntax&lt;/p&gt;
-
-&lt;p&gt;  • TRUNCATE TABLE table_name&lt;/p&gt;
-
-&lt;p&gt;​8. ALTER TABLE Synta&lt;/p&gt;
-
-&lt;p&gt;  • ALTER TABLE table_name ADD column_name data_type&lt;/p&gt;
-
-&lt;p&gt;  • ALTER TABLE table_name DROP column_name&lt;/p&gt;
-
-&lt;p&gt;  • ALTER TABLE table_name ALTER COLUMN column_name data_type&lt;/p&gt;
-
-&lt;p&gt;​9. SQL CREATE VIEW&lt;/p&gt;
-
-&lt;p&gt;  (1) a view is a virtual table based on the result-set of an SQL
-statement&lt;/p&gt;
-
-&lt;p&gt;  (2) CREATE VIEW Syntax&lt;/p&gt;
-
-&lt;p&gt;  • CREATE VIEW view_name AS SELECT column_name(s) FROM table_name
-WHERE condition&lt;/p&gt;
-
-&lt;p&gt;  (3) UPDATE VIEW Syntax&lt;/p&gt;
-
-&lt;p&gt;  • CREATE OR REPLACE VIEW view_name AS SELECT column_name(s) FROM
-table_name WHERE condition&lt;/p&gt;
-
-&lt;p&gt;  (4) DROP VIEW Syntax&lt;/p&gt;
-
-&lt;p&gt;  • DROP VIEW view_name&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2012/03/09/sql_study_notes_ddl/</guid>
+      <description>​1. CREATE DATABASE Syntax • CREATE DATABASE database_name ​2. CREATE TABLE Syntax • CREATE TABLE table_name ( column_name1 data_type, column_name2 data_type, column_name3 data_type, ) ​3. SQL Constraints • NOT NULL - cannot insert a new record, or update a record without adding a value to this field • UNIQUE - uniquely identifies each record in a table • PRIMARY KEY • FOREIGN KEY (REFERENCES)</description>
     </item>
     
     <item>
       <title>SQL学习笔记——DDL</title>
-      <link>http://blog.wenzhixin.net.cn/2012/03/09/sql_study_notes_ddl</link>
+      <link>http://blog.wenzhixin.net.cn/2012/03/09/sql_study_notes_ddl/</link>
       <pubDate>Fri, 09 Mar 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/03/09/sql_study_notes_ddl</guid>
-      <description>&lt;p&gt;​1. CREATE DATABASE Syntax&lt;/p&gt;
-
-&lt;p&gt;  • CREATE DATABASE database_name&lt;/p&gt;
-
-&lt;p&gt;​2. CREATE TABLE Syntax&lt;/p&gt;
-
-&lt;p&gt;  • CREATE TABLE table_name &lt;/p&gt;
-
-&lt;p&gt;    (&lt;/p&gt;
-
-&lt;p&gt;    column_name1 data_type,&lt;/p&gt;
-
-&lt;p&gt;    column_name2 data_type,&lt;/p&gt;
-
-&lt;p&gt;    column_name3 data_type,&lt;/p&gt;
-
-&lt;p&gt;    )&lt;/p&gt;
-
-&lt;p&gt;​3. SQL Constraints&lt;/p&gt;
-
-&lt;p&gt;  • NOT NULL - cannot insert a new record, or update a record without
-adding a value to this field&lt;/p&gt;
-
-&lt;p&gt;  • UNIQUE - uniquely identifies each record in a table&lt;/p&gt;
-
-&lt;p&gt;  • PRIMARY KEY&lt;/p&gt;
-
-&lt;p&gt;  • FOREIGN KEY (REFERENCES) - points to a PRIMARY KEY in another table&lt;/p&gt;
-
-&lt;p&gt;  • CHECK - is used to limit the value range that can be placed in a
-column&lt;/p&gt;
-
-&lt;p&gt;  • DEFAULT - is used to insert a default value into a column&lt;/p&gt;
-
-&lt;p&gt;​4. SQL Indexs&lt;/p&gt;
-
-&lt;p&gt;  (1) An index can be created in a table to find data more quickly and
-efficiently&lt;/p&gt;
-
-&lt;p&gt;  (2) CREATE INDEX Syntax:&lt;/p&gt;
-
-&lt;p&gt;  • CREATE INDEX index_name ON table_name(column_name)&lt;/p&gt;
-
-&lt;p&gt;  • CREATE UNIQUE INDEX index_name ON table_name(column_name)&lt;/p&gt;
-
-&lt;p&gt;  (3) DROP INDEX Syntax: &lt;/p&gt;
-
-&lt;p&gt;  • DROP INDEX index_name ON table_name&lt;/p&gt;
-
-&lt;p&gt;​5. DROP TABLE Syntax&lt;/p&gt;
-
-&lt;p&gt;  • DROP TABLE table_name&lt;/p&gt;
-
-&lt;p&gt;​6. DROP DATABASE Syntax&lt;/p&gt;
-
-&lt;p&gt;  • DROP DATABASE database_name&lt;/p&gt;
-
-&lt;p&gt;​7. TRUNCATE TABLE Syntax&lt;/p&gt;
-
-&lt;p&gt;  • TRUNCATE TABLE table_name&lt;/p&gt;
-
-&lt;p&gt;​8. ALTER TABLE Synta&lt;/p&gt;
-
-&lt;p&gt;  • ALTER TABLE table_name ADD column_name data_type&lt;/p&gt;
-
-&lt;p&gt;  • ALTER TABLE table_name DROP column_name&lt;/p&gt;
-
-&lt;p&gt;  • ALTER TABLE table_name ALTER COLUMN column_name data_type&lt;/p&gt;
-
-&lt;p&gt;​9. SQL CREATE VIEW&lt;/p&gt;
-
-&lt;p&gt;  (1) a view is a virtual table based on the result-set of an SQL
-statement&lt;/p&gt;
-
-&lt;p&gt;  (2) CREATE VIEW Syntax&lt;/p&gt;
-
-&lt;p&gt;  • CREATE VIEW view_name AS SELECT column_name(s) FROM table_name
-WHERE condition&lt;/p&gt;
-
-&lt;p&gt;  (3) UPDATE VIEW Syntax&lt;/p&gt;
-
-&lt;p&gt;  • CREATE OR REPLACE VIEW view_name AS SELECT column_name(s) FROM
-table_name WHERE condition&lt;/p&gt;
-
-&lt;p&gt;  (4) DROP VIEW Syntax&lt;/p&gt;
-
-&lt;p&gt;  • DROP VIEW view_name&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2012/03/09/sql_study_notes_ddl/</guid>
+      <description>​1. CREATE DATABASE Syntax • CREATE DATABASE database_name ​2. CREATE TABLE Syntax • CREATE TABLE table_name ( column_name1 data_type, column_name2 data_type, column_name3 data_type, ) ​3. SQL Constraints • NOT NULL - cannot insert a new record, or update a record without adding a value to this field • UNIQUE - uniquely identifies each record in a table • PRIMARY KEY • FOREIGN KEY (REFERENCES)</description>
     </item>
     
   </channel>

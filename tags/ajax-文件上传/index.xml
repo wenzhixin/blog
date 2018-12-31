@@ -8,154 +8,26 @@
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Thu, 28 Nov 2013 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.wenzhixin.net.cn/tags/ajax-%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/ajax-%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Ajax 文件上传——通过 html5 的方法</title>
-      <link>http://blog.wenzhixin.net.cn/2013/11/28/ajax_file_upload_html5</link>
+      <link>http://blog.wenzhixin.net.cn/2013/11/28/ajax_file_upload_html5/</link>
       <pubDate>Thu, 28 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/11/28/ajax_file_upload_html5</guid>
-      <description>
-
-&lt;h4 id=&#34;html5-方法:f5a698885091fe9812ae461e6526e53b&#34;&gt;html5 方法&lt;/h4&gt;
-
-&lt;p&gt;上篇文章讲到 Ajax 文件上传是如何通过 iframe 的方法，这里我们通过 html5 的方法来进行文件的上传。&lt;/p&gt;
-
-&lt;p&gt;在 html5 标准中，XMLHttpRequest 对象被重新定义，称为“XMLHttpRequest Level 2”，其中包含了文件相关的新特性：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;支持上传、下载字节流，比如文件、blob以及表单数据&lt;/li&gt;
-&lt;li&gt;增加了上传、下载中的进度事件&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;关于 XMLHttpRequest Level 2，阮一峰有一篇文章介绍的很详细，就不多做解释了，详细见：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.w3.org/TR/XMLHttpRequest2/&#34;&gt;官网 XMLHttpRequest2&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.ruanyifeng.com/blog/2012/09/xmlhttprequest_level_2.html&#34;&gt;XMLHttpRequest Level 2 使用指南&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;首先，创建一个 XMLHttpRequest2 的实例：&lt;/p&gt;
-var xhr = new XMLHttpRequest();
-
-&lt;p&gt;添加 file 控件，这里我们使用 multiple 属性来支持多文件的选择。&lt;/p&gt;
-&lt;input id=&#34;filename&#34; type=&#34;file&#34; multiple=&#34;multiple&#34; /&gt;
-
-&lt;p&gt;获取并保存选择的多个文件。&lt;/p&gt;
-var files = document.getElementById(&#39;filename&#39;).files;
-
-&lt;p&gt;接下来，要介绍的是另一个 html5 推出的新对象：FormData。&lt;/p&gt;
-
-&lt;p&gt;FormData 对象是用户的表单数据的集合，
-它以键值对的形式存储了表单数据，其值能够包括数字、字符串以及文件。
-我们通过这个对象，来向服务器提交我们的文件数据。&lt;/p&gt;
-var formData = new FormData();
-formData.append(&#39;filename&#39;, files[index]); // index 为第 n 个文件的索引
-xhr.open(&#39;post&#39;, url); // url 为提交的后台地址
-xhr.send(formData);
-
-&lt;p&gt;这样就完成了一次文件的上传，多个文件我们遍历多个文件重复这个步骤即可。&lt;/p&gt;
-
-&lt;p&gt;接下来是对上传事件的监听：&lt;/p&gt;
-xhr.upload.addEventListener(&#34;progress&#34;, uploadProgress, false); // 处理上传进度
-xhr.addEventListener(&#34;load&#34;, uploadComplete, false); // 处理上传完成
-xhr.addEventListener(&#34;error&#34;, uploadFailed, false); // 处理上传失败
-xhr.addEventListener(&#34;abort&#34;, uploadCanceled, false); // 处理取消上传
-
-&lt;p&gt;在不同的事件中做不同的处理在完成所有的文件上传后再显示结果，使用 html5 的方法是不是很简单呢。&lt;/p&gt;
-
-&lt;h4 id=&#34;使用-html5-的-jquery-插件:f5a698885091fe9812ae461e6526e53b&#34;&gt;使用 html5 的 jQuery 插件&lt;/h4&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/mihaild/jquery-html5-upload&#34;&gt;jquery-html5-upload&lt;/a&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;浏览器支持情况:f5a698885091fe9812ae461e6526e53b&#34;&gt;浏览器支持情况&lt;/h4&gt;
-
-&lt;p&gt;因为用到了新的特性，所以只有在支持这些新对象的浏览器下才可以支持我们的代码，
-可以通过&lt;a href=&#34;http://caniuse.com/&#34;&gt;这里&lt;/a&gt;查看浏览器的支持情况。&lt;/p&gt;
-
-&lt;p&gt;最后，对于不支持的浏览器，我们做了降级处理，优先使用 html5 方法，
-在浏览器不支持的情况下，使用上一篇提到的 iframe 的方法，
-当然也可以考虑将介绍到的两个 jQuery 插件合并起来。&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/28/ajax_file_upload_html5/</guid>
+      <description>html5 方法 上篇文章讲到 Ajax 文件上传是如何通过 iframe 的方法，这里我们通过 html5 的方法来进行文件的上传。 在 html5 标准中，XMLHttpRequest 对象被重新定义</description>
     </item>
     
     <item>
       <title>Ajax 文件上传——通过 iframe 的方法</title>
-      <link>http://blog.wenzhixin.net.cn/2013/11/27/ajax_file_upload_iframe</link>
+      <link>http://blog.wenzhixin.net.cn/2013/11/27/ajax_file_upload_iframe/</link>
       <pubDate>Wed, 27 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/11/27/ajax_file_upload_iframe</guid>
-      <description>
-
-&lt;h4 id=&#34;前言:9d2eee6ba8fab7c3c4918c26a26acf7a&#34;&gt;前言&lt;/h4&gt;
-
-&lt;p&gt;由于安全问题，浏览器不允许通过 XMLHttpRequest（又名XHR）的方式上传文件。&lt;/p&gt;
-
-&lt;p&gt;那么如何在不刷新界面的情况下实现文件的上传呢？&lt;/p&gt;
-
-&lt;h4 id=&#34;解决方法:9d2eee6ba8fab7c3c4918c26a26acf7a&#34;&gt;解决方法&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;一种方法是使用 Flash，但是需要安装 Flash 插件。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;使用 iframe 的方法，这里来介绍它是如何工作的。&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;iframe-的方法:9d2eee6ba8fab7c3c4918c26a26acf7a&#34;&gt;iframe 的方法&lt;/h4&gt;
-
-&lt;p&gt;假设我们有一个文件类型的输入字段的表单&lt;/p&gt;
-&lt;input name=&#34;filename&#34; type=&#34;file&#34; /&gt;
-
-&lt;p&gt;使用 iframe 的方法可以概括为如下步骤：&lt;/p&gt;
-
-&lt;p&gt;1) 禁用原表单的 submit 事件，以方便我们使用自定义 iframe 的 submit 事件。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2013/11/27/iframe-method-step-0.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;2) 使用 JavaScript 创建一个 iframe 元素并将其插入到当前页面（对用户不可见）。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2013/11/27/iframe-method-step-1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;3) 修改 iframe 的 target 属性，使得表单提交的结果显示在新的 iframe 中，而不是当前窗口。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2013/11/27/iframe-method-step-2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;4) 提交 iframe 中的表单，例如用 jQuery 的 $(&amp;lsquo;form&amp;rsquo;).submit()。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2013/11/27/iframe-method-step-3.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;5) 让隐藏的 iframe 导航到新的响应界面，在这里，父窗口并没有打开新的页面或者进行重定向。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2013/11/27/iframe-method-step-4.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;6) 获取 iframe 的响应内容到父窗口中。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2013/11/27/iframe-method-step-5.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;7) 删除 iframe，重置原来的表单，提交完成。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2013/11/27/iframe-method-step-6.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;需要注意的问题:9d2eee6ba8fab7c3c4918c26a26acf7a&#34;&gt;需要注意的问题&lt;/h4&gt;
-
-&lt;p&gt;由于使用了 iframe，所以我们无法获得响应接口的响应头和状态码。&lt;/p&gt;
-
-&lt;p&gt;为了判断是否已经提交成功，我们需要在返回接口中定义我们需要的响应信息。&lt;/p&gt;
-
-&lt;p&gt;例如，在 body 中返回 status：&lt;/p&gt;
-{
-	&#34;status&#34;: 200
-}
-
-&lt;h4 id=&#34;使用-iframe-的-jquery-插件:9d2eee6ba8fab7c3c4918c26a26acf7a&#34;&gt;使用 iframe 的 jQuery 插件&lt;/h4&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.phpletter.com/Demo/AjaxFileUpload-Demo/&#34;&gt;AjaxFileUpload 插件&lt;/a&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;参考：&lt;a href=&#34;http://www.alfajango.com/blog/ajax-file-uploads-with-the-iframe-method/&#34;&gt;AJAX File Uploads with the iFrame Method&lt;/a&gt;&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/27/ajax_file_upload_iframe/</guid>
+      <description>前言 由于安全问题，浏览器不允许通过 XMLHttpRequest（又名XHR）的方式上传文件。 那么如何在不刷新界面的情况下实现文件的上传呢？ 解</description>
     </item>
     
   </channel>

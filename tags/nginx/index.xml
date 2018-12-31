@@ -1,49 +1,105 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Nginx on 文翼的博客</title>
+    <title>nginx on 文翼的博客</title>
     <link>http://blog.wenzhixin.net.cn/tags/nginx/</link>
-    <description>Recent content in Nginx on 文翼的博客</description>
+    <description>Recent content in nginx on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Thu, 18 Sep 2014 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.wenzhixin.net.cn/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 18 Jan 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
-      <title>如何为 NodeJs 设置 Nginx 代理服务器</title>
-      <link>http://blog.wenzhixin.net.cn/2014/09/18/nginx_as_proxy_nodejs</link>
-      <pubDate>Thu, 18 Sep 2014 00:00:00 +0000</pubDate>
+      <title>nodeJS 和 Nginx 解决客户端发送大数据的问题</title>
+      <link>http://blog.wenzhixin.net.cn/2014/01/18/large_body_error/</link>
+      <pubDate>Sat, 18 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/09/18/nginx_as_proxy_nodejs</guid>
-      <description>&lt;p&gt;很多时候，我们需要为 NodeJs 设置反向代理，例如本博客后台 NodeJs 的应用监听的端口为 3333，通过 Nginx 便可以轻松代理为 80 端口，那么应该如何设置呢？&lt;/p&gt;
-
-&lt;p&gt;首先设置 &lt;code&gt;upstream&lt;/code&gt;：&lt;/p&gt;
-upstream app_blog {
-    server 127.0.0.1:3333;
-}
-
-&lt;p&gt;设置 &lt;code&gt;server&lt;/code&gt;：&lt;/p&gt;
-server {
-    listen 80 default;
-    server_name wenzhixin.net.cn wenzhixin.*;
-
-    location / {
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header Host $http_host;
-        proxy_set_header X-NginX-Proxy true;
-
-        proxy_pass http://app_blog;
-        proxy_redirect off;
-    }
-}
-
-&lt;p&gt;重启 &lt;code&gt;nginx&lt;/code&gt;：&lt;/p&gt;
-sudo service nginx restart
-
-&lt;p&gt;大功告成！根据我们的设置，所有通过 80 的请求（头部信息）都会跳转到 3333 端口。&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2014/01/18/large_body_error/</guid>
+      <description>nodeJS 和 Nginx 默认情况下都只支持 1MB 的 body 数据，当客户端发送大数据的时候，分别会出现以下错误： nodeJS： 1 Error: request entity too large 解决： 1 2 3 app.use(express.bodyParser({ limit: 1024 * 1024 * 64 // 64M }));</description>
+    </item>
+    
+    <item>
+      <title>Nginx rewrite query string</title>
+      <link>http://blog.wenzhixin.net.cn/2013/12/31/nginx_rewrite_query_string/</link>
+      <pubDate>Tue, 31 Dec 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2013/12/31/nginx_rewrite_query_string/</guid>
+      <description>rewrite 的正则是不匹配 query string 的， 默认情况下，query string 会自动追加到rewrite 后的地址上。 例如： 1 rewrite ^/read.php$ /api.php 那么： 访问 read.php?tid=123 的时候实际上已经 rewrite 到了 api.php?tid=123 上了</description>
+    </item>
+    
+    <item>
+      <title>apache 重写链接</title>
+      <link>http://blog.wenzhixin.net.cn/2013/12/31/apache_rewrite/</link>
+      <pubDate>Tue, 31 Dec 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2013/12/31/apache_rewrite/</guid>
+      <description>安装启用 mod_rewrite 在安装启用之前，编写 info.php 文件 1 2 &amp;lt;?php phpinfo();?&amp;gt; 从浏览器中打开，使用 Ctrl + F 进行查找 mod_rewrite 是否在 Loaded Modules 中， 已经存在就表示我们已经安装，不存在的话，那么，</description>
+    </item>
+    
+    <item>
+      <title>为你的网站开启 gzip 压缩功能（nodejs、nginx）</title>
+      <link>http://blog.wenzhixin.net.cn/2013/11/10/server_gzip_on/</link>
+      <pubDate>Sun, 10 Nov 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2013/11/10/server_gzip_on/</guid>
+      <description>开启网站的 gzip 压缩功能，通常可以高达70%，也就是说，如果你的网页有30K，压缩之后就变成9K， 对于大部分网站，显然可以明显提高浏览速度（注：</description>
+    </item>
+    
+    <item>
+      <title>nginx 开启 http 下载服务器认证</title>
+      <link>http://blog.wenzhixin.net.cn/2013/10/19/nginx_http_auth/</link>
+      <pubDate>Sat, 19 Oct 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2013/10/19/nginx_http_auth/</guid>
+      <description>1. 介绍 有时候，我们需要提供下载服务器给别人文件，但是又不想给所有人看到，从而保证安全性。 这种时候，对目录访问进行认证，并且每天改变随机密码，</description>
+    </item>
+    
+    <item>
+      <title>nginx 安装与配置详解</title>
+      <link>http://blog.wenzhixin.net.cn/2013/09/21/nginx_install_settings/</link>
+      <pubDate>Sat, 21 Sep 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2013/09/21/nginx_install_settings/</guid>
+      <description>安装（需要支持 php）： 1 2 sudo apt-get install nginx sudo apt-get install php5-fpm nginx 的基本配置（/etc/nginx/nginx.conf）与参数说明： 1 2 3 4 5 6 7 8 9 10 11 12 13</description>
+    </item>
+    
+    <item>
+      <title>nginx 配置 SSL（https）</title>
+      <link>http://blog.wenzhixin.net.cn/2013/09/01/nginx_ssl_settings/</link>
+      <pubDate>Sun, 01 Sep 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2013/09/01/nginx_ssl_settings/</guid>
+      <description>配置信息： 1 2 3 4 5 6 7 8 listen 443; server_name wenzhixin.net.cn; ssl on; ssl_certificate /etc/ssl/certs/wenzhixin_net_cn.crt; ssl_certificate_key /etc/ssl/private/wenzhixin_net_cn.key; ssl_client_certificate /etc/ssl/certs/wenzhixin_net_cn-bundle; ssl_verify_client optional; 配置下面： 1 2 ssl_client_certificate /etc/ssl/certs/wenzhixin_net_cn-bundle; ssl_verify_client optional; 是为了解决： 1 unable to get local issuer certificate 的问题。</description>
+    </item>
+    
+    <item>
+      <title>使用 nginx 作为代理服务器的路径问题</title>
+      <link>http://blog.wenzhixin.net.cn/2013/07/17/nginx_proxy/</link>
+      <pubDate>Wed, 17 Jul 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2013/07/17/nginx_proxy/</guid>
+      <description>继上篇文章：使用 nginx 作为代理服务器轻松解决 Ajax 跨域问题， 使用 proxy 来解决 Ajax 跨域的问题，方便我们开发测试。 但是很多时候，我们的服务器地址是这样的： 1 2</description>
+    </item>
+    
+    <item>
+      <title>使用 nginx 作为代理服务器轻松解决 Ajax 跨域问题</title>
+      <link>http://blog.wenzhixin.net.cn/2012/08/01/the_use_of_nginx_as_a_proxy_server_easily_solve_the_cross_domain_ajax_problem/</link>
+      <pubDate>Wed, 01 Aug 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2012/08/01/the_use_of_nginx_as_a_proxy_server_easily_solve_the_cross_domain_ajax_problem/</guid>
+      <description>1、安装 nginx： 1 sudo apt-get install nginx 2、配置 nginx： 1 sudo vi /etc/nginx/sites-enabled/default 输入内容： 1 2 3 4 5 6 7 8 server { listen 8080; location /api { proxy_pass http://myserver/api; access_log off; } } 3、重启 1 sudo /etc/init.d/nginx restart 4、使用： 1 var</description>
+    </item>
+    
+    <item>
+      <title>使用 nginx 作为代理服务器轻松解决 Ajax 跨域问题</title>
+      <link>http://blog.wenzhixin.net.cn/2012/08/01/the_use_of_nginx_as_a_proxy_server_easily_solve_the_cross_domain_ajax_problem/</link>
+      <pubDate>Wed, 01 Aug 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2012/08/01/the_use_of_nginx_as_a_proxy_server_easily_solve_the_cross_domain_ajax_problem/</guid>
+      <description>1、安装 nginx： 1 sudo apt-get install nginx 2、配置 nginx： 1 sudo vi /etc/nginx/sites-enabled/default 输入内容： 1 2 3 4 5 6 7 8 server { listen 8080; location /api { proxy_pass http://myserver/api; access_log off; } } 3、重启 1 sudo /etc/init.d/nginx restart 4、使用： 1 var</description>
     </item>
     
   </channel>

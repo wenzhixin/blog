@@ -8,82 +8,17 @@
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Thu, 23 Jan 2014 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.wenzhixin.net.cn/tags/%E9%82%AE%E4%BB%B6/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/%E9%82%AE%E4%BB%B6/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>使用 nodejs 发送邮件</title>
-      <link>http://blog.wenzhixin.net.cn/2014/01/23/node_send_email</link>
+      <link>http://blog.wenzhixin.net.cn/2014/01/23/node_send_email/</link>
       <pubDate>Thu, 23 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/01/23/node_send_email</guid>
-      <description>&lt;p&gt;平时在开发应用的时候，很多时候会用到邮件，来通知我们，
-这里介绍 nodejs 如何发送邮件，比较简单。&lt;/p&gt;
-
-&lt;p&gt;使用 &lt;a href=&#34;https://github.com/andris9/Nodemailer&#34;&gt;Nodemailer&lt;/a&gt; 库来发送邮件。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;安装：&lt;/strong&gt;&lt;/p&gt;
-npm install nodemailer --save
-
-&lt;p&gt;&lt;strong&gt;增加配置信息 config.js：&lt;/strong&gt;&lt;/p&gt;
-module.exports = {
-    mail: {
-        from: {
-            name: &#39;App name&#39;,
-            service: &#39;Gmail&#39;,
-            auth: {
-                user: &#39;gmail.name@gmail.com&#39;,
-                pass: &#39;gmail.password&#39;
-            }
-        },
-        to: [
-            &#39;Zhixin Wen &lt;wenzhixin2010@gmail.com&gt;&#39;
-        ]
-    }
-};
-
-&lt;p&gt;参数：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;from：配置发送邮件信息&lt;/li&gt;
-&lt;li&gt;to：数组，配置发送给谁&lt;/li&gt;
-&lt;li&gt;name：显示的名称&lt;/li&gt;
-&lt;li&gt;service：SMTP 名称，这里用 Gmail&lt;/li&gt;
-&lt;li&gt;auth：邮箱的用户名和密码&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;如何使用：&lt;/strong&gt;&lt;/p&gt;
-var nodemailer = require(&#39;nodemailer&#39;),
-    config = require(&#39;./config&#39;),
-    smtpTransport = nodemailer.createTransport(&#39;SMTP&#39;, config.mail.from);
-
-&lt;p&gt;定义并且根据配置文件生成 smtpTransport。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;发送邮件函数：&lt;/strong&gt;&lt;/p&gt;
-/**
- * @param {String} subject：发送的主题
- * @param {String} html：发送的 html 内容
- */
-function sendMail(subject, html) {
-    var mailOptions = {
-        from: [config.mail.from.name, config.mail.from.auth.user].join(&#39; &#39;),
-        to: config.mail.to.join(&#39;,&#39;),
-        subject: subject,
-        html: html
-    };
-
-    smtpTransport.sendMail(mailOptions, function(error, response){
-        if (error) {
-            console.log(error);
-        } else {
-            console.log(&#39;Message sent: &#39; + response.message);
-        }
-        smtpTransport.close();
-    });
-};
-
-&lt;p&gt;&lt;strong&gt;发邮件例子：&lt;/strong&gt;&lt;/p&gt;
-sendMail(&#39;测试发邮件&#39;, &#39;&lt;p&gt;Hello world!&lt;/p&gt;&#39;);
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2014/01/23/node_send_email/</guid>
+      <description>平时在开发应用的时候，很多时候会用到邮件，来通知我们， 这里介绍 nodejs 如何发送邮件，比较简单。 使用 Nodemailer 库来发送邮件。 安装： 1 npm install nodemailer --save 增加配置信息 co</description>
     </item>
     
   </channel>

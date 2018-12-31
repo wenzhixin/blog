@@ -8,43 +8,17 @@
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Thu, 20 Nov 2014 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.wenzhixin.net.cn/tags/windows-%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/windows-%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Ubuntu 下不能访问 Windows 文件系统</title>
-      <link>http://blog.wenzhixin.net.cn/2014/11/20/ubuntu_unable_to_access_windows</link>
+      <link>http://blog.wenzhixin.net.cn/2014/11/20/ubuntu_unable_to_access_windows/</link>
       <pubDate>Thu, 20 Nov 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/11/20/ubuntu_unable_to_access_windows</guid>
-      <description>
-
-&lt;p&gt;Ubuntu 和 Windows 双系统下，Ubuntu 不能访问 Windows 下的分区，例如：&lt;code&gt;/dev/sdb1&lt;/code&gt;，显示如下错误：&lt;/p&gt;
-Error mounting /dev/sdb1 exited with non-zero exit status 14: The disk contains an unclean file system (0, 0).
-Metadata kept in Windows cache, refused to mount.
-Failed to mount &#39;/dev/sdb1&#39;: Operation not permitted
-The NTFS partition is in an unsafe state. Please resume and shutdown
-Windows fully (no hibernation or fast restarting), or mount the volume
-read-only with the &#39;ro&#39; mount option.
-
-&lt;h3 id=&#34;解决:5af504e3a6dfa89ab0895ec157811330&#34;&gt;解决&lt;/h3&gt;
-
-&lt;p&gt;不确定具体是什么原因引起这个错误，应该是 Windows 没有正确关闭所引起。可以通过 &lt;code&gt;ntfsfix&lt;/code&gt; 命令，来对 NTFS 磁盘进行检查和修复。&lt;/p&gt;
-$ sudo ntfsfix /dev/sdb1
-Mounting volume... The disk contains an unclean file system (0, 0).
-Metadata kept in Windows cache, refused to mount.
-FAILED
-Attempting to correct errors...
-Processing $MFT and $MFTMirr...
-Reading $MFT... OK
-Reading $MFTMirr... OK
-Comparing $MFTMirr to $MFT... OK
-Processing of $MFT and $MFTMirr completed successfully.
-Setting required flags on partition... OK
-Going to empty the journal ($LogFile)... OK
-Checking the alternate boot sector... OK
-NTFS volume version is 3.1.
-NTFS partition /dev/sdb1 was processed successfully.
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2014/11/20/ubuntu_unable_to_access_windows/</guid>
+      <description>Ubuntu 和 Windows 双系统下，Ubuntu 不能访问 Windows 下的分区，例如：/dev/sdb1，显示如下错误： 1 2 3 4 5 6 Error mounting /dev/sdb1 exited with non-zero exit status 14: The disk contains an unclean file system (0, 0). Metadata kept</description>
     </item>
     
   </channel>

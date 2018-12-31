@@ -1,93 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Z-index on 文翼的博客</title>
+    <title>z-index on 文翼的博客</title>
     <link>http://blog.wenzhixin.net.cn/tags/z-index/</link>
-    <description>Recent content in Z-index on 文翼的博客</description>
+    <description>Recent content in z-index on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Fri, 06 Dec 2013 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.wenzhixin.net.cn/tags/z-index/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/z-index/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>使用 jQuery 修复 IE7 z-index 的 bug</title>
-      <link>http://blog.wenzhixin.net.cn/2013/12/06/jquery_ie7_zindex</link>
+      <link>http://blog.wenzhixin.net.cn/2013/12/06/jquery_ie7_zindex/</link>
       <pubDate>Fri, 06 Dec 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/12/06/jquery_ie7_zindex</guid>
-      <description>
-
-&lt;h3 id=&#34;现象:3bfff6febd50369cffe3c242086365b3&#34;&gt;现象：&lt;/h3&gt;
-
-&lt;p&gt;先来看下这段代码：&lt;/p&gt;
-td {
-	text-align: center;
-}
-.parent {
-	width: 300px;
-	height: 30px;
-	position: relative;
-	display: inline-block;
-	background: #f00;
-	border: 1px solid #aaa;
-}
-.parent1 {
-	width: 200px;
-	background: #000;
-}
-.child {
-	width: 200px;
-	height: 200px;
-	position: absolute;
-	z-index: 1000;
-	top: 100%;
-	left: -1px;
-	background: #fff;
-	border: 1px solid #aaa;
-}
-.none {
-	display: none;
-}
-
-&lt;table border=&#34;0&#34;&gt;
-  &lt;tr&gt;
-    &lt;td&gt;
-    &lt;div class=&#34;parent parent1&#34;&gt;
-      &lt;div class=&#34;child&#34;&gt;&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;
-    &lt;div class=&#34;parent parent2&#34;&gt;
-      &lt;div class=&#34;child none&#34;&gt;&lt;/div&gt;
-    &lt;/div&gt;&lt;/div&gt;
-    &lt;/td&gt;
-  &lt;/tr&gt;
-&lt;/table&gt;
-
-&lt;p&gt;在非 IE7 下的浏览器的显示效果：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2013/12/06/1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;在 IE7 下：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2013/12/06/2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;原因:3bfff6febd50369cffe3c242086365b3&#34;&gt;原因：&lt;/h3&gt;
-
-&lt;p&gt;这是因为同个 parent 在 IE7 的渲染下，后面的元素的 z-index 比前面的 大 的 bug。&lt;/p&gt;
-
-&lt;h3 id=&#34;解决:3bfff6febd50369cffe3c242086365b3&#34;&gt;解决：&lt;/h3&gt;
-
-&lt;p&gt;可以使用 jQuery 设置 css 中 z-index 的值：&lt;/p&gt;
-var zIndex = 1000;
-$(&#39;.parent&#39;).each(function() {
-	$(this).css(&#39;z-index&#39;, zIndexNumber);
-	zIndex -= 10;
-});
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2013/12/06/jquery_ie7_zindex/</guid>
+      <description>现象： 先来看下这段代码： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 td { text-align: center; } .parent { width: 300px; height: 30px; position: relative;</description>
     </item>
     
   </channel>

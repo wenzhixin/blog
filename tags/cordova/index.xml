@@ -1,261 +1,33 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Cordova on 文翼的博客</title>
+    <title>cordova on 文翼的博客</title>
     <link>http://blog.wenzhixin.net.cn/tags/cordova/</link>
-    <description>Recent content in Cordova on 文翼的博客</description>
+    <description>Recent content in cordova on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Thu, 20 Mar 2014 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.wenzhixin.net.cn/tags/cordova/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/cordova/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Cordova 开发属于自己的插件（plugin）</title>
-      <link>http://blog.wenzhixin.net.cn/2014/03/20/cordova_my_plugin</link>
+      <link>http://blog.wenzhixin.net.cn/2014/03/20/cordova_my_plugin/</link>
       <pubDate>Thu, 20 Mar 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/03/20/cordova_my_plugin</guid>
-      <description>&lt;p&gt;在上一篇文章 &lt;a href=&#34;http://wenzhixin.net.cn/2014/02/11/cordova_command_line&#34;&gt;cordova 初识之命令行工具&lt;/a&gt; 中，我们讲到了如何使用命令行快速地创建我们的 app 应用，并添加和运行各种平台。&lt;/p&gt;
-
-&lt;p&gt;在实际的项目开发中，需要用到 cordova 的插件，进行各个不同平台的辅助开发，我们可以通过 &lt;a href=&#34;http://plugins.cordova.io/&#34;&gt;plugins.cordova.io&lt;/a&gt; 对现有插件的搜索，以及安装。&lt;/p&gt;
-
-&lt;p&gt;插件的安装和使用，详细可以通过查阅 Cordova 的官网文档 &lt;a href=&#34;http://cordova.apache.org/docs/en/3.4.0/guide_cli_index.md.html#The%20Command-Line%20Interface&#34;&gt;The Command-Line Interface&lt;/a&gt; 以及某前端大大张鑫旭的文章：&lt;a href=&#34;http://www.zhangxinxu.com/wordpress/2014/03/phonegap-cordova-ios-statusbar-style/&#34;&gt;PhoneGap/Cordova控制iOS7状态栏的显隐/颜色&lt;/a&gt;。&lt;/p&gt;
-
-&lt;p&gt;但是更多的时候，我们需要开发属于我们自己的插件。通过查看官方文档 &lt;a href=&#34;http://cordova.apache.org/docs/en/3.4.0/guide_hybrid_plugins_index.md.html#Plugin%20Development%20Guide&#34;&gt;Plugin Development Guide&lt;/a&gt;，你会发现，&lt;strong&gt;坑爹&lt;/strong&gt;啊，这文档怎么还是以前 2.x 的开发文档？？自己在编写插件的过程中，花了不少时间，在这里讲一下如何开发属于自己的插件。&lt;/p&gt;
-
-&lt;p&gt;通过命令行创建 app 应用之后，你会发现目录结构是这样子的：&lt;/p&gt;
-├── platforms
-|    ├── android
-|    ├── ios
-|    ├── wp7
-|    └── ...
-├── plugins
-|    ├── org.apache.cordova.device
-|    └── ...
-├── config.xml
-└── www
-
-&lt;p&gt;这里的 &lt;code&gt;platforms&lt;/code&gt; 是我们应用支持的平台目录，&lt;code&gt;plugins&lt;/code&gt; 是我们安装的插件目录，&lt;code&gt;config.xml&lt;/code&gt; 是应用的配置信息（应用名称、描述等），&lt;code&gt;www&lt;/code&gt; 是我们的 web 工程目录。&lt;/p&gt;
-
-&lt;p&gt;我们知道，Cordova 3.x 的插件机制改变了，只需要通过简单的命令行即可安装和删除所需要的插件，而我们自己开发的插件，最终是要添加到 &lt;code&gt;plugins&lt;/code&gt; 目录中的。&lt;/p&gt;
-
-&lt;p&gt;那么，就让一起开始，&lt;strong&gt;制作属于我们自己的插件&lt;/strong&gt; 吧，这里以 ExtraInfo（获取 app 额外信息） 为例子，我们在当前目录下（当然可以放在别的目录下）创建 ExtraInfo 文件夹，先看下具体的目录结构：&lt;/p&gt;
-ExtraInfo
-├── src
-|    ├── android
-|    |    └── ExtraInfo.java
-|    ├── ios
-|    └── ...
-├── www
-|    └── ExtraInfo.js
-└── plugin.xml
-
-&lt;p&gt;这里的 &lt;code&gt;src&lt;/code&gt; 对应不同的平台，&lt;code&gt;www&lt;/code&gt; 放我们的 javascript 文件，&lt;code&gt;plugin.xml&lt;/code&gt; 是插件的配置文件。&lt;/p&gt;
-
-&lt;p&gt;先来看看 &lt;code&gt;plugin.xml&lt;/code&gt; 的内容：&lt;/p&gt;
-&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;
-&lt;plugin id=&#34;cn.net.wenzhixin.cordova&#34; version=&#34;0.0.1&#34;
-        xmlns=&#34;http://apache.org/cordova/ns/plugins/1.0&#34;
-        xmlns:android=&#34;http://schemas.android.com/apk/res/android&#34;&gt;
-    &lt;name&gt;ExtraInfo&lt;/name&gt;
-    &lt;description&gt;Description&lt;/description&gt;
-    &lt;js-module name=&#34;ExtraInfo&#34; src=&#34;www/ExtraInfo.js&#34;&gt;
-        &lt;clobbers target=&#34;cordova.plugins.ExtraInfo&#34;/&gt;
-    &lt;/js-module&gt;
-    &lt;platform name=&#34;android&#34;&gt;
-        &lt;config-file parent=&#34;/*&#34; target=&#34;res/xml/config.xml&#34;&gt;
-            &lt;feature name=&#34;ExtraInfo&#34;&gt;
-                &lt;param name=&#34;android-package&#34; value=&#34;cn.net.wenzhixin.cordova.ExtraInfo&#34;/&gt;
-            &lt;/feature&gt;
-        &lt;/config-file&gt;
-        &lt;source-file src=&#34;src/android/ExtraInfo.java&#34; target-dir=&#34;src/cn/net/wenzhixin/cordova&#34;/&gt;
-    &lt;/platform&gt;
-&lt;/plugin&gt;
-
-&lt;p&gt;有几个关键的字段需要解释下：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;id: 插件的标识，即发布到 &lt;a href=&#34;http://plugins.cordova.io/&#34;&gt;plugins.cordova.io&lt;/a&gt; 的 ID&lt;/li&gt;
-&lt;li&gt;name：插件的名称&lt;/li&gt;
-&lt;li&gt;description：描述信息&lt;/li&gt;
-&lt;li&gt;js-module：对应我们的 javascript 文件，&lt;code&gt;src&lt;/code&gt; 属性指向 &lt;code&gt;www/ExtraInfo.js&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;platform：支持的平台，这里仅仅用到了 android&lt;/li&gt;
-&lt;/ul&gt;
-&lt;config-file parent=&#34;/*&#34; target=&#34;res/xml/config.xml&#34;&gt;
-    &lt;feature name=&#34;ExtraInfo&#34;&gt;
-        &lt;param name=&#34;android-package&#34; value=&#34;cn.net.wenzhixin.cordova.ExtraInfo&#34;/&gt;
-    &lt;/feature&gt;
-&lt;/config-file&gt;
-&lt;source-file src=&#34;src/android/ExtraInfo.java&#34; target-dir=&#34;src/cn/net/wenzhixin/cordova&#34;/&gt;
-
-&lt;p&gt;这里是插件的配置信息，最后会添加到 &lt;code&gt;res/xml/config.xml&lt;/code&gt; 文件中，并且将我们的 &lt;code&gt;src/android/ExtraInfo.java&lt;/code&gt;，复制到 android 的 package 包中。&lt;/p&gt;
-
-&lt;p&gt;接下来，&lt;code&gt;ExtraInfo.js&lt;/code&gt; 的内容很简单：&lt;/p&gt;
-var exec = require(&#39;cordova/exec&#39;);
-
-exports.getExtra = function(success, error) {
-    exec(success, error, &#34;ExtraInfo&#34;, &#34;getExtra&#34;, []);
-};
-
-&lt;p&gt;用过 Nodejs 或者了解过 AMD、CMD 的话（当然，没了解过也没关系），一定会觉得很熟悉。简单的说，&lt;code&gt;require&lt;/code&gt; 用于引入我们的类，&lt;code&gt;exports&lt;/code&gt; 用于导出我们的方法。这里对外公开了 &lt;code&gt;getExtra&lt;/code&gt; 方法，以便我们在 app 中可以用到。&lt;/p&gt;
-
-&lt;p&gt;最后看 &lt;code&gt;ExtraInfo.java&lt;/code&gt; 的内容：&lt;/p&gt;
-public class ExtraInfo extends CordovaPlugin {
-
-    public boolean execute(String action, JSONArray args, CallbackContext callbackContext)
-            throws JSONException {
-        Activity activity = this.cordova.getActivity();
-        if (action.equals(&#34;getExtra&#34;)) {
-            Intent i = activity.getIntent();
-            if (i.hasExtra(Intent.EXTRA_TEXT)) {
-                callbackContext.success(i.getStringExtra(Intent.EXTRA_TEXT));
-            } else {
-                callbackContext.error(&#34;&#34;);
-            }
-            return true;
-        }
-        return false;
-    }
-}
-
-&lt;p&gt;继承了 CordovaPlugin 类，并重写 &lt;code&gt;execute&lt;/code&gt; 方法，使用 action 来判断我们在 javascript 中调用的方法名，成功的话调用 &lt;code&gt;callbackContext.success(message)&lt;/code&gt;，失败调用 &lt;code&gt;callbackContext.error(message)&lt;/code&gt; 方法，分别对应 javascript 文件中的 &lt;code&gt;success&lt;/code&gt; 和 &lt;code&gt;error&lt;/code&gt; 回调函数。&lt;/p&gt;
-
-&lt;p&gt;当然，这里只用到 android 平台，其他的平台也是一样的，ios 使用 object-c、wp7 使用 c# 语言，例子见&lt;a href=&#34;http://cordova.apache.org/docs/en/3.4.0/guide_hybrid_plugins_index.md.html#Plugin%20Development%20Guide&#34;&gt;Plugin Development Guide&lt;/a&gt;。&lt;/p&gt;
-
-&lt;p&gt;到了这里，我们的插件就编写完成了。可以通过下面的命令添加插件：&lt;/p&gt;
-cordova plugin add ExtraInfo #目录名称，也可以是 git 的地址
-
-&lt;p&gt;查看我们的 &lt;code&gt;plugins&lt;/code&gt; 目录，会发现在该目录下已经华丽丽地生成我们自己的插件 &lt;code&gt;cn.net.wenzhixin.cordova&lt;/code&gt; 了。&lt;/p&gt;
-
-&lt;p&gt;对了，好像把最关键的事情给忘记了，这里貌似还没提到我们应该如何在 app 中使用自己的插件呢。前面提到说按照文档来坑爹了，是因为使用 &lt;code&gt;window.getExtra&lt;/code&gt;，会报 &lt;code&gt;getExtra is not defined&lt;/code&gt; 的错误。&lt;/p&gt;
-
-&lt;p&gt;通过查看生成的文件信息，可以知道，应该这样使用我们的插件：&lt;/p&gt;
-document.addEventListener(&#39;deviceready&#39;, function() {
-    var extraInfo = cordova.require(&#39;cn.net.wenzhixin.cordova.ExtraInfo&#39;);
-
-    extraInfo.getExtra(function(message) {
-        // alert(message);
-    }, function(message) {
-        // alert(message);
-    });
-});
-
-&lt;p&gt;最后，像平时的开发，觉得及时更新文档还是比较重要的，虽然自己花了不少时间，不过至少更加明白了 Cordova 插件的原理，同时也希望本文可以帮到你。&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2014/03/20/cordova_my_plugin/</guid>
+      <description>在上一篇文章 cordova 初识之命令行工具 中，我们讲到了如何使用命令行快速地创建我们的 app 应用，并添加和运行各种平台。 在实际的项目开发中，需要用到 cordova 的插件</description>
     </item>
     
     <item>
       <title>cordova 初识之命令行工具</title>
-      <link>http://blog.wenzhixin.net.cn/2014/02/11/cordova_command_line</link>
+      <link>http://blog.wenzhixin.net.cn/2014/02/11/cordova_command_line/</link>
       <pubDate>Tue, 11 Feb 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/02/11/cordova_command_line</guid>
-      <description>
-
-&lt;h3 id=&#34;1-准备工作:3e3ff89256ad4638db10fc2d7fbcb164&#34;&gt;1. 准备工作&lt;/h3&gt;
-
-&lt;p&gt;在使用 cordova 的命令行之前，需要安装各平台对应的 SDK，各个平台对应的操作系统如下：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;iOS (Mac)&lt;/li&gt;
-&lt;li&gt;Amazon Fire OS (Mac, Linux, Windows)&lt;/li&gt;
-&lt;li&gt;Android (Mac, Linux)&lt;/li&gt;
-&lt;li&gt;BlackBerry 10 (Mac, Linux, Windows)&lt;/li&gt;
-&lt;li&gt;Windows Phone 7 (Windows)&lt;/li&gt;
-&lt;li&gt;Windows Phone 8 (Windows)&lt;/li&gt;
-&lt;li&gt;Windows 8 (Windows)&lt;/li&gt;
-&lt;li&gt;Firefox OS (Mac, Linux, Windows)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;2-安装命令行工具:3e3ff89256ad4638db10fc2d7fbcb164&#34;&gt;2. 安装命令行工具&lt;/h3&gt;
-
-&lt;p&gt;首先下载安装 &lt;a href=&#34;http://nodejs.org/&#34;&gt;node.js&lt;/a&gt; （像我安装过的就不用啦）&lt;/p&gt;
-
-&lt;p&gt;全局安装 cordova：&lt;/p&gt;
-npm install -g cordova
-
-&lt;p&gt;注：&lt;/p&gt;
-
-&lt;p&gt;-g 表示安装为全局，有些系统需要 sudo 权限（像 ubuntu）&lt;/p&gt;
-
-&lt;p&gt;cordova 的基本命令格式为：&lt;/p&gt;
-cordova command [options]
-
-&lt;h3 id=&#34;3-创建-app:3e3ff89256ad4638db10fc2d7fbcb164&#34;&gt;3. 创建 app&lt;/h3&gt;
-
-&lt;p&gt;创建使用&lt;code&gt;cordova create&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;例如，进入工程目录：&lt;/p&gt;
-cordova create hello com.example.hello HelloWorld
-
-&lt;ul&gt;
-&lt;li&gt;第一个参数&lt;code&gt;hello&lt;/code&gt;表示在工程目录中创建一个 hello 的文件夹&lt;/li&gt;
-&lt;li&gt;第二个参数&lt;code&gt;com.example.hello&lt;/code&gt;表示包名（反向域名），用于标志不同的 app&lt;/li&gt;
-&lt;li&gt;第三个参数&lt;code&gt;HelloWorld&lt;/code&gt;表示项目的名称，可以在 config.xml 文件中修改&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;4-添加平台:3e3ff89256ad4638db10fc2d7fbcb164&#34;&gt;4. 添加平台&lt;/h3&gt;
-
-&lt;p&gt;进入创建的项目中：&lt;/p&gt;
-cd hello
-
-&lt;p&gt;查看已经安装的平台和支持的平台：&lt;/p&gt;
-cordova platforms list
-
-&lt;p&gt;例如，在 ubuntu 下的结果是：&lt;/p&gt;
-Installed platforms:
-Available platforms: android, blackberry10, firefoxos, ubuntu
-
-&lt;p&gt;在 ubuntu 下，可以通过以下命令添加支持的平台：&lt;/p&gt;
-cordova platform add android
-cordova platform add blackberry10
-cordova platform add firefoxos
-cordova platform add ubuntu
-
-&lt;p&gt;在 mac 下，可以通过以下命令添加支持的平台：&lt;/p&gt;
-cordova platform add ios
-cordova platform add amazon-fireos
-cordova platform add android
-cordova platform add blackberry10
-cordova platform add firefoxos
-
-&lt;p&gt;在 windows 下，可以通过以下命令添加支持的平台：&lt;/p&gt;
-cordova platform add wp7
-cordova platform add wp8
-cordova platform add windows8
-cordova platform add amazon-fireos
-cordova platform add android
-cordova platform add blackberry10
-cordova platform add firefoxos
-
-&lt;p&gt;当然，也可以删除不想要的平台：&lt;/p&gt;
-cordova platform remove android
-cordova platform rm android
-
-&lt;h3 id=&#34;5-编译项目:3e3ff89256ad4638db10fc2d7fbcb164&#34;&gt;5. 编译项目&lt;/h3&gt;
-
-&lt;p&gt;通过下面命令，即可编译项目：&lt;/p&gt;
-cordova build android
-
-&lt;p&gt;或者是使用（build 为简写）：&lt;/p&gt;
-cordova prepare android
-cordova compile android
-
-&lt;p&gt;编译完成后可以看到 platforms/android/bin/ 下已经生成了 apk 文件&lt;/p&gt;
-
-&lt;h3 id=&#34;6-测试-运行项目:3e3ff89256ad4638db10fc2d7fbcb164&#34;&gt;6. 测试、运行项目&lt;/h3&gt;
-
-&lt;p&gt;启动 android 虚拟机：&lt;/p&gt;
-cordova emulate android
-
-&lt;p&gt;运行 app 项目（在虚拟机或者在真机）：&lt;/p&gt;
-cordova run android
-
-&lt;p&gt;运行结果：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/02/11/1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2014/02/11/cordova_command_line/</guid>
+      <description>1. 准备工作 在使用 cordova 的命令行之前，需要安装各平台对应的 SDK，各个平台对应的操作系统如下： iOS (Mac) Amazon Fire OS (Mac, Linux, Windows) Android (Mac, Linux) BlackBerry 10 (Mac, Linux, Windows) Windows Phone 7 (Windows) Windows Phone 8 (Windows) Windows 8</description>
     </item>
     
   </channel>

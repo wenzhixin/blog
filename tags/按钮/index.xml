@@ -8,135 +8,35 @@
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Sun, 06 Jul 2014 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.wenzhixin.net.cn/tags/%E6%8C%89%E9%92%AE/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/%E6%8C%89%E9%92%AE/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>读《Backbone.js 实战》</title>
-      <link>http://blog.wenzhixin.net.cn/2014/07/06/backbone_book</link>
+      <link>http://blog.wenzhixin.net.cn/2014/07/06/backbone_book/</link>
       <pubDate>Sun, 06 Jul 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/07/06/backbone_book</guid>
-      <description>
-
-&lt;p&gt;Backbone 是一个轻量级 JavaScript 的 MVC 框架，配合 Underscore 这个依赖库，我们可以打造出强大的 MVC 应用程序。其实很早就用到 Backbone + Underscore 进行网站和应用程序的开发了，只是国内一直没有相关的书籍，这次看到《Backbone.js 实战》，就买下了。现在对书籍的要求越来越高，对于这本书也认认真真的看了一遍，这里写一下读书的笔记和自己的一些看法。&lt;/p&gt;
-
-&lt;h3 id=&#34;第一章:9665a217439f92224574aec4c262bcea&#34;&gt;第一章&lt;/h3&gt;
-
-&lt;p&gt;是对 Backbone 的介绍以及通过第一个 hello,backbone! 的小应用来介绍如何使用 backbone 进行开发，和其他一些书差不多都是以 hello, world 开篇。&lt;/p&gt;
-
-&lt;h3 id=&#34;第二章:9665a217439f92224574aec4c262bcea&#34;&gt;第二章&lt;/h3&gt;
-
-&lt;p&gt;主要介绍依赖库 Underscore 的常见函数的使用方法，包括了集合、数组、函数、对象和功能：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/07/06/1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/07/06/2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;我觉得像这些函数的介绍在官方的文档中都是有的，而且也有简单的例子，像这种介绍应该可以完善下的，例如加入一些扩展或者对比什么的。如：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;sortBy 函数默认是返回一个按升序排序的副本列表，那我想反序呢？（p17）&lt;/li&gt;
-&lt;li&gt;delay 函数类似于 setTimeout 方法，那为什么还要设计这个函数，它们的区别又是什么？（p22）&lt;/li&gt;
-&lt;li&gt;实例代码 &lt;code&gt;return s ? n + &amp;quot;, 先生&amp;quot; : n + &amp;quot;, 女士&amp;quot;;&lt;/code&gt;是否可以改成&lt;code&gt;return n + &amp;quot;, &amp;quot; + s ? &amp;quot;先生&amp;quot; : &amp;quot;女士&amp;quot;&lt;/code&gt;更简短一些呢？（p23）&lt;/li&gt;
-&lt;li&gt;defaults 函数与 jQuery 中的 extend 有什么区别？（p26）&lt;/li&gt;
-&lt;li&gt;has 函数与 hasOwnProperty 函数有什么区别？（p27）&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2014/07/06/backbone_book/</guid>
+      <description>Backbone 是一个轻量级 JavaScript 的 MVC 框架，配合 Underscore 这个依赖库，我们可以打造出强大的 MVC 应用程序。其实很早就用到 Backbone + Underscore 进行网站和应用程序的开发了，只是国内一直没有</description>
     </item>
     
     <item>
       <title>Bootstrap a 标签按钮使用 prop 方法</title>
-      <link>http://blog.wenzhixin.net.cn/2014/06/18/a_prop_problem</link>
+      <link>http://blog.wenzhixin.net.cn/2014/06/18/a_prop_problem/</link>
       <pubDate>Wed, 18 Jun 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/06/18/a_prop_problem</guid>
-      <description>
-
-&lt;h3 id=&#34;问题:a28454daa0e071303e4565ef461d5dfa&#34;&gt;问题&lt;/h3&gt;
-
-&lt;p&gt;将 jQuery 从 1.5.2 升级到 1.7.2 之后，统一将&lt;code&gt;attr(&#39;disabled&#39;, &#39;disabled&#39;)&lt;/code&gt;改为&lt;code&gt;prop(&#39;disabled&#39;, true)&lt;/code&gt;，将&lt;code&gt;attr(&#39;disabled&#39;, &#39;&#39;)&lt;/code&gt;改为&lt;code&gt;prop(&#39;disabled&#39;, false)&lt;/code&gt;。由于使用了 bootstrap，所以很多按钮都是 a 标签按钮，如：&lt;/p&gt;
-&lt;a class=&#34;btn&#34; href=&#34;javascript:void(0)&#34;&gt;button&lt;/a&gt;
-
-&lt;p&gt;当对 a 标签使用 prop 的时候，并没有禁用按钮。&lt;/p&gt;
-
-&lt;h3 id=&#34;原因:a28454daa0e071303e4565ef461d5dfa&#34;&gt;原因&lt;/h3&gt;
-
-&lt;p&gt;从&lt;a href=&#34;http://wenzhixin.net.cn/2013/08/12/disable_link&#34;&gt;Bootstrap 禁用 a 按钮&lt;/a&gt;一文中，我们知道禁用 ａ 标签的按钮是利用 css，而通过&lt;a href=&#34;http://wenzhixin.net.cn/2013/05/24/jquery_attr_prop&#34;&gt;jQuery 中 attr() 和 prop() 方法的区别&lt;/a&gt;我们知道对于 a 标签应该使用&lt;code&gt;attr(&#39;disabled&#39;, true)&lt;/code&gt;。由于项目比较庞大，修改的地方也比较多，需要先判断这个按钮是否为 a 标签，那么有没有更好的办法呢？&lt;/p&gt;
-
-&lt;h3 id=&#34;解决:a28454daa0e071303e4565ef461d5dfa&#34;&gt;解决&lt;/h3&gt;
-
-&lt;p&gt;通过统一处理 jQuery 的函数来解决这个问题，代码如下：&lt;/p&gt;
-(function() {
-    var fn = {
-        attr: jQuery.fn.attr,
-        prop: jQuery.fn.prop
-    };
-
-    jQuery.fn.prop = function() {
-        var value,
-            args = Array.prototype.slice.apply(arguments);
-
-        if (!this.length &amp;&amp; args.length === 1) {
-            return undefined;
-        }
-        this.each(function() {
-            if (args.length === 1) {
-                value = fn[$(this).is(&#39;a&#39;) ? &#39;attr&#39; : &#39;prop&#39;].apply($(this), args);
-            } else {
-                fn[$(this).is(&#39;a&#39;) ? &#39;attr&#39; : &#39;prop&#39;].apply($(this), args);
-            }
-        });
-        return typeof value === &#39;undefined&#39; ? this : value;
-    };
-})();
-
-&lt;p&gt;在这里，我们对原来的 prop 函数进行了预处理，假如是 a 标签则使用 attr 方式。&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2014/06/18/a_prop_problem/</guid>
+      <description>问题 将 jQuery 从 1.5.2 升级到 1.7.2 之后，统一将attr(&#39;disabled&#39;, &#39;disabled&#39;)改为prop(&#39;disabled&#39;, true)，将at</description>
     </item>
     
     <item>
       <title>Bootstrap 禁用 a 按钮</title>
-      <link>http://blog.wenzhixin.net.cn/2013/08/12/disable_link</link>
+      <link>http://blog.wenzhixin.net.cn/2013/08/12/disable_link/</link>
       <pubDate>Mon, 12 Aug 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/08/12/disable_link</guid>
-      <description>
-
-&lt;h3 id=&#34;问题描述:88cf12f3afe91a87ebec91ff4ba52147&#34;&gt;问题描述：&lt;/h3&gt;
-
-&lt;p&gt;使用 Bootstrap 的 btn 时，可以使用添加 class=&amp;ldquo;disabled&amp;rdquo; 或者 disabled=&amp;ldquo;disabled&amp;rdquo; 来禁用按钮，可以看到 bootstrap.css 中的代码：&lt;/p&gt;
-.btn.disabled,
-.btn[disabled] {
-  cursor: default;
-  background-color: #e6e6e6;
-  background-image: none;
-  opacity: 0.65;
-  filter: alpha(opacity=65);
-  -webkit-box-shadow: none;
-     -moz-box-shadow: none;
-          box-shadow: none;
-}
-
-&lt;p&gt;假如我们需要对按钮进行事件监听，例如：&lt;/p&gt;
-&lt;a href=&#34;#&#34; class=&#34;btn&#34; disabled=&#34;disabled&#34;&gt;按钮&lt;/a&gt;
-
-$(function() {
-    $(&#39;btn&#39;).click(function() {
-        alert(&#39;click&#39;);
-    });
-});
-
-&lt;p&gt;按钮是灰掉了，但是还是会触发点击事件。&lt;/p&gt;
-
-&lt;h3 id=&#34;问题解决:88cf12f3afe91a87ebec91ff4ba52147&#34;&gt;问题解决：&lt;/h3&gt;
-
-&lt;p&gt;通过添加 pointer-events 来阻止按钮的事件：&lt;/p&gt;
-.btn.disabled,
-.btn[disabled] {
-    pointer-events: none;
-    cursor: default;
-}
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2013/08/12/disable_link/</guid>
+      <description>问题描述： 使用 Bootstrap 的 btn 时，可以使用添加 class=&amp;ldquo;disabled&amp;rdquo; 或者 disabled=&amp;ldquo;disabled&amp;rdquo; 来禁用按钮，可以看到 bootstrap.css 中的代码： 1 2 3 4 5 6 7 8 9 10 11 .btn.disabled, .btn[disabled] { cursor: default; background-color: #e6e6e6; background-image: none; opacity: 0.65; filter: alpha(opacity=65); -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; } 假</description>
     </item>
     
   </channel>

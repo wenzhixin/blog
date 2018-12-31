@@ -8,86 +8,17 @@
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Wed, 17 Jul 2013 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.wenzhixin.net.cn/tags/%E8%B7%AF%E5%BE%84/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/%E8%B7%AF%E5%BE%84/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>使用 nginx 作为代理服务器的路径问题</title>
-      <link>http://blog.wenzhixin.net.cn/2013/07/17/nginx_proxy</link>
+      <link>http://blog.wenzhixin.net.cn/2013/07/17/nginx_proxy/</link>
       <pubDate>Wed, 17 Jul 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/07/17/nginx_proxy</guid>
-      <description>&lt;p&gt;继上篇文章：&lt;a href=&#34;http://qing.blog.sina.com.cn/2292826740/88a9c27433001xt5.html&#34;&gt;使用 nginx 作为代理服务器轻松解决 Ajax 跨域问题&lt;/a&gt;，
-使用 proxy 来解决 Ajax 跨域的问题，方便我们开发测试。&lt;/p&gt;
-
-&lt;p&gt;但是很多时候，我们的服务器地址是这样的：&lt;/p&gt;
-a: 192.168.1.14
-b: 192.168.1.15
-c: 192.168.1.16
-...
-
-&lt;p&gt;我们需要将&lt;/p&gt;
-127.0.0.1/a 代理到 a 服务器
-127.0.0.1/b 代理到 b 服务器
-127.0.0.1/c 代理到 c 服务器
-...
-
-&lt;p&gt;那么应该怎么设置呢？&lt;/p&gt;
-location /a {
-    proxy_pass http://192.168.1.14;
-    access_log off;
-}
-
-&lt;p&gt;通过试验可以发现，这样代理的实际地址为&lt;/p&gt;
-http://192.168.1.14/a
-
-&lt;p&gt;并不是我们想要的，为什么会这样呢？&lt;/p&gt;
-
-&lt;p&gt;答案在与 proxy_pass 中路径是否有加上/：&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;当路径加上了/，相当于是绝对根路径，则 nginx 不会把 location 中匹配的路径部分代理。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;如果没有/，则会把匹配的路径部分也给代理。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;通过以上结论，我们知道应该如何设置了&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;代理到同一台服务器的多个项目下：&lt;/strong&gt;&lt;/p&gt;
-location /a/ {
-    proxy_pass http://192.168.1.14;
-    access_log off;
-}
-location /b/ {
-    proxy_pass http://192.168.1.14;
-    access_log off;
-}
-location /c/ {
-    proxy_pass http://192.168.1.14;
-    access_log off;
-}
-
-&lt;p&gt;分别代理为：&lt;/p&gt;
-http://127.0.0.1/a  -&gt;  http://192.168.1.14/a
-http://127.0.0.1/b  -&gt;  http://192.168.1.14/b
-http://127.0.0.1/c  -&gt;  http://192.168.1.14/c
-
-&lt;p&gt;&lt;strong&gt;代理到不同服务器上：&lt;/strong&gt;&lt;/p&gt;
-location /a/ {
-    proxy_pass http://192.168.1.14/;
-    access_log off;
-}
-location /b/ {
-    proxy_pass http://192.168.1.15/;
-    access_log off;
-}
-location /c/ {
-    proxy_pass http://192.168.1.14/;
-    access_log off;
-}
-
-&lt;p&gt;分别代理为：&lt;/p&gt;
-http://127.0.0.1/a  -&gt;  http://192.168.1.14
-http://127.0.0.1/b  -&gt;  http://192.168.1.15
-http://127.0.0.1/c  -&gt;  http://192.168.1.16
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2013/07/17/nginx_proxy/</guid>
+      <description>继上篇文章：使用 nginx 作为代理服务器轻松解决 Ajax 跨域问题， 使用 proxy 来解决 Ajax 跨域的问题，方便我们开发测试。 但是很多时候，我们的服务器地址是这样的： 1 2</description>
     </item>
     
   </channel>

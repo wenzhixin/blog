@@ -1,83 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Viewport on 文翼的博客</title>
+    <title>viewport on 文翼的博客</title>
     <link>http://blog.wenzhixin.net.cn/tags/viewport/</link>
-    <description>Recent content in Viewport on 文翼的博客</description>
+    <description>Recent content in viewport on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Fri, 01 Aug 2014 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.wenzhixin.net.cn/tags/viewport/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/viewport/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>设置 viewport 实现定宽网页 WebApp 下布局自适应</title>
-      <link>http://blog.wenzhixin.net.cn/2014/08/01/viewport_mobile</link>
+      <link>http://blog.wenzhixin.net.cn/2014/08/01/viewport_mobile/</link>
       <pubDate>Fri, 01 Aug 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/08/01/viewport_mobile</guid>
-      <description>&lt;p&gt;一般来说，我们实现布局自适应可以有以下几种方式：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;使用流动布局（fluid grid）&lt;/li&gt;
-&lt;li&gt;根据屏幕大小选择加载不同的CSS&lt;/li&gt;
-&lt;li&gt;使用 CSS 的@media规则&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;详细的介绍，可以参考&lt;a href=&#34;http://www.ruanyifeng.com/blog/2012/05/responsive_web_design.html&#34;&gt;自适应网页设计（Responsive Web Design）&lt;/a&gt;这篇文章。&lt;/p&gt;
-
-&lt;p&gt;这里介绍的是如何让定宽网页在 WebApp 下（或者手机浏览器）实现自适应。例如，我们设计了一套宽度为 640px 的小页面，主要是用于手机查看，但是手机屏幕分辨率实在太多了，要适应每台手机，应该怎么办呢？&lt;/p&gt;
-
-&lt;p&gt;首先，我们在 head 中加入：&lt;/p&gt;
-&lt;head&gt;
-&lt;meta name=&#34;viewport&#34; content=&#34;width=device-width, user-scalable=no&#34;&gt;
-&lt;/head&gt;
-
-&lt;p&gt;这里表示 viewport 的宽度为匹配设备屏幕的宽度，且禁用缩放。涉及到两个概念：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://developer.mozilla.org/zh-CN/docs/Mobile/Viewport_meta_tag&#34;&gt;viewport 元素&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;devicePixelRatio：设备上物理像素和设备独立像素(device-independent pixels (dips))的比例。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;由于 iphone 手机和 android 4.0 以上的手机支持修改 viewport 的 width 来改变页面的缩放情况，因此我们&lt;strong&gt;可以将 width 指定为页面设计的宽度&lt;/strong&gt;，如此一来，你的页面正好充满 viewport 并全屏显示，而不会缩放。例如：&lt;/p&gt;
-&lt;meta name=&#34;viewport&#34; content=&#34;width=640px, user-scalable=no&#34;&gt;
-
-&lt;p&gt;但是对于 android 4.0 以下的手机，不支持设置 viewport 的 width，但是我们&lt;strong&gt;可以设置 Android 的另一参数target-densitydpi，从而达到相同的目的&lt;/strong&gt;，计算 target-densitydpi 的公式如下：&lt;/p&gt;
-target-densitydpi = UI-width / device-width * window.devicePixelRatio * 160;
-  //UI-width ：WebApp布局宽度
-  //device-width ：屏幕分辨率宽度
-
-&lt;p&gt;于是，&lt;strong&gt;最终解决方案&lt;/strong&gt;如下：&lt;/p&gt;
-&lt;meta name=&#34;viewport&#34; content=&#34;target-densitydpi=device-dpi, width=640px, user-scalable=no&#34;&gt;
-$(function () {
-	var DEFAULT_WIDTH = 640, // 页面的默认宽度
-		ua = navigator.userAgent.toLowerCase(), // 根据 user agent 的信息获取浏览器信息
-		deviceWidth = window.screen.width, // 设备的宽度
-		devicePixelRatio = window.devicePixelRatio || 1, // 物理像素和设备独立像素的比例，默认为1
-		targetDensitydpi;
-
-	// Android4.0以下手机不支持viewport的width，需要设置target-densitydpi
-	if (ua.indexOf(&#34;android&#34;) !== -1 &amp;&amp; parseFloat(ua.slice(ua.indexOf(&#34;android&#34;)+8)) &lt; 4) {
-    	targetDensitydpi = DEFAULT_WIDTH / deviceWidth * devicePixelRatio * 160;
-    	$(&#39;meta[name=&#34;viewport&#34;]&#39;).attr(&#39;content&#39;, &#39;target-densitydpi=&#39; + targetDensitydpi +
-    			&#39;, width=device-width, user-scalable=no&#39;);
-    }
-
-	// TODO: 其他手机需要特殊处理的在下面
-});
-
-&lt;p&gt;&lt;strong&gt;存在的问题&lt;/strong&gt;：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;目前只测试 android 和 ios/ipad 手机&lt;/li&gt;
-&lt;li&gt;android 下使用 firefox 无法检测出 android 的版本，因此只能忽略 firefox&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;ps: 理论上可以利用枚举的方式将通用的手机分辨率记录起来，从而达到适应所有机型的效果。&lt;/p&gt;
-&lt;/blockquote&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2014/08/01/viewport_mobile/</guid>
+      <description>一般来说，我们实现布局自适应可以有以下几种方式： 使用流动布局（fluid grid） 根据屏幕大小选择加载不同的CSS 使用 CSS 的@media规则 详</description>
     </item>
     
   </channel>

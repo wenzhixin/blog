@@ -8,56 +8,17 @@
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Mon, 25 Feb 2013 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.wenzhixin.net.cn/tags/%E7%9F%A5%E8%AF%86%E7%82%B9/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/%E7%9F%A5%E8%AF%86%E7%82%B9/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>JavaScript 语言基础知识点</title>
-      <link>http://blog.wenzhixin.net.cn/2013/02/25/javascript_base</link>
+      <link>http://blog.wenzhixin.net.cn/2013/02/25/javascript_base/</link>
       <pubDate>Mon, 25 Feb 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/02/25/javascript_base</guid>
-      <description>
-
-&lt;h4 id=&#34;javascript-数据类型:746f281c34bd621b4068e68f8e832f62&#34;&gt;JavaScript 数据类型&lt;/h4&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2013/02/25/JavaScript数据类型.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;javascript-变量:746f281c34bd621b4068e68f8e832f62&#34;&gt;JavaScript 变量&lt;/h4&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2013/02/25/JavaScript变量.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;javascript-运算符:746f281c34bd621b4068e68f8e832f62&#34;&gt;Javascript 运算符&lt;/h4&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2013/02/25/Javascript运算符.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;javascript-流程控制:746f281c34bd621b4068e68f8e832f62&#34;&gt;JavaScript 流程控制&lt;/h4&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2013/02/25/JavaScript流程控制.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;javascript-函数基础:746f281c34bd621b4068e68f8e832f62&#34;&gt;JavaScript 函数基础&lt;/h4&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2013/02/25/JavaScript函数基础.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;javascript数组:746f281c34bd621b4068e68f8e832f62&#34;&gt;JavaScript数组&lt;/h4&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2013/02/25/JavaScript数组.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;javascript-字符串函数:746f281c34bd621b4068e68f8e832f62&#34;&gt;JavaScript 字符串函数&lt;/h4&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2013/02/25/JavaScript字符串函数.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;javascript-正则表达式:746f281c34bd621b4068e68f8e832f62&#34;&gt;JavaScript 正则表达式&lt;/h4&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2013/02/25/JavaScript正则表达式.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;window对象:746f281c34bd621b4068e68f8e832f62&#34;&gt;Window对象&lt;/h4&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2013/02/25/Window对象.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;dom-基本操作:746f281c34bd621b4068e68f8e832f62&#34;&gt;DOM 基本操作&lt;/h4&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2013/02/25/DOM基本操作.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2013/02/25/javascript_base/</guid>
+      <description>JavaScript 数据类型 JavaScript 变量 Javascript 运算符 JavaScript 流程控制 JavaScript 函数基础 JavaScript数组 JavaScript 字符串函数 JavaScript 正则表达式 Window对象 DOM 基本操作</description>
     </item>
     
   </channel>

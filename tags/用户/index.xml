@@ -8,66 +8,17 @@
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Sat, 28 Dec 2013 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.wenzhixin.net.cn/tags/%E7%94%A8%E6%88%B7/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/%E7%94%A8%E6%88%B7/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>管理 ubuntu 服务器用户</title>
-      <link>http://blog.wenzhixin.net.cn/2013/12/28/ubuntu_new_user</link>
+      <link>http://blog.wenzhixin.net.cn/2013/12/28/ubuntu_new_user/</link>
       <pubDate>Sat, 28 Dec 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/12/28/ubuntu_new_user</guid>
-      <description>
-
-&lt;h4 id=&#34;前言:d0ece5b5baee835ea1f0703c405d1ffb&#34;&gt;前言&lt;/h4&gt;
-
-&lt;p&gt;对于刚刚安装（或者购买）的服务器，一般只有 root 用户，那我们需要对其进行用户管理设置。&lt;/p&gt;
-
-&lt;h4 id=&#34;创建新的用户:d0ece5b5baee835ea1f0703c405d1ffb&#34;&gt;创建新的用户&lt;/h4&gt;
-
-&lt;p&gt;创建一个名为 username 的新用户（自己替换为想要的名字）&lt;/p&gt;
-useradd -m username
-
-&lt;p&gt;-m, &amp;ndash;create-home：表示创建 home 目录&lt;/p&gt;
-
-&lt;p&gt;为 username 用户设置密码（不在 useradd 中指定 -p 的方式）&lt;/p&gt;
-passwd username
-
-&lt;p&gt;输入两次密码即可&lt;/p&gt;
-
-&lt;p&gt;将 username 用户加入 root 组&lt;/p&gt;
-visudo
-
-&lt;p&gt;在 root 下面加入&lt;/p&gt;
-root    	ALL=(ALL:ALL) ALL
-username	ALL=(ALL) ALL
-
-&lt;p&gt;修改用户 sh 为 bash&lt;/p&gt;
-vi /etc/passwd
-
-&lt;p&gt;将对应用户信息（一般为最后一行）改为&lt;/p&gt;
-/home/username:/bin/bash
-
-&lt;p&gt;接下来退出 root 用户，使用我们新增的用户登录服务器（这一步比较重要，不然设置不对的话，下一步禁用了 root 之后就悲剧了）&lt;/p&gt;
-
-&lt;h4 id=&#34;禁用-root-用户:d0ece5b5baee835ea1f0703c405d1ffb&#34;&gt;禁用 root 用户&lt;/h4&gt;
-
-&lt;p&gt;由于 root 用户的权限比较可怕，为了安全起见，我们需要将 root 禁用&lt;/p&gt;
-sudo vi /etc/passwd
-
-&lt;p&gt;将对应的信息（一般为第一行）改为&lt;/p&gt;
-root:x:0:0:root:/root:/bin/false
-
-&lt;h4 id=&#34;移动原来文件到用户目录下:d0ece5b5baee835ea1f0703c405d1ffb&#34;&gt;移动原来文件到用户目录下&lt;/h4&gt;
-
-&lt;p&gt;查看原来 root 下的目录&lt;/p&gt;
-sudo ls /root
-
-&lt;p&gt;移动到用户 home 目录&lt;/p&gt;
-sudo mv /root/www ~/
-
-&lt;p&gt;修改文件属性&lt;/p&gt;
-sudo chown -R username.username ~/www
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2013/12/28/ubuntu_new_user/</guid>
+      <description>前言 对于刚刚安装（或者购买）的服务器，一般只有 root 用户，那我们需要对其进行用户管理设置。 创建新的用户 创建一个名为 username 的新用户（自己替换为想要的名</description>
     </item>
     
   </channel>

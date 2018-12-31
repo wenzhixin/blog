@@ -8,216 +8,35 @@
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Mon, 04 Aug 2014 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.wenzhixin.net.cn/tags/oracle/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/oracle/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>如何使用 python 连接 Oracle（网站）</title>
-      <link>http://blog.wenzhixin.net.cn/2014/08/04/python_oracle</link>
+      <link>http://blog.wenzhixin.net.cn/2014/08/04/python_oracle/</link>
       <pubDate>Mon, 04 Aug 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/08/04/python_oracle</guid>
-      <description>
-
-&lt;p&gt;首先，由于网站部署在远程服务器的局域网上面，所以需要通过 &lt;a href=&#34;http://wenzhixin.net.cn/2014/03/15/ssh_tunnel&#34;&gt;ssh tunnel（隧道）&lt;/a&gt; 的方式进行本地的映射，主要映射两个端口：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Oracle 服务：&lt;code&gt;ssh -fN -L 1521:ip:1521 server&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;远程桌面：&lt;code&gt;ssh -fN -L 3389:ip:3389 server&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;python 连接 Oracle 主要使用 cx_Oracle。&lt;/p&gt;
-
-&lt;h3 id=&#34;步骤:845220f7444ef6bdbea12f87d789131a&#34;&gt;步骤：&lt;/h3&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;下载 Instant Client Package - Basic 和 Instant Client Package - SDK 的 rpm 安装包：&lt;a href=&#34;http://www.oracle.com/technetwork/topics/linuxx86-64soft-092277.html&#34;&gt;http://www.oracle.com/technetwork/topics/linuxx86-64soft-092277.html&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;转换为 deb 包：&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-sudo apt-get install alien
-sudo alien oracle-instantclient12.1-basic-12.1.0.2.0-1.x86_64.rpm
-sudo alien oracle-instantclient12.1-devel-12.1.0.2.0-1.x86_64.rpm
-
-&lt;ol&gt;
-&lt;li&gt;安装 deb 包：&lt;/li&gt;
-&lt;/ol&gt;
-sudo dpkg -i oracle-instantclient12.1-basic_12.1.0.2.0-2_amd64.deb
-sudo dpkg -i oracle-instantclient12.1-devel_12.1.0.2.0-2_amd64.deb
-
-&lt;ol&gt;
-&lt;li&gt;设置环境变量（加到 .bashrc 中）&lt;/li&gt;
-&lt;/ol&gt;
-export ORACLE_HOME=/usr/lib/oracle/12.1/client64/
-export LD_LIBRARY_PATH=$ORACLE_HOME/lib
-export NLS_LANG=AMERICAN_AMERICA.WE8ISO8859P1 # 设置 Oracle 编码，解决乱码问题
-
-&lt;ol&gt;
-&lt;li&gt;安装 cx_Oracle：&lt;/li&gt;
-&lt;/ol&gt;
-sudo apt-get install python-dev python-pip
-sudo env ORACLE_HOME=$ORACLE_HOME pip install cx_Oracle
-
-&lt;ol&gt;
-&lt;li&gt;使用：&lt;/li&gt;
-&lt;/ol&gt;
-import cx_Oracle
-
-conn = cx_Oracle.connect(&#39;user&#39;, &#39;password&#39;, &#39;127.0.0.1/orcl&#39;)
-cursor = conn.cursor()
-cursor.execute(&#39;select * from table&#39;)
-
-&lt;p&gt;可能遇到的问题:&lt;/p&gt;
-ImportError: libaio.so.1: cannot open shared object file: No such file or directory
-
-&lt;p&gt;解决:&lt;/p&gt;
-sudo apt-get install libaio1 libaio-dev
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2014/08/04/python_oracle/</guid>
+      <description>首先，由于网站部署在远程服务器的局域网上面，所以需要通过 ssh tunnel（隧道） 的方式进行本地的映射，主要映射两个端口： Oracle 服务：ssh -fN -L 1521:ip:1521 server</description>
     </item>
     
     <item>
       <title>Temporary Tablespace is Empty 解决方法（ORA-25153）</title>
-      <link>http://blog.wenzhixin.net.cn/2014/04/28/temporary_tablespace_is_empty</link>
+      <link>http://blog.wenzhixin.net.cn/2014/04/28/temporary_tablespace_is_empty/</link>
       <pubDate>Mon, 28 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/04/28/temporary_tablespace_is_empty</guid>
-      <description>
-
-&lt;h3 id=&#34;问题:80823c84cfc39e1c08535d0f0ce2d355&#34;&gt;问题：&lt;/h3&gt;
-
-&lt;p&gt;当我们对 Oralce 数据库进行操作的时候，出现了：&lt;/p&gt;
-ORA-25153: Temporary Tablespace is Empty
-
-&lt;p&gt;的错误，提示 temporary 表空间为空。&lt;/p&gt;
-
-&lt;h3 id=&#34;思路:80823c84cfc39e1c08535d0f0ce2d355&#34;&gt;思路：&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;当前用户没有设置表空间权限&lt;/li&gt;
-&lt;li&gt;表空间状态为 offline&lt;/li&gt;
-&lt;li&gt;当前用户没有指定表空间文件&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;解决:80823c84cfc39e1c08535d0f0ce2d355&#34;&gt;解决：&lt;/h3&gt;
-
-&lt;h4 id=&#34;1-查看当前用户:80823c84cfc39e1c08535d0f0ce2d355&#34;&gt;1. 查看当前用户&lt;/h4&gt;
-SQL&gt; show user;
-
-USER is &#34;SYS&#34;
-
-&lt;h4 id=&#34;2-查看当前用户是否已经设置了表空间权限:80823c84cfc39e1c08535d0f0ce2d355&#34;&gt;2. 查看当前用户是否已经设置了表空间权限&lt;/h4&gt;
-SQL&gt; select username,temporary_tablespace from dba_users where username=&#39;sys&#39;;
-
-USERNAME                       TEMPORARY_TABLESPACE
------------------------------- ------------------------------
-SYS                            TEMP
-
-&lt;p&gt;假如为空，我们需要增加权限：&lt;/p&gt;
-SQL&gt; alter user sys temporary tablespace temp;
-
-&lt;h4 id=&#34;3-查看表空间状态:80823c84cfc39e1c08535d0f0ce2d355&#34;&gt;3. 查看表空间状态&lt;/h4&gt;
-SQL&gt; select tablespace_name, status from dba_tablespaces where tablespace_name=&#39;temp&#39;;
-
-TABLESPACE STATUS
----------- ---------
-TEMP       ONLINE
-
-&lt;p&gt;假如为 OFFLINE，我们需要改为 ONLINE：&lt;/p&gt;
-SQL&gt; alter tablespace temp online;
-
-&lt;h4 id=&#34;4-查看当前用户是否指定表空间文件:80823c84cfc39e1c08535d0f0ce2d355&#34;&gt;4. 查看当前用户是否指定表空间文件&lt;/h4&gt;
-SQL&gt; select tablespace_name, file_name from dba_temp_files;
-
-TABLESPACE FILE_NAME
----------- --------------------------------------------------
-TEMP       /opt/oracle/oradata/orcl/temp01.dbf
-
-&lt;p&gt;假如为空，我们需要先查看文件是否存在（windows 下为安装目录下的 oradata/orcl/temp01.dbf）：&lt;/p&gt;
-ls /opt/oracle/oradata/orcl/temp01.dbf
-
-/opt/oracle/oradata/orcl/temp01.dbf
-
-&lt;p&gt;在增加表空间文件：&lt;/p&gt;
-SQL&gt; alter tablespace temp add tempfile &#39;/opt/oracle/oradata/orcl/temp01.dbf&#39;;
-
-&lt;p&gt;搞定！！！&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2014/04/28/temporary_tablespace_is_empty/</guid>
+      <description>问题： 当我们对 Oralce 数据库进行操作的时候，出现了： 1 ORA-25153: Temporary Tablespace is Empty 的错误，提示 temporary 表空间为空。 思路： 当前用户没有设置表空间权限 表空间状态为 offline 当前用户没</description>
     </item>
     
     <item>
       <title>Oracle 获取DDL语句入门小记</title>
-      <link>http://blog.wenzhixin.net.cn/2014/02/13/oracle_ddl</link>
+      <link>http://blog.wenzhixin.net.cn/2014/02/13/oracle_ddl/</link>
       <pubDate>Thu, 13 Feb 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/02/13/oracle_ddl</guid>
-      <description>
-
-&lt;h3 id=&#34;sqlplus-登录:e3b1259d48a958535969632ae5dfca28&#34;&gt;sqlplus 登录&lt;/h3&gt;
-
-&lt;p&gt;在操作系统命令行下：&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;方法1：&lt;/strong&gt;&lt;/p&gt;
-sqlplus / as sysdba #这是典型的操作系统认证，不需要listener进程
-sqlplus system/password as sysdba #这种连接方式只能连接本机数据库，同样不需要listener进程
-
-&lt;p&gt;&lt;strong&gt;方法2：&lt;/strong&gt;&lt;/p&gt;
-sqlplus /nolog
-CONNECT username/password@host[:port][/service_name]
-
-&lt;h3 id=&#34;查看当前用户:e3b1259d48a958535969632ae5dfca28&#34;&gt;查看当前用户&lt;/h3&gt;
-select user from dual;
-
-&lt;h3 id=&#34;查看-databases:e3b1259d48a958535969632ae5dfca28&#34;&gt;查看 databases&lt;/h3&gt;
-select name from v$database;
-
-&lt;h3 id=&#34;查看-tables:e3b1259d48a958535969632ae5dfca28&#34;&gt;查看 tables&lt;/h3&gt;
-select owner, table_name from dba_tables;
-select owner, table_name from all_tables; # do not have access dba_tables;
-select table_name from user_tables; # you own
-
-&lt;h3 id=&#34;获取一个schema下的所有建表-视图和建索引的语法:e3b1259d48a958535969632ae5dfca28&#34;&gt;获取一个SCHEMA下的所有建表、视图和建索引的语法&lt;/h3&gt;
-set pagesize 0
-set long 90000
-set feedback off
-set echo off
-spool schema.sql
-select dbms_metadata.get_ddl(&#39;TABLE&#39;, u.table_name) from user_tables u;
-select dbms_metadata.get_ddl(&#39;VIEW&#39;, u.VIEW_name) from user_views u;
-select dbms_metadata.get_ddl(&#39;INDEX&#39;, u.index_name) from user_indexes u;
-spool off;
-
-&lt;h3 id=&#34;获取单个的建表-视图和建索引的语法:e3b1259d48a958535969632ae5dfca28&#34;&gt;获取单个的建表、视图和建索引的语法&lt;/h3&gt;
-set pagesize 0
-set long 90000
-set feedback off
-set echo off
-spool &lt;table_name&gt;.sql
-select dbms_metadata.get_ddl(&#39;TABLE&#39;, &#39;&lt;table_name&gt;&#39;, &#39;&lt;SCHEMA&gt;&#39;) from dual;
-select dbms_metadata.get_ddl(&#39;VIEW&#39;, &#39;&lt;view_name&gt;&#39;, &#39;&lt;SCHEMA&gt;&#39;) from dual;
-select dbms_metadata.get_ddl(&#39;INDEX&#39;, &#39;&lt;index_name&gt;&#39;, &#39;&lt;SCHEMA&gt;&#39;) from dual;
-spool off;
-
-&lt;h3 id=&#34;获取某个-schema-的建全部存储过程的语法:e3b1259d48a958535969632ae5dfca28&#34;&gt;获取某个 SCHEMA 的建全部存储过程的语法&lt;/h3&gt;
-set pagesize 0
-set long 90000
-set feedback off
-set echo off
-spool procedures.sql
-select dbms_metadata.get_ddl(&#39;PROCEDURE&#39;, u.object_name)
-from user_objects u
-where object_type = &#39;PROCEDURE&#39;;
-spool off;
-
-&lt;h3 id=&#34;获取指定名称的建存储过程的语法:e3b1259d48a958535969632ae5dfca28&#34;&gt;获取指定名称的建存储过程的语法&lt;/h3&gt;
-set pagesize 0
-set long 90000
-set feedback off
-set echo off
-spool &lt;Procedure_Name&gt;.sql
-select text
-from all_source
-where name= &#39;&lt;procedure_name&gt;&#39;;
-spool off;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2014/02/13/oracle_ddl/</guid>
+      <description>sqlplus 登录 在操作系统命令行下： 方法1： 1 2 sqlplus / as sysdba #这是典型的操作系统认证，不需要listener进程 sqlplus system/password as sysdba #这种连接方式只能连接本机数据库，</description>
     </item>
     
   </channel>

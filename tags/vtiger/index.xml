@@ -1,100 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Vtiger on 文翼的博客</title>
+    <title>vtiger on 文翼的博客</title>
     <link>http://blog.wenzhixin.net.cn/tags/vtiger/</link>
-    <description>Recent content in Vtiger on 文翼的博客</description>
+    <description>Recent content in vtiger on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Thu, 17 Jan 2013 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.wenzhixin.net.cn/tags/vtiger/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/vtiger/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>vtiger5.2 问题修复</title>
-      <link>http://blog.wenzhixin.net.cn/2013/01/17/vtiger_bug</link>
+      <link>http://blog.wenzhixin.net.cn/2013/01/17/vtiger_bug/</link>
       <pubDate>Thu, 17 Jan 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/01/17/vtiger_bug</guid>
-      <description>
-
-&lt;h3 id=&#34;图表乱码:4357e6d4853464f8f0c8ab5435428738&#34;&gt;图表乱码：&lt;/h3&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;下载 &lt;a href=&#34;http://blog.wenzhixin.net.cn/2013/01/17/Simsun.zip&#34;&gt;Simsun&lt;/a&gt; 解压&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;将 Simsun.ttf 文件复制到 Image/Canvas/Fonts 目录下&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;修改 Image/Canvas/Fonts/fontmap.txt，最后增加一行：&lt;/p&gt;
-
-&lt;p&gt;Simsun, Simsun.ttf&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;修改 include/utils/GraphUtils.php，在第22行插入以下代码：&lt;/p&gt;
-
-&lt;p&gt;DEFINE(&amp;ldquo;FF_DROIDSANSFALLBACK&amp;rdquo;,&amp;lsquo;Droid Sans Fallback&amp;rsquo;);&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;将第43行的&lt;/p&gt;
-case &#39;cn_zh&#39;:
-
-&lt;p&gt;修改为&lt;/p&gt;
-case &#39;zh_cn&#39;:
-
-&lt;hr /&gt;
-
-&lt;h3 id=&#34;导出-cvs-乱码:4357e6d4853464f8f0c8ab5435428738&#34;&gt;导出 cvs 乱码&lt;/h3&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;下载 &lt;a href=&#34;http://blog.wenzhixin.net.cn/2013/01/17/vtiger53csv.zip&#34;&gt;vtiger53csv&lt;/a&gt; 解压（改的文件比较多，已压缩为 zip 包）&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;覆盖目标目录&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&#34;导出-pdf-乱码:4357e6d4853464f8f0c8ab5435428738&#34;&gt;导出 pdf 乱码：&lt;/h3&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;下载 &lt;a href=&#34;http://blog.wenzhixin.net.cn/2013/01/17/vtiger53pdf.zip&#34;&gt;vtiger53pdf&lt;/a&gt; 解压 (改的文件比较多，已压缩为 zip 包)&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;覆盖目标目录&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&#34;报表描述格式显示错误:4357e6d4853464f8f0c8ab5435428738&#34;&gt;报表描述格式显示错误&lt;/h3&gt;
-
-&lt;p&gt;编辑 ReportRun.php 文件&lt;/p&gt;
-sudo vi modules/Reports/ReportRun.php
-
-&lt;p&gt;将第 1896 和 1897 行&lt;/p&gt;
-$fieldvalue = str_replace(&#34;&lt;&#34;, &#34;&lt;&#34;, $fieldvalue);
-$fieldvalue = str_replace(&#34;&gt;&#34;, &#34;&gt;&#34;, $fieldvalue);
-
-&lt;p&gt;修改为&lt;/p&gt;
-$fieldvalue = html_entity_decode($fieldvalue);
-
-&lt;h4 id=&#34;知识点:4357e6d4853464f8f0c8ab5435428738&#34;&gt;知识点：&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;htmlentities — Convert all applicable characters to HTML entities&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;html_entity_decode — Convert all HTML entities to their applicable characters&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&#34;日程安排发邮件问题:4357e6d4853464f8f0c8ab5435428738&#34;&gt;日程安排发邮件问题&lt;/h3&gt;
-
-&lt;p&gt;编辑 Activity.php 文件&lt;/p&gt;
-sudo vi modules/Calendar/Activity.php
-
-&lt;p&gt;将第 131 行&lt;/p&gt;
-if(isset($this-&gt;column_fields[&#39;sendnotification&#39;])){
-
-&lt;p&gt;修改为&lt;/p&gt;
-if($this-&gt;column_fields[&#39;sendnotification&#39;] == &#39;On&#39;){
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2013/01/17/vtiger_bug/</guid>
+      <description>图表乱码： 下载 Simsun 解压 将 Simsun.ttf 文件复制到 Image/Canvas/Fonts 目录下 修改 Image/Canvas/Fonts/fontmap.txt，最后增加一行： Simsun, Simsun.ttf 修改 inclu</description>
     </item>
     
   </channel>

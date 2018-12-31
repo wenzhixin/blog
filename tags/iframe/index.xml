@@ -1,107 +1,33 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Iframe on 文翼的博客</title>
+    <title>iframe on 文翼的博客</title>
     <link>http://blog.wenzhixin.net.cn/tags/iframe/</link>
-    <description>Recent content in Iframe on 文翼的博客</description>
+    <description>Recent content in iframe on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Wed, 27 Nov 2013 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.wenzhixin.net.cn/tags/iframe/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/iframe/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Ajax 文件上传——通过 iframe 的方法</title>
-      <link>http://blog.wenzhixin.net.cn/2013/11/27/ajax_file_upload_iframe</link>
+      <link>http://blog.wenzhixin.net.cn/2013/11/27/ajax_file_upload_iframe/</link>
       <pubDate>Wed, 27 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/11/27/ajax_file_upload_iframe</guid>
-      <description>
-
-&lt;h4 id=&#34;前言:9d2eee6ba8fab7c3c4918c26a26acf7a&#34;&gt;前言&lt;/h4&gt;
-
-&lt;p&gt;由于安全问题，浏览器不允许通过 XMLHttpRequest（又名XHR）的方式上传文件。&lt;/p&gt;
-
-&lt;p&gt;那么如何在不刷新界面的情况下实现文件的上传呢？&lt;/p&gt;
-
-&lt;h4 id=&#34;解决方法:9d2eee6ba8fab7c3c4918c26a26acf7a&#34;&gt;解决方法&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;一种方法是使用 Flash，但是需要安装 Flash 插件。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;使用 iframe 的方法，这里来介绍它是如何工作的。&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;iframe-的方法:9d2eee6ba8fab7c3c4918c26a26acf7a&#34;&gt;iframe 的方法&lt;/h4&gt;
-
-&lt;p&gt;假设我们有一个文件类型的输入字段的表单&lt;/p&gt;
-&lt;input name=&#34;filename&#34; type=&#34;file&#34; /&gt;
-
-&lt;p&gt;使用 iframe 的方法可以概括为如下步骤：&lt;/p&gt;
-
-&lt;p&gt;1) 禁用原表单的 submit 事件，以方便我们使用自定义 iframe 的 submit 事件。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2013/11/27/iframe-method-step-0.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;2) 使用 JavaScript 创建一个 iframe 元素并将其插入到当前页面（对用户不可见）。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2013/11/27/iframe-method-step-1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;3) 修改 iframe 的 target 属性，使得表单提交的结果显示在新的 iframe 中，而不是当前窗口。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2013/11/27/iframe-method-step-2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;4) 提交 iframe 中的表单，例如用 jQuery 的 $(&amp;lsquo;form&amp;rsquo;).submit()。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2013/11/27/iframe-method-step-3.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;5) 让隐藏的 iframe 导航到新的响应界面，在这里，父窗口并没有打开新的页面或者进行重定向。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2013/11/27/iframe-method-step-4.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;6) 获取 iframe 的响应内容到父窗口中。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2013/11/27/iframe-method-step-5.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;7) 删除 iframe，重置原来的表单，提交完成。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2013/11/27/iframe-method-step-6.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;需要注意的问题:9d2eee6ba8fab7c3c4918c26a26acf7a&#34;&gt;需要注意的问题&lt;/h4&gt;
-
-&lt;p&gt;由于使用了 iframe，所以我们无法获得响应接口的响应头和状态码。&lt;/p&gt;
-
-&lt;p&gt;为了判断是否已经提交成功，我们需要在返回接口中定义我们需要的响应信息。&lt;/p&gt;
-
-&lt;p&gt;例如，在 body 中返回 status：&lt;/p&gt;
-{
-	&#34;status&#34;: 200
-}
-
-&lt;h4 id=&#34;使用-iframe-的-jquery-插件:9d2eee6ba8fab7c3c4918c26a26acf7a&#34;&gt;使用 iframe 的 jQuery 插件&lt;/h4&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.phpletter.com/Demo/AjaxFileUpload-Demo/&#34;&gt;AjaxFileUpload 插件&lt;/a&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;参考：&lt;a href=&#34;http://www.alfajango.com/blog/ajax-file-uploads-with-the-iframe-method/&#34;&gt;AJAX File Uploads with the iFrame Method&lt;/a&gt;&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/27/ajax_file_upload_iframe/</guid>
+      <description>前言 由于安全问题，浏览器不允许通过 XMLHttpRequest（又名XHR）的方式上传文件。 那么如何在不刷新界面的情况下实现文件的上传呢？ 解</description>
     </item>
     
     <item>
       <title>jQuery 如何获取 iframe 的内容</title>
-      <link>http://blog.wenzhixin.net.cn/2013/03/01/access_iframe</link>
+      <link>http://blog.wenzhixin.net.cn/2013/03/01/access_iframe/</link>
       <pubDate>Fri, 01 Mar 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/03/01/access_iframe</guid>
-      <description>&lt;p&gt;现有 iframe，内容如下：&lt;/p&gt;
-&lt;iframe id=&#34;iframeID&#34; ...&gt;
-    &lt;div id=&#34;someID&#34;&gt;Hello world!&lt;/div&gt;
-&lt;/iframe&gt;
-
-&lt;p&gt;使用 jQuery 获取 div 的内容：&lt;/p&gt;
-$(&#39;#iframeID&#39;).contents().find(&#39;#someID&#39;).html();
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2013/03/01/access_iframe/</guid>
+      <description>现有 iframe，内容如下： 1 2 3 &amp;lt;iframe id=&amp;#34;iframeID&amp;#34; ...&amp;gt; &amp;lt;div id=&amp;#34;someID&amp;#34;&amp;gt;Hello world!&amp;lt;/div&amp;gt; &amp;lt;/iframe&amp;gt; 使用 jQuery 获取 div 的内容： 1 $(&amp;#39;#iframeID&amp;#39;).contents().find(&amp;#39;#someID&amp;#39;).html();</description>
     </item>
     
   </channel>

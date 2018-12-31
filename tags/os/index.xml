@@ -8,147 +8,17 @@
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Mon, 10 Feb 2014 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.wenzhixin.net.cn/tags/os/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/os/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>VirtualBox 安装 Mac OS X 10.9 Mavericks 小记</title>
-      <link>http://blog.wenzhixin.net.cn/2014/02/10/vbox_mac_install</link>
+      <link>http://blog.wenzhixin.net.cn/2014/02/10/vbox_mac_install/</link>
       <pubDate>Mon, 10 Feb 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/02/10/vbox_mac_install</guid>
-      <description>
-
-&lt;h3 id=&#34;1-准备工作:28ef1238a24229312bbe9f6fa6b31cf3&#34;&gt;1. 准备工作&lt;/h3&gt;
-
-&lt;p&gt;安装虚拟机和下载需要的 &lt;a href=&#34;http://pan.baidu.com/s/1hqebqYw&#34;&gt;iso&lt;/a&gt;：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;联想 Y470 I5、8G内存&lt;/li&gt;
-&lt;li&gt;Ubuntu 12.10&lt;/li&gt;
-&lt;li&gt;VirtualBox 虚拟机（4.3.6）&lt;/li&gt;
-&lt;li&gt;HackBoot_Mav.iso&lt;/li&gt;
-&lt;li&gt;OSXMavericks2.iso&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;2-新建-mac-虚拟机:28ef1238a24229312bbe9f6fa6b31cf3&#34;&gt;2. 新建 Mac 虚拟机&lt;/h3&gt;
-
-&lt;p&gt;跟着新向导一步一步即可&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/02/10/images/1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/02/10/images/2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/02/10/images/3.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/02/10/images/4.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/02/10/images/5.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/02/10/images/6.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;3-设置虚拟机:28ef1238a24229312bbe9f6fa6b31cf3&#34;&gt;3. 设置虚拟机&lt;/h3&gt;
-
-&lt;p&gt;去掉 启用 EFI 选项&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/02/10/images/7.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;处理器选择 2 核&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/02/10/images/8.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;启用 3D 加速&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/02/10/images/9.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;设置存储，加入 HackBoot_Mav.iso&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/02/10/images/10.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;4-安装-mac-系统:28ef1238a24229312bbe9f6fa6b31cf3&#34;&gt;4. 安装 Mac 系统&lt;/h3&gt;
-
-&lt;p&gt;启动界面&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/02/10/images/11.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;选择菜单中的设备——分配光驱——OSXMavericks2.iso，按 F5 界面会变成&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/02/10/images/12.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;按 Enter 开始安装&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/02/10/images/13.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;选择语言，继续&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/02/10/images/14.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/02/10/images/15.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;选择实用工具——磁盘工具&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/02/10/images/16.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;名称处输入——Mavericks——选择抹掉&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/02/10/images/17.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;开始安装&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/02/10/images/18.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/02/10/images/19.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;安装完成，强制退出&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/02/10/images/20.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;5-安装内核扩展:28ef1238a24229312bbe9f6fa6b31cf3&#34;&gt;5. 安装内核扩展&lt;/h3&gt;
-
-&lt;p&gt;选择 HackBoot_Mav.iso 重新启动&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/02/10/images/21.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;选择菜单中的设备——分配光驱——OSXMavericks2.iso，按 F5 界面会变成&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/02/10/images/22.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;再次进入安装系统，这次选实用工具——终端&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/02/10/images/23.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;依次输入命令：&lt;/p&gt;
-umount /Volumes/Mavericks
-hdiutil attach /dev/disk0s2 -mountpoint /Volumes/mnt
-cp -rp /Backup/Kexts/ElliottForceLegacyRTC.kext /Volumes/mnt/System/Library/Extensions
-cp -rp /Backup/Kexts/FakeSMC.kext /Volumes/mnt/System/Library/Extensions
-cp -rp /Backup/Kexts/NullCPUPowerManagement.kext /Volumes/mnt/System/Library/Extensions
-chmod -R 0755 /Volumes/mnt/System/Library/Extensions/ElliottForceLegacyRTC.kext
-chmod -R 0755 /Volumes/mnt/System/Library/Extensions/FakeSMC.kext
-chmod -R 0755 /Volumes/mnt/System/Library/Extensions/NullCPUPowerManagement.kext
-hdiutil detach /Volumes/mnt
-
-&lt;p&gt;安装内核扩展，退出终端后, 等待虚拟机的硬盘指示灯熄灭，强制退出&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/02/10/images/24.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;6-完成安装:28ef1238a24229312bbe9f6fa6b31cf3&#34;&gt;6. 完成安装&lt;/h3&gt;
-
-&lt;p&gt;选择 HackBoot_Mav.iso 重新启动，选择 Mavericks，Enter&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/02/10/images/25.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/02/10/images/26.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;设置登录帐号，其他的不注册，不发送&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/02/10/images/27.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;大功告成&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/02/10/images/28.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/02/10/images/29.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2014/02/10/vbox_mac_install/</guid>
+      <description>1. 准备工作 安装虚拟机和下载需要的 iso： 联想 Y470 I5、8G内存 Ubuntu 12.10 VirtualBox 虚拟机（4.3.6） HackBoot_Mav.iso OSXMavericks2.iso 2. 新建 Mac 虚拟机 跟着新向导一步一步即可 3. 设置虚拟机 去</description>
     </item>
     
   </channel>

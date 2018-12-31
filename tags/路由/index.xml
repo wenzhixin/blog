@@ -8,73 +8,17 @@
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Mon, 28 Oct 2013 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.wenzhixin.net.cn/tags/%E8%B7%AF%E7%94%B1/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/%E8%B7%AF%E7%94%B1/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>nodejs 获取路由的主机列表</title>
-      <link>http://blog.wenzhixin.net.cn/2013/10/28/node_agents</link>
+      <link>http://blog.wenzhixin.net.cn/2013/10/28/node_agents/</link>
       <pubDate>Mon, 28 Oct 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/10/28/node_agents</guid>
-      <description>
-
-&lt;h4 id=&#34;1-介绍:dbdc81fab56afdacc26151018bc2c346&#34;&gt;1. 介绍&lt;/h4&gt;
-
-&lt;p&gt;接着之前，今天的目标是通过 nodejs 获取使用路由的主机名称列表。&lt;/p&gt;
-
-&lt;p&gt;路由器的默认登录地址为：&lt;a href=&#34;http://192.168.1.1&#34;&gt;http://192.168.1.1&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;默认的用户名密码都为：admin&lt;/p&gt;
-
-&lt;p&gt;通过 chrome 浏览器的 Network 工具，我们可以知道路由器的登录方式是 HTTP Basic Authentication。&lt;/p&gt;
-
-&lt;p&gt;HTTP Basic Authentication 是一种通过直接提供用户名、密码来进行验证身份的一种优化的解决方案。&lt;/p&gt;
-
-&lt;p&gt;因此，在访问一个需要 HTTP Basic Authentication 的 URL 的时候，如果你没有提供用户名和密码，服务器就会返回401，
-如果直接在浏览器中打开，浏览器会提示你输入用户名和密码。&lt;/p&gt;
-
-&lt;p&gt;要在发送请求的时候添加 HTTP Basic Authentication 认证信息到请求中，有两种方法：&lt;/p&gt;
-
-&lt;p&gt;1) 在请求头中添加Authorization：&lt;/p&gt;
-Authorization: &#34;Basic 用户名和密码的base64加密字符串&#34;
-
-&lt;p&gt;2) 在url中添加用户名和密码：&lt;/p&gt;
-http://userName:password@192.168.1.1
-
-&lt;p&gt;通过分析路由器的页面地址，可以知道获取主机列表的页面地址为：&lt;/p&gt;
-http://192.168.1.1/userRpm/AssignedIpAddrListRpm.htm?Refresh=true
-
-&lt;h4 id=&#34;2-代码实现:dbdc81fab56afdacc26151018bc2c346&#34;&gt;2. 代码实现&lt;/h4&gt;
-
-&lt;p&gt;在这里，我们使用第二种方法来添加认证，使用 http 模块获取主机列表页面的内容，在通过正则表达式进行匹配出主机列表。&lt;/p&gt;
-var http = require(&#39;http&#39;);
-
-http.get(&#39;http://admin:admin@192.168.1.1/userRpm/AssignedIpAddrListRpm.htm?Refresh=true&#39;, function(res) {
-    var content = &#39;&#39;;
-
-    res.setEncoding(&#39;utf8&#39;);
-    res.on(&#39;data&#39;, function(data) {
-        content += data;
-    });
-    res.on(&#39;end&#39;, function() {
-        handle(content);
-    })
-});
-
-function handle(content) {
-    content = content.replace(/\n/g, &#39;&#39;);
-    var m = content.match(/var DHCPDynList = new Array\(([^\)]*)\);/);
-    var str = m[1].substring(1);
-    var arr = str.split(&#39;&#34;, &#34;&#39;);
-    var agents = [];
-    var i = 0;
-    while (i &lt; arr.length) {
-        agents.push(arr[i]);
-        i += 4;
-    }
-    console.log(agents);
-}
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2013/10/28/node_agents/</guid>
+      <description>1. 介绍 接着之前，今天的目标是通过 nodejs 获取使用路由的主机名称列表。 路由器的默认登录地址为：http://192.168.1.1 默认的用户名密码都</description>
     </item>
     
   </channel>

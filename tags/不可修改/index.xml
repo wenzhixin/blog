@@ -8,106 +8,17 @@
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Wed, 07 May 2014 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.wenzhixin.net.cn/tags/%E4%B8%8D%E5%8F%AF%E4%BF%AE%E6%94%B9/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/%E4%B8%8D%E5%8F%AF%E4%BF%AE%E6%94%B9/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>在 JavaScript 中定义常量（不可修改）</title>
-      <link>http://blog.wenzhixin.net.cn/2014/05/07/javascript_define_const</link>
+      <link>http://blog.wenzhixin.net.cn/2014/05/07/javascript_define_const/</link>
       <pubDate>Wed, 07 May 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/05/07/javascript_define_const</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://github.com/wenzhixin/define-const.js&#34;&gt;define-const.js&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;在《JavaScript 启示录》的最后一章中提到:
-&amp;gt; Math 属性是无法改变的常数。这与 JavaScript 可变性质相悖，因此这些属性全部大写。&lt;/p&gt;
-
-&lt;p&gt;于是在浏览器（包括 IE6-IE8）中做了测试，确实如此：&lt;/p&gt;
-Math.PI = 3;
-alert(Math.PI); // 3.141592653589793
-
-&lt;p&gt;比较感兴趣的是它是如何实现的，我们是否可以自己定义这样的常量？&lt;/p&gt;
-
-&lt;p&gt;虽然许多编程语言提供了 const 关键字来支持常量的声明，但 JavaScript 里没有表示常量的语义。
-在平时的开发中，都是通过命名规范（大写+下划线）来定义一个常量的，例如：&lt;/p&gt;
-var MAX_CONST = 10000;
-var MIN_CONST = -10000;
-
-&lt;p&gt;但是实际上，它们跟普通的变量没什么区别，并不能阻止用户改变“常量”的值。&lt;/p&gt;
-
-&lt;p&gt;虽然不知道 Math 内部是如何实现的，但是假如可以自己实现这样的不可变的常量，在应用中还是比较有作用。&lt;/p&gt;
-
-&lt;p&gt;通过查看 JavaScript 的文档，可以使用 &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty&#34;&gt;Object.defineProperty&lt;/a&gt; 方法来定义这样的一个变量。如：&lt;/p&gt;
-var Const = {};
-Object.defineProperty(Const, PI, {writable: false, value: 3.14});
-Const.PI = 3;
-alert(Const.PI); // 3.14
-
-&lt;p&gt;我们将 &lt;code&gt;writable&lt;/code&gt; 设置为 &lt;code&gt;false&lt;/code&gt;，即可简单的实现这样的功能。
-但是问题 &lt;code&gt;defineProperty&lt;/code&gt; 是 ECMAScript 5 才有的，也就是说旧浏览器（IE6、IE7）用不了，
-而且在 IE8 下，虽然也定义了这样的方法，但是仅仅只对 DOM 对象才有效。&lt;/p&gt;
-
-&lt;p&gt;Github 上有许多 shim 的 repo，例如 &lt;a href=&#34;https://github.com/es-shims/es5-shim&#34;&gt;es5-shim&lt;/a&gt; 也没有实现这个方法：
-&amp;gt; Unfortunately, because Object.defineProperty is part of ES5, it is only fully supported in IE9 and newer. IE8 has a partial implementation which only works on DOM objects, and would be useless for the examples considered above. Even more unfortunately, there is no compatibility shim for IE8.&lt;/p&gt;
-
-&lt;p&gt;我们知道，DOM 对象拥有 &lt;code&gt;onpropertychanged&lt;/code&gt; 的事件，可以用于监听 DOM 对象属性值的改变。
-为了兼容旧浏览器，我们可以利用这一特性，来实现我们想要的功能。&lt;/p&gt;
-
-&lt;p&gt;于是有了&lt;code&gt;define-const.js&lt;/code&gt;：&lt;/p&gt;
-function defineConst(props) {
-    var obj = {},
-        hack = !Object.defineProperty || /MSIE 8.0/.test(navigator.userAgent);
-
-    if (hack) {
-        var onPropertyChange = function (e) {
-            // temporarily remove the event so it doesn&#39;t fire again and create a loop
-            obj.detachEvent(&#39;onpropertychange&#39;, onPropertyChange);
-            obj[e.propertyName] = props[e.propertyName];
-            // restore the event
-            obj.attachEvent(&#39;onpropertychange&#39;, onPropertyChange);
-        };
-
-        // IE6 - IE7: must be a DOM object (even if it&#39;s not a real tag) attached to document
-        // IE8 (defineProperty must be a DOM object)
-        obj = document.createElement(&#39;fake&#39;);
-        document.body.appendChild(obj);
-    }
-    for (var prop in props) {
-        if (hack) {
-            obj[prop] = props[prop];
-        } else {
-            // Modern browsers, IE9+
-            Object.defineProperty(obj, prop, {writable: false, value: props[prop]});
-        }
-    }
-
-    if (hack) {
-        obj.attachEvent(&#39;onpropertychange&#39;, onPropertyChange);
-    }
-
-    return obj;
-}
-
-
-&lt;p&gt;通过判断是否定义 &lt;code&gt;Object.defineProperty&lt;/code&gt; 以及正则匹配出 IE6-IE8 浏览器，然后创建了一个假的元素 &lt;code&gt;fake&lt;/code&gt;，
-并添加到 &lt;code&gt;body&lt;/code&gt; 中，这样就可以通过监听 &lt;code&gt;onpropertychange&lt;/code&gt; 来实现想要的功能了。&lt;/p&gt;
-
-&lt;p&gt;这里支持定义多个常量，返回一个对象。&lt;/p&gt;
-var Const = defineConst({
-    PI: 3.14,
-    MAX: 10000,
-    MIN: -10000
-});
-
-Const.PI = 3;
-Const.MAX = 20000;
-Const.MIN = -20000;
-
-alert(Const.PI); // 3.14
-alert(Const.MAX); // 10000
-alert(Const.MIN); // -10000
-
-&lt;p&gt;最后，不知道 Math 是如何实现的，知道的人麻烦告知下。&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2014/05/07/javascript_define_const/</guid>
+      <description>define-const.js 在《JavaScript 启示录》的最后一章中提到: &amp;gt; Math 属性是无法改变的常数。这与 JavaScript 可变性质相悖，因此这些属性全部大写。 于是在浏览器（包括 I</description>
     </item>
     
   </channel>

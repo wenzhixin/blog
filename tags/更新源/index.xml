@@ -8,39 +8,17 @@
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Mon, 21 Jul 2014 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.wenzhixin.net.cn/tags/%E6%9B%B4%E6%96%B0%E6%BA%90/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/%E6%9B%B4%E6%96%B0%E6%BA%90/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Ubuntu 无法找到更新源的问题</title>
-      <link>http://blog.wenzhixin.net.cn/2014/07/21/ubuntu_source_list_not_found</link>
+      <link>http://blog.wenzhixin.net.cn/2014/07/21/ubuntu_source_list_not_found/</link>
       <pubDate>Mon, 21 Jul 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/07/21/ubuntu_source_list_not_found</guid>
-      <description>
-
-&lt;h3 id=&#34;问题:f73ae7c8e69112b208895feeeb127e47&#34;&gt;问题：&lt;/h3&gt;
-
-&lt;p&gt;前段时间，Ubuntu 官方源已经停止了对非长期维护版（如 11.10，12.04，12.10 和 13.04）的支持，并且从归档服务器上移除了这些版本信息，导致无法更新软件和安装不了新软件。例如使用 apt-get update, apt-get upgrade, apt-get install 都无法正常工作。&lt;/p&gt;
-
-&lt;h3 id=&#34;解决方法:f73ae7c8e69112b208895feeeb127e47&#34;&gt;解决方法&lt;/h3&gt;
-
-&lt;p&gt;最好的办法是，升级系统到最新的版本（或者重装），例如升级到 14.04。但是有时候会觉得升级或者重装会很麻烦（说到底是懒），那么可以使用旧源 &lt;a href=&#34;http://old-releases.ubuntu.com&#34;&gt;http://old-releases.ubuntu.com&lt;/a&gt; 进行更新。&lt;/p&gt;
-
-&lt;p&gt;方法如下：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;使用&lt;code&gt;sed&lt;/code&gt;命令：&lt;/p&gt;
-sudo sed -i -e &#39;s/archive.ubuntu.com\|security.ubuntu.com/old-releases.ubuntu.com/g&#39; /etc/apt/sources.list&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;或者使用&lt;code&gt;vim&lt;/code&gt;编辑替换：&lt;/p&gt;
-sudo vi /etc/apt/sources.list
-:%s/archive.ubuntu.com\|security.ubuntu.com/old-releases.ubuntu.com/g&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;更新：&lt;/p&gt;
-sudo apt-get update
-sudo apt-get upgrade
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2014/07/21/ubuntu_source_list_not_found/</guid>
+      <description>问题： 前段时间，Ubuntu 官方源已经停止了对非长期维护版（如 11.10，12.04，12.10 和 13.04）的支持，并且从归档服务器上移除</description>
     </item>
     
   </channel>

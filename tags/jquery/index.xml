@@ -1,1380 +1,231 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>JQuery on 文翼的博客</title>
+    <title>jQuery on 文翼的博客</title>
     <link>http://blog.wenzhixin.net.cn/tags/jquery/</link>
-    <description>Recent content in JQuery on 文翼的博客</description>
+    <description>Recent content in jQuery on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Fri, 17 Jan 2014 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.wenzhixin.net.cn/tags/jquery/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/jquery/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>详解 jQuery.extend() 方法</title>
-      <link>http://blog.wenzhixin.net.cn/2014/01/17/jquery_extend</link>
+      <link>http://blog.wenzhixin.net.cn/2014/01/17/jquery_extend/</link>
       <pubDate>Fri, 17 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/01/17/jquery_extend</guid>
-      <description>&lt;p&gt;今天在写插件，使用&lt;code&gt;$.extend({}, defaults, options)&lt;/code&gt;的时候发现漏写了 {}，浪费了一些时间，
-所以详细记录下该方法的 API 和使用。&lt;/p&gt;
-
-&lt;p&gt;API 如下：&lt;/p&gt;
-
-&lt;p&gt;jQuery.extend(  [ deep ], target, [ object1 ], [ objectN ] )&lt;/p&gt;
-
-&lt;p&gt;描述：合并两个或更多的对象的内容汇集成到第一个对象。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;deep：如果是true，合并成为递归（又叫做深拷贝）。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;target：一个对象，如果附加的对象被传递给这个方法将那么它将接收新的属性，如果它是唯一的参数将扩展 jQuery 的命名空间。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;object1：一个对象，它包含额外的属性合并到第一个参数&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;objectN：包含额外的属性合并到第一个参数&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;源码如下：&lt;/p&gt;
-jQuery.extend = jQuery.fn.extend = function() {
-	var src, copyIsArray, copy, name, options, clone,
-		target = arguments[0] || {},
-		i = 1,
-		length = arguments.length,
-		deep = false;
-
-	// Handle a deep copy situation
-	if ( typeof target === &#34;boolean&#34; ) {
-		deep = target;
-		target = arguments[1] || {};
-		// skip the boolean and the target
-		i = 2;
-	}
-
-	// Handle case when target is a string or something (possible in deep copy)
-	if ( typeof target !== &#34;object&#34; &amp;&amp; !jQuery.isFunction(target) ) {
-		target = {};
-	}
-
-	// extend jQuery itself if only one argument is passed
-	if ( length === i ) {
-		target = this;
-		--i;
-	}
-
-	for ( ; i &lt; length; i++ ) {
-		// Only deal with non-null/undefined values
-		if ( (options = arguments[ i ]) != null ) {
-			// Extend the base object
-			for ( name in options ) {
-				src = target[ name ];
-				copy = options[ name ];
-
-				// Prevent never-ending loop
-				if ( target === copy ) {
-					continue;
-				}
-
-				// Recurse if we&#39;re merging plain objects or arrays
-				if ( deep &amp;&amp; copy &amp;&amp; ( jQuery.isPlainObject(copy) || (copyIsArray = jQuery.isArray(copy)) ) ) {
-					if ( copyIsArray ) {
-						copyIsArray = false;
-						clone = src &amp;&amp; jQuery.isArray(src) ? src : [];
-
-					} else {
-						clone = src &amp;&amp; jQuery.isPlainObject(src) ? src : {};
-					}
-
-					// Never move original objects, clone them
-					target[ name ] = jQuery.extend( deep, clone, copy );
-
-				// Don&#39;t bring in undefined values
-				} else if ( copy !== undefined ) {
-					target[ name ] = copy;
-				}
-			}
-		}
-	}
-
-	// Return the modified object
-	return target;
-};
-
-&lt;p&gt;关键代码为：&lt;/p&gt;
-for ( name in options ) {
-    src = target[ name ];
-    copy = options[ name ];
-    if ( deep ) {
-        clone = src;
-        target[ name ] = jQuery.extend( deep, clone, copy );
-    } else {
-        target[ name ] = copy;
-    }
-}
-
-&lt;p&gt;假如 deep 为&lt;code&gt;true&lt;/code&gt;，则递归调用 extend 函数，从而实现深度拷贝。&lt;/p&gt;
-
-&lt;p&gt;当我们提供两个或多个对象给$.extend()，对象的所有属性都添加到目标对象。&lt;/p&gt;
-
-&lt;p&gt;通过代码可以看到目标对象（第一个参数）将被修改，也将通过 $.extend() 返回。&lt;/p&gt;
-
-&lt;p&gt;如果我们想保留原对象，我们可以通过传递一个空对象作为目标：&lt;/p&gt;
-var object = $.extend({}, object1, object2);
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2014/01/17/jquery_extend/</guid>
+      <description>今天在写插件，使用$.extend({}, defaults, options)的时候发现漏写了 {}，浪费了一些时间， 所以详细记录下该方法的 API 和使用。 API 如下： jQuery.extend(</description>
     </item>
     
     <item>
       <title>jQuery file upload 插件 change 只生效一次</title>
-      <link>http://blog.wenzhixin.net.cn/2013/11/26/jquery_file_upload_change_once</link>
+      <link>http://blog.wenzhixin.net.cn/2013/11/26/jquery_file_upload_change_once/</link>
       <pubDate>Tue, 26 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/11/26/jquery_file_upload_change_once</guid>
-      <description>
-
-&lt;h4 id=&#34;1-前言:0a4244611fc4da1ce3230d8125714dd2&#34;&gt;1. 前言&lt;/h4&gt;
-
-&lt;p&gt;在使用 &lt;a href=&#34;http://www.phpletter.com/Demo/AjaxFileUpload-Demo/&#34;&gt;AjaxFileUpload 插件&lt;/a&gt;的时候，
-发现使用 jQuery 监听 change 事件只生效一次&lt;/p&gt;
-$(&#39;#upload&#39;).change(function() {
-
-});
-
-&lt;p&gt;那么是为什么呢？&lt;/p&gt;
-
-&lt;h4 id=&#34;2-原因:0a4244611fc4da1ce3230d8125714dd2&#34;&gt;2. 原因&lt;/h4&gt;
-
-&lt;p&gt;找了下原因，原来是 130 行对事件进行了 unbind&lt;/p&gt;
-jQuery(io).unbind()
-
-&lt;h4 id=&#34;3-解决:0a4244611fc4da1ce3230d8125714dd2&#34;&gt;3. 解决&lt;/h4&gt;
-
-&lt;p&gt;1) 使用 on() 方法（推荐）：&lt;/p&gt;
-$(document).on(&#39;change&#39;, &#39;#upload&#39;, function() {
-
-});
-
-&lt;p&gt;2) 在 change 起作用之后继续绑定 change 事件&lt;/p&gt;
-
-&lt;p&gt;3) 替换原来的 input：&lt;/p&gt;
-$(&#39;#upload&#39;).replaceWidth(&#39;&lt;input id=&#34;upload&#34; type=&#34;file&#34; /&gt;&#39;)
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/26/jquery_file_upload_change_once/</guid>
+      <description>1. 前言 在使用 AjaxFileUpload 插件的时候， 发现使用 jQuery 监听 change 事件只生效一次 1 2 3 4 $(&amp;#39;#upload&amp;#39;).change(function() { }); 那么是为什么呢？ 2. 原因 找了下原因，原来是 130 行对事件进行了 unbind 1 2 jQuery(io).unbind() 3. 解决</description>
     </item>
     
     <item>
       <title>jQuery 打造月份选择器插件</title>
-      <link>http://blog.wenzhixin.net.cn/2013/11/23/jquery_month_picker</link>
+      <link>http://blog.wenzhixin.net.cn/2013/11/23/jquery_month_picker/</link>
       <pubDate>Sat, 23 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/11/23/jquery_month_picker</guid>
-      <description>
-
-&lt;p&gt;项目中需要用到月份选择器，找到了几款日期选择器 datepicker，
-但是我不需要选择具体的日期，虽然有个可以支持只显示月份的，但是显得比较臃肿。&lt;/p&gt;
-
-&lt;p&gt;所以，还是决定自己实现一个吧。最后封装成了 jQuery 的插件，插件地址为：&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://wenzhixin.net.cn/p/bootstrap-monthpicker/&#34;&gt;bootstrap-monthpicker&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;其实编写 jQuery 插件很简单，使用起来也简单，把相同的代码提取出来写成 jQuery 的插件，
-这样不仅仅可以省很多代码量，还可以很好的提高开发速度。&lt;/p&gt;
-
-&lt;p&gt;这里，把自己编写插件的步骤记录下来，希望有需要的人可以参考下。&lt;/p&gt;
-
-&lt;h4 id=&#34;1-编写基本的-html-代码:ad5eee46152d62e3e061bf4e3d35a595&#34;&gt;1. 编写基本的 html 代码&lt;/h4&gt;
-
-&lt;p&gt;日期选择器需要年份选择，以及12个月的月份选择。&lt;/p&gt;
-&lt;div class=&#34;mp-dialog&#34;&gt;
-	&lt;div class=&#34;mp-title&#34;&gt;
-		&lt;i class=&#34;glyphicon glyphicon-circle-arrow-left&#34;&gt;&lt;/i&gt;
-		&lt;span&gt;2013&lt;/span&gt;
-		&lt;i class=&#34;glyphicon glyphicon-circle-arrow-right&#34;&gt;&lt;/i&gt;
-	&lt;/div&gt;
-	&lt;div class=&#34;mp-content&#34;&gt;
-		&lt;ul&gt;
-			&lt;li&gt;一&lt;/li&gt;
-			&lt;li&gt;二&lt;/li&gt;
-			...
-			&lt;li&gt;十二&lt;/li&gt;
-		&lt;/ul&gt;
-	&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;h4 id=&#34;2-编写基本的-css-代码:ad5eee46152d62e3e061bf4e3d35a595&#34;&gt;2. 编写基本的 css 代码&lt;/h4&gt;
-
-&lt;p&gt;根据 html 代码，编写我们所需要的 css 样式。&lt;/p&gt;
-.mp-dialog {
-	position: absolute;
-	z-index: 1000;
-	width: 282px;
-	height: 260px;
-	background: #fff;
-	border-radius: 5px;
-	border: 1px solid #ccc;
-	display: none;
-}
-.mp-title {
-	text-align: center;
-	line-height: 40px;
-	background: #92cade;
-	color: #fff;
-	border-radius: 5px 5px 0 0;
-}
-.mp-title i {
-	cursor: pointer;
-}
-.mp-content ul {
-	list-style: none;
-	margin: 0;
-	padding: 20px;
-}
-.mp-content li {
-	text-align: center;
-	line-height: 48px;
-	float: left;
-	margin: 6px;
-	padding: 0;
-	width: 48px;
-	height: 48px;
-	border: 2px dotted #ccc;
-	cursor: pointer;
-	border-radius: 5px;
-}
-.mp-content li:hover, .mp-content li.active {
-	background: #f5f9fc;
-	border: 2px dotted #ffaaaa;
-}
-
-&lt;h4 id=&#34;3-编写基本的-js-事件监听:ad5eee46152d62e3e061bf4e3d35a595&#34;&gt;3. 编写基本的 js 事件监听&lt;/h4&gt;
-
-&lt;p&gt;我们需要对上一年和下一年进行事件监听，并显示我们想要的年份。&lt;/p&gt;
-&lt;div class=&#34;mp-title&#34;&gt;
-	&lt;i class=&#34;mp-year-prev glyphicon glyphicon-circle-arrow-left&#34;&gt;&lt;/i&gt;
-	&lt;span&gt;2013&lt;/span&gt;
-	&lt;i class=&#34;mp-year-next glyphicon glyphicon-circle-arrow-right&#34;&gt;&lt;/i&gt;
-&lt;/div&gt;
-
-&lt;p&gt;这里添加了 mp-year-prev 和 mp-year-next 两个类。&lt;/p&gt;
-var year = 2013;
-$(&#39;.mp-year-prev&#39;).click(function() {
-	year--;
-	$(&#39;.mp-title span&#39;).text(year);
-});
-$(&#39;.mp-year-next&#39;).click(function() {
-	year++;
-	$(&#39;.mp-title span&#39;).text(year);
-});
-
-&lt;p&gt;我们在月份中加上了 data-month 属性，方便知道是选择哪个月份。&lt;/p&gt;
-&lt;li data-month=&#34;0&#34;&gt;一&lt;/li&gt;
-&lt;li data-month=&#34;1&#34;&gt;二&lt;/li&gt;
-...
-&lt;li data-month=&#34;11&#34;&gt;十二&lt;/li&gt;
-
-&lt;p&gt;并添加对月份选择的监听。&lt;/p&gt;
-$(&#39;.mp-content li&#39;).click(function() {
-	console.log($(this).data);
-});
-
-&lt;h4 id=&#34;4-封装成-jquery-插件:ad5eee46152d62e3e061bf4e3d35a595&#34;&gt;4. 封装成 jQuery 插件&lt;/h4&gt;
-
-&lt;p&gt;自己写 jQuery 插件的时候有个基本的模块，详细见
-&lt;a href=&#34;https://gist.github.com/wenzhixin/7634953&#34;&gt;源码&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;需要做的事情：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;将基本的 html 让 js 来自动生成&lt;/li&gt;
-&lt;li&gt;监听事件使用 $el.off(&amp;lsquo;click&amp;rsquo;).on(&amp;lsquo;click&amp;rsquo;) 或者绑定监听&lt;/li&gt;
-&lt;li&gt;将月份选择器加在 input 或者 div、span 选择器中&lt;/li&gt;
-&lt;li&gt;对于 input 使用 val()，对于 div、span 使用 text()&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;至此，我们的&lt;a href=&#34;https://github.com/wenzhixin/bootstrap-monthpicker&#34;&gt;月份选择器插件&lt;/a&gt;就完成了。&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/23/jquery_month_picker/</guid>
+      <description>项目中需要用到月份选择器，找到了几款日期选择器 datepicker， 但是我不需要选择具体的日期，虽然有个可以支持只显示月份的，但是显得比较臃</description>
     </item>
     
     <item>
       <title>jQuery 中 attr() 和 prop() 方法的区别</title>
-      <link>http://blog.wenzhixin.net.cn/2013/05/24/jquery_attr_prop</link>
+      <link>http://blog.wenzhixin.net.cn/2013/05/24/jquery_attr_prop/</link>
       <pubDate>Fri, 24 May 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/05/24/jquery_attr_prop</guid>
-      <description>&lt;p&gt;前几天，有人给 &lt;a href=&#34;http://wenzhixin.net.cn/p/multiple-select/&#34;&gt;Multiple Select 插件&lt;/a&gt; 提了问题：&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/wenzhixin/multiple-select/issues/2&#34;&gt;setSelects doesn&amp;rsquo;t work in Firefox when using jquery 1.9.0&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;一直都在用 jQuery 1.8.3 的版本，没有尝试过 jQuery 1.9.0 的版本。&lt;/p&gt;
-
-&lt;p&gt;于是，开始调试代码，在 1.9.0 的版本中：&lt;/p&gt;
-&lt;input type=&#34;checkbox&#34; /&gt;
-&lt;script&gt;
-    $(function() {
-        $(&#39;input&#39;).click(function() {
-            $(this).attr(&#39;checked&#39;);
-        });
-    });
-&lt;/script&gt;
-
-&lt;p&gt;点击 checkbox，&lt;strong&gt;结果都是 undefined&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;而在 1.8.3 的版本中，&lt;strong&gt;结果是 checked 和 undefined&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;到这里，问题答案找到了，就是使用 attr() 方法的问题，于是查看官方文档，
-才知道从 jQuery 1.6 开始新增了一个方法 prop()，但是一直都没有使用过。&lt;/p&gt;
-
-&lt;p&gt;从中文意思看，两者分别是获取/设置 attributes 和 properties 的方法，那么为什么还要增加 prop() 方法呢？&lt;/p&gt;
-Before jQuery 1.6, the .attr() method sometimes took property values into account when retrieving some attributes, which could cause inconsistent behavior.
-
-&lt;p&gt;因为在 jQuery 1.6 之前，使用 attr() 有时候会出现不一致的行为。&lt;/p&gt;
-
-&lt;p&gt;那么，什么时候使用attr()，什么时候使用prop()？&lt;/p&gt;
-To retrieve and change DOM properties such as the checked, selected, or disabled state of form elements, use the .prop() method.
-
-&lt;p&gt;根据官方的建议：&lt;strong&gt;具有 true 和 false 两个属性的属性，如 checked, selected 或者 disabled 使用prop()，其他的使用 attr()&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;到此，将 attr(&amp;lsquo;checked&amp;rsquo;) 改成 prop(&amp;lsquo;checked&amp;rsquo;) 即可修复提的 issues 了。&lt;/p&gt;
-
-&lt;p&gt;^_^&lt;/p&gt;
-
-&lt;p&gt;等等，貌似问题还没真正解决，为什么开头例子中 jQuery 1.8.3 和 1.9.0 使用 attr() 会有所区别呢？&lt;/p&gt;
-
-&lt;p&gt;想知道他们的区别，最好的办法还是看他们的源代码：&lt;/p&gt;
-
-&lt;p&gt;1.8.3 attr()：&lt;/p&gt;
-attr: function( elem, name, value, pass ) {
-    var ret, hooks, notxml,
-        nType = elem.nodeType;
-
-    // don&#39;t get/set attributes on text, comment and attribute nodes
-    if ( !elem || nType === 3 || nType === 8 || nType === 2 ) {
-        return;
-    }
-
-    if ( pass &amp;&amp; jQuery.isFunction( jQuery.fn[ name ] ) ) {
-        return jQuery( elem )[ name ]( value );
-    }
-
-    // Fallback to prop when attributes are not supported
-    if ( typeof elem.getAttribute === &#34;undefined&#34; ) {
-        return jQuery.prop( elem, name, value );
-    }
-
-    notxml = nType !== 1 || !jQuery.isXMLDoc( elem );
-
-    // All attributes are lowercase
-    // Grab necessary hook if one is defined
-    if ( notxml ) {
-        name = name.toLowerCase();
-        hooks = jQuery.attrHooks[ name ] || ( rboolean.test( name ) ? boolHook : nodeHook );
-    }
-
-    if ( value !== undefined ) {
-
-        if ( value === null ) {
-            jQuery.removeAttr( elem, name );
-            return;
-
-        } else if ( hooks &amp;&amp; &#34;set&#34; in hooks &amp;&amp; notxml &amp;&amp; (ret = hooks.set( elem, value, name )) !== undefined ) {
-            return ret;
-
-        } else {
-            elem.setAttribute( name, value + &#34;&#34; );
-            return value;
-        }
-
-    } else if ( hooks &amp;&amp; &#34;get&#34; in hooks &amp;&amp; notxml &amp;&amp; (ret = hooks.get( elem, name )) !== null ) {
-        return ret;
-
-    } else {
-
-        ret = elem.getAttribute( name );
-
-        // Non-existent attributes return null, we normalize to undefined
-        return ret === null ?
-            undefined :
-            ret;
-    }
-}
-
-&lt;p&gt;1.9.0 attr()：&lt;/p&gt;
-    attr: function( elem, name, value ) {
-    var ret, hooks, notxml,
-        nType = elem.nodeType;
-
-    // don&#39;t get/set attributes on text, comment and attribute nodes
-    if ( !elem || nType === 3 || nType === 8 || nType === 2 ) {
-        return;
-    }
-
-    // Fallback to prop when attributes are not supported
-    if ( typeof elem.getAttribute === &#34;undefined&#34; ) {
-        return jQuery.prop( elem, name, value );
-    }
-
-    notxml = nType !== 1 || !jQuery.isXMLDoc( elem );
-
-    // All attributes are lowercase
-    // Grab necessary hook if one is defined
-    if ( notxml ) {
-        name = name.toLowerCase();
-        hooks = jQuery.attrHooks[ name ] || ( rboolean.test( name ) ? boolHook : nodeHook );
-    }
-
-    if ( value !== undefined ) {
-
-        if ( value === null ) {
-            jQuery.removeAttr( elem, name );
-
-        } else if ( hooks &amp;&amp; notxml &amp;&amp; &#34;set&#34; in hooks &amp;&amp; (ret = hooks.set( elem, value, name )) !== undefined ) {
-            return ret;
-
-        } else {
-            elem.setAttribute( name, value + &#34;&#34; );
-            return value;
-        }
-
-    } else if ( hooks &amp;&amp; notxml &amp;&amp; &#34;get&#34; in hooks &amp;&amp; (ret = hooks.get( elem, name )) !== null ) {
-        return ret;
-
-    } else {
-
-        // In IE9+, Flash objects don&#39;t have .getAttribute (#12945)
-        // Support: IE9+
-        if ( typeof elem.getAttribute !== &#34;undefined&#34; ) {
-            ret =  elem.getAttribute( name );
-        }
-
-        // Non-existent attributes return null, we normalize to undefined
-        return ret == null ?
-            undefined :
-            ret;
-    }
-}
-
-&lt;p&gt;1.8.3 和 1.9.0 的 prop() 是一样的:&lt;/p&gt;
-prop: function( elem, name, value ) {
-    var ret, hooks, notxml,
-        nType = elem.nodeType;
-
-    // don&#39;t get/set properties on text, comment and attribute nodes
-    if ( !elem || nType === 3 || nType === 8 || nType === 2 ) {
-        return;
-    }
-
-    notxml = nType !== 1 || !jQuery.isXMLDoc( elem );
-
-    if ( notxml ) {
-        // Fix name and attach hooks
-        name = jQuery.propFix[ name ] || name;
-        hooks = jQuery.propHooks[ name ];
-    }
-
-    if ( value !== undefined ) {
-        if ( hooks &amp;&amp; &#34;set&#34; in hooks &amp;&amp; (ret = hooks.set( elem, value, name )) !== undefined ) {
-            return ret;
-
-        } else {
-            return ( elem[ name ] = value );
-        }
-
-    } else {
-        if ( hooks &amp;&amp; &#34;get&#34; in hooks &amp;&amp; (ret = hooks.get( elem, name )) !== null ) {
-            return ret;
-
-        } else {
-            return elem[ name ];
-        }
-    }
-}
-
-&lt;p&gt;首先，我们看下 &lt;strong&gt;attr() 和 prop() 的区别&lt;/strong&gt;：&lt;/p&gt;
-
-&lt;p&gt;attr() 里面，最关键的两行代码&lt;/p&gt;
-elem.setAttribute( name, value + &#34;&#34; );
-
-ret =  elem.getAttribute( name );
-
-&lt;p&gt;很明显的看出来，使用的 DOM 的 API setAttribute() 和 getAttribute() 方法操作的属性元素节点。&lt;/p&gt;
-
-&lt;p&gt;prop() 里面，最关键的两行代码&lt;/p&gt;
-return ( elem[ name ] = value );
-
-return elem[ name ];
-
-&lt;p&gt;可以理解为 document.getElementById(el)[name] = value，这是转化成 element 的一个属性。&lt;/p&gt;
-
-&lt;p&gt;对比调试 &lt;strong&gt;1.9.0 和 1.8.3 的 attr() 方法&lt;/strong&gt;，发现两者的区别在于&lt;/p&gt;
-hooks.get( elem, name ))
-
-&lt;p&gt;返回的值不一样，具体的实现：&lt;/p&gt;
-
-&lt;p&gt;1.8.3 中&lt;/p&gt;
-boolHook = {
-    get: function( elem, name ) {
-        // Align boolean attributes with corresponding properties
-        // Fall back to attribute presence where some booleans are not supported
-        var attrNode,
-            property = jQuery.prop( elem, name );
-        return property === true || typeof property !== &#34;boolean&#34; &amp;&amp; ( attrNode = elem.getAttributeNode(name) ) &amp;&amp; attrNode.nodeValue !== false ?
-            name.toLowerCase() :
-            undefined;
-    }
-}
-
-&lt;p&gt;1.9.0 中&lt;/p&gt;
-boolHook = {
-    get: function( elem, name ) {
-        var
-            // Use .prop to determine if this attribute is understood as boolean
-            prop = jQuery.prop( elem, name ),
-
-            // Fetch it accordingly
-            attr = typeof prop === &#34;boolean&#34; &amp;&amp; elem.getAttribute( name ),
-            detail = typeof prop === &#34;boolean&#34; ?
-
-                getSetInput &amp;&amp; getSetAttribute ?
-                    attr != null :
-                    // oldIE fabricates an empty string for missing boolean attributes
-                    // and conflates checked/selected into attroperties
-                    ruseDefault.test( name ) ?
-                        elem[ jQuery.camelCase( &#34;default-&#34; + name ) ] :
-                        !!attr :
-
-                // fetch an attribute node for properties not recognized as boolean
-                elem.getAttributeNode( name );
-
-        return detail &amp;&amp; detail.value !== false ?
-            name.toLowerCase() :
-            undefined;
-    }
-}
-
-&lt;p&gt;由此可见，1.9.0 开始不建议使用 attr() 来对具有 true 和 false 两个属性的属性进行操作了。&lt;/p&gt;
-
-&lt;p&gt;那么我们的&lt;strong&gt;结论&lt;/strong&gt;是：&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;具有 true 和 false 两个属性的属性，如 checked, selected 或者 disabled 使用prop()，其他的使用 attr()，具体见下表：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2013/05/24/attr_prop.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;注：本文中的大部分观点以及例子属于个人理解，难免还有不准确的地方，欢迎有相关研究的同行指正。&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2013/05/24/jquery_attr_prop/</guid>
+      <description>前几天，有人给 Multiple Select 插件 提了问题： setSelects doesn&amp;rsquo;t work in Firefox when using jquery 1.9.0 一直都在用 jQuery 1.8.3 的版本，没有尝试过 jQuery 1.9.0 的版本。 于是，开始调试代码，在 1.9.0 的版本中： 1 2 3 4 5 6</description>
     </item>
     
     <item>
       <title>图片查看弹出框 (jQuery 插件)</title>
-      <link>http://blog.wenzhixin.net.cn/2012/12/02/jquery_imagebox</link>
+      <link>http://blog.wenzhixin.net.cn/2012/12/02/jquery_imagebox/</link>
       <pubDate>Sun, 02 Dec 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/12/02/jquery_imagebox</guid>
-      <description>
-
-&lt;h3 id=&#34;参数:fa269ff73629026d8a4c5a02cd855e66&#34;&gt;参数&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;linkTitle: 点击图片提示信息，默认为 &amp;lsquo;点击查看原图&amp;rsquo;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;direction: 箭头显示方向，水平方向 (horizontal) 和垂直方向 (vertical)，默认为 &amp;lsquo;horizontal&amp;rsquo;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;如何使用:fa269ff73629026d8a4c5a02cd855e66&#34;&gt;如何使用&lt;/h3&gt;
-
-&lt;h4 id=&#34;1-导入:fa269ff73629026d8a4c5a02cd855e66&#34;&gt;1、导入&lt;/h4&gt;
-&lt;link rel=&#34;stylesheet&#34; href=&#34;css/jquery.imagebox.css&#34; /&gt;
-&lt;script type=&#34;text/javascript&#34; src=&#34;js/jquery.imagebox.js&#34;&gt;&lt;/script&gt;
-
-&lt;h4 id=&#34;2-使用:fa269ff73629026d8a4c5a02cd855e66&#34;&gt;2、使用&lt;/h4&gt;
-$(&#39;element&#39;).imagebox();
-
-$(&#39;element&#39;).imagebox({
-    linkTitle: &#39;查看原图&#39;,
-    direction: &#39;vertical&#39;
-});
-
-&lt;h4 id=&#34;3-截图:fa269ff73629026d8a4c5a02cd855e66&#34;&gt;3、截图&lt;/h4&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2012/12/02/2.png&#34; alt=&#34;截图2&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2012/12/02/1.png&#34; alt=&#34;截图1&#34; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;源码:fa269ff73629026d8a4c5a02cd855e66&#34;&gt;源码&lt;/h3&gt;
-
-&lt;p&gt;源码见 &lt;a href=&#34;https://github.com/wenzhixin/jquery.imagebox&#34;&gt;github&lt;/a&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;特别感谢：&lt;a href=&#34;http://weibo.com/u/2191714780&#34;&gt;echo&lt;/a&gt; 的提供的图片切换功能，以及图片素材&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2012/12/02/jquery_imagebox/</guid>
+      <description>参数 linkTitle: 点击图片提示信息，默认为 &amp;lsquo;点击查看原图&amp;rsquo; direction: 箭头显示方向，水平方向 (horizontal) 和垂直方向 (vertical)，默认为 &amp;lsquo;horizontal&amp;rsquo; 如何</description>
     </item>
     
     <item>
       <title>图片查看弹出框 (jQuery 插件)</title>
-      <link>http://blog.wenzhixin.net.cn/2012/12/02/jquery_imagebox</link>
+      <link>http://blog.wenzhixin.net.cn/2012/12/02/jquery_imagebox/</link>
       <pubDate>Sun, 02 Dec 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/12/02/jquery_imagebox</guid>
-      <description>
-
-&lt;h3 id=&#34;参数:fa269ff73629026d8a4c5a02cd855e66&#34;&gt;参数&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;linkTitle: 点击图片提示信息，默认为 &amp;lsquo;点击查看原图&amp;rsquo;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;direction: 箭头显示方向，水平方向 (horizontal) 和垂直方向 (vertical)，默认为 &amp;lsquo;horizontal&amp;rsquo;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;如何使用:fa269ff73629026d8a4c5a02cd855e66&#34;&gt;如何使用&lt;/h3&gt;
-
-&lt;h4 id=&#34;1-导入:fa269ff73629026d8a4c5a02cd855e66&#34;&gt;1、导入&lt;/h4&gt;
-&lt;link rel=&#34;stylesheet&#34; href=&#34;css/jquery.imagebox.css&#34; /&gt;
-&lt;script type=&#34;text/javascript&#34; src=&#34;js/jquery.imagebox.js&#34;&gt;&lt;/script&gt;
-
-&lt;h4 id=&#34;2-使用:fa269ff73629026d8a4c5a02cd855e66&#34;&gt;2、使用&lt;/h4&gt;
-$(&#39;element&#39;).imagebox();
-
-$(&#39;element&#39;).imagebox({
-    linkTitle: &#39;查看原图&#39;,
-    direction: &#39;vertical&#39;
-});
-
-&lt;h4 id=&#34;3-截图:fa269ff73629026d8a4c5a02cd855e66&#34;&gt;3、截图&lt;/h4&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2012/12/02/2.png&#34; alt=&#34;截图2&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2012/12/02/1.png&#34; alt=&#34;截图1&#34; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;源码:fa269ff73629026d8a4c5a02cd855e66&#34;&gt;源码&lt;/h3&gt;
-
-&lt;p&gt;源码见 &lt;a href=&#34;https://github.com/wenzhixin/jquery.imagebox&#34;&gt;github&lt;/a&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;特别感谢：&lt;a href=&#34;http://weibo.com/u/2191714780&#34;&gt;echo&lt;/a&gt; 的提供的图片切换功能，以及图片素材&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2012/12/02/jquery_imagebox/</guid>
+      <description>参数 linkTitle: 点击图片提示信息，默认为 &amp;lsquo;点击查看原图&amp;rsquo; direction: 箭头显示方向，水平方向 (horizontal) 和垂直方向 (vertical)，默认为 &amp;lsquo;horizontal&amp;rsquo; 如何</description>
     </item>
     
     <item>
       <title>Twitter Bootstrap 资源汇总</title>
-      <link>http://blog.wenzhixin.net.cn/2012/09/18/twitter_bootstrap_resources_aggregation</link>
+      <link>http://blog.wenzhixin.net.cn/2012/09/18/twitter_bootstrap_resources_aggregation/</link>
       <pubDate>Tue, 18 Sep 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/09/18/twitter_bootstrap_resources_aggregation</guid>
-      <description>
-
-&lt;h4 id=&#34;1-twitter-bootstrap:5fa1e0546286371bcbf464f1fdedcc31&#34;&gt;1、Twitter Bootstrap&lt;/h4&gt;
-
-&lt;h4 id=&#34;2-bootstrap-插件:5fa1e0546286371bcbf464f1fdedcc31&#34;&gt;2、Bootstrap 插件&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;日期选择器：Datepicker for Bootstrap​&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;颜色选择器：Colorpicker for Bootstrap​&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;对话框：bootboxjs​&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;3-boostrap-主题相关:5fa1e0546286371bcbf464f1fdedcc31&#34;&gt;3、Boostrap 主题相关&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;颜色定制：Bootswatch&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;生成自定义样式：StyleBootstrap​&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;自定义按钮：Beautiful Buttons for Bootstrap&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;bootstrap配套图标：&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://fortawesome.github.com/Font-Awesome/  &#34;&gt;http://fortawesome.github.com/Font-Awesome/  &lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://fontello.com &#34;&gt;http://fontello.com &lt;/a&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;4-jquery-bootstrap:5fa1e0546286371bcbf464f1fdedcc31&#34;&gt;4、jQuery Bootstrap&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;jQuery UI Bootstrap 主题：jQuery UI Bootstrap
-​&lt;/li&gt;
-&lt;li&gt;jQuery 手机 Bootstrap 主题：jQuery Mobile Bootstrap Theme&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2012/09/18/twitter_bootstrap_resources_aggregation/</guid>
+      <description>1、Twitter Bootstrap 2、Bootstrap 插件 日期选择器：Datepicker for Bootstrap​ 颜色选择器：Colorpicker for Bo</description>
     </item>
     
     <item>
       <title>Twitter Bootstrap 资源汇总</title>
-      <link>http://blog.wenzhixin.net.cn/2012/09/18/twitter_bootstrap_resources_aggregation</link>
+      <link>http://blog.wenzhixin.net.cn/2012/09/18/twitter_bootstrap_resources_aggregation/</link>
       <pubDate>Tue, 18 Sep 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/09/18/twitter_bootstrap_resources_aggregation</guid>
-      <description>
-
-&lt;h4 id=&#34;1-twitter-bootstrap:5fa1e0546286371bcbf464f1fdedcc31&#34;&gt;1、Twitter Bootstrap&lt;/h4&gt;
-
-&lt;h4 id=&#34;2-bootstrap-插件:5fa1e0546286371bcbf464f1fdedcc31&#34;&gt;2、Bootstrap 插件&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;日期选择器：Datepicker for Bootstrap​&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;颜色选择器：Colorpicker for Bootstrap​&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;对话框：bootboxjs​&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;3-boostrap-主题相关:5fa1e0546286371bcbf464f1fdedcc31&#34;&gt;3、Boostrap 主题相关&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;颜色定制：Bootswatch&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;生成自定义样式：StyleBootstrap​&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;自定义按钮：Beautiful Buttons for Bootstrap&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;bootstrap配套图标：&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://fortawesome.github.com/Font-Awesome/  &#34;&gt;http://fortawesome.github.com/Font-Awesome/  &lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://fontello.com &#34;&gt;http://fontello.com &lt;/a&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;4-jquery-bootstrap:5fa1e0546286371bcbf464f1fdedcc31&#34;&gt;4、jQuery Bootstrap&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;jQuery UI Bootstrap 主题：jQuery UI Bootstrap
-​&lt;/li&gt;
-&lt;li&gt;jQuery 手机 Bootstrap 主题：jQuery Mobile Bootstrap Theme&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2012/09/18/twitter_bootstrap_resources_aggregation/</guid>
+      <description>1、Twitter Bootstrap 2、Bootstrap 插件 日期选择器：Datepicker for Bootstrap​ 颜色选择器：Colorpicker for Bo</description>
     </item>
     
     <item>
       <title>jQuery 插件使用小记（使用、问题、解决）</title>
-      <link>http://blog.wenzhixin.net.cn/2012/09/16/using_jquery_plugin</link>
+      <link>http://blog.wenzhixin.net.cn/2012/09/16/using_jquery_plugin/</link>
       <pubDate>Sun, 16 Sep 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/09/16/using_jquery_plugin</guid>
-      <description>
-
-&lt;h4 id=&#34;1-bootstrap-js-v2-1-0:2f6fc3fb562ad847d5e63a610c7d2114&#34;&gt;1、bootstrap.js (v2.1.0)&lt;/h4&gt;
-
-&lt;p&gt;问题：&lt;/p&gt;
-
-&lt;p&gt;bootstrap dropdown 菜单使用 on 或者 live 无效&lt;/p&gt;
-
-&lt;p&gt;解决：&lt;/p&gt;
-
-&lt;p&gt;注释 .on(&amp;lsquo;click.dropdown touchstart.dropdown.data-api&amp;rsquo;, &amp;lsquo;.dropdown&amp;rsquo;, function (e) { e.stopPropagation() }) (第 720 行)&lt;/p&gt;
-
-&lt;p&gt;2、&amp;hellip;&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2012/09/16/using_jquery_plugin/</guid>
+      <description>1、bootstrap.js (v2.1.0) 问题： bootstrap dropdown 菜单使用 on 或者 live 无效 解决： 注释 .on(&amp;lsquo;click.dropdown touchstart.dropdown.data-api&amp;rsquo;, &amp;lsquo;.dropdown&amp;rsquo;, function (e) { e.stopPropagation() }) (第 720 行) 2、&amp;hellip;</description>
     </item>
     
     <item>
       <title>jQuery 插件使用小记（使用、问题、解决）</title>
-      <link>http://blog.wenzhixin.net.cn/2012/09/16/using_jquery_plugin</link>
+      <link>http://blog.wenzhixin.net.cn/2012/09/16/using_jquery_plugin/</link>
       <pubDate>Sun, 16 Sep 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/09/16/using_jquery_plugin</guid>
-      <description>
-
-&lt;h4 id=&#34;1-bootstrap-js-v2-1-0:2f6fc3fb562ad847d5e63a610c7d2114&#34;&gt;1、bootstrap.js (v2.1.0)&lt;/h4&gt;
-
-&lt;p&gt;问题：&lt;/p&gt;
-
-&lt;p&gt;bootstrap dropdown 菜单使用 on 或者 live 无效&lt;/p&gt;
-
-&lt;p&gt;解决：&lt;/p&gt;
-
-&lt;p&gt;注释 .on(&amp;lsquo;click.dropdown touchstart.dropdown.data-api&amp;rsquo;, &amp;lsquo;.dropdown&amp;rsquo;, function (e) { e.stopPropagation() }) (第 720 行)&lt;/p&gt;
-
-&lt;p&gt;2、&amp;hellip;&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2012/09/16/using_jquery_plugin/</guid>
+      <description>1、bootstrap.js (v2.1.0) 问题： bootstrap dropdown 菜单使用 on 或者 live 无效 解决： 注释 .on(&amp;lsquo;click.dropdown touchstart.dropdown.data-api&amp;rsquo;, &amp;lsquo;.dropdown&amp;rsquo;, function (e) { e.stopPropagation() }) (第 720 行) 2、&amp;hellip;</description>
     </item>
     
     <item>
       <title>《锋利的jQuery》学习笔记——jQuery插件</title>
-      <link>http://blog.wenzhixin.net.cn/2012/03/14/sharp_jquery_study_notes_jquery_plugin</link>
+      <link>http://blog.wenzhixin.net.cn/2012/03/14/sharp_jquery_study_notes_jquery_plugin/</link>
       <pubDate>Wed, 14 Mar 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/03/14/sharp_jquery_study_notes_jquery_plugin</guid>
-      <description>&lt;p&gt;​&lt;strong&gt;1. 插件的种类&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;(1)封装对象方法的插件：将对象方法封装起来，用于对通过选择器获取的 jQuery
-对象进行操作&lt;/p&gt;
-
-&lt;p&gt;(2)封装全局函数的插件：将独立的函数加到 jQuery 命名空间下&lt;/p&gt;
-
-&lt;p&gt;(3)选择器插件&lt;/p&gt;
-
-&lt;p&gt;​&lt;strong&gt;2. 插件的基本要点&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt; • jQuery 插件的文件名推荐命名为 jquery.[插件名].js&lt;/p&gt;
-
-&lt;p&gt; • 所有的对象方法都应当附加到 jQuery.fn
-对象上，而所有的全局函数都应当附加到 jQuery 对象本身上&lt;/p&gt;
-
-&lt;p&gt; • 在插件内部，this 指向的是当前通过选择器获取的 jQuery 对象&lt;/p&gt;
-
-&lt;p&gt; • 可以用 this.each 来遍历所有元素&lt;/p&gt;
-
-&lt;p&gt; • 所有的方法或函数插件，都应当以分号结尾&lt;/p&gt;
-
-&lt;p&gt; • 插件应该返回一个 jQuery 对象，以保证插件的可链式操作&lt;/p&gt;
-
-&lt;p&gt; • 避免在插件内部使用作为 jQuery 对象的别名，而应使用完整的 jQuery
-来表示&lt;/p&gt;
-
-&lt;p&gt; • 使用闭包技巧&lt;/p&gt;
-
-&lt;p&gt;​&lt;strong&gt;3. 插件中的闭包&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;(1)闭包指的是：允许使用内部函数，这些内部函数可以访问它们所在的外部函数中的所有局部变量、参数和生命的其他内部函数，当其中一个这样的内部函数在包含它们的外部函数之外被调用时，就会形成闭包&lt;/p&gt;
-(function() {
-	/\*这里置放代码\*/
-})();
-
-&lt;p&gt;(2)jQuery 中的闭包，为了更好的兼容性，在开始前加分号&lt;/p&gt;
-;(function() {
-	/\*这里置放代码\*/
-})(jQuery);
-
-&lt;p&gt;​&lt;strong&gt;4. jQuery 插件的机制&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;(1)jQuery.fn.extend(Object)-封装对象方法&lt;/p&gt;
-;(function() {
-	$.fn.exetend({
-		func1: function() {
-			/\*这里置放代码\*/
-			return this;
-		},
-
-		func2: function() {
-			/\*这里置放代码\*/
-			return this.each(function() {
-				/\*这里置放代码\*/
-			});
-		},
-
-		...
-	}
-})(jQuery);
-
-&lt;p&gt; • 插件内部的 this 指向的是 jQuery 对象&lt;/p&gt;
-
-&lt;p&gt; • 插件扩展函数应该返回 jQuery 对象，即
-this，从而使其具有可链接性；当选择器匹配多个元素时，应返回每个匹配匹配元素，即
-this.each(function)&lt;/p&gt;
-
-&lt;p&gt; • 使用：(&amp;ldquo;element&amp;rdquo;).func1(), (&amp;ldquo;element&amp;rdquo;).func2(), &amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;(2)jQuery.extend(Object)-封装全局函数或者封装选择器&lt;/p&gt;
-;(function() {
-	$.exetend({
-		func1: function() {
-			/\*这里置放代码\*/
-			return this;
-		},
-
-		func2: function() {
-			/\*这里置放代码\*/
-			return this;
-		},
-		...
-	});
-})(jQuery);
-
-&lt;p&gt; • 使用：.func1(), .func2(), &amp;hellip; 或者 jQuery.func1(), jQuery.func2(),
-&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;(3)jQuery.extend(target, obj1, obj2, &amp;hellip;)-用于扩展已有的 Object
-对象，用一个或多个对象来扩展一个对象，返回被扩展的对象。经常被用于设置插件方法的一系列默认参数，如：&lt;/p&gt;
-function func(options) {
-	options = jQuery.exetend({
-		key1: value1,
-		key2: value2,
-		...                /\*默认参数\*/
-	}, options);
-}
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2012/03/14/sharp_jquery_study_notes_jquery_plugin/</guid>
+      <description>​1. 插件的种类 (1)封装对象方法的插件：将对象方法封装起来，用于对通过选择器获取的 jQuery 对象进行操作 (2)封装全局函数的插件：将独立的函数加到</description>
     </item>
     
     <item>
       <title>《锋利的jQuery》学习笔记——jQuery插件</title>
-      <link>http://blog.wenzhixin.net.cn/2012/03/14/sharp_jquery_study_notes_jquery_plugin</link>
+      <link>http://blog.wenzhixin.net.cn/2012/03/14/sharp_jquery_study_notes_jquery_plugin/</link>
       <pubDate>Wed, 14 Mar 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/03/14/sharp_jquery_study_notes_jquery_plugin</guid>
-      <description>&lt;p&gt;​&lt;strong&gt;1. 插件的种类&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;(1)封装对象方法的插件：将对象方法封装起来，用于对通过选择器获取的 jQuery
-对象进行操作&lt;/p&gt;
-
-&lt;p&gt;(2)封装全局函数的插件：将独立的函数加到 jQuery 命名空间下&lt;/p&gt;
-
-&lt;p&gt;(3)选择器插件&lt;/p&gt;
-
-&lt;p&gt;​&lt;strong&gt;2. 插件的基本要点&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt; • jQuery 插件的文件名推荐命名为 jquery.[插件名].js&lt;/p&gt;
-
-&lt;p&gt; • 所有的对象方法都应当附加到 jQuery.fn
-对象上，而所有的全局函数都应当附加到 jQuery 对象本身上&lt;/p&gt;
-
-&lt;p&gt; • 在插件内部，this 指向的是当前通过选择器获取的 jQuery 对象&lt;/p&gt;
-
-&lt;p&gt; • 可以用 this.each 来遍历所有元素&lt;/p&gt;
-
-&lt;p&gt; • 所有的方法或函数插件，都应当以分号结尾&lt;/p&gt;
-
-&lt;p&gt; • 插件应该返回一个 jQuery 对象，以保证插件的可链式操作&lt;/p&gt;
-
-&lt;p&gt; • 避免在插件内部使用作为 jQuery 对象的别名，而应使用完整的 jQuery
-来表示&lt;/p&gt;
-
-&lt;p&gt; • 使用闭包技巧&lt;/p&gt;
-
-&lt;p&gt;​&lt;strong&gt;3. 插件中的闭包&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;(1)闭包指的是：允许使用内部函数，这些内部函数可以访问它们所在的外部函数中的所有局部变量、参数和生命的其他内部函数，当其中一个这样的内部函数在包含它们的外部函数之外被调用时，就会形成闭包&lt;/p&gt;
-(function() {
-	/\*这里置放代码\*/
-})();
-
-&lt;p&gt;(2)jQuery 中的闭包，为了更好的兼容性，在开始前加分号&lt;/p&gt;
-;(function() {
-	/\*这里置放代码\*/
-})(jQuery);
-
-&lt;p&gt;​&lt;strong&gt;4. jQuery 插件的机制&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;(1)jQuery.fn.extend(Object)-封装对象方法&lt;/p&gt;
-;(function() {
-	$.fn.exetend({
-		func1: function() {
-			/\*这里置放代码\*/
-			return this;
-		},
-
-		func2: function() {
-			/\*这里置放代码\*/
-			return this.each(function() {
-				/\*这里置放代码\*/
-			});
-		},
-
-		...
-	}
-})(jQuery);
-
-&lt;p&gt; • 插件内部的 this 指向的是 jQuery 对象&lt;/p&gt;
-
-&lt;p&gt; • 插件扩展函数应该返回 jQuery 对象，即
-this，从而使其具有可链接性；当选择器匹配多个元素时，应返回每个匹配匹配元素，即
-this.each(function)&lt;/p&gt;
-
-&lt;p&gt; • 使用：(&amp;ldquo;element&amp;rdquo;).func1(), (&amp;ldquo;element&amp;rdquo;).func2(), &amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;(2)jQuery.extend(Object)-封装全局函数或者封装选择器&lt;/p&gt;
-;(function() {
-	$.exetend({
-		func1: function() {
-			/\*这里置放代码\*/
-			return this;
-		},
-
-		func2: function() {
-			/\*这里置放代码\*/
-			return this;
-		},
-		...
-	});
-})(jQuery);
-
-&lt;p&gt; • 使用：.func1(), .func2(), &amp;hellip; 或者 jQuery.func1(), jQuery.func2(),
-&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;(3)jQuery.extend(target, obj1, obj2, &amp;hellip;)-用于扩展已有的 Object
-对象，用一个或多个对象来扩展一个对象，返回被扩展的对象。经常被用于设置插件方法的一系列默认参数，如：&lt;/p&gt;
-function func(options) {
-	options = jQuery.exetend({
-		key1: value1,
-		key2: value2,
-		...                /\*默认参数\*/
-	}, options);
-}
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2012/03/14/sharp_jquery_study_notes_jquery_plugin/</guid>
+      <description>​1. 插件的种类 (1)封装对象方法的插件：将对象方法封装起来，用于对通过选择器获取的 jQuery 对象进行操作 (2)封装全局函数的插件：将独立的函数加到</description>
     </item>
     
     <item>
       <title>《锋利的jQuery》学习笔记——jQuery与Ajax应用</title>
-      <link>http://blog.wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_and_ajax_application</link>
+      <link>http://blog.wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_and_ajax_application/</link>
       <pubDate>Tue, 13 Mar 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_and_ajax_application</guid>
-      <description>&lt;p&gt;​&lt;strong&gt;1. 什么是 Ajax？&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt; • Ajax 全称为”Asynchronous Javascript and XML”（异步 Javascript 和
-XML），并不是指一种单一的技术，而是有机地利用了一系列交互式网页应用相关的技术所形成的结合体。&lt;/p&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;p&gt;​&lt;strong&gt;2. Ajax 的优势和不足&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt; • Ajax 的优势：&lt;/p&gt;
-
-&lt;p&gt;(1)不需要插件支持；(2)优秀的用户体验；(3)提高
-Web程序的性能；(4)减轻服务器和宽带的负担&lt;/p&gt;
-
-&lt;p&gt; • Ajax 的不足&lt;/p&gt;
-
-&lt;p&gt;(1)  浏览器对 XMLHttpRequest
-对象的支持度不足；(2)破坏浏览器前进、后退按钮的正常工作；(3)对搜索引擎的支持不足&lt;/p&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;p&gt;​&lt;strong&gt;3. Ajax的XMLHttpRequest对象&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt; • Ajax 的核心是 XMLHttpRequest 对象，是 Ajax
-实现的关键——发送异步请求、接收响应及执行回调。&lt;/p&gt;
-
-&lt;p&gt;(1)readyState 属性-标识当前对象正处于什么状态&lt;/p&gt;
-
-&lt;p&gt;(2)responseText 属性-包含客户端接收到的 HTTP 响应的文本内容&lt;/p&gt;
-
-&lt;p&gt;(3)responseXML 属性-描述被 XMLHttpRequest 解析后的 XML 文档的属性&lt;/p&gt;
-
-&lt;p&gt;(4)status 属性-描述 HTTP 的状态码&lt;/p&gt;
-
-&lt;p&gt;(5)statusText 属性-描述了 HTTP 的状态代码文本&lt;/p&gt;
-
-&lt;p&gt;(6)onreadystatechange 事件-当 readyState 属性值改变时，触发该事件&lt;/p&gt;
-
-&lt;p&gt;(7)open(method, uri, async, username, password) 方法-对 XMLhttpRequest
-对象进行初始化&lt;/p&gt;
-
-&lt;p&gt;(8)send(params) 方法-按照 open() 方法设定的参数将请求进行发送&lt;/p&gt;
-
-&lt;p&gt;(9)abort() 方法-暂停一个 HttpRequest 的发送请求或者接收，并将
-XMLHttpRequest 对象设置为初始化状态&lt;/p&gt;
-
-&lt;p&gt;(10)setRequestHeader() 方法-设置请求的头部信息&lt;/p&gt;
-
-&lt;p&gt;(11)getResponseHeader() 方法-获取 HttpResponse 的头部信息&lt;/p&gt;
-
-&lt;p&gt;​&lt;strong&gt;4. jQuery 中的 Ajax&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;(1)load(url[, data][, callback])&lt;/p&gt;
-
-&lt;p&gt; • url-请求 HTML 页面的 URL 地址&lt;/p&gt;
-
-&lt;p&gt; • data-发送至服务器的 key/value 数据，可选，没有设置参数表示使用 GET
-方式，设置参数表示使用 POST 方式&lt;/p&gt;
-
-&lt;p&gt; • callback(responseText, textStatus,
-XMLHttpRequest)-请求完成时的回调函数，参数分别表示：请求返回的内容、请求状态（success、error、notmodified、timeout）和
-XMLHttpRequest 对象&lt;/p&gt;
-
-&lt;p&gt;(2)&lt;/p&gt;
-
-&lt;p&gt;$.get(url[, data][, callback][, type])-使用 GET 方式来进行一步请求&lt;/p&gt;
-
-&lt;p&gt;$.post(url[, data][, callback][, type])-使用 POST 方式来进行一步请求&lt;/p&gt;
-
-&lt;p&gt; • url-请求 HTML 页面的 URL 地址&lt;/p&gt;
-
-&lt;p&gt; • data-发送至服务器的 key/value 数据，GET 作为 QueryString 附加到请求
-URL 中，POST 作为 HTTP 消息的实体内容&lt;/p&gt;
-
-&lt;p&gt; • callback(data,
-textStatus)-载入成功时的回调函数，参数分别表示：返回的内容和请求状态（success）&lt;/p&gt;
-
-&lt;p&gt; • type-服务器返回内容的格式，包括 xml、html、script、json、text 和_default&lt;/p&gt;
-
-&lt;p&gt; • 注意：GET 方式请求的数据会被浏览器缓存起来，而 POST 方式不会&lt;/p&gt;
-
-&lt;p&gt;(3)$.getScript(url, callback)-用于动态加载 JS(.js) 文件&lt;/p&gt;
-
-&lt;p&gt;(4)$.getJSON(url, callback)-用于加载 JSON(.json) 文件&lt;/p&gt;
-
-&lt;p&gt;(5)$.ajax(options)-jQuery 最底层的 Ajax 实现&lt;/p&gt;
-
-&lt;p&gt; • 参数 options 以 key/value 的形式存在：&lt;/p&gt;
-
-&lt;p&gt; • url：发送请求的地址&lt;/p&gt;
-
-&lt;p&gt; • type：请求方式（POST 或 GET）默认为 GET&lt;/p&gt;
-
-&lt;p&gt; • timeout：设置请求超时时间（毫秒）&lt;/p&gt;
-
-&lt;p&gt; • data：发送到服务器的数据，默认会将不是字符串会自动转换为字符串。GET
-方式将附加在 URL 后&lt;/p&gt;
-
-&lt;p&gt; •
-dataType：预期服务器返回的数据类型（xml、html、script、json、jsonp、text），默认返回
-responeXML 或 responseText&lt;/p&gt;
-
-&lt;p&gt; • beforeSend：function(XMLHttpRequest)，发送请求前触发的事件&lt;/p&gt;
-
-&lt;p&gt; • complete：function(XMLHttpRequest，textStatus)，请求完成后调用的回调函数（请求成功或失败都调用）&lt;/p&gt;
-
-&lt;p&gt; • success：function(data, textStatus)，请求成功后调用的回调函数&lt;/p&gt;
-
-&lt;p&gt; • error：function(XMLHttpRequest, textStatus,
-errorThrown)，请求失败时被调用的回调函数&lt;/p&gt;
-
-&lt;p&gt; • global：默认为 true，表示是否触发全局 Ajax 事件&lt;/p&gt;
-
-&lt;p&gt;​&lt;strong&gt;5. 序列化方法&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt; • serialize() 方法是用于一个 jQuery 对象，能将 DOM
-元素内容序列化为字符串，用于 Ajax
-请求。经常用于复杂的表单请求中，从而减少代码量&lt;/p&gt;
-
-&lt;p&gt; • serializeArray() 方法是用于一个 jQuery 对象，能将 DOM 元素内容序列化为
-JSON 格式的数据&lt;/p&gt;
-
-&lt;p&gt; • $.param() 方法是用于将一个数组或者对象按照 key/value 进行序列化&lt;/p&gt;
-
-&lt;p&gt;​&lt;strong&gt;6. jQuery 中的 Ajax 全局事件&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt; • $.ajaxStart()-Ajax 请求开始时执行的函数&lt;/p&gt;
-
-&lt;p&gt; • $.ajaxSend()-Ajax 请求发送前执行的函数&lt;/p&gt;
-
-&lt;p&gt; • $.ajaxComplete()-Ajax 请求完成时执行的函数&lt;/p&gt;
-
-&lt;p&gt; • $.ajaxSuccess()-Ajax 请求成功时执行的函数&lt;/p&gt;
-
-&lt;p&gt; • $.ajaxError()-Ajax 请求发生错误时执行的函数&lt;/p&gt;
-
-&lt;p&gt; • $.ajaxStop()-Ajax 请求结束时执行的函数&lt;/p&gt;
-
-&lt;p&gt; &lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_and_ajax_application/</guid>
+      <description>​1. 什么是 Ajax？ • Ajax 全称为”Asynchronous Javascript and XML”（异步 Javascript 和 XML），并不是指一种单一的技术，而是有机地利用了一系列交互</description>
     </item>
     
     <item>
       <title>《锋利的jQuery》学习笔记——jQuery与Ajax应用</title>
-      <link>http://blog.wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_and_ajax_application</link>
+      <link>http://blog.wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_and_ajax_application/</link>
       <pubDate>Tue, 13 Mar 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_and_ajax_application</guid>
-      <description>&lt;p&gt;​&lt;strong&gt;1. 什么是 Ajax？&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt; • Ajax 全称为”Asynchronous Javascript and XML”（异步 Javascript 和
-XML），并不是指一种单一的技术，而是有机地利用了一系列交互式网页应用相关的技术所形成的结合体。&lt;/p&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;p&gt;​&lt;strong&gt;2. Ajax 的优势和不足&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt; • Ajax 的优势：&lt;/p&gt;
-
-&lt;p&gt;(1)不需要插件支持；(2)优秀的用户体验；(3)提高
-Web程序的性能；(4)减轻服务器和宽带的负担&lt;/p&gt;
-
-&lt;p&gt; • Ajax 的不足&lt;/p&gt;
-
-&lt;p&gt;(1)  浏览器对 XMLHttpRequest
-对象的支持度不足；(2)破坏浏览器前进、后退按钮的正常工作；(3)对搜索引擎的支持不足&lt;/p&gt;
-
-&lt;p&gt; &lt;/p&gt;
-
-&lt;p&gt;​&lt;strong&gt;3. Ajax的XMLHttpRequest对象&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt; • Ajax 的核心是 XMLHttpRequest 对象，是 Ajax
-实现的关键——发送异步请求、接收响应及执行回调。&lt;/p&gt;
-
-&lt;p&gt;(1)readyState 属性-标识当前对象正处于什么状态&lt;/p&gt;
-
-&lt;p&gt;(2)responseText 属性-包含客户端接收到的 HTTP 响应的文本内容&lt;/p&gt;
-
-&lt;p&gt;(3)responseXML 属性-描述被 XMLHttpRequest 解析后的 XML 文档的属性&lt;/p&gt;
-
-&lt;p&gt;(4)status 属性-描述 HTTP 的状态码&lt;/p&gt;
-
-&lt;p&gt;(5)statusText 属性-描述了 HTTP 的状态代码文本&lt;/p&gt;
-
-&lt;p&gt;(6)onreadystatechange 事件-当 readyState 属性值改变时，触发该事件&lt;/p&gt;
-
-&lt;p&gt;(7)open(method, uri, async, username, password) 方法-对 XMLhttpRequest
-对象进行初始化&lt;/p&gt;
-
-&lt;p&gt;(8)send(params) 方法-按照 open() 方法设定的参数将请求进行发送&lt;/p&gt;
-
-&lt;p&gt;(9)abort() 方法-暂停一个 HttpRequest 的发送请求或者接收，并将
-XMLHttpRequest 对象设置为初始化状态&lt;/p&gt;
-
-&lt;p&gt;(10)setRequestHeader() 方法-设置请求的头部信息&lt;/p&gt;
-
-&lt;p&gt;(11)getResponseHeader() 方法-获取 HttpResponse 的头部信息&lt;/p&gt;
-
-&lt;p&gt;​&lt;strong&gt;4. jQuery 中的 Ajax&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;(1)load(url[, data][, callback])&lt;/p&gt;
-
-&lt;p&gt; • url-请求 HTML 页面的 URL 地址&lt;/p&gt;
-
-&lt;p&gt; • data-发送至服务器的 key/value 数据，可选，没有设置参数表示使用 GET
-方式，设置参数表示使用 POST 方式&lt;/p&gt;
-
-&lt;p&gt; • callback(responseText, textStatus,
-XMLHttpRequest)-请求完成时的回调函数，参数分别表示：请求返回的内容、请求状态（success、error、notmodified、timeout）和
-XMLHttpRequest 对象&lt;/p&gt;
-
-&lt;p&gt;(2)&lt;/p&gt;
-
-&lt;p&gt;$.get(url[, data][, callback][, type])-使用 GET 方式来进行一步请求&lt;/p&gt;
-
-&lt;p&gt;$.post(url[, data][, callback][, type])-使用 POST 方式来进行一步请求&lt;/p&gt;
-
-&lt;p&gt; • url-请求 HTML 页面的 URL 地址&lt;/p&gt;
-
-&lt;p&gt; • data-发送至服务器的 key/value 数据，GET 作为 QueryString 附加到请求
-URL 中，POST 作为 HTTP 消息的实体内容&lt;/p&gt;
-
-&lt;p&gt; • callback(data,
-textStatus)-载入成功时的回调函数，参数分别表示：返回的内容和请求状态（success）&lt;/p&gt;
-
-&lt;p&gt; • type-服务器返回内容的格式，包括 xml、html、script、json、text 和_default&lt;/p&gt;
-
-&lt;p&gt; • 注意：GET 方式请求的数据会被浏览器缓存起来，而 POST 方式不会&lt;/p&gt;
-
-&lt;p&gt;(3)$.getScript(url, callback)-用于动态加载 JS(.js) 文件&lt;/p&gt;
-
-&lt;p&gt;(4)$.getJSON(url, callback)-用于加载 JSON(.json) 文件&lt;/p&gt;
-
-&lt;p&gt;(5)$.ajax(options)-jQuery 最底层的 Ajax 实现&lt;/p&gt;
-
-&lt;p&gt; • 参数 options 以 key/value 的形式存在：&lt;/p&gt;
-
-&lt;p&gt; • url：发送请求的地址&lt;/p&gt;
-
-&lt;p&gt; • type：请求方式（POST 或 GET）默认为 GET&lt;/p&gt;
-
-&lt;p&gt; • timeout：设置请求超时时间（毫秒）&lt;/p&gt;
-
-&lt;p&gt; • data：发送到服务器的数据，默认会将不是字符串会自动转换为字符串。GET
-方式将附加在 URL 后&lt;/p&gt;
-
-&lt;p&gt; •
-dataType：预期服务器返回的数据类型（xml、html、script、json、jsonp、text），默认返回
-responeXML 或 responseText&lt;/p&gt;
-
-&lt;p&gt; • beforeSend：function(XMLHttpRequest)，发送请求前触发的事件&lt;/p&gt;
-
-&lt;p&gt; • complete：function(XMLHttpRequest，textStatus)，请求完成后调用的回调函数（请求成功或失败都调用）&lt;/p&gt;
-
-&lt;p&gt; • success：function(data, textStatus)，请求成功后调用的回调函数&lt;/p&gt;
-
-&lt;p&gt; • error：function(XMLHttpRequest, textStatus,
-errorThrown)，请求失败时被调用的回调函数&lt;/p&gt;
-
-&lt;p&gt; • global：默认为 true，表示是否触发全局 Ajax 事件&lt;/p&gt;
-
-&lt;p&gt;​&lt;strong&gt;5. 序列化方法&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt; • serialize() 方法是用于一个 jQuery 对象，能将 DOM
-元素内容序列化为字符串，用于 Ajax
-请求。经常用于复杂的表单请求中，从而减少代码量&lt;/p&gt;
-
-&lt;p&gt; • serializeArray() 方法是用于一个 jQuery 对象，能将 DOM 元素内容序列化为
-JSON 格式的数据&lt;/p&gt;
-
-&lt;p&gt; • $.param() 方法是用于将一个数组或者对象按照 key/value 进行序列化&lt;/p&gt;
-
-&lt;p&gt;​&lt;strong&gt;6. jQuery 中的 Ajax 全局事件&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt; • $.ajaxStart()-Ajax 请求开始时执行的函数&lt;/p&gt;
-
-&lt;p&gt; • $.ajaxSend()-Ajax 请求发送前执行的函数&lt;/p&gt;
-
-&lt;p&gt; • $.ajaxComplete()-Ajax 请求完成时执行的函数&lt;/p&gt;
-
-&lt;p&gt; • $.ajaxSuccess()-Ajax 请求成功时执行的函数&lt;/p&gt;
-
-&lt;p&gt; • $.ajaxError()-Ajax 请求发生错误时执行的函数&lt;/p&gt;
-
-&lt;p&gt; • $.ajaxStop()-Ajax 请求结束时执行的函数&lt;/p&gt;
-
-&lt;p&gt; &lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_and_ajax_application/</guid>
+      <description>​1. 什么是 Ajax？ • Ajax 全称为”Asynchronous Javascript and XML”（异步 Javascript 和 XML），并不是指一种单一的技术，而是有机地利用了一系列交互</description>
     </item>
     
     <item>
       <title>《锋利的jQuery》学习笔记——jQuery中的动画</title>
-      <link>http://blog.wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_in_animation</link>
+      <link>http://blog.wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_in_animation/</link>
       <pubDate>Tue, 13 Mar 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_in_animation</guid>
-      <description>&lt;p&gt;​&lt;strong&gt;1. show和hide方法&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt; • (&amp;ldquo;element&amp;rdquo;).show(speed[, callback])-显示element元素&lt;/p&gt;
-
-&lt;p&gt; • (&amp;ldquo;element&amp;rdquo;).hide(speed[, callback])-隐藏element元素&lt;/p&gt;
-
-&lt;p&gt;(1)show() 和 hide() 方法同时修改多个样式属性即高度、宽度和不透明度&lt;/p&gt;
-
-&lt;p&gt;(2)hide() 方法在将内容的 display 属性值设置为 none 之前，会记住原先的
-display 属性值，当调用 show() 方法时，会根据之前记住的值来显示元素&lt;/p&gt;
-
-&lt;p&gt;​&lt;strong&gt;2. fadeIn方法和fadeOut方法&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt; • (&amp;ldquo;element&amp;rdquo;).fadeIn(speed[,
-callback])-渐入，在指定事件内增加元素的不透明度&lt;/p&gt;
-
-&lt;p&gt; • (&amp;ldquo;element&amp;rdquo;).fadeOut(speed[,
-callback])-渐出，在指定事件内降低元素的不透明度&lt;/p&gt;
-
-&lt;p&gt;(1)fadeIn() 和 fadeOut() 方法只改变元素的不透明度&lt;/p&gt;
-
-&lt;p&gt;​&lt;strong&gt;3. slideUp方法和slideDown方法&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt; • (&amp;ldquo;element&amp;rdquo;).slideUp(speed[, callback])-元素由下到上缩短隐藏&lt;/p&gt;
-
-&lt;p&gt; • (&amp;ldquo;element&amp;rdquo;).slideDown(speed[, callback])-元素由上至下延伸显示&lt;/p&gt;
-
-&lt;p&gt;(1)slideUp() 和 slideDown() 只改变元素的高度&lt;/p&gt;
-
-&lt;p&gt;​&lt;strong&gt;4. 动画参数&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt; • 在 jQuery 中的任何动画效果，都可以指定 3 种速度参数，即
-“slow”、“normal” 和 “fast”（时间长度分别是 0.6 秒、0.4 秒和 0.2
-秒）；也可以使用数组作为时间参数（单位：毫秒）&lt;/p&gt;
-
-&lt;p&gt;​&lt;strong&gt;5. 自定义动画&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt; • animate(params[, speed][, callback]);&lt;/p&gt;
-
-&lt;p&gt;(1)params: 一个包含样式属性及值的映射，如 {property1: &amp;ldquo;value1&amp;rdquo;,
-property2: &amp;ldquo;value2&amp;rdquo;, &amp;hellip;}&lt;/p&gt;
-
-&lt;p&gt;(2)speed: 速度参数，可选&lt;/p&gt;
-
-&lt;p&gt;(3)callback: 在动画完成时执行的回调函数，可选&lt;/p&gt;
-
-&lt;p&gt;​&lt;strong&gt;6. 停止动画和判断是否处于动画状态&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;(1)停止元素的动画&lt;/p&gt;
-
-&lt;p&gt; • stop([clearQueue][, gotoEnd]);&lt;/p&gt;
-
-&lt;p&gt; •
-参数说明：参数都为可选参数，clearQueue表示是否清空未执行完的动画队列，gotoEnd表示是否直接将正在执行的动画跳转到末状态&lt;/p&gt;
-
-&lt;p&gt;(2)判断元素是否处于动画状态&lt;/p&gt;
-
-&lt;p&gt; • (element).is(&amp;rdquo;:animated&amp;rdquo;)&lt;/p&gt;
-
-&lt;p&gt;​&lt;strong&gt;7. 其他动画方法&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt; • toggle(speed[, callback])-切换元素的可见状态&lt;/p&gt;
-
-&lt;p&gt; • slideToggle(speed[, callback])通过高度变化来切换匹配元素的可见性&lt;/p&gt;
-
-&lt;p&gt; • fadeTo(speed, opacity[,
-callback])-把元素的不透明度以渐进方式调整到指定的值&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_in_animation/</guid>
+      <description>​1. show和hide方法 • (&amp;ldquo;element&amp;rdquo;).show(speed[, callback])-显示element元素 • (&amp;ldquo;element&amp;rdquo;).hide(speed[, callback])-隐藏element元素 (1)show() 和 hide() 方法同时修</description>
+    </item>
+    
+    <item>
+      <title>《锋利的jQuery》学习笔记——jQuery中的动画</title>
+      <link>http://blog.wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_in_animation/</link>
+      <pubDate>Tue, 13 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_in_animation/</guid>
+      <description>​1. show和hide方法 • (&amp;ldquo;element&amp;rdquo;).show(speed[, callback])-显示element元素 • (&amp;ldquo;element&amp;rdquo;).hide(speed[, callback])-隐藏element元素 (1)show() 和 hide() 方法同时修</description>
+    </item>
+    
+    <item>
+      <title>《锋利的jQuery》学习笔记——jQuery中的DOM操作</title>
+      <link>http://blog.wenzhixin.net.cn/2012/03/12/sharp_jquery_study_notes_dom_operation_in_jquery/</link>
+      <pubDate>Mon, 12 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2012/03/12/sharp_jquery_study_notes_dom_operation_in_jquery/</guid>
+      <description>​1. 什么是DOM？ • DOM 是 Document Object Model 的缩写，是指文档对象模型 ​2. DOM操作的分类 (1)DOM Core-可用来处理任何一种使用标记语言的文档 • getElementById() • getElementByTagName() • getAttribute() •</description>
+    </item>
+    
+    <item>
+      <title>《锋利的jQuery》学习笔记——jQuery中的DOM操作</title>
+      <link>http://blog.wenzhixin.net.cn/2012/03/12/sharp_jquery_study_notes_dom_operation_in_jquery/</link>
+      <pubDate>Mon, 12 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2012/03/12/sharp_jquery_study_notes_dom_operation_in_jquery/</guid>
+      <description>​1. 什么是DOM？ • DOM 是 Document Object Model 的缩写，是指文档对象模型 ​2. DOM操作的分类 (1)DOM Core-可用来处理任何一种使用标记语言的文档 • getElementById() • getElementByTagName() • getAttribute() •</description>
+    </item>
+    
+    <item>
+      <title>《锋利的jQuery》学习笔记——jQuery中的事件</title>
+      <link>http://blog.wenzhixin.net.cn/2012/03/12/sharp_jquery_study_notes_events_in_jquery/</link>
+      <pubDate>Mon, 12 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2012/03/12/sharp_jquery_study_notes_events_in_jquery/</guid>
+      <description>​1. 加载 DOM 1 2 3 $(document).ready(function() { //代码 }); (1)执行时机：window.onload 方法在网页中所有的元素（包括愿你苏的所有关联文件）完全加载后才执行</description>
+    </item>
+    
+    <item>
+      <title>《锋利的jQuery》学习笔记——jQuery中的事件</title>
+      <link>http://blog.wenzhixin.net.cn/2012/03/12/sharp_jquery_study_notes_events_in_jquery/</link>
+      <pubDate>Mon, 12 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2012/03/12/sharp_jquery_study_notes_events_in_jquery/</guid>
+      <description>​1. 加载 DOM 1 2 3 $(document).ready(function() { //代码 }); (1)执行时机：window.onload 方法在网页中所有的元素（包括愿你苏的所有关联文件）完全加载后才执行</description>
+    </item>
+    
+    <item>
+      <title>《锋利的jQuery》学习笔记——jQuery选择器</title>
+      <link>http://blog.wenzhixin.net.cn/2012/03/11/sharp_jquery_study_notes_jquery_selector/</link>
+      <pubDate>Sun, 11 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2012/03/11/sharp_jquery_study_notes_jquery_selector/</guid>
+      <description>1. CSS选择器 (1)标签选择器-以文档元素作为选择符 • E { CSS规则 } (2)ID选择器-以文档元素的唯一标识符 ID 作为选择符 • #ID { CSS规则 }</description>
+    </item>
+    
+    <item>
+      <title>《锋利的jQuery》学习笔记——jQuery选择器</title>
+      <link>http://blog.wenzhixin.net.cn/2012/03/11/sharp_jquery_study_notes_jquery_selector/</link>
+      <pubDate>Sun, 11 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2012/03/11/sharp_jquery_study_notes_jquery_selector/</guid>
+      <description>1. CSS选择器 (1)标签选择器-以文档元素作为选择符 • E { CSS规则 } (2)ID选择器-以文档元素的唯一标识符 ID 作为选择符 • #ID { CSS规则 }</description>
+    </item>
+    
+    <item>
+      <title>《锋利的jQuery》学习笔记——认识jQuery</title>
+      <link>http://blog.wenzhixin.net.cn/2012/03/10/sharp_jquery_study_notes_understanding_of_jquery/</link>
+      <pubDate>Sat, 10 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2012/03/10/sharp_jquery_study_notes_understanding_of_jquery/</guid>
+      <description>认识jQuery ​1. JavaScript中比较流行的JavaScript库：Prototype、Dojo、YUI、Ext JS、MooToo</description>
+    </item>
+    
+    <item>
+      <title>《锋利的jQuery》学习笔记——认识jQuery</title>
+      <link>http://blog.wenzhixin.net.cn/2012/03/10/sharp_jquery_study_notes_understanding_of_jquery/</link>
+      <pubDate>Sat, 10 Mar 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2012/03/10/sharp_jquery_study_notes_understanding_of_jquery/</guid>
+      <description>认识jQuery ​1. JavaScript中比较流行的JavaScript库：Prototype、Dojo、YUI、Ext JS、MooToo</description>
     </item>
     
   </channel>

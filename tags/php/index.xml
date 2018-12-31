@@ -1,271 +1,33 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Php on 文翼的博客</title>
+    <title>php on 文翼的博客</title>
     <link>http://blog.wenzhixin.net.cn/tags/php/</link>
-    <description>Recent content in Php on 文翼的博客</description>
+    <description>Recent content in php on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Fri, 08 Nov 2013 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.wenzhixin.net.cn/tags/php/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/php/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>RSS、Atom、Feed 介绍与简单实现</title>
-      <link>http://blog.wenzhixin.net.cn/2013/11/08/rss_atom_feed_php</link>
+      <link>http://blog.wenzhixin.net.cn/2013/11/08/rss_atom_feed_php/</link>
       <pubDate>Fri, 08 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/11/08/rss_atom_feed_php</guid>
-      <description>
-
-&lt;p&gt;最近接触了 RSS 订阅相关的，做了一些了解与开发，记录下。&lt;/p&gt;
-
-&lt;h4 id=&#34;rss是什么:ff4596b028a60c1dc5123ad61a0f7a25&#34;&gt;RSS是什么&lt;/h4&gt;
-
-&lt;p&gt;RSS（全称RDF Site Summary，网景的最初定义），RSS也是一种“类网页”描述语言（或叫文档格式），
-最初由网景公司（Netscape）定义，RSS只是有个相对统一的规范（注意只是规范），
-前途未卜（RSS 2.0的版权问题）。RSS作为网站内容分享的一种便利接口，只是从博客（BLOG）风行才开始广为流传。&lt;/p&gt;
-
-&lt;p&gt;关于RSS的更多介绍请参考&lt;a href=&#34;http://zh.wikipedia.org/zh-cn/RSS&#34;&gt;RSS&lt;/a&gt;。&lt;/p&gt;
-
-&lt;h4 id=&#34;atom是什么:ff4596b028a60c1dc5123ad61a0f7a25&#34;&gt;ATOM是什么&lt;/h4&gt;
-
-&lt;p&gt;由于RSS前途未卜，而且RSS标准发展存在诸多问题或不足，于是ATOM横空出世，可理解为RSS的替代品。
-ATOM是IETF的建议标准，Atom Syndication Format是基于XML格式，Atom Publishing Protocol则是基于HTTP协议格式。&lt;/p&gt;
-
-&lt;p&gt;RSS与ATOM比较，请参考：&lt;a href=&#34;http://zh.wikipedia.org/wiki/Atom&#34;&gt;ATOM&lt;/a&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;feed是什么:ff4596b028a60c1dc5123ad61a0f7a25&#34;&gt;FEED是什么&lt;/h4&gt;
-
-&lt;p&gt;FEED只是一个中间过程，所以全世界没人能给FEED下一个准确的定义，所以大家不用关心FEED的定义，其实FEED什么都不是。
-如果非得给个说法，最好还是放到英文环境下理解似乎更加合理，FEED其实就是RSS（或ATOM）和订阅用户之间的“中间商”，
-起到帮忙批发传递信息的作用。所以，FEED的常见格式就是RSS和ATOM，网络上说的FEED订阅，更确切的说法应该仍然是RSS或ATOM订阅。&lt;/p&gt;
-
-&lt;p&gt;FEED更多介绍：&lt;a href=&#34;http://en.wikipedia.org/wiki/Feed&#34;&gt;Feed&lt;/a&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;可用的工具:ff4596b028a60c1dc5123ad61a0f7a25&#34;&gt;可用的工具&lt;/h4&gt;
-
-&lt;p&gt;RSS Feed 检验网站：&lt;a href=&#34;http://feedvalidator.org&#34;&gt;feedvalidator&lt;/a&gt;。可以检验你的 RSS 是否符合标准，假如不符合会给出相应的提示和警告。&lt;/p&gt;
-
-&lt;p&gt;RSS托管服务网站：&lt;a href=&#34;http://feedburner.google.com&#34;&gt;feedburner&lt;/a&gt;。 网站定位：全球最大的RSS托管服务网站。07年被google以1亿美元收购，现在已迁移到Google域名之下。&lt;/p&gt;
-
-&lt;h4 id=&#34;php-简单实现:ff4596b028a60c1dc5123ad61a0f7a25&#34;&gt;php 简单实现&lt;/h4&gt;
-
-&lt;p&gt;feed.php&lt;/p&gt;
-&lt;?php
-
-class Feed {
-
-    protected $entries = array();
-
-    protected $title;
-    protected $url;
-    protected $updated;
-    protected $author;
-
-    public function title($title) {
-        $this-&gt;title = $title;
-        return $this;
-    }
-
-    public function url($url) {
-        $this-&gt;url = $url;
-        return $this;
-    }
-
-    public function updated($updated) {
-        $this-&gt;updated = $updated;
-        return $this;
-    }
-
-    public function author($author) {
-        $this-&gt;author = $author;
-        return $this;
-    }
-
-    public function addEntry($entry) {
-        $this-&gt;entries[] = $entry;
-        return $this;
-    }
-
-    public function __toString() {
-        $result = &#39;&lt;?xml version=&#34;1.0&#34;&gt;&#39;;
-        $result .= &#39;&lt;feed xmlns=&#34;http://www.w3.org/2005/Atom&#34;&gt;&#39;;
-        $result .= &#39;&lt;title&gt;&#39; . $this-&gt;title . &#39;&lt;/title&gt;&#39;;
-        $result .= &#39;&lt;link href=&#34;&gt;&#39; . $this-&gt;url . &#39;&#34; /&gt;&#39;;
-        $result .= &#39;&lt;updated&gt;&#39; . $this-&gt;updated . &#39;&lt;/updated&gt;&#39;;
-        $result .= &#39;&lt;author&gt;&#39; . $this-&gt;author . &#39;&lt;/author&gt;&#39;;
-
-        foreach ($this-&gt;entries as $entry) {
-            $result .= $entry;
-        }
-
-        return $result;
-    }
-}
-
-class Entry {
-    protected $title;
-    protected $url;
-    protected $updated;
-    protected $author;
-    protected $description;
-
-    public function title($title) {
-        $this-&gt;title = $title;
-        return $this;
-    }
-
-    public function url($url) {
-        $this-&gt;url = $url;
-        return $this;
-    }
-
-    public function updated($updated) {
-        $this-&gt;updated = $updated;
-        return $this;
-    }
-
-    public function author($author) {
-        $this-&gt;author = $author;
-        return $this;
-    }
-
-    public function description($description) {
-        $this-&gt;description = $description;
-        return $this;
-    }
-
-    public function __toString() {
-        $result .= &#39;&lt;entry&gt;&#39;;
-        $result .= &#39;&lt;title&gt;&#39; . $this-&gt;title . &#39;&lt;/title&gt;&#39;;
-        $result .= &#39;&lt;link href=&#34;&gt;&#39; . $this-&gt;url . &#39;&#34; /&gt;&#39;;
-        $result .= &#39;&lt;updated&gt;&#39; . $this-&gt;updated . &#39;&lt;/updated&gt;&#39;;
-        $result .= &#39;&lt;author&gt;&#39; . $this-&gt;author . &#39;&lt;/author&gt;&#39;;
-        $result .= &#39;&lt;description&gt;&#39; . $this-&gt;description . &#39;&lt;/description&gt;&#39;;
-        $result .= &#39;&lt;/entry&gt;&#39;;
-        return $result;
-    }
-}
-?&gt;
-
-&lt;p&gt;test.php&lt;/p&gt;
-&lt;?php
-require_once &#39;feed.php&#39;;
-
-$feed = new Feed();
-$feed-&gt;title(&#39;文翼的博客&#39;)
-    -&gt;url(&#39;http://wenzhixin.net.cn&#39;)
-    -&gt;updated(date(&#39;Y-m-d H:i:s&#39;, time()))
-    -&gt;author(&#39;wenzhixin&#39;);
-echo $feed;
-
-$entry = new Entry();
-$entry-&gt;title(&#39;文章1&#39;)
-    -&gt;description(&#39;这里是文章1的内容&#39;)
-    -&gt;url(&#39;http://wenzhixin.net.cn/1&#39;)
-    -&gt;updated(&#39;2013-11-08 22:55:00&#39;)
-    -&gt;author(&#39;wenzhixin&#39;);
-$feed-&gt;addEntry($entry);
-
-$entry = new Entry();
-$entry-&gt;title(&#39;文章2&#39;)
-    -&gt;description(&#39;这里是文章2的内容&#39;)
-    -&gt;url(&#39;http://wenzhixin.net.cn/2&#39;)
-    -&gt;updated(&#39;2013-11-07 11:33:00&#39;)
-    -&gt;author(&#39;wenzhixin&#39;);
-$feed-&gt;addEntry($entry);
-
-echo $feed;
-?&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/08/rss_atom_feed_php/</guid>
+      <description>最近接触了 RSS 订阅相关的，做了一些了解与开发，记录下。 RSS是什么 RSS（全称RDF Site Summary，网景的最初定义），RSS也是一种“类网页</description>
     </item>
     
     <item>
       <title>vtiger5.2 问题修复</title>
-      <link>http://blog.wenzhixin.net.cn/2013/01/17/vtiger_bug</link>
+      <link>http://blog.wenzhixin.net.cn/2013/01/17/vtiger_bug/</link>
       <pubDate>Thu, 17 Jan 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/01/17/vtiger_bug</guid>
-      <description>
-
-&lt;h3 id=&#34;图表乱码:4357e6d4853464f8f0c8ab5435428738&#34;&gt;图表乱码：&lt;/h3&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;下载 &lt;a href=&#34;http://blog.wenzhixin.net.cn/2013/01/17/Simsun.zip&#34;&gt;Simsun&lt;/a&gt; 解压&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;将 Simsun.ttf 文件复制到 Image/Canvas/Fonts 目录下&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;修改 Image/Canvas/Fonts/fontmap.txt，最后增加一行：&lt;/p&gt;
-
-&lt;p&gt;Simsun, Simsun.ttf&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;修改 include/utils/GraphUtils.php，在第22行插入以下代码：&lt;/p&gt;
-
-&lt;p&gt;DEFINE(&amp;ldquo;FF_DROIDSANSFALLBACK&amp;rdquo;,&amp;lsquo;Droid Sans Fallback&amp;rsquo;);&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;将第43行的&lt;/p&gt;
-case &#39;cn_zh&#39;:
-
-&lt;p&gt;修改为&lt;/p&gt;
-case &#39;zh_cn&#39;:
-
-&lt;hr /&gt;
-
-&lt;h3 id=&#34;导出-cvs-乱码:4357e6d4853464f8f0c8ab5435428738&#34;&gt;导出 cvs 乱码&lt;/h3&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;下载 &lt;a href=&#34;http://blog.wenzhixin.net.cn/2013/01/17/vtiger53csv.zip&#34;&gt;vtiger53csv&lt;/a&gt; 解压（改的文件比较多，已压缩为 zip 包）&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;覆盖目标目录&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&#34;导出-pdf-乱码:4357e6d4853464f8f0c8ab5435428738&#34;&gt;导出 pdf 乱码：&lt;/h3&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;下载 &lt;a href=&#34;http://blog.wenzhixin.net.cn/2013/01/17/vtiger53pdf.zip&#34;&gt;vtiger53pdf&lt;/a&gt; 解压 (改的文件比较多，已压缩为 zip 包)&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;覆盖目标目录&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&#34;报表描述格式显示错误:4357e6d4853464f8f0c8ab5435428738&#34;&gt;报表描述格式显示错误&lt;/h3&gt;
-
-&lt;p&gt;编辑 ReportRun.php 文件&lt;/p&gt;
-sudo vi modules/Reports/ReportRun.php
-
-&lt;p&gt;将第 1896 和 1897 行&lt;/p&gt;
-$fieldvalue = str_replace(&#34;&lt;&#34;, &#34;&lt;&#34;, $fieldvalue);
-$fieldvalue = str_replace(&#34;&gt;&#34;, &#34;&gt;&#34;, $fieldvalue);
-
-&lt;p&gt;修改为&lt;/p&gt;
-$fieldvalue = html_entity_decode($fieldvalue);
-
-&lt;h4 id=&#34;知识点:4357e6d4853464f8f0c8ab5435428738&#34;&gt;知识点：&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;htmlentities — Convert all applicable characters to HTML entities&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;html_entity_decode — Convert all HTML entities to their applicable characters&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&#34;日程安排发邮件问题:4357e6d4853464f8f0c8ab5435428738&#34;&gt;日程安排发邮件问题&lt;/h3&gt;
-
-&lt;p&gt;编辑 Activity.php 文件&lt;/p&gt;
-sudo vi modules/Calendar/Activity.php
-
-&lt;p&gt;将第 131 行&lt;/p&gt;
-if(isset($this-&gt;column_fields[&#39;sendnotification&#39;])){
-
-&lt;p&gt;修改为&lt;/p&gt;
-if($this-&gt;column_fields[&#39;sendnotification&#39;] == &#39;On&#39;){
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2013/01/17/vtiger_bug/</guid>
+      <description>图表乱码： 下载 Simsun 解压 将 Simsun.ttf 文件复制到 Image/Canvas/Fonts 目录下 修改 Image/Canvas/Fonts/fontmap.txt，最后增加一行： Simsun, Simsun.ttf 修改 inclu</description>
     </item>
     
   </channel>

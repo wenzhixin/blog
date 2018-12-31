@@ -8,109 +8,17 @@
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Wed, 30 Jul 2014 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.wenzhixin.net.cn/tags/%E6%96%87%E4%BB%B6/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/%E6%96%87%E4%BB%B6/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>IE8 文件上传问题分析小记</title>
-      <link>http://blog.wenzhixin.net.cn/2014/07/30/ie8_file_problem</link>
+      <link>http://blog.wenzhixin.net.cn/2014/07/30/ie8_file_problem/</link>
       <pubDate>Wed, 30 Jul 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/07/30/ie8_file_problem</guid>
-      <description>&lt;p&gt;先吐槽一番，IE 浏览器让前端开发人员又恨又郁闷，但是没有办法，谁让中国如此多的用户呢。很多时候，一个简单的问题，可能需要花上大半天的时间才能解决，足够浪费时间的了，故在此记录下。&lt;/p&gt;
-
-&lt;p&gt;首先，问题是这样的：&lt;strong&gt;在 IE8 下选择上传文件无任何反应，其他浏览器使用正常。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;而同事实现的方法是，将文件选择框隐藏起来，然后通过点击一个按钮来选择上传文件并触发事件：&lt;/p&gt;
-&lt;form class=&#34;hidden&#34; action=&#34;url&#34; method=&#34;post&#34; enctype=&#34;multipart/form-data&#34;&gt;
-    &lt;input id=&#34;file&#34; type=&#34;file&#34; name=&#34;file&#34;&gt;
-&lt;/form&gt;
-&lt;a href=&#34;javascript:void(0)&#34; class=&#34;btn&#34;&gt;Upload&lt;/a&gt;
-$(&#39;#button&#39;).live(&#39;click&#39;, function () {
-    $(&#39;#file&#39;).trigger(&#39;click&#39;);
-});
-$(&#39;#file&#39;).live(&#39;change&#39;, function () {
-    // 调用开始上传方法
-});
-
-&lt;p&gt;上面的&lt;code&gt;button&lt;/code&gt;和&lt;code&gt;file&lt;/code&gt;分别是按钮和文件选择框的 ID。&lt;code&gt;live&lt;/code&gt;是旧版 jQuery 绑定事件的方法，现在已经废弃了。&lt;/p&gt;
-
-&lt;p&gt;查阅相关资料，得知这是 jQuery 的一个 bug，&lt;strong&gt;IE8 file 使用&lt;code&gt;live&lt;/code&gt;方法不能触发 change 事件&lt;/strong&gt;，所以将代码改为：&lt;/p&gt;
-$(&#39;#button&#39;).click(function () {
-    $(&#39;#file&#39;).trigger(&#39;click&#39;);
-});
-$(&#39;#file&#39;).change(function () {
-    // 调用开始上传方法
-});
-
-&lt;p&gt;改完之后是可以触发 change 事件了，但是得到这样的一个错误：&lt;code&gt;Access is denied&lt;/code&gt;。原因如下：&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;IE doesn&amp;rsquo;t allow manipulation of the type=&amp;ldquo;file&amp;rdquo; input element from javascript due to security reasons. Setting the filename or invoking a click event to show the browser dialog will result in an &amp;ldquo;Access is denied&amp;rdquo; error on the form submit.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;strong&gt;使用手动触发点击事件来弹出文件选择框会出现没有权限的错误。&lt;/strong&gt;于是，我又对代码进行了改进：&lt;/p&gt;
-&lt;style&gt;
-.pr {
-    position: relative;
-}
-#file {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    right: 0;
-    opacity: 0;
-    filter: alpha(opacity=0);
-}
-&lt;/style&gt;
-&lt;form action=&#34;url&#34; method=&#34;post&#34; enctype=&#34;multipart/form-data&#34;&gt;
-    &lt;a href=&#34;javascript:void(0)&#34; class=&#34;button pr&#34;&gt;
-        Upload
-        &lt;input id=&#34;file&#34; type=&#34;file&#34; name=&#34;file&#34;&gt;
-    &lt;/a&gt;
-&lt;/form&gt;
-
-&lt;p&gt;注意到 css 样式，我将 file 的透明度设置为 0，放置在按钮上，当点击按钮的时候，实际上点击的是 file，并且删除了按钮的&lt;code&gt;click&lt;/code&gt;事件，从而解决了手动触发 click 事件所导致的&lt;code&gt;Access is denied&lt;/code&gt;的问题。&lt;/p&gt;
-
-&lt;p&gt;但是接着我又遇到了问题，因为后台是使用 php 的，我们知道，php 用于处理文件上传使用的是 &lt;code&gt;$_FILES&lt;/code&gt;，在其他浏览器都正常，但是 IE8 选择文件就会出现空的情况。网上说要设置：&lt;/p&gt;
-
-&lt;p&gt;form：&lt;/p&gt;
-enctype=&#34;multipart/form-data&#34;
-
-&lt;p&gt;php.ini：&lt;/p&gt;
-file_uploads = On; sounds like you already did this
-post_max_size = 8M; change this higher if needed
-upload_max_file_size = 8M; change this higher if needed
-
-&lt;p&gt;通过检查，都已经设置的了，那就郁闷了，为什么死活没有数据呢？&lt;/p&gt;
-
-&lt;p&gt;于是我用了最简单的方法，写了个只有文件上传的demo作为对比，结果是能获取到&lt;code&gt;$_FILES&lt;/code&gt;的数据的！！！&lt;/p&gt;
-
-&lt;p&gt;问题的原因居然是因为 &lt;strong&gt;file 不能嵌套在 a 标签下&lt;/strong&gt;，不然会导致获取不到数据，这个又是 IE8 的 bug，问题到此告一段落，却也浪费了我大半天的时间，最后的解决方案如下：&lt;/p&gt;
-&lt;style&gt;
-.pr {
-    position: relative;
-}
-.dil {
-    display: inline-block;
-}
-#file {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    right: 0;
-    opacity: 0;
-    filter: alpha(opacity=0);
-}
-&lt;/style&gt;
-&lt;form action=&#34;url&#34; method=&#34;post&#34; enctype=&#34;multipart/form-data&#34;&gt;
-    &lt;span class=&#34;pr dil&#34;&gt;
-        &lt;a href=&#34;javascript:void(0)&#34; class=&#34;btn&#34;&gt;Upload&lt;/a&gt;
-        &lt;input id=&#34;file&#34; type=&#34;file&#34; name=&#34;file&#34;&gt;
-    &lt;/span&gt;
-&lt;/form&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2014/07/30/ie8_file_problem/</guid>
+      <description>先吐槽一番，IE 浏览器让前端开发人员又恨又郁闷，但是没有办法，谁让中国如此多的用户呢。很多时候，一个简单的问题，可能需要花上大半天的时间才能</description>
     </item>
     
   </channel>

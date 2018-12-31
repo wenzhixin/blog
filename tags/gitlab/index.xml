@@ -1,213 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Gitlab on 文翼的博客</title>
+    <title>gitlab on 文翼的博客</title>
     <link>http://blog.wenzhixin.net.cn/tags/gitlab/</link>
-    <description>Recent content in Gitlab on 文翼的博客</description>
+    <description>Recent content in gitlab on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Mon, 14 Jan 2013 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.wenzhixin.net.cn/tags/gitlab/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/gitlab/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Ubuntu 11.10 搭建 gitlab 服务器</title>
-      <link>http://blog.wenzhixin.net.cn/2013/01/14/gitlab_installation</link>
+      <link>http://blog.wenzhixin.net.cn/2013/01/14/gitlab_installation/</link>
       <pubDate>Mon, 14 Jan 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/01/14/gitlab_installation</guid>
-      <description>
-
-&lt;p&gt;ps: 请按照顺序一步一步来，并注意查看提示，确保成功！&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h4 id=&#34;1-更新系统:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;1. 更新系统&lt;/h4&gt;
-sudo apt-get update
-sudo apt-get upgrade
-
-&lt;h4 id=&#34;2-安装必要的包:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;2. 安装必要的包&lt;/h4&gt;
-sudo apt-get install -y build-essential zlib1g-dev libyaml-dev libssl-dev libgdbm-dev libreadline-dev libncurses5-dev libffi-dev  wget curl git-core openssh-server redis-server postfix checkinstall libxml2-dev libxslt-dev libcurl4-openssl-dev libicu-dev
-
-&lt;h4 id=&#34;3-安装-python-一般已经安装了:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;3. 安装 python  (一般已经安装了)&lt;/h4&gt;
-sudo apt-get install python2.7
-
-# 查看 python 版本 ( 2.5 &lt;= version &lt; 3.0)
-python2 --version
-
-sudo ln -s /usr/bin/python /usr/bin/python2
-
-&lt;h4 id=&#34;4-下载编译并安装-ruby-1-9-3-apt-get-install-的有问题:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;4. 下载编译并安装 ruby 1.9.3 (apt-get install 的有问题)&lt;/h4&gt;
-mkdir /tmp/ruby &amp;&amp; cd /tmp/ruby
-
-# 太慢了可以从 ftp 上下载 ftp://192.168.88.104/temp/ruby-1.9.3-p327.tar.gz
-wget http://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.3-p327.tar.gz
-
-tar xfvz ruby-1.9.3-p327.tar.gz
-cd ruby-1.9.3-p327
-
-# 编译 (可以去喝杯茶再说)
-./configure
-make
-
-# 安装
-sudo make install
-
-&lt;h4 id=&#34;5-安装-bundler:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;5. 安装 bundler&lt;/h4&gt;
-sudo gem install bundler
-
-&lt;h4 id=&#34;6-新建-git-和-gitolite-的用户:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;6. 新建 git 和 gitolite 的用户&lt;/h4&gt;
-sudo adduser --system --shell /bin/sh --gecos &#39;Git Version Control&#39; --group --disabled-password --home /home/git git
-
-&lt;h4 id=&#34;7-新建-gitlab-用户:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;7. 新建 gitlab 用户&lt;/h4&gt;
-sudo adduser --disabled-login --gecos &#39;GitLab&#39; gitlab
-
-# 添加到 git 组
-sudo usermod -a -G git gitlab
-
-# 创建 SSH 密钥
-sudo -u gitlab -H ssh-keygen -q -N &#39;&#39; -t rsa -f /home/gitlab/.ssh/id_rsa
-
-&lt;h4 id=&#34;8-克隆-gitolite-源码:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;8. 克隆 gitolite 源码&lt;/h4&gt;
-cd /home/git
-sudo -u git -H git clone -b gl-v320 https://github.com/gitlabhq/gitolite.git /home/git/gitolite
-
-&lt;h4 id=&#34;9-设置-gitolite:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;9. 设置 gitolite&lt;/h4&gt;
-# 添加 gitolite 脚本到 $PATH
-sudo -u git -H mkdir /home/git/bin
-sudo -u git -H sh -c &#39;printf &#34;%b\n%b\n&#34; &#34;PATH=\$PATH:/home/git/bin&#34; &#34;export PATH&#34; &gt;&gt; /home/git/.profile&#39;
-sudo -u git -H sh -c &#39;gitolite/install -ln /home/git/bin&#39;
-
-# 设置 SSH 密钥
-sudo cp /home/gitlab/.ssh/id_rsa.pub /home/git/gitlab.pub
-sudo chmod 0444 /home/git/gitlab.pub
-sudo -u git -H sh -c &#34;PATH=/home/git/bin:$PATH; gitolite setup -pk /home/git/gitlab.pub&#34;
-
-# 修改文件夹权限
-sudo chmod 750 /home/git/.gitolite/
-sudo chown -R git:git /home/git/.gitolite/
-sudo chmod -R ug+rwXs,o-rwx /home/git/repositories/
-sudo chown -R git:git /home/git/repositories/
-
-&lt;h4 id=&#34;10-测试-gitolite:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;10. 测试 gitolite&lt;/h4&gt;
-sudo -u gitlab -H git clone git@localhost:gitolite-admin.git /tmp/gitolite-admin
-sudo rm -rf /tmp/gitolite-admin
-
-&lt;p&gt;出现以下提示表示配置 gitolite 成功：&lt;/p&gt;
-Cloning into /tmp/gitolite-admin...
-remote: Counting objects: 6, done.
-remote: Compressing objects: 100% (4/4), done.
-Receiving objects: 100% (6/6), 740 bytes, done.
-remote: Total 6 (delta 0), reused 0 (delta 0)
-
-&lt;h4 id=&#34;11-安装-mysql-服务器:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;11. 安装 mysql 服务器&lt;/h4&gt;
-sudo apt-get install -y mysql-server mysql-client libmysqlclient-dev
-
-&lt;h4 id=&#34;12-设置-mysql:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;12. 设置 mysql&lt;/h4&gt;
-# 登陆 mysql
-mysql -u root -p password
-
-# 添加 gitlab 用户 (记得修改 password 为自己的密码)
-CREATE USER &#39;gitlab&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;password&#39;;
-
-&lt;h4 id=&#34;13-克隆-gitlab-源码:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;13. 克隆 gitlab 源码&lt;/h4&gt;
-cd /home/gitlab
-sudo -u gitlab -H git clone https://github.com/gitlabhq/gitlabhq.git gitlab
-cd /home/gitlab/gitlab
-sudo -u gitlab -H git checkout 4-0-stable
-
-&lt;h4 id=&#34;14-设置-gitlab:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;14. 设置 gitlab&lt;/h4&gt;
-sudo -u gitlab -H cp config/gitlab.yml.example config/gitlab.yml
-sudo -u gitlab -H cp config/unicorn.rb.example config/unicorn.rb
-
-# 修改 gitlab 文件夹权限
-sudo chown -R gitlab log/
-sudo chown -R gitlab tmp/
-sudo chmod -R u+rwX  log/
-sudo chmod -R u+rwX  tmp/
-
-&lt;h4 id=&#34;15-设置-gitlab-数据库-mysql-连接:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;15. 设置 gitlab 数据库 (mysql) 连接&lt;/h4&gt;
-sudo -u gitlab cp config/database.yml.mysql config/database.yml
-
-# 安装 gems (可以再去喝杯茶)
-sudo gem install charlock_holmes --version &#39;0.6.9&#39;
-sudo -u gitlab -H bundle install --deployment --without development test postgres
-
-&lt;h4 id=&#34;16-设置-git:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;16. 设置 git&lt;/h4&gt;
-sudo -u gitlab -H git config --global user.name &#34;GitLab&#34;
-sudo -u gitlab -H git config --global user.email &#34;gitlab@localhost&#34;
-
-&lt;h4 id=&#34;17-设置-gitlab-钩子:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;17. 设置 gitlab 钩子&lt;/h4&gt;
-sudo cp ./lib/hooks/post-receive /home/git/.gitolite/hooks/common/post-receive
-sudo chown git:git /home/git/.gitolite/hooks/common/post-receive
-
-&lt;h4 id=&#34;18-初始化数据库:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;18. 初始化数据库&lt;/h4&gt;
-sudo -u gitlab -H bundle exec rake gitlab:app:setup RAILS_ENV=production
-
-&lt;h4 id=&#34;19-设置-gitlab-开机启动脚本:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;19. 设置 gitlab 开机启动脚本&lt;/h4&gt;
-sudo wget https://raw.github.com/gitlabhq/gitlab-recipes/4-0-stable/init.d/gitlab -P /etc/init.d/
-sudo chmod +x /etc/init.d/gitlab
-sudo update-rc.d gitlab defaults 21
-
-&lt;h4 id=&#34;20-启动-gitlab:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;20. 启动 gitlab&lt;/h4&gt;
-sudo /etc/init.d/gitlab start
-# 或者 sudo /etc/init.d/gitlab restart
-
-&lt;h4 id=&#34;21-安装-nginx:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;21. 安装 nginx&lt;/h4&gt;
-sudo apt-get install nginx
-
-&lt;h4 id=&#34;22-设置-gitlab-的网站配置:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;22. 设置 gitlab 的网站配置&lt;/h4&gt;
-sudo wget https://raw.github.com/gitlabhq/gitlab-recipes/4-0-stable/nginx/gitlab -P /etc/nginx/sites-available/
-sudo ln -s /etc/nginx/sites-available/gitlab /etc/nginx/sites-enabled/gitlab
-
-&lt;h4 id=&#34;23-修改配置文件-并重启-nginx:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;23. 修改配置文件，并重启 nginx&lt;/h4&gt;
-# 修改 listen server_IP:80 default_server; 为服务器 IP
-sudo vim /etc/nginx/sites-enabled/gitlab
-# 重启
-sudo /etc/init.d/nginx restart
-
-&lt;h4 id=&#34;24-查看和测试服务器状态:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;24. 查看和测试服务器状态&lt;/h4&gt;
-sudo -u gitlab -H bundle exec rake gitlab:env:info RAILS_ENV=production
-sudo -u gitlab -H bundle exec rake gitlab:check RAILS_ENV=production
-
-&lt;p&gt;&amp;mdash;&amp;mdash;&amp;mdash;-服务器端至此搞定！以下为客户端&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;-&lt;/p&gt;
-
-&lt;h4 id=&#34;25-在浏览器中输入地址:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;25. 在浏览器中输入地址：&lt;/h4&gt;
-http://server_IP/users/sign_in
-
-&lt;h5 id=&#34;登录用户名和密码:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;登录用户名和密码：&lt;/h5&gt;
-username: admin@local.host
-password: 5iveL!fe
-
-&lt;h4 id=&#34;26-最后-设置-ssh-key:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;26. 最后，设置 SSH key&lt;/h4&gt;
-# 邮箱与登录名称保持一致
-ssh-keygen -t rsa -C &#34;admin@local.host&#34;
-
-cat ~/.ssh/id_rsa.pub
-
-&lt;p&gt;选择 Your Profile -&amp;gt; SSH key -&amp;gt; Add new，将 id_rsa.pub 中的内容复制到 Key 输入框中，Save&lt;/p&gt;
-
-&lt;h5 id=&#34;配置-id-rsa:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;配置 id_rsa&lt;/h5&gt;
-cd ~/.ssh
-mkdir gitlab
-mv id_rsa gitlab/
-chmod 600 gitlab/id_rsa
-
-&lt;h5 id=&#34;配置-config-修改相应的-server-ip:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;配置 config (修改相应的 server_IP)&lt;/h5&gt;
-host gitlab
-    HostName server_IP
-    User git
-    IdentityFile ~/.ssh/gitlab/id_rsa
-
-&lt;h4 id=&#34;27-最后的最后-创建提交项目:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;27. 最后的最后，创建提交项目&lt;/h4&gt;
-
-&lt;p&gt;选择 New Project -&amp;gt; Create Project&lt;/p&gt;
-
-&lt;h5 id=&#34;提交:1896b5d8c9412c3da8a6f98eb46b2e49&#34;&gt;提交&lt;/h5&gt;
-# 修改下面命令为：
-# git remote add origin git@localhost
-git remote add origin gitlab
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2013/01/14/gitlab_installation/</guid>
+      <description>ps: 请按照顺序一步一步来，并注意查看提示，确保成功！ 1. 更新系统 1 2 sudo apt-get update sudo apt-get upgrade 2. 安装必要的包 1 sudo apt-get install -y build-essential zlib1g-dev libyaml-dev libssl-dev libgdbm-dev libreadline-dev libncurses5-dev libffi-dev wget curl git-core openssh-server redis-server postfix checkinstall libxml2-dev libxslt-dev libcurl4-openssl-dev libicu-dev 3.</description>
     </item>
     
   </channel>

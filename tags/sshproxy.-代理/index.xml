@@ -1,151 +1,33 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Sshproxy. 代理 on 文翼的博客</title>
-    <link>http://blog.wenzhixin.net.cn/tags/sshproxy/index.-%E4%BB%A3%E7%90%86/</link>
-    <description>Recent content in Sshproxy. 代理 on 文翼的博客</description>
+    <title>sshproxy. 代理 on 文翼的博客</title>
+    <link>http://blog.wenzhixin.net.cn/tags/sshproxy.-%E4%BB%A3%E7%90%86/</link>
+    <description>Recent content in sshproxy. 代理 on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Wed, 24 Oct 2012 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.wenzhixin.net.cn/tags/sshproxy.-%E4%BB%A3%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/sshproxy.-%E4%BB%A3%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Ubuntu 设置 sshproxy 代理</title>
-      <link>http://blog.wenzhixin.net.cn/2012/10/24/ubuntu_sshproxy</link>
+      <link>http://blog.wenzhixin.net.cn/2012/10/24/ubuntu_sshproxy/</link>
       <pubDate>Wed, 24 Oct 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/10/24/ubuntu_sshproxy</guid>
-      <description>
-
-&lt;h3 id=&#34;服务器端:4c8e1b9a7a8395b91ca5c59d6255e92c&#34;&gt;服务器端&lt;/h3&gt;
-
-&lt;h4 id=&#34;1-添加用户-并切换到该用户:4c8e1b9a7a8395b91ca5c59d6255e92c&#34;&gt;1. 添加用户，并切换到该用户：&lt;/h4&gt;
-adduser sshproxy
-su - sshproxy
-
-&lt;h4 id=&#34;2-生成-key:4c8e1b9a7a8395b91ca5c59d6255e92c&#34;&gt;2. 生成 key：&lt;/h4&gt;
-ssh-keygen
-cd .ssh
-mv id_rsa.pub authorized_keys
-
-&lt;h4 id=&#34;3-禁止-sshproxy-用户登录:4c8e1b9a7a8395b91ca5c59d6255e92c&#34;&gt;3. 禁止 sshproxy 用户登录：&lt;/h4&gt;
-chsh -s /bin/false sshproxy
-
-&lt;hr /&gt;
-
-&lt;h3 id=&#34;客户端:4c8e1b9a7a8395b91ca5c59d6255e92c&#34;&gt;客户端：&lt;/h3&gt;
-
-&lt;h4 id=&#34;1-拷贝密钥-id-rsa-到客户端-并进行配置:4c8e1b9a7a8395b91ca5c59d6255e92c&#34;&gt;1. 拷贝密钥 id_rsa 到客户端，并进行配置：&lt;/h4&gt;
-cd ~/.ssh
-mkdir sshproxy
-chmod 700 sshproxy
-mv id_rsa sshproxy/
-chmod 600 sshproxy/id_rsa
-
-&lt;h4 id=&#34;2-配置-sshproxy-在-ssh-config-中加入:4c8e1b9a7a8395b91ca5c59d6255e92c&#34;&gt;2. 配置 sshproxy，在 .ssh/config 中加入：&lt;/h4&gt;
-host sshproxy
-        HostName &lt;your hostname&gt;
-        user sshproxy
-        IdentityFile ~/.ssh/sshproxy/id_rsa
-
-&lt;h4 id=&#34;3-安装-autossh:4c8e1b9a7a8395b91ca5c59d6255e92c&#34;&gt;3. 安装 autossh&lt;/h4&gt;
-wget https://launchpad.net/~likemartinma/+archive/net/+files/autossh_1.4c-1_amd64.deb
-sudo dpkg -i autossh_1.4c-1_amd64.deb
-
-&lt;h4 id=&#34;4-创建-etc-init-myhost-conf:4c8e1b9a7a8395b91ca5c59d6255e92c&#34;&gt;4. 创建 /etc/init/myhost.conf&lt;/h4&gt;
-# autossh
-
-description  &#34;myhost autossh daemon&#34;
-
-start on (net-device-up IFACE!=lo)
-stop on (net-device-down IFACE!=lo)
-
-respawn
-
-script
-        exec /usr/bin/autossh -U &lt;your username&gt; -M40000 -q -N -D localhost:12345 sshproxy
-end script
-
-&lt;h4 id=&#34;5-启动-myhost:4c8e1b9a7a8395b91ca5c59d6255e92c&#34;&gt;5. 启动 myhost&lt;/h4&gt;
-sudo start / restart myhost
-
-&lt;h4 id=&#34;6-查看是否成功:4c8e1b9a7a8395b91ca5c59d6255e92c&#34;&gt;6. 查看是否成功：&lt;/h4&gt;
-ps -ef | grep autossh
-
-&lt;h4 id=&#34;7-配置-socks-v5-代理:4c8e1b9a7a8395b91ca5c59d6255e92c&#34;&gt;7. 配置 SOCKS v5 代理：&lt;/h4&gt;
-SOCKS 代理：127.0.0.1
-端口：12345
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2012/10/24/ubuntu_sshproxy/</guid>
+      <description>服务器端 1. 添加用户，并切换到该用户： 1 2 adduser sshproxy su - sshproxy 2. 生成 key： 1 2 3 ssh-keygen cd .ssh mv id_rsa.pub authorized_keys 3. 禁止 sshproxy 用户登录： 1 chsh -s /bin/false sshproxy 客户端： 1. 拷贝密钥 id_rsa 到客户端，</description>
     </item>
     
     <item>
       <title>Ubuntu 设置 sshproxy 代理</title>
-      <link>http://blog.wenzhixin.net.cn/2012/10/24/ubuntu_sshproxy</link>
+      <link>http://blog.wenzhixin.net.cn/2012/10/24/ubuntu_sshproxy/</link>
       <pubDate>Wed, 24 Oct 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/10/24/ubuntu_sshproxy</guid>
-      <description>
-
-&lt;h3 id=&#34;服务器端:4c8e1b9a7a8395b91ca5c59d6255e92c&#34;&gt;服务器端&lt;/h3&gt;
-
-&lt;h4 id=&#34;1-添加用户-并切换到该用户:4c8e1b9a7a8395b91ca5c59d6255e92c&#34;&gt;1. 添加用户，并切换到该用户：&lt;/h4&gt;
-adduser sshproxy
-su - sshproxy
-
-&lt;h4 id=&#34;2-生成-key:4c8e1b9a7a8395b91ca5c59d6255e92c&#34;&gt;2. 生成 key：&lt;/h4&gt;
-ssh-keygen
-cd .ssh
-mv id_rsa.pub authorized_keys
-
-&lt;h4 id=&#34;3-禁止-sshproxy-用户登录:4c8e1b9a7a8395b91ca5c59d6255e92c&#34;&gt;3. 禁止 sshproxy 用户登录：&lt;/h4&gt;
-chsh -s /bin/false sshproxy
-
-&lt;hr /&gt;
-
-&lt;h3 id=&#34;客户端:4c8e1b9a7a8395b91ca5c59d6255e92c&#34;&gt;客户端：&lt;/h3&gt;
-
-&lt;h4 id=&#34;1-拷贝密钥-id-rsa-到客户端-并进行配置:4c8e1b9a7a8395b91ca5c59d6255e92c&#34;&gt;1. 拷贝密钥 id_rsa 到客户端，并进行配置：&lt;/h4&gt;
-cd ~/.ssh
-mkdir sshproxy
-chmod 700 sshproxy
-mv id_rsa sshproxy/
-chmod 600 sshproxy/id_rsa
-
-&lt;h4 id=&#34;2-配置-sshproxy-在-ssh-config-中加入:4c8e1b9a7a8395b91ca5c59d6255e92c&#34;&gt;2. 配置 sshproxy，在 .ssh/config 中加入：&lt;/h4&gt;
-host sshproxy
-        HostName &lt;your hostname&gt;
-        user sshproxy
-        IdentityFile ~/.ssh/sshproxy/id_rsa
-
-&lt;h4 id=&#34;3-安装-autossh:4c8e1b9a7a8395b91ca5c59d6255e92c&#34;&gt;3. 安装 autossh&lt;/h4&gt;
-wget https://launchpad.net/~likemartinma/+archive/net/+files/autossh_1.4c-1_amd64.deb
-sudo dpkg -i autossh_1.4c-1_amd64.deb
-
-&lt;h4 id=&#34;4-创建-etc-init-myhost-conf:4c8e1b9a7a8395b91ca5c59d6255e92c&#34;&gt;4. 创建 /etc/init/myhost.conf&lt;/h4&gt;
-# autossh
-
-description  &#34;myhost autossh daemon&#34;
-
-start on (net-device-up IFACE!=lo)
-stop on (net-device-down IFACE!=lo)
-
-respawn
-
-script
-        exec /usr/bin/autossh -U &lt;your username&gt; -M40000 -q -N -D localhost:12345 sshproxy
-end script
-
-&lt;h4 id=&#34;5-启动-myhost:4c8e1b9a7a8395b91ca5c59d6255e92c&#34;&gt;5. 启动 myhost&lt;/h4&gt;
-sudo start / restart myhost
-
-&lt;h4 id=&#34;6-查看是否成功:4c8e1b9a7a8395b91ca5c59d6255e92c&#34;&gt;6. 查看是否成功：&lt;/h4&gt;
-ps -ef | grep autossh
-
-&lt;h4 id=&#34;7-配置-socks-v5-代理:4c8e1b9a7a8395b91ca5c59d6255e92c&#34;&gt;7. 配置 SOCKS v5 代理：&lt;/h4&gt;
-SOCKS 代理：127.0.0.1
-端口：12345
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2012/10/24/ubuntu_sshproxy/</guid>
+      <description>服务器端 1. 添加用户，并切换到该用户： 1 2 adduser sshproxy su - sshproxy 2. 生成 key： 1 2 3 ssh-keygen cd .ssh mv id_rsa.pub authorized_keys 3. 禁止 sshproxy 用户登录： 1 chsh -s /bin/false sshproxy 客户端： 1. 拷贝密钥 id_rsa 到客户端，</description>
     </item>
     
   </channel>

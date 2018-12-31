@@ -1,103 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Crontab on 文翼的博客</title>
+    <title>crontab on 文翼的博客</title>
     <link>http://blog.wenzhixin.net.cn/tags/crontab/</link>
-    <description>Recent content in Crontab on 文翼的博客</description>
+    <description>Recent content in crontab on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Fri, 07 Nov 2014 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.wenzhixin.net.cn/tags/crontab/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/crontab/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>crontab 学习笔记</title>
-      <link>http://blog.wenzhixin.net.cn/2014/11/07/crontab_study</link>
+      <link>http://blog.wenzhixin.net.cn/2014/11/07/crontab_study/</link>
       <pubDate>Fri, 07 Nov 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/11/07/crontab_study</guid>
-      <description>
-
-&lt;p&gt;crontab 常见于 Unix 和类 Unix 的操作系统之中，用于设置周期性被执行的指令。该命令从标准输入设备读取指令，并将其存放于&lt;code&gt;crontab&lt;/code&gt;文件中，以供之后读取和执行。&lt;/p&gt;
-
-&lt;h3 id=&#34;crontab-命令格式和参数:48b38d7290c8c7d5754d0161bc80acb2&#34;&gt;crontab 命令格式和参数&lt;/h3&gt;
-crontab [ -u user ] [ -i ] { -e | -l | -r }
-
-&lt;ul&gt;
-&lt;li&gt;-u：设置指定用户，默认为当前用户&lt;/li&gt;
-&lt;li&gt;-i：删除用户 crontab 的确认提示&lt;/li&gt;
-&lt;li&gt;-e：编辑用户的 crontab&lt;/li&gt;
-&lt;li&gt;-l：列表用户的 crontab&lt;/li&gt;
-&lt;li&gt;-r：删除用户的 crontab&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;crontab-e-配置文件格式:48b38d7290c8c7d5754d0161bc80acb2&#34;&gt;crontab -e 配置文件格式&lt;/h3&gt;
-* * * * * COMMAND
-
-&lt;p&gt;&lt;strong&gt;分钟0~59&lt;/strong&gt; &lt;strong&gt;小时0~23&lt;/strong&gt; &lt;strong&gt;日期1~31&lt;/strong&gt; &lt;strong&gt;月份1~12&lt;/strong&gt; &lt;strong&gt;星期0~7&lt;/strong&gt; COMMAND&lt;/p&gt;
-
-&lt;p&gt;例子：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;每晚的21:30重启 nginx&lt;/p&gt;
-30 21 * * * service nginx restart&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;每月1、10、22日的4:45重启 nginx&lt;/p&gt;
-45 4 1,10,22 * * service nginx restart&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;每月1到10日的4:45重启 nginx&lt;/p&gt;
-45 4 1-10 * * service nginx restart&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;每隔两分钟重启 nginx 服务器&lt;/p&gt;
-*/2 * * * * service nginx restart
-1-59/2 * * * * service nginx restart&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;晚上11点到早上7点之间，每隔一小时重启 nginx&lt;/p&gt;
-0 23-7/1 * * * service nginx restart&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;每天18:00到23:00之间每隔30分钟重启 nginx&lt;/p&gt;
-0,30 18-23 * * * service nginx restart
-0-59/30 18-23 * * * service nginx restart
-*/30 18-23 * * * service nginx restart&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;小结：&lt;/strong&gt;
-* *表示任何时候都匹配
-* 可以用 “A,B,C” 表示A或者B或者C时执行命令
-* 可以用 “A-B” 表示A到B之间时执行命令
-* 可以用 “/A” 表示每隔A分钟（小时等）执行命令&lt;/p&gt;
-
-&lt;h3 id=&#34;使用系统-crontab-配置文件:48b38d7290c8c7d5754d0161bc80acb2&#34;&gt;使用系统 crontab 配置文件&lt;/h3&gt;
-
-&lt;p&gt;文件位置：&lt;code&gt;/etc/crontab&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;命令格式（指定用户）：&lt;/p&gt;
-* * * * * USER COMMAND
-
-&lt;p&gt;例子：&lt;/p&gt;
-*\30 * * * * root service nginx restart
-
-&lt;h3 id=&#34;crontab-使用注意:48b38d7290c8c7d5754d0161bc80acb2&#34;&gt;crontab 使用注意&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;无法在 crontab 的命令中使用环境变量&lt;/li&gt;
-&lt;/ul&gt;
-*/1 * * * * echo $APP_HOME # 为空
-
-&lt;ul&gt;
-&lt;li&gt;第三个域和第五个域是 “或” 操作系统&lt;/li&gt;
-&lt;/ul&gt;
-# 四月的第一个星期日早晨1时59分运行 a.sh
-59 1 1-7 4 0 a.sh # 错误
-59 1 1-7 4 * test `date +\%w` -eq 0 &amp;&amp; a.sh # 正确
-
-&lt;ul&gt;
-&lt;li&gt;分钟误用&lt;/li&gt;
-&lt;/ul&gt;
-# 每两个小时执行一次
-* /2 * * * command # 错误
-0 /2 * * * command # 正确
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2014/11/07/crontab_study/</guid>
+      <description>crontab 常见于 Unix 和类 Unix 的操作系统之中，用于设置周期性被执行的指令。该命令从标准输入设备读取指令，并将其存放于crontab文件中，以供之后读取和执</description>
     </item>
     
   </channel>

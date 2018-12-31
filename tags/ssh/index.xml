@@ -1,211 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ssh on 文翼的博客</title>
+    <title>ssh on 文翼的博客</title>
     <link>http://blog.wenzhixin.net.cn/tags/ssh/</link>
-    <description>Recent content in Ssh on 文翼的博客</description>
+    <description>Recent content in ssh on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Sun, 16 Mar 2014 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.wenzhixin.net.cn/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 17 Mar 2013 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
-      <title>ubuntu 下使用 FreeRDP 连接 Windows 远程桌面</title>
-      <link>http://blog.wenzhixin.net.cn/2014/03/16/ubuntu_xfreerdp</link>
-      <pubDate>Sun, 16 Mar 2014 00:00:00 +0000</pubDate>
+      <title>Ubuntu 下无密码访问及文件同步</title>
+      <link>http://blog.wenzhixin.net.cn/2013/03/17/ssh_rsync/</link>
+      <pubDate>Sun, 17 Mar 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/03/16/ubuntu_xfreerdp</guid>
-      <description>
-
-&lt;h4 id=&#34;简介:35719c5fd0b3ab2ac34b47cf0a797513&#34;&gt;简介&lt;/h4&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/FreeRDP/FreeRDP&#34;&gt;FreeRDP&lt;/a&gt; 是一款开源的远程桌面系统，支持多种平台，
-在 ubuntu 中使用 FreeRDP 可以很方便的登录到 windwos 远程桌面中。&lt;/p&gt;
-
-&lt;h4 id=&#34;安装:35719c5fd0b3ab2ac34b47cf0a797513&#34;&gt;安装&lt;/h4&gt;
-sudo apt-get install freerdp
-
-&lt;h4 id=&#34;使用:35719c5fd0b3ab2ac34b47cf0a797513&#34;&gt;使用&lt;/h4&gt;
-xfreerdp -f host:port -u username -p password
-
-&lt;p&gt;&lt;strong&gt;参数：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;-f：表示全屏（切换全屏的快捷键为：Ctrl + Alt + Enter）&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;host：远程服务器地址&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;port：端口，默认为 3389&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;-u username：用户名&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;-p password：密码&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;例如：&lt;/p&gt;
-xfreerdp -f 192.168.1.10 -u administrator -p 123456
-
-&lt;p&gt;表示远程桌面到 192.168.1.10&lt;/p&gt;
-
-&lt;h4 id=&#34;常用插件:35719c5fd0b3ab2ac34b47cf0a797513&#34;&gt;常用插件&lt;/h4&gt;
-
-&lt;p&gt;FreeRDP 提供了很多&lt;a href=&#34;https://github.com/FreeRDP/FreeRDP/wiki/Plugins&#34;&gt;插件&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;这里记录我比较常用到的插件：&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;cliprdr（开启粘贴功能）&lt;/strong&gt;&lt;/p&gt;
---plugin cliprdr
-
-&lt;p&gt;例如：&lt;/p&gt;
-xfreerdp -f --plugin cliprdr 192.168.1.10 -u administrator -p 123456
-
-&lt;p&gt;&lt;strong&gt;rdpdr（开启本地文件夹映射为远程服务器磁盘功能）&lt;/strong&gt;&lt;/p&gt;
---plugin rdpdr --data disk:&lt;Name&gt;:&lt;Path&gt; --
-
-&lt;p&gt;例如将本地 /home/username/share 作为共享文件夹：&lt;/p&gt;
-xfreerdp -f --plugin rdpdr --data disk:username:~/share -- 192.168.1.10 -u administrator -p 123456
-</description>
-    </item>
-    
-    <item>
-      <title>ssh tunnel（隧道）</title>
-      <link>http://blog.wenzhixin.net.cn/2014/03/15/ssh_tunnel</link>
-      <pubDate>Sat, 15 Mar 2014 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2014/03/15/ssh_tunnel</guid>
-      <description>
-
-&lt;h3 id=&#34;问题描述:409e60413bfcfe8bece1a1e1741b8511&#34;&gt;问题描述：&lt;/h3&gt;
-
-&lt;p&gt;公司内部机器限制了登录，只能通过某台指定的机器才能上网，我们这里叫做中转服务器。
-例如邮件服务器，而一般中转服务器是 linux 系统。
-你想要登录到内部的机器，只能通过 ssh 登录到邮件服务器，然后在 ssh 登录到内部的机器。
-如果内部的机器是 windows 系统，或者还需要传输文件，会变的相当的麻烦：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;两次登录&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;不能开图形界面&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;需要在中转服务器中安装额外的软件&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;文件传输受限于中转服务器的存储空间&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;问题解决:409e60413bfcfe8bece1a1e1741b8511&#34;&gt;问题解决：&lt;/h3&gt;
-
-&lt;p&gt;使用强大的 ssh tunnel（隧道），就可以通过一次 ssh 进行远程端口的映射，从而完成以上麻烦的步骤。&lt;/p&gt;
-ssh -fN -L local_port:remote_host:remote_port bridge_user@bridge_host
-
-&lt;p&gt;&lt;strong&gt;参数：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;-fN：表示在后台运行 ssh 并不执行远程命令&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;-L：表示使用 ssh tunnel 将远程端口映射到本地&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;local_port：本地的端口&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;remote_host：远程服务器的地址&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;remote_port：远程服务器的端口&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;bridge_user：中转服务器的用户名&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;bridge_host：中转服务器的地址&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;例如，我们需要访问的内部机器的IP为：192.168.1.10，为windows，开启了远程桌面（端口为3389），
-中转服务器的地址为：zhixin@mail.wenzhixin.net.cn，那么我们使用以下命令：&lt;/p&gt;
-ssh -fN -L 3389:192.168.1.10:3389 zhixin@mail.wenzhixin.net.cn
-
-&lt;p&gt;即可将远程服务器的 3389 映射到本地中，现在要登录远程服务器，只需要使用登录到 127.0.0.1:3389 即可。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>安卓 ssh 和 rsync 同步客户端的实现</title>
-      <link>http://blog.wenzhixin.net.cn/2013/10/18/android_ssh_rsync_client</link>
-      <pubDate>Fri, 18 Oct 2013 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2013/10/18/android_ssh_rsync_client</guid>
-      <description>
-
-&lt;h4 id=&#34;1-介绍:15c86d4aa49fdfafae7a5d6f144fe403&#34;&gt;1. 介绍&lt;/h4&gt;
-
-&lt;p&gt;基于安卓的 ssh 和 rsync 客户端，可用于对服务器指定的目录进行同步到手机。
-在这里我们使用 Dropbear 的 dbclient 作为 ssh 的客户端。&lt;/p&gt;
-
-&lt;p&gt;Dropbear是一个相对较小的SSH服务器和客户端。
-它运行在一个基于POSIX的各种平台。
-Dropbear是开源软件，在麻省理工学院式的许可证。
-Dropbear是特别有用的“嵌入”式的Linux（或其他Unix）系统，如无线路由器。&lt;/p&gt;
-
-&lt;h4 id=&#34;2-准备工作:15c86d4aa49fdfafae7a5d6f144fe403&#34;&gt;2. 准备工作&lt;/h4&gt;
-
-&lt;p&gt;在使用之前，需要先编译 dropbear 的可执行文件，详细的编译步骤见：
-&lt;a href=&#34;http://code.google.com/p/droidsshd/wiki/BuildingDropbear&#34;&gt;BuildingDropbear&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;或者直接下载已经帮我们编译好的文件：
-&lt;a href=&#34;http://code.google.com/p/droidsshd/downloads/detail?name=dropbearmulti&amp;amp;can=2&amp;amp;q=&#34;&gt;dropbearmulti&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;rsync 可以到网站上找到相应的文件：
-&lt;a href=&#34;http://www.samba.org/ftp/rsync/&#34;&gt;Rsync&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;或者直接下载已经编译好的文件：
-&lt;a href=&#34;http://blog.wenzhixin.net.cn/2013/10/18/rsync_gz&#34;&gt;rsync&lt;/a&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;3-如何使用:15c86d4aa49fdfafae7a5d6f144fe403&#34;&gt;3. 如何使用&lt;/h4&gt;
-
-&lt;p&gt;关键代码如下：&lt;/p&gt;
-ArrayList&lt;String&gt; list = new ArrayList&lt;String&gt;();
-list.add(binDir + &#34;/rsync&#34;); // rsync 的 bin 目录
-list.add(&#34;-avzO&#34;); // 同步参数
-list.add(&#34;--progress&#34;); // 显示进度
-list.add(&#34;-e&#34;); // 用于指定端口，或者 key
-list.add(binDir + &#34;/ssh -y -i &#34; + homeDir + &#34;/id_rsa&#34;); // id_rsa 的存放目录
-list.add(Config.SERVER); // 同步服务器地址目录，如 admin@wenzhixin.net.cn:~/
-list.add(Config.ROOT); // 需要同步到的目录
-try {
-    ProcessBuilder pb = new ProcessBuilder(list.toArray(new String[] {}));
-    pb.directory(binDir);
-    Map&lt;String, String&gt; env = pb.environment();
-    env.clear();
-    env.putAll(System.getenv());
-    pb.redirectErrorStream(true);
-    Process p = pb.start();
-
-    BufferedReader bis = new BufferedReader(new InputStreamReader(p.getInputStream()));
-    String line;
-    while ((line = bis.readLine()) != null) {
-        log(line); // 显示日志
-    }
-    bis.close();
-    p.waitFor();
-    p.destroy();
-} catch (Exception e) {
-    log(e.getMessage());
-}
-
-&lt;h4 id=&#34;4-需要注意的问题:15c86d4aa49fdfafae7a5d6f144fe403&#34;&gt;4. 需要注意的问题&lt;/h4&gt;
-
-&lt;p&gt;1) 如何生成 id_rsa 和 authorized_keys，从而跳过密码的验证&lt;/p&gt;
-
-&lt;p&gt;生成 id_rsa，拷贝到手机客户端下：&lt;/p&gt;
-dropbearkey -t rsa -f ~/.ssh/id_rsa
-
-&lt;p&gt;生成 authorized_keys，并拷贝到服务器 ~/.ssh/ 下：&lt;/p&gt;
-dropbearkey -y -f ~/.ssh/id_rsa | grep “^ssh-rsa ” &gt;&gt; authorized_keys
-
-&lt;p&gt;2) 跳过 known_hosts 提示和密码验证&lt;/p&gt;
-ssh -y -i id_rsa
-
-&lt;ul&gt;
-&lt;li&gt;-y 表示跳过 known_hosts&lt;/li&gt;
-&lt;li&gt;-i 指定 id_rsa 进行认证&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2013/03/17/ssh_rsync/</guid>
+      <description>服务器端配置 ssh 修改客户端sshd配置文件 1 sudo vi /etc/ssh/sshd_config 修改为 1 2 3 RSAAuthentication yes PubkeyAuthentication yes AuthorizedKeysFile %h/.ssh/authorized_keys 重启ssh服务 1 sudo /etc/init.d/sshd restart 配置密钥 在客户端生成公钥和私钥文件 1 2 ssh-keygen cat ~/.ssh/id_rsa.pub &amp;gt;&amp;gt;</description>
     </item>
     
   </channel>

@@ -1,473 +1,60 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Nodejs on 文翼的博客</title>
+    <title>nodejs on 文翼的博客</title>
     <link>http://blog.wenzhixin.net.cn/tags/nodejs/</link>
-    <description>Recent content in Nodejs on 文翼的博客</description>
+    <description>Recent content in nodejs on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Mon, 07 Jan 2013 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.wenzhixin.net.cn/tags/nodejs/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/nodejs/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Ubuntu 12.04 安装 Nodejs</title>
-      <link>http://blog.wenzhixin.net.cn/2013/01/07/installing_node_on_ubuntu</link>
+      <link>http://blog.wenzhixin.net.cn/2013/01/07/installing_node_on_ubuntu/</link>
       <pubDate>Mon, 07 Jan 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/01/07/installing_node_on_ubuntu</guid>
-      <description>&lt;p&gt;命令行：&lt;/p&gt;
-sudo apt-get install python-software-properties
-sudo add-apt-repository ppa:chris-lea/node.js
-sudo apt-get update
-sudo apt-get install nodejs npm
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager&#34;&gt;Installing Node.js via package manager&lt;/a&gt;&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2013/01/07/installing_node_on_ubuntu/</guid>
+      <description>命令行： 1 2 3 4 sudo apt-get install python-software-properties sudo add-apt-repository ppa:chris-lea/node.js sudo apt-get update sudo apt-get install nodejs npm Installing Node.js via package manager</description>
     </item>
     
     <item>
       <title>Nodejs 应用部署小记</title>
-      <link>http://blog.wenzhixin.net.cn/2012/11/09/nodejs_deploy</link>
+      <link>http://blog.wenzhixin.net.cn/2012/11/09/nodejs_deploy/</link>
       <pubDate>Fri, 09 Nov 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/11/09/nodejs_deploy</guid>
-      <description>
-
-&lt;h3 id=&#34;1-日志功能:81f1797f1abfbfd2290e7727689d7acd&#34;&gt;1、日志功能&lt;/h3&gt;
-
-&lt;h4 id=&#34;1-加入-access-log:81f1797f1abfbfd2290e7727689d7acd&#34;&gt;1) 加入 access.log&lt;/h4&gt;
-var accessLogfile = fs.createWriteStream(&#39;access.log&#39;, {flags: &#39;a&#39;});
-
-app.configure(function() {
-    app.use(express.logger({stream: accessLogfile}));
-}
-
-&lt;h4 id=&#34;2-加入-error-log:81f1797f1abfbfd2290e7727689d7acd&#34;&gt;2) 加入 error.log&lt;/h4&gt;
-
-&lt;p&gt;首先，添加 helpers/error.js 文件：&lt;/p&gt;
-var fs = require(&#39;fs&#39;);
-var errorLogfile = fs.createWriteStream(&#39;logs/error.log&#39;, {flags: &#39;a&#39;});
-
-exports.handler = function(err, req, res, status) {
-      console.log(err);
-
-      var meta = &#39;[&#39; + new Date() + &#39;] &#39; + req.url + &#39; &#39; + status + &#39;\n&#39;;
-      errorLogfile.write(meta + err.stack + &#39;\n&#39;);
-
-      res.status(status);
-      res.end(&#39;&#39;);
-}
-
-&lt;p&gt;在 routes 中使用：&lt;/p&gt;
-function(req, res) {
-      error.handler(err, req, res, 500);
-}
-
-&lt;h3 id=&#34;2-多进程启动服务器-使用-cluster-模块:81f1797f1abfbfd2290e7727689d7acd&#34;&gt;2、多进程启动服务器，使用 cluster 模块&lt;/h3&gt;
-var cluster = require(&#39;cluster&#39;);
-var os = require(&#39;os&#39;);
-
-// 获取 CPU 的数量
-var numCPUs = os.cpus().length;
-
-var workers = {};
-if (cluster.isMaster) {
-      // 主进程分支
-      cluster.on(&#39;death&#39;, function(worker) {
-        // 当一个工作进程结束时，重启工作进程
-        delete workers[worker.pid];
-        worker = cluster.fork();
-        workers[worker.pid] = worker;
-      });
-      // 初始开启与 CPU 数量相同的工作进程
-      for ( var i = 0; i &lt; numCPUs; i++) {
-        var worker = cluster.fork();
-        workers[worker.pid] = worker;
-      }
-} else {
-      // 工作进程分支，启动服务器
-      var app = require(&#39;./app&#39;);
-      app.listen(app.get(&#39;port&#39;), function() {
-        console.log(&#39;Server listening on port %d in %s mode&#39;, app.get(&#39;port&#39;), app.get(&#39;env&#39;));
-      });
-}
-
-// 当进程被终止时，关闭所有工作进程
-process.on(&#39;SIGTERM&#39;, function() {
-      for ( var pid in workers) {
-        process.kill(pid);
-      }
-      process.exit(0);
-});
-
-&lt;h3 id=&#34;3-启动脚本-可用于开机启动服务:81f1797f1abfbfd2290e7727689d7acd&#34;&gt;3、启动脚本，可用于开机启动服务&lt;/h3&gt;
-#! /bin/bash
-
-NODE_ENV=production
-DAEMON=&#34;node cluster.js&#34;
-NAME=name
-PIDFILE=&#34;name.pid&#34;
-
-case &#34;$1&#34; in
-  start)
-        echo &#34;Starting $NAME.&#34;
-        nohup $DAEMON &gt;/dev/null 2&gt;/dev/null &amp;
-        echo $! &gt; $PIDFILE
-        ;;
-  stop)
-        echo &#34;Stopping $NAME.&#34;
-        pid=`cat $PIDFILE`
-        kill $pid
-        rm $PIDFILE
-        ;;
-  status)
-      ps -ef | grep nodejs
-      ;;
-    esac
-
-    exit 0
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2012/11/09/nodejs_deploy/</guid>
+      <description>1、日志功能 1) 加入 access.log 1 2 3 4 5 var accessLogfile = fs.createWriteStream(&amp;#39;access.log&amp;#39;, {flags: &amp;#39;a&amp;#39;}); app.configure(function() { app.use(express.logger({stream: accessLogfile})); } 2) 加入 error.log 首先，添加 helpers/error.js 文件： 1 2 3 4 5 6 7 8 9 10 11 12 var fs = require(&amp;#39;fs&amp;#39;); var errorLogfile = fs.createWriteStream(&amp;#39;logs/error.log&amp;#39;, {flags: &amp;#39;a&amp;#39;}); exports.handler = function(err, req, res, status) { console.log(err); var</description>
     </item>
     
     <item>
       <title>Nodejs 应用部署小记</title>
-      <link>http://blog.wenzhixin.net.cn/2012/11/09/nodejs_deploy</link>
+      <link>http://blog.wenzhixin.net.cn/2012/11/09/nodejs_deploy/</link>
       <pubDate>Fri, 09 Nov 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/11/09/nodejs_deploy</guid>
-      <description>
-
-&lt;h3 id=&#34;1-日志功能:81f1797f1abfbfd2290e7727689d7acd&#34;&gt;1、日志功能&lt;/h3&gt;
-
-&lt;h4 id=&#34;1-加入-access-log:81f1797f1abfbfd2290e7727689d7acd&#34;&gt;1) 加入 access.log&lt;/h4&gt;
-var accessLogfile = fs.createWriteStream(&#39;access.log&#39;, {flags: &#39;a&#39;});
-
-app.configure(function() {
-    app.use(express.logger({stream: accessLogfile}));
-}
-
-&lt;h4 id=&#34;2-加入-error-log:81f1797f1abfbfd2290e7727689d7acd&#34;&gt;2) 加入 error.log&lt;/h4&gt;
-
-&lt;p&gt;首先，添加 helpers/error.js 文件：&lt;/p&gt;
-var fs = require(&#39;fs&#39;);
-var errorLogfile = fs.createWriteStream(&#39;logs/error.log&#39;, {flags: &#39;a&#39;});
-
-exports.handler = function(err, req, res, status) {
-      console.log(err);
-
-      var meta = &#39;[&#39; + new Date() + &#39;] &#39; + req.url + &#39; &#39; + status + &#39;\n&#39;;
-      errorLogfile.write(meta + err.stack + &#39;\n&#39;);
-
-      res.status(status);
-      res.end(&#39;&#39;);
-}
-
-&lt;p&gt;在 routes 中使用：&lt;/p&gt;
-function(req, res) {
-      error.handler(err, req, res, 500);
-}
-
-&lt;h3 id=&#34;2-多进程启动服务器-使用-cluster-模块:81f1797f1abfbfd2290e7727689d7acd&#34;&gt;2、多进程启动服务器，使用 cluster 模块&lt;/h3&gt;
-var cluster = require(&#39;cluster&#39;);
-var os = require(&#39;os&#39;);
-
-// 获取 CPU 的数量
-var numCPUs = os.cpus().length;
-
-var workers = {};
-if (cluster.isMaster) {
-      // 主进程分支
-      cluster.on(&#39;death&#39;, function(worker) {
-        // 当一个工作进程结束时，重启工作进程
-        delete workers[worker.pid];
-        worker = cluster.fork();
-        workers[worker.pid] = worker;
-      });
-      // 初始开启与 CPU 数量相同的工作进程
-      for ( var i = 0; i &lt; numCPUs; i++) {
-        var worker = cluster.fork();
-        workers[worker.pid] = worker;
-      }
-} else {
-      // 工作进程分支，启动服务器
-      var app = require(&#39;./app&#39;);
-      app.listen(app.get(&#39;port&#39;), function() {
-        console.log(&#39;Server listening on port %d in %s mode&#39;, app.get(&#39;port&#39;), app.get(&#39;env&#39;));
-      });
-}
-
-// 当进程被终止时，关闭所有工作进程
-process.on(&#39;SIGTERM&#39;, function() {
-      for ( var pid in workers) {
-        process.kill(pid);
-      }
-      process.exit(0);
-});
-
-&lt;h3 id=&#34;3-启动脚本-可用于开机启动服务:81f1797f1abfbfd2290e7727689d7acd&#34;&gt;3、启动脚本，可用于开机启动服务&lt;/h3&gt;
-#! /bin/bash
-
-NODE_ENV=production
-DAEMON=&#34;node cluster.js&#34;
-NAME=name
-PIDFILE=&#34;name.pid&#34;
-
-case &#34;$1&#34; in
-  start)
-        echo &#34;Starting $NAME.&#34;
-        nohup $DAEMON &gt;/dev/null 2&gt;/dev/null &amp;
-        echo $! &gt; $PIDFILE
-        ;;
-  stop)
-        echo &#34;Stopping $NAME.&#34;
-        pid=`cat $PIDFILE`
-        kill $pid
-        rm $PIDFILE
-        ;;
-  status)
-      ps -ef | grep nodejs
-      ;;
-    esac
-
-    exit 0
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2012/11/09/nodejs_deploy/</guid>
+      <description>1、日志功能 1) 加入 access.log 1 2 3 4 5 var accessLogfile = fs.createWriteStream(&amp;#39;access.log&amp;#39;, {flags: &amp;#39;a&amp;#39;}); app.configure(function() { app.use(express.logger({stream: accessLogfile})); } 2) 加入 error.log 首先，添加 helpers/error.js 文件： 1 2 3 4 5 6 7 8 9 10 11 12 var fs = require(&amp;#39;fs&amp;#39;); var errorLogfile = fs.createWriteStream(&amp;#39;logs/error.log&amp;#39;, {flags: &amp;#39;a&amp;#39;}); exports.handler = function(err, req, res, status) { console.log(err); var</description>
     </item>
     
     <item>
       <title>Ubuntu 开发 Nodejs 入门小记</title>
-      <link>http://blog.wenzhixin.net.cn/2012/10/25/nodejs_get_started</link>
+      <link>http://blog.wenzhixin.net.cn/2012/10/25/nodejs_get_started/</link>
       <pubDate>Thu, 25 Oct 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/10/25/nodejs_get_started</guid>
-      <description>
-
-&lt;h3 id=&#34;nodejs-之搭建环境:a5204e6eee1a0030abd2bf5569c20de9&#34;&gt;Nodejs 之搭建环境&lt;/h3&gt;
-
-&lt;h5 id=&#34;1-安装-nodejs-npm:a5204e6eee1a0030abd2bf5569c20de9&#34;&gt;1) 安装 nodejs、npm&lt;/h5&gt;
-sudo apt-get install python-software-properties
-sudo add-apt-repository ppa:chris-lea/node.js
-sudo apt-get update
-sudo apt-get install nodejs npm
-
-&lt;h5 id=&#34;2-安装-express-web-application-framework-for-node:a5204e6eee1a0030abd2bf5569c20de9&#34;&gt;2) 安装 express​ - web application framework for node&lt;/h5&gt;
-sudo npm install -g express
-
-&lt;h5 id=&#34;3-安装-supervisor-is-used-to-restart-programs-when-a-js-file-changes:a5204e6eee1a0030abd2bf5569c20de9&#34;&gt;3) 安装 supervisor - is used to restart programs when a *.js file changes&lt;/h5&gt;
-
-&lt;p&gt;​
-    npm install -g supervisor&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&#34;nodejs-之模块与包:a5204e6eee1a0030abd2bf5569c20de9&#34;&gt;Nodejs 之模块与包&lt;/h3&gt;
-
-&lt;h5 id=&#34;1-模块是什么:a5204e6eee1a0030abd2bf5569c20de9&#34;&gt;1) 模块是什么&lt;/h5&gt;
-
-&lt;p&gt;一个 Nodejs 文件（Javascript 代码、JSON 代码或者 C/C++ 模块）就是一个模块。&lt;/p&gt;
-
-&lt;h5 id=&#34;2-加载-创建模块:a5204e6eee1a0030abd2bf5569c20de9&#34;&gt;2) 加载、创建模块&lt;/h5&gt;
-require 用来访问其他模块提供的 API
-exports 用来向外提供模块的 API
-module 存储模块的元信息
-
-&lt;p&gt;例子：&lt;/p&gt;
-exports.func = function() {};
-var hello = require(&#34;./hello&#34;);
-hello.func();
-
-function Hello() {}
-module.exports = Hello;
-var Hello = require(&#34;./Hello&#34;);
-var hello = new Hello();
-
-&lt;h5 id=&#34;3-包-package-json-字段:a5204e6eee1a0030abd2bf5569c20de9&#34;&gt;3) 包（package.json）字段：&lt;/h5&gt;
-name 包的名称
-description 简要说明
-version 版本号
-keywords 关键字数组，用于搜索
-​maintainers 维护者数组，包含 name、email（可选）、web（可选）
-​contributors 贡献这数组，作者为第一个元素
-bugs 提交 bug 的地址
-licenses 许可证数组
-repositories 仓库托管地址数组，包含 type、url、path（可选）
-dependencies 包的依赖，由包名和版本号组成
-
-&lt;h5 id=&#34;4-包管理器-npm:a5204e6eee1a0030abd2bf5569c20de9&#34;&gt;4) 包管理器 npm&lt;/h5&gt;
-
-&lt;p&gt;安装 Nodejs 包：&lt;/p&gt;
-npm [install / i] [-g] [package_name]
-
-&lt;p&gt;本地模式和全局模式区别：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;本地模式：npm install package_name&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;全局模式：npm install -g package_name&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;本地模式：可通过 require 使用、不注册 PATH&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;全局模式：不可通过 require 使用、注册 PATH&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;创建全局链接：&lt;/p&gt;
-npm link package_name
-
-&lt;p&gt;包的发布相关：&lt;/p&gt;
-npm init / npm publish / npm unpublish
-
-&lt;hr /&gt;
-
-&lt;h3 id=&#34;nodejs-之调试:a5204e6eee1a0030abd2bf5569c20de9&#34;&gt;Nodejs 之调试&lt;/h3&gt;
-
-&lt;h5 id=&#34;1-命令行调试:a5204e6eee1a0030abd2bf5569c20de9&#34;&gt;1) 命令行调试&lt;/h5&gt;
-node debug *.js
-
-&lt;p&gt;调试参数：&lt;/p&gt;
-run 执行脚本，在第一行暂停
-restart 重新执行脚本
-cont(c) 继续执行
-stop(s) 单步执行
-out(o) 从函数步出
-setBreakpoint(sb) 设置断点
-clearBreakpoint(cp) 清除断点
-backtrace(bt) 显示当前的调用栈
-watch 加入到监视列表
-unwatch 从监视列表移除
-watchers 显示监视列表所有的表达式和值
-kill 停止执行
-
-&lt;h5 id=&#34;2-使用-eclipse-调试-nodejs:a5204e6eee1a0030abd2bf5569c20de9&#34;&gt;2) 使用 Eclipse 调试 Nodejs&lt;/h5&gt;
-
-&lt;ul&gt;
-&lt;li&gt;依次点击：Help -&amp;gt; Install New Software&amp;hellip; -&amp;gt; Add&lt;/li&gt;
-&lt;li&gt;输入：&lt;a href=&#34;http://chromedevtools.googlecode.com/svn/update/dev/&#34;&gt;http://chromedevtools.googlecode.com/svn/update/dev/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;选择：Google Chrome Developer Tools&lt;/li&gt;
-&lt;li&gt;重启 eclipse&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h5 id=&#34;3-使用-node-inspector-调试-nodejs:a5204e6eee1a0030abd2bf5569c20de9&#34;&gt;3) 使用 node-inspector 调试 Nodejs&lt;/h5&gt;
-sudo npm install -g node-inspector
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2012/10/25/nodejs_get_started/</guid>
+      <description>Nodejs 之搭建环境 1) 安装 nodejs、npm 1 2 3 4 sudo apt-get install python-software-properties sudo add-apt-repository ppa:chris-lea/node.js sudo apt-get update sudo apt-get install nodejs npm 2) 安装 express​ - web application framework for node 1 sudo npm install -g express 3) 安装 supervisor - is used to restart</description>
     </item>
     
     <item>
       <title>Ubuntu 开发 Nodejs 入门小记</title>
-      <link>http://blog.wenzhixin.net.cn/2012/10/25/nodejs_get_started</link>
+      <link>http://blog.wenzhixin.net.cn/2012/10/25/nodejs_get_started/</link>
       <pubDate>Thu, 25 Oct 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/10/25/nodejs_get_started</guid>
-      <description>
-
-&lt;h3 id=&#34;nodejs-之搭建环境:a5204e6eee1a0030abd2bf5569c20de9&#34;&gt;Nodejs 之搭建环境&lt;/h3&gt;
-
-&lt;h5 id=&#34;1-安装-nodejs-npm:a5204e6eee1a0030abd2bf5569c20de9&#34;&gt;1) 安装 nodejs、npm&lt;/h5&gt;
-sudo apt-get install python-software-properties
-sudo add-apt-repository ppa:chris-lea/node.js
-sudo apt-get update
-sudo apt-get install nodejs npm
-
-&lt;h5 id=&#34;2-安装-express-web-application-framework-for-node:a5204e6eee1a0030abd2bf5569c20de9&#34;&gt;2) 安装 express​ - web application framework for node&lt;/h5&gt;
-sudo npm install -g express
-
-&lt;h5 id=&#34;3-安装-supervisor-is-used-to-restart-programs-when-a-js-file-changes:a5204e6eee1a0030abd2bf5569c20de9&#34;&gt;3) 安装 supervisor - is used to restart programs when a *.js file changes&lt;/h5&gt;
-
-&lt;p&gt;​
-    npm install -g supervisor&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&#34;nodejs-之模块与包:a5204e6eee1a0030abd2bf5569c20de9&#34;&gt;Nodejs 之模块与包&lt;/h3&gt;
-
-&lt;h5 id=&#34;1-模块是什么:a5204e6eee1a0030abd2bf5569c20de9&#34;&gt;1) 模块是什么&lt;/h5&gt;
-
-&lt;p&gt;一个 Nodejs 文件（Javascript 代码、JSON 代码或者 C/C++ 模块）就是一个模块。&lt;/p&gt;
-
-&lt;h5 id=&#34;2-加载-创建模块:a5204e6eee1a0030abd2bf5569c20de9&#34;&gt;2) 加载、创建模块&lt;/h5&gt;
-require 用来访问其他模块提供的 API
-exports 用来向外提供模块的 API
-module 存储模块的元信息
-
-&lt;p&gt;例子：&lt;/p&gt;
-exports.func = function() {};
-var hello = require(&#34;./hello&#34;);
-hello.func();
-
-function Hello() {}
-module.exports = Hello;
-var Hello = require(&#34;./Hello&#34;);
-var hello = new Hello();
-
-&lt;h5 id=&#34;3-包-package-json-字段:a5204e6eee1a0030abd2bf5569c20de9&#34;&gt;3) 包（package.json）字段：&lt;/h5&gt;
-name 包的名称
-description 简要说明
-version 版本号
-keywords 关键字数组，用于搜索
-​maintainers 维护者数组，包含 name、email（可选）、web（可选）
-​contributors 贡献这数组，作者为第一个元素
-bugs 提交 bug 的地址
-licenses 许可证数组
-repositories 仓库托管地址数组，包含 type、url、path（可选）
-dependencies 包的依赖，由包名和版本号组成
-
-&lt;h5 id=&#34;4-包管理器-npm:a5204e6eee1a0030abd2bf5569c20de9&#34;&gt;4) 包管理器 npm&lt;/h5&gt;
-
-&lt;p&gt;安装 Nodejs 包：&lt;/p&gt;
-npm [install / i] [-g] [package_name]
-
-&lt;p&gt;本地模式和全局模式区别：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;本地模式：npm install package_name&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;全局模式：npm install -g package_name&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;本地模式：可通过 require 使用、不注册 PATH&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;全局模式：不可通过 require 使用、注册 PATH&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;创建全局链接：&lt;/p&gt;
-npm link package_name
-
-&lt;p&gt;包的发布相关：&lt;/p&gt;
-npm init / npm publish / npm unpublish
-
-&lt;hr /&gt;
-
-&lt;h3 id=&#34;nodejs-之调试:a5204e6eee1a0030abd2bf5569c20de9&#34;&gt;Nodejs 之调试&lt;/h3&gt;
-
-&lt;h5 id=&#34;1-命令行调试:a5204e6eee1a0030abd2bf5569c20de9&#34;&gt;1) 命令行调试&lt;/h5&gt;
-node debug *.js
-
-&lt;p&gt;调试参数：&lt;/p&gt;
-run 执行脚本，在第一行暂停
-restart 重新执行脚本
-cont(c) 继续执行
-stop(s) 单步执行
-out(o) 从函数步出
-setBreakpoint(sb) 设置断点
-clearBreakpoint(cp) 清除断点
-backtrace(bt) 显示当前的调用栈
-watch 加入到监视列表
-unwatch 从监视列表移除
-watchers 显示监视列表所有的表达式和值
-kill 停止执行
-
-&lt;h5 id=&#34;2-使用-eclipse-调试-nodejs:a5204e6eee1a0030abd2bf5569c20de9&#34;&gt;2) 使用 Eclipse 调试 Nodejs&lt;/h5&gt;
-
-&lt;ul&gt;
-&lt;li&gt;依次点击：Help -&amp;gt; Install New Software&amp;hellip; -&amp;gt; Add&lt;/li&gt;
-&lt;li&gt;输入：&lt;a href=&#34;http://chromedevtools.googlecode.com/svn/update/dev/&#34;&gt;http://chromedevtools.googlecode.com/svn/update/dev/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;选择：Google Chrome Developer Tools&lt;/li&gt;
-&lt;li&gt;重启 eclipse&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h5 id=&#34;3-使用-node-inspector-调试-nodejs:a5204e6eee1a0030abd2bf5569c20de9&#34;&gt;3) 使用 node-inspector 调试 Nodejs&lt;/h5&gt;
-sudo npm install -g node-inspector
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2012/10/25/nodejs_get_started/</guid>
+      <description>Nodejs 之搭建环境 1) 安装 nodejs、npm 1 2 3 4 sudo apt-get install python-software-properties sudo add-apt-repository ppa:chris-lea/node.js sudo apt-get update sudo apt-get install nodejs npm 2) 安装 express​ - web application framework for node 1 sudo npm install -g express 3) 安装 supervisor - is used to restart</description>
     </item>
     
   </channel>

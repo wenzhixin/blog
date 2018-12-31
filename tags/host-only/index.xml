@@ -8,48 +8,17 @@
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Thu, 31 Jul 2014 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.wenzhixin.net.cn/tags/host-only/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/host-only/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>VirtualBox 设置 Host-Only 上网</title>
-      <link>http://blog.wenzhixin.net.cn/2014/07/31/virtual_box_host_only_settings</link>
+      <link>http://blog.wenzhixin.net.cn/2014/07/31/virtual_box_host_only_settings/</link>
       <pubDate>Thu, 31 Jul 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/07/31/virtual_box_host_only_settings</guid>
-      <description>
-
-&lt;p&gt;我们平时在使用 VirtualBox 虚拟机的时候，工作场所内部网和家里内部网的网段不相同，使用 DHCP 获取 IP 地址的方式导致虚拟机的地址会经常改变，从而不方便使用，特别是使用 ssh 配置 key 连接到虚拟机的方式。&lt;/p&gt;
-
-&lt;p&gt;参考文章&lt;a href=&#34;http://www.malike.net.cn/blog/2011/12/20/vbox-hostonly-dhcp/&#34;&gt;Ubuntu 11.10 VirtualBox 的 Host-only 网卡上外网和 DHCP 永久地址&lt;/a&gt;，我们可以设置固定的 IP 地址，例如：&lt;code&gt;192.168.56.101&lt;/code&gt;，但是却不能解决上外网的问题。&lt;/p&gt;
-
-&lt;p&gt;于是，想实现虚拟机上网，可以为虚拟机再添加一块网卡，通过 NAT 方式，轻松达到连接外网的效果，具体步骤如下：&lt;/p&gt;
-
-&lt;h4 id=&#34;1-为-virtualbox-添加虚拟网卡-连接方式为-nat:c673a42ed2240232037c76e56966f2b3&#34;&gt;1. 为 VirtualBox 添加虚拟网卡，连接方式为 NAT：&lt;/h4&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/07/31/1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;2-启动添加的网卡:c673a42ed2240232037c76e56966f2b3&#34;&gt;2. 启动添加的网卡：&lt;/h4&gt;
-sudo ifconfig eth1 up
-sudo dhclient eth1
-
-&lt;h4 id=&#34;3-修改配置信息并重启:c673a42ed2240232037c76e56966f2b3&#34;&gt;3. 修改配置信息并重启：&lt;/h4&gt;
-sudo vim /etc/network/interfaces
-# This file describes the network interfaces available on your system
-# and how to activate them. For more information, see interfaces(5).
-
-# The loopback network interface
-auto lo
-iface lo inet loopback
-
-# The primary network interface (Host-only)
-auto eth0
-iface eth0 inet dhcp
-
-# The second network interface (NAT)
-auto eth1
-iface eth1 inet dhcp
-sudo /etc/init.d/networking restart
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2014/07/31/virtual_box_host_only_settings/</guid>
+      <description>我们平时在使用 VirtualBox 虚拟机的时候，工作场所内部网和家里内部网的网段不相同，使用 DHCP 获取 IP 地址的方式导致虚拟机的地址会经常改变，从而不方便使用，特别</description>
     </item>
     
   </channel>

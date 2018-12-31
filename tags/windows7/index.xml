@@ -1,47 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Windows7 on 文翼的博客</title>
+    <title>windows7 on 文翼的博客</title>
     <link>http://blog.wenzhixin.net.cn/tags/windows7/</link>
-    <description>Recent content in Windows7 on 文翼的博客</description>
+    <description>Recent content in windows7 on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Wed, 15 Jan 2014 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.wenzhixin.net.cn/tags/windows7/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/windows7/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>windows7 下 Bad owner or permissions 问题</title>
-      <link>http://blog.wenzhixin.net.cn/2014/01/15/windows7_rsync_error</link>
+      <link>http://blog.wenzhixin.net.cn/2014/01/15/windows7_rsync_error/</link>
       <pubDate>Wed, 15 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/01/15/windows7_rsync_error</guid>
-      <description>&lt;p&gt;&lt;strong&gt;问题：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;ssh 或者 rsync 的时候出现以下错误：&lt;/p&gt;
-Bad owner or permissions on ~/.ssh/config
-
-&lt;p&gt;&lt;strong&gt;原因：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;权限问题，需要将配置文件和 key 文件修改成当前用户和 600&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;解决：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;下载 &lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/01/15/chown.zip&#34;&gt;chown.zip&lt;/a&gt;，&lt;/p&gt;
-
-&lt;p&gt;解压放到 C:\Program Files\cwRsync\bin 下，在 cmd 下：&lt;/p&gt;
-cd C:\Program Files\cwRsync\home\.ssh
-
-chmod 600 config id_rsa
-chown user config id_rsa
-
-&lt;p&gt;命令解释：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;chmod：改变文件权限为当前用户可读写&lt;/li&gt;
-&lt;li&gt;chown：改变文件所属用户为 user，用户名为计算机用户，查看：C:\Users 可以看到&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2014/01/15/windows7_rsync_error/</guid>
+      <description>问题： ssh 或者 rsync 的时候出现以下错误： 1 Bad owner or permissions on ~/.ssh/config 原因： 权限问题，需要将配置文件和 key 文件修改成当前用户和 600 解决： 下载 chown.zip， 解压放</description>
     </item>
     
   </channel>

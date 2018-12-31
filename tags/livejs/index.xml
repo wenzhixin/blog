@@ -1,64 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Livejs on 文翼的博客</title>
+    <title>livejs on 文翼的博客</title>
     <link>http://blog.wenzhixin.net.cn/tags/livejs/</link>
-    <description>Recent content in Livejs on 文翼的博客</description>
+    <description>Recent content in livejs on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Thu, 07 Nov 2013 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.wenzhixin.net.cn/tags/livejs/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/livejs/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>前端工程师必备工具 livejs</title>
-      <link>http://blog.wenzhixin.net.cn/2013/11/07/front_end_tool_livejs</link>
+      <link>http://blog.wenzhixin.net.cn/2013/11/07/front_end_tool_livejs/</link>
       <pubDate>Thu, 07 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/11/07/front_end_tool_livejs</guid>
-      <description>&lt;p&gt;公司的台式机一直没有用到，于是乎想到能否重复利用起来，在笔记本上做开发，在大显示器上看效果。
-有了这样的想法之后，找到了 &lt;a href=&#34;http://livejs.com/&#34;&gt;Live.js&lt;/a&gt;，
-它可以让你在开发的时候不用切换窗口（Alt + Tab），可以让你不用到页面 F5 刷新页面，
-只要修改了任何 html、css 或者 js 的代码，页面便会自动重新加载，从而达到显示最新页面效果的功能。&lt;/p&gt;
-
-&lt;p&gt;先来看看它的&lt;strong&gt;特性&lt;/strong&gt;：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;支持 html、css、javascript 三种格式&lt;/li&gt;
-&lt;li&gt;只支持同域网页&lt;/li&gt;
-&lt;li&gt;不支持 file:// 协议&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;如何&lt;strong&gt;使用&lt;/strong&gt;：&lt;/p&gt;
-
-&lt;p&gt;1) 将 livejs 链接加入到书签中，使用的时候点击书签即可，但是这种方式只能支持 css&lt;/p&gt;
-
-&lt;p&gt;2) 下载 livejs 文件到开发目录中，并且在页面中加入：&lt;/p&gt;
-&lt;script src=&#34;live.js&#34;&gt;&lt;/script&gt;
-
-&lt;p&gt;这种方法可以支持 html、css、javascript 三种格式，
-但是很多时候我们在实际开发中并不想在所有的页面加入该代码。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;工作原理&lt;/strong&gt;：&lt;/p&gt;
-
-&lt;p&gt;工作原理比较简单，通过 setTimeout 每秒监听所有的 html、css 和 js 文件的 HEAD，
-对比 Header 中的 value，假如不一样就重新加载文件，
-对于 html 和 js 文件使用 document.location.reload() 的方式；
-对于 css 文件使用 css?now=new Date() * 1 的方式。&lt;/p&gt;
-
-&lt;p&gt;这就解释了为什么使用书签的方式只能支持 css，因为在 html 改变之后，还必须手动在按书签才能继续使用。&lt;/p&gt;
-
-&lt;p&gt;扩展为&lt;strong&gt;浏览器插件&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;到这里，其实使用起来还是比较不方便的。在此基础上，我把它拓展成 chrome 的插件。
-默认是不开启 livejs，点击之后开启监听，并将状态保存到 localstorage 中。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;源码已经放到 github 上：&lt;a href=&#34;https://github.com/wenzhixin/livejs&#34;&gt;livejs&lt;/a&gt;，欢迎 fork&lt;/li&gt;
-&lt;li&gt;插件地址：&lt;a href=&#34;https://chrome.google.com/webstore/detail/livejs/fnenjmjepccoionjgdgimlnppidghbbg&#34;&gt;livejs&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;演示视频：&lt;a href=&#34;http://www.tudou.com/programs/view/5DJkdSuo5lk/&#34;&gt;土豆演示&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/07/front_end_tool_livejs/</guid>
+      <description>公司的台式机一直没有用到，于是乎想到能否重复利用起来，在笔记本上做开发，在大显示器上看效果。 有了这样的想法之后，找到了 Live.js， 它可以</description>
     </item>
     
   </channel>

@@ -8,40 +8,17 @@
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Thu, 24 Apr 2014 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.wenzhixin.net.cn/tags/svn/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/svn/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>SVN 如何恢复被删除的文件夹</title>
-      <link>http://blog.wenzhixin.net.cn/2014/04/24/svn_undelete_folder</link>
+      <link>http://blog.wenzhixin.net.cn/2014/04/24/svn_undelete_folder/</link>
       <pubDate>Thu, 24 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/04/24/svn_undelete_folder</guid>
-      <description>
-
-&lt;h3 id=&#34;问题:e361e7dd74fd97e49c47e3988690836d&#34;&gt;问题：&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;你删除了 SVN 版本库上的文件夹，那么你要怎么恢复呢？&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;尝试办法:e361e7dd74fd97e49c47e3988690836d&#34;&gt;尝试办法：&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;通过 &lt;code&gt;svn revert folder&lt;/code&gt;，会发现找不到该文件夹&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;通过 &lt;code&gt;svn merge&lt;/code&gt;，从上个版本恢复回来，但是发现也是有找不到的问题&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;通过从上个版本恢复，然后 &lt;code&gt;svn add foler&lt;/code&gt; 到现有版本库中，这样会导致 log 失效，并不是我们想要的&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;最终解决办法:e361e7dd74fd97e49c47e3988690836d&#34;&gt;最终解决办法：&lt;/h3&gt;
-
-&lt;p&gt;通过尝试发现把自己的思路给限死了，有时候就应该这样，换个角度思考问题，
-我们所要做的事情很简单，就是恢复文件夹，并且保证 log 的正确性，那么 copy 就能解决这个问题：&lt;/p&gt;
-svn copy svn://svnserver/project/tags@100 http://svnserver/project/tags -m &#34;undeleted folder&#34;
-
-&lt;p&gt;表示从 url 为 svn://svnserver/project 的项目中恢复版本号为 100 的 tags 文件夹，并且信息为 &amp;ldquo;undeleted folder&amp;rdquo;。&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2014/04/24/svn_undelete_folder/</guid>
+      <description>问题： 你删除了 SVN 版本库上的文件夹，那么你要怎么恢复呢？ 尝试办法： 通过 svn revert folder，会发现找不到该文件夹 通过 svn merge，从上个版本恢复回</description>
     </item>
     
   </channel>

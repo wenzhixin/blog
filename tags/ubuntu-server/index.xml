@@ -8,75 +8,17 @@
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Mon, 07 Sep 2015 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.wenzhixin.net.cn/tags/ubuntu-server/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/ubuntu-server/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Installing Virtualbox On Ubuntu Server 14.04</title>
-      <link>http://blog.wenzhixin.net.cn/2015/09/07/installing_vbox_on_ubuntu_server</link>
+      <link>http://blog.wenzhixin.net.cn/2015/09/07/installing_vbox_on_ubuntu_server/</link>
       <pubDate>Mon, 07 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2015/09/07/installing_vbox_on_ubuntu_server</guid>
-      <description>
-
-&lt;p&gt;For some reasons, my computer just only installed Ubuntu Server 14.04 system.
-But sometimes I need to use Windows system to test our project, so I think if I can install virtualbox on the Ubuntu Server,
-and then manage the virtualbox by website.&lt;/p&gt;
-
-&lt;p&gt;How to do that?&lt;/p&gt;
-
-&lt;h3 id=&#34;install-virtualbox:f2d7fafa77e4f10c223d7eeab65bce2b&#34;&gt;Install Virtualbox&lt;/h3&gt;
-
-&lt;p&gt;First we go to the &lt;a href=&#34;http://www.oracle.com/technetwork/server-storage/virtualbox/downloads/index.html&#34;&gt;website&lt;/a&gt;,
-and download the latest verion(5.0.2) of Virtualbox:&lt;/p&gt;
-wget http://download.virtualbox.org/virtualbox/5.0.2/virtualbox-5.0_5.0.2-102096~Ubuntu~trusty_amd64.deb
-wget http://download.virtualbox.org/virtualbox/5.0.2/Oracle_VM_VirtualBox_Extension_Pack-5.0.2-102096.vbox-extpack
-
-&lt;p&gt;Install:&lt;/p&gt;
-sudo dpkg -i virtualbox-5.0_5.0.2-102096\~Ubuntu\~trusty_amd64.deb
-sudo apt-get install -f # install dependency
-sudo VBoxManage extpack install Oracle_VM_VirtualBox_Extension_Pack-5.0.2-102096.vbox-extpack
-
-&lt;h3 id=&#34;add-vbox-user:f2d7fafa77e4f10c223d7eeab65bce2b&#34;&gt;Add vbox user&lt;/h3&gt;
-
-&lt;p&gt;Because we want to use the web service that Virtualbox provide, we need to create a new user and set the password of the user:&lt;/p&gt;
-sudo useradd -m -G vboxusers vbox
-sudo passwd vbox
-
-&lt;h3 id=&#34;install-web-server:f2d7fafa77e4f10c223d7eeab65bce2b&#34;&gt;Install web server&lt;/h3&gt;
-
-&lt;p&gt;Install apache, PHP and Other components:&lt;/p&gt;
-sudo apt-get install apache2 php5 libapache2-mod-php5 php-soap
-
-&lt;h3 id=&#34;install-phpvirtualbox:f2d7fafa77e4f10c223d7eeab65bce2b&#34;&gt;Install phpvirtualbox&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://sourceforge.net/projects/phpvirtualbox/&#34;&gt;Phpvirtualbox&lt;/a&gt; is an open source project that is a web-based front-end to VirtualBox written in PHP.
-We use it to manage our Virtualbox, download the latest verion(5.0.2):&lt;/p&gt;
-wget http://downloads.sourceforge.net/project/phpvirtualbox/phpvirtualbox-5.0-2.zip -O phpvirtualbox.zip
-
-&lt;p&gt;Unzip the package and move to the root dir:&lt;/p&gt;
-unzip phpvirtualbox.zip
-sudo mv phpvirtualbox-5.0-2 /var/www/html/vbox
-
-&lt;p&gt;Setup the config file, make &lt;code&gt;$username&lt;/code&gt; and &lt;code&gt;$password&lt;/code&gt; match the user we created earlier:&lt;/p&gt;
-sudo mv /var/www/html/vbox/config.php-example /var/www/html/vbox/config.php
-sudo vi /var/www/html/vbox/config.php
-
-&lt;h3 id=&#34;config-virtualbox-webservice:f2d7fafa77e4f10c223d7eeab65bce2b&#34;&gt;Config Virtualbox webservice&lt;/h3&gt;
-
-&lt;p&gt;Add &lt;code&gt;VBOXWEB_USER=vbox&lt;/code&gt; to file:&lt;/p&gt;
-sudo vi /etc/default/virtualbox
-
-&lt;p&gt;Start the service:&lt;/p&gt;
-sudo /etc/init.d/vboxweb-service start
-
-&lt;h3 id=&#34;done:f2d7fafa77e4f10c223d7eeab65bce2b&#34;&gt;Done&lt;/h3&gt;
-
-&lt;p&gt;Now we can open bowser and go to &lt;code&gt;http://server/vbox&lt;/code&gt; and login with username &lt;code&gt;admin&lt;/code&gt; and password &lt;code&gt;admin&lt;/code&gt; (you can change it when login into phpvirtualbox).&lt;/p&gt;
-
-&lt;p&gt;We can see the view is so familiar, that&amp;rsquo;s it.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2015/09/07/finish.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2015/09/07/installing_vbox_on_ubuntu_server/</guid>
+      <description>For some reasons, my computer just only installed Ubuntu Server 14.04 system. But sometimes I need to use Windows system to test our project, so I think if I can install virtualbox on the Ubuntu Server, and then manage the virtualbox by website. How to do that? Install Virtualbox First we go to the website, and download the latest verion(5.0.2) of Virtualbox: 1 2 wget http://download.virtualbox.org/virtualbox/5.0.2/virtualbox-5.0_5.0.2-102096~Ubuntu~trusty_amd64.deb wget http://download.virtualbox.org/virtualbox/5.0.2/Oracle_VM_VirtualBox_Extension_Pack-5.0.2-102096.vbox-extpack Install: 1</description>
     </item>
     
   </channel>

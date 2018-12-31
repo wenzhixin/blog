@@ -1,149 +1,42 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Windows on 文翼的博客</title>
+    <title>windows on 文翼的博客</title>
     <link>http://blog.wenzhixin.net.cn/tags/windows/</link>
-    <description>Recent content in Windows on 文翼的博客</description>
+    <description>Recent content in windows on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Mon, 06 Jan 2014 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.wenzhixin.net.cn/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>windows 下同步文件到远程服务器中</title>
-      <link>http://blog.wenzhixin.net.cn/2014/01/06/windows_rsync_file</link>
+      <link>http://blog.wenzhixin.net.cn/2014/01/06/windows_rsync_file/</link>
       <pubDate>Mon, 06 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/01/06/windows_rsync_file</guid>
-      <description>
-
-&lt;h4 id=&#34;安装-cwrsync:291a7aad37e5ccc2dd943e82e05c00e8&#34;&gt;安装 cwRsync&lt;/h4&gt;
-
-&lt;p&gt;下载 &lt;a href=&#34;http://blog.wenzhixin.net.cn/2014/01/06/cwRsync_4.0.5_Installer.zip&#34;&gt;cwRsync 客户端&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;解压并安装到指定目录，例如：C:\Program Files\cwRsync&lt;/p&gt;
-
-&lt;h4 id=&#34;配置环境变量:291a7aad37e5ccc2dd943e82e05c00e8&#34;&gt;配置环境变量：&lt;/h4&gt;
-
-&lt;p&gt;系统变量 Path中后面加入 C:\Program Files\cwRsync\bin;&lt;/p&gt;
-
-&lt;p&gt;创建新的系统变量 HOME = C:\Program Files\cwRsync\home  (其实这个路径是告诉cygWin本地的home路径在哪里)&lt;/p&gt;
-
-&lt;p&gt;进入 cmd 中：&lt;/p&gt;
-cd C:\Program Files\cwRsync\
-mkdir home
-cd home
-mkdir .ssh
-
-&lt;p&gt;进入 C:\Program Files\cwRsync\home\.ssh 下新建文件 config，输入以下信息&lt;/p&gt;
-host server
-	HostName ip.address
-	User username
-	IdentityFile ~/.ssh/id_rsa
-
-&lt;h4 id=&#34;使用:291a7aad37e5ccc2dd943e82e05c00e8&#34;&gt;使用&lt;/h4&gt;
-rsync -vzr /cygdrive/c/blog/ server:~/blog
-
-&lt;ul&gt;
-&lt;li&gt;-vzr：表示压缩&lt;/li&gt;
-&lt;li&gt;/cygdrive/c/blog：表示需要同步的文件夹，对应c:\blog&lt;/li&gt;
-&lt;li&gt;server：表示配置的远程服务器&lt;/li&gt;
-&lt;li&gt;~/blog：表示远程服务器的地址&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2014/01/06/windows_rsync_file/</guid>
+      <description>安装 cwRsync 下载 cwRsync 客户端 解压并安装到指定目录，例如：C:\Program Files\cwRsync 配置环境变量： 系统变量 Path中后面加入 C:\Program Files\cwRsync\bin; 创建新的系统变量 HOME = C:\Program Files\cwRsync\home (其</description>
     </item>
     
     <item>
       <title>从 ubuntu 同步文件到 windows</title>
-      <link>http://blog.wenzhixin.net.cn/2013/12/01/ubuntu_rsync_to_windows</link>
+      <link>http://blog.wenzhixin.net.cn/2013/12/01/ubuntu_rsync_to_windows/</link>
       <pubDate>Sun, 01 Dec 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/12/01/ubuntu_rsync_to_windows</guid>
-      <description>
-
-&lt;p&gt;windows 下使用 cwRsync，ubuntu 使用默认的 rsync。&lt;/p&gt;
-
-&lt;h3 id=&#34;安装-cwrsync:3b2d6b317dc7ea2e9bfb9d515fecc8dc&#34;&gt;安装 cwRsync&lt;/h3&gt;
-
-&lt;p&gt;下载 &lt;a href=&#34;https://www.itefix.no/i2/cwrsync&#34;&gt;cwRsync 服务端&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;解压并安装到指定目录，例如：E:\Program Files\ICW&lt;/p&gt;
-
-&lt;h3 id=&#34;配置-cwrsync:3b2d6b317dc7ea2e9bfb9d515fecc8dc&#34;&gt;配置 cwRsync&lt;/h3&gt;
-
-&lt;p&gt;修改 rsyncd.conf&lt;/p&gt;
-use chroot = false
-strict modes = false
-hosts allow = *
-log file = rsyncd.log
-auth users = backup
-secrets file = rsyncd.secrets
-transfer logging = yes
-
-uid = 0
-gid = 0
-charset = UTF-8
-read only = false
-
-# Module definitions
-# Remember cygwin naming conventions : c:\work becomes /cygwin/c/work
-#
-[backup]
-path = /cygdrive/e/rsync
-read only = false
-transfer logging = yes
-
-&lt;p&gt;新建 rsyncd.secrets，指定用户名和密码&lt;/p&gt;
-backup:password
-
-&lt;p&gt;启动 RsyncServer 服务（运行——services.msc）&lt;/p&gt;
-
-&lt;h3 id=&#34;同步文件-ubuntu:3b2d6b317dc7ea2e9bfb9d515fecc8dc&#34;&gt;同步文件(ubuntu)&lt;/h3&gt;
-rsync -av file username@ip::moduleName
-
-&lt;ul&gt;
-&lt;li&gt;file：对应需要同步的文件或者文件夹&lt;/li&gt;
-&lt;li&gt;username：对应配置的用户名（backup）&lt;/li&gt;
-&lt;li&gt;ip：对应 windows 服务器的 IP&lt;/li&gt;
-&lt;li&gt;moduleName：对于配置中 Module 的名字（backup）&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;其他问题:3b2d6b317dc7ea2e9bfb9d515fecc8dc&#34;&gt;其他问题&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;默认端口为 873（netstat -nao 查看是否已在监听）&lt;/li&gt;
-&lt;li&gt;查看服务 RsyncServer 是否启动&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2013/12/01/ubuntu_rsync_to_windows/</guid>
+      <description>windows 下使用 cwRsync，ubuntu 使用默认的 rsync。 安装 cwRsync 下载 cwRsync 服务端 解压并安装到指定目录，例如：E:\Program Files\ICW 配置 cwRsync 修改 rsyncd.conf 1</description>
     </item>
     
     <item>
       <title>git for windows 安装和配置</title>
-      <link>http://blog.wenzhixin.net.cn/2013/01/04/git_for_windows</link>
+      <link>http://blog.wenzhixin.net.cn/2013/01/04/git_for_windows/</link>
       <pubDate>Fri, 04 Jan 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/01/04/git_for_windows</guid>
-      <description>
-
-&lt;h4 id=&#34;1-安装-msysgit:aad2ae081170cdae557e72e4094a2f11&#34;&gt;1. 安装 msysgit:&lt;/h4&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://msysgit.github.com/&#34;&gt;msysgit&lt;/a&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;2-配置用户信息和-alias:aad2ae081170cdae557e72e4094a2f11&#34;&gt;2. 配置用户信息和 alias&lt;/h4&gt;
-
-&lt;p&gt;gitconfig&lt;/p&gt;
-[user]
-    name = zhixin
-    email = wenzhixin2010@gmail.com
-[alias]
-    co = checkout
-    ci = commit -a
-    st = status
-    br = branch
-    oneline = log --pretty=oneline --since=&#39;2 days ago&#39;
-    onelog = log -p -1
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2013/01/04/git_for_windows/</guid>
+      <description>1. 安装 msysgit: msysgit 2. 配置用户信息和 alias gitconfig 1 2 3 4 5 6 7 8 9 10 [user] name = zhixin email = wenzhixin2010@gmail.com [alias] co = checkout ci = commit -a st = status br = branch oneline = log --pretty=oneline --since=&amp;#39;2 days ago&amp;#39; onelog = log -p -1</description>
     </item>
     
   </channel>

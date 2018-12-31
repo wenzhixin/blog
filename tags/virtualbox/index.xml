@@ -8,96 +8,35 @@
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
     <lastBuildDate>Thu, 31 Jul 2014 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://blog.wenzhixin.net.cn/tags/virtualbox/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://blog.wenzhixin.net.cn/tags/virtualbox/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>VirtualBox 设置 Host-Only 上网</title>
-      <link>http://blog.wenzhixin.net.cn/2014/07/31/virtual_box_host_only_settings</link>
+      <link>http://blog.wenzhixin.net.cn/2014/07/31/virtual_box_host_only_settings/</link>
       <pubDate>Thu, 31 Jul 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/07/31/virtual_box_host_only_settings</guid>
-      <description>
-
-&lt;p&gt;我们平时在使用 VirtualBox 虚拟机的时候，工作场所内部网和家里内部网的网段不相同，使用 DHCP 获取 IP 地址的方式导致虚拟机的地址会经常改变，从而不方便使用，特别是使用 ssh 配置 key 连接到虚拟机的方式。&lt;/p&gt;
-
-&lt;p&gt;参考文章&lt;a href=&#34;http://www.malike.net.cn/blog/2011/12/20/vbox-hostonly-dhcp/&#34;&gt;Ubuntu 11.10 VirtualBox 的 Host-only 网卡上外网和 DHCP 永久地址&lt;/a&gt;，我们可以设置固定的 IP 地址，例如：&lt;code&gt;192.168.56.101&lt;/code&gt;，但是却不能解决上外网的问题。&lt;/p&gt;
-
-&lt;p&gt;于是，想实现虚拟机上网，可以为虚拟机再添加一块网卡，通过 NAT 方式，轻松达到连接外网的效果，具体步骤如下：&lt;/p&gt;
-
-&lt;h4 id=&#34;1-为-virtualbox-添加虚拟网卡-连接方式为-nat:c673a42ed2240232037c76e56966f2b3&#34;&gt;1. 为 VirtualBox 添加虚拟网卡，连接方式为 NAT：&lt;/h4&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://blog.wenzhixin.net.cn/2014/07/31/1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;2-启动添加的网卡:c673a42ed2240232037c76e56966f2b3&#34;&gt;2. 启动添加的网卡：&lt;/h4&gt;
-sudo ifconfig eth1 up
-sudo dhclient eth1
-
-&lt;h4 id=&#34;3-修改配置信息并重启:c673a42ed2240232037c76e56966f2b3&#34;&gt;3. 修改配置信息并重启：&lt;/h4&gt;
-sudo vim /etc/network/interfaces
-# This file describes the network interfaces available on your system
-# and how to activate them. For more information, see interfaces(5).
-
-# The loopback network interface
-auto lo
-iface lo inet loopback
-
-# The primary network interface (Host-only)
-auto eth0
-iface eth0 inet dhcp
-
-# The second network interface (NAT)
-auto eth1
-iface eth1 inet dhcp
-sudo /etc/init.d/networking restart
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2014/07/31/virtual_box_host_only_settings/</guid>
+      <description>我们平时在使用 VirtualBox 虚拟机的时候，工作场所内部网和家里内部网的网段不相同，使用 DHCP 获取 IP 地址的方式导致虚拟机的地址会经常改变，从而不方便使用，特别</description>
     </item>
     
     <item>
       <title>Ubuntu 12.10 VirtualBox 问题</title>
-      <link>http://blog.wenzhixin.net.cn/2013/04/01/ubuntu_vbox_install</link>
+      <link>http://blog.wenzhixin.net.cn/2013/04/01/ubuntu_vbox_install/</link>
       <pubDate>Mon, 01 Apr 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/04/01/ubuntu_vbox_install</guid>
-      <description>
-
-&lt;h4 id=&#34;问题:50a56da5bddf04658d0f2c6daef91b49&#34;&gt;问题：&lt;/h4&gt;
-
-&lt;p&gt;Ubuntu 12.10 unable to find sources of your current kernel&lt;/p&gt;
-
-&lt;h4 id=&#34;错误信息:50a56da5bddf04658d0f2c6daef91b49&#34;&gt;错误信息：&lt;/h4&gt;
-Kernel driver not installed (rc=-1908)
-
-The VirtualBox Linux kernel driver (vboxdrv) is either not loaded or there is a permission problem with /dev/vboxdrv. Please reinstall the kernel module by executing
-
-&#39;/etc/init.d/vboxdrv setup&#39;
-
-as root. If it is available in your distribution, you should install the DKMS package first. This package keeps track of Linux kernel changes and recompiles the vboxdrv kernel module if necessary.
-
-&lt;h4 id=&#34;解决:50a56da5bddf04658d0f2c6daef91b49&#34;&gt;解决：&lt;/h4&gt;
-sudo apt-get install dkms build-essential linux-headers-generic
-
-sudo /etc/init.d/vboxdrv setup
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2013/04/01/ubuntu_vbox_install/</guid>
+      <description>问题： Ubuntu 12.10 unable to find sources of your current kernel 错误信息： 1 2 3 4 5 6 7 Kernel driver not installed (rc=-1908) The VirtualBox Linux kernel driver (vboxdrv) is either not loaded or there is a permission problem with /dev/vboxdrv. Please reinstall the kernel module by executing &amp;#39;/etc/init.d/vboxdrv setup&amp;#39; as root. If it is available in your distribution, you should install the</description>
     </item>
     
     <item>
       <title>VirtualBox 虚拟机设置共享文件夹</title>
-      <link>http://blog.wenzhixin.net.cn/2013/01/06/vbox_share</link>
+      <link>http://blog.wenzhixin.net.cn/2013/01/06/vbox_share/</link>
       <pubDate>Sun, 06 Jan 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/01/06/vbox_share</guid>
-      <description>
-
-&lt;p&gt;Windows7 x64 下安装 Ubuntu12.04 x64 虚拟机，设置共享文件夹：&lt;/p&gt;
-
-&lt;h5 id=&#34;1-安装-virtualbox-的-vboxguestaddition-iso-在-设备-安装增强功能-安装完成后关闭虚拟机:fc90a769356b412c3aef1c41a484bd4a&#34;&gt;1. 安装 VirtualBox 的 VBoxGuestAddition.iso。在 “设备”-&amp;gt;“安装增强功能”，安装完成后关闭虚拟机。&lt;/h5&gt;
-
-&lt;h5 id=&#34;2-virtualbox-的-设备-分配数据空间-添加固定分配-如-f-share-名称share-记得勾选-auto-mount-选项:fc90a769356b412c3aef1c41a484bd4a&#34;&gt;2. VirtualBox 的“设备”-&amp;gt;“分配数据空间”，添加固定分配，如 F:\share, 名称share。记得勾选 Auto-mount 选项&lt;/h5&gt;
-
-&lt;h5 id=&#34;3-到-terminal-命令行下:fc90a769356b412c3aef1c41a484bd4a&#34;&gt;3. 到 Terminal 命令行下：&lt;/h5&gt;
-sudo mkdir /mnt/share
-sudo mount -t vboxsf share /mnt/share
-</description>
+      <guid>http://blog.wenzhixin.net.cn/2013/01/06/vbox_share/</guid>
+      <description>Windows7 x64 下安装 Ubuntu12.04 x64 虚拟机，设置共享文件夹： 1. 安装 VirtualBox 的 VBoxGuestAddition.iso。在 “设备”-&amp;gt;“安装增强功能”，安装完成后</description>
     </item>
     
   </channel>
