@@ -5,7 +5,7 @@ categories: [前端技术]
 tags: [jQuery,attr,prop]
 ---
 
-前几天，有人给 [Multiple Select 插件](http://wenzhixin.net.cn/p/multiple-select/) 提了问题：
+前几天，有人给 [Multiple Select 插件](http://multiple-select.wenzhixin.net.cn) 提了问题：
 
 [setSelects doesn't work in Firefox when using jquery 1.9.0](https://github.com/wenzhixin/multiple-select/issues/2)
 

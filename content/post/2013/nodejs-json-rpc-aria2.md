@@ -12,7 +12,7 @@ tags: [aria2,websocket,jsonrpc]
 这里，我们用到的是 aria2，aria2 是一个命令行下运行、多协议、多来源下载工具。
 它除了可以像 wget 一样直接下载文件外，最主要的功能是可以启用后台服务，启动后等着从 rpc 接口添加任务。
 
-在[搭建小型下载服务器](http://wenzhixin.net.cn/2013/07/01/raspberry-server)一文中，提到启动的方式为：
+在[搭建小型下载服务器](/2013/07/01/raspberry-server)一文中，提到启动的方式为：
 
     aria2c --enable-rpc --rpc-listen-all &
 

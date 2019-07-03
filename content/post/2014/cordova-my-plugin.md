@@ -5,7 +5,7 @@ categories: [移动开发]
 tags: [cordova,插件,Android]
 ---
 
-在上一篇文章 [cordova 初识之命令行工具](http://wenzhixin.net.cn/2014/02/11/cordova-command-line) 中，我们讲到了如何使用命令行快速地创建我们的 app 应用，并添加和运行各种平台。
+在上一篇文章 [cordova 初识之命令行工具](/2014/02/11/cordova-command-line) 中，我们讲到了如何使用命令行快速地创建我们的 app 应用，并添加和运行各种平台。
 
 在实际的项目开发中，需要用到 cordova 的插件，进行各个不同平台的辅助开发，我们可以通过 [plugins.cordova.io](http://plugins.cordova.io/) 对现有插件的搜索，以及安装。
 

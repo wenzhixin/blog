@@ -5,7 +5,7 @@ categories: [数据库]
 tags: [Oracle,python]
 ---
 
-首先，由于网站部署在远程服务器的局域网上面，所以需要通过 [ssh tunnel（隧道）](http://wenzhixin.net.cn/2014/03/15/ssh-tunnel) 的方式进行本地的映射，主要映射两个端口：
+首先，由于网站部署在远程服务器的局域网上面，所以需要通过 [ssh tunnel（隧道）](/2014/03/15/ssh-tunnel) 的方式进行本地的映射，主要映射两个端口：
 
 * Oracle 服务：```ssh -fN -L 1521:ip:1521 server```
 * 远程桌面：```ssh -fN -L 3389:ip:3389 server```

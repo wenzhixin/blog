@@ -61,4 +61,4 @@ sudo vi /etc/apache2/site-enabled/proxy.conf
 
 ___
 
-相关问题：[使用 nginx 作为代理服务器轻松解决 Ajax 跨域问题](http://wenzhixin.net.cn/2012/08/01/the-use-of-nginx-as-a-proxy-server-easily-solve-the-cross-domain-ajax-problem)
+相关问题：[使用 nginx 作为代理服务器轻松解决 Ajax 跨域问题](/2012/08/01/the-use-of-nginx-as-a-proxy-server-easily-solve-the-cross-domain-ajax-problem)

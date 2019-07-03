@@ -17,7 +17,7 @@ tags: [Bootstrap,按钮,prop]
 
 ### 原因
 
-从[Bootstrap 禁用 a 按钮](http://wenzhixin.net.cn/2013/08/12/disable-link)一文中，我们知道禁用 ａ 标签的按钮是利用 css，而通过[jQuery 中 attr() 和 prop() 方法的区别](http://wenzhixin.net.cn/2013/05/24/jquery-attr-prop)我们知道对于 a 标签应该使用```attr('disabled', true)```。由于项目比较庞大，修改的地方也比较多，需要先判断这个按钮是否为 a 标签，那么有没有更好的办法呢？
+从[Bootstrap 禁用 a 按钮](/2013/08/12/disable-link)一文中，我们知道禁用 ａ 标签的按钮是利用 css，而通过[jQuery 中 attr() 和 prop() 方法的区别](/2013/05/24/jquery-attr-prop)我们知道对于 a 标签应该使用```attr('disabled', true)```。由于项目比较庞大，修改的地方也比较多，需要先判断这个按钮是否为 a 标签，那么有没有更好的办法呢？
 
 ### 解决
 
