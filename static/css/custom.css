@@ -1,0 +1,27 @@
+#cf {
+  max-width: 100%!important;
+}
+.cf-wrapper {
+  box-sizing: border-box;
+  z-index: 5;
+  width: 100%;
+  background-color: #f0f0f0!important;
+  text-align: left!important;
+  line-height: 1.5!important;
+  padding: 0.7em 1em!important;
+  border-radius: 0!important;
+}
+.cf-img-wrapper {
+  display: none!important;
+}
+.cf-powered-by {
+  display: inline!important;
+}
+.cf-text:before {
+  margin-right: 4px;
+  padding: 2px 6px;
+  border-radius: 3px;
+  background-color: #4caf50;
+  color: #fff;
+  content: "Ad";
+}
