@@ -16,14 +16,14 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="wenzhixin" /><meta name="description" content="在写代码的时候，很多时候（例如写 jQuery 插件）需要将 html 代码转换为 js 模板。例如将下面的 html 代码： 1 2 3 4 5 &amp;lt;ul&amp;gt; &amp;lt;li class=&amp;#34;item&amp;#34;&amp;gt; &amp;lt;a href=&amp;#34;#&amp;#34;&amp;gt;Item 1&amp;lt;/a&amp;gt; &amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; 放到 js 中： 1 2 3 4 5 6 7 8 var" /><meta name="keywords" content="文翼的博客, web前端博客" />
+<meta name="author" content="wenzhixin" /><meta name="description" content="在写代码的时候，很多时候（例如写 jQuery 插件）需要将 html 代码转换为 js 模板。例如将下面的 html 代码： 1 2 3 4 5 &amp;lt;ul&amp;gt; &amp;lt;li class=&amp;#34;item&amp;#34;&amp;gt; &amp;lt;a href=&amp;#34;#&amp;#34;&amp;gt;Item 1&amp;lt;/a&amp;gt; &amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; 放到 js 中： 1 2 3 4 5 6 7 var html" /><meta name="keywords" content="文翼的博客, web前端博客" />
 
 
 
 
 
 
-<meta name="generator" content="Hugo 0.53 with even 4.0.0" />
+<meta name="generator" content="Hugo 0.55.6 with even 4.0.0" />
 
 
 <link rel="canonical" href="http://blog.wenzhixin.net.cn/2014/11/04/webstorm_tools/" />
@@ -39,33 +39,26 @@
 
 
 <meta property="og:title" content="编写 WebStorm 实用工具" />
-<meta property="og:description" content="在写代码的时候，很多时候（例如写 jQuery 插件）需要将 html 代码转换为 js 模板。例如将下面的 html 代码： 1 2 3 4 5 &lt;ul&gt; &lt;li class=&#34;item&#34;&gt; &lt;a href=&#34;#&#34;&gt;Item 1&lt;/a&gt; &lt;/li&gt; &lt;/ul&gt; 放到 js 中： 1 2 3 4 5 6 7 8 var" />
+<meta property="og:description" content="在写代码的时候，很多时候（例如写 jQuery 插件）需要将 html 代码转换为 js 模板。例如将下面的 html 代码： 1 2 3 4 5 &lt;ul&gt; &lt;li class=&#34;item&#34;&gt; &lt;a href=&#34;#&#34;&gt;Item 1&lt;/a&gt; &lt;/li&gt; &lt;/ul&gt; 放到 js 中： 1 2 3 4 5 6 7 var html" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://blog.wenzhixin.net.cn/2014/11/04/webstorm_tools/" /><meta property="article:published_time" content="2014-11-04T00:00:00&#43;00:00"/>
+<meta property="og:url" content="http://blog.wenzhixin.net.cn/2014/11/04/webstorm_tools/" />
+<meta property="article:published_time" content="2014-11-04T00:00:00&#43;00:00"/>
 <meta property="article:modified_time" content="2014-11-04T00:00:00&#43;00:00"/>
 
 <meta itemprop="name" content="编写 WebStorm 实用工具">
-<meta itemprop="description" content="在写代码的时候，很多时候（例如写 jQuery 插件）需要将 html 代码转换为 js 模板。例如将下面的 html 代码： 1 2 3 4 5 &lt;ul&gt; &lt;li class=&#34;item&#34;&gt; &lt;a href=&#34;#&#34;&gt;Item 1&lt;/a&gt; &lt;/li&gt; &lt;/ul&gt; 放到 js 中： 1 2 3 4 5 6 7 8 var">
+<meta itemprop="description" content="在写代码的时候，很多时候（例如写 jQuery 插件）需要将 html 代码转换为 js 模板。例如将下面的 html 代码： 1 2 3 4 5 &lt;ul&gt; &lt;li class=&#34;item&#34;&gt; &lt;a href=&#34;#&#34;&gt;Item 1&lt;/a&gt; &lt;/li&gt; &lt;/ul&gt; 放到 js 中： 1 2 3 4 5 6 7 var html">
 
 
 <meta itemprop="datePublished" content="2014-11-04T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2014-11-04T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="591">
+<meta itemprop="wordCount" content="589">
 
 
 
 <meta itemprop="keywords" content="WebStorm,工具," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="编写 WebStorm 实用工具"/>
-<meta name="twitter:description" content="在写代码的时候，很多时候（例如写 jQuery 插件）需要将 html 代码转换为 js 模板。例如将下面的 html 代码： 1 2 3 4 5 &lt;ul&gt; &lt;li class=&#34;item&#34;&gt; &lt;a href=&#34;#&#34;&gt;Item 1&lt;/a&gt; &lt;/li&gt; &lt;/ul&gt; 放到 js 中： 1 2 3 4 5 6 7 8 var"/>
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-6977536652297913",
-    enable_page_level_ads: true
-  });
-</script>
-
+<meta name="twitter:description" content="在写代码的时候，很多时候（例如写 jQuery 插件）需要将 html 代码转换为 js 模板。例如将下面的 html 代码： 1 2 3 4 5 &lt;ul&gt; &lt;li class=&#34;item&#34;&gt; &lt;a href=&#34;#&#34;&gt;Item 1&lt;/a&gt; &lt;/li&gt; &lt;/ul&gt; 放到 js 中： 1 2 3 4 5 6 7 var html"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -75,6 +68,8 @@
   <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
 <![endif]-->
+
+<link rel="stylesheet" href="/custom.css">
 
 </head>
 <body>
@@ -124,6 +119,10 @@
       </li>
   </ul>
 </nav>
+
+<div id="codefund"></div>
+<script src="https://codefund.io/properties/292/funder.js" async="async"></script>
+
     </header>
 
     <main id="main" class="main">
@@ -177,7 +176,6 @@
 </span><span class="lnt">5
 </span><span class="lnt">6
 </span><span class="lnt">7
-</span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">html</span> <span class="o">=</span> <span class="p">[</span>
@@ -260,7 +258,6 @@
 </span><span class="lnt">49
 </span><span class="lnt">50
 </span><span class="lnt">51
-</span><span class="lnt">52
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-js" data-lang="js"><span class="ch">#! /usr/bin/node
@@ -419,7 +416,7 @@
   <span class="copyright-year">
     &copy; 
     2012 - 
-    2018
+    2019
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>

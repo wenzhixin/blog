@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Tue, 15 Jan 2013 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 04 Dec 2013 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://blog.wenzhixin.net.cn/tags/wordpress/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Wordpress 打造 CMS 系统小记</title>
+      <link>http://blog.wenzhixin.net.cn/2013/12/04/wordpress_cms/</link>
+      <pubDate>Wed, 04 Dec 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2013/12/04/wordpress_cms/</guid>
+      <description>关闭文章评论： 设置-讨论下，去掉“允许他人在新文章上发表评论”选项 关闭页面评论： 到具体页面编辑，打开显示选项中的讨论，去掉“允许评论”选项 添</description>
+    </item>
     
     <item>
       <title>wordpress 插件开发</title>
@@ -19,6 +28,15 @@
       
       <guid>http://blog.wenzhixin.net.cn/2013/01/15/wordpress_plugin/</guid>
       <description>1. 创建插件 在目录 wp-content/plugins 下创建自己的插件 新建目录 plugin-demo 新建文件 plugin-demo.php 1 2 3 4 5 6 7 8 9 &amp;lt;?php /* Plugin Name: Plugin Demo Description: 此插件用于插件演示 Version: 1.0 Author: zhixin wen Author URI: http://wenzhixin.net.cn */ ?&amp;gt; 2. 添加实现类和添</description>
+    </item>
+    
+    <item>
+      <title>完全禁用 Wordpress 后台的更新提示和功能</title>
+      <link>http://blog.wenzhixin.net.cn/2013/01/14/hidden_wordpress_update/</link>
+      <pubDate>Mon, 14 Jan 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2013/01/14/hidden_wordpress_update/</guid>
+      <description>为了防止误操作，需要禁用后台的更新提示以及更新功能 需要禁用的更新包括： 1. 头部更新提示 (wp-includes/admin-bar.php) 注释第 618 行： 1 2 3 4 5 6 7 8 $wp_admin_bar-&amp;gt;add_menu( array( &amp;#39;id&amp;#39; =&amp;gt; &amp;#39;updates&amp;#39;, &amp;#39;title&amp;#39; =&amp;gt; $title, &amp;#39;href&amp;#39; =&amp;gt; network_admin_url( &amp;#39;update-core.php&amp;#39; ),</description>
     </item>
     
     <item>

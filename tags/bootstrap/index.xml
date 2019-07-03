@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>bootstrap on 文翼的博客</title>
+    <title>Bootstrap on 文翼的博客</title>
     <link>http://blog.wenzhixin.net.cn/tags/bootstrap/</link>
-    <description>Recent content in bootstrap on 文翼的博客</description>
+    <description>Recent content in Bootstrap on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
@@ -28,6 +28,15 @@
       
       <guid>http://blog.wenzhixin.net.cn/2014/06/18/a_prop_problem/</guid>
       <description>问题 将 jQuery 从 1.5.2 升级到 1.7.2 之后，统一将attr(&#39;disabled&#39;, &#39;disabled&#39;)改为prop(&#39;disabled&#39;, true)，将at</description>
+    </item>
+    
+    <item>
+      <title>bootstrap menu 插件介绍</title>
+      <link>http://blog.wenzhixin.net.cn/2013/12/29/bootstrap_menu_guide/</link>
+      <pubDate>Sun, 29 Dec 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2013/12/29/bootstrap_menu_guide/</guid>
+      <description>前言 平时在定义目录菜单的时候会使用 ul、li 等，定义和维护起来不是很方便， 所以就写成了 bootstrap 的 jQuery 的插件。 如何使用 使用起来非常简单，先来看看如何使</description>
     </item>
     
     <item>

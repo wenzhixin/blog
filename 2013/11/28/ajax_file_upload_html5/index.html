@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.53 with even 4.0.0" />
+<meta name="generator" content="Hugo 0.55.6 with even 4.0.0" />
 
 
 <link rel="canonical" href="http://blog.wenzhixin.net.cn/2013/11/28/ajax_file_upload_html5/" />
@@ -41,7 +41,8 @@
 <meta property="og:title" content="Ajax 文件上传——通过 html5 的方法" />
 <meta property="og:description" content="html5 方法 上篇文章讲到 Ajax 文件上传是如何通过 iframe 的方法，这里我们通过 html5 的方法来进行文件的上传。 在 html5 标准中，XMLHttpRequest 对象被重新定义" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://blog.wenzhixin.net.cn/2013/11/28/ajax_file_upload_html5/" /><meta property="article:published_time" content="2013-11-28T00:00:00&#43;00:00"/>
+<meta property="og:url" content="http://blog.wenzhixin.net.cn/2013/11/28/ajax_file_upload_html5/" />
+<meta property="article:published_time" content="2013-11-28T00:00:00&#43;00:00"/>
 <meta property="article:modified_time" content="2013-11-28T00:00:00&#43;00:00"/>
 
 <meta itemprop="name" content="Ajax 文件上传——通过 html5 的方法">
@@ -50,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2013-11-28T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2013-11-28T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="678">
+<meta itemprop="wordCount" content="675">
 
 
 
@@ -58,14 +59,6 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Ajax 文件上传——通过 html5 的方法"/>
 <meta name="twitter:description" content="html5 方法 上篇文章讲到 Ajax 文件上传是如何通过 iframe 的方法，这里我们通过 html5 的方法来进行文件的上传。 在 html5 标准中，XMLHttpRequest 对象被重新定义"/>
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-6977536652297913",
-    enable_page_level_ads: true
-  });
-</script>
-
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -75,6 +68,8 @@
   <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
 <![endif]-->
+
+<link rel="stylesheet" href="/custom.css">
 
 </head>
 <body>
@@ -124,6 +119,10 @@
       </li>
   </ul>
 </nav>
+
+<div id="codefund"></div>
+<script src="https://codefund.io/properties/292/funder.js" async="async"></script>
+
     </header>
 
     <main id="main" class="main">
@@ -189,7 +188,6 @@
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="lnt">1
-</span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
@@ -209,7 +207,6 @@
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="lnt">1
-</span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">files</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;filename&#39;</span><span class="p">).</span><span class="nx">files</span><span class="p">;</span>
@@ -244,14 +241,13 @@ xhr.send(formData);</code></pre></td></tr></table>
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
-</span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">xhr</span><span class="p">.</span><span class="nx">upload</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&#34;progress&#34;</span><span class="p">,</span> <span class="nx">uploadProgress</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span> <span class="c1">// 处理上传进度
 </span><span class="c1"></span><span class="nx">xhr</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&#34;load&#34;</span><span class="p">,</span> <span class="nx">uploadComplete</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span> <span class="c1">// 处理上传完成
 </span><span class="c1"></span><span class="nx">xhr</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&#34;error&#34;</span><span class="p">,</span> <span class="nx">uploadFailed</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span> <span class="c1">// 处理上传失败
 </span><span class="c1"></span><span class="nx">xhr</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&#34;abort&#34;</span><span class="p">,</span> <span class="nx">uploadCanceled</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span> <span class="c1">// 处理取消上传
-</span><span class="c1"></span></code></pre></td></tr></table>
+</span></code></pre></td></tr></table>
 </div>
 </div>
 <p>在不同的事件中做不同的处理在完成所有的文件上传后再显示结果，使用 html5 的方法是不是很简单呢。</p>
@@ -361,7 +357,7 @@ xhr.send(formData);</code></pre></td></tr></table>
   <span class="copyright-year">
     &copy; 
     2012 - 
-    2018
+    2019
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>

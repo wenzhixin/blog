@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.53 with even 4.0.0" />
+<meta name="generator" content="Hugo 0.55.6 with even 4.0.0" />
 
 
 <link rel="canonical" href="http://blog.wenzhixin.net.cn/2014/10/03/call_string_function/" />
@@ -41,7 +41,8 @@
 <meta property="og:title" content="如何不用 eval 的方式通过字符串调用 JavaScript 的方法" />
 <meta property="og:description" content="由于 bootstrap-table 插件需要支持data-name=&quot;functionName&quot;的方式，所以在实现的过程中使用了eval的方法。我们知" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://blog.wenzhixin.net.cn/2014/10/03/call_string_function/" /><meta property="article:published_time" content="2014-10-03T00:00:00&#43;00:00"/>
+<meta property="og:url" content="http://blog.wenzhixin.net.cn/2014/10/03/call_string_function/" />
+<meta property="article:published_time" content="2014-10-03T00:00:00&#43;00:00"/>
 <meta property="article:modified_time" content="2014-10-03T00:00:00&#43;00:00"/>
 
 <meta itemprop="name" content="如何不用 eval 的方式通过字符串调用 JavaScript 的方法">
@@ -50,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2014-10-03T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2014-10-03T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="751">
+<meta itemprop="wordCount" content="745">
 
 
 
@@ -58,14 +59,6 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="如何不用 eval 的方式通过字符串调用 JavaScript 的方法"/>
 <meta name="twitter:description" content="由于 bootstrap-table 插件需要支持data-name=&quot;functionName&quot;的方式，所以在实现的过程中使用了eval的方法。我们知"/>
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-6977536652297913",
-    enable_page_level_ads: true
-  });
-</script>
-
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -75,6 +68,8 @@
   <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
 <![endif]-->
+
+<link rel="stylesheet" href="/custom.css">
 
 </head>
 <body>
@@ -124,6 +119,10 @@
       </li>
   </ul>
 </nav>
+
+<div id="codefund"></div>
+<script src="https://codefund.io/properties/292/funder.js" async="async"></script>
+
     </header>
 
     <main id="main" class="main">
@@ -163,7 +162,6 @@
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-js" data-lang="js"><span class="lnt">1
 </span><span class="lnt">2
-</span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-js" data-lang="js"><span class="nb">eval</span><span class="p">(</span><span class="s2">&#34;var x = &#39;Hello from eval!&#39;;&#34;</span><span class="p">);</span>
@@ -192,7 +190,6 @@
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span><span class="lnt">6
-</span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// function we want to run
@@ -214,7 +211,6 @@
 </span><span class="lnt">5
 </span><span class="lnt">6
 </span><span class="lnt">7
-</span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// find function
@@ -241,7 +237,6 @@
 </span><span class="lnt"> 9
 </span><span class="lnt">10
 </span><span class="lnt">11
-</span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// function name and parameters to pass
@@ -282,7 +277,6 @@
 </span><span class="lnt">17
 </span><span class="lnt">18
 </span><span class="lnt">19
-</span><span class="lnt">20
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">calculateFunctionValue</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">func</span><span class="p">,</span> <span class="nx">args</span><span class="p">,</span> <span class="nx">defaultValue</span><span class="p">)</span> <span class="p">{</span>
@@ -315,7 +309,6 @@
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-js" data-lang="js"><span class="lnt">1
-</span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-js" data-lang="js"><span class="s1">&#39;[5, 10, 20, 50, 100, 200]&#39;</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/, /g</span><span class="p">,</span> <span class="s1">&#39;,&#39;</span><span class="p">).</span><span class="nx">slice</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">).</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">);</span>
@@ -415,7 +408,7 @@
   <span class="copyright-year">
     &copy; 
     2012 - 
-    2018
+    2019
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>

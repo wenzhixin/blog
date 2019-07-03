@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.53 with even 4.0.0" />
+<meta name="generator" content="Hugo 0.55.6 with even 4.0.0" />
 
 
 <link rel="canonical" href="http://blog.wenzhixin.net.cn/2013/11/20/canvas_draw_clock/" />
@@ -41,7 +41,8 @@
 <meta property="og:title" content="使用 canvas 绘制时钟" />
 <meta property="og:description" content="今天我们利用 canvas 来画一个基本的时钟程序。通过一边实践一边学习新的知识。 准备工作，我们先定义需要用到的变量： 1 2 &lt;canvas id=&#34;canvas&#34; width=&#34;300&#34; height=&#34;300&#34;&gt;&lt;/canvas&gt; &lt;script src=&#34;clock.js&#34;&gt;&lt;/script&gt; 1 2 3 4 5 6 7 8 9 10" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://blog.wenzhixin.net.cn/2013/11/20/canvas_draw_clock/" /><meta property="article:published_time" content="2013-11-20T00:00:00&#43;00:00"/>
+<meta property="og:url" content="http://blog.wenzhixin.net.cn/2013/11/20/canvas_draw_clock/" />
+<meta property="article:published_time" content="2013-11-20T00:00:00&#43;00:00"/>
 <meta property="article:modified_time" content="2013-11-20T00:00:00&#43;00:00"/>
 
 <meta itemprop="name" content="使用 canvas 绘制时钟">
@@ -50,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2013-11-20T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2013-11-20T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="828">
+<meta itemprop="wordCount" content="821">
 
 
 
@@ -58,14 +59,6 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="使用 canvas 绘制时钟"/>
 <meta name="twitter:description" content="今天我们利用 canvas 来画一个基本的时钟程序。通过一边实践一边学习新的知识。 准备工作，我们先定义需要用到的变量： 1 2 &lt;canvas id=&#34;canvas&#34; width=&#34;300&#34; height=&#34;300&#34;&gt;&lt;/canvas&gt; &lt;script src=&#34;clock.js&#34;&gt;&lt;/script&gt; 1 2 3 4 5 6 7 8 9 10"/>
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-6977536652297913",
-    enable_page_level_ads: true
-  });
-</script>
-
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -75,6 +68,8 @@
   <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
 <![endif]-->
+
+<link rel="stylesheet" href="/custom.css">
 
 </head>
 <body>
@@ -124,6 +119,10 @@
       </li>
   </ul>
 </nav>
+
+<div id="codefund"></div>
+<script src="https://codefund.io/properties/292/funder.js" async="async"></script>
+
     </header>
 
     <main id="main" class="main">
@@ -192,7 +191,6 @@
 </span><span class="lnt"> 8
 </span><span class="lnt"> 9
 </span><span class="lnt">10
-</span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">canvas</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;canvas&#39;</span><span class="p">),</span>
@@ -200,7 +198,7 @@
 
 	<span class="nx">WIDTH</span> <span class="o">=</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">width</span><span class="p">,</span>
 	<span class="nx">HEIGHT</span> <span class="o">=</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">height</span><span class="p">,</span>
-	<span class="nx">RADIUS</span> <span class="o">=</span> <span class="nx">WIDTH</span> <span class="err">/ 2 - 30;</span>
+	<span class="nx">RADIUS</span> <span class="o">=</span> <span class="nx">WIDTH</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">30</span><span class="p">;</span>
 	<span class="nx">NUMBER_RADIUS</span> <span class="o">=</span> <span class="nx">RADIUS</span> <span class="o">+</span> <span class="mi">10</span><span class="p">,</span>
 	<span class="nx">FONT_HEIGHT</span> <span class="o">=</span> <span class="mi">15</span><span class="p">;</span>
 
@@ -223,7 +221,6 @@
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="lnt">1
-</span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">context</span><span class="p">.</span><span class="nx">arc</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">r</span><span class="p">,</span> <span class="nx">sAngle</span><span class="p">,</span> <span class="nx">eAngle</span><span class="p">,</span> <span class="nx">counterclockwise</span><span class="p">);</span>
@@ -285,18 +282,17 @@
 </span><span class="lnt"> 9
 </span><span class="lnt">10
 </span><span class="lnt">11
-</span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">drawCircle</span><span class="p">()</span> <span class="p">{</span>
 	<span class="nx">context</span><span class="p">.</span><span class="nx">beginPath</span><span class="p">();</span>
-	<span class="nx">context</span><span class="p">.</span><span class="nx">arc</span><span class="p">(</span><span class="nx">canvas</span><span class="p">.</span><span class="nx">width</span> <span class="sr">/ 2, canvas.height /</span> <span class="mi">2</span><span class="p">,</span> <span class="nx">RADIUS</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+	<span class="nx">context</span><span class="p">.</span><span class="nx">arc</span><span class="p">(</span><span class="nx">canvas</span><span class="p">.</span><span class="nx">width</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="nx">canvas</span><span class="p">.</span><span class="nx">height</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="nx">RADIUS</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
 	<span class="nx">context</span><span class="p">.</span><span class="nx">stroke</span><span class="p">();</span>
 <span class="p">}</span>
 
 <span class="kd">function</span> <span class="nx">drawCenter</span><span class="p">()</span> <span class="p">{</span>
 	<span class="nx">context</span><span class="p">.</span><span class="nx">beginPath</span><span class="p">();</span>
-	<span class="nx">context</span><span class="p">.</span><span class="nx">arc</span><span class="p">(</span><span class="nx">WIDTH</span> <span class="sr">/ 2, HEIGHT /</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+	<span class="nx">context</span><span class="p">.</span><span class="nx">arc</span><span class="p">(</span><span class="nx">WIDTH</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="nx">HEIGHT</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
 	<span class="nx">context</span><span class="p">.</span><span class="nx">fill</span><span class="p">();</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
@@ -317,7 +313,6 @@
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="lnt">1
-</span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">context</span><span class="p">.</span><span class="nx">fillText</span><span class="p">(</span><span class="nx">text</span><span class="p">,</span><span class="nx">x</span><span class="p">,</span><span class="nx">y</span><span class="p">,</span><span class="nx">maxWidth</span><span class="p">);</span>
@@ -368,17 +363,16 @@
 </span><span class="lnt"> 8
 </span><span class="lnt"> 9
 </span><span class="lnt">10
-</span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">drawNumbers</span><span class="p">()</span> <span class="p">{</span>
 	<span class="kd">var</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">angle</span><span class="p">,</span> <span class="nx">numWidth</span><span class="p">;</span>
 
 	<span class="k">for</span> <span class="p">(</span><span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="mi">12</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-		<span class="nx">angle</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span> <span class="err">/ 6 * (i - 3);</span>
+		<span class="nx">angle</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span> <span class="o">/</span> <span class="mi">6</span> <span class="o">*</span> <span class="p">(</span><span class="nx">i</span> <span class="o">-</span> <span class="mi">3</span><span class="p">);</span>
 		<span class="nx">numWidth</span> <span class="o">=</span> <span class="nx">context</span><span class="p">.</span><span class="nx">measureText</span><span class="p">(</span><span class="nx">i</span><span class="p">).</span><span class="nx">width</span><span class="p">;</span>
-		<span class="nx">context</span><span class="p">.</span><span class="nx">fillText</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">WIDTH</span> <span class="sr">/ 2 + Math.cos(angle) * NUMBER_RADIUS - numWidth /</span> <span class="mi">2</span><span class="p">,</span>
-			<span class="nx">HEIGHT</span> <span class="sr">/ 2 + Math.sin(angle) * NUMBER_RADIUS + FONT_HEIGHT /</span> <span class="mi">3</span><span class="p">);</span>
+		<span class="nx">context</span><span class="p">.</span><span class="nx">fillText</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">WIDTH</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">+</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">cos</span><span class="p">(</span><span class="nx">angle</span><span class="p">)</span> <span class="o">*</span> <span class="nx">NUMBER_RADIUS</span> <span class="o">-</span> <span class="nx">numWidth</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span>
+			<span class="nx">HEIGHT</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">+</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">sin</span><span class="p">(</span><span class="nx">angle</span><span class="p">)</span> <span class="o">*</span> <span class="nx">NUMBER_RADIUS</span> <span class="o">+</span> <span class="nx">FONT_HEIGHT</span> <span class="o">/</span> <span class="mi">3</span><span class="p">);</span>
 	<span class="p">}</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
@@ -417,7 +411,6 @@
 </span><span class="lnt">17
 </span><span class="lnt">18
 </span><span class="lnt">19
-</span><span class="lnt">20
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">drawHands</span><span class="p">()</span> <span class="p">{</span>
@@ -426,17 +419,17 @@
 		<span class="nx">m</span> <span class="o">=</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getMinutes</span><span class="p">(),</span>
 		<span class="nx">s</span> <span class="o">=</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getSeconds</span><span class="p">();</span>
 
-	<span class="nx">drawHand</span><span class="p">((</span><span class="nx">h</span> <span class="o">%</span> <span class="mi">12</span><span class="p">)</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">+</span> <span class="p">(</span><span class="nx">m</span> <span class="err">/ 60) * 5, RADIUS - 60);</span>
+	<span class="nx">drawHand</span><span class="p">((</span><span class="nx">h</span> <span class="o">%</span> <span class="mi">12</span><span class="p">)</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">+</span> <span class="p">(</span><span class="nx">m</span> <span class="o">/</span> <span class="mi">60</span><span class="p">)</span> <span class="o">*</span> <span class="mi">5</span><span class="p">,</span> <span class="nx">RADIUS</span> <span class="o">-</span> <span class="mi">60</span><span class="p">);</span>
 	<span class="nx">drawHand</span><span class="p">(</span><span class="nx">m</span><span class="p">,</span> <span class="nx">RADIUS</span> <span class="o">-</span> <span class="mi">40</span><span class="p">);</span>
 	<span class="nx">drawHand</span><span class="p">(</span><span class="nx">s</span><span class="p">,</span> <span class="nx">RADIUS</span> <span class="o">-</span> <span class="mi">20</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="kd">function</span> <span class="nx">drawHand</span><span class="p">(</span><span class="nx">loc</span><span class="p">,</span> <span class="nx">radius</span><span class="p">)</span> <span class="p">{</span>
-	<span class="kd">var</span> <span class="nx">angle</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="nx">loc</span> <span class="sr">/ 60) - Math.PI /</span> <span class="mi">2</span><span class="p">;</span>
+	<span class="kd">var</span> <span class="nx">angle</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="nx">loc</span> <span class="o">/</span> <span class="mi">60</span><span class="p">)</span> <span class="o">-</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
 
-	<span class="nx">context</span><span class="p">.</span><span class="nx">moveTo</span><span class="p">(</span><span class="nx">WIDTH</span> <span class="sr">/ 2, HEIGHT /</span> <span class="mi">2</span><span class="p">);</span>
-	<span class="nx">context</span><span class="p">.</span><span class="nx">lineTo</span><span class="p">(</span><span class="nx">WIDTH</span> <span class="err">/ 2 + Math.cos(angle) * radius,</span>
-		<span class="nx">HEIGHT</span> <span class="err">/ 2 + Math.sin(angle) * radius);</span>
+	<span class="nx">context</span><span class="p">.</span><span class="nx">moveTo</span><span class="p">(</span><span class="nx">WIDTH</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="nx">HEIGHT</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span>
+	<span class="nx">context</span><span class="p">.</span><span class="nx">lineTo</span><span class="p">(</span><span class="nx">WIDTH</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">+</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">cos</span><span class="p">(</span><span class="nx">angle</span><span class="p">)</span> <span class="o">*</span> <span class="nx">radius</span><span class="p">,</span>
+		<span class="nx">HEIGHT</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">+</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">sin</span><span class="p">(</span><span class="nx">angle</span><span class="p">)</span> <span class="o">*</span> <span class="nx">radius</span><span class="p">);</span>
 	<span class="nx">context</span><span class="p">.</span><span class="nx">stroke</span><span class="p">();</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
@@ -466,7 +459,6 @@
 </span><span class="lnt"> 9
 </span><span class="lnt">10
 </span><span class="lnt">11
-</span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">drawClock</span><span class="p">()</span> <span class="p">{</span>
@@ -577,7 +569,7 @@
   <span class="copyright-year">
     &copy; 
     2012 - 
-    2018
+    2019
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>

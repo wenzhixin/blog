@@ -126,7 +126,7 @@
       <pubDate>Tue, 04 Nov 2014 00:00:00 +0000</pubDate>
       
       <guid>http://blog.wenzhixin.net.cn/2014/11/04/webstorm_tools/</guid>
-      <description>在写代码的时候，很多时候（例如写 jQuery 插件）需要将 html 代码转换为 js 模板。例如将下面的 html 代码： 1 2 3 4 5 &amp;lt;ul&amp;gt; &amp;lt;li class=&amp;#34;item&amp;#34;&amp;gt; &amp;lt;a href=&amp;#34;#&amp;#34;&amp;gt;Item 1&amp;lt;/a&amp;gt; &amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; 放到 js 中： 1 2 3 4 5 6 7 8 var</description>
+      <description>在写代码的时候，很多时候（例如写 jQuery 插件）需要将 html 代码转换为 js 模板。例如将下面的 html 代码： 1 2 3 4 5 &amp;lt;ul&amp;gt; &amp;lt;li class=&amp;#34;item&amp;#34;&amp;gt; &amp;lt;a href=&amp;#34;#&amp;#34;&amp;gt;Item 1&amp;lt;/a&amp;gt; &amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; 放到 js 中： 1 2 3 4 5 6 7 var html</description>
     </item>
     
     <item>
@@ -918,7 +918,7 @@
       <pubDate>Tue, 31 Dec 2013 00:00:00 +0000</pubDate>
       
       <guid>http://blog.wenzhixin.net.cn/2013/12/31/apache_rewrite/</guid>
-      <description>安装启用 mod_rewrite 在安装启用之前，编写 info.php 文件 1 2 &amp;lt;?php phpinfo();?&amp;gt; 从浏览器中打开，使用 Ctrl + F 进行查找 mod_rewrite 是否在 Loaded Modules 中， 已经存在就表示我们已经安装，不存在的话，那么，</description>
+      <description>安装启用 mod_rewrite 在安装启用之前，编写 info.php 文件 1 &amp;lt;?php phpinfo();?&amp;gt; 从浏览器中打开，使用 Ctrl + F 进行查找 mod_rewrite 是否在 Loaded Modules 中， 已经存在就表示我们已经安装，不存在的话，那么，需</description>
     </item>
     
     <item>
@@ -1062,7 +1062,7 @@
       <pubDate>Tue, 26 Nov 2013 00:00:00 +0000</pubDate>
       
       <guid>http://blog.wenzhixin.net.cn/2013/11/26/jquery_file_upload_change_once/</guid>
-      <description>1. 前言 在使用 AjaxFileUpload 插件的时候， 发现使用 jQuery 监听 change 事件只生效一次 1 2 3 4 $(&amp;#39;#upload&amp;#39;).change(function() { }); 那么是为什么呢？ 2. 原因 找了下原因，原来是 130 行对事件进行了 unbind 1 2 jQuery(io).unbind() 3. 解决</description>
+      <description>1. 前言 在使用 AjaxFileUpload 插件的时候， 发现使用 jQuery 监听 change 事件只生效一次 1 2 3 $(&amp;#39;#upload&amp;#39;).change(function() { }); 那么是为什么呢？ 2. 原因 找了下原因，原来是 130 行对事件进行了 unbind 1 jQuery(io).unbind() 3. 解决 1) 使</description>
     </item>
     
     <item>

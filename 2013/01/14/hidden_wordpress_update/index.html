@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.53 with even 4.0.0" />
+<meta name="generator" content="Hugo 0.55.6 with even 4.0.0" />
 
 
 <link rel="canonical" href="http://blog.wenzhixin.net.cn/2013/01/14/hidden_wordpress_update/" />
@@ -41,7 +41,8 @@
 <meta property="og:title" content="完全禁用 Wordpress 后台的更新提示和功能" />
 <meta property="og:description" content="为了防止误操作，需要禁用后台的更新提示以及更新功能 需要禁用的更新包括： 1. 头部更新提示 (wp-includes/admin-bar.php) 注释第 618 行： 1 2 3 4 5 6 7 8 $wp_admin_bar-&gt;add_menu( array( &#39;id&#39; =&gt; &#39;updates&#39;, &#39;title&#39; =&gt; $title, &#39;href&#39; =&gt; network_admin_url( &#39;update-core.php&#39; )," />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://blog.wenzhixin.net.cn/2013/01/14/hidden_wordpress_update/" /><meta property="article:published_time" content="2013-01-14T00:00:00&#43;00:00"/>
+<meta property="og:url" content="http://blog.wenzhixin.net.cn/2013/01/14/hidden_wordpress_update/" />
+<meta property="article:published_time" content="2013-01-14T00:00:00&#43;00:00"/>
 <meta property="article:modified_time" content="2013-01-14T00:00:00&#43;00:00"/>
 
 <meta itemprop="name" content="完全禁用 Wordpress 后台的更新提示和功能">
@@ -58,14 +59,6 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="完全禁用 Wordpress 后台的更新提示和功能"/>
 <meta name="twitter:description" content="为了防止误操作，需要禁用后台的更新提示以及更新功能 需要禁用的更新包括： 1. 头部更新提示 (wp-includes/admin-bar.php) 注释第 618 行： 1 2 3 4 5 6 7 8 $wp_admin_bar-&gt;add_menu( array( &#39;id&#39; =&gt; &#39;updates&#39;, &#39;title&#39; =&gt; $title, &#39;href&#39; =&gt; network_admin_url( &#39;update-core.php&#39; ),"/>
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-6977536652297913",
-    enable_page_level_ads: true
-  });
-</script>
-
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -75,6 +68,8 @@
   <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
 <![endif]-->
+
+<link rel="stylesheet" href="/custom.css">
 
 </head>
 <body>
@@ -124,6 +119,10 @@
       </li>
   </ul>
 </nav>
+
+<div id="codefund"></div>
+<script src="https://codefund.io/properties/292/funder.js" async="async"></script>
+
     </header>
 
     <main id="main" class="main">
@@ -331,7 +330,7 @@ if ( isset( $cur-&gt;response ) &amp;&amp; $cur-&gt;response == &#39;upgrade&#39
   <span class="copyright-year">
     &copy; 
     2012 - 
-    2018
+    2019
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>

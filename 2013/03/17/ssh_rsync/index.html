@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.53 with even 4.0.0" />
+<meta name="generator" content="Hugo 0.55.6 with even 4.0.0" />
 
 
 <link rel="canonical" href="http://blog.wenzhixin.net.cn/2013/03/17/ssh_rsync/" />
@@ -41,7 +41,8 @@
 <meta property="og:title" content="Ubuntu 下无密码访问及文件同步" />
 <meta property="og:description" content="服务器端配置 ssh 修改客户端sshd配置文件 1 sudo vi /etc/ssh/sshd_config 修改为 1 2 3 RSAAuthentication yes PubkeyAuthentication yes AuthorizedKeysFile %h/.ssh/authorized_keys 重启ssh服务 1 sudo /etc/init.d/sshd restart 配置密钥 在客户端生成公钥和私钥文件 1 2 ssh-keygen cat ~/.ssh/id_rsa.pub &gt;&gt;" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://blog.wenzhixin.net.cn/2013/03/17/ssh_rsync/" /><meta property="article:published_time" content="2013-03-17T00:00:00&#43;00:00"/>
+<meta property="og:url" content="http://blog.wenzhixin.net.cn/2013/03/17/ssh_rsync/" />
+<meta property="article:published_time" content="2013-03-17T00:00:00&#43;00:00"/>
 <meta property="article:modified_time" content="2013-03-17T00:00:00&#43;00:00"/>
 
 <meta itemprop="name" content="Ubuntu 下无密码访问及文件同步">
@@ -58,14 +59,6 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Ubuntu 下无密码访问及文件同步"/>
 <meta name="twitter:description" content="服务器端配置 ssh 修改客户端sshd配置文件 1 sudo vi /etc/ssh/sshd_config 修改为 1 2 3 RSAAuthentication yes PubkeyAuthentication yes AuthorizedKeysFile %h/.ssh/authorized_keys 重启ssh服务 1 sudo /etc/init.d/sshd restart 配置密钥 在客户端生成公钥和私钥文件 1 2 ssh-keygen cat ~/.ssh/id_rsa.pub &gt;&gt;"/>
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-6977536652297913",
-    enable_page_level_ads: true
-  });
-</script>
-
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -75,6 +68,8 @@
   <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
 <![endif]-->
+
+<link rel="stylesheet" href="/custom.css">
 
 </head>
 <body>
@@ -124,6 +119,10 @@
       </li>
   </ul>
 </nav>
+
+<div id="codefund"></div>
+<script src="https://codefund.io/properties/292/funder.js" async="async"></script>
+
     </header>
 
     <main id="main" class="main">
@@ -370,7 +369,7 @@ cat ~/.ssh/id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys</pre></td></tr></table>
   <span class="copyright-year">
     &copy; 
     2012 - 
-    2018
+    2019
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>

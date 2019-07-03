@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.53 with even 4.0.0" />
+<meta name="generator" content="Hugo 0.55.6 with even 4.0.0" />
 
 
 <link rel="canonical" href="http://blog.wenzhixin.net.cn/2015/06/07/react_memory/" />
@@ -41,7 +41,8 @@
 <meta property="og:title" content="react-memory：基于 nodejs &#43; bower &#43; react 的文字记忆游戏" />
 <meta property="og:description" content="前言 现在最热门的前端框架，毫无疑问是 React，React 是由 Facebook 出品的 JavaScript 框架，由于该框架比较新，比较少中文的资料。这几天看了很多篇关于 react 的英" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://blog.wenzhixin.net.cn/2015/06/07/react_memory/" /><meta property="article:published_time" content="2015-06-07T00:00:00&#43;00:00"/>
+<meta property="og:url" content="http://blog.wenzhixin.net.cn/2015/06/07/react_memory/" />
+<meta property="article:published_time" content="2015-06-07T00:00:00&#43;00:00"/>
 <meta property="article:modified_time" content="2015-06-07T00:00:00&#43;00:00"/>
 
 <meta itemprop="name" content="react-memory：基于 nodejs &#43; bower &#43; react 的文字记忆游戏">
@@ -50,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2015-06-07T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2015-06-07T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="3580">
+<meta itemprop="wordCount" content="3573">
 
 
 
@@ -58,14 +59,6 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="react-memory：基于 nodejs &#43; bower &#43; react 的文字记忆游戏"/>
 <meta name="twitter:description" content="前言 现在最热门的前端框架，毫无疑问是 React，React 是由 Facebook 出品的 JavaScript 框架，由于该框架比较新，比较少中文的资料。这几天看了很多篇关于 react 的英"/>
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-6977536652297913",
-    enable_page_level_ads: true
-  });
-</script>
-
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -75,6 +68,8 @@
   <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
 <![endif]-->
+
+<link rel="stylesheet" href="/custom.css">
 
 </head>
 <body>
@@ -124,6 +119,10 @@
       </li>
   </ul>
 </nav>
+
+<div id="codefund"></div>
+<script src="https://codefund.io/properties/292/funder.js" async="async"></script>
+
     </header>
 
     <main id="main" class="main">
@@ -393,7 +392,6 @@ npm install -g browserify watchify http-server</code></pre></td></tr></table>
 </span><span class="lnt">21
 </span><span class="lnt">22
 </span><span class="lnt">23
-</span><span class="lnt">24
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">React</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;react&#39;</span><span class="p">),</span> <span class="c1">// 加载 react 模块
@@ -413,7 +411,7 @@ npm install -g browserify watchify http-server</code></pre></td></tr></table>
     <span class="c1">// 渲染我们的界面
 </span><span class="c1"></span>    <span class="nx">render</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
         <span class="k">return</span> <span class="p">(</span>
-            <span class="o">&lt;</span><span class="nx">OtherComponent</span> <span class="nx">prop1</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">prop1</span><span class="p">}</span> <span class="nx">func1</span><span class="o">=</span><span class="p">{{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">func1</span><span class="p">}}</span> <span class="err">/&gt;</span>
+            <span class="o">&lt;</span><span class="nx">OtherComponent</span> <span class="nx">prop1</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">prop1</span><span class="p">}</span> <span class="nx">func1</span><span class="o">=</span><span class="p">{{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">func1</span><span class="p">}}</span> <span class="o">/&gt;</span>
         <span class="p">);</span>
     <span class="p">}</span>
 <span class="p">});</span>
@@ -461,7 +459,6 @@ npm install -g browserify watchify http-server</code></pre></td></tr></table>
 </span><span class="lnt">30
 </span><span class="lnt">31
 </span><span class="lnt">32
-</span><span class="lnt">33
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">React</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;react&#39;</span><span class="p">),</span>
@@ -489,8 +486,8 @@ npm install -g browserify watchify http-server</code></pre></td></tr></table>
 </span><span class="c1"></span>    <span class="nx">render</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
         <span class="k">return</span> <span class="p">(</span>
             <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">words</span> <span class="o">?</span>
-                <span class="o">&lt;</span><span class="nx">Board</span> <span class="nx">onEndGame</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">endGame</span><span class="p">}</span> <span class="nx">words</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">words</span><span class="p">}</span><span class="err">/&gt; :</span>
-                <span class="o">&lt;</span><span class="nx">WordForm</span> <span class="nx">onWordsEntered</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">startGame</span><span class="p">}</span> <span class="err">/&gt;</span>
+                <span class="o">&lt;</span><span class="nx">Board</span> <span class="nx">onEndGame</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">endGame</span><span class="p">}</span> <span class="nx">words</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">words</span><span class="p">}</span><span class="o">/&gt;</span> <span class="o">:</span>
+                <span class="o">&lt;</span><span class="nx">WordForm</span> <span class="nx">onWordsEntered</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">startGame</span><span class="p">}</span> <span class="o">/&gt;</span>
         <span class="p">);</span>
     <span class="p">}</span>
 <span class="p">});</span>
@@ -554,7 +551,6 @@ npm install -g browserify watchify http-server</code></pre></td></tr></table>
 </span><span class="lnt">46
 </span><span class="lnt">47
 </span><span class="lnt">48
-</span><span class="lnt">49
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">React</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;react&#39;</span><span class="p">),</span>
@@ -596,7 +592,7 @@ npm install -g browserify watchify http-server</code></pre></td></tr></table>
             <span class="o">&lt;</span><span class="nx">form</span> <span class="nx">className</span><span class="o">=</span><span class="s1">&#39;form-inline&#39;</span> <span class="nx">onSubmit</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">submitWords</span><span class="p">}</span><span class="o">&gt;</span>
                 <span class="o">&lt;</span><span class="nx">span</span><span class="o">&gt;</span><span class="nx">请输入你想记忆的字符</span><span class="err">：</span><span class="o">&lt;</span><span class="err">/span&gt;</span>
                 <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">className</span><span class="o">=</span><span class="s1">&#39;form-control&#39;</span> <span class="nx">type</span><span class="o">=</span><span class="s1">&#39;text&#39;</span> <span class="nx">ref</span><span class="o">=</span><span class="s1">&#39;words&#39;</span> <span class="nx">maxLength</span><span class="o">=</span><span class="s1">&#39;10&#39;</span>
-                    <span class="nx">defaultValue</span><span class="o">=</span><span class="s1">&#39;文字记忆游戏&#39;</span> <span class="err">/&gt;</span>
+                    <span class="nx">defaultValue</span><span class="o">=</span><span class="s1">&#39;文字记忆游戏&#39;</span> <span class="o">/&gt;</span>
                 <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">className</span><span class="o">=</span><span class="s1">&#39;btn btn-default&#39;</span> <span class="nx">type</span><span class="o">=</span><span class="s1">&#39;submit&#39;</span><span class="o">&gt;</span><span class="nx">开始记忆</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
                 <span class="o">&lt;</span><span class="nx">p</span> <span class="nx">className</span><span class="o">=</span><span class="s1">&#39;error&#39;</span><span class="o">&gt;</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">error</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
             <span class="o">&lt;</span><span class="err">/form&gt;</span>
@@ -732,7 +728,6 @@ npm install -g browserify watchify http-server</code></pre></td></tr></table>
 </span><span class="lnt"> 98
 </span><span class="lnt"> 99
 </span><span class="lnt">100
-</span><span class="lnt">101
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">React</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;react&#39;</span><span class="p">),</span>
@@ -748,7 +743,7 @@ npm install -g browserify watchify http-server</code></pre></td></tr></table>
     <span class="p">},</span>
     <span class="c1">// 在组件还未 mount 之前用于计算总共有多少对文字卡片
 </span><span class="c1"></span>    <span class="nx">componentWillMount</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">max</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">words</span><span class="p">.</span><span class="nx">length</span> <span class="err">/ 2;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">max</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">words</span><span class="p">.</span><span class="nx">length</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
     <span class="p">},</span>
     <span class="c1">// State 状态
 </span><span class="c1"></span>    <span class="c1">// found：表示找到了多少对文字卡片
@@ -820,14 +815,14 @@ npm install -g browserify watchify http-server</code></pre></td></tr></table>
 </span><span class="c1"></span>        <span class="kd">var</span> <span class="nx">tiles</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">words</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">word</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">return</span> <span class="p">(</span>
                 <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">i</span><span class="p">}</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">_</span><span class="p">.</span><span class="nx">partial</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">clickedTile</span><span class="p">,</span> <span class="nx">i</span><span class="p">)}</span><span class="o">&gt;</span>
-                    <span class="o">&lt;</span><span class="nx">Tile</span> <span class="nx">word</span><span class="o">=</span><span class="p">{</span><span class="nx">word</span><span class="p">}</span> <span class="nx">status</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">tileStates</span><span class="p">[</span><span class="nx">i</span><span class="p">]}</span> <span class="err">/&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">Tile</span> <span class="nx">word</span><span class="o">=</span><span class="p">{</span><span class="nx">word</span><span class="p">}</span> <span class="nx">status</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">tileStates</span><span class="p">[</span><span class="nx">i</span><span class="p">]}</span> <span class="o">/&gt;</span>
                 <span class="o">&lt;</span><span class="err">/div&gt;</span>
             <span class="p">);</span>
         <span class="p">}.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">));</span>
         <span class="k">return</span> <span class="p">(</span>
             <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
                 <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">className</span><span class="o">=</span><span class="s1">&#39;btn btn-default&#39;</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">onEndGame</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">结束记忆</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
-                <span class="o">&lt;</span><span class="nx">Status</span> <span class="nx">found</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">found</span><span class="p">}</span> <span class="nx">max</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">max</span><span class="p">}</span> <span class="nx">message</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">message</span><span class="p">}</span> <span class="err">/&gt;</span>
+                <span class="o">&lt;</span><span class="nx">Status</span> <span class="nx">found</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">found</span><span class="p">}</span> <span class="nx">max</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">max</span><span class="p">}</span> <span class="nx">message</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">message</span><span class="p">}</span> <span class="o">/&gt;</span>
                 <span class="p">{</span><span class="nx">tiles</span><span class="p">}</span>
             <span class="o">&lt;</span><span class="err">/div&gt;</span>
         <span class="p">);</span>
@@ -870,7 +865,6 @@ npm install -g browserify watchify http-server</code></pre></td></tr></table>
 </span><span class="lnt">25
 </span><span class="lnt">26
 </span><span class="lnt">27
-</span><span class="lnt">28
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">React</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;react&#39;</span><span class="p">);</span>
@@ -894,7 +888,7 @@ npm install -g browserify watchify http-server</code></pre></td></tr></table>
                 <span class="nx">foundAll</span><span class="o">:</span> <span class="s1">&#39;恭喜过关，你已经找到所有&#39;</span> <span class="o">+</span> <span class="nx">max</span> <span class="o">+</span> <span class="s1">&#39;对卡片了！&#39;</span>
             <span class="p">};</span>
         <span class="k">return</span> <span class="p">(</span>
-            <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="p">({</span><span class="nx">found</span><span class="p">}</span><span class="err">/{max})&amp;nbsp;&amp;nbsp;{texts[this.props.message]}&lt;/p&gt;</span>
+            <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="p">({</span><span class="nx">found</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="nx">max</span><span class="p">})</span><span class="o">&amp;</span><span class="nx">nbsp</span><span class="p">;</span><span class="o">&amp;</span><span class="nx">nbsp</span><span class="p">;{</span><span class="nx">texts</span><span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">message</span><span class="p">]}</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
         <span class="p">);</span>
     <span class="p">}</span>
 <span class="p">});</span>
@@ -928,7 +922,6 @@ npm install -g browserify watchify http-server</code></pre></td></tr></table>
 </span><span class="lnt">16
 </span><span class="lnt">17
 </span><span class="lnt">18
-</span><span class="lnt">19
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">React</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;react&#39;</span><span class="p">);</span>
@@ -1225,14 +1218,13 @@ npm install -g browserify watchify http-server</code></pre></td></tr></table>
 </span><span class="lnt">5
 </span><span class="lnt">6
 </span><span class="lnt">7
-</span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">React</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;react&#39;</span><span class="p">),</span>
     <span class="nx">Game</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./game&#39;</span><span class="p">);</span>
 
 <span class="nx">React</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
-    <span class="o">&lt;</span><span class="nx">Game</span> <span class="err">/&gt;,</span>
+    <span class="o">&lt;</span><span class="nx">Game</span> <span class="o">/&gt;</span><span class="p">,</span>
     <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;app&#39;</span><span class="p">)</span>
 <span class="p">);</span>
 </code></pre></td></tr></table>
@@ -1408,7 +1400,7 @@ npm install -g browserify watchify http-server</code></pre></td></tr></table>
   <span class="copyright-year">
     &copy; 
     2012 - 
-    2018
+    2019
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>

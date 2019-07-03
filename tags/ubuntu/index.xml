@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ubuntu on 文翼的博客</title>
+    <title>Ubuntu on 文翼的博客</title>
     <link>http://blog.wenzhixin.net.cn/tags/ubuntu/</link>
-    <description>Recent content in ubuntu on 文翼的博客</description>
+    <description>Recent content in Ubuntu on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
@@ -49,6 +49,15 @@
     </item>
     
     <item>
+      <title>ubuntu 设置环境变量问题</title>
+      <link>http://blog.wenzhixin.net.cn/2014/02/17/ubuntu_path/</link>
+      <pubDate>Mon, 17 Feb 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2014/02/17/ubuntu_path/</guid>
+      <description>开发的时候需要设置环境变量，但是发现设置了之后，每次重启却没有起作用。 首先，将环境加入 1 export PATH=${PATH}:$HOME/bin 到 ~/.bash_profile 文件中，运行 1 source ~/.bash_profile 即可让设置的环境变量生效。</description>
+    </item>
+    
+    <item>
       <title>Ubuntu 下安装音乐播放器</title>
       <link>http://blog.wenzhixin.net.cn/2014/01/25/ubuntu_music_player/</link>
       <pubDate>Sat, 25 Jan 2014 00:00:00 +0000</pubDate>
@@ -58,12 +67,48 @@
     </item>
     
     <item>
+      <title>ubuntu 解决语言设置错误的问题</title>
+      <link>http://blog.wenzhixin.net.cn/2014/01/11/ubuntu_setting_locale_failed/</link>
+      <pubDate>Sat, 11 Jan 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2014/01/11/ubuntu_setting_locale_failed/</guid>
+      <description>在使用 ubuntu 命令行登录的时候，出现： 1 2 3 4 5 6 7 8 perl: warning: Setting locale failed. perl: warning: Please check that your locale settings: LANGUAGE = (unset), LC_ALL = (unset), LC_MESSAGES = &amp;#34;zh_CN.UTF-8&amp;#34;, LANG = &amp;#34;zh_CN.UTF-8&amp;#34; are supported and installed on your system. perl: warning: Falling back to the standard locale (&amp;#34;C&amp;#34;). 这样的错误</description>
+    </item>
+    
+    <item>
+      <title>windows 下同步文件到远程服务器中</title>
+      <link>http://blog.wenzhixin.net.cn/2014/01/06/windows_rsync_file/</link>
+      <pubDate>Mon, 06 Jan 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2014/01/06/windows_rsync_file/</guid>
+      <description>安装 cwRsync 下载 cwRsync 客户端 解压并安装到指定目录，例如：C:\Program Files\cwRsync 配置环境变量： 系统变量 Path中后面加入 C:\Program Files\cwRsync\bin; 创建新的系统变量 HOME = C:\Program Files\cwRsync\home (其</description>
+    </item>
+    
+    <item>
       <title>Ubuntu 12.10 添加 node 应用为自启动服务</title>
       <link>http://blog.wenzhixin.net.cn/2013/12/30/ubuntu_node_app_service/</link>
       <pubDate>Mon, 30 Dec 2013 00:00:00 +0000</pubDate>
       
       <guid>http://blog.wenzhixin.net.cn/2013/12/30/ubuntu_node_app_service/</guid>
       <description>开发 node 应用之后，启动的方式一般是通过 node app 或者 node app &amp;amp; 来运行， 十分不方便，这里将以本 blog 应用为例介绍如何添加为自启动的服务。 环境 用户名：usern</description>
+    </item>
+    
+    <item>
+      <title>管理 ubuntu 服务器用户</title>
+      <link>http://blog.wenzhixin.net.cn/2013/12/28/ubuntu_new_user/</link>
+      <pubDate>Sat, 28 Dec 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2013/12/28/ubuntu_new_user/</guid>
+      <description>前言 对于刚刚安装（或者购买）的服务器，一般只有 root 用户，那我们需要对其进行用户管理设置。 创建新的用户 创建一个名为 username 的新用户（自己替换为想要的名</description>
+    </item>
+    
+    <item>
+      <title>从 ubuntu 同步文件到 windows</title>
+      <link>http://blog.wenzhixin.net.cn/2013/12/01/ubuntu_rsync_to_windows/</link>
+      <pubDate>Sun, 01 Dec 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2013/12/01/ubuntu_rsync_to_windows/</guid>
+      <description>windows 下使用 cwRsync，ubuntu 使用默认的 rsync。 安装 cwRsync 下载 cwRsync 服务端 解压并安装到指定目录，例如：E:\Program Files\ICW 配置 cwRsync 修改 rsyncd.conf 1</description>
     </item>
     
     <item>
@@ -109,6 +154,24 @@
       
       <guid>http://blog.wenzhixin.net.cn/2012/10/22/ubuntu_ruby_on_rails_development_environment_set_up/</guid>
       <description>安装 ruby： 1 sudo apt-get install ruby1.9.1 ruby1.9.1-dev 安装 rubygems： 1 sudo apt-get install rubygems 安装 mysql 1 sudo apt-get install mysql 安装 ruby-mysql 1）下载：http://www.tmtm.org/en/ru</description>
+    </item>
+    
+    <item>
+      <title>ubuntu vim gedit 乱码解决</title>
+      <link>http://blog.wenzhixin.net.cn/2012/09/24/ubuntu_vim_gedit_garbled_solution/</link>
+      <pubDate>Mon, 24 Sep 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2012/09/24/ubuntu_vim_gedit_garbled_solution/</guid>
+      <description>添加中文字符编码： 1 sudo vi /var/lib/locales/supported.d/local 添加下面的中文字符集： 1 2 3 zh_CN.GBK GBK zh_CN.GB2312 GB2312 zh_CN.GB18030 GB18030 使其生效： 1 sudo dpkg-reconfigure locales vim： 1 sudo vi /etc/vim/vimrc 打开vim的配置文件，在其中加入： 1 2 3</description>
+    </item>
+    
+    <item>
+      <title>ubuntu vim gedit 乱码解决</title>
+      <link>http://blog.wenzhixin.net.cn/2012/09/24/ubuntu_vim_gedit_garbled_solution/</link>
+      <pubDate>Mon, 24 Sep 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2012/09/24/ubuntu_vim_gedit_garbled_solution/</guid>
+      <description>添加中文字符编码： 1 sudo vi /var/lib/locales/supported.d/local 添加下面的中文字符集： 1 2 3 zh_CN.GBK GBK zh_CN.GB2312 GB2312 zh_CN.GB18030 GB18030 使其生效： 1 sudo dpkg-reconfigure locales vim： 1 sudo vi /etc/vim/vimrc 打开vim的配置文件，在其中加入： 1 2 3</description>
     </item>
     
     <item>

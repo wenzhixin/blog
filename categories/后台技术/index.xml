@@ -99,7 +99,7 @@
       <pubDate>Tue, 31 Dec 2013 00:00:00 +0000</pubDate>
       
       <guid>http://blog.wenzhixin.net.cn/2013/12/31/apache_rewrite/</guid>
-      <description>安装启用 mod_rewrite 在安装启用之前，编写 info.php 文件 1 2 &amp;lt;?php phpinfo();?&amp;gt; 从浏览器中打开，使用 Ctrl + F 进行查找 mod_rewrite 是否在 Loaded Modules 中， 已经存在就表示我们已经安装，不存在的话，那么，</description>
+      <description>安装启用 mod_rewrite 在安装启用之前，编写 info.php 文件 1 &amp;lt;?php phpinfo();?&amp;gt; 从浏览器中打开，使用 Ctrl + F 进行查找 mod_rewrite 是否在 Loaded Modules 中， 已经存在就表示我们已经安装，不存在的话，那么，需</description>
     </item>
     
     <item>

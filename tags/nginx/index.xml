@@ -1,16 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>nginx on 文翼的博客</title>
+    <title>Nginx on 文翼的博客</title>
     <link>http://blog.wenzhixin.net.cn/tags/nginx/</link>
-    <description>Recent content in nginx on 文翼的博客</description>
+    <description>Recent content in Nginx on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Sat, 18 Jan 2014 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 18 Sep 2014 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://blog.wenzhixin.net.cn/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>如何为 NodeJs 设置 Nginx 代理服务器</title>
+      <link>http://blog.wenzhixin.net.cn/2014/09/18/nginx_as_proxy_nodejs/</link>
+      <pubDate>Thu, 18 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2014/09/18/nginx_as_proxy_nodejs/</guid>
+      <description>很多时候，我们需要为 NodeJs 设置反向代理，例如本博客后台 NodeJs 的应用监听的端口为 3333，通过 Nginx 便可以轻松代理为 80 端口，那么应该如何设置呢？ 首先设置 u</description>
+    </item>
     
     <item>
       <title>nodeJS 和 Nginx 解决客户端发送大数据的问题</title>
@@ -36,7 +45,7 @@
       <pubDate>Tue, 31 Dec 2013 00:00:00 +0000</pubDate>
       
       <guid>http://blog.wenzhixin.net.cn/2013/12/31/apache_rewrite/</guid>
-      <description>安装启用 mod_rewrite 在安装启用之前，编写 info.php 文件 1 2 &amp;lt;?php phpinfo();?&amp;gt; 从浏览器中打开，使用 Ctrl + F 进行查找 mod_rewrite 是否在 Loaded Modules 中， 已经存在就表示我们已经安装，不存在的话，那么，</description>
+      <description>安装启用 mod_rewrite 在安装启用之前，编写 info.php 文件 1 &amp;lt;?php phpinfo();?&amp;gt; 从浏览器中打开，使用 Ctrl + F 进行查找 mod_rewrite 是否在 Loaded Modules 中， 已经存在就表示我们已经安装，不存在的话，那么，需</description>
     </item>
     
     <item>

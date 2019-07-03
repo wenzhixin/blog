@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.53 with even 4.0.0" />
+<meta name="generator" content="Hugo 0.55.6 with even 4.0.0" />
 
 
 <link rel="canonical" href="http://blog.wenzhixin.net.cn/2014/08/04/python_oracle/" />
@@ -41,7 +41,8 @@
 <meta property="og:title" content="如何使用 python 连接 Oracle（网站）" />
 <meta property="og:description" content="首先，由于网站部署在远程服务器的局域网上面，所以需要通过 ssh tunnel（隧道） 的方式进行本地的映射，主要映射两个端口： Oracle 服务：ssh -fN -L 1521:ip:1521 server" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://blog.wenzhixin.net.cn/2014/08/04/python_oracle/" /><meta property="article:published_time" content="2014-08-04T00:00:00&#43;00:00"/>
+<meta property="og:url" content="http://blog.wenzhixin.net.cn/2014/08/04/python_oracle/" />
+<meta property="article:published_time" content="2014-08-04T00:00:00&#43;00:00"/>
 <meta property="article:modified_time" content="2014-08-04T00:00:00&#43;00:00"/>
 
 <meta itemprop="name" content="如何使用 python 连接 Oracle（网站）">
@@ -58,14 +59,6 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="如何使用 python 连接 Oracle（网站）"/>
 <meta name="twitter:description" content="首先，由于网站部署在远程服务器的局域网上面，所以需要通过 ssh tunnel（隧道） 的方式进行本地的映射，主要映射两个端口： Oracle 服务：ssh -fN -L 1521:ip:1521 server"/>
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-6977536652297913",
-    enable_page_level_ads: true
-  });
-</script>
-
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -75,6 +68,8 @@
   <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
 <![endif]-->
+
+<link rel="stylesheet" href="/custom.css">
 
 </head>
 <body>
@@ -124,6 +119,10 @@
       </li>
   </ul>
 </nav>
+
+<div id="codefund"></div>
+<script src="https://codefund.io/properties/292/funder.js" async="async"></script>
+
     </header>
 
     <main id="main" class="main">
@@ -176,8 +175,7 @@
 <ol>
 <li><p>下载 Instant Client Package - Basic 和 Instant Client Package - SDK 的 rpm 安装包：<a href="http://www.oracle.com/technetwork/topics/linuxx86-64soft-092277.html">http://www.oracle.com/technetwork/topics/linuxx86-64soft-092277.html</a></p></li>
 
-<li><p>转换为 deb 包：</p></li>
-</ol>
+<li><p>转换为 deb 包：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
@@ -189,10 +187,9 @@
 sudo alien oracle-instantclient12.1-basic-12.1.0.2.0-1.x86_64.rpm
 sudo alien oracle-instantclient12.1-devel-12.1.0.2.0-1.x86_64.rpm</pre></td></tr></table>
 </div>
-</div>
-<ol>
-<li>安装 deb 包：</li>
-</ol>
+</div></li>
+
+<li><p>安装 deb 包：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
@@ -202,10 +199,9 @@ sudo alien oracle-instantclient12.1-devel-12.1.0.2.0-1.x86_64.rpm</pre></td></tr
 <pre class="chroma">sudo dpkg -i oracle-instantclient12.1-basic_12.1.0.2.0-2_amd64.deb
 sudo dpkg -i oracle-instantclient12.1-devel_12.1.0.2.0-2_amd64.deb</pre></td></tr></table>
 </div>
-</div>
-<ol>
-<li>设置环境变量（加到 .bashrc 中）</li>
-</ol>
+</div></li>
+
+<li><p>设置环境变量（加到 .bashrc 中）</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
@@ -217,10 +213,9 @@ sudo dpkg -i oracle-instantclient12.1-devel_12.1.0.2.0-2_amd64.deb</pre></td></t
 export LD_LIBRARY_PATH=$ORACLE_HOME/lib
 export NLS_LANG=AMERICAN_AMERICA.WE8ISO8859P1 # 设置 Oracle 编码，解决乱码问题</pre></td></tr></table>
 </div>
-</div>
-<ol>
-<li>安装 cx_Oracle：</li>
-</ol>
+</div></li>
+
+<li><p>安装 cx_Oracle：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
@@ -230,10 +225,9 @@ export NLS_LANG=AMERICAN_AMERICA.WE8ISO8859P1 # 设置 Oracle 编码，解决乱
 <pre class="chroma">sudo apt-get install python-dev python-pip
 sudo env ORACLE_HOME=$ORACLE_HOME pip install cx_Oracle</pre></td></tr></table>
 </div>
-</div>
-<ol>
-<li>使用：</li>
-</ol>
+</div></li>
+
+<li><p>使用：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
@@ -249,7 +243,9 @@ conn = cx_Oracle.connect(&#39;user&#39;, &#39;password&#39;, &#39;127.0.0.1/orcl
 cursor = conn.cursor()
 cursor.execute(&#39;select * from table&#39;)</pre></td></tr></table>
 </div>
-</div>
+</div></li>
+</ol>
+
 <p>可能遇到的问题:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -360,7 +356,7 @@ cursor.execute(&#39;select * from table&#39;)</pre></td></tr></table>
   <span class="copyright-year">
     &copy; 
     2012 - 
-    2018
+    2019
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>

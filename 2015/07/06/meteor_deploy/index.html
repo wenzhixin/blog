@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.53 with even 4.0.0" />
+<meta name="generator" content="Hugo 0.55.6 with even 4.0.0" />
 
 
 <link rel="canonical" href="http://blog.wenzhixin.net.cn/2015/07/06/meteor_deploy/" />
@@ -41,7 +41,8 @@
 <meta property="og:title" content="在 Ubuntu 14.04 server 上部署 meteor 应用" />
 <meta property="og:description" content="关于 Meteor.js Meteor.js Meteor 是一个构建在 Node.js 之上的平台，用来开发实时网页程序。Meteor 位于程序数据库和用户界面之间，保持二者之间的数据同步更新。使用 Mete" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://blog.wenzhixin.net.cn/2015/07/06/meteor_deploy/" /><meta property="article:published_time" content="2015-07-06T00:00:00&#43;00:00"/>
+<meta property="og:url" content="http://blog.wenzhixin.net.cn/2015/07/06/meteor_deploy/" />
+<meta property="article:published_time" content="2015-07-06T00:00:00&#43;00:00"/>
 <meta property="article:modified_time" content="2015-07-06T00:00:00&#43;00:00"/>
 
 <meta itemprop="name" content="在 Ubuntu 14.04 server 上部署 meteor 应用">
@@ -50,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2015-07-06T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2015-07-06T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="332">
+<meta itemprop="wordCount" content="331">
 
 
 
@@ -58,14 +59,6 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="在 Ubuntu 14.04 server 上部署 meteor 应用"/>
 <meta name="twitter:description" content="关于 Meteor.js Meteor.js Meteor 是一个构建在 Node.js 之上的平台，用来开发实时网页程序。Meteor 位于程序数据库和用户界面之间，保持二者之间的数据同步更新。使用 Mete"/>
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-6977536652297913",
-    enable_page_level_ads: true
-  });
-</script>
-
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -75,6 +68,8 @@
   <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
 <![endif]-->
+
+<link rel="stylesheet" href="/custom.css">
 
 </head>
 <body>
@@ -124,6 +119,10 @@
       </li>
   </ul>
 </nav>
+
+<div id="codefund"></div>
+<script src="https://codefund.io/properties/292/funder.js" async="async"></script>
+
     </header>
 
     <main id="main" class="main">
@@ -183,19 +182,14 @@
 <pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> myapp
 meteor build --directory ../build</code></pre></td></tr></table>
 </div>
-</div></li>
-
-<li><p>使用 rsync 同步到服务器上</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> ../
-rsync -avz build/bundle hostname:/home/myapp</code></pre></td></tr></table>
 </div>
-</div></li>
+<ul>
+<li>使用 rsync 同步到服务器上
+<code>bash
+cd ../
+rsync -avz build/bundle hostname:/home/myapp
+</code></li>
+</ul></li>
 </ul>
 
 <h3 id="安装-mongodb">安装 mongodb</h3>
@@ -421,7 +415,7 @@ end script</code></pre></td></tr></table>
   <span class="copyright-year">
     &copy; 
     2012 - 
-    2018
+    2019
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>

@@ -7,10 +7,37 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Sun, 17 Mar 2013 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 16 Mar 2014 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://blog.wenzhixin.net.cn/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ubuntu 下使用 FreeRDP 连接 Windows 远程桌面</title>
+      <link>http://blog.wenzhixin.net.cn/2014/03/16/ubuntu_xfreerdp/</link>
+      <pubDate>Sun, 16 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2014/03/16/ubuntu_xfreerdp/</guid>
+      <description>简介 FreeRDP 是一款开源的远程桌面系统，支持多种平台， 在 ubuntu 中使用 FreeRDP 可以很方便的登录到 windwos 远程桌面中。 安装 1 sudo apt-get install freerdp 使用 1 xfreerdp -f host:port -u username -p password 参数： -f：表示</description>
+    </item>
+    
+    <item>
+      <title>ssh tunnel（隧道）</title>
+      <link>http://blog.wenzhixin.net.cn/2014/03/15/ssh_tunnel/</link>
+      <pubDate>Sat, 15 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2014/03/15/ssh_tunnel/</guid>
+      <description>问题描述： 公司内部机器限制了登录，只能通过某台指定的机器才能上网，我们这里叫做中转服务器。 例如邮件服务器，而一般中转服务器是 linux 系统。 你想要登</description>
+    </item>
+    
+    <item>
+      <title>安卓 ssh 和 rsync 同步客户端的实现</title>
+      <link>http://blog.wenzhixin.net.cn/2013/10/18/android_ssh_rsync_client/</link>
+      <pubDate>Fri, 18 Oct 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2013/10/18/android_ssh_rsync_client/</guid>
+      <description>1. 介绍 基于安卓的 ssh 和 rsync 客户端，可用于对服务器指定的目录进行同步到手机。 在这里我们使用 Dropbear 的 dbclient 作为 ssh 的客户端。 Dropbear是一个相对较小的S</description>
+    </item>
     
     <item>
       <title>Ubuntu 下无密码访问及文件同步</title>

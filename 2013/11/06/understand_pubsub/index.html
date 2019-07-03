@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.53 with even 4.0.0" />
+<meta name="generator" content="Hugo 0.55.6 with even 4.0.0" />
 
 
 <link rel="canonical" href="http://blog.wenzhixin.net.cn/2013/11/06/understand_pubsub/" />
@@ -41,7 +41,8 @@
 <meta property="og:title" content="理解并实现 PubSub 模式" />
 <meta property="og:description" content="假如我们正在构建一个类似于 Google Docs 的应用程序，当用户按下一个按键时，需要做的事情有很多： 新字符显示到屏幕上；插入点向后移动；将本次动作加入到撤销" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://blog.wenzhixin.net.cn/2013/11/06/understand_pubsub/" /><meta property="article:published_time" content="2013-11-06T00:00:00&#43;00:00"/>
+<meta property="og:url" content="http://blog.wenzhixin.net.cn/2013/11/06/understand_pubsub/" />
+<meta property="article:published_time" content="2013-11-06T00:00:00&#43;00:00"/>
 <meta property="article:modified_time" content="2013-11-06T00:00:00&#43;00:00"/>
 
 <meta itemprop="name" content="理解并实现 PubSub 模式">
@@ -58,14 +59,6 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="理解并实现 PubSub 模式"/>
 <meta name="twitter:description" content="假如我们正在构建一个类似于 Google Docs 的应用程序，当用户按下一个按键时，需要做的事情有很多： 新字符显示到屏幕上；插入点向后移动；将本次动作加入到撤销"/>
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-6977536652297913",
-    enable_page_level_ads: true
-  });
-</script>
-
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -75,6 +68,8 @@
   <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
 <![endif]-->
+
+<link rel="stylesheet" href="/custom.css">
 
 </head>
 <body>
@@ -124,6 +119,10 @@
       </li>
   </ul>
 </nav>
+
+<div id="codefund"></div>
+<script src="https://codefund.io/properties/292/funder.js" async="async"></script>
+
     </header>
 
     <main id="main" class="main">
@@ -452,7 +451,7 @@ pubsub.emit(&#39;message&#39;, &#39;test2&#39;);
   <span class="copyright-year">
     &copy; 
     2012 - 
-    2018
+    2019
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>

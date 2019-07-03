@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.53 with even 4.0.0" />
+<meta name="generator" content="Hugo 0.55.6 with even 4.0.0" />
 
 
 <link rel="canonical" href="http://blog.wenzhixin.net.cn/2014/09/03/convert_size_using_javascript/" />
@@ -41,7 +41,8 @@
 <meta property="og:title" content="使用 JavaScript 转换数据单位" />
 <meta property="og:description" content="我们知道，千字节是一个计量单位，虽然从字面上理解代表着1000，但是专业术语kilobyte在计算机科学和信息技术等领域有两种含义，分别代表" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://blog.wenzhixin.net.cn/2014/09/03/convert_size_using_javascript/" /><meta property="article:published_time" content="2014-09-03T00:00:00&#43;00:00"/>
+<meta property="og:url" content="http://blog.wenzhixin.net.cn/2014/09/03/convert_size_using_javascript/" />
+<meta property="article:published_time" content="2014-09-03T00:00:00&#43;00:00"/>
 <meta property="article:modified_time" content="2014-09-03T00:00:00&#43;00:00"/>
 
 <meta itemprop="name" content="使用 JavaScript 转换数据单位">
@@ -50,7 +51,7 @@
 
 <meta itemprop="datePublished" content="2014-09-03T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2014-09-03T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="295">
+<meta itemprop="wordCount" content="294">
 
 
 
@@ -58,14 +59,6 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="使用 JavaScript 转换数据单位"/>
 <meta name="twitter:description" content="我们知道，千字节是一个计量单位，虽然从字面上理解代表着1000，但是专业术语kilobyte在计算机科学和信息技术等领域有两种含义，分别代表"/>
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-6977536652297913",
-    enable_page_level_ads: true
-  });
-</script>
-
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -75,6 +68,8 @@
   <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
 <![endif]-->
+
+<link rel="stylesheet" href="/custom.css">
 
 </head>
 <body>
@@ -124,6 +119,10 @@
       </li>
   </ul>
 </nav>
+
+<div id="codefund"></div>
+<script src="https://codefund.io/properties/292/funder.js" async="async"></script>
+
     </header>
 
     <main id="main" class="main">
@@ -165,16 +164,15 @@
 </span><span class="lnt">6
 </span><span class="lnt">7
 </span><span class="lnt">8
-</span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">bytesToSize</span><span class="p">(</span><span class="nx">bytes</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">bytes</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="s1">&#39;0 B&#39;</span><span class="p">;</span>
     <span class="kd">var</span> <span class="nx">k</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">,</span> <span class="c1">// or 1024
 </span><span class="c1"></span>        <span class="nx">sizes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;KB&#39;</span><span class="p">,</span> <span class="s1">&#39;MB&#39;</span><span class="p">,</span> <span class="s1">&#39;GB&#39;</span><span class="p">,</span> <span class="s1">&#39;TB&#39;</span><span class="p">,</span> <span class="s1">&#39;PB&#39;</span><span class="p">,</span> <span class="s1">&#39;EB&#39;</span><span class="p">,</span> <span class="s1">&#39;ZB&#39;</span><span class="p">,</span> <span class="s1">&#39;YB&#39;</span><span class="p">],</span>
-        <span class="nx">i</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">bytes</span><span class="p">)</span> <span class="err">/ Math.log(k));</span>
+        <span class="nx">i</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">bytes</span><span class="p">)</span> <span class="o">/</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">k</span><span class="p">));</span>
 
-   <span class="k">return</span> <span class="p">(</span><span class="nx">bytes</span> <span class="err">/ Math.pow(k, i)).toPrecision(3) + &#39; &#39; + sizes[i];</span>
+   <span class="k">return</span> <span class="p">(</span><span class="nx">bytes</span> <span class="o">/</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">pow</span><span class="p">(</span><span class="nx">k</span><span class="p">,</span> <span class="nx">i</span><span class="p">)).</span><span class="nx">toPrecision</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="nx">sizes</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
@@ -271,7 +269,7 @@
   <span class="copyright-year">
     &copy; 
     2012 - 
-    2018
+    2019
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
