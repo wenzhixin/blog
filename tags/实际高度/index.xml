@@ -14,10 +14,10 @@
     
     <item>
       <title>如何获取 div 的实际高度</title>
-      <link>http://blog.wenzhixin.net.cn/2014/05/04/get_div_outer_height/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/05/04/get-div-outer-height/</link>
       <pubDate>Sun, 04 May 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/05/04/get_div_outer_height/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/05/04/get-div-outer-height/</guid>
       <description>在实际开发中，需要对 div 的高度进行计算并自动设置高度，但是遇到了这样的一个问题： 1 2 3 4 5 &amp;lt;div id=&amp;#34;outer&amp;#34;&amp;gt; &amp;lt;div id=&amp;#34;inner&amp;#34; style=&amp;#34;height: 50px; margin-top: 20px; margin-bottom: 20px;&amp;#34;&amp;gt; 如何获取 div 的实际高度 &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; 1 2 3 4</description>
     </item>
     

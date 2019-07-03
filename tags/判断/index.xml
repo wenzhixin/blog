@@ -14,10 +14,10 @@
     
     <item>
       <title>判断浏览器是否为 IE11</title>
-      <link>http://blog.wenzhixin.net.cn/2014/05/05/detect_ie11/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/05/05/detect-ie11/</link>
       <pubDate>Mon, 05 May 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/05/05/detect_ie11/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/05/05/detect-ie11/</guid>
       <description>项目中需要判断对浏览器的支持，使用 jQuery 去判断一个浏览器是否为 IE11 的时候，会识别错误。 这是因为 IE11 使用了和之前版本不一样的 User-agent： 1 Mozilla/5.0</description>
     </item>
     

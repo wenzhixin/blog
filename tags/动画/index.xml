@@ -14,28 +14,19 @@
     
     <item>
       <title>使用 requestAnimationFrame 实现动画</title>
-      <link>http://blog.wenzhixin.net.cn/2014/01/14/canvas_fps_frame/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/01/14/canvas-fps-frame/</link>
       <pubDate>Tue, 14 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/01/14/canvas_fps_frame/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/01/14/canvas-fps-frame/</guid>
       <description>requestAnimationFrame 函数是主流浏览器推出来的用来代替旧的setTimeout和setInterval方法， 从而提高动作的性能。 该函数把绘制动画的任务直接交给浏</description>
     </item>
     
     <item>
       <title>《锋利的jQuery》学习笔记——jQuery中的动画</title>
-      <link>http://blog.wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_in_animation/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/03/13/sharp-jquery-study-notes-jquery-in-animation/</link>
       <pubDate>Tue, 13 Mar 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_in_animation/</guid>
-      <description>​1. show和hide方法 • (&amp;ldquo;element&amp;rdquo;).show(speed[, callback])-显示element元素 • (&amp;ldquo;element&amp;rdquo;).hide(speed[, callback])-隐藏element元素 (1)show() 和 hide() 方法同时修</description>
-    </item>
-    
-    <item>
-      <title>《锋利的jQuery》学习笔记——jQuery中的动画</title>
-      <link>http://blog.wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_in_animation/</link>
-      <pubDate>Tue, 13 Mar 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_in_animation/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/03/13/sharp-jquery-study-notes-jquery-in-animation/</guid>
       <description>​1. show和hide方法 • (&amp;ldquo;element&amp;rdquo;).show(speed[, callback])-显示element元素 • (&amp;ldquo;element&amp;rdquo;).hide(speed[, callback])-隐藏element元素 (1)show() 和 hide() 方法同时修</description>
     </item>
     

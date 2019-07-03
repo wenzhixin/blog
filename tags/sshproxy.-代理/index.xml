@@ -14,19 +14,10 @@
     
     <item>
       <title>Ubuntu 设置 sshproxy 代理</title>
-      <link>http://blog.wenzhixin.net.cn/2012/10/24/ubuntu_sshproxy/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/10/24/ubuntu-sshproxy/</link>
       <pubDate>Wed, 24 Oct 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/10/24/ubuntu_sshproxy/</guid>
-      <description>服务器端 1. 添加用户，并切换到该用户： 1 2 adduser sshproxy su - sshproxy 2. 生成 key： 1 2 3 ssh-keygen cd .ssh mv id_rsa.pub authorized_keys 3. 禁止 sshproxy 用户登录： 1 chsh -s /bin/false sshproxy 客户端： 1. 拷贝密钥 id_rsa 到客户端，</description>
-    </item>
-    
-    <item>
-      <title>Ubuntu 设置 sshproxy 代理</title>
-      <link>http://blog.wenzhixin.net.cn/2012/10/24/ubuntu_sshproxy/</link>
-      <pubDate>Wed, 24 Oct 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/10/24/ubuntu_sshproxy/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/10/24/ubuntu-sshproxy/</guid>
       <description>服务器端 1. 添加用户，并切换到该用户： 1 2 adduser sshproxy su - sshproxy 2. 生成 key： 1 2 3 ssh-keygen cd .ssh mv id_rsa.pub authorized_keys 3. 禁止 sshproxy 用户登录： 1 chsh -s /bin/false sshproxy 客户端： 1. 拷贝密钥 id_rsa 到客户端，</description>
     </item>
     

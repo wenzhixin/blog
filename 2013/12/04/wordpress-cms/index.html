@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Wordpress 打造 CMS 系统小记 - 文翼的博客</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="wenzhixin" /><meta name="description" content="关闭文章评论： 设置-讨论下，去掉“允许他人在新文章上发表评论”选项 关闭页面评论： 到具体页面编辑，打开显示选项中的讨论，去掉“允许评论”选项 添" /><meta name="keywords" content="文翼的博客, web前端博客" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.55.6 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://blog.wenzhixin.net.cn/2013/12/04/wordpress-cms/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.93844dae.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Wordpress 打造 CMS 系统小记" />
+<meta property="og:description" content="关闭文章评论： 设置-讨论下，去掉“允许他人在新文章上发表评论”选项 关闭页面评论： 到具体页面编辑，打开显示选项中的讨论，去掉“允许评论”选项 添" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.wenzhixin.net.cn/2013/12/04/wordpress-cms/" />
+<meta property="article:published_time" content="2013-12-04T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2013-12-04T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="Wordpress 打造 CMS 系统小记">
+<meta itemprop="description" content="关闭文章评论： 设置-讨论下，去掉“允许他人在新文章上发表评论”选项 关闭页面评论： 到具体页面编辑，打开显示选项中的讨论，去掉“允许评论”选项 添">
+
+
+<meta itemprop="datePublished" content="2013-12-04T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2013-12-04T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="605">
+
+
+
+<meta itemprop="keywords" content="Wordpress," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Wordpress 打造 CMS 系统小记"/>
+<meta name="twitter:description" content="关闭文章评论： 设置-讨论下，去掉“允许他人在新文章上发表评论”选项 关闭页面评论： 到具体页面编辑，打开显示选项中的讨论，去掉“允许评论”选项 添"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+<link rel="stylesheet" href="/css/custom.css">
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">文翼的博客</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">文翼的博客</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+
+<div id="codefund"></div>
+<script src="https://codefund.io/properties/292/funder.js" async="async"></script>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Wordpress 打造 CMS 系统小记</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2013-12-04 </span>
+        <div class="post-category">
+            <a href="/categories/%E5%90%8E%E5%8F%B0%E6%8A%80%E6%9C%AF/"> 后台技术 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#关闭文章评论">关闭文章评论：</a></li>
+<li><a href="#关闭页面评论">关闭页面评论：</a></li>
+<li><a href="#添加上一篇-下一篇">添加上一篇、下一篇：</a></li>
+<li><a href="#隐藏文章底部分享信息">隐藏文章底部分享信息：</a></li>
+<li><a href="#自定义首页">自定义首页：</a></li>
+<li><a href="#添加首页幻灯片">添加首页幻灯片：</a></li>
+<li><a href="#其他">其他</a>
+<ul>
+<li><a href="#content-php">content.php</a></li>
+<li><a href="#functions-php">functions.php</a></li>
+<li><a href="#sytle-css">sytle.css</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<h3 id="关闭文章评论">关闭文章评论：</h3>
+
+<p>设置-讨论下，去掉“允许他人在新文章上发表评论”选项</p>
+
+<h3 id="关闭页面评论">关闭页面评论：</h3>
+
+<p>到具体页面编辑，打开显示选项中的讨论，去掉“允许评论”选项</p>
+
+<h3 id="添加上一篇-下一篇">添加上一篇、下一篇：</h3>
+
+<p>打开 single.php 页面，在 footer 中加入</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">&lt;div&gt;
+	&lt;div class=&#34;left&#34;&gt;
+		&lt;?php if (get_previous_post()) { previous_post_link(&#39;上一篇：%link&#39;); } else { echo &#39;上一篇：没有了！&#39;; }?&gt;
+	&lt;/div&gt;
+	&lt;div class=&#34;right&#34;&gt;
+		&lt;?php if (get_next_post()) { next_post_link(&#39;下一篇：%link&#39;); } else { echo &#39;下一篇：没有了！&#39;; } ?&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;clear&#34;&gt;&lt;/div&gt;</pre></td></tr></table>
+</div>
+</div>
+<p>在 style.css 中加入</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">.entry-utility .left {
+	float: left;
+}
+.entry-utility .right {
+	float: right;
+}</pre></td></tr></table>
+</div>
+</div>
+<h3 id="隐藏文章底部分享信息">隐藏文章底部分享信息：</h3>
+
+<p>打开 functions.php，找到 pinboard_social_bookmarks 函数</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">function pinboard_social_bookmarks() {
+	return false;
+}</pre></td></tr></table>
+</div>
+</div>
+<h3 id="自定义首页">自定义首页：</h3>
+
+<p>新建 home.php</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">&lt;?php
+/*
+Template Name: Home
+*/
+?&gt;
+&lt;?php get_header(); ?&gt;
+&lt;?php if( is_front_page() ) : ?&gt;
+	&lt;?php if( pinboard_get_option( &#39;slider&#39; ) ) : ?&gt;
+		&lt;?php get_template_part( &#39;slider&#39; ); ?&gt;
+	&lt;?php endif; ?&gt;
+	&lt;?php get_sidebar( &#39;wide&#39; ); ?&gt;
+	&lt;?php get_sidebar( &#39;boxes&#39; ); ?&gt;
+&lt;?php endif; ?&gt;
+&lt;div id=&#34;container&#34;&gt;
+&lt;/div&gt;
+&lt;?php get_footer(); ?&gt;</pre></td></tr></table>
+</div>
+</div>
+<p>页面-新建，选择模板 home，标题为首页，内容为空。</p>
+
+<p>设置-阅读中，首页显示选择“一个静态页面”，主页选择“首页”。</p>
+
+<h3 id="添加首页幻灯片">添加首页幻灯片：</h3>
+
+<p><a href="http://wordpress.org/plugins/ml-slider/">Meta Slider</a></p>
+
+<p>下载解压到 wp-content/plugins，并启用。</p>
+
+<p>设置大小为：1140px * 350px</p>
+
+<p>在 home.php 加入(id 为幻灯片的ID)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">&lt;?php echo do_shortcode(&#34;[metaslider id=id]&#34;); ?&gt;</pre></td></tr></table>
+</div>
+</div>
+<h3 id="其他">其他</h3>
+
+<h4 id="content-php">content.php</h4>
+
+<p>第1行去掉</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">&lt;?php post_class(); ?&gt;</pre></td></tr></table>
+</div>
+</div>
+<h4 id="functions-php">functions.php</h4>
+
+<p>第760行去掉</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$content.imagesLoaded(function() {
+	$content.masonry({
+		itemSelector : &#39;.hentry, #infscr-loading&#39;,
+		columnWidth : container.querySelector(&#39;.&lt;?php echo pinboard_teaser_class(); ?&gt;&#39;),
+	});
+});</pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">function pinboard_entry_meta () {
+}</pre></td></tr></table>
+</div>
+</div>
+<p>the_author_link() 改为 the_author()</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">&lt;span class=&#34;entry-date&#34;&gt;&lt;span rel=&#34;bookmark&#34; title=&#34;&lt;?php the_title_attribute(); ?&gt;&#34;&gt;&lt;?php the_time( get_option( &#39;date_format&#39; ) ); ?&gt;&lt;/span&gt;&lt;/span&gt;</pre></td></tr></table>
+</div>
+</div>
+<p>Permalink 改为 更多&hellip;</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">function pinboard_excerpt_length() 改为 return 100;</pre></td></tr></table>
+</div>
+</div>
+<h4 id="sytle-css">sytle.css</h4>
+
+<p>#header #searchform 加上</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">display: none;</pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">wenzhixin</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2013-12-04</span>
+  </p>
+  
+  
+</div><div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/weixin.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/alipay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/wordpress/">Wordpress</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/2013/12/05/on-duplicate-key-update/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">ON DUPLICATE KEY UPDATE</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/2013/12/03/mousewheel-event/">
+            <span class="next-text nav-default">鼠标滚轮事件 MouseWheel</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'wenzhixin';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:wenzhixin2010@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/1531096/wenyi" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/wenzhixin2010" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.facebook.com/wenzhixin2010" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://github.com/wenzhixin" class="iconfont icon-github" title="github"></a>
+      <a href="https://weibo.com/2292826740" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://www.zhihu.com/people/zhixin-wen" class="iconfont icon-zhihu" title="zhihu"></a>
+  <a href="http://blog.wenzhixin.net.cn/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2012 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">wenzhixin.net.cn 粤ICP备15117953号</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.ece58db6.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-36708951-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

@@ -14,10 +14,10 @@
     
     <item>
       <title>vim 添加批量注释</title>
-      <link>http://blog.wenzhixin.net.cn/2014/03/14/vim_batch_notes/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/03/14/vim-batch-notes/</link>
       <pubDate>Fri, 14 Mar 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/03/14/vim_batch_notes/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/03/14/vim-batch-notes/</guid>
       <description>在配置服务器的过程中，经常会用到 vim 作为我们的编辑器，批量注释这一功能很常用到。 这里记录 vim 如何添加批量注释的方法。 Ctrl + v 使用方向键上下选择范围</description>
     </item>
     

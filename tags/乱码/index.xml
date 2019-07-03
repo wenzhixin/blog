@@ -14,19 +14,10 @@
     
     <item>
       <title>ubuntu vim gedit 乱码解决</title>
-      <link>http://blog.wenzhixin.net.cn/2012/09/24/ubuntu_vim_gedit_garbled_solution/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/09/24/ubuntu-vim-gedit-garbled-solution/</link>
       <pubDate>Mon, 24 Sep 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/09/24/ubuntu_vim_gedit_garbled_solution/</guid>
-      <description>添加中文字符编码： 1 sudo vi /var/lib/locales/supported.d/local 添加下面的中文字符集： 1 2 3 zh_CN.GBK GBK zh_CN.GB2312 GB2312 zh_CN.GB18030 GB18030 使其生效： 1 sudo dpkg-reconfigure locales vim： 1 sudo vi /etc/vim/vimrc 打开vim的配置文件，在其中加入： 1 2 3</description>
-    </item>
-    
-    <item>
-      <title>ubuntu vim gedit 乱码解决</title>
-      <link>http://blog.wenzhixin.net.cn/2012/09/24/ubuntu_vim_gedit_garbled_solution/</link>
-      <pubDate>Mon, 24 Sep 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/09/24/ubuntu_vim_gedit_garbled_solution/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/09/24/ubuntu-vim-gedit-garbled-solution/</guid>
       <description>添加中文字符编码： 1 sudo vi /var/lib/locales/supported.d/local 添加下面的中文字符集： 1 2 3 zh_CN.GBK GBK zh_CN.GB2312 GB2312 zh_CN.GB18030 GB18030 使其生效： 1 sudo dpkg-reconfigure locales vim： 1 sudo vi /etc/vim/vimrc 打开vim的配置文件，在其中加入： 1 2 3</description>
     </item>
     

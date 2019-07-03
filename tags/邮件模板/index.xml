@@ -14,10 +14,10 @@
     
     <item>
       <title>制作漂亮的邮件模板</title>
-      <link>http://blog.wenzhixin.net.cn/2014/01/24/send_email_template/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/01/24/send-email-template/</link>
       <pubDate>Fri, 24 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/01/24/send_email_template/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/01/24/send-email-template/</guid>
       <description>上一篇中讲到如何通过 nodejs 发送通知邮件，在发送通知邮件的时候， 假如可以有漂亮的邮件模板就更好了，但是出于安全的原因， 邮件一般不支持 link 或者 style 样式，</description>
     </item>
     

@@ -14,28 +14,19 @@
     
     <item>
       <title>markdown 介绍、解析与编辑器</title>
-      <link>http://blog.wenzhixin.net.cn/2013/11/02/markdown_and_markdown_editor/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/11/02/markdown-and-markdown-editor/</link>
       <pubDate>Sat, 02 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/11/02/markdown_and_markdown_editor/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/02/markdown-and-markdown-editor/</guid>
       <description>markdown 是一种轻量级标记语言，它允许使用易读易写的纯文本格式编写文档，然后转换成html文档。 markdown 强调可读性高于一切。其实网上有很多介绍 markdown 的文章，这</description>
     </item>
     
     <item>
       <title>快速搭建自己的博客(markdown)</title>
-      <link>http://blog.wenzhixin.net.cn/2012/11/30/build_markdown_blog/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/11/30/build-markdown-blog/</link>
       <pubDate>Fri, 30 Nov 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/11/30/build_markdown_blog/</guid>
-      <description>PS：基于 jQuery、markdown 的 html 博客，无涉及后台，如此简单，你也可以拥有!!! 目录结构 1 2 3 4 5 6 7 8 9 10 ├── js | ├── jquery-1.8.3.min.js | ├</description>
-    </item>
-    
-    <item>
-      <title>快速搭建自己的博客(markdown)</title>
-      <link>http://blog.wenzhixin.net.cn/2012/11/30/build_markdown_blog/</link>
-      <pubDate>Fri, 30 Nov 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/11/30/build_markdown_blog/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/11/30/build-markdown-blog/</guid>
       <description>PS：基于 jQuery、markdown 的 html 博客，无涉及后台，如此简单，你也可以拥有!!! 目录结构 1 2 3 4 5 6 7 8 9 10 ├── js | ├── jquery-1.8.3.min.js | ├</description>
     </item>
     

@@ -14,10 +14,10 @@
     
     <item>
       <title>Android ant 编译问题收集</title>
-      <link>http://blog.wenzhixin.net.cn/2013/02/26/android_ant_problem/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/02/26/android-ant-problem/</link>
       <pubDate>Tue, 26 Feb 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/02/26/android_ant_problem/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/02/26/android-ant-problem/</guid>
       <description>问题： 1 aapt not found under the right path 解决： 1 2 sudo apt-get install ia32-libs # 12.04 sudo apt-get install lib32z1 # 14.04 问题： 1 Perhaps JAVA_HOME does not point to the JDK. It is currently set to &amp;#34;/usr/lib/jvm/java-6-openjdk/jre&amp;#34; 解决： Fixed it by installing the open jdk: 1 sudo apt-get install openjdk-7-jdk</description>
     </item>
     

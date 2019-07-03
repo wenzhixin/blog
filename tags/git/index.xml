@@ -14,10 +14,10 @@
     
     <item>
       <title>git for windows 安装和配置</title>
-      <link>http://blog.wenzhixin.net.cn/2013/01/04/git_for_windows/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/01/04/git-for-windows/</link>
       <pubDate>Fri, 04 Jan 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/01/04/git_for_windows/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/01/04/git-for-windows/</guid>
       <description>1. 安装 msysgit: msysgit 2. 配置用户信息和 alias gitconfig 1 2 3 4 5 6 7 8 9 10 [user] name = zhixin email = wenzhixin2010@gmail.com [alias] co = checkout ci = commit -a st = status br = branch oneline = log --pretty=oneline --since=&amp;#39;2 days ago&amp;#39; onelog = log -p -1</description>
     </item>
     

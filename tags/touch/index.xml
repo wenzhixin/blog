@@ -14,10 +14,10 @@
     
     <item>
       <title>手机 web 开发之 Touch 入门</title>
-      <link>http://blog.wenzhixin.net.cn/2013/11/18/hello_touch_event/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/11/18/hello-touch-event/</link>
       <pubDate>Mon, 18 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/11/18/hello_touch_event/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/18/hello-touch-event/</guid>
       <description>微博应用上用手向左滑动，便可以触发返回事件，这一小小的功能虽说很简单， 但是却大大提高了用户体验（特别是用左手拿手机的人）。 今天来研究在 web 上模</description>
     </item>
     

@@ -14,10 +14,10 @@
     
     <item>
       <title>简单的博客 RSS 聚合</title>
-      <link>http://blog.wenzhixin.net.cn/2013/11/04/simple_rss_together/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/11/04/simple-rss-together/</link>
       <pubDate>Mon, 04 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/11/04/simple_rss_together/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/04/simple-rss-together/</guid>
       <description>1. 前言 将博客的 RSS 内容聚合起来，这样方便查看，今天就来研究如何简单的将 RSS 的内容存到数据库（MySQL）中。 2. 创建数据库表 1 2 3 4 5 6 7 8 CREATE TABLE links</description>
     </item>
     

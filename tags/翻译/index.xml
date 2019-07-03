@@ -14,10 +14,10 @@
     
     <item>
       <title>nodejs 使用百度翻译 API</title>
-      <link>http://blog.wenzhixin.net.cn/2013/11/13/nodejs_use_baidu_translate_api/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/11/13/nodejs-use-baidu-translate-api/</link>
       <pubDate>Wed, 13 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/11/13/nodejs_use_baidu_translate_api/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/13/nodejs-use-baidu-translate-api/</guid>
       <description>博客（网站）中需要对文章标题进行翻译成英文显示，要求可以批量翻译。 这里使用 nodejs 来对指定内容进行翻译，主要用到的知识点有两个： 使用百度翻译 API</description>
     </item>
     

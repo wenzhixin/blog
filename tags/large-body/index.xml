@@ -14,10 +14,10 @@
     
     <item>
       <title>nodeJS 和 Nginx 解决客户端发送大数据的问题</title>
-      <link>http://blog.wenzhixin.net.cn/2014/01/18/large_body_error/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/01/18/large-body-error/</link>
       <pubDate>Sat, 18 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/01/18/large_body_error/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/01/18/large-body-error/</guid>
       <description>nodeJS 和 Nginx 默认情况下都只支持 1MB 的 body 数据，当客户端发送大数据的时候，分别会出现以下错误： nodeJS： 1 Error: request entity too large 解决： 1 2 3 app.use(express.bodyParser({ limit: 1024 * 1024 * 64 // 64M }));</description>
     </item>
     

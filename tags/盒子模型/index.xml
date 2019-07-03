@@ -14,19 +14,10 @@
     
     <item>
       <title>彻底研究CSS——深入理解盒子模型</title>
-      <link>http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_understanding_the_box_model/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/05/04/a-thorough-study-of-css-understanding-the-box-model/</link>
       <pubDate>Fri, 04 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_understanding_the_box_model/</guid>
-      <description>1、盒子模型的内部结构 * 在 CSS 中，一个独立的盒子模型由 content（内容）、border（边框）、padding（内边距）和 margin（外</description>
-    </item>
-    
-    <item>
-      <title>彻底研究CSS——深入理解盒子模型</title>
-      <link>http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_understanding_the_box_model/</link>
-      <pubDate>Fri, 04 May 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_understanding_the_box_model/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/05/04/a-thorough-study-of-css-understanding-the-box-model/</guid>
       <description>1、盒子模型的内部结构 * 在 CSS 中，一个独立的盒子模型由 content（内容）、border（边框）、padding（内边距）和 margin（外</description>
     </item>
     

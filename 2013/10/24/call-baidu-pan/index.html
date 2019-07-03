@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>使用百度云接口 - 文翼的博客</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="wenzhixin" /><meta name="description" content="树莓派 raspberry pi 已经买了好一段时间了，但是实际上却没怎么用到。 一开始买的时候就是打算重复利用宿舍网络资源的，但是却一直没有时间去做开发。 有些事情，" /><meta name="keywords" content="文翼的博客, web前端博客" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.55.6 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://blog.wenzhixin.net.cn/2013/10/24/call-baidu-pan/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.93844dae.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="使用百度云接口" />
+<meta property="og:description" content="树莓派 raspberry pi 已经买了好一段时间了，但是实际上却没怎么用到。 一开始买的时候就是打算重复利用宿舍网络资源的，但是却一直没有时间去做开发。 有些事情，" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.wenzhixin.net.cn/2013/10/24/call-baidu-pan/" />
+<meta property="article:published_time" content="2013-10-24T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2013-10-24T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="使用百度云接口">
+<meta itemprop="description" content="树莓派 raspberry pi 已经买了好一段时间了，但是实际上却没怎么用到。 一开始买的时候就是打算重复利用宿舍网络资源的，但是却一直没有时间去做开发。 有些事情，">
+
+
+<meta itemprop="datePublished" content="2013-10-24T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2013-10-24T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="716">
+
+
+
+<meta itemprop="keywords" content="百度云,树莓派,下载," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="使用百度云接口"/>
+<meta name="twitter:description" content="树莓派 raspberry pi 已经买了好一段时间了，但是实际上却没怎么用到。 一开始买的时候就是打算重复利用宿舍网络资源的，但是却一直没有时间去做开发。 有些事情，"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+<link rel="stylesheet" href="/css/custom.css">
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">文翼的博客</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">文翼的博客</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+
+<div id="codefund"></div>
+<script src="https://codefund.io/properties/292/funder.js" async="async"></script>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">使用百度云接口</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2013-10-24 </span>
+        <div class="post-category">
+            <a href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/"> 前端技术 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#1-创建百度开发者应用">1. 创建百度开发者应用</a></li>
+<li><a href="#2-获取-access-token">2. 获取 Access Token</a></li>
+<li><a href="#3-开始使用-api-下载文件">3. 开始使用 api 下载文件</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<p>树莓派 raspberry pi 已经买了好一段时间了，但是实际上却没怎么用到。
+一开始买的时候就是打算重复利用宿舍网络资源的，但是却一直没有时间去做开发。
+有些事情，不去开始，也许永远都不会有所成吧。
+另外，即使开始了，假如不去坚持，那也是等于0。</p>
+
+<p>先说说最终目标吧：因为申请了 2T 的百度云，打算重复利用资源，将数据保存到云中，
+下载服务器变会自动开始同步数据到指定的目录中。</p>
+
+<p>并且实时监听网络资源，没有人使用的使用便开启同步，有人使用便暂停。</p>
+
+<p>其实也不知道最后会不会做出来，但是不去尝试也不会知道。
+有所感悟，有所思。废话就不多说了。</p>
+
+<h4 id="1-创建百度开发者应用">1. 创建百度开发者应用</h4>
+
+<p>1) 选择 Web 应用，创建并进入应用信息页面</p>
+
+<p><img src="/2013/10/24/1.png" alt="1" /></p>
+
+<p>2) 在应用信息页面左侧菜单栏中，找到“开放API &gt; API管理 &gt; API列表”，点击打开相应页面</p>
+
+<p>3) 在“API服务列表”页面，点击“API服务”栏中“PCS API”项对应的“开启”键</p>
+
+<p>4) 输入对应的文件目录设置项（例如我设置的是pcs_wen）并点击“确认”，即可完成PCS API权限开通</p>
+
+<h4 id="2-获取-access-token">2. 获取 Access Token</h4>
+
+<p>1) 在进行PCS API调用之前，需要先获取Access Token，在浏览器中输入下面地址：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">https://openapi.baidu.com/oauth/2.0/authorize?response_type=token&amp;client_id=apikey&amp;redirect_uri=oob&amp;scope=netdisk</pre></td></tr></table>
+</div>
+</div>
+<p>注意：需要将 apikey 换为自己应用的 API Key</p>
+
+<p>2) 输入后，弹出百度登录页面，登录后弹出以下授权页面，选择授权</p>
+
+<p>3) 授权成功后会显示 OAuth2.0，此时我们复制 url 地址</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">http://openapi.baidu.com/oauth/2.0/login_success#expires_in=2592000&amp;access_token=3.811a254908d094012df764a38882a179.2592000.1348661720.2233553628-238347&amp;session_secret=9deaa587f9cd177f02079506dc4391ab&amp;session_key=94rrnl7qf2cYVnSZ0KfARwLS%2BIMuQn%2FbZKgbYBEnwDZv1O%2Bzp7fJxo8cN%2BrrhLAQsJy8FeBD2SP6Ioux%2B2TW6IgR8JFIGsU%3D&amp;scope=basic+netdisk</pre></td></tr></table>
+</div>
+</div>
+<p>这里的 access_token=3.811a254908d094012df764a38882a179.2592000.1348661720.2233553628-238347 就是我们想要的 Access Token 值了，保存起来。</p>
+
+<h4 id="3-开始使用-api-下载文件">3. 开始使用 api 下载文件</h4>
+
+<p>1) 获取目录下的文件列表（对应百度盘中的 &ldquo;我的应用数据  &gt;  pcs_wen&rdquo;）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">https://pcs.baidu.com/rest/2.0/pcs/file?method=list&amp;access_token=access_token&amp;path=/apps/pcs_wen/</pre></td></tr></table>
+</div>
+</div>
+<p>注：这里的 access_token 为第2步获取的 access_token，path 为第一步设置的目录，格式为 /app/pcs_wen/</p>
+
+<p>2) 下载目录下的文件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">https://d.pcs.baidu.com/rest/2.0/pcs/file?method=download&amp;access_token=access_token&amp;path=/apps/pcs_wen/test.jpg</pre></td></tr></table>
+</div>
+</div>
+<p>注：这里的 path 为获取目录文件的 path</p>
+
+<p>到这里，我们已经可以下载我们保存到百度盘的文件了！</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">wenzhixin</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2013-10-24</span>
+  </p>
+  
+  
+</div><div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/weixin.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/alipay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/%E7%99%BE%E5%BA%A6%E4%BA%91/">百度云</a>
+          <a href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a>
+          <a href="/tags/%E4%B8%8B%E8%BD%BD/">下载</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/2013/10/25/about-choice-and-happiness/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">关于选择与幸福</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/2013/10/23/hdd-is-not-safe/">
+            <span class="next-text nav-default">移动硬盘安全吗？备份数据真的很重要！</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'wenzhixin';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:wenzhixin2010@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/1531096/wenyi" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/wenzhixin2010" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.facebook.com/wenzhixin2010" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://github.com/wenzhixin" class="iconfont icon-github" title="github"></a>
+      <a href="https://weibo.com/2292826740" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://www.zhihu.com/people/zhixin-wen" class="iconfont icon-zhihu" title="zhihu"></a>
+  <a href="http://blog.wenzhixin.net.cn/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2012 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">wenzhixin.net.cn 粤ICP备15117953号</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.ece58db6.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-36708951-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

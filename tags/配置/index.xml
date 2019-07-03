@@ -14,10 +14,10 @@
     
     <item>
       <title>nginx 安装与配置详解</title>
-      <link>http://blog.wenzhixin.net.cn/2013/09/21/nginx_install_settings/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/09/21/nginx-install-settings/</link>
       <pubDate>Sat, 21 Sep 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/09/21/nginx_install_settings/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/09/21/nginx-install-settings/</guid>
       <description>安装（需要支持 php）： 1 2 sudo apt-get install nginx sudo apt-get install php5-fpm nginx 的基本配置（/etc/nginx/nginx.conf）与参数说明： 1 2 3 4 5 6 7 8 9 10 11 12 13</description>
     </item>
     

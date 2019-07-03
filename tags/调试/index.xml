@@ -14,10 +14,10 @@
     
     <item>
       <title>使用 Chrome 调试和模拟 android 上的页面</title>
-      <link>http://blog.wenzhixin.net.cn/2013/11/16/android_chrome_debug/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/11/16/android-chrome-debug/</link>
       <pubDate>Sat, 16 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/11/16/android_chrome_debug/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/16/android-chrome-debug/</guid>
       <description>介绍 通过电脑调试手机上的页面，对于开发移动页面或者开发自适应的界面很有帮助。 本文主要介绍如何使用 chrome 浏览器调试和模拟 android 上的页面。 1. 如何调试 1) 打</description>
     </item>
     

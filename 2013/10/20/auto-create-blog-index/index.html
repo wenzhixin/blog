@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>使用 js 自动生成博客首页文件列表 - 文翼的博客</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="wenzhixin" /><meta name="description" content="1. 介绍 因为每次写完文章后，都需要手动更新主页文件，打算每天至少写一篇文章。 所以这种重复工作还是交给机器去完成吧。 2. 步骤 1) 遍历文章存放文件夹列" /><meta name="keywords" content="文翼的博客, web前端博客" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.55.6 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://blog.wenzhixin.net.cn/2013/10/20/auto-create-blog-index/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.93844dae.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="使用 js 自动生成博客首页文件列表" />
+<meta property="og:description" content="1. 介绍 因为每次写完文章后，都需要手动更新主页文件，打算每天至少写一篇文章。 所以这种重复工作还是交给机器去完成吧。 2. 步骤 1) 遍历文章存放文件夹列" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.wenzhixin.net.cn/2013/10/20/auto-create-blog-index/" />
+<meta property="article:published_time" content="2013-10-20T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2013-10-20T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="使用 js 自动生成博客首页文件列表">
+<meta itemprop="description" content="1. 介绍 因为每次写完文章后，都需要手动更新主页文件，打算每天至少写一篇文章。 所以这种重复工作还是交给机器去完成吧。 2. 步骤 1) 遍历文章存放文件夹列">
+
+
+<meta itemprop="datePublished" content="2013-10-20T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2013-10-20T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="724">
+
+
+
+<meta itemprop="keywords" content="node," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="使用 js 自动生成博客首页文件列表"/>
+<meta name="twitter:description" content="1. 介绍 因为每次写完文章后，都需要手动更新主页文件，打算每天至少写一篇文章。 所以这种重复工作还是交给机器去完成吧。 2. 步骤 1) 遍历文章存放文件夹列"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+<link rel="stylesheet" href="/css/custom.css">
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">文翼的博客</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">文翼的博客</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+
+<div id="codefund"></div>
+<script src="https://codefund.io/properties/292/funder.js" async="async"></script>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">使用 js 自动生成博客首页文件列表</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2013-10-20 </span>
+        <div class="post-category">
+            <a href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/"> 前端技术 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#1-介绍">1. 介绍</a></li>
+<li><a href="#2-步骤">2. 步骤</a></li>
+<li><a href="#3-最终成果">3. 最终成果</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<h4 id="1-介绍">1. 介绍</h4>
+
+<p>因为每次写完文章后，都需要手动更新主页文件，打算每天至少写一篇文章。
+所以这种重复工作还是交给机器去完成吧。</p>
+
+<h4 id="2-步骤">2. 步骤</h4>
+
+<p>1) 遍历文章存放文件夹列表，生成所需要的文章列表</p>
+
+<ul>
+<li><p>使用 fs.readdir(path, callback) 来读取文件夹的内容。</p></li>
+
+<li><p>使用 fs.stat(path, callback) 来判断文件的属性</p></li>
+</ul>
+
+<p>写了一半的代码之后发现 github 上有开源的遍历目录下（包括子目录）的所有文件，
+于是直接拿来用了，多谢作者，该项目为：<a href="https://github.com/leizongmin/node-rd">https://github.com/leizongmin/node-rd</a></p>
+
+<p>2) 解析文件，提取文章名称、分类和日期信息</p>
+
+<ul>
+<li><p>使用 fs.readFile(filename, [options], callback) 读取文件内容</p></li>
+
+<li><p>使用正则表达式匹配想要的内容（最后木有用正则，字符串解析了。。。）</p></li>
+</ul>
+
+<p>3) 生成 index.md 文件</p>
+
+<ul>
+<li>使用 fs.writeFile(filename, data, [options], callback) 写入内容</li>
+</ul>
+
+<h4 id="3-最终成果">3. 最终成果</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">var fs = require(&#39;fs&#39;),
+    rd = require(&#39;rd&#39;),
+
+    POST_DIR = __dirname + &#39;/html/posts/&#39;;
+
+
+function list() {
+    rd.read(POST_DIR, function(err, files) {
+        if (err) {
+            console.log(err);
+            return;
+        }
+        files = files.filter(function(file) {
+            if (endWith(file, &#39;/index.md&#39;)) { // 过滤 index.md
+                return false;
+            }
+            return endWith(file, &#39;.md&#39;); // 查找 md 结尾的文件
+        });
+        files.sort().reverse(); // 按日期排序
+        parse(files);
+    });
+}
+
+function endWith(name, str) {
+    return name.substring(name.length - str.length) === str;
+}
+
+function parse(files) {
+    var posts = [];
+    for (var i in files) {
+        var content = fs.readFileSync(files[i]).toString();
+            lines = content.split(&#39;\n&#39;);
+
+        posts.push(getPost(files[i], lines[0], lines[2]));
+    }
+    create(posts);
+}
+
+function getPost(file, title, desc) {
+    var arr = desc.split(&#39; | &#39;),
+        post = {
+            path: file.substring(POST_DIR.length, file.length - 3),
+            title: title.substring(3),
+            category: &#39;个人作品&#39;,
+            time: &#39;置顶&#39;
+        };
+
+    if (arr.length === 3) {
+        post.category = arr[0].split(&#39;：&#39;)[1];
+        post.time = arr[2].split(&#39;：&#39;)[1].split(&#39; &#39;)[0];
+    }
+    return post;
+}
+
+function create(posts) {
+    var content = [&#39;## 全部文章 (&#39; + (posts.length + 50) + &#39;)&#39;];
+    for (var i in posts) {
+        var post = posts[i];
+        content.push([
+            &#39;* &#39;,
+            &#39;(&#39; + post.time + &#39;)&#39;,
+            &#39;[&#39; + post.title + &#39;](&#39; + post.path + &#39;)&#39;,
+            &#39;【&#39; + post.category + &#39;】&#39;
+        ].join(&#39; &#39;));
+    }
+    content.push(&#39;* (其他)[更多文章...](http://qing.weibo.com/2292826740/profile) &#39;)
+    fs.writeFile(POST_DIR + &#39;index.md&#39;, content.join(&#39;\n\n&#39;));
+}
+
+list();</pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">wenzhixin</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2013-10-20</span>
+  </p>
+  
+  
+</div><div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/weixin.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/alipay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/node/">node</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/2013/10/21/have-dream/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">程序猿也有梦</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/2013/10/19/nginx-http-auth/">
+            <span class="next-text nav-default">nginx 开启 http 下载服务器认证</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'wenzhixin';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:wenzhixin2010@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/1531096/wenyi" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/wenzhixin2010" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.facebook.com/wenzhixin2010" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://github.com/wenzhixin" class="iconfont icon-github" title="github"></a>
+      <a href="https://weibo.com/2292826740" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://www.zhihu.com/people/zhixin-wen" class="iconfont icon-zhihu" title="zhihu"></a>
+  <a href="http://blog.wenzhixin.net.cn/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2012 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">wenzhixin.net.cn 粤ICP备15117953号</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.ece58db6.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-36708951-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

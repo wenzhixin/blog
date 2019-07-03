@@ -14,10 +14,10 @@
     
     <item>
       <title>设置存在特殊字符的 tooltip</title>
-      <link>http://blog.wenzhixin.net.cn/2013/01/12/title_special_character/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/01/12/title-special-character/</link>
       <pubDate>Sat, 12 Jan 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/01/12/title_special_character/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/01/12/title-special-character/</guid>
       <description>问题： 通过 $(&amp;lsquo;element&amp;rsquo;).html(html) 来生成页面元素时，假如 title 信息存在 &amp;lsquo; 或者 &amp;ldquo; 等特殊字符时便会出现显示错误的问题 解决： 1 2 3 4 5 6 7 8 9 function getHtml(html, title, el) { $div = $(&amp;#39;&amp;lt;div&amp;gt;&amp;lt;/div&amp;gt;&amp;#39;).html(html); if (el) { $div.find(el).attr(&amp;#39;title&amp;#39;, title); } else</description>
     </item>
     

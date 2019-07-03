@@ -14,10 +14,10 @@
     
     <item>
       <title>crontab 学习笔记</title>
-      <link>http://blog.wenzhixin.net.cn/2014/11/07/crontab_study/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/11/07/crontab-study/</link>
       <pubDate>Fri, 07 Nov 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/11/07/crontab_study/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/11/07/crontab-study/</guid>
       <description>crontab 常见于 Unix 和类 Unix 的操作系统之中，用于设置周期性被执行的指令。该命令从标准输入设备读取指令，并将其存放于crontab文件中，以供之后读取和执</description>
     </item>
     

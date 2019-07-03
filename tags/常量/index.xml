@@ -14,10 +14,10 @@
     
     <item>
       <title>在 JavaScript 中定义常量（不可修改）</title>
-      <link>http://blog.wenzhixin.net.cn/2014/05/07/javascript_define_const/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/05/07/javascript-define-const/</link>
       <pubDate>Wed, 07 May 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/05/07/javascript_define_const/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/05/07/javascript-define-const/</guid>
       <description>define-const.js 在《JavaScript 启示录》的最后一章中提到: &amp;gt; Math 属性是无法改变的常数。这与 JavaScript 可变性质相悖，因此这些属性全部大写。 于是在浏览器（包括 I</description>
     </item>
     

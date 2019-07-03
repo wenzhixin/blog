@@ -14,10 +14,10 @@
     
     <item>
       <title>使用 nginx 作为代理服务器的路径问题</title>
-      <link>http://blog.wenzhixin.net.cn/2013/07/17/nginx_proxy/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/07/17/nginx-proxy/</link>
       <pubDate>Wed, 17 Jul 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/07/17/nginx_proxy/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/07/17/nginx-proxy/</guid>
       <description>继上篇文章：使用 nginx 作为代理服务器轻松解决 Ajax 跨域问题， 使用 proxy 来解决 Ajax 跨域的问题，方便我们开发测试。 但是很多时候，我们的服务器地址是这样的： 1 2</description>
     </item>
     

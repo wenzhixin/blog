@@ -14,10 +14,10 @@
     
     <item>
       <title>详解 jQuery.extend() 方法</title>
-      <link>http://blog.wenzhixin.net.cn/2014/01/17/jquery_extend/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/01/17/jquery-extend/</link>
       <pubDate>Fri, 17 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/01/17/jquery_extend/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/01/17/jquery-extend/</guid>
       <description>今天在写插件，使用$.extend({}, defaults, options)的时候发现漏写了 {}，浪费了一些时间， 所以详细记录下该方法的 API 和使用。 API 如下： jQuery.extend(</description>
     </item>
     

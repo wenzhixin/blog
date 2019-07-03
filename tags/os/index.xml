@@ -14,10 +14,10 @@
     
     <item>
       <title>VirtualBox 安装 Mac OS X 10.9 Mavericks 小记</title>
-      <link>http://blog.wenzhixin.net.cn/2014/02/10/vbox_mac_install/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/02/10/vbox-mac-install/</link>
       <pubDate>Mon, 10 Feb 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/02/10/vbox_mac_install/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/02/10/vbox-mac-install/</guid>
       <description>1. 准备工作 安装虚拟机和下载需要的 iso： 联想 Y470 I5、8G内存 Ubuntu 12.10 VirtualBox 虚拟机（4.3.6） HackBoot_Mav.iso OSXMavericks2.iso 2. 新建 Mac 虚拟机 跟着新向导一步一步即可 3. 设置虚拟机 去</description>
     </item>
     

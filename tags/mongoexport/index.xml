@@ -14,10 +14,10 @@
     
     <item>
       <title>MongoDB mongoexport 命令的使用及简单实现</title>
-      <link>http://blog.wenzhixin.net.cn/2013/06/12/mongodb_export/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/06/12/mongodb-export/</link>
       <pubDate>Wed, 12 Jun 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/06/12/mongodb_export/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/06/12/mongodb-export/</guid>
       <description>MongoDB 提供了 mongoexport 命令来导出数据，导出的数据是 json 格式的，当然也可以是 csv 格式。主要可以实现备份和恢复的功能。 具体的使用，我们使用 &amp;ndash;help 查看，主要的参数有：</description>
     </item>
     

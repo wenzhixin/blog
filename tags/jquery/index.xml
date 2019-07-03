@@ -14,217 +14,127 @@
     
     <item>
       <title>详解 jQuery.extend() 方法</title>
-      <link>http://blog.wenzhixin.net.cn/2014/01/17/jquery_extend/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/01/17/jquery-extend/</link>
       <pubDate>Fri, 17 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/01/17/jquery_extend/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/01/17/jquery-extend/</guid>
       <description>今天在写插件，使用$.extend({}, defaults, options)的时候发现漏写了 {}，浪费了一些时间， 所以详细记录下该方法的 API 和使用。 API 如下： jQuery.extend(</description>
     </item>
     
     <item>
       <title>jQuery file upload 插件 change 只生效一次</title>
-      <link>http://blog.wenzhixin.net.cn/2013/11/26/jquery_file_upload_change_once/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/11/26/jquery-file-upload-change-once/</link>
       <pubDate>Tue, 26 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/11/26/jquery_file_upload_change_once/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/26/jquery-file-upload-change-once/</guid>
       <description>1. 前言 在使用 AjaxFileUpload 插件的时候， 发现使用 jQuery 监听 change 事件只生效一次 1 2 3 $(&amp;#39;#upload&amp;#39;).change(function() { }); 那么是为什么呢？ 2. 原因 找了下原因，原来是 130 行对事件进行了 unbind 1 jQuery(io).unbind() 3. 解决 1) 使</description>
     </item>
     
     <item>
       <title>jQuery 打造月份选择器插件</title>
-      <link>http://blog.wenzhixin.net.cn/2013/11/23/jquery_month_picker/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/11/23/jquery-month-picker/</link>
       <pubDate>Sat, 23 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/11/23/jquery_month_picker/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/23/jquery-month-picker/</guid>
       <description>项目中需要用到月份选择器，找到了几款日期选择器 datepicker， 但是我不需要选择具体的日期，虽然有个可以支持只显示月份的，但是显得比较臃</description>
     </item>
     
     <item>
       <title>jQuery 中 attr() 和 prop() 方法的区别</title>
-      <link>http://blog.wenzhixin.net.cn/2013/05/24/jquery_attr_prop/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/05/24/jquery-attr-prop/</link>
       <pubDate>Fri, 24 May 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/05/24/jquery_attr_prop/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/05/24/jquery-attr-prop/</guid>
       <description>前几天，有人给 Multiple Select 插件 提了问题： setSelects doesn&amp;rsquo;t work in Firefox when using jquery 1.9.0 一直都在用 jQuery 1.8.3 的版本，没有尝试过 jQuery 1.9.0 的版本。 于是，开始调试代码，在 1.9.0 的版本中： 1 2 3 4 5 6</description>
     </item>
     
     <item>
       <title>图片查看弹出框 (jQuery 插件)</title>
-      <link>http://blog.wenzhixin.net.cn/2012/12/02/jquery_imagebox/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/12/02/jquery-imagebox/</link>
       <pubDate>Sun, 02 Dec 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/12/02/jquery_imagebox/</guid>
-      <description>参数 linkTitle: 点击图片提示信息，默认为 &amp;lsquo;点击查看原图&amp;rsquo; direction: 箭头显示方向，水平方向 (horizontal) 和垂直方向 (vertical)，默认为 &amp;lsquo;horizontal&amp;rsquo; 如何</description>
-    </item>
-    
-    <item>
-      <title>图片查看弹出框 (jQuery 插件)</title>
-      <link>http://blog.wenzhixin.net.cn/2012/12/02/jquery_imagebox/</link>
-      <pubDate>Sun, 02 Dec 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/12/02/jquery_imagebox/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/12/02/jquery-imagebox/</guid>
       <description>参数 linkTitle: 点击图片提示信息，默认为 &amp;lsquo;点击查看原图&amp;rsquo; direction: 箭头显示方向，水平方向 (horizontal) 和垂直方向 (vertical)，默认为 &amp;lsquo;horizontal&amp;rsquo; 如何</description>
     </item>
     
     <item>
       <title>Twitter Bootstrap 资源汇总</title>
-      <link>http://blog.wenzhixin.net.cn/2012/09/18/twitter_bootstrap_resources_aggregation/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/09/18/twitter-bootstrap-resources-aggregation/</link>
       <pubDate>Tue, 18 Sep 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/09/18/twitter_bootstrap_resources_aggregation/</guid>
-      <description>1、Twitter Bootstrap 2、Bootstrap 插件 日期选择器：Datepicker for Bootstrap​ 颜色选择器：Colorpicker for Bo</description>
-    </item>
-    
-    <item>
-      <title>Twitter Bootstrap 资源汇总</title>
-      <link>http://blog.wenzhixin.net.cn/2012/09/18/twitter_bootstrap_resources_aggregation/</link>
-      <pubDate>Tue, 18 Sep 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/09/18/twitter_bootstrap_resources_aggregation/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/09/18/twitter-bootstrap-resources-aggregation/</guid>
       <description>1、Twitter Bootstrap 2、Bootstrap 插件 日期选择器：Datepicker for Bootstrap​ 颜色选择器：Colorpicker for Bo</description>
     </item>
     
     <item>
       <title>jQuery 插件使用小记（使用、问题、解决）</title>
-      <link>http://blog.wenzhixin.net.cn/2012/09/16/using_jquery_plugin/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/09/16/using-jquery-plugin/</link>
       <pubDate>Sun, 16 Sep 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/09/16/using_jquery_plugin/</guid>
-      <description>1、bootstrap.js (v2.1.0) 问题： bootstrap dropdown 菜单使用 on 或者 live 无效 解决： 注释 .on(&amp;lsquo;click.dropdown touchstart.dropdown.data-api&amp;rsquo;, &amp;lsquo;.dropdown&amp;rsquo;, function (e) { e.stopPropagation() }) (第 720 行) 2、&amp;hellip;</description>
-    </item>
-    
-    <item>
-      <title>jQuery 插件使用小记（使用、问题、解决）</title>
-      <link>http://blog.wenzhixin.net.cn/2012/09/16/using_jquery_plugin/</link>
-      <pubDate>Sun, 16 Sep 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/09/16/using_jquery_plugin/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/09/16/using-jquery-plugin/</guid>
       <description>1、bootstrap.js (v2.1.0) 问题： bootstrap dropdown 菜单使用 on 或者 live 无效 解决： 注释 .on(&amp;lsquo;click.dropdown touchstart.dropdown.data-api&amp;rsquo;, &amp;lsquo;.dropdown&amp;rsquo;, function (e) { e.stopPropagation() }) (第 720 行) 2、&amp;hellip;</description>
     </item>
     
     <item>
       <title>《锋利的jQuery》学习笔记——jQuery插件</title>
-      <link>http://blog.wenzhixin.net.cn/2012/03/14/sharp_jquery_study_notes_jquery_plugin/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/03/14/sharp-jquery-study-notes-jquery-plugin/</link>
       <pubDate>Wed, 14 Mar 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/03/14/sharp_jquery_study_notes_jquery_plugin/</guid>
-      <description>​1. 插件的种类 (1)封装对象方法的插件：将对象方法封装起来，用于对通过选择器获取的 jQuery 对象进行操作 (2)封装全局函数的插件：将独立的函数加到</description>
-    </item>
-    
-    <item>
-      <title>《锋利的jQuery》学习笔记——jQuery插件</title>
-      <link>http://blog.wenzhixin.net.cn/2012/03/14/sharp_jquery_study_notes_jquery_plugin/</link>
-      <pubDate>Wed, 14 Mar 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/03/14/sharp_jquery_study_notes_jquery_plugin/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/03/14/sharp-jquery-study-notes-jquery-plugin/</guid>
       <description>​1. 插件的种类 (1)封装对象方法的插件：将对象方法封装起来，用于对通过选择器获取的 jQuery 对象进行操作 (2)封装全局函数的插件：将独立的函数加到</description>
     </item>
     
     <item>
       <title>《锋利的jQuery》学习笔记——jQuery与Ajax应用</title>
-      <link>http://blog.wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_and_ajax_application/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/03/13/sharp-jquery-study-notes-jquery-and-ajax-application/</link>
       <pubDate>Tue, 13 Mar 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_and_ajax_application/</guid>
-      <description>​1. 什么是 Ajax？ • Ajax 全称为”Asynchronous Javascript and XML”（异步 Javascript 和 XML），并不是指一种单一的技术，而是有机地利用了一系列交互</description>
-    </item>
-    
-    <item>
-      <title>《锋利的jQuery》学习笔记——jQuery与Ajax应用</title>
-      <link>http://blog.wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_and_ajax_application/</link>
-      <pubDate>Tue, 13 Mar 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_and_ajax_application/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/03/13/sharp-jquery-study-notes-jquery-and-ajax-application/</guid>
       <description>​1. 什么是 Ajax？ • Ajax 全称为”Asynchronous Javascript and XML”（异步 Javascript 和 XML），并不是指一种单一的技术，而是有机地利用了一系列交互</description>
     </item>
     
     <item>
       <title>《锋利的jQuery》学习笔记——jQuery中的动画</title>
-      <link>http://blog.wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_in_animation/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/03/13/sharp-jquery-study-notes-jquery-in-animation/</link>
       <pubDate>Tue, 13 Mar 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_in_animation/</guid>
-      <description>​1. show和hide方法 • (&amp;ldquo;element&amp;rdquo;).show(speed[, callback])-显示element元素 • (&amp;ldquo;element&amp;rdquo;).hide(speed[, callback])-隐藏element元素 (1)show() 和 hide() 方法同时修</description>
-    </item>
-    
-    <item>
-      <title>《锋利的jQuery》学习笔记——jQuery中的动画</title>
-      <link>http://blog.wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_in_animation/</link>
-      <pubDate>Tue, 13 Mar 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_in_animation/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/03/13/sharp-jquery-study-notes-jquery-in-animation/</guid>
       <description>​1. show和hide方法 • (&amp;ldquo;element&amp;rdquo;).show(speed[, callback])-显示element元素 • (&amp;ldquo;element&amp;rdquo;).hide(speed[, callback])-隐藏element元素 (1)show() 和 hide() 方法同时修</description>
     </item>
     
     <item>
       <title>《锋利的jQuery》学习笔记——jQuery中的DOM操作</title>
-      <link>http://blog.wenzhixin.net.cn/2012/03/12/sharp_jquery_study_notes_dom_operation_in_jquery/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/03/12/sharp-jquery-study-notes-dom-operation-in-jquery/</link>
       <pubDate>Mon, 12 Mar 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/03/12/sharp_jquery_study_notes_dom_operation_in_jquery/</guid>
-      <description>​1. 什么是DOM？ • DOM 是 Document Object Model 的缩写，是指文档对象模型 ​2. DOM操作的分类 (1)DOM Core-可用来处理任何一种使用标记语言的文档 • getElementById() • getElementByTagName() • getAttribute() •</description>
-    </item>
-    
-    <item>
-      <title>《锋利的jQuery》学习笔记——jQuery中的DOM操作</title>
-      <link>http://blog.wenzhixin.net.cn/2012/03/12/sharp_jquery_study_notes_dom_operation_in_jquery/</link>
-      <pubDate>Mon, 12 Mar 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/03/12/sharp_jquery_study_notes_dom_operation_in_jquery/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/03/12/sharp-jquery-study-notes-dom-operation-in-jquery/</guid>
       <description>​1. 什么是DOM？ • DOM 是 Document Object Model 的缩写，是指文档对象模型 ​2. DOM操作的分类 (1)DOM Core-可用来处理任何一种使用标记语言的文档 • getElementById() • getElementByTagName() • getAttribute() •</description>
     </item>
     
     <item>
       <title>《锋利的jQuery》学习笔记——jQuery中的事件</title>
-      <link>http://blog.wenzhixin.net.cn/2012/03/12/sharp_jquery_study_notes_events_in_jquery/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/03/12/sharp-jquery-study-notes-events-in-jquery/</link>
       <pubDate>Mon, 12 Mar 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/03/12/sharp_jquery_study_notes_events_in_jquery/</guid>
-      <description>​1. 加载 DOM 1 2 3 $(document).ready(function() { //代码 }); (1)执行时机：window.onload 方法在网页中所有的元素（包括愿你苏的所有关联文件）完全加载后才执行</description>
-    </item>
-    
-    <item>
-      <title>《锋利的jQuery》学习笔记——jQuery中的事件</title>
-      <link>http://blog.wenzhixin.net.cn/2012/03/12/sharp_jquery_study_notes_events_in_jquery/</link>
-      <pubDate>Mon, 12 Mar 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/03/12/sharp_jquery_study_notes_events_in_jquery/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/03/12/sharp-jquery-study-notes-events-in-jquery/</guid>
       <description>​1. 加载 DOM 1 2 3 $(document).ready(function() { //代码 }); (1)执行时机：window.onload 方法在网页中所有的元素（包括愿你苏的所有关联文件）完全加载后才执行</description>
     </item>
     
     <item>
       <title>《锋利的jQuery》学习笔记——jQuery选择器</title>
-      <link>http://blog.wenzhixin.net.cn/2012/03/11/sharp_jquery_study_notes_jquery_selector/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/03/11/sharp-jquery-study-notes-jquery-selector/</link>
       <pubDate>Sun, 11 Mar 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/03/11/sharp_jquery_study_notes_jquery_selector/</guid>
-      <description>1. CSS选择器 (1)标签选择器-以文档元素作为选择符 • E { CSS规则 } (2)ID选择器-以文档元素的唯一标识符 ID 作为选择符 • #ID { CSS规则 }</description>
-    </item>
-    
-    <item>
-      <title>《锋利的jQuery》学习笔记——jQuery选择器</title>
-      <link>http://blog.wenzhixin.net.cn/2012/03/11/sharp_jquery_study_notes_jquery_selector/</link>
-      <pubDate>Sun, 11 Mar 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/03/11/sharp_jquery_study_notes_jquery_selector/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/03/11/sharp-jquery-study-notes-jquery-selector/</guid>
       <description>1. CSS选择器 (1)标签选择器-以文档元素作为选择符 • E { CSS规则 } (2)ID选择器-以文档元素的唯一标识符 ID 作为选择符 • #ID { CSS规则 }</description>
     </item>
     
     <item>
       <title>《锋利的jQuery》学习笔记——认识jQuery</title>
-      <link>http://blog.wenzhixin.net.cn/2012/03/10/sharp_jquery_study_notes_understanding_of_jquery/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/03/10/sharp-jquery-study-notes-understanding-of-jquery/</link>
       <pubDate>Sat, 10 Mar 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/03/10/sharp_jquery_study_notes_understanding_of_jquery/</guid>
-      <description>认识jQuery ​1. JavaScript中比较流行的JavaScript库：Prototype、Dojo、YUI、Ext JS、MooToo</description>
-    </item>
-    
-    <item>
-      <title>《锋利的jQuery》学习笔记——认识jQuery</title>
-      <link>http://blog.wenzhixin.net.cn/2012/03/10/sharp_jquery_study_notes_understanding_of_jquery/</link>
-      <pubDate>Sat, 10 Mar 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/03/10/sharp_jquery_study_notes_understanding_of_jquery/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/03/10/sharp-jquery-study-notes-understanding-of-jquery/</guid>
       <description>认识jQuery ​1. JavaScript中比较流行的JavaScript库：Prototype、Dojo、YUI、Ext JS、MooToo</description>
     </item>
     

@@ -14,28 +14,28 @@
     
     <item>
       <title>PHP 代码规范</title>
-      <link>http://blog.wenzhixin.net.cn/2014/01/20/php_code_standard/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/01/20/php-code-standard/</link>
       <pubDate>Mon, 20 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/01/20/php_code_standard/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/01/20/php-code-standard/</guid>
       <description>通用规范 代码缩进全部用 tab / 四个空格 SVN / Git 中新建文件编码类型统一用 utf-8 编码 行宽：80 字符 PHP 代码划分 PHP 代码总是用完整的标准的 PHP 标签定界： 1 2 3 4 5</description>
     </item>
     
     <item>
       <title>RSS、Atom、Feed 介绍与简单实现</title>
-      <link>http://blog.wenzhixin.net.cn/2013/11/08/rss_atom_feed_php/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/11/08/rss-atom-feed-php/</link>
       <pubDate>Fri, 08 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/11/08/rss_atom_feed_php/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/08/rss-atom-feed-php/</guid>
       <description>最近接触了 RSS 订阅相关的，做了一些了解与开发，记录下。 RSS是什么 RSS（全称RDF Site Summary，网景的最初定义），RSS也是一种“类网页</description>
     </item>
     
     <item>
       <title>vtiger5.2 问题修复</title>
-      <link>http://blog.wenzhixin.net.cn/2013/01/17/vtiger_bug/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/01/17/vtiger-bug/</link>
       <pubDate>Thu, 17 Jan 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/01/17/vtiger_bug/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/01/17/vtiger-bug/</guid>
       <description>图表乱码： 下载 Simsun 解压 将 Simsun.ttf 文件复制到 Image/Canvas/Fonts 目录下 修改 Image/Canvas/Fonts/fontmap.txt，最后增加一行： Simsun, Simsun.ttf 修改 inclu</description>
     </item>
     

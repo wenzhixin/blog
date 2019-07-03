@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Mon, 11 Jan 2016 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 05 Jan 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://blog.wenzhixin.net.cn/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>shell</title>
+      <link>http://blog.wenzhixin.net.cn/tags/shell/</link>
+      <pubDate>Sat, 05 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/tags/shell/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>CSS</title>
@@ -157,20 +166,20 @@
     </item>
     
     <item>
+      <title>Bootstrap Table</title>
+      <link>http://blog.wenzhixin.net.cn/tags/bootstrap-table/</link>
+      <pubDate>Sat, 08 Nov 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/tags/bootstrap-table/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>DBackup</title>
       <link>http://blog.wenzhixin.net.cn/tags/dbackup/</link>
       <pubDate>Sat, 08 Nov 2014 00:00:00 +0000</pubDate>
       
       <guid>http://blog.wenzhixin.net.cn/tags/dbackup/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>bootstrap-table</title>
-      <link>http://blog.wenzhixin.net.cn/tags/bootstrap-table/</link>
-      <pubDate>Sat, 08 Nov 2014 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/tags/bootstrap-table/</guid>
       <description></description>
     </item>
     
@@ -301,7 +310,7 @@
     </item>
     
     <item>
-      <title>NodeJs</title>
+      <title>nodejs</title>
       <link>http://blog.wenzhixin.net.cn/tags/nodejs/</link>
       <pubDate>Sun, 21 Sep 2014 00:00:00 +0000</pubDate>
       
@@ -328,20 +337,20 @@
     </item>
     
     <item>
-      <title>Nginx</title>
-      <link>http://blog.wenzhixin.net.cn/tags/nginx/</link>
-      <pubDate>Thu, 18 Sep 2014 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/tags/nginx/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>http代理</title>
       <link>http://blog.wenzhixin.net.cn/tags/http%E4%BB%A3%E7%90%86/</link>
       <pubDate>Thu, 18 Sep 2014 00:00:00 +0000</pubDate>
       
       <guid>http://blog.wenzhixin.net.cn/tags/http%E4%BB%A3%E7%90%86/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nginx</title>
+      <link>http://blog.wenzhixin.net.cn/tags/nginx/</link>
+      <pubDate>Thu, 18 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/tags/nginx/</guid>
       <description></description>
     </item>
     
@@ -1129,7 +1138,7 @@
     </item>
     
     <item>
-      <title>wordpress</title>
+      <title>Wordpress</title>
       <link>http://blog.wenzhixin.net.cn/tags/wordpress/</link>
       <pubDate>Wed, 04 Dec 2013 00:00:00 +0000</pubDate>
       
@@ -2173,15 +2182,6 @@
     </item>
     
     <item>
-      <title>天鹿湖</title>
-      <link>http://blog.wenzhixin.net.cn/tags/%E5%A4%A9%E9%B9%BF%E6%B9%96/</link>
-      <pubDate>Sat, 01 Dec 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/tags/%E5%A4%A9%E9%B9%BF%E6%B9%96/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>编码约定</title>
       <link>http://blog.wenzhixin.net.cn/tags/%E7%BC%96%E7%A0%81%E7%BA%A6%E5%AE%9A/</link>
       <pubDate>Sat, 01 Dec 2012 00:00:00 +0000</pubDate>
@@ -2250,15 +2250,6 @@
       <pubDate>Sat, 02 Jun 2012 00:00:00 +0000</pubDate>
       
       <guid>http://blog.wenzhixin.net.cn/tags/android_x86/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>shell</title>
-      <link>http://blog.wenzhixin.net.cn/tags/shell/</link>
-      <pubDate>Tue, 29 May 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/tags/shell/</guid>
       <description></description>
     </item>
     

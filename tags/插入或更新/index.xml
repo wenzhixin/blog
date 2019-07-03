@@ -14,10 +14,10 @@
     
     <item>
       <title>ON DUPLICATE KEY UPDATE</title>
-      <link>http://blog.wenzhixin.net.cn/2013/12/05/on_duplicate_key_update/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/12/05/on-duplicate-key-update/</link>
       <pubDate>Thu, 05 Dec 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/12/05/on_duplicate_key_update/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/12/05/on-duplicate-key-update/</guid>
       <description>有些时候，操作 sql 语句需要判断记录是否存在，不存在则插入存在则更新，可以考虑使用 ON DUPLICATE KEY UPDATE。 在 INSERT INTO 语句末尾指定了 ON DUPLICATE KEY UPDATE，并</description>
     </item>
     

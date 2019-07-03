@@ -14,19 +14,19 @@
     
     <item>
       <title>备份恢复 Meteor Mongo 数据库</title>
-      <link>http://blog.wenzhixin.net.cn/2016/01/07/meteor_mongo_dump/</link>
+      <link>http://blog.wenzhixin.net.cn/2016/01/07/meteor-mongo-dump/</link>
       <pubDate>Thu, 07 Jan 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2016/01/07/meteor_mongo_dump/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2016/01/07/meteor-mongo-dump/</guid>
       <description>运行 meteor 后使用新的窗口运行 1 meteor mongo 可以看到类似下面的信息： 1 2 MongoDB shell version: 2.6.7 connecting to: 127.0.0.1:4001/meteor Meteor 数据库运行于 127.0.0.1 3001 端口，Ctrl + D 退出即可。 导出： 1 mongodump -h 127.0.0.1 --port 4001 -d meteor</description>
     </item>
     
     <item>
       <title>在 Ubuntu 14.04 server 上部署 meteor 应用</title>
-      <link>http://blog.wenzhixin.net.cn/2015/07/06/meteor_deploy/</link>
+      <link>http://blog.wenzhixin.net.cn/2015/07/06/meteor-deploy/</link>
       <pubDate>Mon, 06 Jul 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2015/07/06/meteor_deploy/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2015/07/06/meteor-deploy/</guid>
       <description>关于 Meteor.js Meteor.js Meteor 是一个构建在 Node.js 之上的平台，用来开发实时网页程序。Meteor 位于程序数据库和用户界面之间，保持二者之间的数据同步更新。使用 Mete</description>
     </item>
     

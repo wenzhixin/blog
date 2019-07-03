@@ -14,10 +14,10 @@
     
     <item>
       <title>如何不用 eval 的方式通过字符串调用 JavaScript 的方法</title>
-      <link>http://blog.wenzhixin.net.cn/2014/10/03/call_string_function/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/10/03/call-string-function/</link>
       <pubDate>Fri, 03 Oct 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/10/03/call_string_function/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/10/03/call-string-function/</guid>
       <description>由于 bootstrap-table 插件需要支持data-name=&amp;quot;functionName&amp;quot;的方式，所以在实现的过程中使用了eval的方法。我们知</description>
     </item>
     

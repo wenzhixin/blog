@@ -14,10 +14,10 @@
     
     <item>
       <title>RSS、Atom、Feed 介绍与简单实现</title>
-      <link>http://blog.wenzhixin.net.cn/2013/11/08/rss_atom_feed_php/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/11/08/rss-atom-feed-php/</link>
       <pubDate>Fri, 08 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/11/08/rss_atom_feed_php/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/08/rss-atom-feed-php/</guid>
       <description>最近接触了 RSS 订阅相关的，做了一些了解与开发，记录下。 RSS是什么 RSS（全称RDF Site Summary，网景的最初定义），RSS也是一种“类网页</description>
     </item>
     

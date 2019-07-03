@@ -14,10 +14,10 @@
     
     <item>
       <title>Ubuntu 12.04 设置 VPN</title>
-      <link>http://blog.wenzhixin.net.cn/2013/01/12/ubuntu_set_vpn/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/01/12/ubuntu-set-vpn/</link>
       <pubDate>Sat, 12 Jan 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/01/12/ubuntu_set_vpn/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/01/12/ubuntu-set-vpn/</guid>
       <description>1. 设置 - 网络 - VPN 连接 - 配置 VPN 2. 添加 VPN - 新建 PPTP 3. 输入正确的网关、用户名、密码 4. 选择高级 - 勾选使用点到点加密(MPPE)(P) 5. 设置 IPv4 路由，添加</description>
     </item>
     

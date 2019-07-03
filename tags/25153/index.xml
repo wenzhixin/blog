@@ -14,10 +14,10 @@
     
     <item>
       <title>Temporary Tablespace is Empty 解决方法（ORA-25153）</title>
-      <link>http://blog.wenzhixin.net.cn/2014/04/28/temporary_tablespace_is_empty/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/04/28/temporary-tablespace-is-empty/</link>
       <pubDate>Mon, 28 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/04/28/temporary_tablespace_is_empty/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/04/28/temporary-tablespace-is-empty/</guid>
       <description>问题： 当我们对 Oralce 数据库进行操作的时候，出现了： 1 ORA-25153: Temporary Tablespace is Empty 的错误，提示 temporary 表空间为空。 思路： 当前用户没有设置表空间权限 表空间状态为 offline 当前用户没</description>
     </item>
     

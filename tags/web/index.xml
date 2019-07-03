@@ -14,55 +14,37 @@
     
     <item>
       <title>手机 web 开发之 Touch 入门</title>
-      <link>http://blog.wenzhixin.net.cn/2013/11/18/hello_touch_event/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/11/18/hello-touch-event/</link>
       <pubDate>Mon, 18 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/11/18/hello_touch_event/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/18/hello-touch-event/</guid>
       <description>微博应用上用手向左滑动，便可以触发返回事件，这一小小的功能虽说很简单， 但是却大大提高了用户体验（特别是用左手拿手机的人）。 今天来研究在 web 上模</description>
     </item>
     
     <item>
       <title>Web 前端开发有用的代码片段</title>
-      <link>http://blog.wenzhixin.net.cn/2013/06/20/web_code_gist/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/06/20/web-code-gist/</link>
       <pubDate>Thu, 20 Jun 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/06/20/web_code_gist/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/06/20/web-code-gist/</guid>
       <description>1. 定时器 经常会用到 setTimeout 和 setInterval 函数，假如可以整合起来，会方便很多： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 function timer(func, start, interval, end) { start = start || 0; if (arguments.length &amp;lt;= 2) { setTimeout(func, start); } else { var repeat = function() {</description>
     </item>
     
     <item>
       <title>编写高质量代码——Web前端开发修炼之道</title>
-      <link>http://blog.wenzhixin.net.cn/2012/03/15/write_high_quality_code_web_front_end_development_practice_of_the_road/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/03/15/write-high-quality-code-web-front-end-development-practice-of-the-road/</link>
       <pubDate>Thu, 15 Mar 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/03/15/write_high_quality_code_web_front_end_development_practice_of_the_road/</guid>
-      <description>• Web 标准 Web 标准由一系列标准组合而成，其核心理念是将网页的结构、样式和行为分离开来，主要分为：结构标准、样式标准和行为标准。结构标准包括 XML 标准</description>
-    </item>
-    
-    <item>
-      <title>编写高质量代码——Web前端开发修炼之道</title>
-      <link>http://blog.wenzhixin.net.cn/2012/03/15/write_high_quality_code_web_front_end_development_practice_of_the_road/</link>
-      <pubDate>Thu, 15 Mar 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/03/15/write_high_quality_code_web_front_end_development_practice_of_the_road/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/03/15/write-high-quality-code-web-front-end-development-practice-of-the-road/</guid>
       <description>• Web 标准 Web 标准由一系列标准组合而成，其核心理念是将网页的结构、样式和行为分离开来，主要分为：结构标准、样式标准和行为标准。结构标准包括 XML 标准</description>
     </item>
     
     <item>
       <title>编写高质量代码——高质量的HTML</title>
-      <link>http://blog.wenzhixin.net.cn/2012/03/15/write_high_quality_code_high_quality_html/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/03/15/write-high-quality-code-high-quality-html/</link>
       <pubDate>Thu, 15 Mar 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/03/15/write_high_quality_code_high_quality_html/</guid>
-      <description>1、使用语义化标签 • div-division：分隔 • span：范围 • ol-ordered list：排序列表 • ul-unordered list：不排序列表 • li-list item：列表项目 • dl-definition l</description>
-    </item>
-    
-    <item>
-      <title>编写高质量代码——高质量的HTML</title>
-      <link>http://blog.wenzhixin.net.cn/2012/03/15/write_high_quality_code_high_quality_html/</link>
-      <pubDate>Thu, 15 Mar 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/03/15/write_high_quality_code_high_quality_html/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/03/15/write-high-quality-code-high-quality-html/</guid>
       <description>1、使用语义化标签 • div-division：分隔 • span：范围 • ol-ordered list：排序列表 • ul-unordered list：不排序列表 • li-list item：列表项目 • dl-definition l</description>
     </item>
     

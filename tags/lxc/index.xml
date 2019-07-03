@@ -14,10 +14,10 @@
     
     <item>
       <title>lxc 小贴士：创建、自动启动、设置存放目录</title>
-      <link>http://blog.wenzhixin.net.cn/2015/03/04/lxc_tips/</link>
+      <link>http://blog.wenzhixin.net.cn/2015/03/04/lxc-tips/</link>
       <pubDate>Wed, 04 Mar 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2015/03/04/lxc_tips/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2015/03/04/lxc-tips/</guid>
       <description>平时使用 lxc 比较多，在这里记录下容易忘记的点。 创建 很简单，创建一个 ubuntu 系统（trusty），详细见LXC简介。 创建文件：vi trusty.con</description>
     </item>
     

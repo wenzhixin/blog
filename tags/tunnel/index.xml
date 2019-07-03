@@ -14,10 +14,10 @@
     
     <item>
       <title>ssh tunnel（隧道）</title>
-      <link>http://blog.wenzhixin.net.cn/2014/03/15/ssh_tunnel/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/03/15/ssh-tunnel/</link>
       <pubDate>Sat, 15 Mar 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/03/15/ssh_tunnel/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/03/15/ssh-tunnel/</guid>
       <description>问题描述： 公司内部机器限制了登录，只能通过某台指定的机器才能上网，我们这里叫做中转服务器。 例如邮件服务器，而一般中转服务器是 linux 系统。 你想要登</description>
     </item>
     

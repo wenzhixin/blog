@@ -14,10 +14,10 @@
     
     <item>
       <title>chrome 浏览器 console 面板直接使用 JSON 数据进行调试错误问题</title>
-      <link>http://blog.wenzhixin.net.cn/2014/11/02/chrome_console_error/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/11/02/chrome-console-error/</link>
       <pubDate>Sun, 02 Nov 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/11/02/chrome_console_error/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/11/02/chrome-console-error/</guid>
       <description>今天在微博上看到小鱼在问：https://gist.github.com/sofish/c250881989aaa10c029d 为什么会出错</description>
     </item>
     

@@ -14,10 +14,10 @@
     
     <item>
       <title>使用 requestAnimationFrame 实现动画</title>
-      <link>http://blog.wenzhixin.net.cn/2014/01/14/canvas_fps_frame/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/01/14/canvas-fps-frame/</link>
       <pubDate>Tue, 14 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/01/14/canvas_fps_frame/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/01/14/canvas-fps-frame/</guid>
       <description>requestAnimationFrame 函数是主流浏览器推出来的用来代替旧的setTimeout和setInterval方法， 从而提高动作的性能。 该函数把绘制动画的任务直接交给浏</description>
     </item>
     

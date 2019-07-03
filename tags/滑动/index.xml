@@ -14,10 +14,10 @@
     
     <item>
       <title>Web 开发——实现滑动特效</title>
-      <link>http://blog.wenzhixin.net.cn/2014/01/21/mobile_transition/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/01/21/mobile-transition/</link>
       <pubDate>Tue, 21 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/01/21/mobile_transition/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/01/21/mobile-transition/</guid>
       <description>先看下 demo 声明 html 标记和 css 样式： 1 2 3 4 5 6 7 8 9 10 11 &amp;lt;div class=&amp;#34;container&amp;#34;&amp;gt; &amp;lt;div id=&amp;#34;home&amp;#34; class=&amp;#34;page stage-center&amp;#34;&amp;gt; &amp;lt;h1&amp;gt;Home Page&amp;lt;/h1&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div id=&amp;#34;products&amp;#34; class=&amp;#34;page stage-right&amp;#34;&amp;gt; &amp;lt;h1&amp;gt;Products Page&amp;lt;/h1&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div id=&amp;#34;about&amp;#34; class=&amp;#34;page stage-right&amp;#34;&amp;gt; &amp;lt;h1&amp;gt;About Page&amp;lt;/h1&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 .container { overflow:</description>
     </item>
     

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>wordpress on 文翼的博客</title>
+    <title>Wordpress on 文翼的博客</title>
     <link>http://blog.wenzhixin.net.cn/tags/wordpress/</link>
-    <description>Recent content in wordpress on 文翼的博客</description>
+    <description>Recent content in Wordpress on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
@@ -14,46 +14,37 @@
     
     <item>
       <title>Wordpress 打造 CMS 系统小记</title>
-      <link>http://blog.wenzhixin.net.cn/2013/12/04/wordpress_cms/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/12/04/wordpress-cms/</link>
       <pubDate>Wed, 04 Dec 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/12/04/wordpress_cms/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/12/04/wordpress-cms/</guid>
       <description>关闭文章评论： 设置-讨论下，去掉“允许他人在新文章上发表评论”选项 关闭页面评论： 到具体页面编辑，打开显示选项中的讨论，去掉“允许评论”选项 添</description>
     </item>
     
     <item>
       <title>wordpress 插件开发</title>
-      <link>http://blog.wenzhixin.net.cn/2013/01/15/wordpress_plugin/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/01/15/wordpress-plugin/</link>
       <pubDate>Tue, 15 Jan 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/01/15/wordpress_plugin/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/01/15/wordpress-plugin/</guid>
       <description>1. 创建插件 在目录 wp-content/plugins 下创建自己的插件 新建目录 plugin-demo 新建文件 plugin-demo.php 1 2 3 4 5 6 7 8 9 &amp;lt;?php /* Plugin Name: Plugin Demo Description: 此插件用于插件演示 Version: 1.0 Author: zhixin wen Author URI: http://wenzhixin.net.cn */ ?&amp;gt; 2. 添加实现类和添</description>
     </item>
     
     <item>
       <title>完全禁用 Wordpress 后台的更新提示和功能</title>
-      <link>http://blog.wenzhixin.net.cn/2013/01/14/hidden_wordpress_update/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/01/14/hidden-wordpress-update/</link>
       <pubDate>Mon, 14 Jan 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/01/14/hidden_wordpress_update/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/01/14/hidden-wordpress-update/</guid>
       <description>为了防止误操作，需要禁用后台的更新提示以及更新功能 需要禁用的更新包括： 1. 头部更新提示 (wp-includes/admin-bar.php) 注释第 618 行： 1 2 3 4 5 6 7 8 $wp_admin_bar-&amp;gt;add_menu( array( &amp;#39;id&amp;#39; =&amp;gt; &amp;#39;updates&amp;#39;, &amp;#39;title&amp;#39; =&amp;gt; $title, &amp;#39;href&amp;#39; =&amp;gt; network_admin_url( &amp;#39;update-core.php&amp;#39; ),</description>
     </item>
     
     <item>
       <title>wordpress 修改IP地址后进不去后台的解决方法</title>
-      <link>http://blog.wenzhixin.net.cn/2012/09/14/solution_wordpress_to_change_the_ip_address_after_not_go_back/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/09/14/solution-wordpress-to-change-the-ip-address-after-not-go-back/</link>
       <pubDate>Fri, 14 Sep 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/09/14/solution_wordpress_to_change_the_ip_address_after_not_go_back/</guid>
-      <description>1、登录数据库 1 mysql -uroot -ppassword wordpress 2、更新 wp_options 表 1 update wp_options set option_value = &amp;#39;http://newip/wordpress&amp;#39; where option_name = &amp;#39;siteurl&amp;#39; or option_name = &amp;#39;home&amp;#39;; 注：使用 shell 脚本 1 vi setwordpress 输入内容： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 #! /bin/bash # set wordpress admin ip param=$#</description>
-    </item>
-    
-    <item>
-      <title>wordpress 修改IP地址后进不去后台的解决方法</title>
-      <link>http://blog.wenzhixin.net.cn/2012/09/14/solution_wordpress_to_change_the_ip_address_after_not_go_back/</link>
-      <pubDate>Fri, 14 Sep 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/09/14/solution_wordpress_to_change_the_ip_address_after_not_go_back/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/09/14/solution-wordpress-to-change-the-ip-address-after-not-go-back/</guid>
       <description>1、登录数据库 1 mysql -uroot -ppassword wordpress 2、更新 wp_options 表 1 update wp_options set option_value = &amp;#39;http://newip/wordpress&amp;#39; where option_name = &amp;#39;siteurl&amp;#39; or option_name = &amp;#39;home&amp;#39;; 注：使用 shell 脚本 1 vi setwordpress 输入内容： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 #! /bin/bash # set wordpress admin ip param=$#</description>
     </item>
     

@@ -14,127 +14,91 @@
     
     <item>
       <title>Cordova 开发属于自己的插件（plugin）</title>
-      <link>http://blog.wenzhixin.net.cn/2014/03/20/cordova_my_plugin/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/03/20/cordova-my-plugin/</link>
       <pubDate>Thu, 20 Mar 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/03/20/cordova_my_plugin/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/03/20/cordova-my-plugin/</guid>
       <description>在上一篇文章 cordova 初识之命令行工具 中，我们讲到了如何使用命令行快速地创建我们的 app 应用，并添加和运行各种平台。 在实际的项目开发中，需要用到 cordova 的插件</description>
     </item>
     
     <item>
       <title>cordova 初识之命令行工具</title>
-      <link>http://blog.wenzhixin.net.cn/2014/02/11/cordova_command_line/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/02/11/cordova-command-line/</link>
       <pubDate>Tue, 11 Feb 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/02/11/cordova_command_line/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/02/11/cordova-command-line/</guid>
       <description>1. 准备工作 在使用 cordova 的命令行之前，需要安装各平台对应的 SDK，各个平台对应的操作系统如下： iOS (Mac) Amazon Fire OS (Mac, Linux, Windows) Android (Mac, Linux) BlackBerry 10 (Mac, Linux, Windows) Windows Phone 7 (Windows) Windows Phone 8 (Windows) Windows 8</description>
     </item>
     
     <item>
       <title>Android 界面不支持 position fixed 问题</title>
-      <link>http://blog.wenzhixin.net.cn/2013/11/21/android_position_fixed/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/11/21/android-position-fixed/</link>
       <pubDate>Thu, 21 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/11/21/android_position_fixed/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/21/android-position-fixed/</guid>
       <description>在 Android 中，部分浏览器不支持 css 的 position: fixed 属性。 详细的支持情况见：http://caniuse.com/css-fixed 对于不支持的情况，我们可以通</description>
     </item>
     
     <item>
       <title>使用 Chrome 调试和模拟 android 上的页面</title>
-      <link>http://blog.wenzhixin.net.cn/2013/11/16/android_chrome_debug/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/11/16/android-chrome-debug/</link>
       <pubDate>Sat, 16 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/11/16/android_chrome_debug/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/16/android-chrome-debug/</guid>
       <description>介绍 通过电脑调试手机上的页面，对于开发移动页面或者开发自适应的界面很有帮助。 本文主要介绍如何使用 chrome 浏览器调试和模拟 android 上的页面。 1. 如何调试 1) 打</description>
     </item>
     
     <item>
       <title>安卓 ssh 和 rsync 同步客户端的实现</title>
-      <link>http://blog.wenzhixin.net.cn/2013/10/18/android_ssh_rsync_client/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/10/18/android-ssh-rsync-client/</link>
       <pubDate>Fri, 18 Oct 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/10/18/android_ssh_rsync_client/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/10/18/android-ssh-rsync-client/</guid>
       <description>1. 介绍 基于安卓的 ssh 和 rsync 客户端，可用于对服务器指定的目录进行同步到手机。 在这里我们使用 Dropbear 的 dbclient 作为 ssh 的客户端。 Dropbear是一个相对较小的S</description>
     </item>
     
     <item>
       <title>Ubuntu 系统下 android 连接小米2进行开发</title>
-      <link>http://blog.wenzhixin.net.cn/2013/06/14/ubuntu_android_xiaomi2/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/06/14/ubuntu-android-xiaomi2/</link>
       <pubDate>Fri, 14 Jun 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/06/14/ubuntu_android_xiaomi2/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/06/14/ubuntu-android-xiaomi2/</guid>
       <description>问题： 小米2 通过 USB 连接到 Ubuntu 12.10 系统进行开发，发现 adb devices 不能看到设备。 解决： 1. 运行下面的命令： 1 lsusb 通过对比发现，Bus 002 Device 010: ID 2717:9039 就是小米2的设备号</description>
     </item>
     
     <item>
       <title>ubuntu 连接平板进行 Android 开发的问题</title>
-      <link>http://blog.wenzhixin.net.cn/2012/06/05/the_ubuntu_connection_plate_for_the_development_of_android_problem/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/06/05/the-ubuntu-connection-plate-for-the-development-of-android-problem/</link>
       <pubDate>Tue, 05 Jun 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/06/05/the_ubuntu_connection_plate_for_the_development_of_android_problem/</guid>
-      <description>ubuntu 下连接平板进行 Android 开发，在 eclipse 下会显示乱码(???)并无法使用，解决方法如下： 1、设置平板： 系统设置-应用程序-开发-USB调试，打勾该选项 2</description>
-    </item>
-    
-    <item>
-      <title>ubuntu 连接平板进行 Android 开发的问题</title>
-      <link>http://blog.wenzhixin.net.cn/2012/06/05/the_ubuntu_connection_plate_for_the_development_of_android_problem/</link>
-      <pubDate>Tue, 05 Jun 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/06/05/the_ubuntu_connection_plate_for_the_development_of_android_problem/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/06/05/the-ubuntu-connection-plate-for-the-development-of-android-problem/</guid>
       <description>ubuntu 下连接平板进行 Android 开发，在 eclipse 下会显示乱码(???)并无法使用，解决方法如下： 1、设置平板： 系统设置-应用程序-开发-USB调试，打勾该选项 2</description>
     </item>
     
     <item>
       <title>ubuntu 连接华为 C8650 进行 Android 开发的问题</title>
-      <link>http://blog.wenzhixin.net.cn/2012/06/04/the_ubuntu_connection_c8650_android_development_of_huawei/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/06/04/the-ubuntu-connection-c8650-android-development-of-huawei/</link>
       <pubDate>Mon, 04 Jun 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/06/04/the_ubuntu_connection_c8650_android_development_of_huawei/</guid>
-      <description>ubuntu 下连接华为 C8650 进行 Android 开发，在 eclipse 下会显示乱码(???)并无法使用，解决方法如下： 1、使用电话拨打##2846579## 2、然后选择 projec</description>
-    </item>
-    
-    <item>
-      <title>ubuntu 连接华为 C8650 进行 Android 开发的问题</title>
-      <link>http://blog.wenzhixin.net.cn/2012/06/04/the_ubuntu_connection_c8650_android_development_of_huawei/</link>
-      <pubDate>Mon, 04 Jun 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/06/04/the_ubuntu_connection_c8650_android_development_of_huawei/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/06/04/the-ubuntu-connection-c8650-android-development-of-huawei/</guid>
       <description>ubuntu 下连接华为 C8650 进行 Android 开发，在 eclipse 下会显示乱码(???)并无法使用，解决方法如下： 1、使用电话拨打##2846579## 2、然后选择 projec</description>
     </item>
     
     <item>
       <title>虚拟机安装 Android_x86 系统，用于开发、测试 Android 程序</title>
-      <link>http://blog.wenzhixin.net.cn/2012/06/02/install_android_x86_virtual_machine_for_the_development_testing_android_applications/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/06/02/install-android-x86-virtual-machine-for-the-development-testing-android-applications/</link>
       <pubDate>Sat, 02 Jun 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/06/02/install_android_x86_virtual_machine_for_the_development_testing_android_applications/</guid>
-      <description>1、下载镜像： 从 http://www.android-x86.org/download 下载 android_x86 iso 镜像（例如 android-x86-2.3-RC1-eeepc.iso） 2、安装系统： 使用虚拟机 VirtualBox 来安装系统，步骤如</description>
-    </item>
-    
-    <item>
-      <title>虚拟机安装 Android_x86 系统，用于开发、测试 Android 程序</title>
-      <link>http://blog.wenzhixin.net.cn/2012/06/02/install_android_x86_virtual_machine_for_the_development_testing_android_applications/</link>
-      <pubDate>Sat, 02 Jun 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/06/02/install_android_x86_virtual_machine_for_the_development_testing_android_applications/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/06/02/install-android-x86-virtual-machine-for-the-development-testing-android-applications/</guid>
       <description>1、下载镜像： 从 http://www.android-x86.org/download 下载 android_x86 iso 镜像（例如 android-x86-2.3-RC1-eeepc.iso） 2、安装系统： 使用虚拟机 VirtualBox 来安装系统，步骤如</description>
     </item>
     
     <item>
       <title>Ubuntu 下 eclipse 搭建 Android 开发环境安装 ADT 的问题</title>
-      <link>http://blog.wenzhixin.net.cn/2012/04/10/ubuntu_eclipse_build_android_development_environment_for_the_installation_adt/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/04/10/ubuntu-eclipse-build-android-development-environment-for-the-installation-adt/</link>
       <pubDate>Tue, 10 Apr 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/04/10/ubuntu_eclipse_build_android_development_environment_for_the_installation_adt/</guid>
-      <description>1、无法连接到 Repository： https://dl-ssl.google.com/android/eclipse/ 或者 http://dl-ssl.google.com/android/eclipse/ 解决：下载 zip 包进行本地安装（如：ADT-18.0.0）或者通过翻墙设置代理 2、长时间停留在 calculating requirements and</description>
-    </item>
-    
-    <item>
-      <title>Ubuntu 下 eclipse 搭建 Android 开发环境安装 ADT 的问题</title>
-      <link>http://blog.wenzhixin.net.cn/2012/04/10/ubuntu_eclipse_build_android_development_environment_for_the_installation_adt/</link>
-      <pubDate>Tue, 10 Apr 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/04/10/ubuntu_eclipse_build_android_development_environment_for_the_installation_adt/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/04/10/ubuntu-eclipse-build-android-development-environment-for-the-installation-adt/</guid>
       <description>1、无法连接到 Repository： https://dl-ssl.google.com/android/eclipse/ 或者 http://dl-ssl.google.com/android/eclipse/ 解决：下载 zip 包进行本地安装（如：ADT-18.0.0）或者通过翻墙设置代理 2、长时间停留在 calculating requirements and</description>
     </item>
     

@@ -14,19 +14,10 @@
     
     <item>
       <title>虚拟机安装 Android_x86 系统，用于开发、测试 Android 程序</title>
-      <link>http://blog.wenzhixin.net.cn/2012/06/02/install_android_x86_virtual_machine_for_the_development_testing_android_applications/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/06/02/install-android-x86-virtual-machine-for-the-development-testing-android-applications/</link>
       <pubDate>Sat, 02 Jun 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/06/02/install_android_x86_virtual_machine_for_the_development_testing_android_applications/</guid>
-      <description>1、下载镜像： 从 http://www.android-x86.org/download 下载 android_x86 iso 镜像（例如 android-x86-2.3-RC1-eeepc.iso） 2、安装系统： 使用虚拟机 VirtualBox 来安装系统，步骤如</description>
-    </item>
-    
-    <item>
-      <title>虚拟机安装 Android_x86 系统，用于开发、测试 Android 程序</title>
-      <link>http://blog.wenzhixin.net.cn/2012/06/02/install_android_x86_virtual_machine_for_the_development_testing_android_applications/</link>
-      <pubDate>Sat, 02 Jun 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/06/02/install_android_x86_virtual_machine_for_the_development_testing_android_applications/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/06/02/install-android-x86-virtual-machine-for-the-development-testing-android-applications/</guid>
       <description>1、下载镜像： 从 http://www.android-x86.org/download 下载 android_x86 iso 镜像（例如 android-x86-2.3-RC1-eeepc.iso） 2、安装系统： 使用虚拟机 VirtualBox 来安装系统，步骤如</description>
     </item>
     

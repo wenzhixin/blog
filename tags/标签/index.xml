@@ -14,10 +14,10 @@
     
     <item>
       <title>ubuntu 下将 word 文件转换为 markdown</title>
-      <link>http://blog.wenzhixin.net.cn/2014/01/03/convert_word_to_markdown/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/01/03/convert-word-to-markdown/</link>
       <pubDate>Fri, 03 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/01/03/convert_word_to_markdown/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/01/03/convert-word-to-markdown/</guid>
       <description>主要介绍如何将 word 文件转换为 markdown 文件。 第一步：安装 unoconv 和 pandoc 1 sudo apt-get install unoconv pandoc 第二步：将 word 文件转换 html 1 unoconv -f html -o file.html file.docx -f html：指定我们要转为 html 格式（for</description>
     </item>
     

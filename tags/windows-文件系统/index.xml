@@ -14,10 +14,10 @@
     
     <item>
       <title>Ubuntu 下不能访问 Windows 文件系统</title>
-      <link>http://blog.wenzhixin.net.cn/2014/11/20/ubuntu_unable_to_access_windows/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/11/20/ubuntu-unable-to-access-windows/</link>
       <pubDate>Thu, 20 Nov 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/11/20/ubuntu_unable_to_access_windows/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/11/20/ubuntu-unable-to-access-windows/</guid>
       <description>Ubuntu 和 Windows 双系统下，Ubuntu 不能访问 Windows 下的分区，例如：/dev/sdb1，显示如下错误： 1 2 3 4 5 6 Error mounting /dev/sdb1 exited with non-zero exit status 14: The disk contains an unclean file system (0, 0). Metadata kept</description>
     </item>
     

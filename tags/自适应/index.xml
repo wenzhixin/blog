@@ -14,19 +14,19 @@
     
     <item>
       <title>设置 viewport 实现定宽网页 WebApp 下布局自适应</title>
-      <link>http://blog.wenzhixin.net.cn/2014/08/01/viewport_mobile/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/08/01/viewport-mobile/</link>
       <pubDate>Fri, 01 Aug 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/08/01/viewport_mobile/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/08/01/viewport-mobile/</guid>
       <description>一般来说，我们实现布局自适应可以有以下几种方式： 使用流动布局（fluid grid） 根据屏幕大小选择加载不同的CSS 使用 CSS 的@media规则 详</description>
     </item>
     
     <item>
       <title>让你的网站支持自适应界面</title>
-      <link>http://blog.wenzhixin.net.cn/2013/10/22/responsive_web/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/10/22/responsive-web/</link>
       <pubDate>Tue, 22 Oct 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/10/22/responsive_web/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/10/22/responsive-web/</guid>
       <description>1. 介绍 随着智能手机的普及，越来越多的人使用手机上网。 我自己就是，经常懒得开电脑，直接用手机查看网页，简单又方便。 那么，如何才能把自己的博客做</description>
     </item>
     

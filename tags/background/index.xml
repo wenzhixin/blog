@@ -14,10 +14,10 @@
     
     <item>
       <title>canvas 如何在保留 background 的情况下重置画布</title>
-      <link>http://blog.wenzhixin.net.cn/2014/02/16/canvas_background/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/02/16/canvas-background/</link>
       <pubDate>Sun, 16 Feb 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/02/16/canvas_background/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/02/16/canvas-background/</guid>
       <description>前几天在用 canvas 实现动画的时候，因为是需要设置画图的背景， 所以一开始想到的就是使用 canvas 的 drawImage() 方法： 1 context.drawImage(img, x, y, width, height); 但是后面发现了在此基础上画动画的话，假</description>
     </item>
     

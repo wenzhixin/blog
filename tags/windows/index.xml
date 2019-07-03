@@ -14,28 +14,28 @@
     
     <item>
       <title>windows 下同步文件到远程服务器中</title>
-      <link>http://blog.wenzhixin.net.cn/2014/01/06/windows_rsync_file/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/01/06/windows-rsync-file/</link>
       <pubDate>Mon, 06 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/01/06/windows_rsync_file/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/01/06/windows-rsync-file/</guid>
       <description>安装 cwRsync 下载 cwRsync 客户端 解压并安装到指定目录，例如：C:\Program Files\cwRsync 配置环境变量： 系统变量 Path中后面加入 C:\Program Files\cwRsync\bin; 创建新的系统变量 HOME = C:\Program Files\cwRsync\home (其</description>
     </item>
     
     <item>
       <title>从 ubuntu 同步文件到 windows</title>
-      <link>http://blog.wenzhixin.net.cn/2013/12/01/ubuntu_rsync_to_windows/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/12/01/ubuntu-rsync-to-windows/</link>
       <pubDate>Sun, 01 Dec 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/12/01/ubuntu_rsync_to_windows/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/12/01/ubuntu-rsync-to-windows/</guid>
       <description>windows 下使用 cwRsync，ubuntu 使用默认的 rsync。 安装 cwRsync 下载 cwRsync 服务端 解压并安装到指定目录，例如：E:\Program Files\ICW 配置 cwRsync 修改 rsyncd.conf 1</description>
     </item>
     
     <item>
       <title>git for windows 安装和配置</title>
-      <link>http://blog.wenzhixin.net.cn/2013/01/04/git_for_windows/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/01/04/git-for-windows/</link>
       <pubDate>Fri, 04 Jan 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/01/04/git_for_windows/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/01/04/git-for-windows/</guid>
       <description>1. 安装 msysgit: msysgit 2. 配置用户信息和 alias gitconfig 1 2 3 4 5 6 7 8 9 10 [user] name = zhixin email = wenzhixin2010@gmail.com [alias] co = checkout ci = commit -a st = status br = branch oneline = log --pretty=oneline --since=&amp;#39;2 days ago&amp;#39; onelog = log -p -1</description>
     </item>
     

@@ -14,10 +14,10 @@
     
     <item>
       <title>使用 js 脚本自动安装最新安备客户端</title>
-      <link>http://blog.wenzhixin.net.cn/2013/11/11/js_anbay_agent_auto_install/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/11/11/js-anbay-agent-auto-install/</link>
       <pubDate>Mon, 11 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/11/11/js_anbay_agent_auto_install/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/11/js-anbay-agent-auto-install/</guid>
       <description>每次安备客户端的代码一更新（即使是一行代码），那么我需要做的事情包括： 从 FTP 上下载最新的安装包（包括打开 ftp，输入用户名密码，复制，粘贴等）</description>
     </item>
     

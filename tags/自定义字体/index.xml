@@ -14,10 +14,10 @@
     
     <item>
       <title>CSS 自定义字体</title>
-      <link>http://blog.wenzhixin.net.cn/2014/04/21/css_font_face/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/04/21/css-font-face/</link>
       <pubDate>Mon, 21 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/04/21/css_font_face/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/04/21/css-font-face/</guid>
       <description>介绍 通过 CSS 的 @font-face 属性可以实现在网页中嵌入任意字体，例如自定字体、或者是自定义图标（bootstrap）。 为了能在主流浏览器中都能正常显示自定义</description>
     </item>
     

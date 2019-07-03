@@ -14,19 +14,19 @@
     
     <item>
       <title>Cordova 开发属于自己的插件（plugin）</title>
-      <link>http://blog.wenzhixin.net.cn/2014/03/20/cordova_my_plugin/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/03/20/cordova-my-plugin/</link>
       <pubDate>Thu, 20 Mar 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/03/20/cordova_my_plugin/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/03/20/cordova-my-plugin/</guid>
       <description>在上一篇文章 cordova 初识之命令行工具 中，我们讲到了如何使用命令行快速地创建我们的 app 应用，并添加和运行各种平台。 在实际的项目开发中，需要用到 cordova 的插件</description>
     </item>
     
     <item>
       <title>cordova 初识之命令行工具</title>
-      <link>http://blog.wenzhixin.net.cn/2014/02/11/cordova_command_line/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/02/11/cordova-command-line/</link>
       <pubDate>Tue, 11 Feb 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/02/11/cordova_command_line/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/02/11/cordova-command-line/</guid>
       <description>1. 准备工作 在使用 cordova 的命令行之前，需要安装各平台对应的 SDK，各个平台对应的操作系统如下： iOS (Mac) Amazon Fire OS (Mac, Linux, Windows) Android (Mac, Linux) BlackBerry 10 (Mac, Linux, Windows) Windows Phone 7 (Windows) Windows Phone 8 (Windows) Windows 8</description>
     </item>
     

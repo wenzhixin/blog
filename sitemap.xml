@@ -2,25 +2,50 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/tags/css/</loc>
-    <lastmod>2016-01-11T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://blog.wenzhixin.net.cn/categories/</loc>
-    <lastmod>2016-01-11T00:00:00+00:00</lastmod>
+    <lastmod>2019-01-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://blog.wenzhixin.net.cn/post/</loc>
-    <lastmod>2016-01-11T00:00:00+00:00</lastmod>
+    <lastmod>2019-01-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://blog.wenzhixin.net.cn/tags/</loc>
+    <lastmod>2019-01-05T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.wenzhixin.net.cn/tags/shell/</loc>
+    <lastmod>2019-01-05T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.wenzhixin.net.cn/2019/01/05/move-blog-from-node-to-hugo/</loc>
+    <lastmod>2019-01-05T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.wenzhixin.net.cn/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</loc>
+    <lastmod>2019-01-05T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.wenzhixin.net.cn/</loc>
+    <lastmod>2019-01-05T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.wenzhixin.net.cn/tags/css/</loc>
     <lastmod>2016-01-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -32,13 +57,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/</loc>
-    <lastmod>2016-01-11T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2016/01/11/css_height_equals_width_with_css/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2016/01/11/css-height-equals-width-with-css/</loc>
     <lastmod>2016-01-11T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -51,7 +70,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2016/01/07/meteor_mongo_dump/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2016/01/07/meteor-mongo-dump/</loc>
     <lastmod>2016-01-07T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -82,7 +101,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2015/11/10/slapd_slurpd/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2015/11/10/slapd-slurpd/</loc>
     <lastmod>2015-11-10T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -101,13 +120,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</loc>
-    <lastmod>2015-11-10T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2015/09/07/installing_vbox_on_ubuntu_server/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2015/09/07/installing-vbox-on-ubuntu-server/</loc>
     <lastmod>2015-09-07T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -126,7 +139,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2015/07/06/meteor_deploy/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2015/07/06/meteor-deploy/</loc>
     <lastmod>2015-07-06T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -145,7 +158,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2015/06/07/react_memory/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2015/06/07/react-memory/</loc>
     <lastmod>2015-06-07T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -158,7 +171,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2015/03/04/lxc_tips/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2015/03/04/lxc-tips/</loc>
     <lastmod>2015-03-04T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -171,7 +184,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/11/23/lazy_is_important/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/11/23/lazy-is-important/</loc>
     <lastmod>2014-11-23T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -190,7 +203,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/11/21/kvm_study/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/11/21/kvm-study/</loc>
     <lastmod>2014-11-21T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -203,7 +216,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/11/20/ubuntu_unable_to_access_windows/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/11/20/ubuntu-unable-to-access-windows/</loc>
     <lastmod>2014-11-20T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -216,13 +229,13 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/tags/dbackup/</loc>
+    <loc>http://blog.wenzhixin.net.cn/tags/bootstrap-table/</loc>
     <lastmod>2014-11-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/tags/bootstrap-table/</loc>
+    <loc>http://blog.wenzhixin.net.cn/tags/dbackup/</loc>
     <lastmod>2014-11-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -241,7 +254,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/11/07/crontab_study/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/11/07/crontab-study/</loc>
     <lastmod>2014-11-07T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -266,7 +279,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/11/04/webstorm_tools/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/11/04/webstorm-tools/</loc>
     <lastmod>2014-11-04T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -279,7 +292,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/11/02/chrome_console_error/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/11/02/chrome-console-error/</loc>
     <lastmod>2014-11-02T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -325,7 +338,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/10/09/national_day_note/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/10/09/national-day-note/</loc>
     <lastmod>2014-10-09T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -344,7 +357,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/10/03/call_string_function/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/10/03/call-string-function/</loc>
     <lastmod>2014-10-03T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -369,7 +382,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/09/26/hong_kong_tips/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/09/26/hong-kong-tips/</loc>
     <lastmod>2014-09-26T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -400,7 +413,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/09/21/node_docx/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/09/21/node-docx/</loc>
     <lastmod>2014-09-21T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -413,19 +426,19 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/tags/nginx/</loc>
-    <lastmod>2014-09-18T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://blog.wenzhixin.net.cn/tags/http%E4%BB%A3%E7%90%86/</loc>
     <lastmod>2014-09-18T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/09/18/nginx_as_proxy_nodejs/</loc>
+    <loc>http://blog.wenzhixin.net.cn/tags/nginx/</loc>
+    <lastmod>2014-09-18T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.wenzhixin.net.cn/2014/09/18/nginx-as-proxy-nodejs/</loc>
     <lastmod>2014-09-18T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -438,7 +451,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/09/03/convert_size_using_javascript/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/09/03/convert-size-using-javascript/</loc>
     <lastmod>2014-09-03T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -463,7 +476,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/08/30/edit_text_gvim/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/08/30/edit-text-gvim/</loc>
     <lastmod>2014-08-30T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -476,7 +489,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/08/10/fixed_table/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/08/10/fixed-table/</loc>
     <lastmod>2014-08-10T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -495,7 +508,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/08/04/python_oracle/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/08/04/python-oracle/</loc>
     <lastmod>2014-08-04T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -514,7 +527,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/08/03/slice_arguments/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/08/03/slice-arguments/</loc>
     <lastmod>2014-08-03T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -546,7 +559,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/08/01/viewport_mobile/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/08/01/viewport-mobile/</loc>
     <lastmod>2014-08-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -559,7 +572,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/07/31/virtual_box_host_only_settings/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/07/31/virtual-box-host-only-settings/</loc>
     <lastmod>2014-07-31T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -572,7 +585,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/07/30/ie8_file_problem/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/07/30/ie8-file-problem/</loc>
     <lastmod>2014-07-30T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -591,7 +604,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/07/21/ubuntu_source_list_not_found/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/07/21/ubuntu-source-list-not-found/</loc>
     <lastmod>2014-07-21T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -622,14 +635,14 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/07/06/backbone_book/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/07/06/backbone-book/</loc>
     <lastmod>2014-07-06T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/06/18/a_prop_problem/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/06/18/a-prop-problem/</loc>
     <lastmod>2014-06-18T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -648,14 +661,14 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/06/14/backbone_custom_fetch_errors/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/06/14/backbone-custom-fetch-errors/</loc>
     <lastmod>2014-06-14T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/06/11/why_blog/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/06/11/why-blog/</loc>
     <lastmod>2014-06-11T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -674,7 +687,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/06/05/apache_proxy/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/06/05/apache-proxy/</loc>
     <lastmod>2014-06-05T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -693,7 +706,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/05/07/javascript_define_const/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/05/07/javascript-define-const/</loc>
     <lastmod>2014-05-07T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -718,7 +731,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/05/05/detect_ie11/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/05/05/detect-ie11/</loc>
     <lastmod>2014-05-05T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -731,7 +744,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/05/04/get_div_outer_height/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/05/04/get-div-outer-height/</loc>
     <lastmod>2014-05-04T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -750,7 +763,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/04/28/temporary_tablespace_is_empty/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/04/28/temporary-tablespace-is-empty/</loc>
     <lastmod>2014-04-28T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -763,7 +776,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/04/24/svn_undelete_folder/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/04/24/svn-undelete-folder/</loc>
     <lastmod>2014-04-24T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -776,7 +789,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/04/23/strive_and_foreward/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/04/23/strive-and-foreward/</loc>
     <lastmod>2014-04-23T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -789,14 +802,14 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/04/22/angular_scutech_step7/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/04/22/angular-scutech-step7/</loc>
     <lastmod>2014-04-22T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/04/21/css_font_face/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/04/21/css-font-face/</loc>
     <lastmod>2014-04-21T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -815,7 +828,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/04/02/ubuntu_java_ee/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/04/02/ubuntu-java-ee/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -828,7 +841,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/03/20/cordova_my_plugin/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/03/20/cordova-my-plugin/</loc>
     <lastmod>2014-03-20T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -853,7 +866,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/03/19/life_is_simple/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/03/19/life-is-simple/</loc>
     <lastmod>2014-03-19T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -872,14 +885,14 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/03/16/ubuntu_xfreerdp/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/03/16/ubuntu-xfreerdp/</loc>
     <lastmod>2014-03-16T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/03/15/ssh_tunnel/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/03/15/ssh-tunnel/</loc>
     <lastmod>2014-03-15T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -892,7 +905,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/03/14/vim_batch_notes/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/03/14/vim-batch-notes/</loc>
     <lastmod>2014-03-14T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -905,21 +918,21 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/03/13/not_simple/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/03/13/not-simple/</loc>
     <lastmod>2014-03-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/03/10/angular_scutech_step6/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/03/10/angular-scutech-step6/</loc>
     <lastmod>2014-03-10T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/03/08/cherish_the_present/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/03/08/cherish-the-present/</loc>
     <lastmod>2014-03-08T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -952,7 +965,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/02/28/rejecting_fear_and_fixed_thinking/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/02/28/rejecting-fear-and-fixed-thinking/</loc>
     <lastmod>2014-02-28T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -965,7 +978,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/02/26/life_and_road/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/02/26/life-and-road/</loc>
     <lastmod>2014-02-26T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -984,56 +997,56 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/02/25/where_is_your_time/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/02/25/where-is-your-time/</loc>
     <lastmod>2014-02-25T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/02/23/angular_scutech_step5/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/02/23/angular-scutech-step5/</loc>
     <lastmod>2014-02-23T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/02/22/angular_scutech_step4/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/02/22/angular-scutech-step4/</loc>
     <lastmod>2014-02-22T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/02/21/angular_scutech_step3/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/02/21/angular-scutech-step3/</loc>
     <lastmod>2014-02-21T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/02/20/angular_scutech_step2/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/02/20/angular-scutech-step2/</loc>
     <lastmod>2014-02-20T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/02/19/angular_scutech_step1/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/02/19/angular-scutech-step1/</loc>
     <lastmod>2014-02-19T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/02/18/angular_scutech_step0/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/02/18/angular-scutech-step0/</loc>
     <lastmod>2014-02-18T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/02/17/ubuntu_path/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/02/17/ubuntu-path/</loc>
     <lastmod>2014-02-17T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1058,7 +1071,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/02/16/canvas_background/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/02/16/canvas-background/</loc>
     <lastmod>2014-02-16T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1085,7 +1098,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/02/13/oracle_ddl/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/02/13/oracle-ddl/</loc>
     <lastmod>2014-02-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1099,7 +1112,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/02/11/cordova_command_line/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/02/11/cordova-command-line/</loc>
     <lastmod>2014-02-11T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1124,7 +1137,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/02/10/vbox_mac_install/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/02/10/vbox-mac-install/</loc>
     <lastmod>2014-02-10T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1144,21 +1157,21 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/01/27/write_article/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/01/27/write-article/</loc>
     <lastmod>2014-01-27T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/01/26/dreams_and_reality/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/01/26/dreams-and-reality/</loc>
     <lastmod>2014-01-26T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/01/25/ubuntu_music_player/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/01/25/ubuntu-music-player/</loc>
     <lastmod>2014-01-25T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1171,7 +1184,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/01/24/send_email_template/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/01/24/send-email-template/</loc>
     <lastmod>2014-01-24T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1184,7 +1197,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/01/23/node_send_email/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/01/23/node-send-email/</loc>
     <lastmod>2014-01-23T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1204,7 +1217,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/01/21/mobile_transition/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/01/21/mobile-transition/</loc>
     <lastmod>2014-01-21T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1223,7 +1236,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/01/20/php_code_standard/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/01/20/php-code-standard/</loc>
     <lastmod>2014-01-20T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1255,7 +1268,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/01/18/large_body_error/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/01/18/large-body-error/</loc>
     <lastmod>2014-01-18T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1274,14 +1287,14 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/01/17/jquery_extend/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/01/17/jquery-extend/</loc>
     <lastmod>2014-01-17T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/01/16/use_webstorm/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/01/16/use-webstorm/</loc>
     <lastmod>2014-01-16T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1300,7 +1313,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/01/15/windows7_rsync_error/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/01/15/windows7-rsync-error/</loc>
     <lastmod>2014-01-15T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1313,7 +1326,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/01/14/canvas_fps_frame/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/01/14/canvas-fps-frame/</loc>
     <lastmod>2014-01-14T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1326,7 +1339,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/01/13/write_something/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/01/13/write-something/</loc>
     <lastmod>2014-01-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1339,7 +1352,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/01/12/hello_postgresql/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/01/12/hello-postgresql/</loc>
     <lastmod>2014-01-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1352,14 +1365,14 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/01/11/ubuntu_setting_locale_failed/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/01/11/ubuntu-setting-locale-failed/</loc>
     <lastmod>2014-01-11T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/01/10/angular_cart_demo/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/01/10/angular-cart-demo/</loc>
     <lastmod>2014-01-10T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1372,14 +1385,14 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/01/08/web_study/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/01/08/web-study/</loc>
     <lastmod>2014-01-08T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/01/07/angularjs_study_note_introduction/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/01/07/angularjs-study-note-introduction/</loc>
     <lastmod>2014-01-07T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1392,21 +1405,21 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/01/06/windows_rsync_file/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/01/06/windows-rsync-file/</loc>
     <lastmod>2014-01-06T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/01/04/thoughts_and_actions/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/01/04/thoughts-and-actions/</loc>
     <lastmod>2014-01-04T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/01/03/convert_word_to_markdown/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/01/03/convert-word-to-markdown/</loc>
     <lastmod>2014-01-03T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1431,7 +1444,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2014/01/02/lscache_introduction/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2014/01/02/lscache-introduction/</loc>
     <lastmod>2014-01-02T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1445,14 +1458,14 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/12/31/nginx_rewrite_query_string/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/12/31/nginx-rewrite-query-string/</loc>
     <lastmod>2013-12-31T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/12/31/apache_rewrite/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/12/31/apache-rewrite/</loc>
     <lastmod>2013-12-31T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1471,7 +1484,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/12/30/ubuntu_node_app_service/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/12/30/ubuntu-node-app-service/</loc>
     <lastmod>2013-12-30T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1484,7 +1497,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/12/29/bootstrap_menu_guide/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/12/29/bootstrap-menu-guide/</loc>
     <lastmod>2013-12-29T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1503,14 +1516,14 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/12/28/ubuntu_new_user/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/12/28/ubuntu-new-user/</loc>
     <lastmod>2013-12-28T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/12/27/anime_and_dreams/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/12/27/anime-and-dreams/</loc>
     <lastmod>2013-12-27T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1542,14 +1555,14 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/12/06/jquery_ie7_zindex/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/12/06/jquery-ie7-zindex/</loc>
     <lastmod>2013-12-06T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/12/05/on_duplicate_key_update/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/12/05/on-duplicate-key-update/</loc>
     <lastmod>2013-12-05T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1562,16 +1575,16 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/12/04/wordpress_cms/</loc>
-    <lastmod>2013-12-04T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://blog.wenzhixin.net.cn/tags/wordpress/</loc>
     <lastmod>2013-12-04T00:00:00+00:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.wenzhixin.net.cn/2013/12/04/wordpress-cms/</loc>
+    <lastmod>2013-12-04T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
   
   <url>
@@ -1581,14 +1594,14 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/12/03/mousewheel_event/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/12/03/mousewheel-event/</loc>
     <lastmod>2013-12-03T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/12/02/xin_lin_mi_ma/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/12/02/xin-lin-mi-ma/</loc>
     <lastmod>2013-12-02T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1601,15 +1614,8 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/12/01/ubuntu_rsync_to_windows/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/12/01/ubuntu-rsync-to-windows/</loc>
     <lastmod>2013-12-01T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/11/30/note/</loc>
-    <lastmod>2013-11-30T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1621,7 +1627,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/11/29/jshint_warnings_resolve/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/11/29/jshint-warnings-resolve/</loc>
     <lastmod>2013-11-29T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1640,7 +1646,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/11/28/ajax_file_upload_html5/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/11/28/ajax-file-upload-html5/</loc>
     <lastmod>2013-11-28T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1653,7 +1659,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/11/27/ajax_file_upload_iframe/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/11/27/ajax-file-upload-iframe/</loc>
     <lastmod>2013-11-27T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1672,7 +1678,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/11/26/jquery_file_upload_change_once/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/11/26/jquery-file-upload-change-once/</loc>
     <lastmod>2013-11-26T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1691,7 +1697,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/11/25/grid_system/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/11/25/grid-system/</loc>
     <lastmod>2013-11-25T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1704,14 +1710,14 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/11/24/bai_wan_kui_yuan/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/11/24/bai-wan-kui-yuan/</loc>
     <lastmod>2013-11-24T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/11/23/jquery_month_picker/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/11/23/jquery-month-picker/</loc>
     <lastmod>2013-11-23T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1736,7 +1742,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/11/22/all_images_is_loaded/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/11/22/all-images-is-loaded/</loc>
     <lastmod>2013-11-22T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1755,7 +1761,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/11/21/android_position_fixed/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/11/21/android-position-fixed/</loc>
     <lastmod>2013-11-21T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1774,7 +1780,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/11/20/canvas_draw_clock/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/11/20/canvas-draw-clock/</loc>
     <lastmod>2013-11-20T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1793,7 +1799,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/11/19/post_blank_window/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/11/19/post-blank-window/</loc>
     <lastmod>2013-11-19T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1818,14 +1824,14 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/11/18/hello_touch_event/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/11/18/hello-touch-event/</loc>
     <lastmod>2013-11-18T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/11/17/fate_and_future/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/11/17/fate-and-future/</loc>
     <lastmod>2013-11-17T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1838,7 +1844,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/11/16/android_chrome_debug/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/11/16/android-chrome-debug/</loc>
     <lastmod>2013-11-16T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1857,7 +1863,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/11/15/use_google_analytics_and_display_visits/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/11/15/use-google-analytics-and-display-visits/</loc>
     <lastmod>2013-11-15T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1876,7 +1882,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/11/14/sina_qing_export_or_backup/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/11/14/sina-qing-export-or-backup/</loc>
     <lastmod>2013-11-14T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1889,7 +1895,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/11/13/nodejs_use_baidu_translate_api/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/11/13/nodejs-use-baidu-translate-api/</loc>
     <lastmod>2013-11-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1902,7 +1908,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/11/12/hello_canvas/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/11/12/hello-canvas/</loc>
     <lastmod>2013-11-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1915,7 +1921,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/11/11/js_anbay_agent_auto_install/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/11/11/js-anbay-agent-auto-install/</loc>
     <lastmod>2013-11-11T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1934,14 +1940,14 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/11/10/server_gzip_on/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/11/10/server-gzip-on/</loc>
     <lastmod>2013-11-10T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/11/09/commitment_and_persistence/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/11/09/commitment-and-persistence/</loc>
     <lastmod>2013-11-09T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1966,7 +1972,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/11/08/rss_atom_feed_php/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/11/08/rss-atom-feed-php/</loc>
     <lastmod>2013-11-08T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1985,7 +1991,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/11/07/front_end_tool_livejs/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/11/07/front-end-tool-livejs/</loc>
     <lastmod>2013-11-07T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -2010,14 +2016,14 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/11/06/understand_pubsub/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/11/06/understand-pubsub/</loc>
     <lastmod>2013-11-06T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/11/05/local_time_to_timezone/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/11/05/local-time-to-timezone/</loc>
     <lastmod>2013-11-05T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -2042,7 +2048,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/11/04/simple_rss_together/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/11/04/simple-rss-together/</loc>
     <lastmod>2013-11-04T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -2055,7 +2061,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/11/03/ploughing_and_harvesting/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/11/03/ploughing-and-harvesting/</loc>
     <lastmod>2013-11-03T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -2068,7 +2074,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/11/02/markdown_and_markdown_editor/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/11/02/markdown-and-markdown-editor/</loc>
     <lastmod>2013-11-02T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -2105,14 +2111,14 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/11/01/understanding_bind_bindall/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/11/01/understanding-bind-bindall/</loc>
     <lastmod>2013-11-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/10/31/html_title_wrap/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/10/31/html-title-wrap/</loc>
     <lastmod>2013-10-31T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -2137,7 +2143,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/10/30/debian_script_init/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/10/30/debian-script-init/</loc>
     <lastmod>2013-10-30T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -2156,7 +2162,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/10/29/debian_node_install/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/10/29/debian-node-install/</loc>
     <lastmod>2013-10-29T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -2169,7 +2175,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/10/28/node_agents/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/10/28/node-agents/</loc>
     <lastmod>2013-10-28T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -2200,7 +2206,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/10/27/nodejs_json_rpc_aria2/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/10/27/nodejs-json-rpc-aria2/</loc>
     <lastmod>2013-10-27T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -2219,7 +2225,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/10/26/nodejs_async/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/10/26/nodejs-async/</loc>
     <lastmod>2013-10-26T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -2232,7 +2238,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/10/26/dream_and_homesickness/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/10/26/dream-and-homesickness/</loc>
     <lastmod>2013-10-26T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -2245,7 +2251,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/10/25/about_choice_and_happiness/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/10/25/about-choice-and-happiness/</loc>
     <lastmod>2013-10-25T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -2258,7 +2264,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/10/24/call_baidu_pan/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/10/24/call-baidu-pan/</loc>
     <lastmod>2013-10-24T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -2289,7 +2295,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/10/23/hdd_is_not_safe/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/10/23/hdd-is-not-safe/</loc>
     <lastmod>2013-10-23T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -2308,21 +2314,21 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/10/22/responsive_web/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/10/22/responsive-web/</loc>
     <lastmod>2013-10-22T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/10/21/have_dream/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/10/21/have-dream/</loc>
     <lastmod>2013-10-21T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/10/20/auto_create_blog_index/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/10/20/auto-create-blog-index/</loc>
     <lastmod>2013-10-20T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -2335,7 +2341,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/10/19/nginx_http_auth/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/10/19/nginx-http-auth/</loc>
     <lastmod>2013-10-19T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -2348,14 +2354,14 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/10/18/android_ssh_rsync_client/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/10/18/android-ssh-rsync-client/</loc>
     <lastmod>2013-10-18T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/09/21/nginx_install_settings/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/09/21/nginx-install-settings/</loc>
     <lastmod>2013-09-21T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -2374,7 +2380,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/09/01/nginx_ssl_settings/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/09/01/nginx-ssl-settings/</loc>
     <lastmod>2013-09-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -2387,7 +2393,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/08/12/disable_link/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/08/12/disable-link/</loc>
     <lastmod>2013-08-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -2400,7 +2406,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/07/30/firefox_selenium_ide/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/07/30/firefox-selenium-ide/</loc>
     <lastmod>2013-07-30T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -2413,7 +2419,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/07/17/nginx_proxy/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/07/17/nginx-proxy/</loc>
     <lastmod>2013-07-17T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -2432,7 +2438,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/07/01/raspberry_server/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/07/01/raspberry-server/</loc>
     <lastmod>2013-07-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -2445,7 +2451,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/06/20/web_code_gist/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/06/20/web-code-gist/</loc>
     <lastmod>2013-06-20T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -2458,7 +2464,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/06/14/ubuntu_android_xiaomi2/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/06/14/ubuntu-android-xiaomi2/</loc>
     <lastmod>2013-06-14T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -2477,7 +2483,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/06/12/mongodb_export/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/06/12/mongodb-export/</loc>
     <lastmod>2013-06-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -2496,14 +2502,14 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/05/24/jquery_attr_prop/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/05/24/jquery-attr-prop/</loc>
     <lastmod>2013-05-24T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/04/09/data_storage/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/04/09/data-storage/</loc>
     <lastmod>2013-04-09T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -2516,7 +2522,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/04/02/node_chat/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/04/02/node-chat/</loc>
     <lastmod>2013-04-02T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -2529,21 +2535,21 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/04/01/ubuntu_vbox_install/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/04/01/ubuntu-vbox-install/</loc>
     <lastmod>2013-04-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/04/01/installing_qt/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/04/01/installing-qt/</loc>
     <lastmod>2013-04-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/03/29/ubuntu_desktop/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/03/29/ubuntu-desktop/</loc>
     <lastmod>2013-03-29T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -2556,7 +2562,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/03/27/javascript_base_advice/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/03/27/javascript-base-advice/</loc>
     <lastmod>2013-03-27T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -2569,7 +2575,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/03/27/what_to_play/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/03/27/what-to-play/</loc>
     <lastmod>2013-03-27T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -2582,14 +2588,14 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/03/26/ubuntu_vim/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/03/26/ubuntu-vim/</loc>
     <lastmod>2013-03-26T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/03/18/android_install/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/03/18/android-install/</loc>
     <lastmod>2013-03-18T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -2602,35 +2608,35 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/03/17/ssh_rsync/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/03/17/ssh-rsync/</loc>
     <lastmod>2013-03-17T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/03/12/my_daily/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/03/12/my-daily/</loc>
     <lastmod>2013-03-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/03/05/youth_is_gone/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/03/05/youth-is-gone/</loc>
     <lastmod>2013-03-05T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/03/01/access_iframe/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/03/01/access-iframe/</loc>
     <lastmod>2013-03-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/02/26/android_ant_problem/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/02/26/android-ant-problem/</loc>
     <lastmod>2013-02-26T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -2649,7 +2655,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/02/25/javascript_base/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/02/25/javascript-base/</loc>
     <lastmod>2013-02-25T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -2662,7 +2668,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/02/21/java_get_cur_path/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/02/21/java-get-cur-path/</loc>
     <lastmod>2013-02-21T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -2696,7 +2702,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/01/23/terminal_sshproxy_socks/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/01/23/terminal-sshproxy-socks/</loc>
     <lastmod>2013-01-23T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -2715,7 +2721,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/01/17/vtiger_bug/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/01/17/vtiger-bug/</loc>
     <lastmod>2013-01-17T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -2728,7 +2734,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/01/16/splice_in_ie/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/01/16/splice-in-ie/</loc>
     <lastmod>2013-01-16T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -2741,21 +2747,21 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/01/15/wordpress_plugin/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/01/15/wordpress-plugin/</loc>
     <lastmod>2013-01-15T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/01/14/css_font_setting/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/01/14/css-font-setting/</loc>
     <lastmod>2013-01-14T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/01/14/gitlab_installation/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/01/14/gitlab-installation/</loc>
     <lastmod>2013-01-14T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -2774,7 +2780,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/01/14/hidden_wordpress_update/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/01/14/hidden-wordpress-update/</loc>
     <lastmod>2013-01-14T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -2787,14 +2793,14 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/01/13/hu_hua/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/01/13/hu-hua/</loc>
     <lastmod>2013-01-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/01/12/ubuntu_set_vpn/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/01/12/ubuntu-set-vpn/</loc>
     <lastmod>2013-01-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -2813,14 +2819,14 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/01/12/title_special_character/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/01/12/title-special-character/</loc>
     <lastmod>2013-01-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/01/10/fill_text/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/01/10/fill-text/</loc>
     <lastmod>2013-01-10T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -2833,28 +2839,28 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/01/07/installing_node_on_ubuntu/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/01/07/installing-node-on-ubuntu/</loc>
     <lastmod>2013-01-07T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/01/07/installing_subversion_on_ubuntu/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/01/07/installing-subversion-on-ubuntu/</loc>
     <lastmod>2013-01-07T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/01/06/vbox_share/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/01/06/vbox-share/</loc>
     <lastmod>2013-01-06T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/01/06/windows_bitvise/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/01/06/windows-bitvise/</loc>
     <lastmod>2013-01-06T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -2879,7 +2885,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2013/01/04/git_for_windows/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2013/01/04/git-for-windows/</loc>
     <lastmod>2013-01-04T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -2899,27 +2905,13 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/12/23/zhuangtai/</loc>
-    <lastmod>2012-12-23T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://blog.wenzhixin.net.cn/tags/%E4%B8%89%E6%AF%9B/</loc>
     <lastmod>2012-12-21T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/12/21/yu_ji_bu_zai_lai/</loc>
-    <lastmod>2012-12-21T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/12/21/yu_ji_bu_zai_lai/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2012/12/21/yu-ji-bu-zai-lai/</loc>
     <lastmod>2012-12-21T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -2932,28 +2924,14 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/12/10/dan_ding/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2012/12/10/dan-ding/</loc>
     <lastmod>2012-12-10T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/12/10/dan_ding/</loc>
-    <lastmod>2012-12-10T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/12/08/mongodb_insert_update_remove/</loc>
-    <lastmod>2012-12-08T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/12/08/mongodb_insert_update_remove/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2012/12/08/mongodb-insert-update-remove/</loc>
     <lastmod>2012-12-08T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -2966,28 +2944,14 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/12/07/css3_blog_logo/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2012/12/07/css3-blog-logo/</loc>
     <lastmod>2012-12-07T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/12/07/css3_blog_logo/</loc>
-    <lastmod>2012-12-07T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/12/06/mongodb_started/</loc>
-    <lastmod>2012-12-06T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/12/06/mongodb_started/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2012/12/06/mongodb-started/</loc>
     <lastmod>2012-12-06T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -3000,42 +2964,21 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/12/05/ucd_book2/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2012/12/05/ucd-book2/</loc>
     <lastmod>2012-12-05T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/12/05/ucd_book2/</loc>
-    <lastmod>2012-12-05T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/12/04/ucd_book1/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2012/12/04/ucd-book1/</loc>
     <lastmod>2012-12-04T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/12/04/ucd_book1/</loc>
-    <lastmod>2012-12-04T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/12/03/ie_enter_button_bug/</loc>
-    <lastmod>2012-12-03T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/12/03/ie_enter_button_bug/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2012/12/03/ie-enter-button-bug/</loc>
     <lastmod>2012-12-03T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -3048,41 +2991,14 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/12/02/jquery_imagebox/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2012/12/02/jquery-imagebox/</loc>
     <lastmod>2012-12-02T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/12/02/jquery_imagebox/</loc>
-    <lastmod>2012-12-02T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/12/01/javascript_coding_convention/</loc>
-    <lastmod>2012-12-01T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/12/01/javascript_coding_convention/</loc>
-    <lastmod>2012-12-01T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/tags/%E5%A4%A9%E9%B9%BF%E6%B9%96/</loc>
-    <lastmod>2012-12-01T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/12/01/tianluhu_cycle_trip/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2012/12/01/javascript-coding-convention/</loc>
     <lastmod>2012-12-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -3095,28 +3011,14 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/11/30/build_markdown_blog/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2012/11/30/build-markdown-blog/</loc>
     <lastmod>2012-11-30T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/11/30/build_markdown_blog/</loc>
-    <lastmod>2012-11-30T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/11/16/because_not_easy/</loc>
-    <lastmod>2012-11-16T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/11/16/because_not_easy/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2012/11/16/because-not-easy/</loc>
     <lastmod>2012-11-16T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -3129,42 +3031,21 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/11/09/nodejs_deploy/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2012/11/09/nodejs-deploy/</loc>
     <lastmod>2012-11-09T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/11/09/nodejs_deploy/</loc>
-    <lastmod>2012-11-09T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/10/25/nodejs_get_started/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2012/10/25/nodejs-get-started/</loc>
     <lastmod>2012-10-25T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/10/25/nodejs_get_started/</loc>
-    <lastmod>2012-10-25T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/10/24/ubuntu_sshproxy/</loc>
-    <lastmod>2012-10-24T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/10/24/ubuntu_sshproxy/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2012/10/24/ubuntu-sshproxy/</loc>
     <lastmod>2012-10-24T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -3183,28 +3064,14 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/10/22/ubuntu_ruby_on_rails_development_environment_set_up/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2012/10/22/ubuntu-ruby-on-rails-development-environment-set-up/</loc>
     <lastmod>2012-10-22T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/10/22/ubuntu_ruby_on_rails_development_environment_set_up/</loc>
-    <lastmod>2012-10-22T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/09/24/ubuntu_vim_gedit_garbled_solution/</loc>
-    <lastmod>2012-09-24T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/09/24/ubuntu_vim_gedit_garbled_solution/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2012/09/24/ubuntu-vim-gedit-garbled-solution/</loc>
     <lastmod>2012-09-24T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -3217,42 +3084,21 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/09/18/twitter_bootstrap_resources_aggregation/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2012/09/18/twitter-bootstrap-resources-aggregation/</loc>
     <lastmod>2012-09-18T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/09/18/twitter_bootstrap_resources_aggregation/</loc>
-    <lastmod>2012-09-18T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/09/16/using_jquery_plugin/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2012/09/16/using-jquery-plugin/</loc>
     <lastmod>2012-09-16T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/09/16/using_jquery_plugin/</loc>
-    <lastmod>2012-09-16T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/09/14/solution_wordpress_to_change_the_ip_address_after_not_go_back/</loc>
-    <lastmod>2012-09-14T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/09/14/solution_wordpress_to_change_the_ip_address_after_not_go_back/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2012/09/14/solution-wordpress-to-change-the-ip-address-after-not-go-back/</loc>
     <lastmod>2012-09-14T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -3265,14 +3111,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/08/01/phonegap_plugin_hello_world/</loc>
-    <lastmod>2012-08-01T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/08/01/phonegap_plugin_hello_world/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2012/08/01/phonegap-plugin-hello-world/</loc>
     <lastmod>2012-08-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -3285,56 +3124,28 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/08/01/the_use_of_nginx_as_a_proxy_server_easily_solve_the_cross_domain_ajax_problem/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2012/08/01/the-use-of-nginx-as-a-proxy-server-easily-solve-the-cross-domain-ajax-problem/</loc>
     <lastmod>2012-08-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/08/01/the_use_of_nginx_as_a_proxy_server_easily_solve_the_cross_domain_ajax_problem/</loc>
-    <lastmod>2012-08-01T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/06/07/ant_key_elements_and_common_commands/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2012/06/07/ant-key-elements-and-common-commands/</loc>
     <lastmod>2012-06-07T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/06/07/ant_key_elements_and_common_commands/</loc>
-    <lastmod>2012-06-07T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/06/05/the_ubuntu_connection_plate_for_the_development_of_android_problem/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2012/06/05/the-ubuntu-connection-plate-for-the-development-of-android-problem/</loc>
     <lastmod>2012-06-05T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/06/05/the_ubuntu_connection_plate_for_the_development_of_android_problem/</loc>
-    <lastmod>2012-06-05T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/06/04/the_ubuntu_connection_c8650_android_development_of_huawei/</loc>
-    <lastmod>2012-06-04T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/06/04/the_ubuntu_connection_c8650_android_development_of_huawei/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2012/06/04/the-ubuntu-connection-c8650-android-development-of-huawei/</loc>
     <lastmod>2012-06-04T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -3347,118 +3158,56 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/06/02/install_android_x86_virtual_machine_for_the_development_testing_android_applications/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2012/06/02/install-android-x86-virtual-machine-for-the-development-testing-android-applications/</loc>
     <lastmod>2012-06-02T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/06/02/install_android_x86_virtual_machine_for_the_development_testing_android_applications/</loc>
-    <lastmod>2012-06-02T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/05/29/linux_shell_programming/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2012/05/29/linux-shell-programming/</loc>
     <lastmod>2012-05-29T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/05/29/linux_shell_programming/</loc>
-    <lastmod>2012-05-29T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/tags/shell/</loc>
-    <lastmod>2012-05-29T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/05/23/commonly_used_linux_commands_compression_decompression_command/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2012/05/23/commonly-used-linux-commands-compression-decompression-command/</loc>
     <lastmod>2012-05-23T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/05/23/commonly_used_linux_commands_compression_decompression_command/</loc>
-    <lastmod>2012-05-23T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/05/22/commonly_used_linux_commands_help_command/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2012/05/22/commonly-used-linux-commands-help-command/</loc>
     <lastmod>2012-05-22T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/05/22/commonly_used_linux_commands_help_command/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2012/05/22/commonly-used-linux-commands-file-search-command/</loc>
     <lastmod>2012-05-22T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/05/22/commonly_used_linux_commands_file_search_command/</loc>
-    <lastmod>2012-05-22T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/05/22/commonly_used_linux_commands_file_search_command/</loc>
-    <lastmod>2012-05-22T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/05/20/html5_canvas_drawing_examples_rotate/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2012/05/20/html5-canvas-drawing-examples-rotate/</loc>
     <lastmod>2012-05-20T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/05/20/html5_canvas_drawing_examples_rotate/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2012/05/20/commonly-used-linux-commands-permission-management-command/</loc>
     <lastmod>2012-05-20T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/05/20/commonly_used_linux_commands_permission_management_command/</loc>
-    <lastmod>2012-05-20T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/05/20/commonly_used_linux_commands_permission_management_command/</loc>
-    <lastmod>2012-05-20T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/05/19/commonly_used_linux_commands_file_command/</loc>
-    <lastmod>2012-05-19T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/05/19/commonly_used_linux_commands_file_command/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2012/05/19/commonly-used-linux-commands-file-command/</loc>
     <lastmod>2012-05-19T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -3471,14 +3220,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/05/15/mysql_open_the_remote_access_ubuntu/</loc>
-    <lastmod>2012-05-15T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/05/15/mysql_open_the_remote_access_ubuntu/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2012/05/15/mysql-open-the-remote-access-ubuntu/</loc>
     <lastmod>2012-05-15T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -3497,28 +3239,14 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/05/08/eclipse_install_the_plugin_aptana_svn_git_java_ee_jshint/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2012/05/08/eclipse-install-the-plugin-aptana-svn-git-java-ee-jshint/</loc>
     <lastmod>2012-05-08T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/05/08/eclipse_install_the_plugin_aptana_svn_git_java_ee_jshint/</loc>
-    <lastmod>2012-05-08T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/05/08/word_wrap_and_one_cannot_display_the_problems_in_div/</loc>
-    <lastmod>2012-05-08T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/05/08/word_wrap_and_one_cannot_display_the_problems_in_div/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2012/05/08/word-wrap-and-one-cannot-display-the-problems-in-div/</loc>
     <lastmod>2012-05-08T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -3531,28 +3259,14 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/05/06/the_vertical_alignment_of_css_complete_paragraph/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2012/05/06/the-vertical-alignment-of-css-complete-paragraph/</loc>
     <lastmod>2012-05-06T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/05/06/the_vertical_alignment_of_css_complete_paragraph/</loc>
-    <lastmod>2012-05-06T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/05/05/a_thorough_study_of_css_text_and_image/</loc>
-    <lastmod>2012-05-05T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/05/05/a_thorough_study_of_css_text_and_image/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2012/05/05/a-thorough-study-of-css-text-and-image/</loc>
     <lastmod>2012-05-05T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -3565,42 +3279,21 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_css_core_base/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2012/05/04/a-thorough-study-of-css-css-core-base/</loc>
     <lastmod>2012-05-04T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_css_core_base/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2012/05/04/a-thorough-study-of-css-understanding-the-box-model/</loc>
     <lastmod>2012-05-04T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_understanding_the_box_model/</loc>
-    <lastmod>2012-05-04T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_understanding_the_box_model/</loc>
-    <lastmod>2012-05-04T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_floating_and_positioning_the_box/</loc>
-    <lastmod>2012-05-04T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/05/04/a_thorough_study_of_css_floating_and_positioning_the_box/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2012/05/04/a-thorough-study-of-css-floating-and-positioning-the-box/</loc>
     <lastmod>2012-05-04T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -3619,84 +3312,42 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/04/26/ubuntu_11.10_will_be_openjdk_into_sun_jdk_steps/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2012/04/26/ubuntu-11.10-will-be-openjdk-into-sun-jdk-steps/</loc>
     <lastmod>2012-04-26T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/04/26/ubuntu_11.10_will_be_openjdk_into_sun_jdk_steps/</loc>
-    <lastmod>2012-04-26T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/04/10/ubuntu_eclipse_build_android_development_environment_for_the_installation_adt/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2012/04/10/ubuntu-eclipse-build-android-development-environment-for-the-installation-adt/</loc>
     <lastmod>2012-04-10T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/04/10/ubuntu_eclipse_build_android_development_environment_for_the_installation_adt/</loc>
-    <lastmod>2012-04-10T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/04/05/javascript_advanced_programming_reference_types_object_array_string_date/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2012/04/05/javascript-advanced-programming-reference-types-object-array-string-date/</loc>
     <lastmod>2012-04-05T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/04/05/javascript_advanced_programming_reference_types_object_array_string_date/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2012/04/05/javascript-advanced-programming-reference-types-regexp-function-global/</loc>
     <lastmod>2012-04-05T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/04/05/javascript_advanced_programming_reference_types_regexp_function_global/</loc>
-    <lastmod>2012-04-05T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/04/05/javascript_advanced_programming_reference_types_regexp_function_global/</loc>
-    <lastmod>2012-04-05T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/04/04/javascript_advanced_programming_inheritance/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2012/04/04/javascript-advanced-programming-inheritance/</loc>
     <lastmod>2012-04-04T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/04/04/javascript_advanced_programming_inheritance/</loc>
-    <lastmod>2012-04-04T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/04/03/javascript_advanced_programming_object_oriented/</loc>
-    <lastmod>2012-04-03T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/04/03/javascript_advanced_programming_object_oriented/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2012/04/03/javascript-advanced-programming-object-oriented/</loc>
     <lastmod>2012-04-03T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -3709,14 +3360,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/03/24/javascript_advanced_programming_variables_scope_and_garbage_collection/</loc>
-    <lastmod>2012-03-24T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/03/24/javascript_advanced_programming_variables_scope_and_garbage_collection/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2012/03/24/javascript-advanced-programming-variables-scope-and-garbage-collection/</loc>
     <lastmod>2012-03-24T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -3741,14 +3385,7 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/03/19/javascript_advanced_programming_data_types/</loc>
-    <lastmod>2012-03-19T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/03/19/javascript_advanced_programming_data_types/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2012/03/19/javascript-advanced-programming-data-types/</loc>
     <lastmod>2012-03-19T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -3761,42 +3398,21 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/03/18/write_high_quality_code_high_quality_javascript/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2012/03/18/write-high-quality-code-high-quality-javascript/</loc>
     <lastmod>2012-03-18T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/03/18/write_high_quality_code_high_quality_javascript/</loc>
-    <lastmod>2012-03-18T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/03/17/write_high_quality_code_high_quality_css/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2012/03/17/write-high-quality-code-high-quality-css/</loc>
     <lastmod>2012-03-17T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/03/17/write_high_quality_code_high_quality_css/</loc>
-    <lastmod>2012-03-17T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/03/16/javascript_programming_using_javascript_in_html/</loc>
-    <lastmod>2012-03-16T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/03/16/javascript_programming_using_javascript_in_html/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2012/03/16/javascript-programming-using-javascript-in-html/</loc>
     <lastmod>2012-03-16T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -3809,70 +3425,35 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/03/15/write_high_quality_code_web_front_end_development_practice_of_the_road/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2012/03/15/write-high-quality-code-web-front-end-development-practice-of-the-road/</loc>
     <lastmod>2012-03-15T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/03/15/write_high_quality_code_web_front_end_development_practice_of_the_road/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2012/03/15/write-high-quality-code-high-quality-html/</loc>
     <lastmod>2012-03-15T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/03/15/write_high_quality_code_high_quality_html/</loc>
-    <lastmod>2012-03-15T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/03/15/write_high_quality_code_high_quality_html/</loc>
-    <lastmod>2012-03-15T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/03/14/sharp_jquery_study_notes_jquery_plugin/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2012/03/14/sharp-jquery-study-notes-jquery-plugin/</loc>
     <lastmod>2012-03-14T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/03/14/sharp_jquery_study_notes_jquery_plugin/</loc>
-    <lastmod>2012-03-14T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_and_ajax_application/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2012/03/13/sharp-jquery-study-notes-jquery-and-ajax-application/</loc>
     <lastmod>2012-03-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_and_ajax_application/</loc>
-    <lastmod>2012-03-13T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_in_animation/</loc>
-    <lastmod>2012-03-13T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/03/13/sharp_jquery_study_notes_jquery_in_animation/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2012/03/13/sharp-jquery-study-notes-jquery-in-animation/</loc>
     <lastmod>2012-03-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -3885,28 +3466,14 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/03/12/sharp_jquery_study_notes_dom_operation_in_jquery/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2012/03/12/sharp-jquery-study-notes-dom-operation-in-jquery/</loc>
     <lastmod>2012-03-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/03/12/sharp_jquery_study_notes_dom_operation_in_jquery/</loc>
-    <lastmod>2012-03-12T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/03/12/sharp_jquery_study_notes_events_in_jquery/</loc>
-    <lastmod>2012-03-12T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/03/12/sharp_jquery_study_notes_events_in_jquery/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2012/03/12/sharp-jquery-study-notes-events-in-jquery/</loc>
     <lastmod>2012-03-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -3919,28 +3486,14 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/03/11/sharp_jquery_study_notes_jquery_selector/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2012/03/11/sharp-jquery-study-notes-jquery-selector/</loc>
     <lastmod>2012-03-11T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/03/11/sharp_jquery_study_notes_jquery_selector/</loc>
-    <lastmod>2012-03-11T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/03/10/sharp_jquery_study_notes_understanding_of_jquery/</loc>
-    <lastmod>2012-03-10T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/03/10/sharp_jquery_study_notes_understanding_of_jquery/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2012/03/10/sharp-jquery-study-notes-understanding-of-jquery/</loc>
     <lastmod>2012-03-10T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -3959,28 +3512,14 @@
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/03/09/sql_study_notes_ddl/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2012/03/09/sql-study-notes-ddl/</loc>
     <lastmod>2012-03-09T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/03/09/sql_study_notes_ddl/</loc>
-    <lastmod>2012-03-09T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/03/09/sql_study_notes_dml/</loc>
-    <lastmod>2012-03-09T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://blog.wenzhixin.net.cn/2012/03/09/sql_study_notes_dml/</loc>
+    <loc>http://blog.wenzhixin.net.cn/2012/03/09/sql-study-notes-dml/</loc>
     <lastmod>2012-03-09T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

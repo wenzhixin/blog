@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>彻底研究CSS——盒子的浮动和定位 - 文翼的博客</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="wenzhixin" /><meta name="description" content="1、盒子的浮动 * CSS 中有一个 float 属性，默认为 none，即标准流。通过设置 float 属性的值为 left 或 right，元素会向其父元素的左侧或右侧靠近，盒子的宽度" /><meta name="keywords" content="文翼的博客, web前端博客" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.55.6 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://blog.wenzhixin.net.cn/2012/05/04/a-thorough-study-of-css-floating-and-positioning-the-box/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.93844dae.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="彻底研究CSS——盒子的浮动和定位" />
+<meta property="og:description" content="1、盒子的浮动 * CSS 中有一个 float 属性，默认为 none，即标准流。通过设置 float 属性的值为 left 或 right，元素会向其父元素的左侧或右侧靠近，盒子的宽度" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.wenzhixin.net.cn/2012/05/04/a-thorough-study-of-css-floating-and-positioning-the-box/" />
+<meta property="article:published_time" content="2012-05-04T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2012-05-04T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="彻底研究CSS——盒子的浮动和定位">
+<meta itemprop="description" content="1、盒子的浮动 * CSS 中有一个 float 属性，默认为 none，即标准流。通过设置 float 属性的值为 left 或 right，元素会向其父元素的左侧或右侧靠近，盒子的宽度">
+
+
+<meta itemprop="datePublished" content="2012-05-04T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2012-05-04T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1008">
+
+
+
+<meta itemprop="keywords" content="CSS,浮动和定位," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="彻底研究CSS——盒子的浮动和定位"/>
+<meta name="twitter:description" content="1、盒子的浮动 * CSS 中有一个 float 属性，默认为 none，即标准流。通过设置 float 属性的值为 left 或 right，元素会向其父元素的左侧或右侧靠近，盒子的宽度"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+<link rel="stylesheet" href="/css/custom.css">
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">文翼的博客</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">文翼的博客</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+
+<div id="codefund"></div>
+<script src="https://codefund.io/properties/292/funder.js" async="async"></script>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">彻底研究CSS——盒子的浮动和定位</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2012-05-04 </span>
+        <div class="post-category">
+            <a href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/"> 前端技术 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    
+  </div>
+</div>
+    <div class="post-content">
+      <p>1、盒子的浮动</p>
+
+<p> * CSS 中有一个 float 属性，默认为 none，即标准流。通过设置 float
+属性的值为 left 或
+right，元素会向其父元素的左侧或右侧靠近，盒子的宽度不再伸展，而是根据盒子里面的内容的宽度来确定。</p>
+
+<p> * clear 属性：作用是为了消失由于使用 float
+后，浮动的盒子对其他盒子的影响。clear 的值有 left、right 和
+both，分别表示消除左边的影响、消除右边的影响和消除左右两边的影响。</p>
+
+<p>ps：</p>
+
+<p> * 通过使用 CSS 布局，可以实现在 HTML
+不做任何改动的情况下，调换盒子的显示位置。实际应用中，确定内容的逻辑位置，可以把内容最重要的放在前面，次要的放在后面，再通过
+CSS 来确定内容的显示位置。</p>
+
+<p> * 对 clear 属性的设置要放到设置 float 后面的盒子中，才能有效消除影响。</p>
+
+<p>2、盒子的定位</p>
+
+<p> * 广义的“定位”：泛指一个网页排版中的定位操作，使用任何 CSS 规则来实现。</p>
+
+<p> * 狭义的“定位”：通过设置 CSS 中的属性 position 来进行定位。</p>
+
+<p> </p>
+
+<p> * position 的取值包括：</p>
+
+<p>（1）static：默认的属性值，按照标准流（包括浮动方式）进行布局。</p>
+
+<p>（2）relative：称为相对定位，使用相对的盒子的位置常以标准量的排版方式为基础，然后使盒子相对于它在原本的标准位置偏移指定的距离。</p>
+
+<p>相对定位仍在标准流中，它对父块和兄弟块盒子没有任何影响。</p>
+
+<p>（3）absolute：绝对定位，盒子的位置以它的包含框为基准进行偏移。</p>
+
+<p>绝对定位从标准流中脱离，并且以它的“最近”的一个“已经定位”的“祖先元素”为基准进行定位。没有已经定位的祖先元素，则以浏览器窗口为基准进行定位。</p>
+
+<p>（4）fixed：固定定位，与绝对定位类似，以浏览器窗口为基准进行定位，拖动浏览器窗口的滚动条时，位置保持不变。</p>
+
+<p>ps：</p>
+
+<p> * 当 position 属性设置为 relative、absolute 和 fixed 时，通过设置
+left、right、top 和 bottom 来指定偏移量。这 4
+个属性除了可以设置绝对的像素数外还可以设置百分数。</p>
+
+<p> * “已经定位”元素的含义是：position 属性被设置，并且不是 static。</p>
+
+<p> *
+绝对定位的特殊性质：如何设置了绝对定位，而没有设置偏移属性，那它将保持原来的位置。可用于需要使某个元素脱离标准流，而需要保持在原来位置的情况。</p>
+
+<p>3、z-index 空间位置</p>
+
+<p> * z-index 属性用于调整定位时重叠块的上下位置。默认值为
+0，可以设置为正数或负数，当两个块的 z-index
+值相同时，保持原来的高低覆盖关系。</p>
+
+<p>4、盒子的 display 属性</p>
+
+<p> * 可以通过设置 display 属性来确定盒子的类型。inline 表示行内元素，block
+表示块级元素，none 表示无用于隐藏元素。</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">wenzhixin</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2012-05-04</span>
+  </p>
+  
+  
+</div><div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/weixin.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/alipay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/css/">CSS</a>
+          <a href="/tags/%E6%B5%AE%E5%8A%A8%E5%92%8C%E5%AE%9A%E4%BD%8D/">浮动和定位</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/2012/05/04/a-thorough-study-of-css-understanding-the-box-model/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">彻底研究CSS——深入理解盒子模型</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/2012/04/26/ubuntu-11.10-will-be-openjdk-into-sun-jdk-steps/">
+            <span class="next-text nav-default">Ubuntu 11.10 将 OpenJDK 换成 Sun JDK 的步骤</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'wenzhixin';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:wenzhixin2010@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/1531096/wenyi" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/wenzhixin2010" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.facebook.com/wenzhixin2010" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://github.com/wenzhixin" class="iconfont icon-github" title="github"></a>
+      <a href="https://weibo.com/2292826740" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://www.zhihu.com/people/zhixin-wen" class="iconfont icon-zhihu" title="zhihu"></a>
+  <a href="http://blog.wenzhixin.net.cn/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2012 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">wenzhixin.net.cn 粤ICP备15117953号</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.ece58db6.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-36708951-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

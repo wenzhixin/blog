@@ -14,28 +14,19 @@
     
     <item>
       <title>让你的网站支持自适应界面</title>
-      <link>http://blog.wenzhixin.net.cn/2013/10/22/responsive_web/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/10/22/responsive-web/</link>
       <pubDate>Tue, 22 Oct 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/10/22/responsive_web/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/10/22/responsive-web/</guid>
       <description>1. 介绍 随着智能手机的普及，越来越多的人使用手机上网。 我自己就是，经常懒得开电脑，直接用手机查看网页，简单又方便。 那么，如何才能把自己的博客做</description>
     </item>
     
     <item>
       <title>快速搭建自己的博客(markdown)</title>
-      <link>http://blog.wenzhixin.net.cn/2012/11/30/build_markdown_blog/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/11/30/build-markdown-blog/</link>
       <pubDate>Fri, 30 Nov 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/11/30/build_markdown_blog/</guid>
-      <description>PS：基于 jQuery、markdown 的 html 博客，无涉及后台，如此简单，你也可以拥有!!! 目录结构 1 2 3 4 5 6 7 8 9 10 ├── js | ├── jquery-1.8.3.min.js | ├</description>
-    </item>
-    
-    <item>
-      <title>快速搭建自己的博客(markdown)</title>
-      <link>http://blog.wenzhixin.net.cn/2012/11/30/build_markdown_blog/</link>
-      <pubDate>Fri, 30 Nov 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/11/30/build_markdown_blog/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/11/30/build-markdown-blog/</guid>
       <description>PS：基于 jQuery、markdown 的 html 博客，无涉及后台，如此简单，你也可以拥有!!! 目录结构 1 2 3 4 5 6 7 8 9 10 ├── js | ├── jquery-1.8.3.min.js | ├</description>
     </item>
     

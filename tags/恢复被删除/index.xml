@@ -14,10 +14,10 @@
     
     <item>
       <title>SVN 如何恢复被删除的文件夹</title>
-      <link>http://blog.wenzhixin.net.cn/2014/04/24/svn_undelete_folder/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/04/24/svn-undelete-folder/</link>
       <pubDate>Thu, 24 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/04/24/svn_undelete_folder/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/04/24/svn-undelete-folder/</guid>
       <description>问题： 你删除了 SVN 版本库上的文件夹，那么你要怎么恢复呢？ 尝试办法： 通过 svn revert folder，会发现找不到该文件夹 通过 svn merge，从上个版本恢复回</description>
     </item>
     

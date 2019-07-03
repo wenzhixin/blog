@@ -14,10 +14,10 @@
     
     <item>
       <title>使用 canvas 绘制时钟</title>
-      <link>http://blog.wenzhixin.net.cn/2013/11/20/canvas_draw_clock/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/11/20/canvas-draw-clock/</link>
       <pubDate>Wed, 20 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/11/20/canvas_draw_clock/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/20/canvas-draw-clock/</guid>
       <description>今天我们利用 canvas 来画一个基本的时钟程序。通过一边实践一边学习新的知识。 准备工作，我们先定义需要用到的变量： 1 2 &amp;lt;canvas id=&amp;#34;canvas&amp;#34; width=&amp;#34;300&amp;#34; height=&amp;#34;300&amp;#34;&amp;gt;&amp;lt;/canvas&amp;gt; &amp;lt;script src=&amp;#34;clock.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; 1 2 3 4 5 6 7 8 9 10</description>
     </item>
     

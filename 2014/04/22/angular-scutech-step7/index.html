@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>一步一步学习 AngularJS（八） - 文翼的博客</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="wenzhixin" /><meta name="description" content="上一节 在这一小节，我们将学习如何创建布局模板，和如何通过添加路由来创建多页面的应用， 将使用新的 Angular 模块ngRoute。 在开始之前，我们先来看看" /><meta name="keywords" content="文翼的博客, web前端博客" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.55.6 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://blog.wenzhixin.net.cn/2014/04/22/angular-scutech-step7/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.93844dae.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="一步一步学习 AngularJS（八）" />
+<meta property="og:description" content="上一节 在这一小节，我们将学习如何创建布局模板，和如何通过添加路由来创建多页面的应用， 将使用新的 Angular 模块ngRoute。 在开始之前，我们先来看看" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.wenzhixin.net.cn/2014/04/22/angular-scutech-step7/" />
+<meta property="article:published_time" content="2014-04-22T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2014-04-22T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="一步一步学习 AngularJS（八）">
+<meta itemprop="description" content="上一节 在这一小节，我们将学习如何创建布局模板，和如何通过添加路由来创建多页面的应用， 将使用新的 Angular 模块ngRoute。 在开始之前，我们先来看看">
+
+
+<meta itemprop="datePublished" content="2014-04-22T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2014-04-22T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1874">
+
+
+
+<meta itemprop="keywords" content="AngularJS," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="一步一步学习 AngularJS（八）"/>
+<meta name="twitter:description" content="上一节 在这一小节，我们将学习如何创建布局模板，和如何通过添加路由来创建多页面的应用， 将使用新的 Angular 模块ngRoute。 在开始之前，我们先来看看"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+<link rel="stylesheet" href="/css/custom.css">
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">文翼的博客</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">文翼的博客</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+
+<div id="codefund"></div>
+<script src="https://codefund.io/properties/292/funder.js" async="async"></script>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">一步一步学习 AngularJS（八）</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2014-04-22 </span>
+        <div class="post-category">
+            <a href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/"> 前端技术 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    
+  </div>
+</div>
+    <div class="post-content">
+      <p><a href="/2014/03/10/angular-scutech-step6">上一节</a></p>
+
+<p>在这一小节，我们将学习如何创建布局模板，和如何通过添加路由来创建多页面的应用，
+将使用新的 Angular 模块<code>ngRoute</code>。</p>
+
+<p>在开始之前，我们先来看看 <a href="/demos/angular-scutech/step7">演示</a>，
+也可以通过链接下载 <a href="/demos/angular-scutech/step7.zip">zip</a> 包。</p>
+
+<ul>
+<li>当你通过浏览器打开地址<code>index.html</code>时，会自动跳转到<code>index.html#products</code>并且显示产品列表。</li>
+<li>当你点击某个产品时，会跳到相对应的产品信息页面中。</li>
+</ul>
+
+<p><strong>依赖</strong></p>
+
+<p>用到路由需要提供 angular 的依赖<code>angular-route.js</code>，我们把它加入到<code>index.html</code>中：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">&lt;script src=&#34;lib/angular/angular.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;lib/angular/angular-route.js&#34;&gt;&lt;/script&gt;</pre></td></tr></table>
+</div>
+</div>
+<p>这样我们就可以使用<code>ngRoute</code>模块了。</p>
+
+<p><strong>多页面，路由和布局模板</strong></p>
+
+<p>我们的应用正在慢慢的变强大起来，在前几节中，我们提供了一个单页面（产品列表），并且所有的模板都放在<code>index.html</code>
+中，下一步是增加一个页面来显示我们列表中每个产品的详细信息。</p>
+
+<p>增加产品的详细信息页面，我们可以扩展<code>index.html</code>的内容，但是这样的话，随着页面的增加，我们的页面会变得凌乱起来。
+在这里，我们使用布局模板来解决这一问题。</p>
+
+<p><strong>模板</strong></p>
+
+<p>首先，我们新建 partials 文件夹，用于存放模板文件。并新建<code>partials/list.html</code>：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">&lt;div class=&#34;navbar navbar-inverse&#34; role=&#34;navigation&#34;&gt;
+    &lt;div class=&#34;container&#34;&gt;
+        &lt;div class=&#34;navbar-header&#34;&gt;
+            &lt;a class=&#34;navbar-brand&#34; href=&#34;#&#34;&gt;项目名称&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;collapse navbar-collapse&#34;&gt;
+            &lt;ul class=&#34;nav navbar-nav&#34;&gt;
+                &lt;li class=&#34;active&#34;&gt;&lt;a href=&#34;#&#34;&gt;产品列表&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;&lt;!--/.nav-collapse --&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;container&#34;&gt;
+    &lt;div class=&#34;col-md-3&#34;&gt;
+        &lt;div class=&#34;form-group&#34;&gt;
+            &lt;input type=&#34;text&#34; class=&#34;form-control&#34; placeholder=&#34;搜索&#34; ng-model=&#34;query&#34; /&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;form-group&#34;&gt;
+            &lt;select class=&#34;form-control&#34; ng-model=&#34;order&#34;&gt;
+                &lt;option value=&#34;name&#34;&gt;名称&lt;/option&gt;
+                &lt;option value=&#34;age&#34;&gt;发布时长&lt;/option&gt;
+            &lt;/select&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;ul class=&#34;col-md-9 list-group&#34;&gt;
+        &lt;li class=&#34;list-group-item&#34; ng-repeat=&#34;product in products | filter:query | orderBy:order&#34;&gt;
+            &lt;a href=&#34;#/product/{{product.id}}&#34;&gt;
+                &lt;h4 class=&#34;list-group-item-heading&#34;&gt;
+                    &lt;img ng-src=&#34;{{product.image}}&#34; /&gt;
+                    {{product.name}} - {{product.age}}年
+                &lt;/h4&gt;
+            &lt;/a&gt;
+            &lt;p class=&#34;list-group-item-text&#34;&gt;
+                {{product.info}}
+            &lt;/p&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</pre></td></tr></table>
+</div>
+</div>
+<p>我们把<code>index.html</code>中的内容 copy 到<code>list.html</code>了，并在 body 间加入了<code>ngView</code>指令，</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">&lt;body ng-controller=&#34;ListCtrl&#34;&gt;
+
+&lt;div ng-view&gt;&lt;/div&gt;
+
+&lt;/body&gt;</pre></td></tr></table>
+</div>
+</div>
+<p>接着，我们添加<code>partials/detail.html</code>文件，简单的加入：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">detail view for {{productId}}</pre></td></tr></table>
+</div>
+</div>
+<p>用于显示当前产品的 ID 信息。</p>
+
+<p><strong>APP 模块</strong></p>
+
+<p>在之前的小节中，我们仅仅只用到了<code>controllers.js</code>文件，为了更好的组织我们的代码结构，
+在这里加入<code>app.js</code>，用于控制我们应用的入口和路由的配置信息：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">var scutechApp = angular.module(&#39;scutechApp&#39;, [
+    &#39;ngRoute&#39;,
+    &#39;controllers&#39;
+]);
+
+scutechApp.config([&#39;$routeProvider&#39;,
+    function($routeProvider) {
+        $routeProvider.
+            when(&#39;/products&#39;, {
+                templateUrl: &#39;partials/list.html&#39;,
+                controller: &#39;ListCtrl&#39;
+            }).
+            when(&#39;/products/:productId&#39;, {
+                templateUrl: &#39;partials/detail.html&#39;,
+                controller: &#39;DetailCtrl&#39;
+            }).
+            otherwise({
+                redirectTo: &#39;/products&#39;
+            });
+    }]);</pre></td></tr></table>
+</div>
+</div>
+<p>这里配置了主模块，并且加入了<code>ngRoute</code>，表示我们将启用路由控制我们的界面。</p>
+
+<ul>
+<li>when(&lsquo;/products&rsquo;)：当 url 地址为 products 时，我们使用<code>list.html</code>模板，定义了控制器为<code>ListCtrl</code></li>
+<li>when(&lsquo;/products/:productId&rsquo;)：当 url 地址为产品详细信息时，
+我们使用<code>detail.html</code>模板，定义了控制器为<code>DetailCtrl</code></li>
+<li>otherwise：表示默认为<code>/products</code></li>
+</ul>
+
+<p>因为在这里指定了控制器对应不同的模板页面，所以在<code>index.html</code>不需要在指定<code>ng-controller</code>了，
+加入app.js之后，我们的<code>index.html</code>文件为：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">&lt;!doctype html&gt;
+&lt;html lang=&#34;en&#34; ng-app=&#34;scutechApp&#34;&gt;
+&lt;head&gt;
+    &lt;meta charset=&#34;utf-8&#34;&gt;
+    &lt;title&gt;Angular Scutech&lt;/title&gt;
+    &lt;link rel=&#34;stylesheet&#34; href=&#34;lib/bootstrap/css/bootstrap.css&#34;&gt;
+    &lt;script src=&#34;lib/angular/angular.js&#34;&gt;&lt;/script&gt;
+    &lt;script src=&#34;lib/angular/angular-route.js&#34;&gt;&lt;/script&gt;
+    &lt;script src=&#34;js/app.js&#34;&gt;&lt;/script&gt;
+    &lt;script src=&#34;js/controllers.js&#34;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div ng-view&gt;&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre></td></tr></table>
+</div>
+</div>
+<p><strong>控制器</strong></p>
+
+<p>文件<code>controllers.js</code>：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">var controllers = angular.module(&#39;controllers&#39;, []);
+
+controllers.controller(&#39;ListCtrl&#39;, [&#39;$scope&#39;, &#39;$http&#39;,
+    function ($scope, $http) {
+        $http.get(&#39;data/products.json&#39;).success(function(data) {
+            $scope.products = data;
+        });
+        $scope.order = &#39;age&#39;;
+    }
+]);
+
+controllers.controller(&#39;DetailCtrl&#39;, [&#39;$scope&#39;, &#39;$routeParams&#39;,
+    function ($scope, $routeParams) {
+        $scope.productId = $routeParams.productId;
+    }
+]);</pre></td></tr></table>
+</div>
+</div>
+<p>注意到，我们创建了一个名叫<code>controllers</code>的module，对应 app.js 中的控制器名称，
+用于告诉 AngularJS 使用相对应控制器（对于大型应用，你可能需要创建多个模块）。
+在<code>DetailCtrl</code>中，用到了<code>$routeParams</code>，用于获取 url 的参数，
+如：<code>/products/:productId</code>，直接用<code>$routeParams.productId</code>即可。</p>
+
+<p><strong>扩展练习</strong></p>
+
+<p>添加<code>{{order}}</code>绑定到<code>index.html</code>中，你会发现，该值一直为空，
+这是因为我们把控制器的范围指定为具体的模块中去了，例如<code>ListCtrl</code>对应<code>list.html</code>，
+<code>DetailCtrl</code>对应<code>detail.html</code>。</p>
+
+<p><a href="/2014/03/10/angular-scutech-step6">上一节</a></p>
+
+<hr />
+
+<ul>
+<li><a href="/2014/02/18/angular-scutech-step0">一步一步学习 AngularJS（一）</a></li>
+<li><a href="/2014/02/19/angular-scutech-step1">一步一步学习 AngularJS（二）</a></li>
+<li><a href="/2014/02/20/angular-scutech-step2">一步一步学习 AngularJS（三）</a></li>
+<li><a href="/2014/02/21/angular-scutech-step3">一步一步学习 AngularJS（四）</a></li>
+<li><a href="/2014/02/22/angular-scutech-step4">一步一步学习 AngularJS（五）</a></li>
+<li><a href="/2014/02/23/angular-scutech-step5">一步一步学习 AngularJS（六）</a></li>
+<li><a href="/2014/03/10/angular-scutech-step6">一步一步学习 AngularJS（七）</a></li>
+<li><a href="/2014/04/22/angular-scutech-step7">一步一步学习 AngularJS（八）</a></li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">wenzhixin</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2014-04-22</span>
+  </p>
+  
+  
+</div><div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/weixin.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/alipay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/angularjs/">AngularJS</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/2014/04/23/strive-and-foreward/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">何为努力？怎样算进步？</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/2014/04/21/css-font-face/">
+            <span class="next-text nav-default">CSS 自定义字体</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'wenzhixin';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:wenzhixin2010@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/1531096/wenyi" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/wenzhixin2010" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.facebook.com/wenzhixin2010" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://github.com/wenzhixin" class="iconfont icon-github" title="github"></a>
+      <a href="https://weibo.com/2292826740" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://www.zhihu.com/people/zhixin-wen" class="iconfont icon-zhihu" title="zhihu"></a>
+  <a href="http://blog.wenzhixin.net.cn/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2012 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">wenzhixin.net.cn 粤ICP备15117953号</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.ece58db6.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-36708951-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

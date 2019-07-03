@@ -14,91 +14,91 @@
     
     <item>
       <title>一步一步学习 AngularJS（八）</title>
-      <link>http://blog.wenzhixin.net.cn/2014/04/22/angular_scutech_step7/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/04/22/angular-scutech-step7/</link>
       <pubDate>Tue, 22 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/04/22/angular_scutech_step7/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/04/22/angular-scutech-step7/</guid>
       <description>上一节 在这一小节，我们将学习如何创建布局模板，和如何通过添加路由来创建多页面的应用， 将使用新的 Angular 模块ngRoute。 在开始之前，我们先来看看</description>
     </item>
     
     <item>
       <title>一步一步学习 AngularJS（七）</title>
-      <link>http://blog.wenzhixin.net.cn/2014/03/10/angular_scutech_step6/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/03/10/angular-scutech-step6/</link>
       <pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/03/10/angular_scutech_step6/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/03/10/angular-scutech-step6/</guid>
       <description>上一节 在这一小节，我们为列表中的产品添加图片和链接，下一小节将使用链接跳转到详细的页面。 在开始之前，我们先来看看 演示， 也可以通过链接下载 zip 包</description>
     </item>
     
     <item>
       <title>一步一步学习 AngularJS（六）</title>
-      <link>http://blog.wenzhixin.net.cn/2014/02/23/angular_scutech_step5/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/02/23/angular-scutech-step5/</link>
       <pubDate>Sun, 23 Feb 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/02/23/angular_scutech_step5/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/02/23/angular-scutech-step5/</guid>
       <description>上一节 下一节 在之前几个小节中，我们的列表都是使用固定的数据。 在这一小节，我们使用 $http 请求从后台获取数据。 在开始之前，我们先来看看 演示， 也可以通</description>
     </item>
     
     <item>
       <title>一步一步学习 AngularJS（五）</title>
-      <link>http://blog.wenzhixin.net.cn/2014/02/22/angular_scutech_step4/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/02/22/angular-scutech-step4/</link>
       <pubDate>Sat, 22 Feb 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/02/22/angular_scutech_step4/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/02/22/angular-scutech-step4/</guid>
       <description>上一节 下一节 在这一小节，我们增加一个功能可以用来对列表进行排序。 在开始之前，我们先来看看 演示， 也可以通过链接下载 zip 包。 可以看到在搜索框下面，</description>
     </item>
     
     <item>
       <title>一步一步学习 AngularJS（四）</title>
-      <link>http://blog.wenzhixin.net.cn/2014/02/21/angular_scutech_step3/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/02/21/angular-scutech-step3/</link>
       <pubDate>Fri, 21 Feb 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/02/21/angular_scutech_step3/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/02/21/angular-scutech-step3/</guid>
       <description>上一节 下一节 在这一小节，我们增加一个简单的input输入框，用于搜索。 在开始之前，我们先来看看 演示， 也可以通过链接下载 zip 包。 控制器 我们没有改</description>
     </item>
     
     <item>
       <title>一步一步学习 AngularJS（三）</title>
-      <link>http://blog.wenzhixin.net.cn/2014/02/20/angular_scutech_step2/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/02/20/angular-scutech-step2/</link>
       <pubDate>Thu, 20 Feb 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/02/20/angular_scutech_step2/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/02/20/angular-scutech-step2/</guid>
       <description>上一节 下一节 在这一小节，我们使用 Angular 来动态生成上一节的页面。 在开始之前，我们先来看看 演示， 也可以通过链接下载 zip 包。 一个应用可以有很多种代码结构</description>
     </item>
     
     <item>
       <title>一步一步学习 AngularJS（二）</title>
-      <link>http://blog.wenzhixin.net.cn/2014/02/19/angular_scutech_step1/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/02/19/angular-scutech-step1/</link>
       <pubDate>Wed, 19 Feb 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/02/19/angular_scutech_step1/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/02/19/angular-scutech-step1/</guid>
       <description>上一节 下一节 在这一小节，为了说明 Angular 是如何增强标准 HTML 的，这一节我们来创建静态的 HTML 页面， 顺便也会用到 bootstrap 相关的组件，然后下一节我们将使用 Angul</description>
     </item>
     
     <item>
       <title>一步一步学习 AngularJS（一）</title>
-      <link>http://blog.wenzhixin.net.cn/2014/02/18/angular_scutech_step0/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/02/18/angular-scutech-step0/</link>
       <pubDate>Tue, 18 Feb 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/02/18/angular_scutech_step0/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/02/18/angular-scutech-step0/</guid>
       <description>下一节 今天开始一步一步学习 AngularJS 的教程之旅。 在这一小节中，我们将学习最基础、同时也是重要的代码结构和数据绑定。 在开始之前，我们先来看看 演示， 也可</description>
     </item>
     
     <item>
       <title>AngularJS学习笔记——购物车实例与解析</title>
-      <link>http://blog.wenzhixin.net.cn/2014/01/10/angular_cart_demo/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/01/10/angular-cart-demo/</link>
       <pubDate>Fri, 10 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/01/10/angular_cart_demo/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/01/10/angular-cart-demo/</guid>
       <description>通过构建一款实例来了解 AngularJS 的特性，貌似还是比较有效的。 先来看看效果。 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 &amp;lt;!doctype html&amp;gt; &amp;lt;html ng-app&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;UTF-8&amp;#34;</description>
     </item>
     
     <item>
       <title>AngularJS学习笔记——AngularJS简介</title>
-      <link>http://blog.wenzhixin.net.cn/2014/01/07/angularjs_study_note_introduction/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/01/07/angularjs-study-note-introduction/</link>
       <pubDate>Tue, 07 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/01/07/angularjs_study_note_introduction/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/01/07/angularjs-study-note-introduction/</guid>
       <description>自己在前端开发中还有很多新知识要学习，今天开始进入《用 AngularJS 开发下一代 Web 应用》一书的学习之旅。 AngularJS是一款开源 JavaScript函</description>
     </item>
     

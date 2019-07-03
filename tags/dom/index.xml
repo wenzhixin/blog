@@ -14,19 +14,10 @@
     
     <item>
       <title>《锋利的jQuery》学习笔记——jQuery中的DOM操作</title>
-      <link>http://blog.wenzhixin.net.cn/2012/03/12/sharp_jquery_study_notes_dom_operation_in_jquery/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/03/12/sharp-jquery-study-notes-dom-operation-in-jquery/</link>
       <pubDate>Mon, 12 Mar 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/03/12/sharp_jquery_study_notes_dom_operation_in_jquery/</guid>
-      <description>​1. 什么是DOM？ • DOM 是 Document Object Model 的缩写，是指文档对象模型 ​2. DOM操作的分类 (1)DOM Core-可用来处理任何一种使用标记语言的文档 • getElementById() • getElementByTagName() • getAttribute() •</description>
-    </item>
-    
-    <item>
-      <title>《锋利的jQuery》学习笔记——jQuery中的DOM操作</title>
-      <link>http://blog.wenzhixin.net.cn/2012/03/12/sharp_jquery_study_notes_dom_operation_in_jquery/</link>
-      <pubDate>Mon, 12 Mar 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/03/12/sharp_jquery_study_notes_dom_operation_in_jquery/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/03/12/sharp-jquery-study-notes-dom-operation-in-jquery/</guid>
       <description>​1. 什么是DOM？ • DOM 是 Document Object Model 的缩写，是指文档对象模型 ​2. DOM操作的分类 (1)DOM Core-可用来处理任何一种使用标记语言的文档 • getElementById() • getElementByTagName() • getAttribute() •</description>
     </item>
     

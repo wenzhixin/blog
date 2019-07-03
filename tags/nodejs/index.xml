@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>NodeJs on 文翼的博客</title>
+    <title>nodejs on 文翼的博客</title>
     <link>http://blog.wenzhixin.net.cn/tags/nodejs/</link>
-    <description>Recent content in NodeJs on 文翼的博客</description>
+    <description>Recent content in nodejs on 文翼的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
@@ -14,127 +14,109 @@
     
     <item>
       <title>如何批量读取 word 的内容和图片</title>
-      <link>http://blog.wenzhixin.net.cn/2014/09/21/node_docx/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/09/21/node-docx/</link>
       <pubDate>Sun, 21 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/09/21/node_docx/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/09/21/node-docx/</guid>
       <description>今天朋友说需要对100份 word 文件的内容进行录入工作，问我是否有什么方便的方法。假如最少1份按2分钟的速度算，也需要200分钟才可以录入完成。我</description>
     </item>
     
     <item>
       <title>如何为 NodeJs 设置 Nginx 代理服务器</title>
-      <link>http://blog.wenzhixin.net.cn/2014/09/18/nginx_as_proxy_nodejs/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/09/18/nginx-as-proxy-nodejs/</link>
       <pubDate>Thu, 18 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/09/18/nginx_as_proxy_nodejs/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/09/18/nginx-as-proxy-nodejs/</guid>
       <description>很多时候，我们需要为 NodeJs 设置反向代理，例如本博客后台 NodeJs 的应用监听的端口为 3333，通过 Nginx 便可以轻松代理为 80 端口，那么应该如何设置呢？ 首先设置 u</description>
     </item>
     
     <item>
       <title>使用 nodejs 发送邮件</title>
-      <link>http://blog.wenzhixin.net.cn/2014/01/23/node_send_email/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/01/23/node-send-email/</link>
       <pubDate>Thu, 23 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/01/23/node_send_email/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/01/23/node-send-email/</guid>
       <description>平时在开发应用的时候，很多时候会用到邮件，来通知我们， 这里介绍 nodejs 如何发送邮件，比较简单。 使用 Nodemailer 库来发送邮件。 安装： 1 npm install nodemailer --save 增加配置信息 co</description>
     </item>
     
     <item>
       <title>nodeJS 和 Nginx 解决客户端发送大数据的问题</title>
-      <link>http://blog.wenzhixin.net.cn/2014/01/18/large_body_error/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/01/18/large-body-error/</link>
       <pubDate>Sat, 18 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/01/18/large_body_error/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/01/18/large-body-error/</guid>
       <description>nodeJS 和 Nginx 默认情况下都只支持 1MB 的 body 数据，当客户端发送大数据的时候，分别会出现以下错误： nodeJS： 1 Error: request entity too large 解决： 1 2 3 app.use(express.bodyParser({ limit: 1024 * 1024 * 64 // 64M }));</description>
     </item>
     
     <item>
       <title>nodejs 使用百度翻译 API</title>
-      <link>http://blog.wenzhixin.net.cn/2013/11/13/nodejs_use_baidu_translate_api/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/11/13/nodejs-use-baidu-translate-api/</link>
       <pubDate>Wed, 13 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/11/13/nodejs_use_baidu_translate_api/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/13/nodejs-use-baidu-translate-api/</guid>
       <description>博客（网站）中需要对文章标题进行翻译成英文显示，要求可以批量翻译。 这里使用 nodejs 来对指定内容进行翻译，主要用到的知识点有两个： 使用百度翻译 API</description>
     </item>
     
     <item>
       <title>为你的网站开启 gzip 压缩功能（nodejs、nginx）</title>
-      <link>http://blog.wenzhixin.net.cn/2013/11/10/server_gzip_on/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/11/10/server-gzip-on/</link>
       <pubDate>Sun, 10 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/11/10/server_gzip_on/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/10/server-gzip-on/</guid>
       <description>开启网站的 gzip 压缩功能，通常可以高达70%，也就是说，如果你的网页有30K，压缩之后就变成9K， 对于大部分网站，显然可以明显提高浏览速度（注：</description>
     </item>
     
     <item>
       <title>Debian 安装 nodejs 环境</title>
-      <link>http://blog.wenzhixin.net.cn/2013/10/29/debian_node_install/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/10/29/debian-node-install/</link>
       <pubDate>Tue, 29 Oct 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/10/29/debian_node_install/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/10/29/debian-node-install/</guid>
       <description>1. 安装编译包 1 sudo apt-get install python g++ make checkinstall 2. 获取最新的 node 源码 1 2 3 mkdir ~/src &amp;amp;&amp;amp; cd ~/src wget -N http://nodejs.org/dist/node-latest.tar.gz tar xzvf node-latest.tar.gz &amp;amp;&amp;amp; cd node-v* 3. 配置编译源码 1 2 ./configure sudo checkinstall 注意，运行 checkinstall 需要 sudo，之后选择 3</description>
     </item>
     
     <item>
       <title>nodejs 获取路由的主机列表</title>
-      <link>http://blog.wenzhixin.net.cn/2013/10/28/node_agents/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/10/28/node-agents/</link>
       <pubDate>Mon, 28 Oct 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/10/28/node_agents/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/10/28/node-agents/</guid>
       <description>1. 介绍 接着之前，今天的目标是通过 nodejs 获取使用路由的主机名称列表。 路由器的默认登录地址为：http://192.168.1.1 默认的用户名密码都</description>
     </item>
     
     <item>
       <title>制作在线聊天室</title>
-      <link>http://blog.wenzhixin.net.cn/2013/04/02/node_chat/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/04/02/node-chat/</link>
       <pubDate>Tue, 02 Apr 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/04/02/node_chat/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/04/02/node-chat/</guid>
       <description>先上效果图： 登录 聊天 主要接口： join：用户加入聊天室 users: 发送用户列表 message: 发送聊天信息 server 端主要代码： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22</description>
     </item>
     
     <item>
       <title>Ubuntu 12.04 安装 Nodejs</title>
-      <link>http://blog.wenzhixin.net.cn/2013/01/07/installing_node_on_ubuntu/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/01/07/installing-node-on-ubuntu/</link>
       <pubDate>Mon, 07 Jan 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/01/07/installing_node_on_ubuntu/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/01/07/installing-node-on-ubuntu/</guid>
       <description>命令行： 1 2 3 4 sudo apt-get install python-software-properties sudo add-apt-repository ppa:chris-lea/node.js sudo apt-get update sudo apt-get install nodejs npm Installing Node.js via package manager</description>
     </item>
     
     <item>
       <title>Nodejs 应用部署小记</title>
-      <link>http://blog.wenzhixin.net.cn/2012/11/09/nodejs_deploy/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/11/09/nodejs-deploy/</link>
       <pubDate>Fri, 09 Nov 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/11/09/nodejs_deploy/</guid>
-      <description>1、日志功能 1) 加入 access.log 1 2 3 4 5 var accessLogfile = fs.createWriteStream(&amp;#39;access.log&amp;#39;, {flags: &amp;#39;a&amp;#39;}); app.configure(function() { app.use(express.logger({stream: accessLogfile})); } 2) 加入 error.log 首先，添加 helpers/error.js 文件： 1 2 3 4 5 6 7 8 9 10 11 12 var fs = require(&amp;#39;fs&amp;#39;); var errorLogfile = fs.createWriteStream(&amp;#39;logs/error.log&amp;#39;, {flags: &amp;#39;a&amp;#39;}); exports.handler = function(err, req, res, status) { console.log(err); var</description>
-    </item>
-    
-    <item>
-      <title>Nodejs 应用部署小记</title>
-      <link>http://blog.wenzhixin.net.cn/2012/11/09/nodejs_deploy/</link>
-      <pubDate>Fri, 09 Nov 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/11/09/nodejs_deploy/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/11/09/nodejs-deploy/</guid>
       <description>1、日志功能 1) 加入 access.log 1 2 3 4 5 var accessLogfile = fs.createWriteStream(&amp;#39;access.log&amp;#39;, {flags: &amp;#39;a&amp;#39;}); app.configure(function() { app.use(express.logger({stream: accessLogfile})); } 2) 加入 error.log 首先，添加 helpers/error.js 文件： 1 2 3 4 5 6 7 8 9 10 11 12 var fs = require(&amp;#39;fs&amp;#39;); var errorLogfile = fs.createWriteStream(&amp;#39;logs/error.log&amp;#39;, {flags: &amp;#39;a&amp;#39;}); exports.handler = function(err, req, res, status) { console.log(err); var</description>
     </item>
     
     <item>
       <title>Ubuntu 开发 Nodejs 入门小记</title>
-      <link>http://blog.wenzhixin.net.cn/2012/10/25/nodejs_get_started/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/10/25/nodejs-get-started/</link>
       <pubDate>Thu, 25 Oct 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/10/25/nodejs_get_started/</guid>
-      <description>Nodejs 之搭建环境 1) 安装 nodejs、npm 1 2 3 4 sudo apt-get install python-software-properties sudo add-apt-repository ppa:chris-lea/node.js sudo apt-get update sudo apt-get install nodejs npm 2) 安装 express​ - web application framework for node 1 sudo npm install -g express 3) 安装 supervisor - is used to restart</description>
-    </item>
-    
-    <item>
-      <title>Ubuntu 开发 Nodejs 入门小记</title>
-      <link>http://blog.wenzhixin.net.cn/2012/10/25/nodejs_get_started/</link>
-      <pubDate>Thu, 25 Oct 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/10/25/nodejs_get_started/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/10/25/nodejs-get-started/</guid>
       <description>Nodejs 之搭建环境 1) 安装 nodejs、npm 1 2 3 4 sudo apt-get install python-software-properties sudo add-apt-repository ppa:chris-lea/node.js sudo apt-get update sudo apt-get install nodejs npm 2) 安装 express​ - web application framework for node 1 sudo npm install -g express 3) 安装 supervisor - is used to restart</description>
     </item>
     

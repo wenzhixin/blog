@@ -14,19 +14,19 @@
     
     <item>
       <title>Ajax 文件上传——通过 iframe 的方法</title>
-      <link>http://blog.wenzhixin.net.cn/2013/11/27/ajax_file_upload_iframe/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/11/27/ajax-file-upload-iframe/</link>
       <pubDate>Wed, 27 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/11/27/ajax_file_upload_iframe/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/27/ajax-file-upload-iframe/</guid>
       <description>前言 由于安全问题，浏览器不允许通过 XMLHttpRequest（又名XHR）的方式上传文件。 那么如何在不刷新界面的情况下实现文件的上传呢？ 解</description>
     </item>
     
     <item>
       <title>jQuery 如何获取 iframe 的内容</title>
-      <link>http://blog.wenzhixin.net.cn/2013/03/01/access_iframe/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/03/01/access-iframe/</link>
       <pubDate>Fri, 01 Mar 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/03/01/access_iframe/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/03/01/access-iframe/</guid>
       <description>现有 iframe，内容如下： 1 2 3 &amp;lt;iframe id=&amp;#34;iframeID&amp;#34; ...&amp;gt; &amp;lt;div id=&amp;#34;someID&amp;#34;&amp;gt;Hello world!&amp;lt;/div&amp;gt; &amp;lt;/iframe&amp;gt; 使用 jQuery 获取 div 的内容： 1 $(&amp;#39;#iframeID&amp;#39;).contents().find(&amp;#39;#someID&amp;#39;).html();</description>
     </item>
     

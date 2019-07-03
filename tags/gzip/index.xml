@@ -14,10 +14,10 @@
     
     <item>
       <title>为你的网站开启 gzip 压缩功能（nodejs、nginx）</title>
-      <link>http://blog.wenzhixin.net.cn/2013/11/10/server_gzip_on/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/11/10/server-gzip-on/</link>
       <pubDate>Sun, 10 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/11/10/server_gzip_on/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/10/server-gzip-on/</guid>
       <description>开启网站的 gzip 压缩功能，通常可以高达70%，也就是说，如果你的网页有30K，压缩之后就变成9K， 对于大部分网站，显然可以明显提高浏览速度（注：</description>
     </item>
     

@@ -14,19 +14,10 @@
     
     <item>
       <title>JavaScript 高级程序设计——面向对象</title>
-      <link>http://blog.wenzhixin.net.cn/2012/04/03/javascript_advanced_programming_object_oriented/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/04/03/javascript-advanced-programming-object-oriented/</link>
       <pubDate>Tue, 03 Apr 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/04/03/javascript_advanced_programming_object_oriented/</guid>
-      <description>1、JavaScript 把的对象定义成散列表：无序属性的集合，其属性可以包含基本值、对象或者函数。 2、创建对象模式 （1）最简单的方式：创建一</description>
-    </item>
-    
-    <item>
-      <title>JavaScript 高级程序设计——面向对象</title>
-      <link>http://blog.wenzhixin.net.cn/2012/04/03/javascript_advanced_programming_object_oriented/</link>
-      <pubDate>Tue, 03 Apr 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/04/03/javascript_advanced_programming_object_oriented/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/04/03/javascript-advanced-programming-object-oriented/</guid>
       <description>1、JavaScript 把的对象定义成散列表：无序属性的集合，其属性可以包含基本值、对象或者函数。 2、创建对象模式 （1）最简单的方式：创建一</description>
     </item>
     

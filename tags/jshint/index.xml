@@ -14,10 +14,10 @@
     
     <item>
       <title>解决 jshint 的语法警告</title>
-      <link>http://blog.wenzhixin.net.cn/2013/11/29/jshint_warnings_resolve/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/11/29/jshint-warnings-resolve/</link>
       <pubDate>Fri, 29 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/11/29/jshint_warnings_resolve/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/29/jshint-warnings-resolve/</guid>
       <description>问题： Wrap the regexp literal in parens to disambiguate the slash operator 示例代码： 1 2 3 function isMe(name) { return /^wenzhixin$/.test(name); } 警告原因： 虽然 JavaScript 解析器可以正常工作，但是对于解析器来说，解析 “/” 的完整含义是比较困</description>
     </item>
     

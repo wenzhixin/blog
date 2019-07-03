@@ -14,28 +14,19 @@
     
     <item>
       <title>Oracle 获取DDL语句入门小记</title>
-      <link>http://blog.wenzhixin.net.cn/2014/02/13/oracle_ddl/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/02/13/oracle-ddl/</link>
       <pubDate>Thu, 13 Feb 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/02/13/oracle_ddl/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/02/13/oracle-ddl/</guid>
       <description>sqlplus 登录 在操作系统命令行下： 方法1： 1 2 sqlplus / as sysdba #这是典型的操作系统认证，不需要listener进程 sqlplus system/password as sysdba #这种连接方式只能连接本机数据库，</description>
     </item>
     
     <item>
       <title>SQL学习笔记——DDL</title>
-      <link>http://blog.wenzhixin.net.cn/2012/03/09/sql_study_notes_ddl/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/03/09/sql-study-notes-ddl/</link>
       <pubDate>Fri, 09 Mar 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/03/09/sql_study_notes_ddl/</guid>
-      <description>​1. CREATE DATABASE Syntax • CREATE DATABASE database_name ​2. CREATE TABLE Syntax • CREATE TABLE table_name ( column_name1 data_type, column_name2 data_type, column_name3 data_type, ) ​3. SQL Constraints • NOT NULL - cannot insert a new record, or update a record without adding a value to this field • UNIQUE - uniquely identifies each record in a table • PRIMARY KEY • FOREIGN KEY (REFERENCES)</description>
-    </item>
-    
-    <item>
-      <title>SQL学习笔记——DDL</title>
-      <link>http://blog.wenzhixin.net.cn/2012/03/09/sql_study_notes_ddl/</link>
-      <pubDate>Fri, 09 Mar 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/03/09/sql_study_notes_ddl/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/03/09/sql-study-notes-ddl/</guid>
       <description>​1. CREATE DATABASE Syntax • CREATE DATABASE database_name ​2. CREATE TABLE Syntax • CREATE TABLE table_name ( column_name1 data_type, column_name2 data_type, column_name3 data_type, ) ​3. SQL Constraints • NOT NULL - cannot insert a new record, or update a record without adding a value to this field • UNIQUE - uniquely identifies each record in a table • PRIMARY KEY • FOREIGN KEY (REFERENCES)</description>
     </item>
     

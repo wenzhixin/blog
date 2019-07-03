@@ -14,10 +14,10 @@
     
     <item>
       <title>栅格化布局和常用框架比较</title>
-      <link>http://blog.wenzhixin.net.cn/2013/11/25/grid_system/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/11/25/grid-system/</link>
       <pubDate>Mon, 25 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/11/25/grid_system/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/25/grid-system/</guid>
       <description>在使用了Bootstrap、Foundation 之后，其实已经接触到栅格化布局这一概念。 今天接触了 skeleton 后，特别强调了栅格化布局，那么何为栅格化</description>
     </item>
     

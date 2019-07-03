@@ -14,10 +14,10 @@
     
     <item>
       <title>Java 获取当前路径</title>
-      <link>http://blog.wenzhixin.net.cn/2013/02/21/java_get_cur_path/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/02/21/java-get-cur-path/</link>
       <pubDate>Thu, 21 Feb 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/02/21/java_get_cur_path/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/02/21/java-get-cur-path/</guid>
       <description>1. 利用 System.getProperty( )函数获取当前路径： 1 System.out.println(System.getProperty(&amp;#34;user.dir&amp;#34</description>
     </item>
     

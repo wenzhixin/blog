@@ -14,10 +14,10 @@
     
     <item>
       <title>Ubuntu 12.04 安装 Subversion 1.7</title>
-      <link>http://blog.wenzhixin.net.cn/2013/01/07/installing_subversion_on_ubuntu/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/01/07/installing-subversion-on-ubuntu/</link>
       <pubDate>Mon, 07 Jan 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/01/07/installing_subversion_on_ubuntu/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/01/07/installing-subversion-on-ubuntu/</guid>
       <description>命令行： 1 2 3 4 sudo apt-get install python-software-properties sudo apt-add-repository ppa:dominik-stadler/subversion-1.7 sudo apt-get update sudo apt-get install subversion</description>
     </item>
     

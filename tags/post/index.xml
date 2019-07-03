@@ -14,10 +14,10 @@
     
     <item>
       <title>post 提交数据到新窗口中</title>
-      <link>http://blog.wenzhixin.net.cn/2013/11/19/post_blank_window/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/11/19/post-blank-window/</link>
       <pubDate>Tue, 19 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/11/19/post_blank_window/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/19/post-blank-window/</guid>
       <description>在很多时候，我们需要 post 数据到新的窗口中，例如在需要提交大数据到后台中但是无法通过 url 的时候，或者打印报表等等。 这里记录了 flex 和 js 中如何使用 post 方法</description>
     </item>
     

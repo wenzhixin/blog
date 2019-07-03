@@ -14,10 +14,10 @@
     
     <item>
       <title>客户端数据存储之 Web Storage</title>
-      <link>http://blog.wenzhixin.net.cn/2013/04/09/data_storage/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/04/09/data-storage/</link>
       <pubDate>Tue, 09 Apr 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/04/09/data_storage/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/04/09/data-storage/</guid>
       <description>Web Storage Web Storage 有两种形式：localStorage (本地存储) 和 sessionStorage (会话存储)。 与 cookie 相似，都是使用键值对来对数据进行存储和读取。 这里对 cookie 与 Web Storage 进行</description>
     </item>
     

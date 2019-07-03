@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>SQL学习笔记——DML - 文翼的博客</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="wenzhixin" /><meta name="description" content="​1. What is SQL (1) SQL stands for Structured Query Language (2) SQL is an ANSI standard (3) RDBMS(Relational Database Managerment System) is the basis for SQL like SQLServer, DB2, Oracle, MySQL, and Access eg. ​2. SQL DML and DDL (1) The query and update commands from the DML(Data Manipulation Language) part of SQL: • SELECT - extracts data from a database • UPDATE - updates" /><meta name="keywords" content="文翼的博客, web前端博客" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.55.6 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://blog.wenzhixin.net.cn/2012/03/09/sql-study-notes-dml/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.93844dae.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="SQL学习笔记——DML" />
+<meta property="og:description" content="​1. What is SQL (1) SQL stands for Structured Query Language (2) SQL is an ANSI standard (3) RDBMS(Relational Database Managerment System) is the basis for SQL like SQLServer, DB2, Oracle, MySQL, and Access eg. ​2. SQL DML and DDL (1) The query and update commands from the DML(Data Manipulation Language) part of SQL: • SELECT - extracts data from a database • UPDATE - updates" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.wenzhixin.net.cn/2012/03/09/sql-study-notes-dml/" />
+<meta property="article:published_time" content="2012-03-09T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2012-03-09T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="SQL学习笔记——DML">
+<meta itemprop="description" content="​1. What is SQL (1) SQL stands for Structured Query Language (2) SQL is an ANSI standard (3) RDBMS(Relational Database Managerment System) is the basis for SQL like SQLServer, DB2, Oracle, MySQL, and Access eg. ​2. SQL DML and DDL (1) The query and update commands from the DML(Data Manipulation Language) part of SQL: • SELECT - extracts data from a database • UPDATE - updates">
+
+
+<meta itemprop="datePublished" content="2012-03-09T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2012-03-09T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="955">
+
+
+
+<meta itemprop="keywords" content="SQL,DML," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="SQL学习笔记——DML"/>
+<meta name="twitter:description" content="​1. What is SQL (1) SQL stands for Structured Query Language (2) SQL is an ANSI standard (3) RDBMS(Relational Database Managerment System) is the basis for SQL like SQLServer, DB2, Oracle, MySQL, and Access eg. ​2. SQL DML and DDL (1) The query and update commands from the DML(Data Manipulation Language) part of SQL: • SELECT - extracts data from a database • UPDATE - updates"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+<link rel="stylesheet" href="/css/custom.css">
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">文翼的博客</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">文翼的博客</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+
+<div id="codefund"></div>
+<script src="https://codefund.io/properties/292/funder.js" async="async"></script>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">SQL学习笔记——DML</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2012-03-09 </span>
+        <div class="post-category">
+            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"> 数据库 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    
+  </div>
+</div>
+    <div class="post-content">
+      <p>​1. What is SQL</p>
+
+<p>  (1) SQL stands for Structured Query Language</p>
+
+<p>  (2) SQL is an ANSI standard</p>
+
+<p>  (3) RDBMS(Relational Database Managerment System) is the basis for SQL
+like SQLServer, DB2, Oracle, MySQL, and Access eg.</p>
+
+<p>​2. SQL DML and DDL</p>
+
+<p>  (1) The query and update commands from the DML(Data Manipulation
+Language) part of SQL:</p>
+
+<p>  • SELECT - extracts data from a database</p>
+
+<p>  • UPDATE - updates data in a database</p>
+
+<p>  • DELETE - deletes data from a database</p>
+
+<p>  • INSERT INTO - inserts new data into a database</p>
+
+<p>  (2) The most important DDL(Data Definition Language) statements in
+SQL:</p>
+
+<p>  • CREATE DATABASE - creates a new database</p>
+
+<p>  • ALTER DATABASE - modifies a database</p>
+
+<p>  • CREATE TABLE - creates a new table</p>
+
+<p>  • ALTER TABLE - modifies a table</p>
+
+<p>  • DROP TABLE - deletes a table</p>
+
+<p>  • CREATE INDEX - creates an index</p>
+
+<p>  • DROP INDEX - deletes an index</p>
+
+<p>​3. SELECT Syntax and keywords</p>
+
+<p>  (1) SELECT Syntax: SELECT column_name(s) FTOM table_name</p>
+
+<p>  (2) DISTINCT: can be used to return only distinct values</p>
+
+<p>  (3) WHERE: is used to filter records</p>
+
+<p>  • Operators allowed in the WHERE clause: =, &lt;&gt;, &gt;, &lt;, &gt;=, &lt;=,
+AND, OR, BETWEEN, LIKE, IN</p>
+
+<p>  (4) ORDER BY: is used to sort the result-set</p>
+
+<p>  • Keyworks for ORDER BY: ASC, DESC</p>
+
+<p>​4. INSERT INTO Syntax</p>
+
+<p>  • INSERT INTO table_name VALUES(value1, value2, value3, &hellip;) </p>
+
+<p>  • INSERT INTO table_name(column1, column2, column3, &hellip;)
+VALUES(value1, value2, value3,&hellip;)</p>
+
+<p>​5. UPDATE Syntax</p>
+
+<p>  • UPDATE table_name SET column1 = value1, column2 = value2, &hellip; WHERE
+some_column = some_value</p>
+
+<p>​6. DELETE Syntax</p>
+
+<p>  • DELETE FROM table_name WHERE some_column = some_value</p>
+
+<p>​7. SQL Aggregate functions and Syntax</p>
+
+<p>  (1) AVG() - returns the average value</p>
+
+<p>  • SELECT AVG(column_name) FROM table_name</p>
+
+<p>  (2) COUNT() - returns the number of rows</p>
+
+<p>  • SELECT COUNT(*) FROM table_name</p>
+
+<p>  • SELECT COUNT(DISTINCT column_name) FROM table_name</p>
+
+<p>  (3) FIRST() - returns the first value</p>
+
+<p>  • SELECT FIRST(column_name) FROM table_name</p>
+
+<p>  (4) LAST() - returns the last value</p>
+
+<p>  • SELECT LAST(column_name) FROM table_name</p>
+
+<p>  (5) MAX() - returns the largest value</p>
+
+<p>  • SELECT MAX(column_name) FROM table_name</p>
+
+<p>  (6) MIN() - returns the smallest value</p>
+
+<p>  • SELECT MIN(column_name) FROM table_name</p>
+
+<p>  (7) SUM() - return the sum</p>
+
+<p>  • SELECT SUM(column_name) FROM table_name</p>
+
+<p>  (8) GROUP BY - is used in conjunction with the aggregate functions to
+group the result-set by one or more columns</p>
+
+<p>  • SELECT column_name, aggregate_function(column_name) FROM
+table_name WHERE column_name operator value GROUP BY column_name</p>
+
+<p>  (9) HAVING - was added to SQL because the WHERE keyword could not be
+used with aggregate functions</p>
+
+<p>  • SELECT column_name, agregate_function(column_name) FROM
+table_name WHERE column_name operator value GROUP BY column_name
+HAVING aggregate_function(column_name) operator value</p>
+
+<p>​8. SQL Scalar functions</p>
+
+<p>  (1) UCASE() - converts a field to upper case</p>
+
+<p>  • SELECT UCASE(column_name) FROM table_name</p>
+
+<p>  (2) LCASE() - converts a field to lower case</p>
+
+<p>  • SELECT LCASE(column_name) FROM table_name</p>
+
+<p>  (3) MID() - extract characters from a text field</p>
+
+<p>  • SELECT MID(column_name, start[, length]) FROM table_name</p>
+
+<p>  (4) LEN() - returns the length of a text field</p>
+
+<p>  • SELECT LEN(column_name) FROM table_name</p>
+
+<p>  (5) ROUND() - rounds a numeric field to the number of decimals
+specified</p>
+
+<p>  • SELECT ROUND(column_name, decimals) FROM table_name</p>
+
+<p>  (6) NOW() - returns the current system date and time</p>
+
+<p>  • SELECT NOW() FROM table_name</p>
+
+<p>  (7) FORMAT() - formats how a field is to be diaplayed</p>
+
+<p>  • SELECT FORMAT(column_name, format) FROM table_name</p>
+
+<p>  (8) TOP - is used to specify the number of records to return</p>
+
+<p>  • SELECT TOP number|percent column_name(s) FROM table_name</p>
+
+<p>  (9) LIKE - is used to search for a specified pattern in a column</p>
+
+<p>  • SELECT column_name(s) FROM table_name WHERE column_name LIKE
+pattern</p>
+
+<p>  (10) IN - allows you to specify multiple values in a WHERE clause</p>
+
+<p>  • SELECT column_name(s) FROM table_name WHERE column_name IN
+(value1, value2, &hellip;)</p>
+
+<p>  (11) BETWEEN AND - selects a range of data between two values</p>
+
+<p>  • SELECT column_name(s) FROM table_name WHERE column_name BETWEEN
+value1 AND value2</p>
+
+<p>​9. SQL Wildcard</p>
+
+<p>  • % - a substitute for zero or more characters</p>
+
+<p>  • _ - a substitute for exactly one character</p>
+
+<p>  • [charlist] - any single charater in charlist</p>
+
+<p>  • [\^charlist] or [!charlist] - any single character not in charlist</p>
+
+<p>​10. SQL Alias Syntax</p>
+
+<p>  • SELECT column_name(s) FROM table_name AS alias_name</p>
+
+<p>  • SELECT column_name AS alias_name FROM table_name</p>
+
+<p>​11. SQL Joins</p>
+
+<p>  • SQL joins are used to query data from two or more tables, base on a
+relationship between certain columns in these tablse</p>
+
+<p>  • Different SQL JOINS:</p>
+
+<p>  (1) JOIN or INNER JOIN - return rows when there is at least one match
+in both tables</p>
+
+<p>  • SELECT column_name(s) FROM table_name1 INNER JOIN table_name2 ON
+table_name1.column_name = table_name2.column_name</p>
+
+<p>  (2) LEFT JOIN - return all rows from the left table, even if there are
+no matches in the right table</p>
+
+<p>  • SELECT column_name(s) FROM table_name1 LEFT JOIN table_name2 ON
+table_name1.column_name = table_name2.column_name</p>
+
+<p>  (3) RIGHT JOIN - return all rows from the right table, even if there
+are no matches in the left table</p>
+
+<p>  • SELECT column_name(s) FROM table_name1 RIGHT JOIN table_name2 ON
+table_name1.column_name = table_name2.column_name</p>
+
+<p>  (4) FULL JOIN - return rows when there is a match in one of the tables</p>
+
+<p>  • SELECT column_name(s) FROM table_name1 FULL JOIN table_name2 ON
+table_name1.column_name = table_name2.column_name</p>
+
+<p>​12. SQL UNION Operator</p>
+
+<p>  (1) UNION operator is used to combine the result-set of two or more
+SELECT statements</p>
+
+<p>  (2) Syntax</p>
+
+<p>  • SELECT column_name(s) FROM table_name1 UNION SELECT
+column_name(s) FROM table_name2</p>
+
+<p>  • SELECT column_name(s) FROM table_name1 UNION ALL SELECT
+column_name(s) FROM table_name2</p>
+
+<p>​13. SQL SELECT INTO Statement</p>
+
+<p>  (1) SELECT INTO statement can be used to create backup copies of
+tables</p>
+
+<p>  (2) Syntax:</p>
+
+<p>  • SELECT * INTO new_table_name [IN externaldatabase] FROM
+old_tablename</p>
+
+<p>  • SELECT column_name(s) INTO new_table_name [IN externaldatabase]
+FROM old_tablename</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">wenzhixin</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2012-03-09</span>
+  </p>
+  
+  
+</div><div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/weixin.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/alipay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/sql/">SQL</a>
+          <a href="/tags/dml/">DML</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/2012/03/09/sql-study-notes-ddl/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">SQL学习笔记——DDL</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'wenzhixin';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:wenzhixin2010@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/1531096/wenyi" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/wenzhixin2010" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.facebook.com/wenzhixin2010" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://github.com/wenzhixin" class="iconfont icon-github" title="github"></a>
+      <a href="https://weibo.com/2292826740" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://www.zhihu.com/people/zhixin-wen" class="iconfont icon-zhihu" title="zhihu"></a>
+  <a href="http://blog.wenzhixin.net.cn/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2012 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">wenzhixin.net.cn 粤ICP备15117953号</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.ece58db6.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-36708951-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

@@ -14,10 +14,10 @@
     
     <item>
       <title>管理 ubuntu 服务器用户</title>
-      <link>http://blog.wenzhixin.net.cn/2013/12/28/ubuntu_new_user/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/12/28/ubuntu-new-user/</link>
       <pubDate>Sat, 28 Dec 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/12/28/ubuntu_new_user/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/12/28/ubuntu-new-user/</guid>
       <description>前言 对于刚刚安装（或者购买）的服务器，一般只有 root 用户，那我们需要对其进行用户管理设置。 创建新的用户 创建一个名为 username 的新用户（自己替换为想要的名</description>
     </item>
     

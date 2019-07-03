@@ -14,10 +14,10 @@
     
     <item>
       <title>KVM 虚拟机的学习和使用</title>
-      <link>http://blog.wenzhixin.net.cn/2014/11/21/kvm_study/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/11/21/kvm-study/</link>
       <pubDate>Fri, 21 Nov 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/11/21/kvm_study/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/11/21/kvm-study/</guid>
       <description>KVM 是 Kernel-based Virtual Machine的简称，是一个开源的系统虚拟化模块，是基于硬件的完全虚拟化。 查看硬件是否支持 通过命令行可以查看硬件是否支持： 1 2 3 4 5</description>
     </item>
     

@@ -45,7 +45,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://blog.wenzhixin.net.cn/" />
 
-<meta property="og:updated_time" content="2016-01-11T00:00:00&#43;00:00"/>
+<meta property="og:updated_time" content="2019-01-05T00:00:00&#43;00:00"/>
 
 <meta itemprop="name" content="文翼的博客">
 <meta itemprop="description" content="简介：坚持看书，每天进步一点点。 要常常提醒自己：无情的岁月，还有不够努力的自己！">
@@ -63,7 +63,7 @@
   <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
 <![endif]-->
 
-<link rel="stylesheet" href="/custom.css">
+<link rel="stylesheet" href="/css/custom.css">
 
 </head>
 <body>
@@ -125,9 +125,72 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2012/11/09/nodejs_deploy/">Nodejs 应用部署小记</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/2012/05/23/commonly-used-linux-commands-compression-decompression-command/">linux常用命令——压缩解压命令</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2012-11-09 </span>
+      <span class="post-time"> 2012-05-23 </span>
+      <div class="post-category">
+          <a href="/categories/%E5%90%8E%E5%8F%B0%E6%8A%80%E6%9C%AF/"> 后台技术 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      命令：gzip (GNU zip) 功能：压缩文件 权限：所有用户 语法：gzip 选项[文件] 压缩后格式：.gz 说明：只能压缩文件，不保存源文件 命令：gunzip
+    </div>
+    <div class="read-more">
+      <a href="/2012/05/23/commonly-used-linux-commands-compression-decompression-command/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2012/05/22/commonly-used-linux-commands-help-command/">linux常用命令——帮助命令</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2012-05-22 </span>
+      <div class="post-category">
+          <a href="/categories/%E5%90%8E%E5%8F%B0%E6%8A%80%E6%9C%AF/"> 后台技术 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      命令：man (manual) 功能：获得帮助信息 权限：所有用户 语法：man [命令或配置文件] 例子：man ls 查看 ls 命令的帮助信息 man services 查看配置文件 services 的帮助信息 命
+    </div>
+    <div class="read-more">
+      <a href="/2012/05/22/commonly-used-linux-commands-help-command/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2012/05/22/commonly-used-linux-commands-file-search-command/">linux常用命令——文件搜索命令</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2012-05-22 </span>
+      <div class="post-category">
+          <a href="/categories/%E5%90%8E%E5%8F%B0%E6%8A%80%E6%9C%AF/"> 后台技术 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      命令：which / whereis 功能：显示系统命令所在目录 权限：所有用户 语法：which / whereis [命令名称] 命令：find 功能：查找文件或目录 权限：所有用户
+    </div>
+    <div class="read-more">
+      <a href="/2012/05/22/commonly-used-linux-commands-file-search-command/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2012/05/20/html5-canvas-drawing-examples-rotate/">html5 canvas 画图实例——rotate</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2012-05-20 </span>
       <div class="post-category">
           <a href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/"> 前端技术 </a>
           </div>
@@ -136,19 +199,82 @@
   
   <div class="post-content">
     <div class="post-summary">
-      1、日志功能 1) 加入 access.log 1 2 3 4 5 var accessLogfile = fs.createWriteStream(&#39;access.log&#39;, {flags: &#39;a&#39;}); app.configure(function() { app.use(express.logger({stream: accessLogfile})); } 2) 加入 error.log 首先，添加 helpers/error.js 文件： 1 2 3 4 5 6 7 8 9 10 11 12 var fs = require(&#39;fs&#39;); var errorLogfile = fs.createWriteStream(&#39;logs/error.log&#39;, {flags: &#39;a&#39;}); exports.handler = function(err, req, res, status) { console.log(err); var
+      接口：context.rotate(angle) 功能：按给定的弧度旋转,按顺时针旋转。 说明：rotate 方法旋转的中心始终是canvas 的原
     </div>
     <div class="read-more">
-      <a href="/2012/11/09/nodejs_deploy/" class="read-more-link">阅读更多</a>
+      <a href="/2012/05/20/html5-canvas-drawing-examples-rotate/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2012/10/25/nodejs_get_started/">Ubuntu 开发 Nodejs 入门小记</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/2012/05/20/commonly-used-linux-commands-permission-management-command/">linux常用命令——权限管理命令</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2012-10-25 </span>
+      <span class="post-time"> 2012-05-20 </span>
+      <div class="post-category">
+          <a href="/categories/%E5%90%8E%E5%8F%B0%E6%8A%80%E6%9C%AF/"> 后台技术 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      命令：chmod (change the permissions mode of a file) 功能：改变文件或目录权限 权限：所有用户 语法：chmod [{ugo}{+-=}{rwx}][文件或目录] chmod [mo
+    </div>
+    <div class="read-more">
+      <a href="/2012/05/20/commonly-used-linux-commands-permission-management-command/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2012/05/19/commonly-used-linux-commands-file-command/">linux 常用命令——文件处理命令</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2012-05-19 </span>
+      <div class="post-category">
+          <a href="/categories/%E5%90%8E%E5%8F%B0%E6%8A%80%E6%9C%AF/"> 后台技术 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      命令：ls (list) 功能：显示目录文件 权限：所有用户 语法：ls 选项[-ald] [文件或目录] -a 显示所有文件，包括隐藏文件 -l 显示详细信息 -d 查看目录属性
+    </div>
+    <div class="read-more">
+      <a href="/2012/05/19/commonly-used-linux-commands-file-command/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2012/05/15/mysql-open-the-remote-access-ubuntu/">MySQL、Postgres 开启远程访问权限（ubuntu）</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2012-05-15 </span>
+      <div class="post-category">
+          <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"> 数据库 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      MySQL 1、编辑 my.cnf 文件： 1 sudo vi /etc/mysql/my.cnf 2、将绑定地址行注释掉或者修改为指定 IP 1 #bind-address = 127.0.0.1 3、登录 MySQL： 1 mysql -uroot -p123 4、添加 root 用户访问权限 1 2 grant all privileges on *.* to &#39;root&#39;@&#39;%&#39;
+    </div>
+    <div class="read-more">
+      <a href="/2012/05/15/mysql-open-the-remote-access-ubuntu/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2012/05/08/eclipse-install-the-plugin-aptana-svn-git-java-ee-jshint/">Eclipse 安装插件(aptana、svn 、git、Java EE、JSHint)</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2012-05-08 </span>
       <div class="post-category">
           <a href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/"> 前端技术 </a>
           </div>
@@ -157,19 +283,19 @@
   
   <div class="post-content">
     <div class="post-summary">
-      Nodejs 之搭建环境 1) 安装 nodejs、npm 1 2 3 4 sudo apt-get install python-software-properties sudo add-apt-repository ppa:chris-lea/node.js sudo apt-get update sudo apt-get install nodejs npm 2) 安装 express​ - web application framework for node 1 sudo npm install -g express 3) 安装 supervisor - is used to restart
+      1、安装 aptana 插件： * 依次点击：Help -&gt; Install New Software&hellip; -&gt; Add * 输入：http://download.aptana.com/studio3/plugin/
     </div>
     <div class="read-more">
-      <a href="/2012/10/25/nodejs_get_started/" class="read-more-link">阅读更多</a>
+      <a href="/2012/05/08/eclipse-install-the-plugin-aptana-svn-git-java-ee-jshint/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2012/10/25/nodejs_get_started/">Ubuntu 开发 Nodejs 入门小记</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/2012/05/08/word-wrap-and-one-cannot-display-the-problems-in-div/">div 中无法自动换行、以及单行显示的问题</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2012-10-25 </span>
+      <span class="post-time"> 2012-05-08 </span>
       <div class="post-category">
           <a href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/"> 前端技术 </a>
           </div>
@@ -178,61 +304,19 @@
   
   <div class="post-content">
     <div class="post-summary">
-      Nodejs 之搭建环境 1) 安装 nodejs、npm 1 2 3 4 sudo apt-get install python-software-properties sudo add-apt-repository ppa:chris-lea/node.js sudo apt-get update sudo apt-get install nodejs npm 2) 安装 express​ - web application framework for node 1 sudo npm install -g express 3) 安装 supervisor - is used to restart
+      1、无法自动换行 * 问题：如果 div 输入的是英文字母且没有空格，会导致英文字母不换行直接在同一行输出，导致 div 的宽度远远超出设定的大小。 * 原因：因为
     </div>
     <div class="read-more">
-      <a href="/2012/10/25/nodejs_get_started/" class="read-more-link">阅读更多</a>
+      <a href="/2012/05/08/word-wrap-and-one-cannot-display-the-problems-in-div/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2012/10/24/ubuntu_sshproxy/">Ubuntu 设置 sshproxy 代理</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/2012/05/06/the-vertical-alignment-of-css-complete-paragraph/">彻底研究 CSS ——段落的垂直对齐</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2012-10-24 </span>
-      <div class="post-category">
-          <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"> 操作系统 </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      服务器端 1. 添加用户，并切换到该用户： 1 2 adduser sshproxy su - sshproxy 2. 生成 key： 1 2 3 ssh-keygen cd .ssh mv id_rsa.pub authorized_keys 3. 禁止 sshproxy 用户登录： 1 chsh -s /bin/false sshproxy 客户端： 1. 拷贝密钥 id_rsa 到客户端，
-    </div>
-    <div class="read-more">
-      <a href="/2012/10/24/ubuntu_sshproxy/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2012/10/24/ubuntu_sshproxy/">Ubuntu 设置 sshproxy 代理</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2012-10-24 </span>
-      <div class="post-category">
-          <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"> 操作系统 </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      服务器端 1. 添加用户，并切换到该用户： 1 2 adduser sshproxy su - sshproxy 2. 生成 key： 1 2 3 ssh-keygen cd .ssh mv id_rsa.pub authorized_keys 3. 禁止 sshproxy 用户登录： 1 chsh -s /bin/false sshproxy 客户端： 1. 拷贝密钥 id_rsa 到客户端，
-    </div>
-    <div class="read-more">
-      <a href="/2012/10/24/ubuntu_sshproxy/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2012/10/22/ubuntu_ruby_on_rails_development_environment_set_up/">Ubuntu 搭建 Ruby on Rails 开发环境</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2012-10-22 </span>
+      <span class="post-time"> 2012-05-06 </span>
       <div class="post-category">
           <a href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/"> 前端技术 </a>
           </div>
@@ -241,94 +325,10 @@
   
   <div class="post-content">
     <div class="post-summary">
-      安装 ruby： 1 sudo apt-get install ruby1.9.1 ruby1.9.1-dev 安装 rubygems： 1 sudo apt-get install rubygems 安装 mysql 1 sudo apt-get install mysql 安装 ruby-mysql 1）下载：http://www.tmtm.org/en/ru
+      如果文字内容只有一行，可以设置 line-height 与height 相同来使文字垂直居中。 * css 代码： 1 2 3 4 5 6 7 8 .one_line { width: 500px; height: 100px; line-height: 100px; background-color: #9bd; margin: 20px; padding: 20px; } * html 代码： 1 2 3
     </div>
     <div class="read-more">
-      <a href="/2012/10/22/ubuntu_ruby_on_rails_development_environment_set_up/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2012/10/22/ubuntu_ruby_on_rails_development_environment_set_up/">Ubuntu 搭建 Ruby on Rails 开发环境</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2012-10-22 </span>
-      <div class="post-category">
-          <a href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/"> 前端技术 </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      安装 ruby： 1 sudo apt-get install ruby1.9.1 ruby1.9.1-dev 安装 rubygems： 1 sudo apt-get install rubygems 安装 mysql 1 sudo apt-get install mysql 安装 ruby-mysql 1）下载：http://www.tmtm.org/en/ru
-    </div>
-    <div class="read-more">
-      <a href="/2012/10/22/ubuntu_ruby_on_rails_development_environment_set_up/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2012/09/24/ubuntu_vim_gedit_garbled_solution/">ubuntu vim gedit 乱码解决</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2012-09-24 </span>
-      <div class="post-category">
-          <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"> 操作系统 </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      添加中文字符编码： 1 sudo vi /var/lib/locales/supported.d/local 添加下面的中文字符集： 1 2 3 zh_CN.GBK GBK zh_CN.GB2312 GB2312 zh_CN.GB18030 GB18030 使其生效： 1 sudo dpkg-reconfigure locales vim： 1 sudo vi /etc/vim/vimrc 打开vim的配置文件，在其中加入： 1 2 3
-    </div>
-    <div class="read-more">
-      <a href="/2012/09/24/ubuntu_vim_gedit_garbled_solution/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2012/09/24/ubuntu_vim_gedit_garbled_solution/">ubuntu vim gedit 乱码解决</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2012-09-24 </span>
-      <div class="post-category">
-          <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"> 操作系统 </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      添加中文字符编码： 1 sudo vi /var/lib/locales/supported.d/local 添加下面的中文字符集： 1 2 3 zh_CN.GBK GBK zh_CN.GB2312 GB2312 zh_CN.GB18030 GB18030 使其生效： 1 sudo dpkg-reconfigure locales vim： 1 sudo vi /etc/vim/vimrc 打开vim的配置文件，在其中加入： 1 2 3
-    </div>
-    <div class="read-more">
-      <a href="/2012/09/24/ubuntu_vim_gedit_garbled_solution/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2012/09/18/twitter_bootstrap_resources_aggregation/">Twitter Bootstrap 资源汇总</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2012-09-18 </span>
-      <div class="post-category">
-          <a href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/"> 前端技术 </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      1、Twitter Bootstrap 2、Bootstrap 插件 日期选择器：Datepicker for Bootstrap​ 颜色选择器：Colorpicker for Bo
-    </div>
-    <div class="read-more">
-      <a href="/2012/09/18/twitter_bootstrap_resources_aggregation/" class="read-more-link">阅读更多</a>
+      <a href="/2012/05/06/the-vertical-alignment-of-css-complete-paragraph/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>

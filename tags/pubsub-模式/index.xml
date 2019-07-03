@@ -14,10 +14,10 @@
     
     <item>
       <title>理解并实现 PubSub 模式</title>
-      <link>http://blog.wenzhixin.net.cn/2013/11/06/understand_pubsub/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/11/06/understand-pubsub/</link>
       <pubDate>Wed, 06 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/11/06/understand_pubsub/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/06/understand-pubsub/</guid>
       <description>假如我们正在构建一个类似于 Google Docs 的应用程序，当用户按下一个按键时，需要做的事情有很多： 新字符显示到屏幕上；插入点向后移动；将本次动作加入到撤销</description>
     </item>
     

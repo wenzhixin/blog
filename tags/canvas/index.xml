@@ -14,46 +14,37 @@
     
     <item>
       <title>canvas 如何在保留 background 的情况下重置画布</title>
-      <link>http://blog.wenzhixin.net.cn/2014/02/16/canvas_background/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/02/16/canvas-background/</link>
       <pubDate>Sun, 16 Feb 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/02/16/canvas_background/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/02/16/canvas-background/</guid>
       <description>前几天在用 canvas 实现动画的时候，因为是需要设置画图的背景， 所以一开始想到的就是使用 canvas 的 drawImage() 方法： 1 context.drawImage(img, x, y, width, height); 但是后面发现了在此基础上画动画的话，假</description>
     </item>
     
     <item>
       <title>使用 canvas 绘制时钟</title>
-      <link>http://blog.wenzhixin.net.cn/2013/11/20/canvas_draw_clock/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/11/20/canvas-draw-clock/</link>
       <pubDate>Wed, 20 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/11/20/canvas_draw_clock/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/20/canvas-draw-clock/</guid>
       <description>今天我们利用 canvas 来画一个基本的时钟程序。通过一边实践一边学习新的知识。 准备工作，我们先定义需要用到的变量： 1 2 &amp;lt;canvas id=&amp;#34;canvas&amp;#34; width=&amp;#34;300&amp;#34; height=&amp;#34;300&amp;#34;&amp;gt;&amp;lt;/canvas&amp;gt; &amp;lt;script src=&amp;#34;clock.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; 1 2 3 4 5 6 7 8 9 10</description>
     </item>
     
     <item>
       <title>html5 canvas 画布入门</title>
-      <link>http://blog.wenzhixin.net.cn/2013/11/12/hello_canvas/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/11/12/hello-canvas/</link>
       <pubDate>Tue, 12 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/11/12/hello_canvas/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/12/hello-canvas/</guid>
       <description>今天开始学点新东西，canvas 画布，它是一个 HTML5 的一个新元素， 它没有自己的行为，但是定义了一个 API 支持脚本化客户端绘图操作。 既然是入门，也来个</description>
     </item>
     
     <item>
       <title>html5 canvas 画图实例——rotate</title>
-      <link>http://blog.wenzhixin.net.cn/2012/05/20/html5_canvas_drawing_examples_rotate/</link>
+      <link>http://blog.wenzhixin.net.cn/2012/05/20/html5-canvas-drawing-examples-rotate/</link>
       <pubDate>Sun, 20 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2012/05/20/html5_canvas_drawing_examples_rotate/</guid>
-      <description>接口：context.rotate(angle) 功能：按给定的弧度旋转,按顺时针旋转。 说明：rotate 方法旋转的中心始终是canvas 的原</description>
-    </item>
-    
-    <item>
-      <title>html5 canvas 画图实例——rotate</title>
-      <link>http://blog.wenzhixin.net.cn/2012/05/20/html5_canvas_drawing_examples_rotate/</link>
-      <pubDate>Sun, 20 May 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/05/20/html5_canvas_drawing_examples_rotate/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2012/05/20/html5-canvas-drawing-examples-rotate/</guid>
       <description>接口：context.rotate(angle) 功能：按给定的弧度旋转,按顺时针旋转。 说明：rotate 方法旋转的中心始终是canvas 的原</description>
     </item>
     

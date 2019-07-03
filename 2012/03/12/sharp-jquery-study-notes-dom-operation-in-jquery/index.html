@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>《锋利的jQuery》学习笔记——jQuery中的DOM操作 - 文翼的博客</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="wenzhixin" /><meta name="description" content="​1. 什么是DOM？ • DOM 是 Document Object Model 的缩写，是指文档对象模型 ​2. DOM操作的分类 (1)DOM Core-可用来处理任何一种使用标记语言的文档 • getElementById() • getElementByTagName() • getAttribute() •" /><meta name="keywords" content="文翼的博客, web前端博客" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.55.6 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://blog.wenzhixin.net.cn/2012/03/12/sharp-jquery-study-notes-dom-operation-in-jquery/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.93844dae.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="《锋利的jQuery》学习笔记——jQuery中的DOM操作" />
+<meta property="og:description" content="​1. 什么是DOM？ • DOM 是 Document Object Model 的缩写，是指文档对象模型 ​2. DOM操作的分类 (1)DOM Core-可用来处理任何一种使用标记语言的文档 • getElementById() • getElementByTagName() • getAttribute() •" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.wenzhixin.net.cn/2012/03/12/sharp-jquery-study-notes-dom-operation-in-jquery/" />
+<meta property="article:published_time" content="2012-03-12T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2012-03-12T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="《锋利的jQuery》学习笔记——jQuery中的DOM操作">
+<meta itemprop="description" content="​1. 什么是DOM？ • DOM 是 Document Object Model 的缩写，是指文档对象模型 ​2. DOM操作的分类 (1)DOM Core-可用来处理任何一种使用标记语言的文档 • getElementById() • getElementByTagName() • getAttribute() •">
+
+
+<meta itemprop="datePublished" content="2012-03-12T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2012-03-12T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1503">
+
+
+
+<meta itemprop="keywords" content="jQuery,DOM," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="《锋利的jQuery》学习笔记——jQuery中的DOM操作"/>
+<meta name="twitter:description" content="​1. 什么是DOM？ • DOM 是 Document Object Model 的缩写，是指文档对象模型 ​2. DOM操作的分类 (1)DOM Core-可用来处理任何一种使用标记语言的文档 • getElementById() • getElementByTagName() • getAttribute() •"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+<link rel="stylesheet" href="/css/custom.css">
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">文翼的博客</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">文翼的博客</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+
+<div id="codefund"></div>
+<script src="https://codefund.io/properties/292/funder.js" async="async"></script>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">《锋利的jQuery》学习笔记——jQuery中的DOM操作</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2012-03-12 </span>
+        <div class="post-category">
+            <a href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/"> 前端技术 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    
+  </div>
+</div>
+    <div class="post-content">
+      <p>​<strong>1. 什么是DOM？</strong></p>
+
+<p> • DOM 是 Document Object Model 的缩写，是指文档对象模型</p>
+
+<p><strong>​2. DOM操作的分类</strong></p>
+
+<p>(1)DOM Core-可用来处理任何一种使用标记语言的文档</p>
+
+<p> • getElementById()</p>
+
+<p> • getElementByTagName()</p>
+
+<p> • getAttribute()</p>
+
+<p> • setAttribute()</p>
+
+<p>(2)HTML_DOM-提供一些简明的记号来描述各种 HTML 元素的属性</p>
+
+<p>(3)CSS_DOM-针对 CSS 的操作，主要是获取和设置 style 对象的各种属性</p>
+
+<p><strong>​3. jQuery中的DOM操作</strong></p>
+
+<p>(1)查找节点-通过 jQuery 选择器来进行查找</p>
+
+<p>(2)创建节点-使用 jQuery 的工厂函数$()来创建</p>
+
+<p> • $(html)</p>
+
+<p>(3)插入节点-不仅能创建新的 DOM 元素，也能对原有的 DOM 元素进行移动</p>
+
+<p> • append()-向每个匹配的元素内部追加内容</p>
+
+<p> • appendTo()-将所有匹配的元素追加到指定的元素中，与 append 函数相反</p>
+
+<p> • prepend()-向每个匹配的元素内部前置内容</p>
+
+<p> • prependTo()-将所有匹配的元素前置到指定的元素中，与 prepend 函数相反</p>
+
+<p> • after()-在每个匹配的元素之后插入内容</p>
+
+<p> • insertAfter()-将所有匹配的元素插入到指定元素的后面，与 after 函数相反</p>
+
+<p> • before()-在每个匹配的元素之前插入内容</p>
+
+<p> • insertBefore()-将所有匹配的元素插入到指定的元素的前面，与 before
+函数相反</p>
+
+<p>(4)删除和清空节点</p>
+
+<p> • remove()-删除所匹配的元素</p>
+
+<p> • empty()-清空所匹配元素的所有后代节点</p>
+
+<p>(5)复制节点</p>
+
+<p> • clone(flag)-flag 表示复制元素的同时是否复制元素中所绑定的事件</p>
+
+<p>(6)替换节点</p>
+
+<p> • replaceWith()-将所有匹配的元素都替换成指定的 HTML 或者 DOM 元素</p>
+
+<p> • replaceAll()-与 replaceWith 函数相反</p>
+
+<p>(7)包裹节点</p>
+
+<p> • wrapAll()-将所有匹配的元素用一个元素包裹起来</p>
+
+<p> • wrap()-将所有的匹配的元素进行单独的包裹</p>
+
+<p> • wrapInner()-将每一个匹配的元素的子内容用其他结构化的标记包裹起来</p>
+
+<p>​<strong>4. 属性操作</strong></p>
+
+<p>(1)获取和设置属性</p>
+
+<p> • attr(name)-获取属性 name 的值</p>
+
+<p> • attr(name, value)-设置属性 name 的值为 value</p>
+
+<p>(2)删除属性</p>
+
+<p> • removeAttr(name)-删除属性 name</p>
+
+<p>​<strong>5. 样式操作</strong></p>
+
+<p>(1)获取和设置样式</p>
+
+<p> • css(name)-获取 css 属性 name 的值</p>
+
+<p> • css(name, value)-设置 css 属性 name 的值为 value</p>
+
+<p>(2)追加和移除样式</p>
+
+<p> • addClass(className)-追加 className 样式到指定元素</p>
+
+<p> • removeClass(className)-从指定的元素中移除 className 样式</p>
+
+<p>(3)切换样式</p>
+
+<p> • toggle(className)-交互切换 clssName 样式</p>
+
+<p>(4)判断样式</p>
+
+<p> • hasClass(className)-判断是否含有 className 样式</p>
+
+<p>​<strong>6. 设置和获取 HTML、文本和表单的值</strong></p>
+
+<p>(1)HTML</p>
+
+<p> • html()-获取指定元素的 html</p>
+
+<p> • html(html)-设置指定元素的 html</p>
+
+<p>(2)文本</p>
+
+<p> • text()-获取指定元素的文本内容</p>
+
+<p> • text(text)-设置指定元素的文本内容</p>
+
+<p>(3)表单</p>
+
+<p> • val()-获取表单的值</p>
+
+<p> • val(value)-设置表单的值为 value</p>
+
+<p><strong>7.遍历节点</strong></p>
+
+<p> • children()-用于取得匹配元素的子元素集合</p>
+
+<p> • next()-用于取得匹配元素后面紧邻的同辈元素</p>
+
+<p> • prev()-用于取得匹配元素前面紧邻的同辈元素</p>
+
+<p> • siblings()-用于取得匹配元素前后所有的同辈元素</p>
+
+<p> • closest()-取得最近的匹配元素</p>
+
+<p> • find()、filter()、nextAll()、prevAll()、parent()、parents()</p>
+
+<p><strong>8.CSS_DOM 中经常使用的方法</strong></p>
+
+<p> • width()-获取元素的宽度</p>
+
+<p> • height()-获取元素的高度</p>
+
+<p> • offset()-获取元素在当前视窗的相对偏移</p>
+
+<p> • position()-获取元素相对于最近的一个 position 样式属性设置的 relative
+或者 absolute 的祖父节点的相对偏移</p>
+
+<p> • scrollTop()-获取元素的滚动条距离顶端的距离</p>
+
+<p> • scrollLeft-获取元素的滚动条距离左侧的距离</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">wenzhixin</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2012-03-12</span>
+  </p>
+  
+  
+</div><div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/weixin.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/alipay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/jquery/">jQuery</a>
+          <a href="/tags/dom/">DOM</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/2012/03/13/sharp-jquery-study-notes-jquery-in-animation/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">《锋利的jQuery》学习笔记——jQuery中的动画</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/2012/03/12/sharp-jquery-study-notes-events-in-jquery/">
+            <span class="next-text nav-default">《锋利的jQuery》学习笔记——jQuery中的事件</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'wenzhixin';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:wenzhixin2010@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/1531096/wenyi" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/wenzhixin2010" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.facebook.com/wenzhixin2010" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://github.com/wenzhixin" class="iconfont icon-github" title="github"></a>
+      <a href="https://weibo.com/2292826740" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://www.zhihu.com/people/zhixin-wen" class="iconfont icon-zhihu" title="zhihu"></a>
+  <a href="http://blog.wenzhixin.net.cn/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2012 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">wenzhixin.net.cn 粤ICP备15117953号</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.ece58db6.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-36708951-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

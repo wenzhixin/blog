@@ -14,10 +14,10 @@
     
     <item>
       <title>html 标签 title 换行方法</title>
-      <link>http://blog.wenzhixin.net.cn/2013/10/31/html_title_wrap/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/10/31/html-title-wrap/</link>
       <pubDate>Thu, 31 Oct 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/10/31/html_title_wrap/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/10/31/html-title-wrap/</guid>
       <description>1. 使用换行符换行 换行符分别为：&amp;amp;#10; 或 &amp;amp;#13; 例如： 1 &amp;lt;a href=&amp;#34;http://wenzhixin.net.cn&amp;#34; title=&amp;#34;前端技术&amp;amp;#10;交互设计&amp;amp;#13;移</description>
     </item>
     

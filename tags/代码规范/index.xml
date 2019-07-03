@@ -14,10 +14,10 @@
     
     <item>
       <title>PHP 代码规范</title>
-      <link>http://blog.wenzhixin.net.cn/2014/01/20/php_code_standard/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/01/20/php-code-standard/</link>
       <pubDate>Mon, 20 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/01/20/php_code_standard/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/01/20/php-code-standard/</guid>
       <description>通用规范 代码缩进全部用 tab / 四个空格 SVN / Git 中新建文件编码类型统一用 utf-8 编码 行宽：80 字符 PHP 代码划分 PHP 代码总是用完整的标准的 PHP 标签定界： 1 2 3 4 5</description>
     </item>
     

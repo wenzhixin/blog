@@ -14,10 +14,10 @@
     
     <item>
       <title>Ubuntu 无法找到更新源的问题</title>
-      <link>http://blog.wenzhixin.net.cn/2014/07/21/ubuntu_source_list_not_found/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/07/21/ubuntu-source-list-not-found/</link>
       <pubDate>Mon, 21 Jul 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/07/21/ubuntu_source_list_not_found/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/07/21/ubuntu-source-list-not-found/</guid>
       <description>问题： 前段时间，Ubuntu 官方源已经停止了对非长期维护版（如 11.10，12.04，12.10 和 13.04）的支持，并且从归档服务器上移除</description>
     </item>
     

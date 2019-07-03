@@ -14,19 +14,19 @@
     
     <item>
       <title>RSS、Atom、Feed 介绍与简单实现</title>
-      <link>http://blog.wenzhixin.net.cn/2013/11/08/rss_atom_feed_php/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/11/08/rss-atom-feed-php/</link>
       <pubDate>Fri, 08 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/11/08/rss_atom_feed_php/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/08/rss-atom-feed-php/</guid>
       <description>最近接触了 RSS 订阅相关的，做了一些了解与开发，记录下。 RSS是什么 RSS（全称RDF Site Summary，网景的最初定义），RSS也是一种“类网页</description>
     </item>
     
     <item>
       <title>简单的博客 RSS 聚合</title>
-      <link>http://blog.wenzhixin.net.cn/2013/11/04/simple_rss_together/</link>
+      <link>http://blog.wenzhixin.net.cn/2013/11/04/simple-rss-together/</link>
       <pubDate>Mon, 04 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2013/11/04/simple_rss_together/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2013/11/04/simple-rss-together/</guid>
       <description>1. 前言 将博客的 RSS 内容聚合起来，这样方便查看，今天就来研究如何简单的将 RSS 的内容存到数据库（MySQL）中。 2. 创建数据库表 1 2 3 4 5 6 7 8 CREATE TABLE links</description>
     </item>
     

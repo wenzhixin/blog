@@ -14,10 +14,10 @@
     
     <item>
       <title>如何批量读取 word 的内容和图片</title>
-      <link>http://blog.wenzhixin.net.cn/2014/09/21/node_docx/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/09/21/node-docx/</link>
       <pubDate>Sun, 21 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/09/21/node_docx/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/09/21/node-docx/</guid>
       <description>今天朋友说需要对100份 word 文件的内容进行录入工作，问我是否有什么方便的方法。假如最少1份按2分钟的速度算，也需要200分钟才可以录入完成。我</description>
     </item>
     

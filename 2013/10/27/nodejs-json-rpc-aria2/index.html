@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>nodejs 通过 JSON-RPC 调用 aria2 接口 - 文翼的博客</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="wenzhixin" /><meta name="description" content="今天继续之前的下载服务器的开发，第一步是调用文件的 API，第二步是列出应用目录下的所有文件，今天的目标是调用后台接口进行下载。 1. aria2 配置 这里，" /><meta name="keywords" content="文翼的博客, web前端博客" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.55.6 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://blog.wenzhixin.net.cn/2013/10/27/nodejs-json-rpc-aria2/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.93844dae.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="nodejs 通过 JSON-RPC 调用 aria2 接口" />
+<meta property="og:description" content="今天继续之前的下载服务器的开发，第一步是调用文件的 API，第二步是列出应用目录下的所有文件，今天的目标是调用后台接口进行下载。 1. aria2 配置 这里，" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.wenzhixin.net.cn/2013/10/27/nodejs-json-rpc-aria2/" />
+<meta property="article:published_time" content="2013-10-27T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2013-10-27T00:00:00&#43;00:00"/>
+
+<meta itemprop="name" content="nodejs 通过 JSON-RPC 调用 aria2 接口">
+<meta itemprop="description" content="今天继续之前的下载服务器的开发，第一步是调用文件的 API，第二步是列出应用目录下的所有文件，今天的目标是调用后台接口进行下载。 1. aria2 配置 这里，">
+
+
+<meta itemprop="datePublished" content="2013-10-27T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2013-10-27T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="848">
+
+
+
+<meta itemprop="keywords" content="aria2,websocket,jsonrpc," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="nodejs 通过 JSON-RPC 调用 aria2 接口"/>
+<meta name="twitter:description" content="今天继续之前的下载服务器的开发，第一步是调用文件的 API，第二步是列出应用目录下的所有文件，今天的目标是调用后台接口进行下载。 1. aria2 配置 这里，"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+<link rel="stylesheet" href="/css/custom.css">
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">文翼的博客</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">文翼的博客</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+
+<div id="codefund"></div>
+<script src="https://codefund.io/properties/292/funder.js" async="async"></script>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">nodejs 通过 JSON-RPC 调用 aria2 接口</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2013-10-27 </span>
+        <div class="post-category">
+            <a href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/"> 前端技术 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#1-aria2-配置">1. aria2 配置</a></li>
+<li><a href="#2-编写-nodejs-代码">2. 编写 nodejs 代码</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<p>今天继续之前的下载服务器的开发，第一步是调用文件的 API，第二步是列出应用目录下的所有文件，今天的目标是调用后台接口进行下载。</p>
+
+<h4 id="1-aria2-配置">1. aria2 配置</h4>
+
+<p>这里，我们用到的是 aria2，aria2 是一个命令行下运行、多协议、多来源下载工具。
+它除了可以像 wget 一样直接下载文件外，最主要的功能是可以启用后台服务，启动后等着从 rpc 接口添加任务。</p>
+
+<p>在<a href="/2013/07/01/raspberry-server">搭建小型下载服务器</a>一文中，提到启动的方式为：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">aria2c --enable-rpc --rpc-listen-all &amp;</pre></td></tr></table>
+</div>
+</div>
+<p>用命令方式导致配置不方便修改保存，推荐启动方式是使用配置文件 $HOME/.aria2/aria2.conf 来进行启动。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">aria2c --conf-path=/home/pi/.aria2/aria2.conf &amp;</pre></td></tr></table>
+</div>
+</div>
+<p>1) 首先，创建 aria2.conf 文件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">vi ~/.aria2/aria2.conf</pre></td></tr></table>
+</div>
+</div>
+<p>2) 输入内容：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">#允许rpc
+enable-rpc=true
+#允许非外部访问
+rpc-listen-all=true
+#RPC端口, 仅当默认端口被占用时修改
+rpc-listen-port=6800
+
+#最大同时下载数(任务数), 路由建议值: 3
+max-concurrent-downloads=10
+#断点续传
+continue=true
+#同服务器连接数
+max-connection-per-server=10
+#最小文件分片大小, 下载线程数上限取决于能分出多少片, 对于小文件重要
+min-split-size=10M
+#单文件最大线程数, 路由建议值: 5
+split=10
+#下载速度限制
+max-overall-download-limit=0
+#单文件速度限制
+max-download-limit=0
+#上传速度限制
+max-overall-upload-limit=0
+#单文件速度限制
+max-upload-limit=0
+
+#文件保存路径, 默认为当前启动位置
+dir=/home/pi/Downloads</pre></td></tr></table>
+</div>
+</div>
+<p>3) 增加系统启动脚本（raspberrypi 系统还有待研究）</p>
+
+<h4 id="2-编写-nodejs-代码">2. 编写 nodejs 代码</h4>
+
+<p>1) aria2 JSON-RPC 接口以及 nodejs 模块</p>
+
+<ul>
+<li><a href="http://manpages.ubuntu.com/manpages/oneiric/ru/man1/aria2c.1.html">JSON-RPC 接口</a></li>
+<li><a href="https://github.com/Worlize/WebSocket-Node">websocket</a></li>
+</ul>
+
+<p>2) 封装 websocket client</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">var WebSocketClient = require(&#39;websocket&#39;).client,
+
+    client = new WebSocketClient(),
+    conn,
+    cb,
+    cbmap = {};
+
+client.on(&#39;connect&#39;, function(connection) {
+    console.log(&#39;INFO: WebSocket client connected to Aria2.&#39;);
+    connection.on(&#39;error&#39;, function(error) {
+        console.error(&#34;ERROR: Connection Error: &#34; + error.toString());
+    });
+    connection.on(&#39;close&#39;, function() {
+        console.log(&#39;INFO: Connection Closed&#39;);
+    });
+    connection.on(&#39;message&#39;, function(message) {
+        if (message.type === &#39;utf8&#39;) {
+            var data = JSON.parse(message.utf8Data);
+            if (typeof cbmap[data.id] === &#39;function&#39;) {
+                var result = {
+                    obj: data,
+                    err: data.error ? new Error(data.error.message) : false
+                };
+                cbmap[data.id](result);
+            }
+            delete cbmap[data.id];
+        }
+    });
+
+    conn = connection;
+    if (typeof cb === &#39;function&#39;) {
+        cb();
+    }
+});
+
+client.on(&#39;connectFailed&#39;, function(error) {
+    console.error(&#39;ERROR: Client Error: &#39; + error.toString());
+});
+
+function connect(callback) {
+    cb = callback;
+    client.connect(&#39;ws://localhost:6800/jsonrpc&#39;);
+}
+
+function uuid() {
+    return &#39;xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx&#39;.replace(/[xy]/g, function(c) {
+        var r = Math.random() * 16 | 0, v = (c === &#39;x&#39;) ? r : (r &amp; 0x3 | 0x8);
+        return v.toString(16);
+    });
+}
+
+function send(command, callback) {
+    var id = uuid();
+    if (typeof callback === &#39;function&#39;) {
+        cbmap[id] = callback;
+    }
+
+    command.jsonrpc = &#39;2.0&#39;;
+    command.id = id;
+    conn.sendUTF(JSON.stringify(command));
+}
+
+exports.connect = connect;
+exports.send = send;</pre></td></tr></table>
+</div>
+</div>
+<p>3) 调用 websocket 开始下载：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">var websocket = require(&#39;./websocket&#39;);
+
+websocket.connect(function() {
+    websocket.send({
+        method : &#39;aria2.addUri&#39;,
+        params : [[&#39;http://wenzhixin.net.cn/images/header_bg.jpg&#39;]]
+    }, function(result) {
+        console.log(result);
+    });
+});</pre></td></tr></table>
+</div>
+</div>
+<p>到这里，查看 /home/pi/Downloads，可以看到已经成功下载了 header_bg.jpg 文件，
+已经可以调用后台的 aria2 接口进行添加下载地址并下载我们想要的东西了。</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">wenzhixin</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2013-10-27</span>
+  </p>
+  
+  
+</div><div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/weixin.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/alipay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/aria2/">aria2</a>
+          <a href="/tags/websocket/">websocket</a>
+          <a href="/tags/jsonrpc/">jsonrpc</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/2013/10/28/node-agents/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">nodejs 获取路由的主机列表</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/2013/10/26/nodejs-async/">
+            <span class="next-text nav-default">nodejs 异步递归</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'wenzhixin';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:wenzhixin2010@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/1531096/wenyi" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/wenzhixin2010" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.facebook.com/wenzhixin2010" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://github.com/wenzhixin" class="iconfont icon-github" title="github"></a>
+      <a href="https://weibo.com/2292826740" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://www.zhihu.com/people/zhixin-wen" class="iconfont icon-zhihu" title="zhihu"></a>
+  <a href="http://blog.wenzhixin.net.cn/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2012 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">wenzhixin.net.cn 粤ICP备15117953号</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.ece58db6.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-36708951-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

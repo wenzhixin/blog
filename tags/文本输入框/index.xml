@@ -14,10 +14,10 @@
     
     <item>
       <title>通过 vim 编辑网页文本输入框</title>
-      <link>http://blog.wenzhixin.net.cn/2014/08/30/edit_text_gvim/</link>
+      <link>http://blog.wenzhixin.net.cn/2014/08/30/edit-text-gvim/</link>
       <pubDate>Sat, 30 Aug 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.wenzhixin.net.cn/2014/08/30/edit_text_gvim/</guid>
+      <guid>http://blog.wenzhixin.net.cn/2014/08/30/edit-text-gvim/</guid>
       <description>对于文本编辑和编写代码，我们常常会用到 vim，使用 vim 的好处在这里就不多说了。那么能不能在浏览器中的文本输入框中也使用 vim 来编辑呢，编辑完之后再</description>
     </item>
     

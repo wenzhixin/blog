@@ -45,7 +45,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://blog.wenzhixin.net.cn/" />
 
-<meta property="og:updated_time" content="2016-01-11T00:00:00&#43;00:00"/>
+<meta property="og:updated_time" content="2019-01-05T00:00:00&#43;00:00"/>
 
 <meta itemprop="name" content="文翼的博客">
 <meta itemprop="description" content="简介：坚持看书，每天进步一点点。 要常常提醒自己：无情的岁月，还有不够努力的自己！">
@@ -63,7 +63,7 @@
   <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
 <![endif]-->
 
-<link rel="stylesheet" href="/custom.css">
+<link rel="stylesheet" href="/css/custom.css">
 
 </head>
 <body>
@@ -125,9 +125,9 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2012/12/02/jquery_imagebox/">图片查看弹出框 (jQuery 插件)</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/2012/09/18/twitter-bootstrap-resources-aggregation/">Twitter Bootstrap 资源汇总</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2012-12-02 </span>
+      <span class="post-time"> 2012-09-18 </span>
       <div class="post-category">
           <a href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/"> 前端技术 </a>
           </div>
@@ -136,19 +136,19 @@
   
   <div class="post-content">
     <div class="post-summary">
-      参数 linkTitle: 点击图片提示信息，默认为 &lsquo;点击查看原图&rsquo; direction: 箭头显示方向，水平方向 (horizontal) 和垂直方向 (vertical)，默认为 &lsquo;horizontal&rsquo; 如何
+      1、Twitter Bootstrap 2、Bootstrap 插件 日期选择器：Datepicker for Bootstrap​ 颜色选择器：Colorpicker for Bo
     </div>
     <div class="read-more">
-      <a href="/2012/12/02/jquery_imagebox/" class="read-more-link">阅读更多</a>
+      <a href="/2012/09/18/twitter-bootstrap-resources-aggregation/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2012/12/02/jquery_imagebox/">图片查看弹出框 (jQuery 插件)</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/2012/09/16/using-jquery-plugin/">jQuery 插件使用小记（使用、问题、解决）</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2012-12-02 </span>
+      <span class="post-time"> 2012-09-16 </span>
       <div class="post-category">
           <a href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/"> 前端技术 </a>
           </div>
@@ -157,19 +157,61 @@
   
   <div class="post-content">
     <div class="post-summary">
-      参数 linkTitle: 点击图片提示信息，默认为 &lsquo;点击查看原图&rsquo; direction: 箭头显示方向，水平方向 (horizontal) 和垂直方向 (vertical)，默认为 &lsquo;horizontal&rsquo; 如何
+      1、bootstrap.js (v2.1.0) 问题： bootstrap dropdown 菜单使用 on 或者 live 无效 解决： 注释 .on(&lsquo;click.dropdown touchstart.dropdown.data-api&rsquo;, &lsquo;.dropdown&rsquo;, function (e) { e.stopPropagation() }) (第 720 行) 2、&hellip;
     </div>
     <div class="read-more">
-      <a href="/2012/12/02/jquery_imagebox/" class="read-more-link">阅读更多</a>
+      <a href="/2012/09/16/using-jquery-plugin/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2012/12/01/javascript_coding_convention/">Javascript 编码约定</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/2012/09/14/solution-wordpress-to-change-the-ip-address-after-not-go-back/">wordpress 修改IP地址后进不去后台的解决方法</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2012-12-01 </span>
+      <span class="post-time"> 2012-09-14 </span>
+      <div class="post-category">
+          <a href="/categories/%E5%90%8E%E5%8F%B0%E6%8A%80%E6%9C%AF/"> 后台技术 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      1、登录数据库 1 mysql -uroot -ppassword wordpress 2、更新 wp_options 表 1 update wp_options set option_value = &#39;http://newip/wordpress&#39; where option_name = &#39;siteurl&#39; or option_name = &#39;home&#39;; 注：使用 shell 脚本 1 vi setwordpress 输入内容： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 #! /bin/bash # set wordpress admin ip param=$#
+    </div>
+    <div class="read-more">
+      <a href="/2012/09/14/solution-wordpress-to-change-the-ip-address-after-not-go-back/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2012/08/01/phonegap-plugin-hello-world/">PhoneGap Plugin 之 Hello World</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2012-08-01 </span>
+      <div class="post-category">
+          <a href="/categories/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/"> 移动开发 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      1、编写Java类并继承Plugin： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 public class MyPlugin extends Plugin { @SuppressWarnings(&#34;deprecation&#34;) @Override public PluginResult execute(String action, JSONArray args, String callbackId) { PluginResult result = new PluginResult(Status.INVALID_ACTION); if (action.equals(&#34;hello&#34;)) { try { Toast.makeText(cordova.getContext(), &#34;Hello World!&#34;, Toast.LENGTH_SHORT).show();
+    </div>
+    <div class="read-more">
+      <a href="/2012/08/01/phonegap-plugin-hello-world/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2012/08/01/the-use-of-nginx-as-a-proxy-server-easily-solve-the-cross-domain-ajax-problem/">使用 nginx 作为代理服务器轻松解决 Ajax 跨域问题</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2012-08-01 </span>
       <div class="post-category">
           <a href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/"> 前端技术 </a>
           </div>
@@ -178,157 +220,115 @@
   
   <div class="post-content">
     <div class="post-summary">
-      1、使用 strict 模式 在一个作用域(包括函数作用域、全局作用域)中，可以使用 1 &#34;use strict&#34;; 来开启 strict 模式。 2、缩进 用 Tab 键进行代码缩进，以节约代码大小，使用4个
+      1、安装 nginx： 1 sudo apt-get install nginx 2、配置 nginx： 1 sudo vi /etc/nginx/sites-enabled/default 输入内容： 1 2 3 4 5 6 7 8 server { listen 8080; location /api { proxy_pass http://myserver/api; access_log off; } } 3、重启 1 sudo /etc/init.d/nginx restart 4、使用： 1 var
     </div>
     <div class="read-more">
-      <a href="/2012/12/01/javascript_coding_convention/" class="read-more-link">阅读更多</a>
+      <a href="/2012/08/01/the-use-of-nginx-as-a-proxy-server-easily-solve-the-cross-domain-ajax-problem/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2012/12/01/javascript_coding_convention/">Javascript 编码约定</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/2012/06/07/ant-key-elements-and-common-commands/">Ant 关键元素和常用命令</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2012-12-01 </span>
+      <span class="post-time"> 2012-06-07 </span>
       <div class="post-category">
-          <a href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/"> 前端技术 </a>
+          <a href="/categories/%E5%90%8E%E5%8F%B0%E6%8A%80%E6%9C%AF/"> 后台技术 </a>
           </div>
     </div>
   </header>
   
   <div class="post-content">
     <div class="post-summary">
-      1、使用 strict 模式 在一个作用域(包括函数作用域、全局作用域)中，可以使用 1 &#34;use strict&#34;; 来开启 strict 模式。 2、缩进 用 Tab 键进行代码缩进，以节约代码大小，使用4个
+      一、Ant 关键元素 1、project元素 project 元素是 Ant 构件文件的根元素， Ant 构件文件至少应该包含一个 project 元素，否则会发生错误。在每个 project 元素下，可包含
     </div>
     <div class="read-more">
-      <a href="/2012/12/01/javascript_coding_convention/" class="read-more-link">阅读更多</a>
+      <a href="/2012/06/07/ant-key-elements-and-common-commands/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2012/12/01/tianluhu_cycle_trip/">天鹿湖森林公园单车游(失败告终)</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/2012/06/05/the-ubuntu-connection-plate-for-the-development-of-android-problem/">ubuntu 连接平板进行 Android 开发的问题</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2012-12-01 </span>
+      <span class="post-time"> 2012-06-05 </span>
       <div class="post-category">
-          <a href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/"> 生活随笔 </a>
+          <a href="/categories/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/"> 移动开发 </a>
           </div>
     </div>
   </header>
   
   <div class="post-content">
     <div class="post-summary">
-      2点钟从宿舍出发，因为上周的杯具遭遇，这次带了伞，穿上凉鞋，并做好了风雨无阻的心理准备。 还没出发的时候在开玩笑说等会出去就下雨了，果然没多久
+      ubuntu 下连接平板进行 Android 开发，在 eclipse 下会显示乱码(???)并无法使用，解决方法如下： 1、设置平板： 系统设置-应用程序-开发-USB调试，打勾该选项 2
     </div>
     <div class="read-more">
-      <a href="/2012/12/01/tianluhu_cycle_trip/" class="read-more-link">阅读更多</a>
+      <a href="/2012/06/05/the-ubuntu-connection-plate-for-the-development-of-android-problem/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2012/11/30/build_markdown_blog/">快速搭建自己的博客(markdown)</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/2012/06/04/the-ubuntu-connection-c8650-android-development-of-huawei/">ubuntu 连接华为 C8650 进行 Android 开发的问题</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2012-11-30 </span>
+      <span class="post-time"> 2012-06-04 </span>
       <div class="post-category">
-          <a href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/"> 前端技术 </a>
+          <a href="/categories/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/"> 移动开发 </a>
           </div>
     </div>
   </header>
   
   <div class="post-content">
     <div class="post-summary">
-      PS：基于 jQuery、markdown 的 html 博客，无涉及后台，如此简单，你也可以拥有!!! 目录结构 1 2 3 4 5 6 7 8 9 10 ├── js | ├── jquery-1.8.3.min.js | ├
+      ubuntu 下连接华为 C8650 进行 Android 开发，在 eclipse 下会显示乱码(???)并无法使用，解决方法如下： 1、使用电话拨打##2846579## 2、然后选择 projec
     </div>
     <div class="read-more">
-      <a href="/2012/11/30/build_markdown_blog/" class="read-more-link">阅读更多</a>
+      <a href="/2012/06/04/the-ubuntu-connection-c8650-android-development-of-huawei/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2012/11/30/build_markdown_blog/">快速搭建自己的博客(markdown)</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/2012/06/02/install-android-x86-virtual-machine-for-the-development-testing-android-applications/">虚拟机安装 Android_x86 系统，用于开发、测试 Android 程序</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2012-11-30 </span>
+      <span class="post-time"> 2012-06-02 </span>
       <div class="post-category">
-          <a href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/"> 前端技术 </a>
+          <a href="/categories/%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91/"> 移动开发 </a>
           </div>
     </div>
   </header>
   
   <div class="post-content">
     <div class="post-summary">
-      PS：基于 jQuery、markdown 的 html 博客，无涉及后台，如此简单，你也可以拥有!!! 目录结构 1 2 3 4 5 6 7 8 9 10 ├── js | ├── jquery-1.8.3.min.js | ├
+      1、下载镜像： 从 http://www.android-x86.org/download 下载 android_x86 iso 镜像（例如 android-x86-2.3-RC1-eeepc.iso） 2、安装系统： 使用虚拟机 VirtualBox 来安装系统，步骤如
     </div>
     <div class="read-more">
-      <a href="/2012/11/30/build_markdown_blog/" class="read-more-link">阅读更多</a>
+      <a href="/2012/06/02/install-android-x86-virtual-machine-for-the-development-testing-android-applications/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2012/11/16/because_not_easy/">因为“不容易”</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/2012/05/29/linux-shell-programming/">linux shell编程</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2012-11-16 </span>
+      <span class="post-time"> 2012-05-29 </span>
       <div class="post-category">
-          <a href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/"> 生活随笔 </a>
+          <a href="/categories/%E5%90%8E%E5%8F%B0%E6%8A%80%E6%9C%AF/"> 后台技术 </a>
           </div>
     </div>
   </header>
   
   <div class="post-content">
     <div class="post-summary">
-      熬夜写码后， 敲了敲自己坚硬的肩膀， 对着笔记本发呆， 也不知发了多久的呆。 看着屏幕中的自己， 就这么静静的看着， “谢谢你在25年的时间里， 一直支持
+      1、shell结构 * #!指定执行脚本的shell * #注释行 * 命令和控制结构 2、创建shell程序的步骤 * 创建一个包含命令和控制结构的文件 * 修
     </div>
     <div class="read-more">
-      <a href="/2012/11/16/because_not_easy/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2012/11/16/because_not_easy/">因为“不容易”</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2012-11-16 </span>
-      <div class="post-category">
-          <a href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/"> 生活随笔 </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      熬夜写码后， 敲了敲自己坚硬的肩膀， 对着笔记本发呆， 也不知发了多久的呆。 看着屏幕中的自己， 就这么静静的看着， “谢谢你在25年的时间里， 一直支持
-    </div>
-    <div class="read-more">
-      <a href="/2012/11/16/because_not_easy/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2012/11/09/nodejs_deploy/">Nodejs 应用部署小记</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2012-11-09 </span>
-      <div class="post-category">
-          <a href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/"> 前端技术 </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      1、日志功能 1) 加入 access.log 1 2 3 4 5 var accessLogfile = fs.createWriteStream(&#39;access.log&#39;, {flags: &#39;a&#39;}); app.configure(function() { app.use(express.logger({stream: accessLogfile})); } 2) 加入 error.log 首先，添加 helpers/error.js 文件： 1 2 3 4 5 6 7 8 9 10 11 12 var fs = require(&#39;fs&#39;); var errorLogfile = fs.createWriteStream(&#39;logs/error.log&#39;, {flags: &#39;a&#39;}); exports.handler = function(err, req, res, status) { console.log(err); var
-    </div>
-    <div class="read-more">
-      <a href="/2012/11/09/nodejs_deploy/" class="read-more-link">阅读更多</a>
+      <a href="/2012/05/29/linux-shell-programming/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
