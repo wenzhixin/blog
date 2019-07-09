@@ -45,7 +45,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://blog.wenzhixin.net.cn/" />
 
-<meta property="og:updated_time" content="2019-01-05T00:00:00&#43;00:00"/>
+<meta property="og:updated_time" content="2019-07-09T00:00:00&#43;00:00"/>
 
 <meta itemprop="name" content="文翼的博客">
 <meta itemprop="description" content="简介：坚持看书，每天进步一点点。 要常常提醒自己：无情的岁月，还有不够努力的自己！">
@@ -123,6 +123,27 @@
       <div class="content-wrapper">
         <div id="content" class="content">
           <section id="posts" class="posts">
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2019/07/09/resize-device-size/">扩展文件系统</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2019-07-09 </span>
+      <div class="post-category">
+          <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"> 操作系统 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      查看文件系统信息： 1 2 3 4 df -hT /dev/mapper/systemvg-rootlv ext4 /dev/mapper/systemvg-homelv xfs 增加逻辑卷大小（+nG）： 1 2 lvresize -L +10G /dev/mapper/systemvg-rootlv lvresize -L +10G /dev/mapper/systemvg-homelv 针对 xfs 文件系统： 1 xfs_growfs /dev/mapper/systemvg-homelv 针对 ext4 文件系统： 1 resize2fs /dev/mapper/systemvg-rootlv
+    </div>
+    <div class="read-more">
+      <a href="/2019/07/09/resize-device-size/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
     <article class="post">
   <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/2019/01/05/move-blog-from-node-to-hugo/">博客从 Node 迁移到 Hugo</a></h1>
@@ -308,27 +329,6 @@
     </div>
     <div class="read-more">
       <a href="/2014/11/23/lazy-is-important/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2014/11/21/kvm-study/">KVM 虚拟机的学习和使用</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2014-11-21 </span>
-      <div class="post-category">
-          <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"> 操作系统 </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      KVM 是 Kernel-based Virtual Machine的简称，是一个开源的系统虚拟化模块，是基于硬件的完全虚拟化。 查看硬件是否支持 通过命令行可以查看硬件是否支持： 1 2 3 4 5
-    </div>
-    <div class="read-more">
-      <a href="/2014/11/21/kvm-study/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>
