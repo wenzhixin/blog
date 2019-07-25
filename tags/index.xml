@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Sat, 05 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 25 Jul 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://blog.wenzhixin.net.cn/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>docker</title>
+      <link>http://blog.wenzhixin.net.cn/tags/docker/</link>
+      <pubDate>Thu, 25 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>redmine</title>
+      <link>http://blog.wenzhixin.net.cn/tags/redmine/</link>
+      <pubDate>Thu, 25 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/tags/redmine/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>shell</title>

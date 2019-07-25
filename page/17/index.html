@@ -45,7 +45,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://blog.wenzhixin.net.cn/" />
 
-<meta property="og:updated_time" content="2019-07-09T00:00:00&#43;00:00"/>
+<meta property="og:updated_time" content="2019-07-25T00:00:00&#43;00:00"/>
 
 <meta itemprop="name" content="文翼的博客">
 <meta itemprop="description" content="简介：坚持看书，每天进步一点点。 要常常提醒自己：无情的岁月，还有不够努力的自己！">
@@ -123,6 +123,27 @@
       <div class="content-wrapper">
         <div id="content" class="content">
           <section id="posts" class="posts">
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/2013/09/01/nginx-ssl-settings/">nginx 配置 SSL（https）</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2013-09-01 </span>
+      <div class="post-category">
+          <a href="/categories/%E5%90%8E%E5%8F%B0%E6%8A%80%E6%9C%AF/"> 后台技术 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      配置信息： 1 2 3 4 5 6 7 8 listen 443; server_name wenzhixin.net.cn; ssl on; ssl_certificate /etc/ssl/certs/wenzhixin_net_cn.crt; ssl_certificate_key /etc/ssl/private/wenzhixin_net_cn.key; ssl_client_certificate /etc/ssl/certs/wenzhixin_net_cn-bundle; ssl_verify_client optional; 配置下面： 1 2 ssl_client_certificate /etc/ssl/certs/wenzhixin_net_cn-bundle; ssl_verify_client optional; 是为了解决： 1 unable to get local issuer certificate 的问题。
+    </div>
+    <div class="read-more">
+      <a href="/2013/09/01/nginx-ssl-settings/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
     <article class="post">
   <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/2013/08/12/disable-link/">Bootstrap 禁用 a 按钮</a></h1>
@@ -308,27 +329,6 @@
     </div>
     <div class="read-more">
       <a href="/2013/04/09/data-storage/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/2013/04/02/node-chat/">制作在线聊天室</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2013-04-02 </span>
-      <div class="post-category">
-          <a href="/categories/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/"> 前端技术 </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      先上效果图： 登录 聊天 主要接口： join：用户加入聊天室 users: 发送用户列表 message: 发送聊天信息 server 端主要代码： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22
-    </div>
-    <div class="read-more">
-      <a href="/2013/04/02/node-chat/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>

@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Tue, 09 Jul 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 25 Jul 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://blog.wenzhixin.net.cn/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Plantuml 中文乱码问题</title>
+      <link>http://blog.wenzhixin.net.cn/2019/07/25/plantuml-chinese-issue/</link>
+      <pubDate>Thu, 25 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2019/07/25/plantuml-chinese-issue/</guid>
+      <description>Redmine 使用了 Plantuml 插件，将其部署到 Docker 中，遇到了中文乱码的坑。 首先需要安装对应的包： 1 apt install locales openjdk-8-jdk fonts-arphic-uming 说明： 需要安装 fonts-arphic-uming 中文字体才行，不然会出现方块。 生成并设</description>
+    </item>
     
     <item>
       <title>扩展文件系统</title>

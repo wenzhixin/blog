@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>扩展文件系统 - 文翼的博客</title>
+  <title>Plantuml 中文乱码问题 - 文翼的博客</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="wenzhixin" /><meta name="description" content="查看文件系统信息： 1 2 3 4 df -hT /dev/mapper/systemvg-rootlv ext4 /dev/mapper/systemvg-homelv xfs 增加逻辑卷大小（&#43;nG）： 1 2 lvresize -L &#43;10G /dev/mapper/systemvg-rootlv lvresize -L &#43;10G /dev/mapper/systemvg-homelv 针对 xfs 文件系统： 1 xfs_growfs /dev/mapper/systemvg-homelv 针对 ext4 文件系统： 1 resize2fs /dev/mapper/systemvg-rootlv" /><meta name="keywords" content="文翼的博客, web前端博客" />
+<meta name="author" content="wenzhixin" /><meta name="description" content="Redmine 使用了 Plantuml 插件，将其部署到 Docker 中，遇到了中文乱码的坑。 首先需要安装对应的包： 1 apt install locales openjdk-8-jdk fonts-arphic-uming 说明： 需要安装 fonts-arphic-uming 中文字体才行，不然会出现方块。 生成并设" /><meta name="keywords" content="文翼的博客, web前端博客" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.55.6 with even 4.0.0" />
 
 
-<link rel="canonical" href="http://blog.wenzhixin.net.cn/2019/07/09/resize-device-size/" />
+<link rel="canonical" href="http://blog.wenzhixin.net.cn/2019/07/25/plantuml-chinese-issue/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -38,27 +38,27 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="扩展文件系统" />
-<meta property="og:description" content="查看文件系统信息： 1 2 3 4 df -hT /dev/mapper/systemvg-rootlv ext4 /dev/mapper/systemvg-homelv xfs 增加逻辑卷大小（&#43;nG）： 1 2 lvresize -L &#43;10G /dev/mapper/systemvg-rootlv lvresize -L &#43;10G /dev/mapper/systemvg-homelv 针对 xfs 文件系统： 1 xfs_growfs /dev/mapper/systemvg-homelv 针对 ext4 文件系统： 1 resize2fs /dev/mapper/systemvg-rootlv" />
+<meta property="og:title" content="Plantuml 中文乱码问题" />
+<meta property="og:description" content="Redmine 使用了 Plantuml 插件，将其部署到 Docker 中，遇到了中文乱码的坑。 首先需要安装对应的包： 1 apt install locales openjdk-8-jdk fonts-arphic-uming 说明： 需要安装 fonts-arphic-uming 中文字体才行，不然会出现方块。 生成并设" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://blog.wenzhixin.net.cn/2019/07/09/resize-device-size/" />
-<meta property="article:published_time" content="2019-07-09T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2019-07-09T00:00:00&#43;00:00"/>
+<meta property="og:url" content="http://blog.wenzhixin.net.cn/2019/07/25/plantuml-chinese-issue/" />
+<meta property="article:published_time" content="2019-07-25T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2019-07-25T00:00:00&#43;00:00"/>
 
-<meta itemprop="name" content="扩展文件系统">
-<meta itemprop="description" content="查看文件系统信息： 1 2 3 4 df -hT /dev/mapper/systemvg-rootlv ext4 /dev/mapper/systemvg-homelv xfs 增加逻辑卷大小（&#43;nG）： 1 2 lvresize -L &#43;10G /dev/mapper/systemvg-rootlv lvresize -L &#43;10G /dev/mapper/systemvg-homelv 针对 xfs 文件系统： 1 xfs_growfs /dev/mapper/systemvg-homelv 针对 ext4 文件系统： 1 resize2fs /dev/mapper/systemvg-rootlv">
-
-
-<meta itemprop="datePublished" content="2019-07-09T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2019-07-09T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="64">
+<meta itemprop="name" content="Plantuml 中文乱码问题">
+<meta itemprop="description" content="Redmine 使用了 Plantuml 插件，将其部署到 Docker 中，遇到了中文乱码的坑。 首先需要安装对应的包： 1 apt install locales openjdk-8-jdk fonts-arphic-uming 说明： 需要安装 fonts-arphic-uming 中文字体才行，不然会出现方块。 生成并设">
 
 
+<meta itemprop="datePublished" content="2019-07-25T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-07-25T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="132">
 
-<meta itemprop="keywords" content="" />
+
+
+<meta itemprop="keywords" content="redmine,docker," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="扩展文件系统"/>
-<meta name="twitter:description" content="查看文件系统信息： 1 2 3 4 df -hT /dev/mapper/systemvg-rootlv ext4 /dev/mapper/systemvg-homelv xfs 增加逻辑卷大小（&#43;nG）： 1 2 lvresize -L &#43;10G /dev/mapper/systemvg-rootlv lvresize -L &#43;10G /dev/mapper/systemvg-homelv 针对 xfs 文件系统： 1 xfs_growfs /dev/mapper/systemvg-homelv 针对 ext4 文件系统： 1 resize2fs /dev/mapper/systemvg-rootlv"/>
+<meta name="twitter:title" content="Plantuml 中文乱码问题"/>
+<meta name="twitter:description" content="Redmine 使用了 Plantuml 插件，将其部署到 Docker 中，遇到了中文乱码的坑。 首先需要安装对应的包： 1 apt install locales openjdk-8-jdk fonts-arphic-uming 说明： 需要安装 fonts-arphic-uming 中文字体才行，不然会出现方块。 生成并设"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -131,10 +131,10 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">扩展文件系统</h1>
+      <h1 class="post-title">Plantuml 中文乱码问题</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2019-07-09 </span>
+        <span class="post-time"> 2019-07-25 </span>
         <div class="post-category">
             <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"> 操作系统 </a>
             </div>
@@ -149,7 +149,20 @@
   </div>
 </div>
     <div class="post-content">
-      <p>查看文件系统信息：</p>
+      <p>Redmine 使用了 Plantuml 插件，将其部署到 Docker 中，遇到了中文乱码的坑。</p>
+
+<p>首先需要安装对应的包：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">apt install locales openjdk-8-jdk fonts-arphic-uming</code></pre></td></tr></table>
+</div>
+</div>
+<p><strong>说明：</strong> 需要安装 <code>fonts-arphic-uming</code> 中文字体才行，不然会出现方块。</p>
+
+<p>生成并设置中文：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
@@ -158,41 +171,25 @@
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">df -hT
-
-/dev/mapper/systemvg-rootlv ext4
-/dev/mapper/systemvg-homelv xfs</code></pre></td></tr></table>
+<pre class="chroma"><code class="language-bash" data-lang="bash">locale-gen zh_CN.UTF-8
+<span class="nb">export</span> <span class="nv">LANG</span><span class="o">=</span>zh_CN.UTF-8
+<span class="nb">export</span> <span class="nv">LANGUAGE</span><span class="o">=</span>zh_CN.UTF-8
+<span class="nb">export</span> <span class="nv">LC_ALL</span><span class="o">=</span>zh_CN.UTF-8</code></pre></td></tr></table>
 </div>
 </div>
-<p>增加逻辑卷大小（+nG）：</p>
+<p>最后生成 <code>/usr/bin/plantuml</code> 文件</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">lvresize -L +10G /dev/mapper/systemvg-rootlv
-lvresize -L +10G /dev/mapper/systemvg-homelv</code></pre></td></tr></table>
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="cp">#!/bin/bash
+</span><span class="cp"></span>/usr/bin/java -Djava.io.tmpdir<span class="o">=</span>/var/tmp -Djava.awt.headless<span class="o">=</span><span class="nb">true</span> -jar /usr/bin/plantuml.jar -charset UTF-8 <span class="si">${</span><span class="p">@</span><span class="si">}</span></code></pre></td></tr></table>
 </div>
 </div>
-<p>针对 xfs 文件系统：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">xfs_growfs /dev/mapper/systemvg-homelv</code></pre></td></tr></table>
-</div>
-</div>
-<p>针对 ext4 文件系统：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">resize2fs /dev/mapper/systemvg-rootlv</code></pre></td></tr></table>
-</div>
-</div>
+<p><strong>说明：</strong> 这里需要设置字符为 UTF-8，也就是 <code>-charset UTF-8</code>。</p>
+
     </div>
 
     <div class="post-copyright">
@@ -202,7 +199,7 @@ lvresize -L +10G /dev/mapper/systemvg-homelv</code></pre></td></tr></table>
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
-    <span class="item-content">2019-07-09</span>
+    <span class="item-content">2019-07-25</span>
   </p>
   
   
@@ -221,15 +218,14 @@ lvresize -L +10G /dev/mapper/systemvg-homelv</code></pre></td></tr></table>
       </label>
   </div>
 </div><footer class="post-footer">
-      
+      <div class="post-tags">
+          <a href="/tags/redmine/">redmine</a>
+          <a href="/tags/docker/">docker</a>
+          </div>
       <nav class="post-nav">
-        <a class="prev" href="/2019/07/25/plantuml-chinese-issue/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Plantuml 中文乱码问题</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
-        <a class="next" href="/2019/01/05/move-blog-from-node-to-hugo/">
-            <span class="next-text nav-default">博客从 Node 迁移到 Hugo</span>
+        
+        <a class="next" href="/2019/07/09/resize-device-size/">
+            <span class="next-text nav-default">扩展文件系统</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
