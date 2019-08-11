@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.55.6 with even 4.0.0" />
+<meta name="generator" content="Hugo 0.56.3 with even 4.0.0" />
 
 
 <link rel="canonical" href="http://blog.wenzhixin.net.cn/2015/06/07/react-memory/" />
@@ -42,9 +42,8 @@
 <meta property="og:description" content="前言 现在最热门的前端框架，毫无疑问是 React，React 是由 Facebook 出品的 JavaScript 框架，由于该框架比较新，比较少中文的资料。这几天看了很多篇关于 react 的英" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://blog.wenzhixin.net.cn/2015/06/07/react-memory/" />
-<meta property="article:published_time" content="2015-06-07T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2015-06-07T00:00:00&#43;00:00"/>
-
+<meta property="article:published_time" content="2015-06-07T00:00:00+00:00" />
+<meta property="article:modified_time" content="2015-06-07T00:00:00+00:00" />
 <meta itemprop="name" content="react-memory：基于 nodejs &#43; bower &#43; react 的文字记忆游戏">
 <meta itemprop="description" content="前言 现在最热门的前端框架，毫无疑问是 React，React 是由 Facebook 出品的 JavaScript 框架，由于该框架比较新，比较少中文的资料。这几天看了很多篇关于 react 的英">
 
@@ -253,8 +252,7 @@
 <h3 id="初始化">初始化</h3>
 
 <ul>
-<li>首先，创建 npm 模块的配置文件 package.json</li>
-</ul>
+<li><p>首先，创建 npm 模块的配置文件 package.json</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt"> 1
@@ -272,22 +270,21 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-sh" data-lang="sh"><span class="o">{</span>
-    <span class="s2">&#34;name&#34;</span>: <span class="s2">&#34;react-memory&#34;</span>,
-    <span class="s2">&#34;version&#34;</span>: <span class="s2">&#34;1.0.0&#34;</span>,
-    <span class="s2">&#34;description&#34;</span>: <span class="s2">&#34;基于 nodejs + bower + react 的文字记忆游戏。&#34;</span>,
-    <span class="s2">&#34;browserify&#34;</span>: <span class="o">{</span>
-        <span class="s2">&#34;transform&#34;</span>: <span class="o">[</span>
-            <span class="o">[</span><span class="s2">&#34;reactify&#34;</span><span class="o">]</span>
-        <span class="o">]</span>
-    <span class="o">}</span>,
-    <span class="s2">&#34;author&#34;</span>: <span class="s2">&#34;wenzhixin &lt;wenzhixin2010@gmail.com&gt; (http://wenzhixin.net.cn/)&#34;</span>,
-    <span class="s2">&#34;license&#34;</span>: <span class="s2">&#34;MIT&#34;</span>
+<span class="s2">&#34;name&#34;</span>: <span class="s2">&#34;react-memory&#34;</span>,
+<span class="s2">&#34;version&#34;</span>: <span class="s2">&#34;1.0.0&#34;</span>,
+<span class="s2">&#34;description&#34;</span>: <span class="s2">&#34;基于 nodejs + bower + react 的文字记忆游戏。&#34;</span>,
+<span class="s2">&#34;browserify&#34;</span>: <span class="o">{</span>
+    <span class="s2">&#34;transform&#34;</span>: <span class="o">[</span>
+        <span class="o">[</span><span class="s2">&#34;reactify&#34;</span><span class="o">]</span>
+    <span class="o">]</span>
+<span class="o">}</span>,
+<span class="s2">&#34;author&#34;</span>: <span class="s2">&#34;wenzhixin &lt;wenzhixin2010@gmail.com&gt; (http://wenzhixin.net.cn/)&#34;</span>,
+<span class="s2">&#34;license&#34;</span>: <span class="s2">&#34;MIT&#34;</span>
 <span class="o">}</span></code></pre></td></tr></table>
 </div>
-</div>
-<ul>
-<li>接着，创建 bower 组件的配置文件 bower.json</li>
-</ul>
+</div></li>
+
+<li><p>接着，创建 bower 组件的配置文件 bower.json</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt"> 1
@@ -308,25 +305,24 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-sh" data-lang="sh"><span class="o">{</span>
-    <span class="s2">&#34;name&#34;</span>: <span class="s2">&#34;react-memory&#34;</span>,
-    <span class="s2">&#34;version&#34;</span>: <span class="s2">&#34;1.0.0&#34;</span>,
-    <span class="s2">&#34;authors&#34;</span>: <span class="o">[</span>
-        <span class="s2">&#34;zhixin &lt;wenzhixin2010@gmail.com&gt;&#34;</span>
-    <span class="o">]</span>,
-    <span class="s2">&#34;license&#34;</span>: <span class="s2">&#34;MIT&#34;</span>,
-    <span class="s2">&#34;ignore&#34;</span>: <span class="o">[</span>
-        <span class="s2">&#34;**/.*&#34;</span>,
-        <span class="s2">&#34;node_modules&#34;</span>,
-        <span class="s2">&#34;bower_components&#34;</span>,
-        <span class="s2">&#34;test&#34;</span>,
-        <span class="s2">&#34;tests&#34;</span>
-    <span class="o">]</span>
+<span class="s2">&#34;name&#34;</span>: <span class="s2">&#34;react-memory&#34;</span>,
+<span class="s2">&#34;version&#34;</span>: <span class="s2">&#34;1.0.0&#34;</span>,
+<span class="s2">&#34;authors&#34;</span>: <span class="o">[</span>
+    <span class="s2">&#34;zhixin &lt;wenzhixin2010@gmail.com&gt;&#34;</span>
+<span class="o">]</span>,
+<span class="s2">&#34;license&#34;</span>: <span class="s2">&#34;MIT&#34;</span>,
+<span class="s2">&#34;ignore&#34;</span>: <span class="o">[</span>
+    <span class="s2">&#34;**/.*&#34;</span>,
+    <span class="s2">&#34;node_modules&#34;</span>,
+    <span class="s2">&#34;bower_components&#34;</span>,
+    <span class="s2">&#34;test&#34;</span>,
+    <span class="s2">&#34;tests&#34;</span>
+<span class="o">]</span>
 <span class="o">}</span></code></pre></td></tr></table>
 </div>
-</div>
-<ul>
-<li>安装所需要的依赖包</li>
-</ul>
+</div></li>
+
+<li><p>安装所需要的依赖包</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
@@ -350,7 +346,9 @@ npm install --save-dev browserify watchify reactify
 <span class="c1"># 全局命令行工具</span>
 npm install -g browserify watchify http-server</code></pre></td></tr></table>
 </div>
-</div>
+</div></li>
+</ul>
+
 <p>可以看到，我们安装了运行游戏时所需要的依赖包：react，<a href="https://github.com/lodash/lodash/">lodash</a> 模块，以及 <a href="https://github.com/twbs/bootstrap">bootstrap</a> 组件，lodash 是一个非常实用的工具库，游戏中我们使用到了好多它所提供的操作 array 的简单方法，react 和 bootstrap 的话就不用说了。</p>
 
 <h3 id="react-组件依赖层次">React 组件依赖层次</h3>
@@ -499,8 +497,7 @@ npm install -g browserify watchify http-server</code></pre></td></tr></table>
 <h3 id="wordform">WordForm</h3>
 
 <ul>
-<li>新建文件：<code>js/word-form.js</code></li>
-</ul>
+<li><p>新建文件：<code>js/word-form.js</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-js" data-lang="js"><span class="lnt"> 1
@@ -554,59 +551,58 @@ npm install -g browserify watchify http-server</code></pre></td></tr></table>
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">React</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;react&#39;</span><span class="p">),</span>
-    <span class="nx">_</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;lodash&#39;</span><span class="p">);</span>
+<span class="nx">_</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;lodash&#39;</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">WordForm</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
-    <span class="c1">// 需要提供 onWordsEntered 方法，用于触发提交方法，在 Game 中我们使用了 startGame
-</span><span class="c1"></span>    <span class="nx">propTypes</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">onWordsEntered</span><span class="o">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">PropTypes</span><span class="p">.</span><span class="nx">func</span><span class="p">.</span><span class="nx">isRequired</span>
-    <span class="p">},</span>
-    <span class="c1">// 初始化 error 状态
-</span><span class="c1"></span>    <span class="nx">getInitialState</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="p">{</span><span class="nx">error</span><span class="o">:</span> <span class="kc">undefined</span><span class="p">};</span>
-    <span class="p">},</span>
-    <span class="c1">// 显示错误信息，2s 后自动消失
-</span><span class="c1"></span>    <span class="nx">setError</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">msg</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span><span class="nx">error</span><span class="o">:</span> <span class="nx">msg</span><span class="p">});</span>
-        <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-            <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span><span class="nx">error</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">});</span>
-        <span class="p">}.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">),</span> <span class="mi">2000</span><span class="p">);</span>
-    <span class="p">},</span>
-    <span class="c1">// 提交文字信息，判断是否符合条件
-</span><span class="c1"></span>    <span class="nx">submitWords</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+<span class="c1">// 需要提供 onWordsEntered 方法，用于触发提交方法，在 Game 中我们使用了 startGame
+</span><span class="c1"></span><span class="nx">propTypes</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">onWordsEntered</span><span class="o">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">PropTypes</span><span class="p">.</span><span class="nx">func</span><span class="p">.</span><span class="nx">isRequired</span>
+<span class="p">},</span>
+<span class="c1">// 初始化 error 状态
+</span><span class="c1"></span><span class="nx">getInitialState</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span><span class="nx">error</span><span class="o">:</span> <span class="kc">undefined</span><span class="p">};</span>
+<span class="p">},</span>
+<span class="c1">// 显示错误信息，2s 后自动消失
+</span><span class="c1"></span><span class="nx">setError</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">msg</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span><span class="nx">error</span><span class="o">:</span> <span class="nx">msg</span><span class="p">});</span>
+    <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span><span class="nx">error</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">});</span>
+    <span class="p">}.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">),</span> <span class="mi">2000</span><span class="p">);</span>
+<span class="p">},</span>
+<span class="c1">// 提交文字信息，判断是否符合条件
+</span><span class="c1"></span><span class="nx">submitWords</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
 
-        <span class="kd">var</span> <span class="nx">node</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">refs</span><span class="p">.</span><span class="nx">words</span><span class="p">.</span><span class="nx">getDOMNode</span><span class="p">(),</span>
-            <span class="c1">// unique 用于生成唯一的字符
-</span><span class="c1"></span>            <span class="nx">words</span> <span class="o">=</span> <span class="nx">_</span><span class="p">.</span><span class="nx">unique</span><span class="p">((</span><span class="nx">node</span><span class="p">.</span><span class="nx">value</span> <span class="o">||</span> <span class="s1">&#39;&#39;</span><span class="p">).</span><span class="nx">trim</span><span class="p">().</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">));</span>
+    <span class="kd">var</span> <span class="nx">node</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">refs</span><span class="p">.</span><span class="nx">words</span><span class="p">.</span><span class="nx">getDOMNode</span><span class="p">(),</span>
+        <span class="c1">// unique 用于生成唯一的字符
+</span><span class="c1"></span>        <span class="nx">words</span> <span class="o">=</span> <span class="nx">_</span><span class="p">.</span><span class="nx">unique</span><span class="p">((</span><span class="nx">node</span><span class="p">.</span><span class="nx">value</span> <span class="o">||</span> <span class="s1">&#39;&#39;</span><span class="p">).</span><span class="nx">trim</span><span class="p">().</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">));</span>
 
-        <span class="k">if</span> <span class="p">(</span><span class="nx">words</span><span class="p">.</span><span class="nx">length</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">this</span><span class="p">.</span><span class="nx">setError</span><span class="p">(</span><span class="s1">&#39;请至少输入三个不同的字符！&#39;</span><span class="p">);</span>
-        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-            <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">onWordsEntered</span><span class="p">(</span><span class="nx">words</span><span class="p">);</span>
-            <span class="nx">node</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">},</span>
-    <span class="nx">render</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="p">(</span>
-            <span class="o">&lt;</span><span class="nx">form</span> <span class="nx">className</span><span class="o">=</span><span class="s1">&#39;form-inline&#39;</span> <span class="nx">onSubmit</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">submitWords</span><span class="p">}</span><span class="o">&gt;</span>
-                <span class="o">&lt;</span><span class="nx">span</span><span class="o">&gt;</span><span class="nx">请输入你想记忆的字符</span><span class="err">：</span><span class="o">&lt;</span><span class="err">/span&gt;</span>
-                <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">className</span><span class="o">=</span><span class="s1">&#39;form-control&#39;</span> <span class="nx">type</span><span class="o">=</span><span class="s1">&#39;text&#39;</span> <span class="nx">ref</span><span class="o">=</span><span class="s1">&#39;words&#39;</span> <span class="nx">maxLength</span><span class="o">=</span><span class="s1">&#39;10&#39;</span>
-                    <span class="nx">defaultValue</span><span class="o">=</span><span class="s1">&#39;文字记忆游戏&#39;</span> <span class="o">/&gt;</span>
-                <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">className</span><span class="o">=</span><span class="s1">&#39;btn btn-default&#39;</span> <span class="nx">type</span><span class="o">=</span><span class="s1">&#39;submit&#39;</span><span class="o">&gt;</span><span class="nx">开始记忆</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
-                <span class="o">&lt;</span><span class="nx">p</span> <span class="nx">className</span><span class="o">=</span><span class="s1">&#39;error&#39;</span><span class="o">&gt;</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">error</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
-            <span class="o">&lt;</span><span class="err">/form&gt;</span>
-        <span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">words</span><span class="p">.</span><span class="nx">length</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">setError</span><span class="p">(</span><span class="s1">&#39;请至少输入三个不同的字符！&#39;</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">onWordsEntered</span><span class="p">(</span><span class="nx">words</span><span class="p">);</span>
+        <span class="nx">node</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
     <span class="p">}</span>
+<span class="p">},</span>
+<span class="nx">render</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="o">&lt;</span><span class="nx">form</span> <span class="nx">className</span><span class="o">=</span><span class="s1">&#39;form-inline&#39;</span> <span class="nx">onSubmit</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">submitWords</span><span class="p">}</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">span</span><span class="o">&gt;</span><span class="nx">请输入你想记忆的字符</span><span class="err">：</span><span class="o">&lt;</span><span class="err">/span&gt;</span>
+            <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">className</span><span class="o">=</span><span class="s1">&#39;form-control&#39;</span> <span class="nx">type</span><span class="o">=</span><span class="s1">&#39;text&#39;</span> <span class="nx">ref</span><span class="o">=</span><span class="s1">&#39;words&#39;</span> <span class="nx">maxLength</span><span class="o">=</span><span class="s1">&#39;10&#39;</span>
+                <span class="nx">defaultValue</span><span class="o">=</span><span class="s1">&#39;文字记忆游戏&#39;</span> <span class="o">/&gt;</span>
+            <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">className</span><span class="o">=</span><span class="s1">&#39;btn btn-default&#39;</span> <span class="nx">type</span><span class="o">=</span><span class="s1">&#39;submit&#39;</span><span class="o">&gt;</span><span class="nx">开始记忆</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+            <span class="o">&lt;</span><span class="nx">p</span> <span class="nx">className</span><span class="o">=</span><span class="s1">&#39;error&#39;</span><span class="o">&gt;</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">error</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+        <span class="o">&lt;</span><span class="err">/form&gt;</span>
+    <span class="p">);</span>
+<span class="p">}</span>
 <span class="p">});</span>
 
 <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">WordForm</span><span class="p">;</span>
 </code></pre></td></tr></table>
 </div>
-</div>
-<ul>
-<li>由于用用到了 bootstrap 的样式和自定义了 error 样式，需要创建 <code>css/style.css</code> 文件</li>
-</ul>
+</div></li>
+
+<li><p>由于用用到了 bootstrap 的样式和自定义了 error 样式，需要创建 <code>css/style.css</code> 文件</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-css" data-lang="css"><span class="lnt">1
@@ -619,10 +615,12 @@ npm install -g browserify watchify http-server</code></pre></td></tr></table>
 <pre class="chroma"><code class="language-css" data-lang="css"><span class="p">@</span><span class="k">import</span> <span class="s2">&#34;../bower_components/bootstrap/dist/css/bootstrap.min.css&#34;</span><span class="p">;</span>
 
 <span class="p">.</span><span class="nc">error</span> <span class="p">{</span>
-    <span class="k">color</span><span class="p">:</span> <span class="kc">red</span><span class="p">;</span>
+<span class="k">color</span><span class="p">:</span> <span class="kc">red</span><span class="p">;</span>
 <span class="p">}</span></code></pre></td></tr></table>
 </div>
-</div>
+</div></li>
+</ul>
+
 <h3 id="boar">Boar</h3>
 
 <p>新建文件：<code>js/board.js</code></p>
@@ -900,8 +898,7 @@ npm install -g browserify watchify http-server</code></pre></td></tr></table>
 <h3 id="tile">Tile</h3>
 
 <ul>
-<li>新建文件<code>tile.js</code></li>
-</ul>
+<li><p>新建文件<code>tile.js</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-js" data-lang="js"><span class="lnt"> 1
@@ -927,27 +924,26 @@ npm install -g browserify watchify http-server</code></pre></td></tr></table>
 <pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">React</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;react&#39;</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">Tile</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
-    <span class="nx">propTypes</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">status</span><span class="o">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">PropTypes</span><span class="p">.</span><span class="nx">string</span><span class="p">.</span><span class="nx">isRequired</span><span class="p">,</span>
-        <span class="nx">word</span><span class="o">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">PropTypes</span><span class="p">.</span><span class="nx">string</span><span class="p">.</span><span class="nx">isRequired</span>
-    <span class="p">},</span>
-    <span class="nx">render</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="p">(</span>
-            <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;brick &#39;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">status</span><span class="p">}</span><span class="o">&gt;</span>
-                <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="s1">&#39;front&#39;</span><span class="o">&gt;&lt;</span><span class="nx">i</span> <span class="nx">className</span><span class="o">=</span><span class="s1">&#39;glyphicon glyphicon-question-sign&#39;</span><span class="o">&gt;&lt;</span><span class="err">/i&gt;&lt;/div&gt;</span>
-                <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="s1">&#39;back&#39;</span><span class="o">&gt;</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">word</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/div&gt;</span>
-            <span class="o">&lt;</span><span class="err">/div&gt;</span>
-        <span class="p">);</span>
-    <span class="p">}</span>
+<span class="nx">propTypes</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">status</span><span class="o">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">PropTypes</span><span class="p">.</span><span class="nx">string</span><span class="p">.</span><span class="nx">isRequired</span><span class="p">,</span>
+    <span class="nx">word</span><span class="o">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">PropTypes</span><span class="p">.</span><span class="nx">string</span><span class="p">.</span><span class="nx">isRequired</span>
+<span class="p">},</span>
+<span class="nx">render</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;brick &#39;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">status</span><span class="p">}</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="s1">&#39;front&#39;</span><span class="o">&gt;&lt;</span><span class="nx">i</span> <span class="nx">className</span><span class="o">=</span><span class="s1">&#39;glyphicon glyphicon-question-sign&#39;</span><span class="o">&gt;&lt;</span><span class="err">/i&gt;&lt;/div&gt;</span>
+            <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="s1">&#39;back&#39;</span><span class="o">&gt;</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">word</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/div&gt;</span>
+        <span class="o">&lt;</span><span class="err">/div&gt;</span>
+    <span class="p">);</span>
+<span class="p">}</span>
 <span class="p">});</span>
 
 <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">Tile</span><span class="p">;</span>
 </code></pre></td></tr></table>
 </div>
-</div>
-<ul>
-<li>修改文件<code>css/style.css</code>，增加卡片需要的样式</li>
-</ul>
+</div></li>
+
+<li><p>修改文件<code>css/style.css</code>，增加卡片需要的样式</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-css" data-lang="css"><span class="lnt">  1
@@ -1079,133 +1075,135 @@ npm install -g browserify watchify http-server</code></pre></td></tr></table>
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-css" data-lang="css"><span class="p">@</span><span class="k">-webkit-keyframes</span> <span class="nt">wronganim</span> <span class="p">{</span>
-    <span class="nt">to</span> <span class="p">{</span>
-        <span class="k">background-color</span><span class="p">:</span> <span class="kc">red</span><span class="p">;</span>
-    <span class="p">}</span>
+<span class="nt">to</span> <span class="p">{</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="kc">red</span><span class="p">;</span>
+<span class="p">}</span>
 <span class="p">}</span>
 
 <span class="p">@</span><span class="k">-moz-keyframes</span> <span class="nt">wronganim</span> <span class="p">{</span>
-    <span class="nt">to</span> <span class="p">{</span>
-        <span class="k">background-color</span><span class="p">:</span> <span class="kc">red</span><span class="p">;</span>
-    <span class="p">}</span>
+<span class="nt">to</span> <span class="p">{</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="kc">red</span><span class="p">;</span>
+<span class="p">}</span>
 <span class="p">}</span>
 
 <span class="p">@</span><span class="k">keyframes</span> <span class="nt">wronganim</span> <span class="p">{</span>
-    <span class="nt">to</span> <span class="p">{</span>
-        <span class="k">background-color</span><span class="p">:</span> <span class="kc">red</span><span class="p">;</span>
-    <span class="p">}</span>
+<span class="nt">to</span> <span class="p">{</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="kc">red</span><span class="p">;</span>
+<span class="p">}</span>
 <span class="p">}</span>
 
 <span class="p">@</span><span class="k">-webkit-keyframes</span> <span class="nt">correctanim</span> <span class="p">{</span>
-    <span class="nt">to</span> <span class="p">{</span>
-        <span class="k">background-color</span><span class="p">:</span> <span class="kc">green</span><span class="p">;</span>
-        <span class="k">color</span><span class="p">:</span> <span class="kc">white</span><span class="p">;</span>
-    <span class="p">}</span>
+<span class="nt">to</span> <span class="p">{</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="kc">green</span><span class="p">;</span>
+    <span class="k">color</span><span class="p">:</span> <span class="kc">white</span><span class="p">;</span>
+<span class="p">}</span>
 <span class="p">}</span>
 
 <span class="p">@</span><span class="k">-moz-keyframes</span> <span class="nt">correctanim</span> <span class="p">{</span>
-    <span class="nt">to</span> <span class="p">{</span>
-        <span class="k">background-color</span><span class="p">:</span> <span class="kc">green</span><span class="p">;</span>
-        <span class="k">color</span><span class="p">:</span> <span class="kc">white</span><span class="p">;</span>
-    <span class="p">}</span>
+<span class="nt">to</span> <span class="p">{</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="kc">green</span><span class="p">;</span>
+    <span class="k">color</span><span class="p">:</span> <span class="kc">white</span><span class="p">;</span>
+<span class="p">}</span>
 <span class="p">}</span>
 
 <span class="p">@</span><span class="k">keyframes</span> <span class="nt">correctanim</span> <span class="p">{</span>
-    <span class="nt">to</span> <span class="p">{</span>
-        <span class="k">background-color</span><span class="p">:</span> <span class="kc">green</span><span class="p">;</span>
-        <span class="k">color</span><span class="p">:</span> <span class="kc">white</span><span class="p">;</span>
-    <span class="p">}</span>
+<span class="nt">to</span> <span class="p">{</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="kc">green</span><span class="p">;</span>
+    <span class="k">color</span><span class="p">:</span> <span class="kc">white</span><span class="p">;</span>
+<span class="p">}</span>
 <span class="p">}</span>
 
 <span class="p">.</span><span class="nc">brick</span> <span class="o">&gt;</span> <span class="nt">div</span> <span class="p">{</span>
-    <span class="k">width</span><span class="p">:</span> <span class="mi">80</span><span class="kt">px</span><span class="p">;</span>
-    <span class="k">height</span><span class="p">:</span> <span class="mi">80</span><span class="kt">px</span><span class="p">;</span>
-    <span class="k">border</span><span class="p">:</span> <span class="mi">1</span><span class="kt">px</span> <span class="kc">solid</span> <span class="kc">black</span><span class="p">;</span>
-    <span class="k">text-align</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span>
-    <span class="k">line-height</span><span class="p">:</span> <span class="mi">80</span><span class="kt">px</span><span class="p">;</span>
-    <span class="k">font-size</span><span class="p">:</span> <span class="mi">24</span><span class="kt">px</span><span class="p">;</span>
-    <span class="kp">-webkit-</span><span class="k">backface-visibility</span><span class="p">:</span> <span class="kc">hidden</span><span class="p">;</span>
-    <span class="kp">-webkit-</span><span class="k">transition</span><span class="p">:</span> <span class="kp">-webkit-</span><span class="k">transform</span> <span class="mf">0.3</span><span class="kt">s</span> <span class="kc">linear</span><span class="p">;</span>
-    <span class="kp">-moz-</span><span class="k">transition</span><span class="p">:</span> <span class="kp">-moz-</span><span class="k">transform</span> <span class="mf">0.3</span><span class="kt">s</span> <span class="kc">linear</span><span class="p">;</span>
-    <span class="k">transition</span><span class="p">:</span> <span class="k">transform</span> <span class="mf">0.3</span><span class="kt">s</span> <span class="kc">linear</span><span class="p">;</span>
-    <span class="kp">-webkit-</span><span class="k">transform-style</span><span class="p">:</span> <span class="kc">preserve-3d</span><span class="p">;</span>
-    <span class="k">transform-style</span><span class="p">:</span> <span class="kc">preserve-3d</span><span class="p">;</span>
-    <span class="k">position</span><span class="p">:</span> <span class="kc">absolute</span><span class="p">;</span>
-    <span class="k">overflow</span><span class="p">:</span> <span class="kc">hidden</span><span class="p">;</span>
-    <span class="k">border-radius</span><span class="p">:</span> <span class="mi">5</span><span class="kt">px</span><span class="p">;</span>
-    <span class="k">backface-visibility</span><span class="p">:</span> <span class="kc">hidden</span><span class="p">;</span>
+<span class="k">width</span><span class="p">:</span> <span class="mi">80</span><span class="kt">px</span><span class="p">;</span>
+<span class="k">height</span><span class="p">:</span> <span class="mi">80</span><span class="kt">px</span><span class="p">;</span>
+<span class="k">border</span><span class="p">:</span> <span class="mi">1</span><span class="kt">px</span> <span class="kc">solid</span> <span class="kc">black</span><span class="p">;</span>
+<span class="k">text-align</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span>
+<span class="k">line-height</span><span class="p">:</span> <span class="mi">80</span><span class="kt">px</span><span class="p">;</span>
+<span class="k">font-size</span><span class="p">:</span> <span class="mi">24</span><span class="kt">px</span><span class="p">;</span>
+<span class="kp">-webkit-</span><span class="k">backface-visibility</span><span class="p">:</span> <span class="kc">hidden</span><span class="p">;</span>
+<span class="kp">-webkit-</span><span class="k">transition</span><span class="p">:</span> <span class="kp">-webkit-</span><span class="k">transform</span> <span class="mf">0.3</span><span class="kt">s</span> <span class="kc">linear</span><span class="p">;</span>
+<span class="kp">-moz-</span><span class="k">transition</span><span class="p">:</span> <span class="kp">-moz-</span><span class="k">transform</span> <span class="mf">0.3</span><span class="kt">s</span> <span class="kc">linear</span><span class="p">;</span>
+<span class="k">transition</span><span class="p">:</span> <span class="k">transform</span> <span class="mf">0.3</span><span class="kt">s</span> <span class="kc">linear</span><span class="p">;</span>
+<span class="kp">-webkit-</span><span class="k">transform-style</span><span class="p">:</span> <span class="kc">preserve-3d</span><span class="p">;</span>
+<span class="k">transform-style</span><span class="p">:</span> <span class="kc">preserve-3d</span><span class="p">;</span>
+<span class="k">position</span><span class="p">:</span> <span class="kc">absolute</span><span class="p">;</span>
+<span class="k">overflow</span><span class="p">:</span> <span class="kc">hidden</span><span class="p">;</span>
+<span class="k">border-radius</span><span class="p">:</span> <span class="mi">5</span><span class="kt">px</span><span class="p">;</span>
+<span class="k">backface-visibility</span><span class="p">:</span> <span class="kc">hidden</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="p">.</span><span class="nc">brick</span> <span class="o">&gt;</span> <span class="p">.</span><span class="nc">front</span> <span class="p">{</span>
-    <span class="k">background-color</span><span class="p">:</span> <span class="mh">#AAA</span><span class="p">;</span>
+<span class="k">background-color</span><span class="p">:</span> <span class="mh">#AAA</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="p">.</span><span class="nc">brick</span><span class="o">,</span> <span class="p">.</span><span class="nc">brick</span> <span class="nt">div</span> <span class="p">{</span>
-    <span class="k">user-select</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
-    <span class="k">cursor</span><span class="p">:</span> <span class="kc">pointer</span><span class="p">;</span>
+<span class="k">user-select</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+<span class="k">cursor</span><span class="p">:</span> <span class="kc">pointer</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="p">.</span><span class="nc">brick</span> <span class="p">{</span>
-    <span class="k">float</span><span class="p">:</span> <span class="kc">left</span><span class="p">;</span>
-    <span class="k">margin-right</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
-    <span class="k">margin-bottom</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
-    <span class="k">width</span><span class="p">:</span> <span class="mi">80</span><span class="kt">px</span><span class="p">;</span>
-    <span class="k">height</span><span class="p">:</span> <span class="mi">80</span><span class="kt">px</span><span class="p">;</span>
+<span class="k">float</span><span class="p">:</span> <span class="kc">left</span><span class="p">;</span>
+<span class="k">margin-right</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+<span class="k">margin-bottom</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+<span class="k">width</span><span class="p">:</span> <span class="mi">80</span><span class="kt">px</span><span class="p">;</span>
+<span class="k">height</span><span class="p">:</span> <span class="mi">80</span><span class="kt">px</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="p">.</span><span class="nc">brick</span> <span class="o">&gt;</span> <span class="p">.</span><span class="nc">back</span> <span class="p">{</span>
-    <span class="kp">-webkit-</span><span class="k">animation-duration</span><span class="p">:</span> <span class="mf">0.5</span><span class="kt">s</span><span class="p">;</span>
-    <span class="kp">-webkit-</span><span class="k">animation-timing-function</span><span class="p">:</span> <span class="kc">ease</span><span class="p">;</span>
-    <span class="kp">-webkit-</span><span class="k">animation-delay</span><span class="p">:</span> <span class="mf">0.3</span><span class="kt">s</span><span class="p">;</span>
-    <span class="kp">-webkit-</span><span class="k">animation-iteration-count</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="kp">-webkit-</span><span class="k">animation-fill-mode</span><span class="p">:</span> <span class="kc">forwards</span><span class="p">;</span>
-    <span class="kp">-moz-</span><span class="k">animation-duration</span><span class="p">:</span> <span class="mf">0.5</span><span class="kt">s</span><span class="p">;</span>
-    <span class="kp">-moz-</span><span class="k">animation-timing-function</span><span class="p">:</span> <span class="kc">ease</span><span class="p">;</span>
-    <span class="kp">-moz-</span><span class="k">animation-delay</span><span class="p">:</span> <span class="mf">0.3</span><span class="kt">s</span><span class="p">;</span>
-    <span class="kp">-moz-</span><span class="k">animation-iteration-count</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="kp">-moz-</span><span class="k">animation-fill-mode</span><span class="p">:</span> <span class="kc">forwards</span><span class="p">;</span>
-    <span class="k">animation-duration</span><span class="p">:</span> <span class="mf">0.5</span><span class="kt">s</span><span class="p">;</span>
-    <span class="k">animation-timing-function</span><span class="p">:</span> <span class="kc">ease</span><span class="p">;</span>
-    <span class="k">animation-delay</span><span class="p">:</span> <span class="mf">0.3</span><span class="kt">s</span><span class="p">;</span>
-    <span class="k">animation-iteration-count</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="k">animation-fill-mode</span><span class="p">:</span> <span class="kc">forwards</span><span class="p">;</span>
+<span class="kp">-webkit-</span><span class="k">animation-duration</span><span class="p">:</span> <span class="mf">0.5</span><span class="kt">s</span><span class="p">;</span>
+<span class="kp">-webkit-</span><span class="k">animation-timing-function</span><span class="p">:</span> <span class="kc">ease</span><span class="p">;</span>
+<span class="kp">-webkit-</span><span class="k">animation-delay</span><span class="p">:</span> <span class="mf">0.3</span><span class="kt">s</span><span class="p">;</span>
+<span class="kp">-webkit-</span><span class="k">animation-iteration-count</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+<span class="kp">-webkit-</span><span class="k">animation-fill-mode</span><span class="p">:</span> <span class="kc">forwards</span><span class="p">;</span>
+<span class="kp">-moz-</span><span class="k">animation-duration</span><span class="p">:</span> <span class="mf">0.5</span><span class="kt">s</span><span class="p">;</span>
+<span class="kp">-moz-</span><span class="k">animation-timing-function</span><span class="p">:</span> <span class="kc">ease</span><span class="p">;</span>
+<span class="kp">-moz-</span><span class="k">animation-delay</span><span class="p">:</span> <span class="mf">0.3</span><span class="kt">s</span><span class="p">;</span>
+<span class="kp">-moz-</span><span class="k">animation-iteration-count</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+<span class="kp">-moz-</span><span class="k">animation-fill-mode</span><span class="p">:</span> <span class="kc">forwards</span><span class="p">;</span>
+<span class="k">animation-duration</span><span class="p">:</span> <span class="mf">0.5</span><span class="kt">s</span><span class="p">;</span>
+<span class="k">animation-timing-function</span><span class="p">:</span> <span class="kc">ease</span><span class="p">;</span>
+<span class="k">animation-delay</span><span class="p">:</span> <span class="mf">0.3</span><span class="kt">s</span><span class="p">;</span>
+<span class="k">animation-iteration-count</span><span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+<span class="k">animation-fill-mode</span><span class="p">:</span> <span class="kc">forwards</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="p">.</span><span class="nc">brick</span><span class="p">.</span><span class="nc">wrong</span> <span class="o">&gt;</span> <span class="p">.</span><span class="nc">back</span> <span class="p">{</span>
-    <span class="kp">-webkit-</span><span class="k">animation-name</span><span class="p">:</span> <span class="n">wronganim</span><span class="p">;</span>
-    <span class="kp">-moz-</span><span class="k">animation-name</span><span class="p">:</span> <span class="n">wronganim</span><span class="p">;</span>
-    <span class="k">animation-name</span><span class="p">:</span> <span class="n">wronganim</span><span class="p">;</span>
+<span class="kp">-webkit-</span><span class="k">animation-name</span><span class="p">:</span> <span class="n">wronganim</span><span class="p">;</span>
+<span class="kp">-moz-</span><span class="k">animation-name</span><span class="p">:</span> <span class="n">wronganim</span><span class="p">;</span>
+<span class="k">animation-name</span><span class="p">:</span> <span class="n">wronganim</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="p">.</span><span class="nc">brick</span><span class="p">.</span><span class="nc">correct</span> <span class="o">&gt;</span> <span class="p">.</span><span class="nc">back</span> <span class="p">{</span>
-    <span class="kp">-webkit-</span><span class="k">animation-name</span><span class="p">:</span> <span class="n">correctanim</span><span class="p">;</span>
-    <span class="kp">-moz-</span><span class="k">animation-name</span><span class="p">:</span> <span class="n">correctanim</span><span class="p">;</span>
-    <span class="k">animation-name</span><span class="p">:</span> <span class="n">correctanim</span><span class="p">;</span>
+<span class="kp">-webkit-</span><span class="k">animation-name</span><span class="p">:</span> <span class="n">correctanim</span><span class="p">;</span>
+<span class="kp">-moz-</span><span class="k">animation-name</span><span class="p">:</span> <span class="n">correctanim</span><span class="p">;</span>
+<span class="k">animation-name</span><span class="p">:</span> <span class="n">correctanim</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="p">.</span><span class="nc">brick</span> <span class="o">&gt;</span> <span class="p">.</span><span class="nc">back</span> <span class="p">{</span>
-    <span class="kp">-webkit-</span><span class="k">transform</span><span class="p">:</span> <span class="nb">perspective</span><span class="p">(</span><span class="mi">80</span><span class="kt">px</span><span class="p">)</span> <span class="nb">rotateY</span><span class="p">(</span><span class="mi">180</span><span class="kt">deg</span><span class="p">)</span> <span class="nb">translate3d</span><span class="p">(</span><span class="mi">0</span><span class="kt">px</span><span class="p">,</span> <span class="mi">0</span><span class="kt">px</span><span class="p">,</span> <span class="mi">2</span><span class="kt">px</span><span class="p">);</span>
-    <span class="kp">-moz-</span><span class="k">transform</span><span class="p">:</span> <span class="nb">perspective</span><span class="p">(</span><span class="mi">80</span><span class="kt">px</span><span class="p">)</span> <span class="nb">rotateY</span><span class="p">(</span><span class="mi">180</span><span class="kt">deg</span><span class="p">)</span> <span class="nb">translate3d</span><span class="p">(</span><span class="mi">0</span><span class="kt">px</span><span class="p">,</span> <span class="mi">0</span><span class="kt">px</span><span class="p">,</span> <span class="mi">2</span><span class="kt">px</span><span class="p">);</span>
-    <span class="k">transform</span><span class="p">:</span> <span class="nb">perspective</span><span class="p">(</span><span class="mi">80</span><span class="kt">px</span><span class="p">)</span> <span class="nb">rotateY</span><span class="p">(</span><span class="mi">180</span><span class="kt">deg</span><span class="p">)</span> <span class="nb">translate3d</span><span class="p">(</span><span class="mi">0</span><span class="kt">px</span><span class="p">,</span> <span class="mi">0</span><span class="kt">px</span><span class="p">,</span> <span class="mi">2</span><span class="kt">px</span><span class="p">);</span>
+<span class="kp">-webkit-</span><span class="k">transform</span><span class="p">:</span> <span class="nb">perspective</span><span class="p">(</span><span class="mi">80</span><span class="kt">px</span><span class="p">)</span> <span class="nb">rotateY</span><span class="p">(</span><span class="mi">180</span><span class="kt">deg</span><span class="p">)</span> <span class="nb">translate3d</span><span class="p">(</span><span class="mi">0</span><span class="kt">px</span><span class="p">,</span> <span class="mi">0</span><span class="kt">px</span><span class="p">,</span> <span class="mi">2</span><span class="kt">px</span><span class="p">);</span>
+<span class="kp">-moz-</span><span class="k">transform</span><span class="p">:</span> <span class="nb">perspective</span><span class="p">(</span><span class="mi">80</span><span class="kt">px</span><span class="p">)</span> <span class="nb">rotateY</span><span class="p">(</span><span class="mi">180</span><span class="kt">deg</span><span class="p">)</span> <span class="nb">translate3d</span><span class="p">(</span><span class="mi">0</span><span class="kt">px</span><span class="p">,</span> <span class="mi">0</span><span class="kt">px</span><span class="p">,</span> <span class="mi">2</span><span class="kt">px</span><span class="p">);</span>
+<span class="k">transform</span><span class="p">:</span> <span class="nb">perspective</span><span class="p">(</span><span class="mi">80</span><span class="kt">px</span><span class="p">)</span> <span class="nb">rotateY</span><span class="p">(</span><span class="mi">180</span><span class="kt">deg</span><span class="p">)</span> <span class="nb">translate3d</span><span class="p">(</span><span class="mi">0</span><span class="kt">px</span><span class="p">,</span> <span class="mi">0</span><span class="kt">px</span><span class="p">,</span> <span class="mi">2</span><span class="kt">px</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="p">.</span><span class="nc">brick</span><span class="p">.</span><span class="nc">correct</span> <span class="o">&gt;</span> <span class="p">.</span><span class="nc">front</span><span class="o">,</span> <span class="p">.</span><span class="nc">brick</span><span class="p">.</span><span class="nc">wrong</span> <span class="o">&gt;</span> <span class="p">.</span><span class="nc">front</span><span class="o">,</span> <span class="p">.</span><span class="nc">brick</span><span class="p">.</span><span class="nc">revealed</span> <span class="o">&gt;</span> <span class="p">.</span><span class="nc">front</span> <span class="p">{</span>
-    <span class="kp">-webkit-</span><span class="k">transform</span><span class="p">:</span> <span class="nb">perspective</span><span class="p">(</span><span class="mi">80</span><span class="kt">px</span><span class="p">)</span> <span class="nb">rotateY</span><span class="p">(</span><span class="mi">-180</span><span class="kt">deg</span><span class="p">)</span> <span class="nb">translate3d</span><span class="p">(</span><span class="mi">0</span><span class="kt">px</span><span class="p">,</span> <span class="mi">0</span><span class="kt">px</span><span class="p">,</span> <span class="mi">2</span><span class="kt">px</span><span class="p">);</span>
-    <span class="kp">-moz-</span><span class="k">transform</span><span class="p">:</span> <span class="nb">perspective</span><span class="p">(</span><span class="mi">80</span><span class="kt">px</span><span class="p">)</span> <span class="nb">rotateY</span><span class="p">(</span><span class="mi">-180</span><span class="kt">deg</span><span class="p">)</span> <span class="nb">translate3d</span><span class="p">(</span><span class="mi">0</span><span class="kt">px</span><span class="p">,</span> <span class="mi">0</span><span class="kt">px</span><span class="p">,</span> <span class="mi">2</span><span class="kt">px</span><span class="p">);</span>
-    <span class="k">transform</span><span class="p">:</span> <span class="nb">perspective</span><span class="p">(</span><span class="mi">80</span><span class="kt">px</span><span class="p">)</span> <span class="nb">rotateY</span><span class="p">(</span><span class="mi">-180</span><span class="kt">deg</span><span class="p">)</span> <span class="nb">translate3d</span><span class="p">(</span><span class="mi">0</span><span class="kt">px</span><span class="p">,</span> <span class="mi">0</span><span class="kt">px</span><span class="p">,</span> <span class="mi">2</span><span class="kt">px</span><span class="p">);</span>
+<span class="kp">-webkit-</span><span class="k">transform</span><span class="p">:</span> <span class="nb">perspective</span><span class="p">(</span><span class="mi">80</span><span class="kt">px</span><span class="p">)</span> <span class="nb">rotateY</span><span class="p">(</span><span class="mi">-180</span><span class="kt">deg</span><span class="p">)</span> <span class="nb">translate3d</span><span class="p">(</span><span class="mi">0</span><span class="kt">px</span><span class="p">,</span> <span class="mi">0</span><span class="kt">px</span><span class="p">,</span> <span class="mi">2</span><span class="kt">px</span><span class="p">);</span>
+<span class="kp">-moz-</span><span class="k">transform</span><span class="p">:</span> <span class="nb">perspective</span><span class="p">(</span><span class="mi">80</span><span class="kt">px</span><span class="p">)</span> <span class="nb">rotateY</span><span class="p">(</span><span class="mi">-180</span><span class="kt">deg</span><span class="p">)</span> <span class="nb">translate3d</span><span class="p">(</span><span class="mi">0</span><span class="kt">px</span><span class="p">,</span> <span class="mi">0</span><span class="kt">px</span><span class="p">,</span> <span class="mi">2</span><span class="kt">px</span><span class="p">);</span>
+<span class="k">transform</span><span class="p">:</span> <span class="nb">perspective</span><span class="p">(</span><span class="mi">80</span><span class="kt">px</span><span class="p">)</span> <span class="nb">rotateY</span><span class="p">(</span><span class="mi">-180</span><span class="kt">deg</span><span class="p">)</span> <span class="nb">translate3d</span><span class="p">(</span><span class="mi">0</span><span class="kt">px</span><span class="p">,</span> <span class="mi">0</span><span class="kt">px</span><span class="p">,</span> <span class="mi">2</span><span class="kt">px</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="p">.</span><span class="nc">brick</span><span class="p">.</span><span class="nc">correct</span> <span class="o">&gt;</span> <span class="p">.</span><span class="nc">back</span><span class="o">,</span> <span class="p">.</span><span class="nc">brick</span><span class="p">.</span><span class="nc">wrong</span> <span class="o">&gt;</span> <span class="p">.</span><span class="nc">back</span><span class="o">,</span> <span class="p">.</span><span class="nc">brick</span><span class="p">.</span><span class="nc">revealed</span> <span class="o">&gt;</span> <span class="p">.</span><span class="nc">back</span> <span class="p">{</span>
-    <span class="kp">-webkit-</span><span class="k">transform</span><span class="p">:</span> <span class="nb">perspective</span><span class="p">(</span><span class="mi">80</span><span class="kt">px</span><span class="p">)</span> <span class="nb">rotateY</span><span class="p">(</span><span class="mi">0</span><span class="kt">deg</span><span class="p">)</span> <span class="nb">translate3d</span><span class="p">(</span><span class="mi">0</span><span class="kt">px</span><span class="p">,</span> <span class="mi">0</span><span class="kt">px</span><span class="p">,</span> <span class="mi">1</span><span class="kt">px</span><span class="p">);</span>
-    <span class="kp">-moz-</span><span class="k">transform</span><span class="p">:</span> <span class="nb">perspective</span><span class="p">(</span><span class="mi">80</span><span class="kt">px</span><span class="p">)</span> <span class="nb">rotateY</span><span class="p">(</span><span class="mi">0</span><span class="kt">deg</span><span class="p">)</span> <span class="nb">translate3d</span><span class="p">(</span><span class="mi">0</span><span class="kt">px</span><span class="p">,</span> <span class="mi">0</span><span class="kt">px</span><span class="p">,</span> <span class="mi">1</span><span class="kt">px</span><span class="p">);</span>
-    <span class="k">transform</span><span class="p">:</span> <span class="nb">perspective</span><span class="p">(</span><span class="mi">80</span><span class="kt">px</span><span class="p">)</span> <span class="nb">rotateY</span><span class="p">(</span><span class="mi">0</span><span class="kt">deg</span><span class="p">)</span> <span class="nb">translate3d</span><span class="p">(</span><span class="mi">0</span><span class="kt">px</span><span class="p">,</span> <span class="mi">0</span><span class="kt">px</span><span class="p">,</span> <span class="mi">1</span><span class="kt">px</span><span class="p">);</span>
+<span class="kp">-webkit-</span><span class="k">transform</span><span class="p">:</span> <span class="nb">perspective</span><span class="p">(</span><span class="mi">80</span><span class="kt">px</span><span class="p">)</span> <span class="nb">rotateY</span><span class="p">(</span><span class="mi">0</span><span class="kt">deg</span><span class="p">)</span> <span class="nb">translate3d</span><span class="p">(</span><span class="mi">0</span><span class="kt">px</span><span class="p">,</span> <span class="mi">0</span><span class="kt">px</span><span class="p">,</span> <span class="mi">1</span><span class="kt">px</span><span class="p">);</span>
+<span class="kp">-moz-</span><span class="k">transform</span><span class="p">:</span> <span class="nb">perspective</span><span class="p">(</span><span class="mi">80</span><span class="kt">px</span><span class="p">)</span> <span class="nb">rotateY</span><span class="p">(</span><span class="mi">0</span><span class="kt">deg</span><span class="p">)</span> <span class="nb">translate3d</span><span class="p">(</span><span class="mi">0</span><span class="kt">px</span><span class="p">,</span> <span class="mi">0</span><span class="kt">px</span><span class="p">,</span> <span class="mi">1</span><span class="kt">px</span><span class="p">);</span>
+<span class="k">transform</span><span class="p">:</span> <span class="nb">perspective</span><span class="p">(</span><span class="mi">80</span><span class="kt">px</span><span class="p">)</span> <span class="nb">rotateY</span><span class="p">(</span><span class="mi">0</span><span class="kt">deg</span><span class="p">)</span> <span class="nb">translate3d</span><span class="p">(</span><span class="mi">0</span><span class="kt">px</span><span class="p">,</span> <span class="mi">0</span><span class="kt">px</span><span class="p">,</span> <span class="mi">1</span><span class="kt">px</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="p">.</span><span class="nc">front</span> <span class="p">{</span>
-    <span class="k">font-size</span><span class="p">:</span> <span class="mi">2</span><span class="kt">em</span><span class="p">;</span>
+<span class="k">font-size</span><span class="p">:</span> <span class="mi">2</span><span class="kt">em</span><span class="p">;</span>
 <span class="p">}</span></code></pre></td></tr></table>
 </div>
-</div>
+</div></li>
+</ul>
+
 <h3 id="app-js">app.js</h3>
 
 <p>创建好了我们所有的组件之后，我们需要将组件组合起来，创建文件<code>app.js</code></p>
@@ -1282,8 +1280,7 @@ npm install -g browserify watchify http-server</code></pre></td></tr></table>
 <h3 id="查看结果">查看结果</h3>
 
 <ul>
-<li>开始编译监听 jsx 文件为 js</li>
-</ul>
+<li><p>开始编译监听 jsx 文件为 js</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
@@ -1291,10 +1288,9 @@ npm install -g browserify watchify http-server</code></pre></td></tr></table>
 <td class="lntd">
 <pre class="chroma"><code class="language-sh" data-lang="sh">watchify -v -o build/app.js js/app.js</code></pre></td></tr></table>
 </div>
-</div>
-<ul>
-<li>启用 http server</li>
-</ul>
+</div></li>
+
+<li><p>启用 http server</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-sh" data-lang="sh"><span class="lnt">1
@@ -1302,8 +1298,8 @@ npm install -g browserify watchify http-server</code></pre></td></tr></table>
 <td class="lntd">
 <pre class="chroma"><code class="language-sh" data-lang="sh">http-server -p <span class="m">8888</span></code></pre></td></tr></table>
 </div>
-</div>
-<ul>
+</div></li>
+
 <li><p>查看界面 <a href="http://localhost:8888/">http://localhost:8888/</a></p></li>
 
 <li><p>大功告成，开始开心的游戏吧！</p></li>

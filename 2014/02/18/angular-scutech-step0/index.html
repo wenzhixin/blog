@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.55.6 with even 4.0.0" />
+<meta name="generator" content="Hugo 0.56.3 with even 4.0.0" />
 
 
 <link rel="canonical" href="http://blog.wenzhixin.net.cn/2014/02/18/angular-scutech-step0/" />
@@ -42,16 +42,15 @@
 <meta property="og:description" content="下一节 今天开始一步一步学习 AngularJS 的教程之旅。 在这一小节中，我们将学习最基础、同时也是重要的代码结构和数据绑定。 在开始之前，我们先来看看 演示， 也可" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://blog.wenzhixin.net.cn/2014/02/18/angular-scutech-step0/" />
-<meta property="article:published_time" content="2014-02-18T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2014-02-18T00:00:00&#43;00:00"/>
-
+<meta property="article:published_time" content="2014-02-18T00:00:00+00:00" />
+<meta property="article:modified_time" content="2014-02-18T00:00:00+00:00" />
 <meta itemprop="name" content="一步一步学习 AngularJS（一）">
 <meta itemprop="description" content="下一节 今天开始一步一步学习 AngularJS 的教程之旅。 在这一小节中，我们将学习最基础、同时也是重要的代码结构和数据绑定。 在开始之前，我们先来看看 演示， 也可">
 
 
 <meta itemprop="datePublished" content="2014-02-18T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2014-02-18T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1428">
+<meta itemprop="wordCount" content="1248">
 
 
 
@@ -242,114 +241,85 @@
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-ng-app```标签代表 Angular 中名叫```ngApp```的指令" data-lang="ng-app```标签代表 Angular 中名叫```ngApp```的指令"><span class="lnt">1
 </span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-ng-app```标签代表 Angular 中名叫```ngApp```的指令" data-lang="ng-app```标签代表 Angular 中名叫```ngApp```的指令">（Angular 使用连接符-来定义它的标签，如```ng-app```，
-与其相对应的规则为驼峰命名，如```ngApp```），这里表示我们的应用程序是作用于根元素
-```html```下，对开发者而言可以将 angular 应用于整个页面中，
-也可以作为你的应用的一部分，例如用到了其他的框架。
+与其相对应的规则为驼峰命名，如```ngApp```），这里表示我们的应用程序是作用于根元素</code></pre></td></tr></table>
+</div>
+</div>
+<p>html```下，对开发者而言可以将 angular 应用于整个页面中，
+也可以作为你的应用的一部分，例如用到了其他的框架。</p>
 
-样式标签：</code></pre></td></tr></table>
-</div>
-</div>
-<p><link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css"></p>
+<p>样式标签：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">表示我们的应用是基于 [bootstrap](http://getbootstrap.com) 的，我们增加了一个基本的框架，
-可以通过 [案例](http://v3.bootcss.com/getting-started/#examples) 查看相对应的例子。
+<pre class="chroma">&lt;link rel=&#34;stylesheet&#34; href=&#34;lib/bootstrap/css/bootstrap.css&#34;&gt;</pre></td></tr></table>
+</div>
+</div>
+<p>表示我们的应用是基于 <a href="http://getbootstrap.com">bootstrap</a> 的，我们增加了一个基本的框架，
+可以通过 <a href="http://v3.bootcss.com/getting-started/#examples">案例</a> 查看相对应的例子。</p>
 
-脚本标签：</pre></td></tr></table>
-</div>
-</div>
-<p><script src="lib/angular/angular.js"></script></p>
+<p>脚本标签：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">引用 angular 的脚本，当脚本加载完成之后，Angular 会寻找```npApp```指令，
-假如找到这个标签，Angular 会为项目解析该标签下的元素，并启用应用程序。
+<pre class="chroma">&lt;script src=&#34;lib/angular/angular.js&#34;&gt;&lt;/script&gt;</pre></td></tr></table>
+</div>
+</div>
+<p>引用 angular 的脚本，当脚本加载完成之后，Angular 会寻找<code>npApp</code>指令，
+假如找到这个标签，Angular 会为项目解析该标签下的元素，并启用应用程序。</p>
 
-绑定表达式的双括号行：</pre></td></tr></table>
-</div>
-</div>
-<p>现在还没有任何{{&lsquo;内容&rsquo; + &lsquo;！&rsquo;}}</p>
+<p>绑定表达式的双括号行：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
+<pre class="chroma"><span class="lnt">1
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">这一行演示了 Angular 的核心功能——数据模板绑定，通过```{{}}```来绑定我们的内容。
+<pre class="chroma">现在还没有任何{{&#39;内容&#39; + &#39;！&#39;}}</pre></td></tr></table>
+</div>
+</div>
+<p>这一行演示了 Angular 的核心功能——数据模板绑定，通过<code>{{}}</code>来绑定我们的内容。
 绑定标签告诉 Angular 运行括号内的表达式并插入到相对应的 DOM 中，当表达式进行改变的时候，
-DOM 中的内容会相对应的作出改变，这就是所谓的实时动态绑定。
+DOM 中的内容会相对应的作出改变，这就是所谓的实时动态绑定。</p>
 
-这里的表达式可以是一个变量，也可以是一个运算符，在插入数据之前，
-Angular 会先解析并运行想对应的表达式。
+<p>这里的表达式可以是一个变量，也可以是一个运算符，在插入数据之前，
+Angular 会先解析并运行想对应的表达式。</p>
 
-**启用 AngularJS 应用程序**
+<p><strong>启用 AngularJS 应用程序</strong></p>
 
-在上面的内容中，我们知道，使用```ngApp```标签可以自动启用我们的程序。
-当然，你也可以通过[手动](http://docs.angularjs.org/guide/bootstrap)来启用 Angular。
+<p>在上面的内容中，我们知道，使用<code>ngApp</code>标签可以自动启用我们的程序。
+当然，你也可以通过<a href="http://docs.angularjs.org/guide/bootstrap">手动</a>来启用 Angular。</p>
 
-在启用的过程中，Angular 主要做了三件事情：
+<p>在启用的过程中，Angular 主要做了三件事情：</p>
 
-* [injector](http://docs.angularjs.org/api/auto/service/$injector) 会被自动创建用于依赖注入
+<ul>
+<li><p><a href="http://docs.angularjs.org/api/auto/service/$injector">injector</a> 会被自动创建用于依赖注入</p></li>
 
-* 接下来 injector 会创建根变量```root scope```作为应用程序的数据模块
+<li><p>接下来 injector 会创建根变量<code>root scope</code>作为应用程序的数据模块</p></li>
 
-* Angular 会从```ngApp```根元素开始，“编译”解析，处理所有的指令和绑定。
+<li><p>Angular 会从<code>ngApp</code>根元素开始，“编译”解析，处理所有的指令和绑定。</p></li>
+</ul>
 
-在本小节中，我们的应用程序很简单，我们只是添加了简单的静态绑定，数据模型是空的。
+<p>在本小节中，我们的应用程序很简单，我们只是添加了简单的静态绑定，数据模型是空的。</p>
 
-![](/2014/02/18/tutorial_0.png)
+<p><img src="/2014/02/18/tutorial_0.png" alt="" /></p>
 
-**扩展练习**
+<p><strong>扩展练习</strong></p>
 
-试着添加其他的绑定元素，并查看结果，例如：</pre></td></tr></table>
+<p>试着添加其他的绑定元素，并查看结果，例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">&lt;p&gt;1 + 2 = {{ 1 + 2 }}&lt;/p&gt;</pre></td></tr></table>
 </div>
 </div>
-<p><p>1 + 2 = {{ 1 + 2 }}</p>
-```</p>
-
 <p><a href="/2014/02/19/angular-scutech-step1">下一节</a></p>
 
 <hr />

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>BootstrapTable on 文翼的博客</title>
+    <link>http://blog.wenzhixin.net.cn/categories/bootstraptable/</link>
+    <description>Recent content in BootstrapTable on 文翼的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
+    <lastBuildDate>Sat, 10 Aug 2019 20:32:40 +0800</lastBuildDate>
+    
+	<atom:link href="http://blog.wenzhixin.net.cn/categories/bootstraptable/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>在 Bootstrap Table Formatter 中使用 Vue 组件</title>
+      <link>http://blog.wenzhixin.net.cn/2019/08/10/formatter-use-vue-component/</link>
+      <pubDate>Sat, 10 Aug 2019 20:32:40 +0800</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2019/08/10/formatter-use-vue-component/</guid>
+      <description>从 v1.15.2 开始，Bootstrap Table 增加了 Bootstrap Table Vue 组件的支持。 我们可以这样使用 formatter 和 events 这两个列属性来实现对列的自定义显示和事件监听： 1 2 3 4 5 6 7 8 9</description>
+    </item>
+    
+  </channel>
+</rss>

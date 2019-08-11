@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>在 Bootstrap Table Formatter 中使用 Vue 组件 - 文翼的博客</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="wenzhixin" /><meta name="description" content="从 v1.15.2 开始，Bootstrap Table 增加了 Bootstrap Table Vue 组件的支持。 我们可以这样使用 formatter 和 events 这两个列属性来实现对列的自定义显示和事件监听： 1 2 3 4 5 6 7 8 9" /><meta name="keywords" content="文翼的博客, web前端博客" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.56.3 with even 4.0.0" />
+
+
+<link rel="canonical" href="http://blog.wenzhixin.net.cn/2019/08/10/formatter-use-vue-component/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.93844dae.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="在 Bootstrap Table Formatter 中使用 Vue 组件" />
+<meta property="og:description" content="从 v1.15.2 开始，Bootstrap Table 增加了 Bootstrap Table Vue 组件的支持。 我们可以这样使用 formatter 和 events 这两个列属性来实现对列的自定义显示和事件监听： 1 2 3 4 5 6 7 8 9" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.wenzhixin.net.cn/2019/08/10/formatter-use-vue-component/" />
+<meta property="article:published_time" content="2019-08-10T20:32:40+08:00" />
+<meta property="article:modified_time" content="2019-08-10T20:32:40+08:00" />
+<meta itemprop="name" content="在 Bootstrap Table Formatter 中使用 Vue 组件">
+<meta itemprop="description" content="从 v1.15.2 开始，Bootstrap Table 增加了 Bootstrap Table Vue 组件的支持。 我们可以这样使用 formatter 和 events 这两个列属性来实现对列的自定义显示和事件监听： 1 2 3 4 5 6 7 8 9">
+
+
+<meta itemprop="datePublished" content="2019-08-10T20:32:40&#43;08:00" />
+<meta itemprop="dateModified" content="2019-08-10T20:32:40&#43;08:00" />
+<meta itemprop="wordCount" content="1109">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="在 Bootstrap Table Formatter 中使用 Vue 组件"/>
+<meta name="twitter:description" content="从 v1.15.2 开始，Bootstrap Table 增加了 Bootstrap Table Vue 组件的支持。 我们可以这样使用 formatter 和 events 这两个列属性来实现对列的自定义显示和事件监听： 1 2 3 4 5 6 7 8 9"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+<link rel="stylesheet" href="/css/custom.css">
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">文翼的博客</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">文翼的博客</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+
+<div id="codefund"></div>
+<script src="https://codefund.io/properties/292/funder.js" async="async"></script>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">在 Bootstrap Table Formatter 中使用 Vue 组件</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-08-10 </span>
+        <div class="post-category">
+            <a href="/categories/bootstraptable/"> BootstrapTable </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    
+  </div>
+</div>
+    <div class="post-content">
+      <p>从 v1.15.2 开始，Bootstrap Table 增加了 Bootstrap Table Vue 组件的支持。</p>
+
+<p>我们可以这样使用 <code>formatter</code> 和 <code>events</code> 这两个列属性来实现对列的自定义显示和事件监听：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">BootstrapTable</span>
+    <span class="na">:columns</span><span class="o">=</span><span class="s">&#34;columns&#34;</span>
+    <span class="na">:data</span><span class="o">=</span><span class="s">&#34;data&#34;</span>
+    <span class="na">:options</span><span class="o">=</span><span class="s">&#34;options&#34;</span>
+  <span class="p">/&gt;</span>
+<span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="k">import</span> <span class="nx">BootstrapTable</span> <span class="nx">from</span> <span class="s1">&#39;bootstrap-table/dist/bootstrap-table-vue.esm.js&#39;</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
+  <span class="nx">components</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">BootstrapTable</span>
+  <span class="p">},</span>
+  <span class="nx">data</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="nx">columns</span><span class="o">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Item ID&#39;</span><span class="p">,</span>
+          <span class="nx">field</span><span class="o">:</span> <span class="s1">&#39;id&#39;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="nx">field</span><span class="o">:</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span>
+          <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Item Name&#39;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="nx">field</span><span class="o">:</span> <span class="s1">&#39;price&#39;</span><span class="p">,</span>
+          <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Item Price&#39;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="nx">field</span><span class="o">:</span> <span class="s1">&#39;actions&#39;</span><span class="p">,</span>
+          <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Actions&#39;</span><span class="p">,</span>
+          <span class="nx">formatter</span><span class="o">:</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="s1">&#39;&lt;button class=&#34;btn btn-secondary&#34;&gt;Click&lt;/button&gt;&#39;</span>
+          <span class="p">},</span>
+          <span class="nx">events</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s1">&#39;click .btn&#39;</span><span class="o">:</span> <span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">value</span><span class="p">,</span> <span class="nx">row</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+              <span class="k">this</span><span class="p">.</span><span class="nx">clickRow</span><span class="p">(</span><span class="nx">row</span><span class="p">)</span>
+            <span class="p">}</span>
+          <span class="p">}</span>
+        <span class="p">}</span>
+      <span class="p">],</span>
+      <span class="nx">data</span><span class="o">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="nx">id</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Item 1&#39;</span><span class="p">,</span>
+          <span class="nx">price</span><span class="o">:</span> <span class="s1">&#39;$1&#39;</span>
+        <span class="p">}</span>
+      <span class="p">],</span>
+      <span class="nx">options</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">search</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nx">showColumns</span><span class="o">:</span> <span class="kc">true</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">clickRow</span> <span class="p">(</span><span class="nx">row</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">alert</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">row</span><span class="p">))</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>这里有一个在线例子：<a href="https://live.bootstrap-table.com/code/wenzhixin/440">https://live.bootstrap-table.com/code/wenzhixin/440</a></p>
+
+<p>可以看到，当我们点击按钮的时候调用了 <code>clickRow</code> 方法，不过我们这里使用的是 <code>jQuery</code> 的事件绑定方法。</p>
+
+<p>使用 <code>vue</code> 的话，你可能会想我是否可以使用 <code>vue</code> 的事件进行绑定呢？</p>
+
+<p>如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">formatter</span><span class="o">:</span> <span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="nx">row</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="s1">&#39;&lt;button class=&#34;btn btn-secondary&#34; @click=&#34;clickRow(row)&#34;&gt;Click&lt;/button&gt;&#39;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>答案是不行，因为这里并不会处理 <code>vue</code> 的事件。</p>
+
+<p>另外我们可能会用到 <code>vue</code> 的 UI 组件，例如 <a href="https://bootstrap-vue.js.org/">BootstrapVue
+</a>，那么你可能会想，这里的 <code>formatter</code> 可否使用 <code>vue</code> 组件呢？</p>
+
+<p>如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">formatter</span><span class="o">:</span> <span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="nx">row</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="s1">&#39;&lt;b-button @click=&#34;clickRow(row)&#34;&gt;Click&lt;/b-button&gt;&#39;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>当然，这样也是不支持的。那应该怎么办呢？</p>
+
+<p>针对这两个问题，我进行了深入了研究和试验。幸运的是，找到了可行的方案。</p>
+
+<p>技术原理主要是先将 <code>vue</code> 组件保存到一个自定义变量中，然后返回一个只包含 <code>class</code> 的简单 <code>div</code>，在表格渲染完成之后我们再对其进行转换渲染为对应的 <code>vue</code> 组件。</p>
+
+<p>我们增加了一个方法：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">vueFormatter</span> <span class="p">(</span><span class="nx">obj</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">const</span> <span class="nx">key</span> <span class="o">=</span> <span class="sb">`_vue_formatter_</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">vueFormatters</span><span class="p">.</span><span class="nx">length</span><span class="si">}</span><span class="sb">`</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">vueFormatters</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
+    <span class="nx">el</span><span class="o">:</span> <span class="sb">`.</span><span class="si">${</span><span class="nx">key</span><span class="si">}</span><span class="sb">`</span><span class="p">,</span>
+    <span class="nx">name</span><span class="o">:</span> <span class="nx">key</span><span class="p">,</span>
+    <span class="p">...</span><span class="nx">obj</span>
+  <span class="p">})</span>
+  <span class="k">return</span> <span class="sb">`&lt;div class=&#34;</span><span class="si">${</span><span class="nx">key</span><span class="si">}</span><span class="sb">&#34;/&gt;`</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>可以看到我们使用 <code>vueFormatters</code> 这个变量用于保存所有列的 <code>vue</code> 组件信息。</p>
+
+<p>我们知道表格渲染完成的事件为 <code>onPostBody</code>，我们对其进行监听并对保存的 <code>vue</code> 组件信息进行渲染：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">vueFormatterPostBody</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">vueFormatters</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span>
+  <span class="p">}</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">vueFormatters</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">const</span> <span class="nx">formatter</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">vueFormatters</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByClassName</span><span class="p">(</span><span class="nx">formatter</span><span class="p">.</span><span class="nx">name</span><span class="p">))</span> <span class="p">{</span>
+      <span class="k">new</span> <span class="nx">Vue</span><span class="p">(</span><span class="nx">formatter</span><span class="p">)</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">vueFormatters</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>考虑到会经常复用到，我们创建一个 <code>mixins/table.js</code> 文件：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="k">import</span> <span class="nx">Vue</span> <span class="nx">from</span> <span class="s1">&#39;vue/dist/vue.esm.js&#39;</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
+  <span class="nx">data</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="nx">vueFormatters</span><span class="o">:</span> <span class="p">[]</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+
+  <span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">vueFormatter</span> <span class="p">(</span><span class="nx">obj</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">const</span> <span class="nx">key</span> <span class="o">=</span> <span class="sb">`_vue_formatter_</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">vueFormatters</span><span class="p">.</span><span class="nx">length</span><span class="si">}</span><span class="sb">`</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">vueFormatters</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
+        <span class="nx">el</span><span class="o">:</span> <span class="sb">`.</span><span class="si">${</span><span class="nx">key</span><span class="si">}</span><span class="sb">`</span><span class="p">,</span>
+        <span class="nx">name</span><span class="o">:</span> <span class="nx">key</span><span class="p">,</span>
+        <span class="p">...</span><span class="nx">obj</span>
+      <span class="p">})</span>
+      <span class="k">return</span> <span class="sb">`&lt;div class=&#34;</span><span class="si">${</span><span class="nx">key</span><span class="si">}</span><span class="sb">&#34;/&gt;`</span>
+    <span class="p">},</span>
+
+    <span class="nx">vueFormatterPostBody</span> <span class="p">()</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">vueFormatters</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span>
+      <span class="p">}</span>
+
+      <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">vueFormatters</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">const</span> <span class="nx">formatter</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">vueFormatters</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByClassName</span><span class="p">(</span><span class="nx">formatter</span><span class="p">.</span><span class="nx">name</span><span class="p">))</span> <span class="p">{</span>
+          <span class="k">new</span> <span class="nx">Vue</span><span class="p">(</span><span class="nx">formatter</span><span class="p">)</span>
+          <span class="k">this</span><span class="p">.</span><span class="nx">vueFormatters</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>如何使用：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">formatter</span><span class="o">:</span> <span class="p">(</span><span class="nx">value</span><span class="p">,</span> <span class="nx">row</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">vueFormatter</span><span class="p">({</span>
+    <span class="nx">template</span><span class="o">:</span> <span class="s1">&#39;&lt;b-button @click=&#34;clickRow(row)&#34;&gt;Click&lt;/b-button&gt;&#39;</span><span class="p">,</span>
+    <span class="nx">data</span><span class="o">:</span> <span class="p">{</span> <span class="nx">row</span> <span class="p">},</span>
+    <span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">clickRow</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">clickRow</span>
+    <span class="p">}</span>
+  <span class="p">})</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">BootstrapTable</span>
+  <span class="na">ref</span><span class="o">=</span><span class="s">&#34;table&#34;</span>
+  <span class="na">:columns</span><span class="o">=</span><span class="s">&#34;columns&#34;</span>
+  <span class="na">:data</span><span class="o">=</span><span class="s">&#34;data&#34;</span>
+  <span class="na">:options</span><span class="o">=</span><span class="s">&#34;options&#34;</span>
+  <span class="err">@</span><span class="na">onPostBody</span><span class="o">=</span><span class="s">&#34;vueFormatterPostBody&#34;</span>
+<span class="p">/&gt;</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>在线例子：<a href="https://live.bootstrap-table.com/code/wenzhixin/441">https://live.bootstrap-table.com/code/wenzhixin/441</a></p>
+
+<p><strong>需要注意的是：</strong></p>
+
+<p>由于 <code>new Vue({ template })</code> 需要 <code>full</code> 版本，假如在 webpack 中使用的话，需要修改所有的 <code>vue</code> 的导入：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="k">import</span> <span class="nx">Vue</span> <span class="nx">from</span> <span class="s1">&#39;vue/dist/vue.esm.js&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>源码：<a href="https://github.com/wenzhixin/bootstrap-table-examples/tree/develop/vue-starter">https://github.com/wenzhixin/bootstrap-table-examples/tree/develop/vue-starter</a></p>
+
+<p>最后，希望这篇文章可以帮到你。</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">wenzhixin</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2019-08-10</span>
+  </p>
+  
+  
+</div><div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/weixin.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/alipay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      
+      <nav class="post-nav">
+        
+        <a class="next" href="/2019/07/25/plantuml-chinese-issue/">
+            <span class="next-text nav-default">Plantuml 中文乱码问题</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'wenzhixin';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:wenzhixin2010@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/1531096/wenyi" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/wenzhixin2010" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.facebook.com/wenzhixin2010" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://github.com/wenzhixin" class="iconfont icon-github" title="github"></a>
+      <a href="https://weibo.com/2292826740" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://www.zhihu.com/people/zhixin-wen" class="iconfont icon-zhihu" title="zhihu"></a>
+  <a href="http://blog.wenzhixin.net.cn/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2012 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">wenzhixin.net.cn 粤ICP备15117953号</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.ece58db6.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-36708951-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>
