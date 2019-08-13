@@ -217,6 +217,16 @@ formatter: (value, row) => {
 import Vue from 'vue/dist/vue.esm.js'
 ```
 
+或者我们可以设置 Vue 导入的别名：
+
+```js
+resolve: {
+  alias: {
+    vue$: 'vue/dist/vue.esm.js'
+  }
+}
+```
+
 源码：https://github.com/wenzhixin/bootstrap-table-examples/tree/develop/vue-starter
 
 最后，希望这篇文章可以帮到你。
