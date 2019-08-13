@@ -50,7 +50,7 @@
 
 <meta itemprop="datePublished" content="2019-08-10T20:32:40&#43;08:00" />
 <meta itemprop="dateModified" content="2019-08-10T20:32:40&#43;08:00" />
-<meta itemprop="wordCount" content="1109">
+<meta itemprop="wordCount" content="1137">
 
 
 
@@ -528,6 +528,24 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-js" data-lang="js"><span class="k">import</span> <span class="nx">Vue</span> <span class="nx">from</span> <span class="s1">&#39;vue/dist/vue.esm.js&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>或者我们可以设置 Vue 导入的别名：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">resolve</span><span class="o">:</span> <span class="p">{</span>
+  <span class="nx">alias</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">vue$</span><span class="o">:</span> <span class="s1">&#39;vue/dist/vue.esm.js&#39;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
 </div>
