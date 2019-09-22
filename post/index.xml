@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Sat, 10 Aug 2019 20:32:40 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 22 Sep 2019 22:42:40 +0800</lastBuildDate>
     
 	<atom:link href="http://blog.wenzhixin.net.cn/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>在 Webpack 中使用 Bootstrap Table</title>
+      <link>http://blog.wenzhixin.net.cn/2019/09/22/bootstrap-table-in-webpack/</link>
+      <pubDate>Sun, 22 Sep 2019 22:42:40 +0800</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2019/09/22/bootstrap-table-in-webpack/</guid>
+      <description>因为看到问题说 在 Webpack 中使用最新版本的 Bootstrap Table 会失败，于是尝试了下如何从零开始在 Webpack 中使用 Bootstrap Table。 首先，根据 Webpack Getting Started 的文档，创建了一个测试项目 we</description>
+    </item>
     
     <item>
       <title>在 Bootstrap Table Formatter 中使用 Vue 组件</title>
@@ -940,21 +949,21 @@
     </item>
     
     <item>
-      <title>Nginx rewrite query string</title>
-      <link>http://blog.wenzhixin.net.cn/2013/12/31/nginx-rewrite-query-string/</link>
-      <pubDate>Tue, 31 Dec 2013 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2013/12/31/nginx-rewrite-query-string/</guid>
-      <description>rewrite 的正则是不匹配 query string 的， 默认情况下，query string 会自动追加到rewrite 后的地址上。 例如： 1 rewrite ^/read.php$ /api.php 那么： 访问 read.php?tid=123 的时候实际上已经 rewrite 到了 api.php?tid=123 上了</description>
-    </item>
-    
-    <item>
       <title>apache 重写链接</title>
       <link>http://blog.wenzhixin.net.cn/2013/12/31/apache-rewrite/</link>
       <pubDate>Tue, 31 Dec 2013 00:00:00 +0000</pubDate>
       
       <guid>http://blog.wenzhixin.net.cn/2013/12/31/apache-rewrite/</guid>
       <description>安装启用 mod_rewrite 在安装启用之前，编写 info.php 文件 1 &amp;lt;?php phpinfo();?&amp;gt; 从浏览器中打开，使用 Ctrl + F 进行查找 mod_rewrite 是否在 Loaded Modules 中， 已经存在就表示我们已经安装，不存在的话，那么，需</description>
+    </item>
+    
+    <item>
+      <title>Nginx rewrite query string</title>
+      <link>http://blog.wenzhixin.net.cn/2013/12/31/nginx-rewrite-query-string/</link>
+      <pubDate>Tue, 31 Dec 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2013/12/31/nginx-rewrite-query-string/</guid>
+      <description>rewrite 的正则是不匹配 query string 的， 默认情况下，query string 会自动追加到rewrite 后的地址上。 例如： 1 rewrite ^/read.php$ /api.php 那么： 访问 read.php?tid=123 的时候实际上已经 rewrite 到了 api.php?tid=123 上了</description>
     </item>
     
     <item>
@@ -2173,21 +2182,21 @@
     </item>
     
     <item>
-      <title>Eclipse 安装插件(aptana、svn 、git、Java EE、JSHint)</title>
-      <link>http://blog.wenzhixin.net.cn/2012/05/08/eclipse-install-the-plugin-aptana-svn-git-java-ee-jshint/</link>
-      <pubDate>Tue, 08 May 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/05/08/eclipse-install-the-plugin-aptana-svn-git-java-ee-jshint/</guid>
-      <description>1、安装 aptana 插件： * 依次点击：Help -&amp;gt; Install New Software&amp;hellip; -&amp;gt; Add * 输入：http://download.aptana.com/studio3/plugin/</description>
-    </item>
-    
-    <item>
       <title>div 中无法自动换行、以及单行显示的问题</title>
       <link>http://blog.wenzhixin.net.cn/2012/05/08/word-wrap-and-one-cannot-display-the-problems-in-div/</link>
       <pubDate>Tue, 08 May 2012 00:00:00 +0000</pubDate>
       
       <guid>http://blog.wenzhixin.net.cn/2012/05/08/word-wrap-and-one-cannot-display-the-problems-in-div/</guid>
       <description>1、无法自动换行 * 问题：如果 div 输入的是英文字母且没有空格，会导致英文字母不换行直接在同一行输出，导致 div 的宽度远远超出设定的大小。 * 原因：因为</description>
+    </item>
+    
+    <item>
+      <title>Eclipse 安装插件(aptana、svn 、git、Java EE、JSHint)</title>
+      <link>http://blog.wenzhixin.net.cn/2012/05/08/eclipse-install-the-plugin-aptana-svn-git-java-ee-jshint/</link>
+      <pubDate>Tue, 08 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2012/05/08/eclipse-install-the-plugin-aptana-svn-git-java-ee-jshint/</guid>
+      <description>1、安装 aptana 插件： * 依次点击：Help -&amp;gt; Install New Software&amp;hellip; -&amp;gt; Add * 输入：http://download.aptana.com/studio3/plugin/</description>
     </item>
     
     <item>

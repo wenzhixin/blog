@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>wenzhixin.net.cn 粤ICP备15117953号</copyright>
-    <lastBuildDate>Sat, 10 Aug 2019 20:32:40 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 22 Sep 2019 22:42:40 +0800</lastBuildDate>
     
 	<atom:link href="http://blog.wenzhixin.net.cn/categories/bootstraptable/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>在 Webpack 中使用 Bootstrap Table</title>
+      <link>http://blog.wenzhixin.net.cn/2019/09/22/bootstrap-table-in-webpack/</link>
+      <pubDate>Sun, 22 Sep 2019 22:42:40 +0800</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2019/09/22/bootstrap-table-in-webpack/</guid>
+      <description>因为看到问题说 在 Webpack 中使用最新版本的 Bootstrap Table 会失败，于是尝试了下如何从零开始在 Webpack 中使用 Bootstrap Table。 首先，根据 Webpack Getting Started 的文档，创建了一个测试项目 we</description>
+    </item>
     
     <item>
       <title>在 Bootstrap Table Formatter 中使用 Vue 组件</title>

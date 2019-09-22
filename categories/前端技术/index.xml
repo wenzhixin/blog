@@ -850,21 +850,21 @@
     </item>
     
     <item>
-      <title>Eclipse 安装插件(aptana、svn 、git、Java EE、JSHint)</title>
-      <link>http://blog.wenzhixin.net.cn/2012/05/08/eclipse-install-the-plugin-aptana-svn-git-java-ee-jshint/</link>
-      <pubDate>Tue, 08 May 2012 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.wenzhixin.net.cn/2012/05/08/eclipse-install-the-plugin-aptana-svn-git-java-ee-jshint/</guid>
-      <description>1、安装 aptana 插件： * 依次点击：Help -&amp;gt; Install New Software&amp;hellip; -&amp;gt; Add * 输入：http://download.aptana.com/studio3/plugin/</description>
-    </item>
-    
-    <item>
       <title>div 中无法自动换行、以及单行显示的问题</title>
       <link>http://blog.wenzhixin.net.cn/2012/05/08/word-wrap-and-one-cannot-display-the-problems-in-div/</link>
       <pubDate>Tue, 08 May 2012 00:00:00 +0000</pubDate>
       
       <guid>http://blog.wenzhixin.net.cn/2012/05/08/word-wrap-and-one-cannot-display-the-problems-in-div/</guid>
       <description>1、无法自动换行 * 问题：如果 div 输入的是英文字母且没有空格，会导致英文字母不换行直接在同一行输出，导致 div 的宽度远远超出设定的大小。 * 原因：因为</description>
+    </item>
+    
+    <item>
+      <title>Eclipse 安装插件(aptana、svn 、git、Java EE、JSHint)</title>
+      <link>http://blog.wenzhixin.net.cn/2012/05/08/eclipse-install-the-plugin-aptana-svn-git-java-ee-jshint/</link>
+      <pubDate>Tue, 08 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.wenzhixin.net.cn/2012/05/08/eclipse-install-the-plugin-aptana-svn-git-java-ee-jshint/</guid>
+      <description>1、安装 aptana 插件： * 依次点击：Help -&amp;gt; Install New Software&amp;hellip; -&amp;gt; Add * 输入：http://download.aptana.com/studio3/plugin/</description>
     </item>
     
     <item>
