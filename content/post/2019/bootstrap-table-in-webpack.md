@@ -6,13 +6,13 @@ categories: [BootstrapTable]
 
 因为看到问题说 [在 Webpack 中使用最新版本的 Bootstrap Table 会失败](https://github.com/wenzhixin/bootstrap-table/issues/4597)，于是尝试了下如何从零开始在 Webpack 中使用 Bootstrap Table。
 
-首先，根据 Webpack [Getting Started](https://webpack.js.org/guides/getting-started/) 的文档，创建了一个测试项目 `webpack-bootstrap-table`，在这里我们使用 `http-server` 用于启动服务：
+首先，根据 Webpack [Getting Started](https://webpack.js.org/guides/getting-started/) 的文档，创建了一个测试项目 `webpack-bootstrap-table`，在这里我们使用 `webpack-dev-server` 用于启动服务：
 
 ```bash
 mkdir webpack-bootstrap-table
 cd webpack-bootstrap-table
 yarn init -y
-yarn add webpack webpack-cli http-server -D
+yarn add webpack webpack-cli webpack-dev-server -D
 ```
 
 接下来，增加 `bootstrap-table` 和需要的依赖库 `jquery` 和 `bootstrap`：
@@ -107,11 +107,14 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
     ],
+  },
+  devServer: {
+    contentBase: path.join(__dirname, 'dist')
   }
 }
 ```
 
-然后在 **package.json** 文件中增加 `build` 和 `server` 的 `scripts`：
+然后在 **package.json** 文件中增加 `build` 和 `dev` 的 `scripts`：
 
 ```json
 {
@@ -121,10 +124,10 @@ module.exports = {
   "license": "MIT",
   "devDependencies": {
     "css-loader": "^3.2.0",
-    "http-server": "^0.11.1",
     "style-loader": "^1.0.0",
-    "webpack": "^4.40.2",
-    "webpack-cli": "^3.3.9"
+    "webpack": "^4.41.0",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.8.1"
   },
   "dependencies": {
     "bootstrap": "^4.3.1",
@@ -134,15 +137,15 @@ module.exports = {
   },
   "scripts": {
     "build": "webpack",
-    "server": "http-server dist"
+    "dev": "webpack-dev-server --inline --progress"
   }
 }
 ```
 
-编译和运行服务：
+运行服务（或者 `yarn build`）：
 
 ```
-yarn build && yarn server
+yarn dev
 ```
 
 打开浏览器，就可以正常使用了。
