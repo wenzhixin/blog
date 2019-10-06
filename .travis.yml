@@ -2,7 +2,7 @@ dist: xenial
 
 install:
   - curl -LO https://github.com/gohugoio/hugo/releases/download/v0.55.6/hugo_0.55.6_Linux-64bit.deb
-  - sudo dpkg -i hugo_0.55.4_Linux-64bit.deb
+  - sudo dpkg -i hugo_0.55.6_Linux-64bit.deb
 
 script:
   - hugo version
