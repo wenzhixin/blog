@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.58.3 with even 4.0.0" />
+<meta name="generator" content="Hugo 0.55.6 with even 4.0.0" />
 
 
 <link rel="canonical" href="http://blog.wenzhixin.net.cn/2014/02/20/angular-scutech-step2/" />
@@ -42,15 +42,16 @@
 <meta property="og:description" content="上一节 下一节 在这一小节，我们使用 Angular 来动态生成上一节的页面。 在开始之前，我们先来看看 演示， 也可以通过链接下载 zip 包。 一个应用可以有很多种代码结构" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://blog.wenzhixin.net.cn/2014/02/20/angular-scutech-step2/" />
-<meta property="article:published_time" content="2014-02-20T00:00:00+00:00" />
-<meta property="article:modified_time" content="2014-02-20T00:00:00+00:00" />
+<meta property="article:published_time" content="2014-02-20T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2014-02-20T00:00:00&#43;00:00"/>
+
 <meta itemprop="name" content="一步一步学习 AngularJS（三）">
 <meta itemprop="description" content="上一节 下一节 在这一小节，我们使用 Angular 来动态生成上一节的页面。 在开始之前，我们先来看看 演示， 也可以通过链接下载 zip 包。 一个应用可以有很多种代码结构">
 
 
 <meta itemprop="datePublished" content="2014-02-20T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2014-02-20T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1920">
+<meta itemprop="wordCount" content="2054">
 
 
 
@@ -341,9 +342,31 @@ scutechApp.controller(&#39;ListCtrl&#39;, function ($scope) {
 <li><p>指令<code>ngController</code>是位于<code>body</code>标签中的，与之相对应的<code>ListCtrl</code>是位于<code>controllers.js</code>中，
 表示我们的控制器范围是作用于 body 下的。</p></li>
 
-<li><div class="highlight"><div class="chroma">
+<li><p><code>ListCtrl</code>控制器将数据作为<code>$scope</code>的一个属性值<code>products</code>。这里的 scope 继承于 root scope，
+当应用程序启动的时候自动被创建。</p></li>
+</ul>
+
+<p><strong>Scope</strong></p>
+
+<p>在 Angular 中，Scope 的概念是至关重要的，Scope 将视图、模板、模型和控制器紧紧结合在了一起。
+同时，使用 Scope 让视图、模型和控制器起到了解藕的效果，但是又做到了同步。
+即数据模型与视图的双向绑定，所以任何数据的改变都会在视图中显示出来，反之亦然。</p>
+
+<p><strong>扩展练习</strong></p>
+
+<p>在<code>index.html</code>中添加新的绑定：</p>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-ListCtrl```控制器将数据作为``````的一个属性值```products```。这里的 scope 继承于 root scope，" data-lang="ListCtrl```控制器将数据作为``````的一个属性值```products```。这里的 scope 继承于 root scope，"><span class="lnt"> 1
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">&lt;p&gt;产品个数：{{products.length}}&lt;/p&gt;</pre></td></tr></table>
+</div>
+</div>
+<p>使用表格显示我们的产品：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -354,46 +377,23 @@ scutechApp.controller(&#39;ListCtrl&#39;, function ($scope) {
 </span><span class="lnt"> 9
 </span><span class="lnt">10
 </span><span class="lnt">11
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-ListCtrl```控制器将数据作为``````的一个属性值```products```。这里的 scope 继承于 root scope，" data-lang="ListCtrl```控制器将数据作为``````的一个属性值```products```。这里的 scope 继承于 root scope，">当应用程序启动的时候自动被创建。
-
-**Scope**
-
-在 Angular 中，Scope 的概念是至关重要的，Scope 将视图、模板、模型和控制器紧紧结合在了一起。
-同时，使用 Scope 让视图、模型和控制器起到了解藕的效果，但是又做到了同步。
-即数据模型与视图的双向绑定，所以任何数据的改变都会在视图中显示出来，反之亦然。
-
-**扩展练习**
-
-在```index.html```中添加新的绑定：</code></pre></td></tr></table>
-</div>
-</div></li>
-</ul>
-
-<p><p>产品个数：{{products.length}}</p></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">12
 </span></pre></td>
 <td class="lntd">
-<pre class="chroma">使用表格显示我们的产品：</pre></td></tr></table>
+<pre class="chroma">&lt;table class=&#34;table table-bordered&#34;&gt;
+    &lt;tr&gt;
+        &lt;th&gt;编号&lt;/th&gt;
+        &lt;th&gt;名称&lt;/th&gt;
+        &lt;th&gt;描述&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr ng-repeat=&#34;product in products&#34;&gt;
+        &lt;td&gt;{{$index + 1}}&lt;/td&gt;
+        &lt;td&gt;{{product.name}}&lt;/td&gt;
+        &lt;td&gt;{{product.info}}&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</pre></td></tr></table>
 </div>
 </div>
-<p><table class="table table-bordered">
-    <tr>
-        <th>编号</th>
-        <th>名称</th>
-        <th>描述</th>
-    </tr>
-    <tr ng-repeat="product in products">
-        <td>{{$index + 1}}</td>
-        <td>{{product.name}}</td>
-        <td>{{product.info}}</td>
-    </tr>
-</table>
-```</p>
-
 <p><a href="/2014/02/19/angular-scutech-step1">上一节</a>
 <a href="/2014/02/21/angular-scutech-step3">下一节</a></p>
 

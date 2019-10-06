@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.58.3 with even 4.0.0" />
+<meta name="generator" content="Hugo 0.55.6 with even 4.0.0" />
 
 
 <link rel="canonical" href="http://blog.wenzhixin.net.cn/2014/01/20/php-code-standard/" />
@@ -42,8 +42,9 @@
 <meta property="og:description" content="通用规范 代码缩进全部用 tab / 四个空格 SVN / Git 中新建文件编码类型统一用 utf-8 编码 行宽：80 字符 PHP 代码划分 PHP 代码总是用完整的标准的 PHP 标签定界： 1 2 3 4 5" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://blog.wenzhixin.net.cn/2014/01/20/php-code-standard/" />
-<meta property="article:published_time" content="2014-01-20T00:00:00+00:00" />
-<meta property="article:modified_time" content="2014-01-20T00:00:00+00:00" />
+<meta property="article:published_time" content="2014-01-20T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2014-01-20T00:00:00&#43;00:00"/>
+
 <meta itemprop="name" content="PHP 代码规范">
 <meta itemprop="description" content="通用规范 代码缩进全部用 tab / 四个空格 SVN / Git 中新建文件编码类型统一用 utf-8 编码 行宽：80 字符 PHP 代码划分 PHP 代码总是用完整的标准的 PHP 标签定界： 1 2 3 4 5">
 
@@ -264,7 +265,8 @@ threeArguments(1, 2, 3); // 多个参数，如果有逗号，那么逗号后面�
 <h3 id="控制语句">控制语句</h3>
 
 <ul>
-<li><p>使用控制语句在语句的圆括号前后都必须有一个空格。</p>
+<li>使用控制语句在语句的圆括号前后都必须有一个空格。</li>
+</ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-php" data-lang="php"><span class="lnt"> 1
@@ -300,19 +302,17 @@ for ($j = 0; $j <span class="err">&lt;</span> $i; $j++) { // for后面加空格
 }
 
 switch ($numPeople) { // switch后面加空格
-case 1: // 缩进
-    break;
+    case 1: // 缩进
+        break;
 
-case 2:
-    break;
+    case 2:
+        break;
 
-default: // switch 语句应当有 default
-    break;
+    default: // switch 语句应当有 default
+        break;
 }</code></pre></td></tr></table>
 </div>
-</div></li>
-</ul>
-
+</div>
 <h3 id="数组">数组：</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">

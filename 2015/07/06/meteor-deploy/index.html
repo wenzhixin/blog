@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.58.3 with even 4.0.0" />
+<meta name="generator" content="Hugo 0.55.6 with even 4.0.0" />
 
 
 <link rel="canonical" href="http://blog.wenzhixin.net.cn/2015/07/06/meteor-deploy/" />
@@ -42,15 +42,16 @@
 <meta property="og:description" content="关于 Meteor.js Meteor.js Meteor 是一个构建在 Node.js 之上的平台，用来开发实时网页程序。Meteor 位于程序数据库和用户界面之间，保持二者之间的数据同步更新。使用 Mete" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://blog.wenzhixin.net.cn/2015/07/06/meteor-deploy/" />
-<meta property="article:published_time" content="2015-07-06T00:00:00+00:00" />
-<meta property="article:modified_time" content="2015-07-06T00:00:00+00:00" />
+<meta property="article:published_time" content="2015-07-06T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2015-07-06T00:00:00&#43;00:00"/>
+
 <meta itemprop="name" content="在 Ubuntu 14.04 server 上部署 meteor 应用">
 <meta itemprop="description" content="关于 Meteor.js Meteor.js Meteor 是一个构建在 Node.js 之上的平台，用来开发实时网页程序。Meteor 位于程序数据库和用户界面之间，保持二者之间的数据同步更新。使用 Mete">
 
 
 <meta itemprop="datePublished" content="2015-07-06T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2015-07-06T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="332">
+<meta itemprop="wordCount" content="331">
 
 
 
@@ -181,19 +182,14 @@
 <pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> myapp
 meteor build --directory ../build</code></pre></td></tr></table>
 </div>
-</div></li>
-
-<li><p>使用 rsync 同步到服务器上</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> ../
-rsync -avz build/bundle hostname:/home/myapp</code></pre></td></tr></table>
 </div>
-</div></li>
+<ul>
+<li>使用 rsync 同步到服务器上
+<code>bash
+cd ../
+rsync -avz build/bundle hostname:/home/myapp
+</code></li>
+</ul></li>
 </ul>
 
 <h3 id="安装-mongodb">安装 mongodb</h3>
