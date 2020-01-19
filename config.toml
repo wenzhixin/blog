@@ -17,7 +17,7 @@ hasCJKLanguage = true     # has chinese/japanese/korean ? # 自动检测是否�
 paginate = 10                                              # 首页每页显示的文章数
 disqusShortname = "wenzhixin"      # disqus_shortname
 googleAnalytics = "UA-36708951-1"      # UA-XXXXXXXX-X
-copyright = "wenzhixin.net.cn 粤ICP备15117953号"            # default: author.name ↓        # 默认为下面配置的author.name ↓
+copyright = "wenzhixin.net.cn <a href='http://beian.miit.gov.cn/' target='_blank'>粤ICP备15117953号</a>"            # default: author.name ↓        # 默认为下面配置的author.name ↓
 
 [author]                  # essential                     # 必需
   name = "wenzhixin"
