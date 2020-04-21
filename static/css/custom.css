@@ -1,7 +1,12 @@
-#cf {
+.clearfix {
+  clear: both;
+}
+#cf,
+#carbonads {
   max-width: 100%!important;
 }
-.cf-wrapper {
+.cf-wrapper,
+#carbonads {
   box-sizing: border-box;
   z-index: 5;
   width: 100%;
@@ -11,17 +16,24 @@
   padding: 0.7em 1em!important;
   border-radius: 0!important;
 }
-.cf-img-wrapper {
+.cf-img-wrapper,
+.carbon-wrap img {
   display: none!important;
 }
 .cf-powered-by {
   display: inline!important;
 }
-.cf-text:before {
+.cf-text:before,
+.carbon-text:before {
   margin-right: 4px;
   padding: 2px 6px;
   border-radius: 3px;
   background-color: #4caf50;
   color: #fff;
   content: "Ad";
+}
+.carbon-poweredby {
+  margin-left: 5px;
+  font-size: 11px;
+  color: #777;
 }
